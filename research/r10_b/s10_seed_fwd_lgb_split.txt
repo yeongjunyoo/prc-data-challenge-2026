@@ -1,0 +1,28 @@
+start 06:09:15 need 3500 MB cap 2.8 GB: s10_seed.py fwd <repo root>/research/r10_b/mac/fwd_m6r27skwin_s1.parquet - - --split
+[fwd] seed-1 file <repo root>/research/r10_b/mac/fwd_m6r27skwin_s1.parquet: rows 190713, NaN pred 0
+  leg seed spread on non-G rows: pred RMS diff 47.688, mean diff +0.999
+  leg seed spread on non-G rows: mu RMS diff 48.586, mean diff +1.119
+  leg seed spread on non-G rows: p_art RMS diff 0.020, mean diff -0.000
+  leg alone, non-G rows, MSE / N: seed 0 62,289.4
+  leg alone, non-G rows, MSE / N: seed 1 62,310.3
+  leg alone, non-G rows, MSE / N: mean of 2 (p_art, mu averaged) 61,732.2
+  leg alone, non-G rows, MSE / N: mean of 2 preds 61,732.3
+  val: gkeyxn (avg_xncr) G model recomputed for 397 G rows; against the gkeyxn file max diff 7.28e-12 s
+  fwd: gkeyxn (avg_xncr) G model recomputed for 337 G rows; against the gkeyxn file max diff 7.28e-12 s
+  chain parts loaded in 17s, legs ['m6r27skwing', 'm6r27cbwin', 'm6r25xg', 'm6r27rmwin']
+  base slot = m6r27skwin seed 0 on non-G rows: max |diff| 0.00e+00
+  orig re-inference vs the 468 file: max |diff| 9.09e-13
+  [seed1] base: dMSE all rows +98.88, non-G +98.88 +- 67.57 (P<0 0.0600), body_nonG (y<=3600) +1.43 +- 43.55 (P<0 0.4980); move RMS non-G 14.26 s
+  [seed1] corr: dMSE all rows +85.44, non-G +85.86 +- 70.97 (P<0 0.1120), body_nonG (y<=3600) -11.33 +- 45.17 (P<0 0.6130); move RMS non-G 13.61 s
+  [seed1] aw: dMSE all rows +74.10, non-G +74.20 +- 66.47 (P<0 0.1305), body_nonG (y<=3600) -12.76 +- 43.36 (P<0 0.6315); move RMS non-G 13.46 s
+  [avg2] base: dMSE all rows -1.28, non-G -1.28 +- 33.30 (P<0 0.5165), body_nonG (y<=3600) -43.79 +- 22.35 (P<0 0.9765); move RMS non-G 7.13 s
+  [avg2] corr: dMSE all rows -5.69, non-G -5.69 +- 35.18 (P<0 0.5660), body_nonG (y<=3600) -46.57 +- 24.11 (P<0 0.9790); move RMS non-G 7.12 s
+  [avg2] aw: dMSE all rows -10.60, non-G -10.62 +- 33.23 (P<0 0.6225), body_nonG (y<=3600) -46.50 +- 23.32 (P<0 0.9800); move RMS non-G 7.03 s
+  [avg2_mu_only] base: dMSE all rows -9.74, non-G -9.74 +- 8.11 (P<0 0.8860), body_nonG (y<=3600) -6.69 +- 5.58 (P<0 0.8860); move RMS non-G 3.69 s
+  [avg2_mu_only] corr: dMSE all rows -9.57, non-G -9.57 +- 7.48 (P<0 0.8995), body_nonG (y<=3600) -4.92 +- 5.96 (P<0 0.8020); move RMS non-G 4.04 s
+  [avg2_mu_only] aw: dMSE all rows -9.85, non-G -9.89 +- 7.58 (P<0 0.9020), body_nonG (y<=3600) -4.49 +- 6.01 (P<0 0.7740); move RMS non-G 4.02 s
+  [avg2_p_only] base: dMSE all rows +8.50, non-G +8.50 +- 33.21 (P<0 0.4225), body_nonG (y<=3600) -36.99 +- 21.85 (P<0 0.9555); move RMS non-G 6.10 s
+  [avg2_p_only] corr: dMSE all rows +2.61, non-G +2.61 +- 33.27 (P<0 0.4825), body_nonG (y<=3600) -39.18 +- 22.21 (P<0 0.9615); move RMS non-G 5.96 s
+  [avg2_p_only] aw: dMSE all rows -1.83, non-G -1.86 +- 31.05 (P<0 0.5260), body_nonG (y<=3600) -39.31 +- 21.04 (P<0 0.9685); move RMS non-G 5.87 s
+memcap: rc=0 cap=2.8GB peak_job=2.45GB
+end 06:10:03 rc 0

@@ -127,7 +127,7 @@ TAILSUF = ["", "am", "amfh", "amfhgkc", "amfhgkcx", "amfhgkcxncr", "amfhgkcxncrd
            "amfhgkcxncrdbawgpglgja"]
 PROFILES = {
     "594b": dict(
-        variant="Bb", ff="ff4", default="592", default_ff="ff2", stem="m6r27",
+        variant="Bb", ff="ff4", default="592", default_ff="ff2", stem="m6r27", feats="feats_v27",
         bases={"A": "m6r27wincbrmfw4sv434tmc", "B": "m6r27skcbrmfw4sv434", "C": "m6r27apcbrmfw4sv114"},
         rebuild_of=("531 (v36, daily LB 228.1704) rebuilt on final_ranking as the Default 592 (research/f3/final_chain.py --cfg s75: 514's legs and "
                     "blends from the s50 build, correctors at scale2 0.75 loaded from the fit cache, 531's tails), then option B variant Bb with F2's "
@@ -143,7 +143,7 @@ PROFILES = {
                 "iii_boundary (F2, f2_run)": str(Path(__import__("os").environ.get("PRC_WORK", ".")) / "f2_run/research/f2/out/iii_boundary.json")},
         extra={"s75_correctors_clone": "research/f3/out/collect_s75.json"}),
     "598b": dict(
-        variant="Bb", ff="ff7", default="596", default_ff="ff5", stem="m6r28",
+        variant="Bb", ff="ff7", default="596", default_ff="ff5", stem="m6r28", feats="feats_v28",
         bases={"A": "m6r28wincbrmfw4sv434tmc", "B": "m6r28skcbrmfw4sv434", "C": "m6r28apcbrmfw4sv114"},
         rebuild_of=("L3S (570's configuration) rebuilt on final_ranking as 596 (research/f3/final_chain.py --cfg l3s75: the nine L3 LightGBM legs "
                     "refit in the full setting on this root's feats_v28 with R17-A's arguments, their G bands and seed averages, 514's other "
@@ -211,9 +211,9 @@ def variant_main(argv: list[str]) -> None:
                              "note": "legs, fit cache, CatBoost threads, XGBoost placeholder, TabM device and the one-off changes of the s50 build"},
         "data": {"ranking": sha16("data/ranking.parquet"), "submitting": sha16("data/submitting.parquet"),
                  "note": "final_ranking 4b0692a792846079, final_submitting b3445d80e29bf599 (organizer, 10-08 11:57 UTC)"},
-        "tables_sha16": {t: sha16(f"cache/{t}.parquet") for t in ("all", "feats_v25", "feats_v27", "feats_v28", "adsb_v3", "ctx_v3", "adsb_v1nd",
-                                                                  "geo_v1nd", "antiwin_link_v1", "gkey_v1", "gkeyx_v1", "gkeyxn_v2", "artmm_v1",
-                                                                  "artmm_cells_v1", "arthist_v1")},
+        "tables_sha16": {t: sha16(f"cache/{t}.parquet") for t in ("all", "feats_v25", P["feats"]) + (("adsb_v3",) if P["feats"] == "feats_v28" else ())
+                         + ("ctx_v3", "adsb_v1nd", "geo_v1nd", "antiwin_link_v1", "gkey_v1", "gkeyx_v1", "gkeyxn_v2", "artmm_v1", "artmm_cells_v1",
+                            "arthist_v1")},
         "code_sha16": {f: sha16(f) for f in [P["kit"], P["kit_pins"], "research/f2/merge_corr.py", "research/f2/ctx_corr4.py", "research/f2/ctx4_table.py",
                                              "research/f2/check_split.py", "research/f2/iii_boundary.py", "research/f3/final_chain.py",
                                              "research/f3/mac_step.sh", "research/f3/final_file.py", "src/manifest.py", "src/aiu_shift.py",

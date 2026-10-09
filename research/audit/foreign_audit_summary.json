@@ -1,0 +1,89 @@
+{
+ "what": "Counts of the originality audit of docs/EXTERNAL_IDEAS.md section 3. Scripts: research/audit/foreign_audit.py (function-body AST hashes, 10-token shingles, shared identifiers and strings) and research/audit/foreign_lines.py (identical source lines). Their full outputs quote other teams' code and are not in this repository; foreign files are named by their saved file names.",
+ "run": {
+  "foreign_audit.json": "2026-10-08 13:09 KST",
+  "foreign_lines.json": "2026-10-08 13:10 KST"
+ },
+ "foreign_sources": 15,
+ "our_python_files": 785,
+ "foreign_functions": 18,
+ "function_body_matches": 0,
+ "shingle_top10": [
+  {
+   "ours": "research/r10_a/pru_cal.py",
+   "foreign_file": "analysis_build_pru_calibration.py",
+   "containment_of_foreign": 0.19,
+   "containment_of_ours": 0.149
+  },
+  {
+   "ours": "tools/prucal2.py",
+   "foreign_file": "analysis_build_pru_calibration.py",
+   "containment_of_foreign": 0.144,
+   "containment_of_ours": 0.098
+  },
+  {
+   "ours": "tools/prucal.py",
+   "foreign_file": "analysis_build_pru_calibration.py",
+   "containment_of_foreign": 0.142,
+   "containment_of_ours": 0.103
+  },
+  {
+   "ours": "tools/aiurecon.py",
+   "foreign_file": "ravindra_priors.py",
+   "containment_of_foreign": 0.139,
+   "containment_of_ours": 0.019
+  },
+  {
+   "ours": "tools/gkey.py",
+   "foreign_file": "analysis_build_pru_calibration.py",
+   "containment_of_foreign": 0.134,
+   "containment_of_ours": 0.058
+  },
+  {
+   "ours": "tools/gkey.py",
+   "foreign_file": "ravindra_priors.py",
+   "containment_of_foreign": 0.127,
+   "containment_of_ours": 0.018
+  },
+  {
+   "ours": "tools/gkey.py",
+   "foreign_file": "analysis_oa11_position.py",
+   "containment_of_foreign": 0.126,
+   "containment_of_ours": 0.059
+  },
+  {
+   "ours": "src/aiu_shift.py",
+   "foreign_file": "analysis_build_pru_calibration.py",
+   "containment_of_foreign": 0.12,
+   "containment_of_ours": 0.05
+  },
+  {
+   "ours": "src/aiu_shift.py",
+   "foreign_file": "analysis_oa10_stage1_427.py",
+   "containment_of_foreign": 0.12,
+   "containment_of_ours": 0.059
+  },
+  {
+   "ours": "src/aiu_shift.py",
+   "foreign_file": "ravindra_priors.py",
+   "containment_of_foreign": 0.12,
+   "containment_of_ours": 0.016
+  }
+ ],
+ "identical_lines": {
+  "tools/prucal.py": {
+   "analysis_build_pru_calibration.py": 6
+  },
+  "tools/prucal2.py": {
+   "analysis_build_pru_calibration.py": 6
+  },
+  "research/r10_a/prucal_495_check.py": {
+   "analysis_build_pru_calibration.py": 1
+  },
+  "research/r10_a/pru_cal.py": {
+   "analysis_build_pru_calibration.py": 11
+  }
+ },
+ "shared_identifiers": 37,
+ "shared_strings": 10
+}

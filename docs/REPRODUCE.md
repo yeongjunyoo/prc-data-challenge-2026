@@ -3,7 +3,7 @@
 This file lists, in execution order, what has to run to rebuild the final file `spirited-tiger_final.parquet` (section 0) and the daily submissions it builds on (sections 1 to 9), what each step needs, how long it took on our machines, and where results can differ. The commands are taken from the manifests in `preds/` (field `commands`), from the job files we used, from the drivers in `research/f3/`, and from the docstrings of the scripts. Nothing here was re-run for this document except the checks marked “verified”. Markers `FILL:<name>` stand for values that were not final when this text was written.
 
 <!--AUTO:DAILYBEST-->
-Best daily-board submission (January and July 2026 only; history): v39 (spirited-tiger_v39.parquet), server RMSE 228.1667, ruler RMSE 281.35, written 2026-10-09 09:26 KST. SHA-256 of the submitted file: `9a36a77a409b1056badbef40b87b9b772122a91068708159ef872380008284bb`. Manifest: `preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapwac.json`.
+Best daily-board submission (January and July 2026 only; board-tuned history, not the final file): v39 (spirited-tiger_v39.parquet), server RMSE 228.1667, ruler RMSE 281.35, written 2026-10-09 09:26 KST. SHA-256 of the submitted file: `9a36a77a409b1056badbef40b87b9b772122a91068708159ef872380008284bb`. Manifest: `preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapwac.json`.
 <!--/AUTO:DAILYBEST-->
 
 ## 0. The final file
@@ -359,7 +359,7 @@ Estimated total for a rebuild from raw data on the same machines, from the numbe
 - CatBoost: the final legs ran on arm64 CPU; results differ in the last decimals from x86 runs of the same recipe (`notes/jobs_m6r27cb.txt`). GPU CatBoost runs (earlier candidates) are not bit-reproducible.
 - RealMLP on MPS (Mac) and on CUDA (PC) give different numbers for the same seed; the final stack uses the MPS runs.
 - Library version of the Mac for the final CatBoost and RealMLP legs: catboost 1.2.10, pytabkit 1.7.3, torch 2.11.0 (a list in `research/r10_b/` job notes).
-- `src/feats.py` orders movements with non-stable `np.argsort` on timestamps (lines 137 and 163). Movements with equal timestamps (common at the five airports whose times lie on a one-minute grid) may be ordered differently by different NumPy builds or CPUs, which can change the “previous or next movement” columns of those tied rows. This is by code reading, not measured.
+- `src/feats.py` orders movements with non-stable `np.argsort` on timestamps (`src/feats.py:138` and `src/feats.py:164`). Movements with equal timestamps (common at the five airports whose times lie on a one-minute grid) may be ordered differently by different NumPy builds or CPUs, which can change the “previous or next movement” columns of those tied rows. This is by code reading, not measured.
 - Expected agreement: a rebuild should land within the seed noise of the local ruler (about 4 to 5 RMSE points for one seed of the whole pipeline; much less after the seed averages used here), not bit-identical. The hash list of the original files is in the manifests (`holdout.sha`, `test.sha`, `forward.sha`).
 - The ADS-B and AIU inputs are fixed files; the AIU hashes are given in section 2. ADS-B release assets can be re-published by adsb.lol; the day-to-release mapping is in `research/adsb/manifest_preferred.tsv`.
 

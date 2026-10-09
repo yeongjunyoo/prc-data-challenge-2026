@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
-# G2 진단 발(플레이북 §0, 최대 2발): 상수 예측 둘의 서버 RMSE 로 시험 정답의 평균과 분산을 풀어 로컬 자(2025-01, 07)와 비교한다.
-# 상수 c 의 RMSE^2 = Var(y) + (mean(y) - c)^2 이라 c 두 개면 mean, Var 가 풀린다. 행별 정답은 얻지 않는다.
+# One-off diagnostic of 2026-10-02 (docs/DESIGN.md section 9): the local side of the two constant submissions v2 (0) and v3 (1000).
+# On the 2025 January and July departures it computes the mean, the variance and the RMSE of the two constants, to compare with the
+# mean and variance that the two server scores give (RMSE^2 = Var(y) + (mean(y) - c)^2 for a constant c). No per-row label is obtained.
 import glob
 import json
 import sys

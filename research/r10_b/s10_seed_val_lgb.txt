@@ -1,0 +1,36 @@
+start 07:08:58 need 4000 MB cap 3.2 GB: s10_seed.py val <repo root>/research/r10_b/mac/val_m6r27skwin_s1.parquet - - --out lgb
+[val] seed-1 file <repo root>/research/r10_b/mac/val_m6r27skwin_s1.parquet: rows 344419, NaN pred 0
+  leg seed spread on non-G rows: pred RMS diff 43.097, mean diff -0.442
+  leg seed spread on non-G rows: mu RMS diff 43.814, mean diff -0.243
+  leg seed spread on non-G rows: p_art RMS diff 0.022, mean diff -0.000
+  leg alone, non-G rows, MSE / N: seed 0 79,003.2
+  leg alone, non-G rows, MSE / N: seed 1 78,644.6
+  leg alone, non-G rows, MSE / N: mean of 2 (p_art, mu averaged) 78,360.2
+  leg alone, non-G rows, MSE / N: mean of 2 preds 78,360.1
+  stage-2 fold 0: 304,965 rows
+  stage-2 fold 1: 304,411 rows
+  stage-2 fold 2: 309,509 rows
+  stage-2 fold 3: 310,940 rows
+  stage-2 fold 4: 311,462 rows
+  stage-2 fold 5: 311,710 rows
+  stage-2 fold 6: 310,059 rows
+  stage-2 fold 7: 311,313 rows
+  stage-2 fold 8: 309,364 rows
+  stage-2 fold 9: 310,023 rows
+  val: gkeyxn (avg_xncr) G model recomputed for 397 G rows; against the gkeyxn file max diff 7.28e-12 s
+  val: gkeyxn (avg_xncr) G model recomputed for 397 G rows; against the gkeyxn file max diff 7.28e-12 s
+  chain parts loaded in 27s, legs ['m6r27skwing', 'm6r27cbwin', 'm6r25xg', 'm6r27rmwin']
+  base slot = m6r27skwin seed 0 on non-G rows: max |diff| 0.00e+00
+  orig re-inference vs the 468 file: max |diff| 4.55e-13
+  [seed1] base: dMSE all rows -90.04, non-G -90.04 +- 55.90 (P<0 0.9625), body_nonG (y<=3600) -6.71 +- 24.14 (P<0 0.6070); move RMS non-G 11.82 s
+  [seed1] corr: dMSE all rows -101.73, non-G -100.45 +- 58.15 (P<0 0.9720), body_nonG (y<=3600) -9.68 +- 27.65 (P<0 0.6315); move RMS non-G 11.79 s
+  [seed1] aw: dMSE all rows -94.12, non-G -93.44 +- 53.17 (P<0 0.9705), body_nonG (y<=3600) -11.07 +- 26.46 (P<0 0.6525); move RMS non-G 11.46 s
+  [seed1] aw body_nonG by month: 01 +12.69, 07 -23.76
+  [avg2] base: dMSE all rows -79.88, non-G -79.88 +- 29.22 (P<0 0.9995), body_nonG (y<=3600) -31.28 +- 12.26 (P<0 0.9960); move RMS non-G 5.91 s
+  [avg2] corr: dMSE all rows -87.54, non-G -86.53 +- 32.09 (P<0 0.9990), body_nonG (y<=3600) -29.03 +- 14.14 (P<0 0.9855); move RMS non-G 6.17 s
+  [avg2] aw: dMSE all rows -82.83, non-G -82.38 +- 29.78 (P<0 0.9990), body_nonG (y<=3600) -28.94 +- 13.91 (P<0 0.9840); move RMS non-G 6.03 s
+  [avg2] aw body_nonG by month: 01 -0.51, 07 -28.43
+  [blend 0.5 x (seed1) + 0.5 x 486] dMSE all rows -71.70 +- 27.73 (P<0 0.9985), body_nonG -24.82
+  [blend 0.5 x (avg2) + 0.5 x 486] dMSE all rows -46.18 +- 15.21 (P<0 1.0000), body_nonG -18.19
+memcap: rc=0 cap=3.2GB peak_job=2.79GB
+end 07:09:47 rc 0

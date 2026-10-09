@@ -22,7 +22,7 @@ Ideas that are our own and have no external source: the record-type mixture and 
 
 | Idea | Source | Status |
 |---|---|---|
-| A second CatBoost family in stage 2 of the corrector, averaged with weight 0.5 | GREKI post of 2026-09-27 (row 7 above) | Implemented as `src/ctx_corr4.py`; not part of any submitted chain (it is not listed in the code hashes of the manifests of the last candidates) |
+| A second CatBoost family in stage 2 of the corrector, averaged with weight 0.5 | GREKI post of 2026-09-27 (row 7 above) | Implemented as `src/ctx_corr4.py`; not part of any submitted chain (it is not listed in the code hashes of the manifests of the last candidates). It is not the four-month corrector of the final file, `research/f2/ctx_corr4.py`, which has the same file name |
 | Airport-month calibration of the prediction mean to the EUROCONTROL monthly taxi-out file (the “PRU” rule) | Team versatile-violin, public repository `arnavhm/prc_26` (README says GPLv3; the repository returned 404 on 2026-10-08, license not verified today) | Evaluated on candidates in our working tree. **No submitted file contains it.** The evaluation code is not part of this repository |
 | ADS-B first-point position columns as corrector inputs (called OA-11 by versatile-violin, which credits outgoing-boat's `adsb_lat0`/`adsb_lon0`) | Same repository | Evaluated only (the evaluation code is not part of this repository); status as of 2026-10-09: not in any submitted file up to v39 and not in the final rebuild |
 | Fixed-weight blending of chains with different anchors | Own measurement | In use (row 4 above) |
@@ -30,7 +30,7 @@ Ideas that are our own and have no external source: the record-type mixture and 
 
 ## 3. Originality audit of this repository
 
-Method (read-only, by script; script and output are in `docs_release` of the working tree, not in this repository):
+Method (read-only, by script: `research/audit/foreign_audit.py` and `research/audit/foreign_lines.py`, run on 2026-10-08. They read our saved copies of other teams' code, which this repository does not redistribute; their full outputs quote that code and are left out too; the counts below are in `research/audit/foreign_audit_summary.json`):
 
 1. Corpus of foreign code: every saved Python file of other teams that we had in the working tree (5 files: three analysis scripts of versatile-violin, one script of a participant repository, one prior-computation script of another team), plus every fenced code block of the 15 saved Markdown documents of other teams.
 2. Our corpus: all 785 Python files under `src/`, `tools/` and `research/` of the working tree.
