@@ -329,7 +329,7 @@
   }
  ],
  "fit_caches": {
-  "research/f2/fitcache_4m (final root)": "seeded by kit_final.sh prep at 2026-10-10 00:50:22 with 704 stage-1 models of the four-month corrector, fitted at 2 threads in the month-held-out sandbox (f2_sbx/research/f2/fitcache); 794 files after step 8 (each of the nine scale2-0.75 runs fitted its 10 four-month stage-2 models; the nine 0.5 runs loaded all 65)",
+  "research/f2/fitcache_4m (final root)": "seeded by kit_final.sh prep at 2026-10-10 00:50:22 with 704 corrector models (594 for stage 1, none a four-month stage-2 model) that our build of v38 and a four-month test had fitted at 2 threads in another sandbox (f2_sbx/research/f2/fitcache); 794 files after step 8 (each of the nine scale2-0.75 runs fitted its 10 four-month stage-2 models; the nine 0.5 runs loaded all 65)",
   "research/f3/fitcache_union (final root)": "corrector models of the daily build; the nine corrector runs of step 6 loaded all 65 models each and fitted none (research/f3/out/final_chain_s75_A.json, field checks)"
  }
 }

@@ -1,6 +1,6 @@
 # Release manifest
 
-How this tree was made, what differs from the working copies it was copied from, and what was left out. Built 2026-10-10 05:58 KST by copying files (nothing was moved or changed in the working copies).
+How this tree was made, what differs from the working copies it was copied from, and what was left out. Built 2026-10-10 06:02 KST by copying files (nothing was moved or changed in the working copies).
 
 ## 1. Size and contents
 
