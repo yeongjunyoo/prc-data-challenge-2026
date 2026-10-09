@@ -1,0 +1,148 @@
+{
+ "what": "F2 lever 2, step 1 (private notes research/2026-10-08-f2-four-months.md 1.9, registered 06:10:55 before any number). Read only, 1 thread.",
+ "event_days": {
+  "2025-01": {
+   "complete": 31,
+   "incomplete": [],
+   "targets": [
+    "<mac-workdir>/rb/events"
+   ]
+  },
+  "2025-02": {
+   "complete": 28,
+   "incomplete": [],
+   "targets": [
+    "<mac-workdir>/rb/events"
+   ]
+  },
+  "2025-06": {
+   "complete": 30,
+   "incomplete": [],
+   "targets": [
+    "<mac-workdir>/r17a/out"
+   ]
+  },
+  "2025-07": {
+   "complete": 31,
+   "incomplete": [],
+   "targets": [
+    "<mac-workdir>/rb/events"
+   ]
+  }
+ },
+ "files": {
+  "f2_run adsb_v1nd": "0d03ff06267e0dee",
+  "f2_run geo_v1nd": "43310b9bbeefe81b",
+  "final_run adsb_v1nd": "07df03ca69833082",
+  "final_run geo_v1nd": "9dfa71b64e1099de",
+  "adsb_v3": "816f0ffd9b7ae6a4",
+  "prc_all": "b62c9878799138f0",
+  "fj A": "bbdfbccf5821da14",
+  "fj B": "cd2cf1ea95631aad",
+  "fj C": "c0901a4fd4121cc7",
+  "f2ctx_v3": "531e8113e7f26fff",
+  "stand_map_filled (f2_run)": null,
+  "stand_map_filled (final_run)": "419317298abf4971",
+  "geo_final.py (final_run)": "7ec1ba12026e2b9c",
+  "adsb_geo_v1 (f2_run)": null,
+  "obs_geo (f2_run)": null
+ },
+ "gate14_A_F": true,
+ "gate14_B_F": true,
+ "gate14_C_F": true,
+ "fitcache_g14_files": 246,
+ "stand_sources": {
+  "<mac-workdir>/prcm/f2_run/cache/all.parquet": true,
+  "<mac-workdir>/prcm/final_run/cache/all.parquet": true,
+  "<mac-workdir>/prcm/r17a_sbx/cache/all.parquet": true
+ },
+ "adsb_regression": {
+  "old_rows": 689260,
+  "v3_rows_found": 689260,
+  "old_ids_missing_in_v3": 0,
+  "columns_old": [
+   "MVT_ID_mvt",
+   "day",
+   "ADEP_mvt",
+   "mvt",
+   "how",
+   "matched",
+   "fm_seen",
+   "fm_ok",
+   "first_moving",
+   "dt_to",
+   "est_to",
+   "est_mvt",
+   "est_first",
+   "est_mvt_last",
+   "ev_t_to",
+   "ev_to_gap",
+   "ev_roll_trk",
+   "ev_seg_reason",
+   "ev_t_first",
+   "ev_first_gs",
+   "ev_first_dist_m",
+   "ev_first_stationary",
+   "ev_stand_seen",
+   "ev_stand_dur",
+   "ev_t_fm",
+   "ev_fm_gap",
+   "ev_n_mid_stops",
+   "ev_mid_stop_s",
+   "ev_mid_stop_max",
+   "ev_n_long_stops",
+   "ev_t_fm_last",
+   "ev_fm_last_gap",
+   "ev_last_long_dur",
+   "ev_n_pts",
+   "ev_max_gap_after_fm",
+   "ev_share_mlat",
+   "ev_icao",
+   "ev_typ"
+  ],
+  "columns_same_order": true,
+  "types_differ": {},
+  "columns_with_differences": {},
+  "pass": true
+ },
+ "fj_coverage": {
+  "fj_rows": 326873,
+  "fj_ids_same_in_three_chains": true,
+  "fj_in_adsb_v3": 326873,
+  "fj_in_old_adsb_v1nd": 0,
+  "fj_in_final_adsb_v1nd": 0,
+  "matched": 198414,
+  "by_month": {
+   "2025-02": [
+    143731,
+    78588
+   ],
+   "2025-06": [
+    183142,
+    119826
+   ]
+  },
+  "by_month_airport_matched_pct": {
+   "2025-02 EDDF": 99.2,
+   "2025-02 EDDM": 93.5,
+   "2025-02 EGLL": 84.6,
+   "2025-02 EHAM": 99.3,
+   "2025-02 LEBL": 99.2,
+   "2025-02 LEMD": 0.0,
+   "2025-02 LFPG": 0.0,
+   "2025-02 LIRF": 0.0,
+   "2025-02 LSZH": 98.4,
+   "2025-02 LTFM": 0.0,
+   "2025-06 EDDF": 97.8,
+   "2025-06 EDDM": 69.7,
+   "2025-06 EGLL": 34.7,
+   "2025-06 EHAM": 98.6,
+   "2025-06 LEBL": 98.6,
+   "2025-06 LEMD": 97.7,
+   "2025-06 LFPG": 11.5,
+   "2025-06 LIRF": 88.8,
+   "2025-06 LSZH": 96.1,
+   "2025-06 LTFM": 0.0
+  }
+ }
+}

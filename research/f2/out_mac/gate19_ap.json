@@ -1,0 +1,886 @@
+{
+ "A": {
+  "all": -158.98,
+  "cells": [
+   {
+    "cell": "02 LTFM unmatched",
+    "rows": 18327,
+    "mean": -1675.5,
+    "share": -93.94
+   },
+   {
+    "cell": "06 LIRF unmatched",
+    "rows": 1650,
+    "mean": -4344.3,
+    "share": -21.93
+   },
+   {
+    "cell": "06 EHAM matched",
+    "rows": 20955,
+    "mean": -115.1,
+    "share": -7.38
+   },
+   {
+    "cell": "06 LSZH matched",
+    "rows": 11615,
+    "mean": -185.1,
+    "share": -6.58
+   },
+   {
+    "cell": "06 EDDM matched",
+    "rows": 10919,
+    "mean": -196.3,
+    "share": -6.56
+   },
+   {
+    "cell": "06 LEBL matched",
+    "rows": 16082,
+    "mean": -119.4,
+    "share": -5.88
+   },
+   {
+    "cell": "06 EDDF matched",
+    "rows": 20251,
+    "mean": -72.2,
+    "share": -4.47
+   },
+   {
+    "cell": "02 EDDM matched",
+    "rows": 9709,
+    "mean": -149.3,
+    "share": -4.43
+   },
+   {
+    "cell": "02 LSZH matched",
+    "rows": 8907,
+    "mean": -128.0,
+    "share": -3.49
+   },
+   {
+    "cell": "06 LEMD matched",
+    "rows": 17579,
+    "mean": -63.0,
+    "share": -3.39
+   },
+   {
+    "cell": "02 EDDF matched",
+    "rows": 14977,
+    "mean": -62.7,
+    "share": -2.87
+   },
+   {
+    "cell": "02 EHAM matched",
+    "rows": 17733,
+    "mean": -43.4,
+    "share": -2.35
+   },
+   {
+    "cell": "06 LIRF matched",
+    "rows": 13046,
+    "mean": -57.0,
+    "share": -2.27
+   },
+   {
+    "cell": "02 LEBL matched",
+    "rows": 12068,
+    "mean": -55.6,
+    "share": -2.05
+   },
+   {
+    "cell": "06 EGLL matched",
+    "rows": 6970,
+    "mean": -92.9,
+    "share": -1.98
+   },
+   {
+    "cell": "02 EDDM unmatched",
+    "rows": 672,
+    "mean": -575.6,
+    "share": -1.18
+   },
+   {
+    "cell": "02 EGLL matched",
+    "rows": 15191,
+    "mean": -9.2,
+    "share": -0.43
+   },
+   {
+    "cell": "06 LFPG matched",
+    "rows": 2409,
+    "mean": -53.9,
+    "share": -0.4
+   },
+   {
+    "cell": "06 LSZH unmatched",
+    "rows": 468,
+    "mean": -264.1,
+    "share": -0.38
+   },
+   {
+    "cell": "06 EDDM unmatched",
+    "rows": 4742,
+    "mean": -9.5,
+    "share": -0.14
+   },
+   {
+    "cell": "02 EDDF unmatched",
+    "rows": 122,
+    "mean": -202.7,
+    "share": -0.08
+   },
+   {
+    "cell": "06 EDDF unmatched",
+    "rows": 455,
+    "mean": -47.8,
+    "share": -0.07
+   },
+   {
+    "cell": "02 EHAM unmatched",
+    "rows": 119,
+    "mean": -115.0,
+    "share": -0.04
+   },
+   {
+    "cell": "06 EHAM unmatched",
+    "rows": 302,
+    "mean": -6.3,
+    "share": -0.01
+   },
+   {
+    "cell": "06 LEMD unmatched",
+    "rows": 413,
+    "mean": -10.4,
+    "share": -0.01
+   },
+   {
+    "cell": "02 LFPG matched",
+    "rows": 3,
+    "mean": 292.1,
+    "share": 0.0
+   },
+   {
+    "cell": "06 LEBL unmatched",
+    "rows": 233,
+    "mean": 221.8,
+    "share": 0.16
+   },
+   {
+    "cell": "02 LEBL unmatched",
+    "rows": 101,
+    "mean": 893.6,
+    "share": 0.28
+   },
+   {
+    "cell": "02 EGLL unmatched",
+    "rows": 2765,
+    "mean": 112.3,
+    "share": 0.95
+   },
+   {
+    "cell": "06 EGLL unmatched",
+    "rows": 13093,
+    "mean": 28.3,
+    "share": 1.13
+   },
+   {
+    "cell": "02 LEMD unmatched",
+    "rows": 15390,
+    "mean": 24.4,
+    "share": 1.15
+   },
+   {
+    "cell": "02 LSZH unmatched",
+    "rows": 141,
+    "mean": 2920.6,
+    "share": 1.26
+   },
+   {
+    "cell": "06 LTFM unmatched",
+    "rows": 23482,
+    "mean": 19.0,
+    "share": 1.36
+   },
+   {
+    "cell": "02 LIRF unmatched",
+    "rows": 10703,
+    "mean": 46.6,
+    "share": 1.52
+   },
+   {
+    "cell": "06 LFPG unmatched",
+    "rows": 18478,
+    "mean": 41.1,
+    "share": 2.32
+   },
+   {
+    "cell": "02 LFPG unmatched",
+    "rows": 16803,
+    "mean": 61.8,
+    "share": 3.18
+   }
+  ]
+ },
+ "B": {
+  "all": -84.18,
+  "cells": [
+   {
+    "cell": "02 LTFM unmatched",
+    "rows": 18327,
+    "mean": -1038.9,
+    "share": -58.25
+   },
+   {
+    "cell": "06 LEBL matched",
+    "rows": 16082,
+    "mean": -112.3,
+    "share": -5.53
+   },
+   {
+    "cell": "06 EDDM matched",
+    "rows": 10919,
+    "mean": -158.8,
+    "share": -5.31
+   },
+   {
+    "cell": "06 EHAM matched",
+    "rows": 20955,
+    "mean": -76.2,
+    "share": -4.88
+   },
+   {
+    "cell": "02 EDDM matched",
+    "rows": 9709,
+    "mean": -127.1,
+    "share": -3.77
+   },
+   {
+    "cell": "06 EDDF matched",
+    "rows": 20251,
+    "mean": -60.3,
+    "share": -3.74
+   },
+   {
+    "cell": "02 EDDF matched",
+    "rows": 14977,
+    "mean": -67.0,
+    "share": -3.07
+   },
+   {
+    "cell": "06 LSZH matched",
+    "rows": 11615,
+    "mean": -86.3,
+    "share": -3.07
+   },
+   {
+    "cell": "06 EGLL matched",
+    "rows": 6970,
+    "mean": -105.9,
+    "share": -2.26
+   },
+   {
+    "cell": "02 LSZH matched",
+    "rows": 8907,
+    "mean": -80.1,
+    "share": -2.18
+   },
+   {
+    "cell": "02 EHAM matched",
+    "rows": 17733,
+    "mean": -35.2,
+    "share": -1.91
+   },
+   {
+    "cell": "02 EDDM unmatched",
+    "rows": 672,
+    "mean": -576.2,
+    "share": -1.18
+   },
+   {
+    "cell": "06 LEMD matched",
+    "rows": 17579,
+    "mean": -21.1,
+    "share": -1.13
+   },
+   {
+    "cell": "06 LFPG unmatched",
+    "rows": 18478,
+    "mean": -18.9,
+    "share": -1.07
+   },
+   {
+    "cell": "02 LEBL matched",
+    "rows": 12068,
+    "mean": -21.1,
+    "share": -0.78
+   },
+   {
+    "cell": "06 LFPG matched",
+    "rows": 2409,
+    "mean": -82.6,
+    "share": -0.61
+   },
+   {
+    "cell": "06 EDDM unmatched",
+    "rows": 4742,
+    "mean": -14.5,
+    "share": -0.21
+   },
+   {
+    "cell": "06 LEMD unmatched",
+    "rows": 413,
+    "mean": -73.0,
+    "share": -0.09
+   },
+   {
+    "cell": "06 LSZH unmatched",
+    "rows": 468,
+    "mean": -44.7,
+    "share": -0.06
+   },
+   {
+    "cell": "02 EHAM unmatched",
+    "rows": 119,
+    "mean": -31.4,
+    "share": -0.01
+   },
+   {
+    "cell": "02 EGLL matched",
+    "rows": 15191,
+    "mean": -0.1,
+    "share": -0.0
+   },
+   {
+    "cell": "02 LFPG matched",
+    "rows": 3,
+    "mean": 299.0,
+    "share": 0.0
+   },
+   {
+    "cell": "06 EDDF unmatched",
+    "rows": 455,
+    "mean": 25.3,
+    "share": 0.04
+   },
+   {
+    "cell": "06 LEBL unmatched",
+    "rows": 233,
+    "mean": 68.0,
+    "share": 0.05
+   },
+   {
+    "cell": "02 EDDF unmatched",
+    "rows": 122,
+    "mean": 150.0,
+    "share": 0.06
+   },
+   {
+    "cell": "02 LEBL unmatched",
+    "rows": 101,
+    "mean": 711.9,
+    "share": 0.22
+   },
+   {
+    "cell": "06 EHAM unmatched",
+    "rows": 302,
+    "mean": 245.3,
+    "share": 0.23
+   },
+   {
+    "cell": "06 LTFM unmatched",
+    "rows": 23482,
+    "mean": 3.3,
+    "share": 0.24
+   },
+   {
+    "cell": "02 LFPG unmatched",
+    "rows": 16803,
+    "mean": 7.5,
+    "share": 0.38
+   },
+   {
+    "cell": "02 LIRF unmatched",
+    "rows": 10703,
+    "mean": 18.3,
+    "share": 0.6
+   },
+   {
+    "cell": "02 EGLL unmatched",
+    "rows": 2765,
+    "mean": 88.6,
+    "share": 0.75
+   },
+   {
+    "cell": "02 LEMD unmatched",
+    "rows": 15390,
+    "mean": 20.7,
+    "share": 0.97
+   },
+   {
+    "cell": "06 EGLL unmatched",
+    "rows": 13093,
+    "mean": 28.8,
+    "share": 1.15
+   },
+   {
+    "cell": "02 LSZH unmatched",
+    "rows": 141,
+    "mean": 4692.3,
+    "share": 2.02
+   },
+   {
+    "cell": "06 LIRF matched",
+    "rows": 13046,
+    "mean": 64.4,
+    "share": 2.57
+   },
+   {
+    "cell": "06 LIRF unmatched",
+    "rows": 1650,
+    "mean": 1119.6,
+    "share": 5.65
+   }
+  ]
+ },
+ "C": {
+  "all": 67.41,
+  "cells": [
+   {
+    "cell": "06 EDDM matched",
+    "rows": 10919,
+    "mean": -213.5,
+    "share": -7.13
+   },
+   {
+    "cell": "06 EHAM matched",
+    "rows": 20955,
+    "mean": -102.4,
+    "share": -6.57
+   },
+   {
+    "cell": "06 LEBL matched",
+    "rows": 16082,
+    "mean": -94.9,
+    "share": -4.67
+   },
+   {
+    "cell": "06 LSZH matched",
+    "rows": 11615,
+    "mean": -110.4,
+    "share": -3.92
+   },
+   {
+    "cell": "06 EDDF matched",
+    "rows": 20251,
+    "mean": -52.3,
+    "share": -3.24
+   },
+   {
+    "cell": "02 EDDM matched",
+    "rows": 9709,
+    "mean": -102.2,
+    "share": -3.04
+   },
+   {
+    "cell": "02 EDDF matched",
+    "rows": 14977,
+    "mean": -64.4,
+    "share": -2.95
+   },
+   {
+    "cell": "06 LEMD matched",
+    "rows": 17579,
+    "mean": -48.9,
+    "share": -2.63
+   },
+   {
+    "cell": "02 EHAM matched",
+    "rows": 17733,
+    "mean": -33.3,
+    "share": -1.81
+   },
+   {
+    "cell": "06 EGLL matched",
+    "rows": 6970,
+    "mean": -79.5,
+    "share": -1.69
+   },
+   {
+    "cell": "02 LSZH matched",
+    "rows": 8907,
+    "mean": -55.8,
+    "share": -1.52
+   },
+   {
+    "cell": "06 LTFM unmatched",
+    "rows": 23482,
+    "mean": -16.7,
+    "share": -1.2
+   },
+   {
+    "cell": "06 LFPG unmatched",
+    "rows": 18478,
+    "mean": -20.1,
+    "share": -1.14
+   },
+   {
+    "cell": "02 EDDM unmatched",
+    "rows": 672,
+    "mean": -506.7,
+    "share": -1.04
+   },
+   {
+    "cell": "06 LIRF matched",
+    "rows": 13046,
+    "mean": -18.2,
+    "share": -0.73
+   },
+   {
+    "cell": "02 LEBL matched",
+    "rows": 12068,
+    "mean": -11.2,
+    "share": -0.41
+   },
+   {
+    "cell": "06 LFPG matched",
+    "rows": 2409,
+    "mean": -54.8,
+    "share": -0.4
+   },
+   {
+    "cell": "02 EHAM unmatched",
+    "rows": 119,
+    "mean": -347.3,
+    "share": -0.13
+   },
+   {
+    "cell": "02 LFPG unmatched",
+    "rows": 16803,
+    "mean": -1.6,
+    "share": -0.08
+   },
+   {
+    "cell": "06 LSZH unmatched",
+    "rows": 468,
+    "mean": -42.7,
+    "share": -0.06
+   },
+   {
+    "cell": "02 EDDF unmatched",
+    "rows": 122,
+    "mean": -34.2,
+    "share": -0.01
+   },
+   {
+    "cell": "02 LFPG matched",
+    "rows": 3,
+    "mean": 96.0,
+    "share": 0.0
+   },
+   {
+    "cell": "06 LEBL unmatched",
+    "rows": 233,
+    "mean": 33.6,
+    "share": 0.02
+   },
+   {
+    "cell": "06 EDDM unmatched",
+    "rows": 4742,
+    "mean": 2.4,
+    "share": 0.03
+   },
+   {
+    "cell": "06 EHAM unmatched",
+    "rows": 302,
+    "mean": 71.6,
+    "share": 0.07
+   },
+   {
+    "cell": "06 EDDF unmatched",
+    "rows": 455,
+    "mean": 69.8,
+    "share": 0.1
+   },
+   {
+    "cell": "06 LEMD unmatched",
+    "rows": 413,
+    "mean": 79.0,
+    "share": 0.1
+   },
+   {
+    "cell": "02 LEBL unmatched",
+    "rows": 101,
+    "mean": 962.8,
+    "share": 0.3
+   },
+   {
+    "cell": "06 EGLL unmatched",
+    "rows": 13093,
+    "mean": 16.5,
+    "share": 0.66
+   },
+   {
+    "cell": "02 EGLL unmatched",
+    "rows": 2765,
+    "mean": 88.5,
+    "share": 0.75
+   },
+   {
+    "cell": "02 LEMD unmatched",
+    "rows": 15390,
+    "mean": 31.3,
+    "share": 1.47
+   },
+   {
+    "cell": "02 EGLL matched",
+    "rows": 15191,
+    "mean": 40.2,
+    "share": 1.87
+   },
+   {
+    "cell": "02 LSZH unmatched",
+    "rows": 141,
+    "mean": 5484.7,
+    "share": 2.37
+   },
+   {
+    "cell": "02 LIRF unmatched",
+    "rows": 10703,
+    "mean": 150.4,
+    "share": 4.92
+   },
+   {
+    "cell": "06 LIRF unmatched",
+    "rows": 1650,
+    "mean": 3266.3,
+    "share": 16.49
+   },
+   {
+    "cell": "02 LTFM unmatched",
+    "rows": 18327,
+    "mean": 1473.7,
+    "share": 82.63
+   }
+  ]
+ },
+ "avg": {
+  "all": -60.8,
+  "cells": [
+   {
+    "cell": "02 LTFM unmatched",
+    "rows": 18327,
+    "mean": -509.9,
+    "share": -28.59
+   },
+   {
+    "cell": "06 EHAM matched",
+    "rows": 20955,
+    "mean": -97.1,
+    "share": -6.22
+   },
+   {
+    "cell": "06 EDDM matched",
+    "rows": 10919,
+    "mean": -185.0,
+    "share": -6.18
+   },
+   {
+    "cell": "06 LEBL matched",
+    "rows": 16082,
+    "mean": -105.9,
+    "share": -5.21
+   },
+   {
+    "cell": "06 LSZH matched",
+    "rows": 11615,
+    "mean": -126.6,
+    "share": -4.5
+   },
+   {
+    "cell": "06 EDDF matched",
+    "rows": 20251,
+    "mean": -59.3,
+    "share": -3.68
+   },
+   {
+    "cell": "02 EDDM matched",
+    "rows": 9709,
+    "mean": -117.4,
+    "share": -3.49
+   },
+   {
+    "cell": "02 EDDF matched",
+    "rows": 14977,
+    "mean": -56.6,
+    "share": -2.59
+   },
+   {
+    "cell": "06 LEMD matched",
+    "rows": 17579,
+    "mean": -43.8,
+    "share": -2.36
+   },
+   {
+    "cell": "02 LSZH matched",
+    "rows": 8907,
+    "mean": -78.0,
+    "share": -2.12
+   },
+   {
+    "cell": "06 EGLL matched",
+    "rows": 6970,
+    "mean": -91.6,
+    "share": -1.95
+   },
+   {
+    "cell": "02 EHAM matched",
+    "rows": 17733,
+    "mean": -24.5,
+    "share": -1.33
+   },
+   {
+    "cell": "02 EDDM unmatched",
+    "rows": 672,
+    "mean": -555.8,
+    "share": -1.14
+   },
+   {
+    "cell": "02 LEBL matched",
+    "rows": 12068,
+    "mean": -23.4,
+    "share": -0.86
+   },
+   {
+    "cell": "06 LFPG matched",
+    "rows": 2409,
+    "mean": -55.6,
+    "share": -0.41
+   },
+   {
+    "cell": "06 LSZH unmatched",
+    "rows": 468,
+    "mean": -113.5,
+    "share": -0.16
+   },
+   {
+    "cell": "06 EDDM unmatched",
+    "rows": 4742,
+    "mean": -4.6,
+    "share": -0.07
+   },
+   {
+    "cell": "02 EHAM unmatched",
+    "rows": 119,
+    "mean": -159.7,
+    "share": -0.06
+   },
+   {
+    "cell": "02 EDDF unmatched",
+    "rows": 122,
+    "mean": -33.4,
+    "share": -0.01
+   },
+   {
+    "cell": "02 LFPG matched",
+    "rows": 3,
+    "mean": 227.4,
+    "share": 0.0
+   },
+   {
+    "cell": "06 LIRF unmatched",
+    "rows": 1650,
+    "mean": 2.2,
+    "share": 0.01
+   },
+   {
+    "cell": "06 EDDF unmatched",
+    "rows": 455,
+    "mean": 16.2,
+    "share": 0.02
+   },
+   {
+    "cell": "06 LEMD unmatched",
+    "rows": 413,
+    "mean": 13.7,
+    "share": 0.02
+   },
+   {
+    "cell": "06 LEBL unmatched",
+    "rows": 233,
+    "mean": 104.0,
+    "share": 0.07
+   },
+   {
+    "cell": "06 LFPG unmatched",
+    "rows": 18478,
+    "mean": 1.4,
+    "share": 0.08
+   },
+   {
+    "cell": "06 EHAM unmatched",
+    "rows": 302,
+    "mean": 106.2,
+    "share": 0.1
+   },
+   {
+    "cell": "06 LIRF matched",
+    "rows": 13046,
+    "mean": 2.7,
+    "share": 0.11
+   },
+   {
+    "cell": "02 LEBL unmatched",
+    "rows": 101,
+    "mean": 857.5,
+    "share": 0.26
+   },
+   {
+    "cell": "06 LTFM unmatched",
+    "rows": 23482,
+    "mean": 4.0,
+    "share": 0.28
+   },
+   {
+    "cell": "02 EGLL matched",
+    "rows": 15191,
+    "mean": 13.5,
+    "share": 0.63
+   },
+   {
+    "cell": "02 EGLL unmatched",
+    "rows": 2765,
+    "mean": 94.7,
+    "share": 0.8
+   },
+   {
+    "cell": "02 LFPG unmatched",
+    "rows": 16803,
+    "mean": 21.2,
+    "share": 1.09
+   },
+   {
+    "cell": "06 EGLL unmatched",
+    "rows": 13093,
+    "mean": 30.5,
+    "share": 1.22
+   },
+   {
+    "cell": "02 LEMD unmatched",
+    "rows": 15390,
+    "mean": 27.1,
+    "share": 1.28
+   },
+   {
+    "cell": "02 LSZH unmatched",
+    "rows": 141,
+    "mean": 4388.7,
+    "share": 1.89
+   },
+   {
+    "cell": "02 LIRF unmatched",
+    "rows": 10703,
+    "mean": 69.2,
+    "share": 2.27
+   }
+  ]
+ }
+}

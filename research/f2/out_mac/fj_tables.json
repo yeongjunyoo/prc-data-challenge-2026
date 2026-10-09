@@ -1,0 +1,127 @@
+{
+ "what": "F2 lever 2, step 2 (private notes research/2026-10-08-f2-four-months.md 1.9, registered 06:10:55 before any number): the corrector's stage-1 tables",
+ "registered": "private note 1.9, 2026-10-10 06:10:55 KST",
+ "inputs_sha16": {
+  "f2_run adsb_v1nd": "0d03ff06267e0dee",
+  "f2_run geo_v1nd": "43310b9bbeefe81b",
+  "final_run adsb_v1nd": "07df03ca69833082",
+  "final_run geo_v1nd": "9dfa71b64e1099de",
+  "adsb_v3": "816f0ffd9b7ae6a4"
+ },
+ "code_sha16": {
+  "adsb_match.py r17a_sbx (imported)": "652b0a9519920541",
+  "geo_final_f3.py (this copy)": "7ec1ba12026e2b9c",
+  "geo_final.py final_run": "7ec1ba12026e2b9c",
+  "prc_all r17a_sbx": "b62c9878799138f0",
+  "stand_map_filled": {
+   "<mac-workdir>/prcm/final_run/research/obs2/stand_map_filled.parquet": "419317298abf4971"
+  },
+  "adsb_match.py final_run": "652b0a9519920541"
+ },
+ "stand_source": {
+  "file": "<mac-workdir>/prcm/f2_run/cache/all.parquet",
+  "sha16": "704408c3b5dfccd1"
+ },
+ "adsb_regression": {
+  "rows": 689260,
+  "differences": {},
+  "pass": true
+ },
+ "new_adsb_rows": {
+  "rows": 326873,
+  "matched": 198414,
+  "by_month": {
+   "2025-02": [
+    143731,
+    78588
+   ],
+   "2025-06": [
+    183142,
+    119826
+   ]
+  },
+  "matched_pct_by_month_airport": {
+   "2025-02 EDDF": 99.2,
+   "2025-02 EDDM": 93.5,
+   "2025-02 EGLL": 84.6,
+   "2025-02 EHAM": 99.3,
+   "2025-02 LEBL": 99.2,
+   "2025-02 LEMD": 0.0,
+   "2025-02 LFPG": 0.0,
+   "2025-02 LIRF": 0.0,
+   "2025-02 LSZH": 98.4,
+   "2025-02 LTFM": 0.0,
+   "2025-06 EDDF": 97.8,
+   "2025-06 EDDM": 69.7,
+   "2025-06 EGLL": 34.7,
+   "2025-06 EHAM": 98.6,
+   "2025-06 LEBL": 98.6,
+   "2025-06 LEMD": 97.7,
+   "2025-06 LFPG": 11.5,
+   "2025-06 LIRF": 88.8,
+   "2025-06 LSZH": 96.1,
+   "2025-06 LTFM": 0.0
+  }
+ },
+ "stand_missing_on_fj_rows": 4,
+ "geo_regression": {
+  "rows_recomputed": 344419,
+  "rows_2025_today": 344419,
+  "same_ids": true,
+  "d_stand_first": {
+   "nan_pattern_equal": true,
+   "bits_equal": false,
+   "max_abs": 1.8189894035458565e-12
+  },
+  "st_known": {
+   "nan_pattern_equal": true,
+   "bits_equal": true,
+   "max_abs": 0.0
+  },
+  "d_stand_stop": {
+   "nan_pattern_equal": true,
+   "bits_equal": false,
+   "max_abs": 9.094947017729282e-13
+  },
+  "d_any_stand": {
+   "nan_pattern_equal": true,
+   "bits_equal": false,
+   "max_abs": 4.547473508864641e-13
+  },
+  "seg_code": {
+   "nan_pattern_equal": true,
+   "bits_equal": true,
+   "max_abs": 0.0
+  },
+  "to_gap": {
+   "nan_pattern_equal": true,
+   "bits_equal": true,
+   "max_abs": 0.0
+  },
+  "pass": true
+ },
+ "new_geo_rows": {
+  "rows": 326873,
+  "filled": {
+   "d_stand_first": 0.5958,
+   "st_known": 1.0,
+   "d_stand_stop": 0.1328,
+   "d_any_stand": 0.607,
+   "seg_code": 0.607,
+   "to_gap": 0.0
+  }
+ },
+ "outputs_sha16": {
+  "adsb_v1ndfj": "477f52ea44b954e2",
+  "adsb_v1ndfjF": "e13437a2c55a77c5",
+  "geo_v1ndfj": "9ec77c9e1f0bf042",
+  "geo_v1ndfjF": "4fd677dc9060ce22"
+ },
+ "rows": {
+  "adsb_v1ndfj": 1016133,
+  "adsb_v1ndfjF": 1335983,
+  "geo_v1ndfj": 1016133,
+  "geo_v1ndfjF": 1335983
+ },
+ "seconds": 20
+}
