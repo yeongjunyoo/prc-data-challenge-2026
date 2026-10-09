@@ -1,7 +1,7 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
 # R17-A download and extraction runner on the Mac, fifth form (private notes research/2026-10-08-r17-a-adsb-fill.md section 4.1). dl4_r17a.sh plus the
-# coordinator's 10-09 04:1x conditions: no new day while ${PRC_WORK:-.}/final_run/REALMLP_ALONE exists (F3's RealMLP needs the Mac alone), and
+# our 10-09 04:1x conditions: no new day while ${PRC_WORK:-.}/final_run/REALMLP_ALONE exists (F3's RealMLP needs the Mac alone), and
 # the memory (>= 30 % free) and REALMLP_ALONE checks are repeated right after a slot is taken, just before curl starts (the slot is given back
 # when they fail). dl4's text follows: dl3_r17a.sh with the
 # stream limit counted in bytes per second instead of streams. 10-09 04:0x: GitHub paced each connection at about 2.2 MB/s and an extra
@@ -56,7 +56,7 @@ worker() {
         ok_now && break
         rm -rf "$lock"; sleep 30
       done
-      printf 'owner: PRC R17-A ADS-B day download+extract (worker %s, network-bound curl stream), coordinator main\npid: %s\npeak_gb: 0.9\nthreads: 0.25\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s --stream --limit-rate %s\n' \
+      printf 'owner: PRC R17-A ADS-B day download+extract (worker %s, network-bound curl stream)\npid: %s\npeak_gb: 0.9\nthreads: 0.25\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s --stream --limit-rate %s\n' \
         "$w" "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+25M '+%Y-%m-%d %H:%M')" "$day" "$RATE" > "$lock/info"
       t0=$(date +%s)
       nice -n 10 /usr/bin/time -l "$PY" -I adsb_day_r17a.py --day "$day" --manifest manifest_preferred.tsv --out out --stream \

@@ -18,7 +18,7 @@ run() {  # n day mode-args
   local n=$1 day=$2; shift 2
   local lock="$P/r17a_pilot$n.lock"
   mkdir "$lock" || return 9
-  printf 'owner: PRC R17-A ADS-B pilot day %s, coordinator main\npid: %s\npeak_gb: 0.9\nthreads: 1\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s %s\n' \
+  printf 'owner: PRC R17-A ADS-B pilot day %s\npid: %s\npeak_gb: 0.9\nthreads: 1\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s %s\n' \
     "$day" "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+12M '+%Y-%m-%d %H:%M')" "$day" "$*" > "$lock/info"
   nice -n 10 /usr/bin/time -l "$PY" -I adsb_day_r17a.py --day "$day" --manifest manifest_preferred.tsv --out out --raw raw \
     --limit-rate 9500K "$@" > "logs/$day.log" 2>&1

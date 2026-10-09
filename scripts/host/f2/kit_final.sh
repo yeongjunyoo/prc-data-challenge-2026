@@ -1,7 +1,7 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F2 final split kit for F3 (coordinator 10-09 23:4x: the final is option B with the monthly AIU columns kept; private notes
-# research/2026-10-08-f2-four-months.md 5.8; post hoc, raised after chain A's gate14 numbers, decided by the coordinator). Every step works in the
+# F2 final split kit for F3 (10-09 23:4x: the final is option B with the monthly AIU columns kept; private notes
+# research/2026-10-08-f2-four-months.md 5.8; post hoc, raised after chain A's gate14 numbers, decided by us). Every step works in the
 # final root ${PRC_WORK:-.}/final_run, runs its python through F3's PROTOCOL step runner research/f3/mac_step.sh (F3's locks and caps; at most
 # KIT_TH threads, default 2) and refuses to overwrite. bash 3.2 compatible. Row groups: jj = research/f2/janjul_ids.parquet (the test ids of the
 # original Jan/Jul ranking.parquet, sha16 9db75e3a56fa09b8; final_run/data/ranking.parquet is the four-month file, so it is not used),
@@ -96,7 +96,7 @@ corr4m)  # four-month corrector, full setting, seeds 0-2: at 0.75 (10 fits: the 
       step "c4m_${X}_${sc}_s$k" 6 $TH research/f2/ctx_corr4.py --setting full --seed $k --base $T --base_seed 0 --tag $tg $ARGS --scale2 $sc
       want=10; if [ $sc = 0.5 ]; then want=0; fi  # 0.75: the ten S_k with the extra rows; stage 1 (10 + 45) loads; the 0.5 twin loads everything
       got=$(grep -o '[0-9]* fitted' "$R/logs/f2k_c4m_${X}_${sc}_s$k.log" | tail -1 | grep -o '^[0-9]*')
-      if [ "${got:-x}" != $want ]; then echo "$(ts) c4m_${X}_${sc}_s$k fitted ${got:-?} models, expected $want: stop and tell F2 and the coordinator"; exit 5; fi
+      if [ "${got:-x}" != $want ]; then echo "$(ts) c4m_${X}_${sc}_s$k fitted ${got:-?} models, expected $want: stop and report"; exit 5; fi
     done
     if [ ! -e "$R/cache/full_${tg}c3_s0.parquet" ]; then
       step "c4m_${X}_${sc}_cavg" 3 1 research/r10_b/cavg.py --setting full --seed 0 --tag ${tg}c3 --src $tg --seeds 0,1,2 --base $T --base_seed 0

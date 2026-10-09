@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 M3 follow-up, NOT pre-registered (written 2026-10-08 22:4x after research/f2/m3_corr.py's numbers; private note section 4.3).
+"""F2 M3 follow-up, NOT pre-registered (written 2026-10-08 22:4x after research/f2/m3_corr.py's numbers; vault note section 4.3).
 Why: m3_corr's U_F and I_F fit stage 2 on other days of the same month. aiu_m_* is constant within an airport-month, so with day folds the
 model can learn each airport-month's mean residual from that month's other days: a leak the final file cannot have (no Feb/Jun 2026 label).
 This check holds out the whole month instead: stage 2 = one model (the T1 recipe of m3_corr) trained on all V rows plus the F rows of the

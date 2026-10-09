@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2: are the corrector's 2025 rows byte copies in F3's final tables? (coordinator 10-09 02:1x; the stage-1 fit-cache key is a digest of
+"""F2: are the corrector's 2025 rows byte copies in F3's final tables? (10-09 02:1x; the stage-1 fit-cache key is a digest of
 the matched rows' values, research/f2 reads src/ctx_corr2.fit_cache, and src/adsb_corr.design looks rows up by MVT_ID, so the key is untouched
 exactly when the set of 2025 departure ids in a table and every column's bytes on those rows are the same.)
 For each table: MVT_ID unique in both files; the set (and order) of ids that are 2025 departures (today's feats_v25, src != 0); same columns

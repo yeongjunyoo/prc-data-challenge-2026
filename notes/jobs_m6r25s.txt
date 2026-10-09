@@ -1,4 +1,4 @@
-# m6r25 에서 회귀(mu)를 LIRF 와 나머지로 나눠 학습한 판(--mu_sep LIRF). LIRF 의 시끄러운 정상 행이 다른 공항 회귀를 흔들지 않게 한다. 묶음 002 후보(10-03 작업 세션).
+# m6r25 에서 회귀(mu)를 LIRF 와 나머지로 나눠 학습한 판(--mu_sep LIRF). LIRF 의 시끄러운 정상 행이 다른 공항 회귀를 흔들지 않게 한다. 묶음 002 후보(10-03).
 logs/m6r25s_val_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m6r25s --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --mu_sep LIRF
 logs/m6r25s_fwd_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 0 --tag m6r25s --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --mu_sep LIRF
 logs/m6r25s_full_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting full --seed 0 --tag m6r25s --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --mu_sep LIRF

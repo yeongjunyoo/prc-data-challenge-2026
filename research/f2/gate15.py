@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 gate 1.5 (private notes research/2026-10-08-f2-four-months.md 1.5, registered 2026-10-08 23:23 KST before any blend-world or server number of
+"""F2 gate 1.5 (vault research/2026-10-08-f2-four-months.md 1.5, registered 2026-10-08 23:23 KST before any blend-world or server number of
 this variant): the A3 corrector's stage 2 without the four monthly AIU columns (aiu_m_txo, aiu_m_add, aiu_m_valid, aiu_m_gap), measured in the
 form that would go into the final file, in gate 1.4's blend world and with gate 1.4's code.
 
@@ -202,7 +202,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     A = cc.stage1_inputs(a)
     ctx = cc.checked(g.ctx, g.ctx_sha).set_index("MVT_ID_mvt")
-    rep = {"registered": "private note 1.5, 2026-10-08 23:23 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "dropped": NM, "stage2_columns": len(names),
+    rep = {"registered": "vault note 1.5, 2026-10-08 23:23 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "dropped": NM, "stage2_columns": len(names),
            "gate14_pass": bool(g14["pass"]), "chains": {}}
     PVs, PFs = [], []
     for name, spec in g14["chains"].items():

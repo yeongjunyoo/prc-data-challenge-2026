@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-# R17-A PC watchdog for the PC download side (coordinator 10-08 22:3x: "stop the PC side at once if commit goes above 85% or free memory
+# R17-A PC watchdog for the PC download side (10-08 22:3x: "stop the PC side at once if commit goes above 85% or free memory
 # drops below 4 GB"). Every 20 s it reads commit % and free GB. On the first failure it stops the PC side at once and for good:
 #   touches $env:ADSB_PC_WORK\STOP, kills only this lane's processes (bash running pc_dl_r17a.sh, python running adsb_day_r17a.py incl. its memcap
 #   wrapper, and their curl children), releases the Mac claims of the interrupted days (ssh rmdir ${ADSB_WORK:-.}/claim/<day>) so the Mac runner

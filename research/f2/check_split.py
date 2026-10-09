@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 final split kit: the five checks and a manifest (coordinator 10-09 23:4x; private notes research/2026-10-08-f2-four-months.md 5.8). Run from the
+"""F2 final split kit: the five checks and a manifest (10-09 23:4x; private notes research/2026-10-08-f2-four-months.md 5.8). Run from the
 root (final_run). It can run twice: after the merges (corrector stage only) and again after the variants' tails and chainavg3 (with --finals).
 Corrector stage (research/f2/merge_corr.py outputs):
   (ii) every merged tag: cache/full_<tag>_s0.parquet has the default's row order and in every group equals the group's source row by row in every

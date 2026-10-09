@@ -11,10 +11,10 @@ the R13-F3 ap builder for chain C, research/r16_b/sb_build_r16b.py for the three
   - The tail (artmm .. gjoint a) runs all three settings with the unchanged tools on tables rebuilt with --force in this root
     (step 'tables', order antiwin link, gkey, gkeyx, gkeyxn v2, artmm, arthist); its val and fwd outputs are compared with 514's.
 Each tool run goes through research/f3/mac_step.sh. Every target is checked to not exist before its step.
---cfg s75 (second rebuild, coordinator 10-09 23:2x, the Default final = 531): every corrector stage at --scale2 0.75 with tag ..x50ws75,
+--cfg s75 (second rebuild, 10-09 23:2x, the Default final = 531): every corrector stage at --scale2 0.75 with tag ..x50ws75,
 then cavg, manifest, tail and chainavg3 as above; blend and add are 514's (shared). Its val and fwd inputs are 531's caches cloned from
 var1_sbx (research/f3/collect_s75.py). Queue numbers +1000, step and state names prefixed s75_. Without --cfg everything is as before.
---cfg l3s75 (L3 final, coordinator 10-10 03:5x, 596 = L3S): R17-A's L3 chains (feats_v28 LightGBM base legs, 514's other learners),
+--cfg l3s75 (L3 final, 10-10 03:5x, 596 = L3S): R17-A's L3 chains (feats_v28 LightGBM base legs, 514's other learners),
 blend and add rebuilt here, correctors at 0.75 from research/f3/fitcache_l3 (L3's corrector models), manifest and gkey on feats_v28;
 val and fwd inputs cloned from r17a_sbx (research/f3/collect_l3.py). Queue numbers +7000, names prefixed l3_.
     python -u research/f3/final_chain.py tables
@@ -43,7 +43,7 @@ SUF = {"am": "am", "fh": "amfh", "gkc": "amfhgkc", "gkcx": "amfhgkcx", "xncr": "
        "gp": "amfhgkcxncrdbawgp", "gl": "amfhgkcxncrdbawgpgl", "gja": "amfhgkcxncrdbawgpglgja"}
 EXTRA = ("src/blend_fixed.py,src/ctx_corr2.py,src/ctx_corr3.py,src/feats_ctx2.py,src/feats_aiu.py,research/ctx_corr/freeze_geo.py,research/obs2/corr_plus.py,"
          "research/obs2/obs_rows.py,research/obs2/coverage.py,research/obs2/osm_stands.py,research/adsb/gprobe/build_nd.py,research/r10_b/cavg.py,"
-         "research/f3/fitwrap.py")  # fitwrap: the fit cache the legs ran through (sha16 54114020d2aa3d3c, coordinator 10-09 00:2x)
+         "research/f3/fitwrap.py")  # fitwrap: the fit cache the legs ran through (sha16 54114020d2aa3d3c, 10-09 00:2x)
 EXTRA_A = EXTRA + ",research/r13_l/prep_x.py,research/r13_l/tabm_leg.py,research/r13_l/xrfm_leg.py,research/r13_l/blend_add.py"
 EXTRA_C = EXTRA + ",research/r13_f3/model3ap.py,research/r13_f3/cat_muap.py"
 CHAINS = {
@@ -54,7 +54,7 @@ CHAINS = {
     "C": dict(T="m6r27apcbrmfw4sv114", base_leg="m6r27skapg", learners="m6r27cbap:mu_cat,m6r25xg:mu_xgb,m6r27rmx4:mu_rmlp",
               TA=None, add_leg=None, gleg="m6r27skapg", num0=2200, extra=EXTRA_C),
 }
-# L3 (coordinator 10-10 03:5x): R17-A's chains (research/r17_a/sb_build_r17a.py CHAINS): the LightGBM base legs on feats_v28, 514's other learners,
+# L3 (10-10 03:5x): R17-A's chains (research/r17_a/sb_build_r17a.py CHAINS): the LightGBM base legs on feats_v28, 514's other learners,
 # and R17-A's code list (its EXTRA, which carries the A chain's r13_l files in every chain) plus this root's fitwrap, full-setting averager and feats_v28 builder
 EXTRA_L3 = (EXTRA + ",research/r13_l/prep_x.py,research/r13_l/tabm_leg.py,research/r13_l/xrfm_leg.py,research/r13_l/blend_add.py,"
             "research/r17_a/avg_r17a.py,research/r17_a/adsb_day_r17a.py,research/adsb/build_feats2.py,research/adsb/adsb_match.py,"
@@ -93,7 +93,7 @@ def sha16(p: Path) -> str:
 
 def run(name: str, step: str, args: list[str], env: dict | None = None) -> None:
     gb, th = DECL[step]
-    th = min(th, int(os.environ.get("F3_MAXTH", th)))  # coordinator 10-09 13:5x: at most 3 threads beside F2's fj CatBoosts (OMP_NUM_THREADS = th)
+    th = min(th, int(os.environ.get("F3_MAXTH", th)))  # 10-09 13:5x: at most 3 threads beside F2's fj CatBoosts (OMP_NUM_THREADS = th)
     log = f"logs/chain_{name}.log"
     cmd = ["bash", "research/f3/mac_step.sh", name, str(gb), str(th), log, PY, "-X", "utf8", "-u", *args]
     print(f"[{ts()}] run {' '.join(args)[:230]}", flush=True)
@@ -206,11 +206,11 @@ def chain(label: str, start: str = "blend", stop: str = "gja") -> None:
                 txt = (ROOT / f"logs/chain_{pre}corr{label}{k}.log").read_text(encoding="utf-8", errors="replace")
                 st["checks"][f"fit_cache_s{k}"] = [x.strip() for x in txt.splitlines() if "fit cache" in x][-1:]
                 sp.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
-                # coordinator 10-09 02:4x: a corrector cache miss in the final root stops the chain (F2 verified the keys of chain A stage 1)
+                # 10-09 02:4x: a corrector cache miss in the final root stops the chain (F2 verified the keys of chain A stage 1)
                 fl = st["checks"][f"fit_cache_s{k}"]
                 fitted = int(fl[0].split(" loaded, ")[1].split(" fitted")[0]) if fl and " loaded, " in fl[0] else -1
                 if fitted != 0:
-                    raise SystemExit(f"corrector fit cache: {fl} (fitted must be 0): stop and tell the coordinator")
+                    raise SystemExit(f"corrector fit cache: {fl} (fitted must be 0): stop and report")
         elif step == "cavg":
             must_be_new(f"cache/full_{TCS}_s0.parquet")
             run(f"{pre}cavg{label}", "cavg", f"research/r10_b/cavg.py --setting full --seed 0 --tag {TCS} --src {TC} --seeds 0,1,2 --base {CB} --base_seed 0".split())

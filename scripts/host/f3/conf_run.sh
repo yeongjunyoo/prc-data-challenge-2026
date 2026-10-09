@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 confirmation run (coordinator 10-08 22:4x, low priority: <= 3 threads, nice): re-draw sampler -> three feature builds (2025 Jan/Jul
+# F3 confirmation run (10-08 22:4x, low priority: <= 3 threads, nice): re-draw sampler -> three feature builds (2025 Jan/Jul
 # re-drawn, everything else today's) -> one table -> one m6r25 val fit predicting all copies -> ΔMSE. Work dir ${PRC_WORK:-.}/f3_sbx/conf.
 # Every step goes through research/f3/mac_step.sh (no lock while waiting, lock while running).
 #   nohup bash ${PRC_WORK:-.}/final_run/research/f3/conf_run.sh >> ${PRC_WORK:-.}/f3_sbx/conf_run.log 2>&1 < /dev/null &

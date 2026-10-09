@@ -27,7 +27,7 @@ n=0; while [ $n -lt 2 ]; do if ok_now; then n=$((n+1)); else n=0; fi; [ $n -lt 2
 L="$P/r17a_$NAME.lock"
 mkdir "$L" || { echo "$(ts) lock $L exists"; exit 9; }
 trap 'rm -rf "$L"' EXIT
-printf 'owner: PRC R17-A (%s), coordinator main\npid: %s\npeak_gb: %s\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: %s\n' \
+printf 'owner: PRC R17-A (%s)\npid: %s\npeak_gb: %s\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: %s\n' \
   "$NAME" "$$" "$PEAK" "$THR" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+${MINS}M '+%Y-%m-%d %H:%M')" "$(echo "$*" | cut -c1-200)" > "$L/info"
 echo "$(ts) start $NAME: $*"
 OMP_NUM_THREADS=$THR OPENBLAS_NUM_THREADS=1 PYTHONIOENCODING=utf-8 nice -n 10 /usr/bin/time -l "$@" > "$LOG" 2>&1

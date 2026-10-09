@@ -1,5 +1,5 @@
 # CatBoost 회귀도 표류한 아홉 칸을 빼고 AOBT 기준으로 학습해(src/cat_mu.py --drop --anchor aobt) m6r25axsg 의 mu 와 반씩 섞는다(W 0.5).
-# GPU, 반복 상한 20000(CPU 판은 상한 4000 에서 멈췄다). v10 의 CatBoost 반반을 표류에 강한 계열로 옮긴 판. 묶음 003 대비(10-03 작업 세션).
+# GPU, 반복 상한 20000(CPU 판은 상한 4000 에서 멈췄다). v10 의 CatBoost 반반을 표류에 강한 계열로 옮긴 판. 묶음 003 대비(10-03).
 logs/m6r25axsgcx_val_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting val --seed 0 --tag m6r25axsgcx --base m6r25axsg --feats feats_v25 --threads 4 --gpu --iters 20000 --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --anchor aobt
 logs/m6r25axsgcx_fwd_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting fwd --seed 0 --tag m6r25axsgcx --base m6r25axsg --feats feats_v25 --threads 4 --gpu --iters 20000 --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --anchor aobt
 logs/m6r25axsgcx_full_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting full --seed 0 --tag m6r25axsgcx --base m6r25axsg --feats feats_v25 --threads 4 --gpu --iters 20000 --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --anchor aobt

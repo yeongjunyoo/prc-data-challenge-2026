@@ -45,7 +45,7 @@ def said(fn, keep=("BLOCK", "WARN", "would", "refuse", "fired", "stop", "묶음 
     try:
         with contextlib.redirect_stdout(buf):
             rc = fn()
-    except Exception as e:  # noqa: BLE001  다른 세션이 큐에 쓰는 중인 파일을 읽은 경우 따위: 시험을 멈추지 않고 적는다
+    except Exception as e:  # noqa: BLE001  다른 작업이 큐에 쓰는 중인 파일을 읽은 경우 따위: 시험을 멈추지 않고 적는다
         rc = f"exception {type(e).__name__}: {str(e)[:120]}"
     lines = [ln.split(" ", 2)[-1].strip() for ln in buf.getvalue().splitlines() if any(k in ln for k in keep)]
     return f"rc {rc}, " + " / ".join(lines)[:600]

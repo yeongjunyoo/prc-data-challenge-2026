@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 1.6 (private notes research/2026-10-08-f2-four-months.md 1.6, registered 2026-10-09 09:05 KST before any number): does the stage-2 corrector keep
+"""F2 1.6 (vault research/2026-10-08-f2-four-months.md 1.6, registered 2026-10-09 09:05 KST before any number): does the stage-2 corrector keep
 helping unseen months (Feb/Jun 2025) as its training months grow past four? LightGBM-only world of 4.3, corrector code = src/ctx_corr3.py's
 (imported, float64 design matrices as src/ctx_corr.py, 514's arguments: adsb_v1nd, geo_v1nd, folds 10, rounds 300/400, max_pred 3600, scale2 0.5,
 LOBT window last), context table with every month used (--ctx).
@@ -123,7 +123,7 @@ def main():
         rowsV[step] = w(PV, xj)
         log(f"{step}: {sum(len(t) for t in ts):,} training rows; F stage-2 dMSE vs stage 1 {np.mean((rowsF[step] - PF.y) ** 2) - np.mean((rowsF['s1w'] - PF.y) ** 2):+.1f}")
     se = lambda df, k: ((df[k] - df["y"]) ** 2).to_numpy()  # noqa: E731
-    rep = {"registered": "private note 1.6, 2026-10-09 09:05 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "steps": {k: ["lmo0107 (V)"] + v for k, v in STEPS.items()},
+    rep = {"registered": "vault note 1.6, 2026-10-09 09:05 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "steps": {k: ["lmo0107 (V)"] + v for k, v in STEPS.items()},
            "F": {}, "JanJul_whole_month": {}}
     monF, monV = rowsF["day"].str[5:7].to_numpy(), rowsV["day"].str[5:7].to_numpy()
     pairs = [("S2", "s1w"), ("S4", "S2"), ("S6", "S4"), ("S8", "S6"), ("S6", "S2"), ("S8", "S2"), ("S8", "S4")]

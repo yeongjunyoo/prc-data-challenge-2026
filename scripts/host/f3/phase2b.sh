@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 final root, phase 2b (fitwrap path, coordinator 2026-10-08 23:5x KST; replaces phase2.sh). Waits for R17-A's package
+# F3 final root, phase 2b (fitwrap path, 2026-10-08 23:5x KST; replaces phase2.sh). Waits for R17-A's package
 # (${PRC_WORK:-.}/r17a_sbx/final/manifest.json), then
 #   1. research/f3/adsb_final_tables.py -> cache/adsb_v2.parquet, cache/adsb_v1nd.parquet
 #   2. python -m src.feats_adsb feats_v27 --adsb adsb_v2 --mode raw -> cache/feats_v27.parquet

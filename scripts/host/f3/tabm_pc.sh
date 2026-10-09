@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 final TabM leg on the PC GPU (coordinator: PC CUDA when the PC guard allows, else Mac MPS; the device is recorded). Copies the
+# F3 final TabM leg on the PC GPU (PC CUDA when the PC guard allows, else Mac MPS; the device is recorded). Copies the
 # full-setting TabM input built on the Mac (final_run/research/r13_l/x/full by prep_x.py) and the LightGBM base full_m6r27skwin_s0 into the
 # PC copy of the final root ($PC_FINAL_ROOT), waits until commit < 85 % and available >= 4 GB on three checks 60 s apart, takes
 # $PC_LOCKS/gpu.lock and pc_heavy.lock (never while waiting), runs research/r13_l/tabm_leg.py there with the 514 arguments and
@@ -38,7 +38,7 @@ while true; do
 done
 trap 'rm -rf "$GL" "$HL"' EXIT
 for L in "$GL" "$HL"; do
-  printf 'owner: PRC F3 final TabM leg on the PC GPU (coordinator main)\npid: %s\npeak_gb: 7\nstart: %s\nexpected_end: about 15 min\njob: tabm_leg full s0 m6r27tmcwin\n' "$$" "$(date '+%Y-%m-%d %H:%M:%S')" > "$L/info"
+  printf 'owner: PRC F3 final TabM leg on the PC GPU\npid: %s\npeak_gb: 7\nstart: %s\nexpected_end: about 15 min\njob: tabm_leg full s0 m6r27tmcwin\n' "$$" "$(date '+%Y-%m-%d %H:%M:%S')" > "$L/info"
 done
 echo "$(ts) locks taken (available ${av} MB, commit ${cm} %), device cuda" | tee -a $LOG
 cd $R && $PYW -c "import ctypes, subprocess, sys; k = ctypes.windll.kernel32; k.SetPriorityClass(k.GetCurrentProcess(), 0x4000); sys.exit(subprocess.call(sys.argv[1:]))" \

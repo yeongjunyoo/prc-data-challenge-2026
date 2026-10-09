@@ -49,7 +49,7 @@ worker() {
     for try in 1 2 3; do
       n=0; while [ $n -lt 2 ]; do if ok_now; then n=$((n+1)); else n=0; fi; [ $n -lt 2 ] && sleep 30; done
       until take_slot "$lock"; do sleep 20; done
-      printf 'owner: PRC R17-A ADS-B day download+extract (worker %s, network-bound curl stream), coordinator main\npid: %s\npeak_gb: 0.9\nthreads: 0.25\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s --stream --limit-rate %s\n' \
+      printf 'owner: PRC R17-A ADS-B day download+extract (worker %s, network-bound curl stream)\npid: %s\npeak_gb: 0.9\nthreads: 0.25\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s --stream --limit-rate %s\n' \
         "$w" "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+25M '+%Y-%m-%d %H:%M')" "$day" "$RATE" > "$lock/info"
       t0=$(date +%s)
       nice -n 10 /usr/bin/time -l "$PY" -I adsb_day_r17a.py --day "$day" --manifest manifest_preferred.tsv --out out --stream \

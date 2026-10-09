@@ -1,5 +1,5 @@
 # m6r25cb 와 같은 CatBoost 회귀(같은 행, 같은 피처, depth 8, lr 0.1)를 GPU 로 반복 상한 20000 까지 학습한 판(CPU 판은 상한 4000 에서 멈췄다).
-# 바탕 m6r25 와 반씩 섞은 출력도 남지만 묶음 후보는 m6r25sgcbg 쪽이다(10-03 작업 세션).
+# 바탕 m6r25 와 반씩 섞은 출력도 남지만 묶음 후보는 m6r25sgcbg 쪽이다(10-03).
 logs/m6r25cbg_val_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting val --seed 0 --tag m6r25cbg --base m6r25 --feats feats_v25 --threads 4 --gpu --iters 20000
 logs/m6r25cbg_fwd_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting fwd --seed 0 --tag m6r25cbg --base m6r25 --feats feats_v25 --threads 4 --gpu --iters 20000
 logs/m6r25cbg_full_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting full --seed 0 --tag m6r25cbg --base m6r25 --feats feats_v25 --threads 4 --gpu --iters 20000

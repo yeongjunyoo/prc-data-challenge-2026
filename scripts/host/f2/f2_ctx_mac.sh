@@ -15,7 +15,7 @@ ok_now() { [ -e "$P/arc_quiet.request" ] || [ -e "$P/arc_quiet.lock" ] && return
 wait_ok() { local n=0; while [ $n -lt 2 ]; do if ok_now; then n=$((n+1)); else n=0; fi; [ $n -lt 2 ] && sleep 30; done; }
 sha() { shasum -a 256 "$1" | cut -c1-16; }
 step() { local name=$1; shift; wait_ok; local lock="$P/f2_ctx.lock"; mkdir "$lock" || return 9
-  printf 'owner: PRC F2 ruler inputs (context tables 2025-01,02,06,07), coordinator main\npid: %s\npeak_gb: 4\nthreads: 1\nstart: %s\nexpected_end: %s KST\njob: %s\n' \
+  printf 'owner: PRC F2 ruler inputs (context tables 2025-01,02,06,07)\npid: %s\npeak_gb: 4\nthreads: 1\nstart: %s\nexpected_end: %s KST\njob: %s\n' \
     "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+20M '+%Y-%m-%d %H:%M')" "$*" > "$lock/info"
   echo "$(ts) START $name"; OMP_NUM_THREADS=1 nice -n 10 /usr/bin/time -l "$PY" -u "$@" > "logs/$name.log" 2>&1; local rc=$?; rm -rf "$lock"; echo "$(ts) END $name rc $rc"; return $rc; }
 step f2ctx_v1 src/feats_ctx.py --name f2ctx_v1 --months 1,2,6,7 || exit 1

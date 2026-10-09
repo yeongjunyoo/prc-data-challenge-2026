@@ -1,5 +1,5 @@
 # 표류에 강한 계열 + LIRF 분리 회귀: m6r25ax(AOBT 기준, 2026 에 표류한 계획 시계 아홉 칸 뺌, MISSION G3 ⑦)에 --mu_sep LIRF 를 더한 판.
-# v10(070_m6r25sgcb, 서버 304.2397)의 LIRF 분리를 표류에 강한 계열로 옮긴다. 묶음 003 대비(10-03 작업 세션).
+# v10(070_m6r25sgcb, 서버 304.2397)의 LIRF 분리를 표류에 강한 계열로 옮긴다. 묶음 003 대비(10-03).
 logs/m6r25axs_val_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m6r25axs --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --mu_sep LIRF
 logs/m6r25axs_fwd_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 0 --tag m6r25axs --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --mu_sep LIRF
 logs/m6r25axs_full_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting full --seed 0 --tag m6r25axs --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --mu_sep LIRF

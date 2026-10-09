@@ -1,9 +1,8 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 reads for the final split (coordinator 10-09 23:4x; private notes research/2026-10-08-f2-four-months.md 5.8). No fits; reads only; run on the Mac
-from <mac-workdir>/prcm/f2_run, one thread.
+"""F2 reads for the final split (coordinator 10-09 23:4x; vault research/2026-10-08-f2-four-months.md 5.8). No fits; reads only; run on the Mac
+from ~/nova-adsb/prcm/f2_run, one thread.
 (1) Matched-row scale2, airport split (registered 23:44:30 before any of these numbers): July matched rows, 0.75 - 0.5, three-chain average, for the
-    six airports named in the registration, EDDF, EDDM, EGLL, EHAM, LEBL, LSZH (a first run took every airport with a January 2025 matched share
-    above 0, which added LEMD at 0.03% and LFPG at 0.01%; see docs/DESIGN.md section 14.7) and the rest, per ruler:
+    airports January 2025 covers (matched share > 0 among January val rows, expected EDDF, EDDM, EGLL, EHAM, LEBL, LSZH) and the rest, per ruler:
     LV2 July and LV4 July (research/f2/out/scale2_<chain>_V.parquet), fwd 531 - 514 per corrector seed (the per-seed outputs research/f2/seed_spread.py
     reads); I_V July as information. Day-block bootstrap as research/f2/m3_corr.boot. Rule: 0.75 for matched rows iff LV2 July, LV4 July and the fwd
     seed mean are all <= max(0, sd over seeds of fwd) at the covered airports; else 0.5; not computable: 0.5.
@@ -21,7 +20,7 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
-P = Path(__import__("os").environ.get("PRC_WORK", "."))
+P = Path.home() / "nova-adsb/prcm"
 RUN, FR = P / "f2_run", P / "final_run"
 CH = {"A": "m6r27wincbrmfw4sv434tmc", "B": "m6r27skcbrmfw4sv434", "C": "m6r27apcbrmfw4sv114"}
 SBX514 = {"A": "f2_sbx", "B": "r10b_sbx", "C": "r13f3_sbx"}
@@ -55,7 +54,7 @@ def find(name: str, sbx: str) -> Path:
     return alt[0]
 
 
-rep = {"registered": "private notes 5.8, 2026-10-09 23:44:30 KST"}
+rep = {"registered": "vault 5.8, 2026-10-09 23:44:30 KST"}
 m_run = pq.read_table(RUN / "cache/adsb_v1nd.parquet", columns=["MVT_ID_mvt"], filters=[("matched", "=", True)]).column(0).to_numpy()
 rep["f2_run_adsb_v1nd_sha16"] = sha16(RUN / "cache/adsb_v1nd.parquet")
 ap = pd.read_parquet(RUN / "cache/feats_v25.parquet", columns=["MVT_ID_mvt", "ap"]).drop_duplicates("MVT_ID_mvt").set_index("MVT_ID_mvt")["ap"].astype(str)

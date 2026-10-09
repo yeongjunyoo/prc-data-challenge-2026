@@ -22,7 +22,7 @@ while [ -n "$left" ]; do
   for t in $left; do
     f="$R/$t.parquet"
     if [ -e "$f" ] && [ $(( $(date +%s) - $(stat -f %m "$f") )) -ge 180 ] && room && sleep 30 && room; then
-      mkdir "$P/f2_reg.lock" && printf 'owner: PRC F2 regression check of final_run %s (read-only), coordinator main\npid: %s\npeak_gb: 2\nthreads: 1\nstart: %s\nexpected_end: %s KST\njob: research/f2/regress_check.py\n' \
+      mkdir "$P/f2_reg.lock" && printf 'owner: PRC F2 regression check of final_run %s (read-only)\npid: %s\npeak_gb: 2\nthreads: 1\nstart: %s\nexpected_end: %s KST\njob: research/f2/regress_check.py\n' \
         "$t" "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+10M '+%Y-%m-%d %H:%M')" > "$P/f2_reg.lock/info"
       echo "$(ts) checking $t"
       OMP_NUM_THREADS=1 nice -n 10 "$PY" -u research/f2/regress_check.py --root "$P/final_run" --tables "$t" --out "$t" > "logs/regress_$t.log" 2>&1

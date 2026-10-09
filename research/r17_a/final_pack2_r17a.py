@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""R17-A second pack for F3 (coordinator 10-09 02:0x, private notes research/2026-10-08-r17-a-adsb-fill.md section 4.5): 2026-06-11 becomes a no-data
+"""R17-A second pack for F3 (10-09 02:0x, private notes research/2026-10-08-r17-a-adsb-fill.md section 4.5): 2026-06-11 becomes a no-data
 day. The source day is short (both releases about 1.6 GB, 89 takeoff events, all at EDDM), so its final-test departures must look exactly as a
 day without ADS-B looks in training: absent from the per-departure table (src/feats_adsb.py then gives every ab_* column NaN, ab_matched
 included; src/adsb_corr.py / src/ctx_corr.py treat an absent row as not matched). All airports, EDDM included.

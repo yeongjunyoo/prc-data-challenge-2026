@@ -86,7 +86,7 @@ def main():
     st = pd.read_parquet(fin / "prc_final_stand.parquet")
     if "STAND_mvt" not in prc.columns:
         prc = prc.merge(st[["MVT_ID_mvt", "STAND_mvt"]], on="MVT_ID_mvt", how="left")
-    # pack 2 (R17-A 02:07, coordinator 02:1x): a short source day reads as a day without ADS-B, so its rows are dropped afterwards
+    # pack 2 (R17-A 02:07, 02:1x): a short source day reads as a day without ADS-B, so its rows are dropped afterwards
     no_data = set(json.loads((fin / "manifest.json").read_text(encoding="utf-8")).get("pack2", {}).get("no_data_days", []))
     rep["no_data_days_dropped"] = sorted(no_data)
     parts = []

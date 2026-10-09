@@ -1,5 +1,5 @@
 # v10(070_m6r25sgcb)과 같은 바탕 m6r25sg 에 상한 없는 GPU CatBoost(m6r25cbg)의 mu_cat 을 반씩 섞은 판(src/blend_mu.py, W 0.5).
-# v10 과 다른 것은 CatBoost 의 반복 수와 장치뿐이다(10-03 작업 세션).
+# v10 과 다른 것은 CatBoost 의 반복 수와 장치뿐이다(10-03).
 logs/m6r25sgcbg_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcbg --base m6r25sg --cat m6r25cbg
 logs/m6r25sgcbg_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgcbg --base m6r25sg --cat m6r25cbg
 logs/m6r25sgcbg_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgcbg --base m6r25sg --cat m6r25cbg

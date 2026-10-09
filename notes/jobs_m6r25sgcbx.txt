@@ -1,5 +1,5 @@
 # v10(070_m6r25sgcb)의 mu(LightGBM 과 CatBoost 반반)에 XGBoost mu 를 셋째 몫으로 섞은 판: mu = 2/3 v10 mu + 1/3 XGBoost, 곧 세 학습기를 고르게(W 0.333333 은 점수 전에 고정).
-# v10 과 다른 것은 XGBoost 를 더한 것뿐이다(10-03 작업 세션).
+# v10 과 다른 것은 XGBoost 를 더한 것뿐이다(10-03).
 logs/m6r25sgcbx_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcbx --base m6r25sgcb --cat m6r25xg --col mu_xgb --w 0.333333
 logs/m6r25sgcbx_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgcbx --base m6r25sgcb --cat m6r25xg --col mu_xgb --w 0.333333
 logs/m6r25sgcbx_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgcbx --base m6r25sgcb --cat m6r25xg --col mu_xgb --w 0.333333

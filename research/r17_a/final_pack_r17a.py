@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""R17-A: the final-phase ADS-B package for F3 (private notes research/2026-10-08-r17-a-adsb-fill.md section 4, coordinator 10-08 22:2x handoff), built in the
+"""R17-A: the final-phase ADS-B package for F3 (private notes research/2026-10-08-r17-a-adsb-fill.md section 4, 10-08 22:2x handoff), built in the
 Mac sandbox <work>/r17a_sbx into final/ (never into F3's root).
 
 Rule for all four test months (2026-01, 02, 06, 07): every departure of data/final_phase/final_ranking.parquet is matched again on the final

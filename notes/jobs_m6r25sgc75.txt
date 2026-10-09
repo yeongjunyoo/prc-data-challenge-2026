@@ -1,5 +1,5 @@
 # v10(070_m6r25sgcb, 서버 304.2397)과 같은 바탕(m6r25sg)과 같은 CatBoost 회귀(m6r25cb)에서 CatBoost mu 의 몫을 0.5 → 0.75 로 올린 판.
-# 근거는 묶음 002 의 서버 차례(v10 − v9 = −8.00, CatBoost 를 넣은 쪽)이고 W 는 점수 전에 0.75 로 고정했다(10-03 작업 세션).
+# 근거는 묶음 002 의 서버 차례(v10 − v9 = −8.00, CatBoost 를 넣은 쪽)이고 W 는 점수 전에 0.75 로 고정했다(10-03).
 logs/m6r25sgc75_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgc75 --base m6r25sg --cat m6r25cb --w 0.75
 logs/m6r25sgc75_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgc75 --base m6r25sg --cat m6r25cb --w 0.75
 logs/m6r25sgc75_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgc75 --base m6r25sg --cat m6r25cb --w 0.75

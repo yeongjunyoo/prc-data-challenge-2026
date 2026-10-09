@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 fitwrap test (coordinator 2026-10-08 23:2x KST), m6r25 full on the final root's feats_v25, scratch dir ${PRC_WORK:-.}/f3_sbx/wt:
+# F3 fitwrap test (2026-10-08 23:2x KST), m6r25 full on the final root's feats_v25, scratch dir ${PRC_WORK:-.}/f3_sbx/wt:
 #   T1 direct (root r1) and T2 save (root r2) in parallel, 4 threads each; T3 load (r2, clone of T2's models); T4 strict on r4 (one
 #   training value changed: must stop); T5 strict on r5 (final table with the hybrid's old-draw Jan/Jul rows: every fit must load; the
 #   real re-draw move); CatBoost synthetic C1 direct, C2 save, C3 load, C4 strict perturbed (thread invariance:

@@ -12,7 +12,7 @@ The final phase asks for one file that predicts January, February, June and July
 | SHA-256 | <!--FILL:final_file_sha256--> |
 | Built by | the three-chain stack of `docs/DESIGN.md`, re-run on `final_ranking.parquet` (SHA-256 `4b0692a792846079516a2749e034b0abda55df72c213eabdcda52a4d1f6bc69f`) with the choices of `docs/DESIGN.md` section 14.5 |
 | Training labels | the twelve 2025 training files only |
-| Months without a public score (February, June) | every choice decided on February and June 2025 held out as unseen months, by rules written before their numbers (`docs/DESIGN.md` section 14) |
+| Months without a public score (February, June) | every choice decided on February and June 2025 held out as unseen months, by rules written before their numbers, with two exceptions: the row split of stage 2 of the corrector was decided after its gate numbers, and the scale2 of the matched February and June rows follows the literal reading of an ambiguous registered rule that we first read the other way after seeing its numbers (`docs/DESIGN.md` sections 14.3 and 14.7) |
 
 How the final file is rebuilt, with commands, machines, times, seeds and the limits of bit-for-bit reproduction: `docs/REPRODUCE.md` section 0.
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 interim root ${PRC_WORK:-.}/f3_sbx/interim (fitwrap path, coordinator 2026-10-08 23:5x KST): APFS clones of the final root's code
+# F3 interim root ${PRC_WORK:-.}/f3_sbx/interim (fitwrap path, 2026-10-08 23:5x KST): APFS clones of the final root's code
 # and tables, plus an interim feats_v27 whose 2025 rows are the final ones (the final feats_v25 + today's adsb_v2 rows of 2025 days) and
 # whose 2026 rows have no ADS-B day data yet. The leg scripts run here in fitwrap save mode while R17-A's Feb/Jun package is pending, so
 # their fits are stored; their outputs here are never used. Checks: check_v27.py criteria 1-3 (schema and rows, 2025 rows equal today's

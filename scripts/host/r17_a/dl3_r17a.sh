@@ -1,7 +1,7 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
 # R17-A download and extraction runner on the Mac, third form (private notes research/2026-10-08-r17-a-adsb-fill.md section 4.1), for the PROTOCOL line of
-# 10-08 23:20: a network-bound curl stream counts 0.25 thread, and the coordinator keeps 4 R17-A streams in the budget. So each day's lock declares
+# 10-08 23:20: a network-bound curl stream counts 0.25 thread, and we keep 4 R17-A streams in the budget. So each day's lock declares
 # 0.25 thread, a day starts after two checks 30 s apart of no arc_quiet.* and memory_pressure free >= 30 % (no thread-sum check), and at most 4
 # r17a_dl*.lock exist at once (counted under a mutex, older runners' locks included): the curl caps stay <= 4 x 4800K = 19.7 MB/s.
 # Otherwise as dl_r17a.sh: claim a day with mkdir claim/<day> (shared with the other runners), adsb_day_r17a.py --stream at nice 10, meta.json only
@@ -39,7 +39,7 @@ worker() {
     for try in 1 2 3; do
       n=0; while [ $n -lt 2 ]; do if ok_now; then n=$((n+1)); else n=0; fi; [ $n -lt 2 ] && sleep 30; done
       until take_slot "$lock"; do sleep 20; done
-      printf 'owner: PRC R17-A ADS-B day download+extract (worker %s, network-bound curl stream), coordinator main\npid: %s\npeak_gb: 0.9\nthreads: 0.25\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s --stream --limit-rate %s\n' \
+      printf 'owner: PRC R17-A ADS-B day download+extract (worker %s, network-bound curl stream)\npid: %s\npeak_gb: 0.9\nthreads: 0.25\nstart: %s\nexpected_end: %s KST\njob: adsb_day_r17a.py --day %s --stream --limit-rate %s\n' \
         "$w" "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+25M '+%Y-%m-%d %H:%M')" "$day" "$RATE" > "$lock/info"
       t0=$(date +%s)
       nice -n 10 /usr/bin/time -l "$PY" -I adsb_day_r17a.py --day "$day" --manifest manifest_preferred.tsv --out out --stream \

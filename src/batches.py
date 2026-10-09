@@ -10,7 +10,7 @@ manifest: spec, config(dict, 켜기 플래그는 true), commands{holdout, test, 
     code_sha{파일 경로: sha}, holdout, test, forward, es_valid_ids(각 {path, sha}), written_kst.
     config 의 플래그와 값이 세 명령에 다 있어야 하고, forward 명령에는 --setting fwd 가 있어야 한다. code_sha 의 파일마다 preds/code/<sha>_<파일 이름>
     사본이 있고 해시가 맞아야 한다. 조기 종료 행은 자의 행과 하나도 겹치지 않아야 한다. 옛 후보(잴 행으로 조기 종료)는 등록되지 않는다.
-묶음 예외(src/exception.py): 준비 점검에서 걸린 칸은 원칙적으로 데이터나 피처에서 고친다. 독립 감사가 승인한 한정 예외는 그 묶음 파일의 exception 에
+묶음 예외(src/exception.py): 준비 점검에서 걸린 칸은 원칙적으로 데이터나 피처에서 고친다. 감사가 승인한 한정 예외는 그 묶음 파일의 exception 에
     묶이고, 쏘기 직전 준비 점검이 걸리면 같은 예외 검사가 그 범위 안인지 다시 잰다. 예외 파일이 등록 뒤 바뀌면 장부 변조와 같이 멈춘다.
 sha 는 파일 바이트 sha256 의 앞 16자다.
 """
@@ -41,7 +41,7 @@ INDEX = BATCHES / "index.csv"  # 등록 때 한 줄씩 더한다: 번호, 경로
 SEALS = ROOT / "notes" / "seals"  # 묶음마다 봉인(딸린 파일 전부의 sha256 과 색인 줄). tools/seal_batch.py 가 OpenTimestamps 로 외부 시각을 받는다
 RUN_FLAGS = {"--setting", "--seed"}  # config 밖에서 명령에 올 수 있는 실행 플래그. 그 밖의 플래그는 config 에 있어야 한다(재검토 5판)
 OPENSSL = r"C:\Program Files\Git\mingw64\bin\openssl.exe" if Path(r"C:\Program Files\Git\mingw64\bin\openssl.exe").exists() else (shutil.which("openssl") or "openssl")
-# RFC 3161 시각 증명 기관과 고정한 인증서(sha256). 인증서 파일을 바꾸면 검증을 멈춘다. 서명 시각은 기관이 서명해 세션이 앞당길 수 없다(재검토 6판)
+# RFC 3161 시각 증명 기관과 고정한 인증서(sha256). 인증서 파일을 바꾸면 검증을 멈춘다. 서명 시각은 기관이 서명해 우리가 앞당길 수 없다(재검토 6판)
 TSA = {"freetsa": {"url": "https://freetsa.org/tsr",
                    "cafile": "notes/seals/tsa/freetsa_cacert.pem", "cafile_sha256": "2151b61137ffa86bf664691ba67e7da0b19f98c758e3d228d5d8ebf27e044438",
                    "untrusted": "notes/seals/tsa/freetsa_tsa.crt", "untrusted_sha256": "8bfb0305bb64e2571ca507552ef3245cb1c2fee8728e0ff8689225081ea13467"}}
@@ -291,7 +291,7 @@ def first_shot_utc(batch_rel: str) -> dt.datetime | None:
 
 def seal_problems(sp: Path) -> list[str]:
     """봉인의 sha256 목록과 지금 파일, 색인 줄, 봉인 파일과 그 .ots 증명의 다이제스트, 그리고 RFC 3161 시각 증명(고정 인증서로 검증, 서명 시각이 그 묶음의 첫 발보다
-    앞서야 한다)을 맞춘다. 대기 중인 .ots 만으로는 독립 기록이 아니다(재검토 6판). 세션이 봉인과 증명을 함께 바꾸면 새 시각 증명은 첫 발보다 늦게 찍힌다."""
+    앞서야 한다)을 맞춘다. 대기 중인 .ots 만으로는 독립 기록이 아니다(재검토 6판). 우리가 봉인과 증명을 함께 바꾸면 새 시각 증명은 첫 발보다 늦게 찍힌다."""
     rel = sp.relative_to(ROOT).as_posix()
     s = json.loads(sp.read_text(encoding="utf-8"))
     P = [f"봉인 {rel}: {f} 이 없거나 봉인 때와 다르다" for f, h in s["files"].items()

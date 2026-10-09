@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 end-to-end twin check of the fitwrap path (coordinator 2026-10-08 23:5x KST): leg sk s0 refit directly, without the wrapper, on the
+# F3 end-to-end twin check of the fitwrap path (2026-10-08 23:5x KST): leg sk s0 refit directly, without the wrapper, on the
 # real feats_v27 in a scratch root (${PRC_WORK:-.}/f3_sbx/twin); its output must equal the final root's cache/full_m6r27sk_s0.parquet
 # (made through fitwrap load from the fits stored on the interim table). Same command as research/f3/final_orch.py job sk_s0.
 # Criterion (fixed 2026-10-09 00:2x KST, before the twin runs; was bit-equal): every column within 1e-9 (seconds for pred and mu) and the

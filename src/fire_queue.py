@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""발사 큐(플레이북 §0 G6: 세션은 큐를 채우고, 발사는 이 도구가 한다). 게이트는 여기서 강제한다.
+"""발사 큐(플레이북 §0 G6: 우리는 큐를 채우고, 발사는 이 도구가 한다). 게이트는 여기서 강제한다.
 
 큐 항목: `queue/<순번>_<이름>.parquet`(칸 MVT_ID_mvt, pred 초)와 같은 이름의 `.json`
     {"kind": "CANDIDATE" | "DIAG" | "ANCHOR", "method": "...", "local_rmse": 123.4, "note": "...", "manifest": "preds/manifest_<spec>.json"}
@@ -212,7 +212,7 @@ def main(dry: bool) -> int:
     items = sorted(p for p in QUEUE.glob("*.parquet") if not p.name.startswith("."))  # 맥에서 옮긴 ._ 리소스 포크 파일은 후보가 아니다(10-05)
     left = DAILY_QUOTA - quota_used_today()
     print(now(), f"queue {len(items)}, quota left {left}, candidate_allowed {gate.get('candidate_allowed')}", flush=True)
-    if gate.get("firing") == "single":  # 10-05: 묶음 길은 남겨 두되 쓰지 않는다. 깨우기(NovaPrcCycle)가 이 함수를 불러도 대기 결과만 읽는다
+    if gate.get("firing") == "single":  # 10-05: 묶음 길은 남겨 두되 쓰지 않는다. 깨우기(예약 작업)가 이 함수를 불러도 대기 결과만 읽는다
         print(now(), "묶음 경로는 은퇴했다(GATE.json firing single, 10-05). 대기 결과만 읽고 쏘지 않는다. 발사는 "
               "python -m src.fire_queue fire-one <큐 이름> --why ... --refs ... 로 한 발씩 한다", flush=True)
         return 0

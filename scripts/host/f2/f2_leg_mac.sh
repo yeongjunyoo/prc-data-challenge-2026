@@ -22,7 +22,7 @@ step() {  # name expected_min cmd...
   wait_ok
   local lock="$P/f2_leg.lock"
   mkdir "$lock" || { echo "$(ts) lock busy"; return 9; }
-  printf 'owner: PRC F2 (four-month generalization, leave-Feb/Jun-out leg), coordinator main\npid: %s\npeak_gb: 6.5\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: %s\n' \
+  printf 'owner: PRC F2 (four-month generalization, leave-Feb/Jun-out leg)\npid: %s\npeak_gb: 6.5\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: %s\n' \
     "$$" "$TH" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+${mins}M '+%Y-%m-%d %H:%M')" "$*" > "$lock/info"
   echo "$(ts) START $name: $*"
   nice -n 10 /usr/bin/time -l "$PY" -u "$@" > "logs/$name.log" 2>&1

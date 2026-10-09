@@ -1,5 +1,5 @@
 # RealMLP 회귀(mu)를 표류에 강한 계열의 회귀 목표와 피처로 GPU 에서 학습한 판(src/rmlp_mu.py --drop --anchor aobt, 설정은 m6r25rm 과 같다).
-# 바탕은 m6r25axsg. 묶음 004 대비(10-04 작업 세션).
+# 바탕은 m6r25axsg. 묶음 004 대비(10-04).
 logs/m6r25axrm_val_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting val --seed 0 --tag m6r25axrm --base m6r25axsg --feats feats_v25 --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --anchor aobt
 logs/m6r25axrm_fwd_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting fwd --seed 0 --tag m6r25axrm --base m6r25axsg --feats feats_v25 --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --anchor aobt
 logs/m6r25axrm_full_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting full --seed 0 --tag m6r25axrm --base m6r25axsg --feats feats_v25 --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch --anchor aobt

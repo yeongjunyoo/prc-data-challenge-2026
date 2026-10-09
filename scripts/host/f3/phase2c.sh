@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 final root, phase 2c (R17-A pack 2, coordinator 2026-10-09 02:1x KST; replaces phase2b.sh, which stopped at its own adsb step on pack
+# F3 final root, phase 2c (R17-A pack 2, 2026-10-09 02:1x KST; replaces phase2b.sh, which stopped at its own adsb step on pack
 # 1 at 02:06 and built nothing from it):
 #   1. research/f3/chk_adsb_pack2.py: pack-2 merged tables (sha16 54ba81f368669d1d and 07df03ca69833082 as in the manifest's pack2 block,
 #      today's schema, 2025 rows bit-equal per id to today's adsb_v2 and adsb_v1nd, 2026-06-11 absent) -> cache/adsb_v2, cache/adsb_v1nd

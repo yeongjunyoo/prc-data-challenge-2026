@@ -1,4 +1,4 @@
-# 다른 학습기 후보: CatBoost 회귀(mu)를 m6r25 의 mu 와 반씩 섞은 판(src/cat_mu.py, W 0.5 는 점수 전에 고정). 묶음 002 후보(10-03 작업 세션).
+# 다른 학습기 후보: CatBoost 회귀(mu)를 m6r25 의 mu 와 반씩 섞은 판(src/cat_mu.py, W 0.5 는 점수 전에 고정). 묶음 002 후보(10-03).
 logs/m6r25cb_val_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting val --seed 0 --tag m6r25cb --base m6r25 --feats feats_v25 --threads 4
 logs/m6r25cb_fwd_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting fwd --seed 0 --tag m6r25cb --base m6r25 --feats feats_v25 --threads 4
 logs/m6r25cb_full_s0.log	.venv/Scripts/python.exe -u src/cat_mu.py --setting full --seed 0 --tag m6r25cb --base m6r25 --feats feats_v25 --threads 4

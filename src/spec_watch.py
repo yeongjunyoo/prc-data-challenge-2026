@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # 요강 쪽 변경 감시. 순위 쪽 원문: “We will post urgent and important news here”. 다섯 쪽의 본문 글자를 해시해
 # notes/spec_hash.json 과 비교하고, 바뀐 쪽은 notes/spec/ 에 새 글자를 두고 「원문 변경」 줄과 차이 몇 줄을 찍는다.
-# 판단은 하지 않는다. 깨어난 세션이 그 쪽을 읽고 MISSION 을 고친다.
+# 판단은 하지 않는다. 다음 작업에서 우리가 그 쪽을 읽고 MISSION 을 고친다.
 import datetime as dt
 import difflib
 import hashlib

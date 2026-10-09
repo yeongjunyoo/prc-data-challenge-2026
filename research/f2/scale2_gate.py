@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 1.7 (private notes research/2026-10-08-f2-four-months.md 1.7, registered 2026-10-09 09:58 KST before any number): scale2 0.75 against 0.5 for
+"""F2 1.7 (vault research/2026-10-08-f2-four-months.md 1.7, registered 2026-10-09 09:58 KST before any number): scale2 0.75 against 0.5 for
 Feb/Jun 2025 as unseen months, in gate 1.4's blend world.
 scale2 multiplies the stage-2 output before the LOBT window, so no model changes. This script rebuilds gate14's and gate15's matrices with their
 code and arguments (float64), loads every LightGBM model from gate14's store (--fit_cache, the same keys, so nothing is refitted), and windows the
@@ -198,7 +198,7 @@ def main():
     ctx = cc.checked(g.ctx, g.ctx_sha).set_index("MVT_ID_mvt")
     formsV = ["I_V", "U_V", "LV2", "LV4"] + (["I_V_nm", "U_V_nm", "LV2_nm", "LV4_nm"] if do_nm else [])
     formsF = ["T", "T1", "L"] + (["T_nm", "T1_nm", "L_nm"] if do_nm else [])
-    rep = {"registered": "private note 1.7, 2026-10-09 09:58 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "gate14_pass": bool(g14["pass"]),
+    rep = {"registered": "vault note 1.7, 2026-10-09 09:58 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "gate14_pass": bool(g14["pass"]),
            "gate15_present": g15 is not None, "gate15_pass_feb_jun": feb_jun_nm, "nm_forms": do_nm, "chains": {}}
     PVs, PFs = [], []
     for name, spec in g14["chains"].items():

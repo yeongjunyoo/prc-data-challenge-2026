@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 (10-09 22:xx, for the coordinator's row-split question): share of context rows whose id has an ADS-B match in the corrector's table
+"""F2 (10-09 22:xx, for our row-split question): share of context rows whose id has an ADS-B match in the corrector's table
 (adsb_v1nd, matched == True, the rows stage 1 corrects), by context part, in final_run (the final's tables) and in f2_run (gate 1.4's world).
 Reads id columns only, one thread, writes nothing.
     python -u research/f2/f2_matchshare.py

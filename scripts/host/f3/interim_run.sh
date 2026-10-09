@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 interim legs (fitwrap save, coordinator 2026-10-08 23:5x KST): LightGBM phase, then CatBoost phase, of research/f3/final_orch.py in
+# F3 interim legs (fitwrap save, 2026-10-08 23:5x KST): LightGBM phase, then CatBoost phase, of research/f3/final_orch.py in
 # the interim root ${PRC_WORK:-.}/f3_sbx/interim, every fit stored in final_run/research/f3/fc_legs. Lock names start with i_. Stops
 # launching when the interim root's STOP_F3 exists (research/f3/phase2b.sh touches it when the real feats_v27 passes its check). The
 # CatBoost phase starts only if R17-A's package is not there yet when the LightGBM phase ends.

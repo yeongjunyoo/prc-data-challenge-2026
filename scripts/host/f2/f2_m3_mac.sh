@@ -17,7 +17,7 @@ wait_ok() { local n=0; while [ $n -lt 2 ]; do if ok_now; then n=$((n+1)); else n
 sha() { shasum -a 256 "$1" | cut -c1-16; }
 wait_ok
 lock="$P/f2_m3.lock"; mkdir "$lock" || exit 9
-printf 'owner: PRC F2 ruler M3 (corrector transfer to Feb/Jun 2025), coordinator main\npid: %s\npeak_gb: 5\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: research/f2/m3_corr.py\n' \
+printf 'owner: PRC F2 ruler M3 (corrector transfer to Feb/Jun 2025)\npid: %s\npeak_gb: 5\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: research/f2/m3_corr.py\n' \
   "$$" "$TH" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+40M '+%Y-%m-%d %H:%M')" > "$lock/info"
 echo "$(ts) START m3_corr"
 nice -n 10 /usr/bin/time -l "$PY" -u research/f2/m3_corr.py --vbase m6r27skwing --fbase f2skwing --seed 0 --ctx f2ctx_v3 --ctx_sha "$(sha cache/f2ctx_v3.parquet)" --tag f2m3 --threads $TH > logs/m3_corr.log 2>&1

@@ -79,7 +79,7 @@ def main():
                  "realmlp_device": "mps (514's command)"},
         "chains": {k: jl(O / f"final_chain_{k}.json") for k in ("A", "B", "C")},
         "one_off_changes": ["ctx_v2: st_k of MVT_ID 182512875 (2025-01, EDDM) kept at today's value 0 (patch_ctx2025.py, ctx_v2.json patched_2025; "
-                            "coordinator 10-08 22:5x)",
+                            "10-08 22:5x)",
                             "ctx_v1: stand_p codes frozen from today's table, new prefixes appended (LEMD_PE 159, LSZH_WE 160)",
                             "geo_final regression check: discrete columns bit-equal, distances within 1e-6 m (first exact run: 1.8e-12 m)",
                             "2026-06-11 rows absent from adsb_v2, adsb_v1nd, geo_v1nd (R17-A pack 2: short source day read as a day without ADS-B)",
@@ -107,7 +107,7 @@ def main():
                         "phase3c": "research/f3/phase3c.sh (resume after the 14:10 stop: src/manifest.py public-template assert)",
                         "final_chain_sha16": sha16("research/f3/final_chain.py"), "mac_step_sha16": sha16("research/f3/mac_step.sh"),
                         "src_manifest_sha16": sha16("src/manifest.py"),
-                        "threads": "F3_MAXTH 3, F3CAP 3, TOTCAP 15 beside F2's fj CatBoosts (coordinator 10-09 13:5x); total-cap override after 300 s "
+                        "threads": "F3_MAXTH 3, F3CAP 3, TOTCAP 15 beside F2's fj CatBoosts (10-09 13:5x); total-cap override after 300 s "
                                    "logged in logs/cap_override.log (none happened if absent)",
                         "cap_override_log": (Path("logs/cap_override.log").read_text(encoding="utf-8") if Path("logs/cap_override.log").exists() else None)},
     }

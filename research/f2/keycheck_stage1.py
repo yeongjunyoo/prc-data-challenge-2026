@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2: does the corrector's stage 1 see the same matrix with F3's final tables? (coordinator 10-09 02:1x, independent of F3's geo_final.py)
+"""F2: does the corrector's stage 1 see the same matrix with F3's final tables? (10-09 02:1x, independent of F3's geo_final.py)
 Builds the stage-1 design of a val base (src/ctx_corr.stage1_inputs + src/adsb_corr.design, the code the corrector runs) twice, once with this
 root's adsb_v1nd/geo_v1nd and once with the final root's (module CACHE pointed there for the load only, read-only), and compares the bytes of
 X[BASE_COLS + ADSB_COLS], y and pred, and the src/ctx_corr2 fit-cache digest of the whole matrix (every stage-1 key is a digest of a row subset).

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 information for the coordinator's row-split spec, the scale2 cell of the Feb/Jun rows with an ADS-B match (private note 1.8 addendum,
+"""F2 information for the coordinator's row-split spec, the scale2 cell of the Feb/Jun rows with an ADS-B match (vault note 1.8 addendum,
 registered before these numbers existed; post hoc, raised after chain A's gate14 numbers; not a gate). scale2_gate gave 0.75 - 0.5 = -368.5 (T)
 and -467.0 (L) on the Feb/Jun 2025 rows, none of which has a match, while the fwd form (stage 2 fitted on January, applied to July 2025, 60% of
 rows matched) gave +114 to +148 per corrector seed. Fits nothing; split by match (id matched in cache/adsb_v1nd.parquet):
@@ -9,7 +9,7 @@ rows matched) gave +114 to +148 per corrector seed. Fits nothing; split by match
       outputs research/f2/seed_spread.py reads (514 <chain>adsbgeondctxv3x50w, 531 <chain>adsbgeondctxv3x50ws75; looked up under --root).
 On all, matched and unmatched rows, and per month; mean over the subset's own rows; day-block bootstrap (research/f2/m3_corr.boot copied: UTC
 day, 2,000 draws, seed 0).
-    python -u research/f2/s75_matched.py [--root <mac-workdir>/prcm] [--out research/f2/out/s75_matched.json]
+    python -u research/f2/s75_matched.py [--root ~/nova-adsb/prcm] [--out research/f2/out/s75_matched.json]
 """
 from __future__ import annotations
 
@@ -63,7 +63,7 @@ def find(root: Path, sbx: str, name: str) -> Path:
 
 def main():
     pa = argparse.ArgumentParser()
-    pa.add_argument("--root", default=str(Path(__import__("os").environ.get("PRC_WORK", "."))))
+    pa.add_argument("--root", default=str(Path.home() / "nova-adsb/prcm"))
     pa.add_argument("--dir", default="research/f2/out")
     pa.add_argument("--adsb", default="cache/adsb_v1nd.parquet")
     pa.add_argument("--ctx", default=None, help="table with MVT_ID_mvt and day for (b) (default <root>/f2_sbx/cache/ctx_v3.parquet)")

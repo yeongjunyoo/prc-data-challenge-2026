@@ -26,7 +26,7 @@ n=0; while [ $n -lt 2 ]; do if ok_now; then n=$((n+1)); else n=0; fi; [ $n -lt 2
 L="$P/f2_smoke.lock"
 mkdir "$L" || { echo "$(ts) lock busy"; exit 9; }
 trap 'rm -rf "$L"' EXIT
-printf 'owner: PRC F2 smoke run of gate14.py and gate15.py (LightGBM world), coordinator main\npid: %s\npeak_gb: 5\nthreads: 2\nstart: %s\nexpected_end: %s KST\njob: research/f2/gate14.py, gate15.py --out research/f2/out_smoke\n' \
+printf 'owner: PRC F2 smoke run of gate14.py and gate15.py (LightGBM world)\npid: %s\npeak_gb: 5\nthreads: 2\nstart: %s\nexpected_end: %s KST\njob: research/f2/gate14.py, gate15.py --out research/f2/out_smoke\n' \
   "$$" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+30M '+%Y-%m-%d %H:%M')" > "$L/info"
 C=$(sha cache/f2ctx_v3.parquet)
 echo "$(ts) START smoke gate14"

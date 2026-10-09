@@ -1,15 +1,15 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F3 server check of the first final file (coordinator 10-08 23:1x): its 344,841 Jan/Jul rows as a daily-format candidate, NOT fired.
+"""F3 server check of the first final file (10-08 23:1x): its 344,841 Jan/Jul rows as a daily-format candidate, NOT fired.
 In the final root (cwd), from preds/test_<spec>.parquet (the chain's float predictions, 670,790 rows):
   <out dir>/<name>.parquet   MVT_ID_mvt (double), pred (double): the public-phase template's ids in its order (as 514's queue parquet)
   <out dir>/<name>.json      queue-style entry: kind, method, local_rmse (the holdout of the manifest), manifest, note, readiness
   <out dir>/composition_<name>.json  src/composition.py (readiness, G2) run in a sandbox root whose data/ranking and data/submitting are the
                              public-phase files, with the final feats_v27 and the final manifest's holdout
   checks in the json: rows, ids complete and unique, NaN and negatives 0, the move against 514's float test predictions and v35 (int) on the
-  same ids, by airport group; the expected daily score (coordinator): about 228.6 to 228.7 against 514's 228.384, a gap over about 1 point
+  same ids, by airport group; the expected daily score: about 228.6 to 228.7 against 514's 228.384, a gap over about 1 point
   means a rebuild error.
     python -X utf8 research/f3/daily_candidate.py <spec> <name> <old ranking> <old submitting> <514 test parquet> <v35 parquet> <out dir>
-The second rebuild's daily check (581 = 592's Jan/Jul rows, coordinator 10-10 00:2x) uses name prefix f3f2: the references are 531's float test
+The second rebuild's daily check (581 = 592's Jan/Jul rows, 10-10 00:2x) uses name prefix f3f2: the references are 531's float test
 and v36 in the same argument slots, and TEXTS below gives its labels and texts (f3f1 = the first final file, unchanged).
 """
 from __future__ import annotations

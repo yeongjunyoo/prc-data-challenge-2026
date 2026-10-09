@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 (coordinator 10-08 22:4x): make the final-rebuild root $PRC_WORK/final_run on the Mac. Code from the daily build root $PRC_WORK/r16b_sbx (its 47 files of
+# F3 (10-08 22:4x): make the final-rebuild root $PRC_WORK/final_run on the Mac. Code from the daily build root $PRC_WORK/r16b_sbx (its 47 files of
 # 514's code_sha match, checked 10-08 22:4x), data as APFS clones of the unchanged training files, METAR and AIU, data/ranking.parquet =
 # final_ranking.parquet, data/submitting.parquet = final_submitting.parquet. cache/ preds/ notes/ queue/ subs/ are empty and private.
 # Corrector fit caches = the union of the Mac sandboxes' copies (content-addressed names). Refuses if final_run exists.

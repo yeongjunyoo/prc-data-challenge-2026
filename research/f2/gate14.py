@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 gate 1.4 (private notes research/2026-10-08-f2-four-months.md 1.4, registered 2026-10-08 22:48 KST before any blend-world number):
+"""F2 gate 1.4 (vault research/2026-10-08-f2-four-months.md 1.4, registered 2026-10-08 22:48 KST before any blend-world number):
 does a corrector whose stage 2 also learns Feb/Jun 2025 help months it never saw, in 514's three-chain blend world?
 
 Per chain c (A, B, C): V = cache/val_<vbase_c>_s0.parquet (514's seed-averaged val base, Jan + Jul 2025), F = cache/fj_<fbase_c>_s0.parquet
@@ -155,7 +155,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     A = cc.stage1_inputs(a)
     ctx = cc.checked(g.ctx, g.ctx_sha).set_index("MVT_ID_mvt")
-    rep = {"registered": "private note 1.4, 2026-10-08 22:48 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "chains": {}}
+    rep = {"registered": "vault note 1.4, 2026-10-08 22:48 KST", "ctx": g.ctx, "ctx_sha": g.ctx_sha, "chains": {}}
     PVs, PFs = [], []
     for spec in g.chains.split(","):
         name, vb, fb = spec.split(":")

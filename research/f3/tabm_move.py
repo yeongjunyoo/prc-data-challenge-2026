@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F3: the move between the two full TabM legs of the final rebuild (coordinator 10-09 03:4x): CUDA (PC GPU, 03:13-03:26) against MPS (Mac,
+"""F3: the move between the two full TabM legs of the final rebuild (10-09 03:4x): CUDA (PC GPU, 03:13-03:26) against MPS (Mac,
 514's device and command), on mu_tabm (the leg's own regression, what chain A's blend_add takes) and pred, by month of the final file and by
 airport group. Report research/f3/out/tabm_move.json.
     python -X utf8 research/f3/tabm_move.py <cuda parquet> <mps parquet>

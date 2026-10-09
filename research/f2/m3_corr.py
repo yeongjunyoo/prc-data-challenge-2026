@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 ruler M3 for the A3 corrector (private notes research/2026-10-08-f2-four-months.md section 1): does a corrector fitted on Jan/Jul 2025
+"""F2 ruler M3 for the A3 corrector (vault research/2026-10-08-f2-four-months.md section 1): does a corrector fitted on Jan/Jul 2025
 transfer to months it never saw (Feb/Jun 2025), and would adding Feb/Jun 2025 rows to its training help?
 
 Two LightGBM-only worlds built with the same leg command (m6r27skwin + g_band), differing only in the held-out months:

@@ -1,5 +1,5 @@
 # XGBoost 회귀(mu)를 model3, cat_mu 와 같은 회귀 행, 같은 피처로 GPU 에서 학습한 판(src/xgb_mu.py, 파라미터는 점수 전에 고정, 반복 상한 20000).
-# 바탕 m6r25 와 반씩 섞은 출력도 남지만 묶음 후보는 m6r25sgcbx 쪽이다(10-03 작업 세션).
+# 바탕 m6r25 와 반씩 섞은 출력도 남지만 묶음 후보는 m6r25sgcbx 쪽이다(10-03).
 logs/m6r25xg_val_s0.log	.venv/Scripts/python.exe -u src/xgb_mu.py --setting val --seed 0 --tag m6r25xg --base m6r25 --feats feats_v25
 logs/m6r25xg_fwd_s0.log	.venv/Scripts/python.exe -u src/xgb_mu.py --setting fwd --seed 0 --tag m6r25xg --base m6r25 --feats feats_v25
 logs/m6r25xg_full_s0.log	.venv/Scripts/python.exe -u src/xgb_mu.py --setting full --seed 0 --tag m6r25xg --base m6r25 --feats feats_v25

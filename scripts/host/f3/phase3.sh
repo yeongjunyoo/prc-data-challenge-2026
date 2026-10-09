@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-only
-# F3 final root, phase 3 (option B, coordinator 2026-10-09 03:4x KST), after the CatBoost and RealMLP phases of phase2c.sh:
+# F3 final root, phase 3 (option B, 2026-10-09 03:4x KST), after the CatBoost and RealMLP phases of phase2c.sh:
 #   1. waits until the RealMLP phase has finished (logs/orch_rm.log) with no failed job
 #   2. moves the CUDA TabM output (sha16 1fd9f495c0bfb04a, PC GPU 03:13-03:26) to research/f3/out/tabm_cuda/ and runs tmcwin_s0 on MPS with
 #      514's exact command (final_orch.py tabm --only tmcwin_s0, 3 threads) in the background
@@ -41,7 +41,7 @@ $PY -u research/f3/final_chain.py chain C >> logs/final_chain_C.log 2>&1 || { ec
 echo "$(ts) chain C done"
 # 4. after the MPS TabM
 wait $TP
-grep -q "tmcwin_s0 ended rc 0, outputs present" logs/orch_tabm.log || { echo "$(ts) MPS TabM failed: stop (fallback: CUDA TabM, coordinator decides)"; exit 5; }
+grep -q "tmcwin_s0 ended rc 0, outputs present" logs/orch_tabm.log || { echo "$(ts) MPS TabM failed: stop (fallback: CUDA TabM, we decide)"; exit 5; }
 rm -f FIRST_CLAIM && touch $P/f2_run/GO_FJ && echo "$(ts) MPS TabM done: FIRST_CLAIM removed, f2_run/GO_FJ touched"
 $PY -u research/f3/final_chain.py chain A --from add >> logs/final_chain_A.log 2>&1 || { echo "$(ts) chain A failed"; exit 4; }
 echo "$(ts) chain A done"

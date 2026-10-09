@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # ADS-B 오프블록 덧씌우기 규칙의 값을 두 정답 날(2025-01-15, 2025-07-15)에서 잰다. 모델은 봉인된 m6r_avg2 홀드아웃(자 1, 7월)이다.
 # 공항별 보정(정답 - ADS-B 추정의 중앙값)은 다른 날에서 구해 바꿔 끼운다(같은 날 정답으로 맞추지 않는다).
-# 읽기만 하고 결과는 research/offblock/nova_overlay_eval.json 에 쓴다.
-#     .venv/Scripts/python.exe -X utf8 research/offblock/nova_overlay_eval.py
+# 읽기만 하고 결과는 research/offblock/overlay_eval.json 에 쓴다.
+#     .venv/Scripts/python.exe -X utf8 research/offblock/overlay_eval.py
 import json
 import sys
 from pathlib import Path
@@ -84,4 +84,4 @@ for k, v in rules.items():
 res["summary"] = summ
 for day in DAYS:
     print(day, "per airport (replace within 300):", res["days"][day]["per_airport_replace_within_300"])
-(OUT / "nova_overlay_eval.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+(OUT / "overlay_eval.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")

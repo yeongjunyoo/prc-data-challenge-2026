@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 ruler M3 for three tail stages fitted on Jan/Jul (private notes research/2026-10-08-f2-four-months.md section 1.3): artmm, arthist and
+"""F2 ruler M3 for three tail stages fitted on Jan/Jul (vault research/2026-10-08-f2-four-months.md section 1.3): artmm, arthist and
 aiu_shift (--group block, lam 0.5, cmax 60) on the corrected LightGBM-only worlds written by research/f2/m3_corr.py.
 
   V = cache/val_<tag>V_s0.parquet (Jan + Jul 2025 after the in-month corrector), F = cache/fj_<tag>T_s0.parquet (Feb + Jun 2025 after the

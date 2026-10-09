@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 for the coordinator's AIU-2026 question (10-08 23:0x): what does the A3 corrector's stage 2 lose without its AIU columns?
+"""F2 for our AIU-2026 question (10-08 23:0x): what does the A3 corrector's stage 2 lose without its AIU columns?
 Local measurement only (no candidate is built). Corrector code = src/ctx_corr3.py's (imported, unchanged); stage 1 is fitted once and
 shared by all variants (it has no AIU column). Stage-2 column sets:
   all       : 514's (ctx_v3: aiu_m_txo, aiu_m_add, aiu_m_valid, aiu_d_pdd, aiu_d_txo + aiu_m_gap, aiu_d_gap)

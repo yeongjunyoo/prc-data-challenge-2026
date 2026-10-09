@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F3 final root, R17-A's pack 2 (research/r17_a/final_pack2.DONE; coordinator 2026-10-09 02:1x KST: adsb_v2_merged is the legs'
+"""F3 final root, R17-A's pack 2 (research/r17_a/final_pack2.DONE; 2026-10-09 02:1x KST: adsb_v2_merged is the legs'
 adsb_v2, adsb_v1nd_merged the corrector's adsb_v1nd). Checks, then places them:
   - sha16 of final/adsb_v2_merged_v2.parquet and final/adsb_v1nd_merged_v2.parquet equal the manifest's pack2 files (54ba81f368669d1d,
-    07df03ca69833082, as the coordinator passed on);
+    07df03ca69833082, as passed on);
   - columns and types equal today's adsb_v2 (sha16 8ee80c46165c4ef9) and adsb_v1nd (0d03ff06267e0dee);
   - the 2025 rows (day < 2026-01-01) carry exactly today's 2025 rows: same ids, every value bit-equal per id (else every fit stored on the
     interim table misses, and the corrector's fit cache too);

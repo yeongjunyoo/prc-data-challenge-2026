@@ -11,11 +11,11 @@ event go to research/f3/out/orch_<phase>.json and logs/orch_<phase>.log. Stops l
 Phases: lgb (LightGBM legs, g_band, LightGBM seed averages), cb (CatBoost legs and averages), rm (RealMLP legs and averages),
         tabm (prep + TabM leg), l3legs (L3 final, 10-10: R17-A's feats_v28 LightGBM legs in the full setting, G bands, averages, and the
         seed-0 leave-Feb/Jun-out L3 legs for the four-month corrector; never wrapped).
-Fit cache (research/f3/fitwrap.py, coordinator approval 2026-10-08 23:2x KST): --wrap save:<dir> or load:<dir> runs the LightGBM and
+Fit cache (research/f3/fitwrap.py, approved 2026-10-08 23:2x KST): --wrap save:<dir> or load:<dir> runs the LightGBM and
 CatBoost leg scripts (model3, model3ap, cat_mu, cat_muap) through the wrapper, unchanged. --root runs the same jobs in another root (the
 interim root), --prefix keeps its lock names apart, --defer_to <root> holds a job while the same job is still running in that root (its
 stored fits are then loaded instead of refit). --cap bounds the threads of all F3 locks together (this driver's jobs, launched or waiting,
-plus every other f3_*.lock in the lock folder PRC_LOCK_DIR). Every CatBoost job runs at 8 threads (coordinator 2026-10-08 23:5x KST: R16-D refit cbwin
+plus every other f3_*.lock in the lock folder PRC_LOCK_DIR). Every CatBoost job runs at 8 threads (2026-10-08 23:5x KST: R16-D refit cbwin
 at 8 threads where 514 ran it at 10 and reproduced the deployed mu_cat exactly, research/2026-10-08-r16-d-nd-legs.md).
 """
 from __future__ import annotations
@@ -85,7 +85,7 @@ def jobs_for(phase: str) -> list[dict]:
                       out=["cache/full_m6r27tmcwin_s0.parquet"],
                       cmd="research/r13_l/tabm_leg.py --setting full --seed 0 --tag m6r27tmcwin --base m6r27skwin --anchor win --sched cos --epochs 20 "
                           "--patience 99 --device mps --threads 3 --amp bf16"))
-    elif phase == "l3legs":  # L3 final (coordinator 10-10 03:5x): R17-A's leg lines (research/r17_a/sb_build_r17a.py M3, 6 threads, feats_v28)
+    elif phase == "l3legs":  # L3 final (10-10 03:5x): R17-A's leg lines (research/r17_a/sb_build_r17a.py M3, 6 threads, feats_v28)
         # in the full setting on the final test, their G bands and seed averages, and the seed-0 leave-Feb/Jun-out legs of the L3 families
         # (F2's research/f2/model3_fj.py, model3ap_fj.py, g_band_fj.py with feats_v28) for the L3 four-month corrector's extra rows.
         L28 = LGB.replace("feats_v27", "feats_v28") + " --threads 6"

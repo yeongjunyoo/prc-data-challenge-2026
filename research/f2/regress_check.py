@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 regression check of F3's final cache root against prc-2026 before the final legs start (coordinator 10-08 22:5x, F2 role 4).
+"""F2 regression check of F3's final cache root against prc-2026 before the final legs start (10-08 22:5x, F2 role 4).
 
 For each table: the rows of 2025 (src 1..12, or the 2025 parts of a context table, or the old table's MVT_IDs for keyed tables) must equal
 today's table column by column; the final rows (src 0) must be exactly the final_ranking DEP ids. Columns that differ on 2025 rows are listed
