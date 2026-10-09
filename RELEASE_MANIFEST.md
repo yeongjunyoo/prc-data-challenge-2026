@@ -1,6 +1,6 @@
 # Release manifest
 
-How this tree was made, what differs from the working copies it was copied from, and what was left out. Built 2026-10-10 08:35 KST by copying files (nothing was moved or changed in the working copies).
+How this tree was made, what differs from the working copies it was copied from, and what was left out. Built 2026-10-10 08:50 KST by copying files (nothing was moved or changed in the working copies).
 
 ## 1. Size and contents
 
@@ -42,7 +42,7 @@ How this tree was made, what differs from the working copies it was copied from,
 
 - `python scripts/verify_code_hashes.py`: `manifests: 179 files: 52 problems: 0`.
 - Scan of every file for stored credential values, token shapes, assignments of secret literals, e-mail addresses, forbidden file kinds (environment files, keys, parquet, databases, `.git`) and copied chat messages: 0 hits in 1049 files. Lines with a machine path or a private-notes word: 233, all in files whose bytes the manifests pin except: `docs/REVIEW_GUIDE.md`. One phone-number shape in a table of numbers (not a phone number).
-- Scripts shipped from the PC against the SHA-256 of their copies on the Mac (lists taken at 2026-10-09 15:23, 2026-10-10 05:19, 2026-10-10 07:55 and 2026-10-10 08:11 KST, the later one winning): 170 checked, 167 equal. Different: `src/fire_queue.py` (Mac 33d7ade593f5eed1, here d62191ced46f1130; upload code of the PC); `src/s3io.py` (Mac 469d5fe506de420b, here 9611ff0275e173fd; upload code of the PC); `src/shot.py` (Mac c06ceb69062e9194, here 95b1e6c41bf0210e; upload code of the PC). The upload code makes no prediction and no manifest hashes it; the Mac holds older copies of it.
+- Scripts shipped from the PC against the SHA-256 of their copies on the Mac (lists taken at 2026-10-09 15:23, 2026-10-10 05:19, 2026-10-10 07:55 and 2026-10-10 08:11 KST, the later one winning): 170 checked, 166 equal. Different: `src/fire_queue.py` (Mac 33d7ade593f5eed1, here d62191ced46f1130; upload code of the PC); `src/s3io.py` (Mac 469d5fe506de420b, here 9611ff0275e173fd; upload code of the PC); `src/shot.py` (Mac c06ceb69062e9194, here 95b1e6c41bf0210e; upload code of the PC); `research/f3/final_manifest.py` (Mac 7af0dacea2b1e5aa, here 5524ea3f81b54858; the PC copy changed at 2026-10-10 08:42, after the Mac list was taken). The upload code makes no prediction and no manifest hashes it; the Mac holds older copies of it.
 - Every Python file compiles; every shell file passes `bash -n`; both PowerShell files parse without errors.
 
 ## 5. What is not in this repository, and why

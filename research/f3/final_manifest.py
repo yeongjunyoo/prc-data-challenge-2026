@@ -162,6 +162,21 @@ PROFILES = {
                "clones_from_r17a_sbx_and_f2_run": "research/f3/out/collect_l3.json", "legs": "research/f3/out/orch_l3legs.json",
                "fj_blends": "research/f3/out/fj_blends_l3.json"}),
 }
+# Round c (10-10 08:2x, F2's lever 2): the b forms with the four-month corrector on F2's fjF tables (research/f3/kit_c.sh, variant BbF,
+# corrector tags ending in F); everything upstream of the merge is the b record's
+for _n, _b, _ff in (("594c", "594b", "ff8"), ("598c", "598b", "ff9")):
+    _p = dict(PROFILES[_b])
+    _p.update(
+        variant="BbF", ff=_ff, ltag="F", logs=f"{_n}_", kit="research/f3/kit_c.sh", drivers=_p["drivers"] + ["research/f3/phase6.sh"],
+        rebuild_of=(_p["rebuild_of"] + "; round c (10-10 08:2x, F2's lever 2): the four-month corrector reads F2's tables adsb_v1ndfjF "
+                    "(e13437a2c55a77c5) and geo_v1ndfjF (4fd677dc9060ce22), this root's adsb_v1nd and geo_v1nd with every row unchanged plus the "
+                    "326,873 Feb/Jun 2025 rows (research/f3/check_fjF.py), tags ...m4F, merged variant BbF by research/f3/kit_c.sh"),
+        checks={f"split_check (check finals: BbF against {_p['default']})": f"research/f3/out/split_check_{_n}.json",
+                "corrector-stage check": f"research/f3/out/split_check_{_n}_corr.json",
+                "twins A": f"research/f3/out/twins_{_n}_A.json", "twins B": f"research/f3/out/twins_{_n}_B.json",
+                "twins C": f"research/f3/out/twins_{_n}_C.json", f"iii_boundary (BbF against {_p['default']})": f"research/f3/out/iii_boundary_{_n}.json"},
+        extra={**_p["extra"], "fjF_tables_check": "research/f3/out/check_fjF.json"})
+    PROFILES[_n] = _p
 
 
 def man_entry(spec: str) -> dict:
@@ -192,7 +207,7 @@ def variant_main(argv: list[str]) -> None:
             "default_c3 (the merge's T, and its val/fwd source)": man_entry(f"{T}{MID}c3"),
             "four_month_L": {sc: {"cavg": {"path": f"cache/full_{T}{tg}c3_s0.parquet", "sha16": sha16(f"cache/full_{T}{tg}c3_s0.parquet")},
                                   "seeds_fit_cache": {k: fit_line(Path("logs") / f"{P['logs']}c4m_{X}_{sc}_s{k}.log") for k in (0, 1, 2)}}
-                             for sc, tg in (("0.75", "adsbgeondctxv3x50ws75m4"), ("0.5", "adsbgeondctxv3x50wm4"))},
+                             for sc, tg in (("0.75", "adsbgeondctxv3x50ws75m4" + P.get("ltag", "")), ("0.5", "adsbgeondctxv3x50wm4" + P.get("ltag", "")))},
             "merge_notes": {s: {"path": f"notes/merge_{T}{MID}c3r{V}_{s}.json", "sha16": sha16(f"notes/merge_{T}{MID}c3r{V}_{s}.json")}
                             for s in ("val", "fwd", "full")},
             "jobs_file": {"path": f"notes/jobs_{T}{MID}c3r{V}.txt", "sha16": sha16(f"notes/jobs_{T}{MID}c3r{V}.txt")},
