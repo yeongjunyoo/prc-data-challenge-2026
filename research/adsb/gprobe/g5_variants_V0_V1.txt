@@ -1,0 +1,48 @@
+{'variant': 'V0 all', 'n_cols': 41, 'ruler_oof': -7444.2, 'oof_jan': -3107.7, 'oof_jul': -4336.6, 'jan_to_jul': -3787.8, 'jul_to_jan': -2647.1, 'keep_jul': 0.873, 'keep_jan': 0.852, 'flags_2026': 9, 'egll_2026_07': -73.5, 'sd_2026': 104.8, 'sd_2025': 96.0}
+{'variant': 'V1 drop LOC', 'n_cols': 30, 'ruler_oof': -5214.9, 'oof_jan': -2114.6, 'oof_jul': -3100.3, 'jan_to_jul': -2410.9, 'jul_to_jan': -1582.7, 'keep_jul': 0.778, 'keep_jan': 0.748, 'flags_2026': 11, 'egll_2026_07': -6.5, 'sd_2026': 93.5, 'sd_2025': 82.0}
+
+variants (ΔMSE over the ruler N on matched rows, negative = better; keep = cross-month gain / in-month OOF gain on the same rows):
+    variant  n_cols  ruler_oof  oof_jan  oof_jul  jan_to_jul  jul_to_jan  keep_jul  keep_jan  flags_2026  egll_2026_07  sd_2026  sd_2025
+     V0 all      41    -7444.2  -3107.7  -4336.6     -3787.8     -2647.1     0.873     0.852           9         -73.5    104.8     96.0
+V1 drop LOC      30    -5214.9  -2114.6  -3100.3     -2410.9     -1582.7     0.778     0.748          11          -6.5     93.5     82.0
+
+mean correction per airport and month (2025 = OOF, 2026 = one model on all 2025):
+variant       V0 all  V1 drop LOC
+ap   mon                         
+EDDF 2025-01    -2.9         -6.8
+     2025-07    -9.0         -9.9
+     2026-01     4.6        -10.6
+     2026-07    -1.1        -18.5
+EDDM 2025-01    -4.0          5.5
+     2025-07     3.7          7.5
+     2026-01     2.0         15.3
+     2026-07   -13.0         -3.7
+EGLL 2025-01   -18.2         -8.8
+     2025-07     5.5        -15.3
+     2026-01   -34.7         -4.5
+     2026-07   -73.5         -6.5
+EHAM 2025-01    -5.6        -13.6
+     2025-07    -1.4          1.5
+     2026-01    10.9         22.8
+     2026-07     6.4          9.0
+LEBL 2025-01     3.0          0.3
+     2025-07     4.3          0.5
+     2026-01     8.5          6.3
+     2026-07     5.1          8.7
+LEMD 2025-01     6.7         -4.1
+     2025-07   -15.7         -5.7
+     2026-01   -24.6        -12.5
+     2026-07   -11.9        -12.7
+LFPG 2025-01    20.8        -28.6
+     2025-07    -0.8         -3.9
+     2026-01    14.8          7.3
+     2026-07    -0.3         -2.8
+LIRF 2025-07   -12.2         -7.6
+     2026-01    -8.6        -12.1
+     2026-07   -28.3         -8.3
+LSZH 2025-01    -2.2          2.7
+     2025-07    -2.1         -6.2
+     2026-01     8.7         23.2
+     2026-07    -0.6          2.4
+LTFM 2026-07    24.8        -15.2
+memcap: rc=0 cap=3.0GB peak_job=1.78GB
