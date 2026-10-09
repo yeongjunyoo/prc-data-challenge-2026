@@ -1,0 +1,571 @@
+{
+ "rule": "폭 = 2025 다른 달 쌍(2+8, 3+9, 4+10, 5+11, 6+12)이 자(1+7)와 보이는 가장 큰 차이(값은 학습 기간에서만 나오고, 설계는 시험 입력 통계를 본 뒤 정했다). 피처 채움 비율은 그 폭과 이항 표준오차 4배 중 큰 쪽. NaN 은 실패",
+ "holdout_rows": 344419,
+ "test_rows": 344841,
+ "checks": [
+  {
+   "check": "공항 분포 TVD(시험 대 자)",
+   "value": 0.01436,
+   "band": 0.01478,
+   "ref": {
+    "2+8": 0.00812,
+    "3+9": 0.01167,
+    "4+10": 0.01478,
+    "5+11": 0.0109,
+    "6+12": 0.00735
+   },
+   "pass": true
+  },
+  {
+   "check": "시각(UTC 시) 분포 TVD(시험 대 자)",
+   "value": 0.01149,
+   "band": 0.04407,
+   "ref": {
+    "2+8": 0.00716,
+    "3+9": 0.00817,
+    "4+10": 0.04407,
+    "5+11": 0.01082,
+    "6+12": 0.00779
+   },
+   "pass": true
+  },
+  {
+   "check": "요일 분포 TVD(시험 대 자)",
+   "value": 0.03575,
+   "band": 0.072,
+   "ref": {
+    "2+8": 0.06351,
+    "3+9": 0.072,
+    "4+10": 0.0137,
+    "5+11": 0.05853,
+    "6+12": 0.06
+   },
+   "pass": true
+  },
+  {
+   "check": "NM 편 매칭(FLIGHT_ID 있음) 비율 차(%p, 시험 98.468 대 자 98.442)",
+   "value": 0.02598,
+   "band": 0.7288,
+   "ref": {
+    "2+8": 0.5332,
+    "3+9": 0.5422,
+    "4+10": 0.7288,
+    "5+11": 0.7086,
+    "6+12": 0.3706
+   },
+   "pass": true
+  },
+  {
+   "check": "LIRF 의 AOBT_3 없음 비율 차(%p, 시험 0.111 대 자 0.115)",
+   "value": 0.0042,
+   "band": 0.0718,
+   "ref": {
+    "2+8": 0.0391,
+    "3+9": 0.0501,
+    "4+10": 0.064,
+    "5+11": 0.0718,
+    "6+12": 0.037
+   },
+   "pass": true
+  },
+  {
+   "check": "241_m6r26as8gc75w: 3,600초 초과 예측 비중 비(시험 0.286% / 자 0.186%, 폭은 정답 비중의 달 쌍 비)",
+   "value": 1.54271,
+   "band": [
+    0.4455,
+    1.5545
+   ],
+   "ref": {
+    "2+8": 1.1563,
+    "3+9": 0.4666,
+    "4+10": 0.4698,
+    "5+11": 0.4455,
+    "6+12": 0.6593
+   },
+   "pass": true
+  },
+  {
+   "check": "241_m6r26as8gc75w: 예측 평균 비(시험 1043.2 / 자 1013.9, 폭은 정답 평균의 달 쌍 비)",
+   "value": 1.02893,
+   "band": [
+    0.9696,
+    1.0304
+   ],
+   "ref": {
+    "2+8": 0.9855,
+    "3+9": 0.9696,
+    "4+10": 0.9702,
+    "5+11": 0.9795,
+    "6+12": 0.9718
+   },
+   "pass": true
+  },
+  {
+   "check": "241_m6r26as8gc75w: 피처 feats_v26 채움 비율(칸 104개, 시험 행 344841, 폭 밖이나 NaN 0개)",
+   "value": 0.0,
+   "band": 0,
+   "ref": {},
+   "pass": true,
+   "kind": "feat_fill",
+   "feats": "feats_v26",
+   "stem": "241_m6r26as8gc75w"
+  },
+  {
+   "check": "261_m6r26as8gc50w: 3,600초 초과 예측 비중 비(시험 0.279% / 자 0.186%, 폭은 정답 비중의 달 쌍 비)",
+   "value": 1.49972,
+   "band": [
+    0.4455,
+    1.5545
+   ],
+   "ref": {
+    "2+8": 1.1563,
+    "3+9": 0.4666,
+    "4+10": 0.4698,
+    "5+11": 0.4455,
+    "6+12": 0.6593
+   },
+   "pass": true
+  },
+  {
+   "check": "261_m6r26as8gc50w: 예측 평균 비(시험 1042.5 / 자 1013.9, 폭은 정답 평균의 달 쌍 비)",
+   "value": 1.02822,
+   "band": [
+    0.9696,
+    1.0304
+   ],
+   "ref": {
+    "2+8": 0.9855,
+    "3+9": 0.9696,
+    "4+10": 0.9702,
+    "5+11": 0.9795,
+    "6+12": 0.9718
+   },
+   "pass": true
+  },
+  {
+   "check": "261_m6r26as8gc50w: 피처 feats_v26 채움 비율(칸 104개, 시험 행 344841, 폭 밖이나 NaN 0개)",
+   "value": 0.0,
+   "band": 0,
+   "ref": {},
+   "pass": true,
+   "kind": "feat_fill",
+   "feats": "feats_v26",
+   "stem": "261_m6r26as8gc50w"
+  },
+  {
+   "check": "171_m6r25sgc100w: 3,600초 초과 예측 비중 비(시험 0.290% / 자 0.190%, 폭은 정답 비중의 달 쌍 비)",
+   "value": 1.52405,
+   "band": [
+    0.4455,
+    1.5545
+   ],
+   "ref": {
+    "2+8": 1.1563,
+    "3+9": 0.4666,
+    "4+10": 0.4698,
+    "5+11": 0.4455,
+    "6+12": 0.6593
+   },
+   "pass": true
+  },
+  {
+   "check": "171_m6r25sgc100w: 예측 평균 비(시험 1042.5 / 자 1015.0, 폭은 정답 평균의 달 쌍 비)",
+   "value": 1.02708,
+   "band": [
+    0.9696,
+    1.0304
+   ],
+   "ref": {
+    "2+8": 0.9855,
+    "3+9": 0.9696,
+    "4+10": 0.9702,
+    "5+11": 0.9795,
+    "6+12": 0.9718
+   },
+   "pass": true
+  },
+  {
+   "check": "171_m6r25sgc100w: 피처 feats_v25 채움 비율(칸 99개, 시험 행 344841, 폭 밖이나 NaN 0개)",
+   "value": 0.0,
+   "band": 0,
+   "ref": {},
+   "pass": true,
+   "kind": "feat_fill",
+   "feats": "feats_v25",
+   "stem": "171_m6r25sgc100w"
+  },
+  {
+   "check": "201_m6r25sgcbrw: 3,600초 초과 예측 비중 비(시험 0.272% / 자 0.178%, 폭은 정답 비중의 달 쌍 비)",
+   "value": 1.52831,
+   "band": [
+    0.4455,
+    1.5545
+   ],
+   "ref": {
+    "2+8": 1.1563,
+    "3+9": 0.4666,
+    "4+10": 0.4698,
+    "5+11": 0.4455,
+    "6+12": 0.6593
+   },
+   "pass": true
+  },
+  {
+   "check": "201_m6r25sgcbrw: 예측 평균 비(시험 1042.5 / 자 1016.0, 폭은 정답 평균의 달 쌍 비)",
+   "value": 1.02613,
+   "band": [
+    0.9696,
+    1.0304
+   ],
+   "ref": {
+    "2+8": 0.9855,
+    "3+9": 0.9696,
+    "4+10": 0.9702,
+    "5+11": 0.9795,
+    "6+12": 0.9718
+   },
+   "pass": true
+  },
+  {
+   "check": "201_m6r25sgcbrw: 피처 feats_v25 채움 비율(칸 99개, 시험 행 344841, 폭 밖이나 NaN 0개)",
+   "value": 0.0,
+   "band": 0,
+   "ref": {},
+   "pass": true,
+   "kind": "feat_fill",
+   "feats": "feats_v25",
+   "stem": "201_m6r25sgcbrw"
+  },
+  {
+   "check": "211_m6r25sgcbxw: 3,600초 초과 예측 비중 비(시험 0.258% / 자 0.183%, 폭은 정답 비중의 달 쌍 비)",
+   "value": 1.40334,
+   "band": [
+    0.4455,
+    1.5545
+   ],
+   "ref": {
+    "2+8": 1.1563,
+    "3+9": 0.4666,
+    "4+10": 0.4698,
+    "5+11": 0.4455,
+    "6+12": 0.6593
+   },
+   "pass": true
+  },
+  {
+   "check": "211_m6r25sgcbxw: 예측 평균 비(시험 1040.3 / 자 1014.7, 폭은 정답 평균의 달 쌍 비)",
+   "value": 1.02527,
+   "band": [
+    0.9696,
+    1.0304
+   ],
+   "ref": {
+    "2+8": 0.9855,
+    "3+9": 0.9696,
+    "4+10": 0.9702,
+    "5+11": 0.9795,
+    "6+12": 0.9718
+   },
+   "pass": true
+  },
+  {
+   "check": "211_m6r25sgcbxw: 피처 feats_v25 채움 비율(칸 99개, 시험 행 344841, 폭 밖이나 NaN 0개)",
+   "value": 0.0,
+   "band": 0,
+   "ref": {},
+   "pass": true,
+   "kind": "feat_fill",
+   "feats": "feats_v25",
+   "stem": "211_m6r25sgcbxw"
+  }
+ ],
+ "candidates": [
+  "241_m6r26as8gc75w",
+  "261_m6r26as8gc50w",
+  "171_m6r25sgc100w",
+  "201_m6r25sgcbrw",
+  "211_m6r25sgcbxw"
+ ],
+ "info": {
+  "te_key_seen_feats_v25": {
+   "file": "notes/te_coverage_feats_v25.json",
+   "columns": 26,
+   "test_below_pseudo_min": {
+    "te_artlate_ap_stand": {
+     "holdout": 0.9994,
+     "test": 0.9942,
+     "pseudo_min": 0.9986,
+     "pseudo_max": 0.9999
+    },
+    "te_ycl_ap_stand": {
+     "holdout": 0.9996,
+     "test": 0.9954,
+     "pseudo_min": 0.9988,
+     "pseudo_max": 1.0
+    },
+    "te_off_ap_stand": {
+     "holdout": 0.9996,
+     "test": 0.9954,
+     "pseudo_min": 0.9988,
+     "pseudo_max": 0.9999
+    },
+    "te_big_ap_stand": {
+     "holdout": 0.9996,
+     "test": 0.9954,
+     "pseudo_min": 0.9988,
+     "pseudo_max": 1.0
+    },
+    "te_artlate_ap_op": {
+     "holdout": 0.9989,
+     "test": 0.9948,
+     "pseudo_min": 0.9986,
+     "pseudo_max": 0.999
+    },
+    "te_ycl_ap_op": {
+     "holdout": 0.9995,
+     "test": 0.9956,
+     "pseudo_min": 0.9994,
+     "pseudo_max": 0.9996
+    },
+    "te_off_ap_op": {
+     "holdout": 0.9839,
+     "test": 0.9802,
+     "pseudo_min": 0.9875,
+     "pseudo_max": 0.9912
+    },
+    "te_artlate_ap_ades": {
+     "holdout": 0.9978,
+     "test": 0.9959,
+     "pseudo_min": 0.9976,
+     "pseudo_max": 0.9981
+    },
+    "te_ycl_ap_ades": {
+     "holdout": 0.999,
+     "test": 0.9976,
+     "pseudo_min": 0.9989,
+     "pseudo_max": 0.9992
+    },
+    "te_off_ap_ades": {
+     "holdout": 0.9989,
+     "test": 0.9975,
+     "pseudo_min": 0.9977,
+     "pseudo_max": 0.9992
+    },
+    "te_artlate_ap_actype": {
+     "holdout": 0.9997,
+     "test": 0.9995,
+     "pseudo_min": 0.9996,
+     "pseudo_max": 0.9997
+    },
+    "te_off_ap_actype": {
+     "holdout": 0.9983,
+     "test": 0.9984,
+     "pseudo_min": 0.9987,
+     "pseudo_max": 0.9992
+    },
+    "te_artlate_ap_stand_rwy": {
+     "holdout": 0.9973,
+     "test": 0.9906,
+     "pseudo_min": 0.9963,
+     "pseudo_max": 0.9976
+    },
+    "te_ycl_ap_stand_rwy": {
+     "holdout": 0.9987,
+     "test": 0.9928,
+     "pseudo_min": 0.9973,
+     "pseudo_max": 0.9991
+    },
+    "te_off_ap_stand_rwy": {
+     "holdout": 0.9983,
+     "test": 0.9927,
+     "pseudo_min": 0.9971,
+     "pseudo_max": 0.999
+    },
+    "te_artlate_ap_ades_nm": {
+     "holdout": 0.997,
+     "test": 0.9952,
+     "pseudo_min": 0.997,
+     "pseudo_max": 0.9978
+    },
+    "te_ycl_ap_ades_nm": {
+     "holdout": 0.9982,
+     "test": 0.9969,
+     "pseudo_min": 0.9984,
+     "pseudo_max": 0.999
+    },
+    "te_off_ap_ades_nm": {
+     "holdout": 0.9835,
+     "test": 0.9824,
+     "pseudo_min": 0.9871,
+     "pseudo_max": 0.9908
+    },
+    "te_big_ap_ades_nm": {
+     "holdout": 0.9982,
+     "test": 0.9969,
+     "pseudo_min": 0.9984,
+     "pseudo_max": 0.999
+    },
+    "te_artlate_ap_stand_ades": {
+     "holdout": 0.9147,
+     "test": 0.8922,
+     "pseudo_min": 0.915,
+     "pseudo_max": 0.9238
+    },
+    "te_ycl_ap_stand_ades": {
+     "holdout": 0.9699,
+     "test": 0.9425,
+     "pseudo_min": 0.967,
+     "pseudo_max": 0.973
+    },
+    "te_off_ap_stand_ades": {
+     "holdout": 0.9679,
+     "test": 0.9401,
+     "pseudo_min": 0.9649,
+     "pseudo_max": 0.9712
+    }
+   },
+   "note": "판정 밖(구조적 한계). MISSION G2 에 적었다"
+  },
+  "te_key_seen_feats_v26": {
+   "file": "notes/te_coverage_feats_v26.json",
+   "columns": 26,
+   "test_below_pseudo_min": {
+    "te_artlate_ap_stand": {
+     "holdout": 0.9994,
+     "test": 0.9942,
+     "pseudo_min": 0.9986,
+     "pseudo_max": 0.9999
+    },
+    "te_ycl_ap_stand": {
+     "holdout": 0.9996,
+     "test": 0.9954,
+     "pseudo_min": 0.9988,
+     "pseudo_max": 1.0
+    },
+    "te_off_ap_stand": {
+     "holdout": 0.9996,
+     "test": 0.9954,
+     "pseudo_min": 0.9988,
+     "pseudo_max": 0.9999
+    },
+    "te_big_ap_stand": {
+     "holdout": 0.9996,
+     "test": 0.9954,
+     "pseudo_min": 0.9988,
+     "pseudo_max": 1.0
+    },
+    "te_artlate_ap_op": {
+     "holdout": 0.9989,
+     "test": 0.9948,
+     "pseudo_min": 0.9986,
+     "pseudo_max": 0.999
+    },
+    "te_ycl_ap_op": {
+     "holdout": 0.9995,
+     "test": 0.9956,
+     "pseudo_min": 0.9994,
+     "pseudo_max": 0.9996
+    },
+    "te_off_ap_op": {
+     "holdout": 0.9839,
+     "test": 0.9802,
+     "pseudo_min": 0.9875,
+     "pseudo_max": 0.9912
+    },
+    "te_artlate_ap_ades": {
+     "holdout": 0.9978,
+     "test": 0.9959,
+     "pseudo_min": 0.9976,
+     "pseudo_max": 0.9981
+    },
+    "te_ycl_ap_ades": {
+     "holdout": 0.999,
+     "test": 0.9976,
+     "pseudo_min": 0.9989,
+     "pseudo_max": 0.9992
+    },
+    "te_off_ap_ades": {
+     "holdout": 0.9989,
+     "test": 0.9975,
+     "pseudo_min": 0.9977,
+     "pseudo_max": 0.9992
+    },
+    "te_artlate_ap_actype": {
+     "holdout": 0.9997,
+     "test": 0.9995,
+     "pseudo_min": 0.9996,
+     "pseudo_max": 0.9997
+    },
+    "te_off_ap_actype": {
+     "holdout": 0.9983,
+     "test": 0.9984,
+     "pseudo_min": 0.9987,
+     "pseudo_max": 0.9992
+    },
+    "te_artlate_ap_stand_rwy": {
+     "holdout": 0.9973,
+     "test": 0.9906,
+     "pseudo_min": 0.9963,
+     "pseudo_max": 0.9976
+    },
+    "te_ycl_ap_stand_rwy": {
+     "holdout": 0.9987,
+     "test": 0.9928,
+     "pseudo_min": 0.9973,
+     "pseudo_max": 0.9991
+    },
+    "te_off_ap_stand_rwy": {
+     "holdout": 0.9983,
+     "test": 0.9927,
+     "pseudo_min": 0.9971,
+     "pseudo_max": 0.999
+    },
+    "te_artlate_ap_ades_nm": {
+     "holdout": 0.997,
+     "test": 0.9952,
+     "pseudo_min": 0.997,
+     "pseudo_max": 0.9978
+    },
+    "te_ycl_ap_ades_nm": {
+     "holdout": 0.9982,
+     "test": 0.9969,
+     "pseudo_min": 0.9984,
+     "pseudo_max": 0.999
+    },
+    "te_off_ap_ades_nm": {
+     "holdout": 0.9835,
+     "test": 0.9824,
+     "pseudo_min": 0.9871,
+     "pseudo_max": 0.9908
+    },
+    "te_big_ap_ades_nm": {
+     "holdout": 0.9982,
+     "test": 0.9969,
+     "pseudo_min": 0.9984,
+     "pseudo_max": 0.999
+    },
+    "te_artlate_ap_stand_ades": {
+     "holdout": 0.9147,
+     "test": 0.8922,
+     "pseudo_min": 0.915,
+     "pseudo_max": 0.9238
+    },
+    "te_ycl_ap_stand_ades": {
+     "holdout": 0.9699,
+     "test": 0.9425,
+     "pseudo_min": 0.967,
+     "pseudo_max": 0.973
+    },
+    "te_off_ap_stand_ades": {
+     "holdout": 0.9679,
+     "test": 0.9401,
+     "pseudo_min": 0.9649,
+     "pseudo_max": 0.9712
+    }
+   },
+   "note": "판정 밖(구조적 한계). MISSION G2 에 적었다"
+  }
+ },
+ "all_pass": true,
+ "queue_dir": "queue"
+}

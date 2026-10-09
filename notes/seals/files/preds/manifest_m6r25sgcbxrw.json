@@ -1,0 +1,78 @@
+{
+ "spec": "m6r25sgcbxrw",
+ "run_tag": "m6r25sgcbxrw",
+ "column": "pred",
+ "seeds": [
+  0
+ ],
+ "feats": "feats_v25",
+ "feats_sha": "fdcb929cae04385a",
+ "config": {
+  "--base": "m6r25sgcbxr",
+  "--tag": "m6r25sgcbxrw",
+  "--feats": "feats_v25"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -u src/lobt_window.py apply --setting val --seed 0 --base m6r25sgcbxr --tag m6r25sgcbxrw --feats feats_v25"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -u src/lobt_window.py apply --setting full --seed 0 --base m6r25sgcbxr --tag m6r25sgcbxrw --feats feats_v25"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -u src/lobt_window.py apply --setting fwd --seed 0 --base m6r25sgcbxr --tag m6r25sgcbxrw --feats feats_v25"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -u src/lobt_window.py apply --setting val --seed 0 --base m6r25sgcbxr --tag m6r25sgcbxrw --feats feats_v25",
+ "code_sha": {
+  "src/model3.py": "e8c2d862564ca90e",
+  "src/feats.py": "112ed09d4d1d52bb",
+  "src/te.py": "0a78bd1cf5a5771a",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a",
+  "src/cat_mu.py": "000a3a79cb54a78c",
+  "src/blend_mu.py": "e5827379dba9ec9a",
+  "src/g_band.py": "46969e68a18dd8d0",
+  "src/xgb_mu.py": "0fffdca525e174e0",
+  "src/rmlp_mu.py": "7a23fdde198bc35a",
+  "src/lobt_window.py": "3f6ef6d290ee429c"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/e8c2d862564ca90e_model3.py",
+  "src/feats.py": "preds/code/112ed09d4d1d52bb_feats.py",
+  "src/te.py": "preds/code/0a78bd1cf5a5771a_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py",
+  "src/cat_mu.py": "preds/code/000a3a79cb54a78c_cat_mu.py",
+  "src/blend_mu.py": "preds/code/e5827379dba9ec9a_blend_mu.py",
+  "src/g_band.py": "preds/code/46969e68a18dd8d0_g_band.py",
+  "src/xgb_mu.py": "preds/code/0fffdca525e174e0_xgb_mu.py",
+  "src/rmlp_mu.py": "preds/code/7a23fdde198bc35a_rmlp_mu.py",
+  "src/lobt_window.py": "preds/code/3f6ef6d290ee429c_lobt_window.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m6r25sgcbxrw_rmse309.34.parquet",
+  "sha": "b5d10907309baf86",
+  "rmse": 309.34,
+  "ruler_hash": "19afdfc7fedf88ea"
+ },
+ "test": {
+  "path": "preds/test_m6r25sgcbxrw.parquet",
+  "sha": "f440baacf8ae4b85"
+ },
+ "forward": {
+  "path": "preds/fwd_m6r25sgcbxrw.parquet",
+  "sha": "054ebbbae94f448b",
+  "rmse_2025_07": 304.19
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m6r25sgcbxrw.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0
+ },
+ "iteration_rule": "internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0)",
+ "written_kst": "2026-10-04 09:08:15 KST"
+}

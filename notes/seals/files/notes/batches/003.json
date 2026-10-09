@@ -1,0 +1,187 @@
+{
+ "number": 3,
+ "registered_kst": "2026-10-04 09:17:46",
+ "candidates": [
+  {
+   "stem": "161_m6r25sgc75w",
+   "manifest": "preds/manifest_m6r25sgc75w.json",
+   "manifest_sha": "d3303a3cc9cefa78",
+   "pred_sha": "77b3503a81f93709",
+   "holdout": "preds/holdout_m6r25sgc75w_rmse310.26.parquet",
+   "holdout_sha": "a498fd5f3c75d7f3",
+   "local_rmse": 310.256,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25sgc75w"
+  },
+  {
+   "stem": "141_m6r25axsgcxw",
+   "manifest": "preds/manifest_m6r25axsgcxw.json",
+   "manifest_sha": "fd9af41198c1f988",
+   "pred_sha": "582605c6301dbc1d",
+   "holdout": "preds/holdout_m6r25axsgcxw_rmse312.45.parquet",
+   "holdout_sha": "93681b153c3aba1e",
+   "local_rmse": 312.455,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25axsgcxw"
+  },
+  {
+   "stem": "131_m6r25sgcbxrw",
+   "manifest": "preds/manifest_m6r25sgcbxrw.json",
+   "manifest_sha": "6bd13a97be6d3ed4",
+   "pred_sha": "f440baacf8ae4b85",
+   "holdout": "preds/holdout_m6r25sgcbxrw_rmse309.34.parquet",
+   "holdout_sha": "b5d10907309baf86",
+   "local_rmse": 309.343,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25sgcbxrw"
+  },
+  {
+   "stem": "151_m6r25axsgw",
+   "manifest": "preds/manifest_m6r25axsgw.json",
+   "manifest_sha": "d7b13a220fe9a42c",
+   "pred_sha": "632f5ee0b62b84fb",
+   "holdout": "preds/holdout_m6r25axsgw_rmse317.82.parquet",
+   "holdout_sha": "67eb74460f26ceb1",
+   "local_rmse": 317.816,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25axsgw"
+  },
+  {
+   "stem": "121_m6r25sgcbgw",
+   "manifest": "preds/manifest_m6r25sgcbgw.json",
+   "manifest_sha": "31b05ca6a5c468b9",
+   "pred_sha": "e204641714a8ed04",
+   "holdout": "preds/holdout_m6r25sgcbgw_rmse310.77.parquet",
+   "holdout_sha": "562289841175591c",
+   "local_rmse": 310.775,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25sgcbgw"
+  }
+ ],
+ "compares": [
+  {
+   "a": "161_m6r25sgc75w",
+   "b": "141_m6r25axsgcxw",
+   "file": "notes/compare/holdout_m6r25sgc75w_rmse310.26__holdout_m6r25axsgcxw_rmse312.45.json",
+   "sha": "012cf4a17dbbc9cc",
+   "delta_b_minus_a": 2.2,
+   "sd_delta": 6.55,
+   "sd_boot": 0.46,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "161_m6r25sgc75w",
+   "b": "131_m6r25sgcbxrw",
+   "file": "notes/compare/holdout_m6r25sgc75w_rmse310.26__holdout_m6r25sgcbxrw_rmse309.34.json",
+   "sha": "2a5ff050b24e7dbe",
+   "delta_b_minus_a": -0.91,
+   "sd_delta": 6.54,
+   "sd_boot": 0.18,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "161_m6r25sgc75w",
+   "b": "151_m6r25axsgw",
+   "file": "notes/compare/holdout_m6r25sgc75w_rmse310.26__holdout_m6r25axsgw_rmse317.82.json",
+   "sha": "ed39b0a577afc9e1",
+   "delta_b_minus_a": 7.56,
+   "sd_delta": 6.62,
+   "sd_boot": 1.05,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "161_m6r25sgc75w",
+   "b": "121_m6r25sgcbgw",
+   "file": "notes/compare/holdout_m6r25sgc75w_rmse310.26__holdout_m6r25sgcbgw_rmse310.77.json",
+   "sha": "8e0d292b8e3502f8",
+   "delta_b_minus_a": 0.52,
+   "sd_delta": 6.54,
+   "sd_boot": 0.2,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "141_m6r25axsgcxw",
+   "b": "131_m6r25sgcbxrw",
+   "file": "notes/compare/holdout_m6r25axsgcxw_rmse312.45__holdout_m6r25sgcbxrw_rmse309.34.json",
+   "sha": "a05ad5fd0c9ed302",
+   "delta_b_minus_a": -3.11,
+   "sd_delta": 6.56,
+   "sd_boot": 0.53,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "141_m6r25axsgcxw",
+   "b": "151_m6r25axsgw",
+   "file": "notes/compare/holdout_m6r25axsgcxw_rmse312.45__holdout_m6r25axsgw_rmse317.82.json",
+   "sha": "63fdaeadb5f45dca",
+   "delta_b_minus_a": 5.36,
+   "sd_delta": 6.57,
+   "sd_boot": 0.67,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "141_m6r25axsgcxw",
+   "b": "121_m6r25sgcbgw",
+   "file": "notes/compare/holdout_m6r25axsgcxw_rmse312.45__holdout_m6r25sgcbgw_rmse310.77.json",
+   "sha": "a3a3dde3cd0ea3d7",
+   "delta_b_minus_a": -1.68,
+   "sd_delta": 6.55,
+   "sd_boot": 0.42,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "131_m6r25sgcbxrw",
+   "b": "151_m6r25axsgw",
+   "file": "notes/compare/holdout_m6r25sgcbxrw_rmse309.34__holdout_m6r25axsgw_rmse317.82.json",
+   "sha": "d22500e92a6fafee",
+   "delta_b_minus_a": 8.47,
+   "sd_delta": 6.63,
+   "sd_boot": 1.14,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "131_m6r25sgcbxrw",
+   "b": "121_m6r25sgcbgw",
+   "file": "notes/compare/holdout_m6r25sgcbxrw_rmse309.34__holdout_m6r25sgcbgw_rmse310.77.json",
+   "sha": "65eb4d187f41dcc1",
+   "delta_b_minus_a": 1.43,
+   "sd_delta": 6.54,
+   "sd_boot": 0.24,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "151_m6r25axsgw",
+   "b": "121_m6r25sgcbgw",
+   "file": "notes/compare/holdout_m6r25axsgw_rmse317.82__holdout_m6r25sgcbgw_rmse310.77.json",
+   "sha": "bdd1d1d7a6705000",
+   "delta_b_minus_a": -7.04,
+   "sd_delta": 6.61,
+   "sd_boot": 0.99,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  }
+ ],
+ "readiness": {
+  "file": "notes/readiness_records/003_register.json",
+  "all_pass": true,
+  "failed": [],
+  "checks": 20,
+  "sha": "cb0c0f43b7cf182c"
+ },
+ "rule": "이 묶음의 후보는 어느 것의 점수도 나오기 전에 이 파일로 묶였다. 이 파일은 고치거나 지우지 않는다(장부의 sha_batch 가 지킨다). 발사기는 적힌 순서대로 쏘고, 이 묶음이 끝나기 전에는 다른 묶음이나 후보를 쏘지 않는다. 점수를 보고 남은 후보를 바꾸거나 빼지 않는다. 묶음은 모든 후보가 쏘이면 끝난다.",
+ "note": "MISSION G2 묶음 003 구성 규칙(10-03 22:31)과 보충 둘을 따른다. 보충 10-04 01:10: RealMLP mu 만 쓴 혼합의 홀드아웃 317.31 이 바탕 m6r25 320.34 보다 10 넘게 나쁘지 않아(logs/m6r25rm_val_s0.log) m6r25sgcbxr 가 m6r25sgcbx 를 대신한다. 보충 10-04 08:59:50: 모든 후보는 LOBT 창 판(끝에 w, src/lobt_window.py). 갈래: ΔA = s(080) − s(110) = 312.2410 − 314.0094 = −1.7684, ΔX = s(100) − s(080) = 311.6682 − 312.2410 = −0.5728, 합 −2.3412 < 0 이라 ②(m6r25axsgcx, m6r25axsg, m6r25sgc75)에 ①(m6r25sgcbg, m6r25sgcbxr). 순서: tools/batch_order.py(차례 |Δ| 최소 2.199, 합 20.825, 같은 두 순열 중 로컬이 낮은 161 로 시작)."
+}

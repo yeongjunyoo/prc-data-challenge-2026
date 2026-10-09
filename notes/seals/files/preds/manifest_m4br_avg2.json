@@ -1,0 +1,77 @@
+{
+ "spec": "m4br_avg2",
+ "run_tag": "m4br24",
+ "column": "pred",
+ "seeds": [
+  0,
+  1
+ ],
+ "feats": "feats_v24",
+ "feats_sha": "2398ee9eb01792ca",
+ "config": {
+  "--tag": "m4br24",
+  "--feats": "feats_v24",
+  "--es": "internal",
+  "--refit": true,
+  "--wpow": "1",
+  "--leaves": "255",
+  "--mdl": "100",
+  "--no_direct": true,
+  "--full_mult": "1.0",
+  "--threads": "4"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4",
+   ".venv/Scripts/python.exe -u src/model3.py --setting val --seed 1 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -u src/model3.py --setting full --seed 0 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4",
+   ".venv/Scripts/python.exe -u src/model3.py --setting full --seed 1 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 0 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4",
+   ".venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 1 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m4br24 --feats feats_v24 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --full_mult 1.0 --threads 4",
+ "code_sha": {
+  "src/model3.py": "663a204f8249cf12",
+  "src/feats.py": "d1c68f27c2e4b823",
+  "src/te.py": "e327405d63aa2996",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/663a204f8249cf12_model3.py",
+  "src/feats.py": "preds/code/d1c68f27c2e4b823_feats.py",
+  "src/te.py": "preds/code/e327405d63aa2996_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m4br_avg2_rmse321.17.parquet",
+  "sha": "f1623540441698b7",
+  "rmse": 321.17,
+  "ruler_hash": "19afdfc7fedf88ea"
+ },
+ "test": {
+  "path": "preds/test_m4br_avg2.parquet",
+  "sha": "366eace1cc8f5c2e"
+ },
+ "forward": {
+  "path": "preds/fwd_m4br_avg2.parquet",
+  "sha": "632dddcbb3794b08",
+  "rmse_2025_07": 329.64
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m4br_avg2.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0
+ },
+ "iteration_rule": "internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0)",
+ "written_kst": "2026-10-02 21:56:49 KST"
+}

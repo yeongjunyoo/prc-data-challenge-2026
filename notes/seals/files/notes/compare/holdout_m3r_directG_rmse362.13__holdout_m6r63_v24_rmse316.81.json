@@ -1,0 +1,16 @@
+{
+ "a": "preds/holdout_m3r_directG_rmse362.13.parquet",
+ "b": "preds/holdout_m6r63_v24_rmse316.81.parquet",
+ "rows": 344419,
+ "days": 62,
+ "reps": 300,
+ "rmse_a": 362.13,
+ "rmse_b": 316.81,
+ "delta_b_minus_a": -45.32,
+ "sd_delta": 22.38,
+ "sd_boot": 21.54,
+ "sd_seed": 6.07,
+ "ka": 1,
+ "kb": 1,
+ "verdict": "b 가 낫다(분해능 밖)"
+}

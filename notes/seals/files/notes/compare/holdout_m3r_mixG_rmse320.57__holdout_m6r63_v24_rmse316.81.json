@@ -1,0 +1,16 @@
+{
+ "a": "preds/holdout_m3r_mixG_rmse320.57.parquet",
+ "b": "preds/holdout_m6r63_v24_rmse316.81.parquet",
+ "rows": 344419,
+ "days": 62,
+ "reps": 300,
+ "rmse_a": 320.57,
+ "rmse_b": 316.81,
+ "delta_b_minus_a": -3.77,
+ "sd_delta": 6.87,
+ "sd_boot": 3.23,
+ "sd_seed": 6.07,
+ "ka": 1,
+ "kb": 1,
+ "verdict": "분해능 안: 서버 쿼터로 판정"
+}

@@ -1,0 +1,187 @@
+{
+ "number": 4,
+ "registered_kst": "2026-10-05 09:44:27",
+ "candidates": [
+  {
+   "stem": "241_m6r26as8gc75w",
+   "manifest": "preds/manifest_m6r26as8gc75w.json",
+   "manifest_sha": "9fd3a38d96aa32b2",
+   "pred_sha": "8a0ecf08afa99f1e",
+   "holdout": "preds/holdout_m6r26as8gc75w_rmse310.73.parquet",
+   "holdout_sha": "8200e7c77721c53d",
+   "local_rmse": 310.732,
+   "seeds": 1,
+   "feats": "feats_v26",
+   "spec": "m6r26as8gc75w"
+  },
+  {
+   "stem": "261_m6r26as8gc50w",
+   "manifest": "preds/manifest_m6r26as8gc50w.json",
+   "manifest_sha": "af8b9a4d311b545e",
+   "pred_sha": "8983a90873225ff9",
+   "holdout": "preds/holdout_m6r26as8gc50w_rmse311.32.parquet",
+   "holdout_sha": "c20f4c4ed585f85a",
+   "local_rmse": 311.316,
+   "seeds": 1,
+   "feats": "feats_v26",
+   "spec": "m6r26as8gc50w"
+  },
+  {
+   "stem": "171_m6r25sgc100w",
+   "manifest": "preds/manifest_m6r25sgc100w.json",
+   "manifest_sha": "1517d09a4f663338",
+   "pred_sha": "c59006a3e57d613a",
+   "holdout": "preds/holdout_m6r25sgc100w_rmse310.82.parquet",
+   "holdout_sha": "aa450458f56bf2bd",
+   "local_rmse": 310.82,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25sgc100w"
+  },
+  {
+   "stem": "201_m6r25sgcbrw",
+   "manifest": "preds/manifest_m6r25sgcbrw.json",
+   "manifest_sha": "a5c18948cb6f9189",
+   "pred_sha": "ad6743d27af98a6a",
+   "holdout": "preds/holdout_m6r25sgcbrw_rmse308.93.parquet",
+   "holdout_sha": "bf67af78bed41292",
+   "local_rmse": 308.934,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25sgcbrw"
+  },
+  {
+   "stem": "211_m6r25sgcbxw",
+   "manifest": "preds/manifest_m6r25sgcbxw.json",
+   "manifest_sha": "db30431e04d1b945",
+   "pred_sha": "e32193d973a0d7bf",
+   "holdout": "preds/holdout_m6r25sgcbxw_rmse311.03.parquet",
+   "holdout_sha": "132a86363e6a805a",
+   "local_rmse": 311.029,
+   "seeds": 1,
+   "feats": "feats_v25",
+   "spec": "m6r25sgcbxw"
+  }
+ ],
+ "compares": [
+  {
+   "a": "241_m6r26as8gc75w",
+   "b": "261_m6r26as8gc50w",
+   "file": "notes/compare/holdout_m6r26as8gc75w_rmse310.73__holdout_m6r26as8gc50w_rmse311.32.json",
+   "sha": "4ab0752ca9430b95",
+   "delta_b_minus_a": 0.58,
+   "sd_delta": 6.53,
+   "sd_boot": 0.13,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "241_m6r26as8gc75w",
+   "b": "171_m6r25sgc100w",
+   "file": "notes/compare/holdout_m6r26as8gc75w_rmse310.73__holdout_m6r25sgc100w_rmse310.82.json",
+   "sha": "a7ee8f874dda170f",
+   "delta_b_minus_a": 0.09,
+   "sd_delta": 6.54,
+   "sd_boot": 0.37,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "241_m6r26as8gc75w",
+   "b": "201_m6r25sgcbrw",
+   "file": "notes/compare/holdout_m6r26as8gc75w_rmse310.73__holdout_m6r25sgcbrw_rmse308.93.json",
+   "sha": "e20ea236f5b4487a",
+   "delta_b_minus_a": -1.8,
+   "sd_delta": 6.55,
+   "sd_boot": 0.41,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "241_m6r26as8gc75w",
+   "b": "211_m6r25sgcbxw",
+   "file": "notes/compare/holdout_m6r26as8gc75w_rmse310.73__holdout_m6r25sgcbxw_rmse311.03.json",
+   "sha": "a65c5d0f6b0036e9",
+   "delta_b_minus_a": 0.3,
+   "sd_delta": 6.54,
+   "sd_boot": 0.33,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "261_m6r26as8gc50w",
+   "b": "171_m6r25sgc100w",
+   "file": "notes/compare/holdout_m6r26as8gc50w_rmse311.32__holdout_m6r25sgc100w_rmse310.82.json",
+   "sha": "9215cf036c6979ec",
+   "delta_b_minus_a": -0.5,
+   "sd_delta": 6.55,
+   "sd_boot": 0.42,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "261_m6r26as8gc50w",
+   "b": "201_m6r25sgcbrw",
+   "file": "notes/compare/holdout_m6r26as8gc50w_rmse311.32__holdout_m6r25sgcbrw_rmse308.93.json",
+   "sha": "ae12020788d40180",
+   "delta_b_minus_a": -2.38,
+   "sd_delta": 6.55,
+   "sd_boot": 0.48,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "261_m6r26as8gc50w",
+   "b": "211_m6r25sgcbxw",
+   "file": "notes/compare/holdout_m6r26as8gc50w_rmse311.32__holdout_m6r25sgcbxw_rmse311.03.json",
+   "sha": "be721e2a1b64653b",
+   "delta_b_minus_a": -0.29,
+   "sd_delta": 6.54,
+   "sd_boot": 0.33,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "171_m6r25sgc100w",
+   "b": "201_m6r25sgcbrw",
+   "file": "notes/compare/holdout_m6r25sgc100w_rmse310.82__holdout_m6r25sgcbrw_rmse308.93.json",
+   "sha": "aa07c0806f34cfbe",
+   "delta_b_minus_a": -1.89,
+   "sd_delta": 6.54,
+   "sd_boot": 0.32,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "171_m6r25sgc100w",
+   "b": "211_m6r25sgcbxw",
+   "file": "notes/compare/holdout_m6r25sgc100w_rmse310.82__holdout_m6r25sgcbxw_rmse311.03.json",
+   "sha": "90942cf95e4e2344",
+   "delta_b_minus_a": 0.21,
+   "sd_delta": 6.54,
+   "sd_boot": 0.26,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "201_m6r25sgcbrw",
+   "b": "211_m6r25sgcbxw",
+   "file": "notes/compare/holdout_m6r25sgcbrw_rmse308.93__holdout_m6r25sgcbxw_rmse311.03.json",
+   "sha": "713722ecac065c21",
+   "delta_b_minus_a": 2.09,
+   "sd_delta": 6.54,
+   "sd_boot": 0.35,
+   "sd_seed": 6.53,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  }
+ ],
+ "readiness": {
+  "file": "notes/readiness_records/004_register.json",
+  "all_pass": true,
+  "failed": [],
+  "checks": 20,
+  "sha": "89b2d398fc23e440"
+ },
+ "rule": "이 묶음의 후보는 어느 것의 점수도 나오기 전에 이 파일로 묶였다. 이 파일은 고치거나 지우지 않는다(장부의 sha_batch 가 지킨다). 발사기는 적힌 순서대로 쏘고, 이 묶음이 끝나기 전에는 다른 묶음이나 후보를 쏘지 않는다. 점수를 보고 남은 후보를 바꾸거나 빼지 않는다. 묶음은 모든 후보가 쏘이면 끝난다.",
+ "note": "묶음 004(10-05 09:4x 등록, 맥락 0 독립 판정 「다른 길」에 따름). 규칙(10-04 06:46)의 다섯 가운데 181_m6r25axsgcxxrw(3,600초 초과 예측 비중 비 시험 0.266% / 자 0.161%)와 191_m6r25axsgcxxw(0.260% / 0.158%, 비 1.64321)가 준비 점검 띠 0.4455~1.5545 밖이다(notes/composition.json 09:21:11). 231_m6r26axs8gcw 도 1.61122 로 걸린다. 이 값들은 10-04 09:08 의 예측 파일로 미리 잴 수 있었지만 처음 잰 때는 v16~v18 점수 뒤였다. 해석 둘: 준비 점검 실패를 규칙의 「빌드가 실패한 후보」로 읽었고, 소진된 묶음 003 풀을 지금 큐로 넓혀 같은 축(표류에 강한 쪽)의 통과 후보 241_m6r26as8gc75w(비 1.54271), 261_m6r26as8gc50w(1.49972)로 채웠다(그 축의 통과 후보는 이 둘뿐). 272 는 묶음 005 자리라 끌어오지 않았다. 비용 셋: 차례 Δ 가 모두 분해능 안(|Δ| [0.584, 0.496, 1.886, 2.095]), 241 → 261 은 같은 학습 성분이라 닫힘 ② 에서 빠진다, 272 는 하루나 이틀 늦게 나간다. 순서는 tools/batch_order.py 규칙 그대로 241 → 261 → 171 → 201 → 211. 묶음 005 구성 규칙 2차 개정은 이 등록 전에 MISSION G2 에 적었다(09:43)."
+}

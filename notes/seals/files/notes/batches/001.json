@@ -1,0 +1,371 @@
+{
+ "number": 1,
+ "registered_kst": "2026-10-03 02:20:21",
+ "candidates": [
+  {
+   "stem": "030_m6r_avg2",
+   "manifest": "preds/manifest_m6r_avg2.json",
+   "manifest_sha": "b87327f6d33d572c",
+   "pred_sha": "451c370a1957e1e7",
+   "holdout": "preds/holdout_m6r_avg2_rmse317.74.parquet",
+   "holdout_sha": "8644d863ee04a2de",
+   "local_rmse": 317.744,
+   "seeds": 2,
+   "feats": "feats_v24",
+   "spec": "m6r_avg2"
+  },
+  {
+   "stem": "020_m3r_directG",
+   "manifest": "preds/manifest_m3r_directG.json",
+   "manifest_sha": "75f19494d6482019",
+   "pred_sha": "3064e349ca6ca57b",
+   "holdout": "preds/holdout_m3r_directG_rmse362.13.parquet",
+   "holdout_sha": "3c4352a4a9ff7e54",
+   "local_rmse": 362.126,
+   "seeds": 1,
+   "feats": "feats_v24",
+   "spec": "m3r_directG"
+  },
+  {
+   "stem": "040_m3r_mixG",
+   "manifest": "preds/manifest_m3r_mixG.json",
+   "manifest_sha": "d46603dae5ee0ffc",
+   "pred_sha": "354b05c214c7807c",
+   "holdout": "preds/holdout_m3r_mixG_rmse320.57.parquet",
+   "holdout_sha": "e4ff45c8a34640fe",
+   "local_rmse": 320.572,
+   "seeds": 1,
+   "feats": "feats_v24",
+   "spec": "m3r_mixG"
+  },
+  {
+   "stem": "050_m6r63_24",
+   "manifest": "preds/manifest_m6r63_v24.json",
+   "manifest_sha": "99c7b8be9e063855",
+   "pred_sha": "619fced0121a5c8a",
+   "holdout": "preds/holdout_m6r63_v24_rmse316.81.parquet",
+   "holdout_sha": "75268c616155d4f2",
+   "local_rmse": 316.806,
+   "seeds": 1,
+   "feats": "feats_v24",
+   "spec": "m6r63_v24"
+  },
+  {
+   "stem": "010_m4br_avg2",
+   "manifest": "preds/manifest_m4br_avg2.json",
+   "manifest_sha": "94be00389e9fd325",
+   "pred_sha": "366eace1cc8f5c2e",
+   "holdout": "preds/holdout_m4br_avg2_rmse321.17.parquet",
+   "holdout_sha": "f1623540441698b7",
+   "local_rmse": 321.167,
+   "seeds": 2,
+   "feats": "feats_v24",
+   "spec": "m4br_avg2"
+  }
+ ],
+ "compares": [
+  {
+   "a": "030_m6r_avg2",
+   "b": "020_m3r_directG",
+   "file": "notes/compare/holdout_m6r_avg2_rmse317.74__holdout_m3r_directG_rmse362.13.json",
+   "sha": "66cc0a797a75f2f3",
+   "delta_b_minus_a": 44.38,
+   "sd_delta": 20.27,
+   "sd_boot": 19.57,
+   "sd_seed": 5.25,
+   "verdict": "a 가 낫다(분해능 밖)"
+  },
+  {
+   "a": "030_m6r_avg2",
+   "b": "040_m3r_mixG",
+   "file": "notes/compare/holdout_m6r_avg2_rmse317.74__holdout_m3r_mixG_rmse320.57.json",
+   "sha": "efd25d6651f76bd2",
+   "delta_b_minus_a": 2.83,
+   "sd_delta": 5.38,
+   "sd_boot": 1.16,
+   "sd_seed": 5.25,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "030_m6r_avg2",
+   "b": "050_m6r63_24",
+   "file": "notes/compare/holdout_m6r_avg2_rmse317.74__holdout_m6r63_v24_rmse316.81.json",
+   "sha": "3507567881896033",
+   "delta_b_minus_a": -0.94,
+   "sd_delta": 5.66,
+   "sd_boot": 2.1,
+   "sd_seed": 5.25,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "030_m6r_avg2",
+   "b": "010_m4br_avg2",
+   "file": "notes/compare/holdout_m6r_avg2_rmse317.74__holdout_m4br_avg2_rmse321.17.json",
+   "sha": "bcccfaa42bcb18c8",
+   "delta_b_minus_a": 3.42,
+   "sd_delta": 5.41,
+   "sd_boot": 3.29,
+   "sd_seed": 4.29,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "020_m3r_directG",
+   "b": "040_m3r_mixG",
+   "file": "notes/compare/holdout_m3r_directG_rmse362.13__holdout_m3r_mixG_rmse320.57.json",
+   "sha": "b58dcea79bf8614e",
+   "delta_b_minus_a": -41.55,
+   "sd_delta": 19.49,
+   "sd_boot": 18.52,
+   "sd_seed": 6.07,
+   "verdict": "b 가 낫다(분해능 밖)"
+  },
+  {
+   "a": "020_m3r_directG",
+   "b": "050_m6r63_24",
+   "file": "notes/compare/holdout_m3r_directG_rmse362.13__holdout_m6r63_v24_rmse316.81.json",
+   "sha": "5d53dff3d4a6d592",
+   "delta_b_minus_a": -45.32,
+   "sd_delta": 22.38,
+   "sd_boot": 21.54,
+   "sd_seed": 6.07,
+   "verdict": "b 가 낫다(분해능 밖)"
+  },
+  {
+   "a": "020_m3r_directG",
+   "b": "010_m4br_avg2",
+   "file": "notes/compare/holdout_m3r_directG_rmse362.13__holdout_m4br_avg2_rmse321.17.json",
+   "sha": "9d232d443d7e2410",
+   "delta_b_minus_a": -40.96,
+   "sd_delta": 17.37,
+   "sd_boot": 16.56,
+   "sd_seed": 5.25,
+   "verdict": "b 가 낫다(분해능 밖)"
+  },
+  {
+   "a": "040_m3r_mixG",
+   "b": "050_m6r63_24",
+   "file": "notes/compare/holdout_m3r_mixG_rmse320.57__holdout_m6r63_v24_rmse316.81.json",
+   "sha": "1b1cbfeb6fa7781e",
+   "delta_b_minus_a": -3.77,
+   "sd_delta": 6.87,
+   "sd_boot": 3.23,
+   "sd_seed": 6.07,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "040_m3r_mixG",
+   "b": "010_m4br_avg2",
+   "file": "notes/compare/holdout_m3r_mixG_rmse320.57__holdout_m4br_avg2_rmse321.17.json",
+   "sha": "50d2716abcef8359",
+   "delta_b_minus_a": 0.59,
+   "sd_delta": 5.69,
+   "sd_boot": 2.19,
+   "sd_seed": 5.25,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  },
+  {
+   "a": "050_m6r63_24",
+   "b": "010_m4br_avg2",
+   "file": "notes/compare/holdout_m6r63_v24_rmse316.81__holdout_m4br_avg2_rmse321.17.json",
+   "sha": "8510763be3eab0c3",
+   "delta_b_minus_a": 4.36,
+   "sd_delta": 7.53,
+   "sd_boot": 5.39,
+   "sd_seed": 5.25,
+   "verdict": "분해능 안: 서버 쿼터로 판정"
+  }
+ ],
+ "readiness": {
+  "file": "notes/readiness_records/001_register.json",
+  "all_pass": false,
+  "failed": [
+   "030_m6r_avg2: 피처 feats_v24 채움 비율(칸 101개, 시험 행 344841, 폭 밖이나 NaN 2개)",
+   "020_m3r_directG: 피처 feats_v24 채움 비율(칸 101개, 시험 행 344841, 폭 밖이나 NaN 2개)",
+   "040_m3r_mixG: 피처 feats_v24 채움 비율(칸 101개, 시험 행 344841, 폭 밖이나 NaN 2개)",
+   "050_m6r63_24: 피처 feats_v24 채움 비율(칸 101개, 시험 행 344841, 폭 밖이나 NaN 2개)",
+   "010_m4br_avg2: 피처 feats_v24 채움 비율(칸 101개, 시험 행 344841, 폭 밖이나 NaN 2개)"
+  ],
+  "checks": 20,
+  "sha": "d947bee9ba81f6fb"
+ },
+ "rule": "이 묶음의 후보는 어느 것의 점수도 나오기 전에 이 파일로 묶였다. 이 파일은 고치거나 지우지 않는다(장부의 sha_batch 가 지킨다). 발사기는 적힌 순서대로 쏘고, 이 묶음이 끝나기 전에는 다른 묶음이나 후보를 쏘지 않는다. 점수를 보고 남은 후보를 바꾸거나 빼지 않는다. 묶음은 모든 후보가 쏘이면 끝난다. 이 묶음은 준비 점검의 한정 예외(exception)를 안고 등록됐다. 예외는 이 묶음에만 쓰이고, 쏘기 직전마다 같은 예외 검사가 범위를 다시 재며 범위 밖이면 멈춘다.",
+ "exception": {
+  "file": "notes/exceptions/001.json",
+  "sha": "f775970d3fc85720",
+  "number": 1,
+  "feats": "feats_v24",
+  "feats_sha": "2398ee9eb01792ca",
+  "columns": [
+   "prefix",
+   "fl_len"
+  ],
+  "caps": {
+   "ruler": {
+    "nan_max": 25,
+    "rows": 344419
+   },
+   "test": {
+    "nan_max": 58,
+    "rows": 344841
+   }
+  },
+  "rows_sha": {
+   "prefix": {
+    "ruler": "731913499b3e3e35",
+    "test": "de6078362c8a4a18"
+   },
+   "fl_len": {
+    "ruler": "731913499b3e3e35",
+    "test": "de6078362c8a4a18"
+   }
+  },
+  "cause": {
+   "airport": "LIRF",
+   "blank_column": "FLIGHT_mvt"
+  },
+  "thresholds": {
+   "rmse_change_max": 0.1,
+   "pair_delta_change_max": 0.01
+  },
+  "candidates": [
+   "030_m6r_avg2",
+   "020_m3r_directG",
+   "040_m3r_mixG",
+   "050_m6r63_24",
+   "010_m4br_avg2"
+  ],
+  "ruling_sha": "8fef0ce19a4b8fbe",
+  "scope": "이 예외는 이 기록을 처음 쓰는 묶음 하나에만 쓰인다. 면제는 피처 판 feats_v24 의 칸 prefix, fl_len 채움 비율 판정뿐이고, 다른 준비 점검, 다른 칸, 다른 피처 판, 다른 후보, 다른 묶음에는 쓰이지 않는다. 로컬 선택과 G2 닫힘의 승인은 별도다.",
+  "checked_at_registration": {
+   "nan_counts": {
+    "prefix": {
+     "ruler": 25,
+     "test": 58
+    },
+    "fl_len": {
+     "ruler": 25,
+     "test": 58
+    }
+   },
+   "sensitivity": {
+    "weight_nan_rows": 2.3172,
+    "weight_other_rows": 0.999904,
+    "candidates": {
+     "030_m6r_avg2": {
+      "rmse": 317.7437,
+      "rmse_reweighted": 317.8331,
+      "change": 0.0895,
+      "nan_rows": 25,
+      "rmse_on_nan_rows": 834.023,
+      "max_abs_err_on_nan_rows": 2440.071
+     },
+     "020_m3r_directG": {
+      "rmse": 362.126,
+      "rmse_reweighted": 362.2145,
+      "change": 0.0885,
+      "nan_rows": 25,
+      "rmse_on_nan_rows": 895.423,
+      "max_abs_err_on_nan_rows": 2738.156
+     },
+     "040_m3r_mixG": {
+      "rmse": 320.5725,
+      "rmse_reweighted": 320.6637,
+      "change": 0.0913,
+      "nan_rows": 25,
+      "rmse_on_nan_rows": 845.447,
+      "max_abs_err_on_nan_rows": 2470.012
+     },
+     "050_m6r63_24": {
+      "rmse": 316.8062,
+      "rmse_reweighted": 316.8997,
+      "change": 0.0935,
+      "nan_rows": 25,
+      "rmse_on_nan_rows": 848.704,
+      "max_abs_err_on_nan_rows": 2320.91
+     },
+     "010_m4br_avg2": {
+      "rmse": 321.167,
+      "rmse_reweighted": 321.254,
+      "change": 0.087,
+      "nan_rows": 25,
+      "rmse_on_nan_rows": 829.314,
+      "max_abs_err_on_nan_rows": 2443.195
+     }
+    },
+    "pairs": [
+     {
+      "pair": "020_m3r_directG-030_m6r_avg2",
+      "delta": 44.3823,
+      "delta_reweighted": 44.3814,
+      "change": 0.0009,
+      "same_sign": true
+     },
+     {
+      "pair": "040_m3r_mixG-030_m6r_avg2",
+      "delta": 2.8288,
+      "delta_reweighted": 2.8306,
+      "change": 0.0018,
+      "same_sign": true
+     },
+     {
+      "pair": "050_m6r63_24-030_m6r_avg2",
+      "delta": -0.9375,
+      "delta_reweighted": -0.9334,
+      "change": 0.0041,
+      "same_sign": true
+     },
+     {
+      "pair": "010_m4br_avg2-030_m6r_avg2",
+      "delta": 3.4233,
+      "delta_reweighted": 3.4209,
+      "change": 0.0024,
+      "same_sign": true
+     },
+     {
+      "pair": "040_m3r_mixG-020_m3r_directG",
+      "delta": -41.5535,
+      "delta_reweighted": -41.5508,
+      "change": 0.0027,
+      "same_sign": true
+     },
+     {
+      "pair": "050_m6r63_24-020_m3r_directG",
+      "delta": -45.3198,
+      "delta_reweighted": -45.3148,
+      "change": 0.005,
+      "same_sign": true
+     },
+     {
+      "pair": "010_m4br_avg2-020_m3r_directG",
+      "delta": -40.959,
+      "delta_reweighted": -40.9605,
+      "change": 0.0015,
+      "same_sign": true
+     },
+     {
+      "pair": "050_m6r63_24-040_m3r_mixG",
+      "delta": -3.7663,
+      "delta_reweighted": -3.764,
+      "change": 0.0023,
+      "same_sign": true
+     },
+     {
+      "pair": "010_m4br_avg2-040_m3r_mixG",
+      "delta": 0.5945,
+      "delta_reweighted": 0.5902,
+      "change": 0.0042,
+      "same_sign": true
+     },
+     {
+      "pair": "010_m4br_avg2-050_m6r63_24",
+      "delta": 4.3608,
+      "delta_reweighted": 4.3543,
+      "change": 0.0065,
+      "same_sign": true
+     }
+    ]
+   }
+  }
+ },
+ "note": "쏘는 순서는 tools/batch_order.py 규칙(차례 |Δ| 최소가 가장 큰 순열, 같으면 합이 큰 순열, 같으면 로컬 RMSE 가 낮은 후보로 시작)으로 어느 점수도 나오기 전에 정했다. 로컬 316.806~362.126, 차례 |Δ| 44.382, 41.554, 3.766, 4.361. 분해능 안의 작은 Δ 끼리만 차례를 채우지 않으려는 것이고 닫힘 ② 의 문턱(80%)과 판정 수는 바꾸지 않는다. 다섯 중 넷이 316.8~321.2 에 모여 있어 어느 순서도 차례 둘은 분해능 안이다. m3r_mixG 와 m3r_directG 는 같은 학습 실행의 다른 출력 칸이다."
+}

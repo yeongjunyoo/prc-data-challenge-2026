@@ -1,0 +1,72 @@
+{
+ "spec": "m6r25sgcb",
+ "run_tag": "m6r25sgcb",
+ "column": "pred",
+ "seeds": [
+  0
+ ],
+ "feats": "feats_v25",
+ "feats_sha": "fdcb929cae04385a",
+ "config": {
+  "--tag": "m6r25sgcb",
+  "--base": "m6r25sg",
+  "--cat": "m6r25cb"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb",
+ "code_sha": {
+  "src/model3.py": "9a8f49c6c12e51c4",
+  "src/feats.py": "112ed09d4d1d52bb",
+  "src/te.py": "0a78bd1cf5a5771a",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a",
+  "src/cat_mu.py": "ce8e9e6a311e6946",
+  "src/blend_mu.py": "26433039322dbbe5",
+  "src/g_band.py": "46969e68a18dd8d0"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/9a8f49c6c12e51c4_model3.py",
+  "src/feats.py": "preds/code/112ed09d4d1d52bb_feats.py",
+  "src/te.py": "preds/code/0a78bd1cf5a5771a_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py",
+  "src/cat_mu.py": "preds/code/ce8e9e6a311e6946_cat_mu.py",
+  "src/blend_mu.py": "preds/code/26433039322dbbe5_blend_mu.py",
+  "src/g_band.py": "preds/code/46969e68a18dd8d0_g_band.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m6r25sgcb_rmse313.18.parquet",
+  "sha": "5267472126f84600",
+  "rmse": 313.18,
+  "ruler_hash": "19afdfc7fedf88ea"
+ },
+ "test": {
+  "path": "preds/test_m6r25sgcb.parquet",
+  "sha": "d62594a1cf242bee"
+ },
+ "forward": {
+  "path": "preds/fwd_m6r25sgcb.parquet",
+  "sha": "2182650830c634ab",
+  "rmse_2025_07": 318.7
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m6r25sgcb.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0
+ },
+ "iteration_rule": "internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0)",
+ "written_kst": "2026-10-03 14:44:00 KST"
+}
