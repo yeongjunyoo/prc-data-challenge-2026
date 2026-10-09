@@ -1,0 +1,38 @@
+{
+ "label": "B",
+ "names": {
+  "corr": "2104_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3",
+  "am": "2105_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3am",
+  "fh": "2106_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfh",
+  "gkc": "2107_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkc",
+  "gkcx": "2108_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcx",
+  "xncr": "2109_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncr",
+  "db": "2110_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdb",
+  "aw": "2111_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbaw",
+  "gp": "2112_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgp",
+  "gl": "2113_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpgl",
+  "gja": "2114_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja"
+ },
+ "checks": {
+  "xgb_weight": {
+   "weights": [
+    0.1252,
+    0.4951,
+    0.0,
+    0.3798
+   ],
+   "zeros_vs_ones_identical": true
+  },
+  "fit_cache_s0": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s1": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s2": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ]
+ },
+ "done": "gja",
+ "updated": "10-09 14:29:28"
+}

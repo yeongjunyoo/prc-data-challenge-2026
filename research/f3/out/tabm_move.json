@@ -1,0 +1,69 @@
+{
+ "rows": 670790,
+ "mu_tabm": {
+  "all": {
+   "mse": 304.923,
+   "mean": -0.189,
+   "max_abs": 977.8
+  },
+  "month_01": {
+   "rows": 152719,
+   "mse": 548.12,
+   "mean": -0.583
+  },
+  "month_02": {
+   "rows": 144158,
+   "mse": 219.155,
+   "mean": -0.641
+  },
+  "month_06": {
+   "rows": 181791,
+   "mse": 230.415,
+   "mean": 0.067
+  },
+  "month_07": {
+   "rows": 192122,
+   "mse": 246.462,
+   "mean": 0.219
+  },
+  "minute_airports": {
+   "mse": 358.795
+  },
+  "second_airports": {
+   "mse": 247.0
+  }
+ },
+ "pred": {
+  "all": {
+   "mse": 65.61,
+   "mean": -0.067,
+   "max_abs": 440.8
+  },
+  "month_01": {
+   "rows": 152719,
+   "mse": 127.824,
+   "mean": -0.246
+  },
+  "month_02": {
+   "rows": 144158,
+   "mse": 46.226,
+   "mean": -0.274
+  },
+  "month_06": {
+   "rows": 181791,
+   "mse": 47.351,
+   "mean": 0.045
+  },
+  "month_07": {
+   "rows": 192122,
+   "mse": 47.976,
+   "mean": 0.126
+  },
+  "minute_airports": {
+   "mse": 71.666
+  },
+  "second_airports": {
+   "mse": 59.097
+  }
+ }
+}

@@ -1,0 +1,25 @@
+# Python packages imported by the code in this repository, with the versions installed on the PC that produced the predictions
+# (python 3.11.15; read from the package metadata on 2026-10-08). The Mac used the same versions for catboost, numpy, pandas, pyarrow, pytabkit, torch.
+# Some research scripts import optional plotting packages; those are listed at the end.
+boto3==1.43.107
+botocore==1.43.107
+catboost==1.2.10
+lightgbm==4.7.0
+numpy==2.4.6
+orjson==3.12.0
+pandas==3.0.6
+psutil==7.2.2
+pyarrow==25.0.1
+pytabkit==1.7.3
+rtdl_num_embeddings==0.0.12
+scipy==1.17.1
+scikit-learn==1.9.1
+tabm==0.0.3
+torch==2.11.0+cu128
+xgboost==3.2.0
+xrfm==0.4.5
+# optional (plots, timestamp proofs of the retired measurement batch):
+opentimestamps==0.4.5
+# ADS-B extraction (research/adsb/adsb_day.py) ran in a separate environment (Python 3.12.13) with: isal 1.8.0, orjson 3.12.0, pandas 3.0.6, numpy 2.5.3, pyarrow 25.0.1
+isal==1.8.0
+# torch is installed from the CUDA 12.8 wheel index on the PC (2.11.0+cu128) and from the default macOS wheel on the Mac (MPS)

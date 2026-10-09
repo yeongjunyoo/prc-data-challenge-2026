@@ -1,0 +1,5 @@
+# 네 학습기를 고르게: m6r25axsgcxx(LightGBM, CatBoost, XGBoost 각 1/3)의 mu 에 표류에 강한 RealMLP(m6r25axrm)를 넷째 몫으로(W 0.25, 점수 전에 고정).
+# v10 쪽의 m6r25sgcbxr 과 같은 섞기를 표류에 강한 계열로 옮긴 판(10-04 작업 세션).
+logs/m6r25axsgcxxr_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25axsgcxxr --base m6r25axsgcxx --cat m6r25axrm --col mu_rmlp --w 0.25
+logs/m6r25axsgcxxr_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25axsgcxxr --base m6r25axsgcxx --cat m6r25axrm --col mu_rmlp --w 0.25
+logs/m6r25axsgcxxr_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25axsgcxxr --base m6r25axsgcxx --cat m6r25axrm --col mu_rmlp --w 0.25

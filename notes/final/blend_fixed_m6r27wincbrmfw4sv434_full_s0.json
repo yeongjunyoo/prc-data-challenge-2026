@@ -1,0 +1,33 @@
+{
+ "tag": "m6r27wincbrmfw4sv434",
+ "setting": "full",
+ "seed": 0,
+ "base": "m6r27skwingx4",
+ "ref_base": "m6r25sg",
+ "ref_tag": "m6r25sgoof4",
+ "learners": [
+  "lgbm",
+  "mu_cat",
+  "mu_xgb",
+  "mu_rmlp"
+ ],
+ "leg_tags": [
+  "m6r27skwingx4",
+  "m6r27cbwinx3",
+  "m6r25xg",
+  "m6r27rmwinx4"
+ ],
+ "ref_leg_tags": [
+  "m6r25sg",
+  "m6r25cb",
+  "m6r25xg",
+  "m6r25rm"
+ ],
+ "weights": [
+  0.1252,
+  0.4951,
+  0.0,
+  0.3798
+ ],
+ "fit_rows": 344022
+}

@@ -1,0 +1,286 @@
+{
+ "rows": 344419,
+ "mse_orig": 102425.20193448705,
+ "copies": {
+  "1": {
+   "pred_move_rms": 15.448396294341514,
+   "pred_move_max": 749.1089724220947,
+   "rows_moved_gt1s": 284821,
+   "p_art_move_max": 0.5461676451123582,
+   "a|all": {
+    "dmse": 161.029,
+    "dmse_inputs_only": 161.029,
+    "p_below0": 0.0005,
+    "boot_sd": 86.321
+   },
+   "a|body_nonG": {
+    "dmse": 44.814,
+    "dmse_inputs_only": 44.814,
+    "p_below0": 0.01,
+    "boot_sd": 19.223
+   },
+   "a|G": {
+    "dmse": -1.013,
+    "dmse_inputs_only": -1.013,
+    "p_below0": 0.5435,
+    "boot_sd": 11.332
+   },
+   "a|y_gt3600": {
+    "dmse": 117.227,
+    "dmse_inputs_only": 117.227,
+    "p_below0": 0.0195,
+    "boot_sd": 90.337
+   },
+   "b_label_change_sd": 9.85412007785784,
+   "b_mse_orig_pred": 77.2065834524692,
+   "b|all": {
+    "dmse": 129.611,
+    "dmse_inputs_only": 52.404,
+    "p_below0": 0.012,
+    "boot_sd": 87.267
+   },
+   "b|body_nonG": {
+    "dmse": 16.965,
+    "dmse_inputs_only": -63.459,
+    "p_below0": 0.1455,
+    "boot_sd": 16.497
+   },
+   "b|G": {
+    "dmse": -5.246,
+    "dmse_inputs_only": -1.321,
+    "p_below0": 0.7045,
+    "boot_sd": 10.806
+   },
+   "b|y_gt3600": {
+    "dmse": 117.892,
+    "dmse_inputs_only": 117.184,
+    "p_below0": 0.023,
+    "boot_sd": 91.035
+   }
+  },
+  "2": {
+   "pred_move_rms": 15.442381597939894,
+   "pred_move_max": 556.6709317547031,
+   "rows_moved_gt1s": 284790,
+   "p_art_move_max": 0.607172330747593,
+   "a|all": {
+    "dmse": 147.847,
+    "dmse_inputs_only": 147.847,
+    "p_below0": 0.001,
+    "boot_sd": 59.373
+   },
+   "a|body_nonG": {
+    "dmse": 55.632,
+    "dmse_inputs_only": 55.632,
+    "p_below0": 0.0,
+    "boot_sd": 16.166
+   },
+   "a|G": {
+    "dmse": -2.997,
+    "dmse_inputs_only": -2.997,
+    "p_below0": 0.582,
+    "boot_sd": 13.299
+   },
+   "a|y_gt3600": {
+    "dmse": 95.213,
+    "dmse_inputs_only": 95.213,
+    "p_below0": 0.0125,
+    "boot_sd": 57.603
+   },
+   "b_label_change_sd": 9.833485450715228,
+   "b_mse_orig_pred": 81.68323590459477,
+   "b|all": {
+    "dmse": 120.379,
+    "dmse_inputs_only": 38.696,
+    "p_below0": 0.0045,
+    "boot_sd": 58.319
+   },
+   "b|body_nonG": {
+    "dmse": 22.91,
+    "dmse_inputs_only": -52.992,
+    "p_below0": 0.0695,
+    "boot_sd": 15.23
+   },
+   "b|G": {
+    "dmse": -1.879,
+    "dmse_inputs_only": -3.355,
+    "p_below0": 0.5585,
+    "boot_sd": 13.108
+   },
+   "b|y_gt3600": {
+    "dmse": 99.348,
+    "dmse_inputs_only": 95.042,
+    "p_below0": 0.007,
+    "boot_sd": 56.605
+   }
+  },
+  "3": {
+   "pred_move_rms": 15.497118818670677,
+   "pred_move_max": 495.14936383620034,
+   "rows_moved_gt1s": 285058,
+   "p_art_move_max": 0.2774009869507815,
+   "a|all": {
+    "dmse": 106.33,
+    "dmse_inputs_only": 106.33,
+    "p_below0": 0.0,
+    "boot_sd": 26.175
+   },
+   "a|body_nonG": {
+    "dmse": 44.48,
+    "dmse_inputs_only": 44.48,
+    "p_below0": 0.0025,
+    "boot_sd": 16.88
+   },
+   "a|G": {
+    "dmse": 14.61,
+    "dmse_inputs_only": 14.61,
+    "p_below0": 0.1355,
+    "boot_sd": 12.911
+   },
+   "a|y_gt3600": {
+    "dmse": 47.239,
+    "dmse_inputs_only": 47.239,
+    "p_below0": 0.016,
+    "boot_sd": 24.683
+   },
+   "b_label_change_sd": 9.846122343257031,
+   "b_mse_orig_pred": 98.0371527231473,
+   "b|all": {
+    "dmse": 95.286,
+    "dmse_inputs_only": -2.751,
+    "p_below0": 0.0,
+    "boot_sd": 28.285
+   },
+   "b|body_nonG": {
+    "dmse": 30.434,
+    "dmse_inputs_only": -64.086,
+    "p_below0": 0.0355,
+    "boot_sd": 17.215
+   },
+   "b|G": {
+    "dmse": 13.125,
+    "dmse_inputs_only": 14.248,
+    "p_below0": 0.1475,
+    "boot_sd": 12.027
+   },
+   "b|y_gt3600": {
+    "dmse": 51.727,
+    "dmse_inputs_only": 47.087,
+    "p_below0": 0.0115,
+    "boot_sd": 26.565
+   }
+  },
+  "4": {
+   "pred_move_rms": 5.295499174868305,
+   "pred_move_max": 132.7842810811544,
+   "rows_moved_gt1s": 152844,
+   "p_art_move_max": 0.21089334866667453,
+   "a|all": {
+    "dmse": 6.424,
+    "dmse_inputs_only": 6.424,
+    "p_below0": 0.3225,
+    "boot_sd": 14.047
+   },
+   "a|body_nonG": {
+    "dmse": 0.002,
+    "dmse_inputs_only": 0.002,
+    "p_below0": 0.5125,
+    "boot_sd": 6.806
+   },
+   "a|G": {
+    "dmse": -3.455,
+    "dmse_inputs_only": -3.455,
+    "p_below0": 0.8425,
+    "boot_sd": 3.561
+   },
+   "a|y_gt3600": {
+    "dmse": 9.877,
+    "dmse_inputs_only": 9.877,
+    "p_below0": 0.1555,
+    "boot_sd": 9.823
+   },
+   "b_label_change_sd": 9.85412007785784,
+   "b_mse_orig_pred": 77.2065834524692,
+   "b|all": {
+    "dmse": 74.398,
+    "dmse_inputs_only": -2.809,
+    "p_below0": 0.0,
+    "boot_sd": 15.421
+   },
+   "b|body_nonG": {
+    "dmse": 71.021,
+    "dmse_inputs_only": -9.403,
+    "p_below0": 0.0,
+    "boot_sd": 10.215
+   },
+   "b|G": {
+    "dmse": -7.443,
+    "dmse_inputs_only": -3.518,
+    "p_below0": 0.9655,
+    "boot_sd": 4.497
+   },
+   "b|y_gt3600": {
+    "dmse": 10.82,
+    "dmse_inputs_only": 10.112,
+    "p_below0": 0.1,
+    "boot_sd": 8.569
+   }
+  },
+  "5": {
+   "pred_move_rms": 0.7081276689147634,
+   "pred_move_max": 86.41073242434845,
+   "rows_moved_gt1s": 3105,
+   "p_art_move_max": 0.06418158131943441,
+   "a|all": {
+    "dmse": 1.181,
+    "dmse_inputs_only": 1.181,
+    "p_below0": 0.0325,
+    "boot_sd": 0.667
+   },
+   "a|body_nonG": {
+    "dmse": 0.976,
+    "dmse_inputs_only": 0.976,
+    "p_below0": 0.057,
+    "boot_sd": 0.641
+   },
+   "a|G": {
+    "dmse": 0.0,
+    "dmse_inputs_only": 0.0,
+    "p_below0": 0.0,
+    "boot_sd": 0.0
+   },
+   "a|y_gt3600": {
+    "dmse": 0.205,
+    "dmse_inputs_only": 0.205,
+    "p_below0": 0.0,
+    "boot_sd": 0.133
+   },
+   "b_label_change_sd": 9.85412007785784,
+   "b_mse_orig_pred": 77.2065834524692,
+   "b|all": {
+    "dmse": 77.92,
+    "dmse_inputs_only": 0.713,
+    "p_below0": 0.0,
+    "boot_sd": 10.477
+   },
+   "b|body_nonG": {
+    "dmse": 80.935,
+    "dmse_inputs_only": 0.511,
+    "p_below0": 0.0,
+    "boot_sd": 8.311
+   },
+   "b|G": {
+    "dmse": -3.925,
+    "dmse_inputs_only": 0.0,
+    "p_below0": 0.89,
+    "boot_sd": 3.334
+   },
+   "b|y_gt3600": {
+    "dmse": 0.91,
+    "dmse_inputs_only": 0.202,
+    "p_below0": 0.4135,
+    "boot_sd": 4.778
+   }
+  }
+ }
+}

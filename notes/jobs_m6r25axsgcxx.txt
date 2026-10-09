@@ -1,0 +1,5 @@
+# m6r25axsgcx(LightGBM 과 CatBoost 반반)의 mu 에 표류에 강한 XGBoost(m6r25axxg)를 셋째 몫으로(W 0.333333, 점수 전에 고정).
+# v10 쪽의 m6r25sgcbx 와 같은 섞기를 표류에 강한 계열로 옮긴 판(10-04 작업 세션).
+logs/m6r25axsgcxx_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25axsgcxx --base m6r25axsgcx --cat m6r25axxg --col mu_xgb --w 0.333333
+logs/m6r25axsgcxx_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25axsgcxx --base m6r25axsgcx --cat m6r25axxg --col mu_xgb --w 0.333333
+logs/m6r25axsgcxx_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25axsgcxx --base m6r25axsgcx --cat m6r25axxg --col mu_xgb --w 0.333333

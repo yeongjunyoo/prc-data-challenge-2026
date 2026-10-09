@@ -1,0 +1,113 @@
+{
+ "name": "ctx_v2",
+ "file": "cache/ctx_v2.parquet",
+ "sha16": "67c6f0a7a3f79637",
+ "rows": 1015209,
+ "base": "ctx_v1",
+ "base_sha16": "0aa0fb24888729eb",
+ "new_columns": [
+  "gate_delay_pm30",
+  "plan_ground_aobt3",
+  "st_g1",
+  "st_g2",
+  "st_g3",
+  "st_gp",
+  "st_gp2",
+  "st_k",
+  "st_n_arr_2h"
+ ],
+ "fill": {
+  "2025-01": {
+   "gate_delay_pm30": 1.0,
+   "plan_ground_aobt3": 0.9907,
+   "st_g1": 0.9918,
+   "st_g2": 0.9772,
+   "st_g3": 0.9627,
+   "st_gp": 0.9851,
+   "st_gp2": 0.971,
+   "st_k": 0.9851,
+   "st_n_arr_2h": 1.0
+  },
+  "2025-07": {
+   "gate_delay_pm30": 0.9999,
+   "plan_ground_aobt3": 0.9794,
+   "st_g1": 0.9994,
+   "st_g2": 0.9993,
+   "st_g3": 0.9991,
+   "st_gp": 0.9998,
+   "st_gp2": 0.9997,
+   "st_k": 0.9998,
+   "st_n_arr_2h": 1.0
+  },
+  "2026-01": {
+   "gate_delay_pm30": 0.9999,
+   "plan_ground_aobt3": 0.984,
+   "st_g1": 1.0,
+   "st_g2": 0.9998,
+   "st_g3": 0.9996,
+   "st_gp": 0.9999,
+   "st_gp2": 0.9997,
+   "st_k": 0.9999,
+   "st_n_arr_2h": 1.0
+  },
+  "2026-02": {
+   "gate_delay_pm30": 1.0,
+   "plan_ground_aobt3": 0.9909,
+   "st_g1": 0.9999,
+   "st_g2": 0.9997,
+   "st_g3": 0.9996,
+   "st_gp": 0.9999,
+   "st_gp2": 0.9998,
+   "st_k": 0.9999,
+   "st_n_arr_2h": 1.0
+  },
+  "2026-06": {
+   "gate_delay_pm30": 0.9999,
+   "plan_ground_aobt3": 0.9865,
+   "st_g1": 0.9999,
+   "st_g2": 0.9994,
+   "st_g3": 0.9993,
+   "st_gp": 0.9999,
+   "st_gp2": 0.9997,
+   "st_k": 0.9999,
+   "st_n_arr_2h": 1.0
+  },
+  "2026-07": {
+   "gate_delay_pm30": 1.0,
+   "plan_ground_aobt3": 0.9852,
+   "st_g1": 1.0,
+   "st_g2": 0.9995,
+   "st_g3": 0.9994,
+   "st_gp": 0.9999,
+   "st_gp2": 0.9999,
+   "st_k": 0.9999,
+   "st_n_arr_2h": 1.0
+  }
+ },
+ "check_vs_r3_stand_files": {
+  "status": "R3 files not present"
+ },
+ "code": "src/feats_ctx2.py",
+ "code_sha16": "01fc7ad52545c6ba",
+ "sha16_unpatched": "f592e0fea6fdacb7",
+ "patched_2025": {
+  "from": "../r16b_sbx/cache/ctx_v2.parquet",
+  "from_sha16": "ac01294f15b8a618",
+  "changed": {
+   "st_k": {
+    "rows": 1,
+    "ids": [
+     182512875.0
+    ],
+    "new": [
+     null
+    ],
+    "old": [
+     0.0
+    ]
+   }
+  },
+  "tool": "research/f3/patch_ctx2025.py",
+  "why": "st_k of one 2025-01 EDDM row: 0 in today's table (its stand had no arrival in data/), NaN in the rebuild (the final file adds an arrival on that stand in Feb/Jun 2026); today's value kept so the corrector's training rows and fit cache stay"
+ }
+}

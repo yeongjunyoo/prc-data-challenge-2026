@@ -1,0 +1,46 @@
+{
+ "sd_single_seed": 4.62,
+ "rule": "측정한 계열 중 가장 큰 단일 시드 표준편차(표본, ddof=1)를 쓴다. 분해능을 넓게 잡는 쪽이 안전하다(로컬 선택은 G2 가 닫힐 때까지 잠겨 있다)",
+ "groups": {
+  "m3w 옛 방식(--es holdout) 시드 0, 1, 2": {
+   "values": [
+    318.08,
+    321.56,
+    320.47
+   ],
+   "sd": 1.78
+  },
+  "m4b_avg2 새 방식(--es internal) 시드 둘": {
+   "values": [
+    319.13,
+    325.2
+   ],
+   "sd": 4.29
+  },
+  "m6_avg2 새 방식(--es internal) 시드 둘": {
+   "values": [
+    318.69,
+    324.58
+   ],
+   "sd": 4.16
+  },
+  "m6r_avg2(v2.4 refit, --es internal) 시드 둘": {
+   "values": [
+    316.03,
+    322.56
+   ],
+   "sd": 4.62
+  },
+  "m4br_avg2(v2.4 refit, --es internal) 시드 둘": {
+   "values": [
+    320.37,
+    323.43
+   ],
+   "sd": 2.16
+  }
+ },
+ "source": "notes/levers.md(「자 고침」 표, m3w 시드 줄, v2.4 후보 표의 시드별 값)",
+ "use": "compare.py: Δ 의 시드 잡음 = sd_single_seed * sqrt(1/ka + 1/kb), ka, kb 는 평균한 시드 수",
+ "written_kst": "2026-10-03 02:45:31",
+ "history": "10-02 18:52 1.78, 19:06 4.29(새 방식 m4b_avg2), 10-03 02:45 4.62(v2.4 m6r_avg2, 감사 7회차가 규칙보다 낮다고 지적). 묶음 001 의 등록 비교(notes/compare/, 봉인)는 4.29 로 냈고 다시 쓰지 않는다. 4.62 판정은 notes/seed_noise_recheck_001.json"
+}

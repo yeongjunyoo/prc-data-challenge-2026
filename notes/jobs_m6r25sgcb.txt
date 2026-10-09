@@ -1,0 +1,4 @@
+# 묶음 002 의 합친 후보: m6r25sg(LIRF 분리 회귀 + G 지연 1~4시간 규칙)의 mu 와 CatBoost 회귀(m6r25cb 의 mu_cat)를 반씩 섞는다(src/blend_mu.py, G 행은 m6r25sg 값 그대로).
+logs/m6r25sgcb_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb
+logs/m6r25sgcb_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb
+logs/m6r25sgcb_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgcb --base m6r25sg --cat m6r25cb

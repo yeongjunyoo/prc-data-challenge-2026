@@ -1,0 +1,55 @@
+{
+ "root": "<mac-workdir>/prcm/final_run",
+ "final_dep_rows": 670790,
+ "data_ranking_sha16": "4b0692a792846079",
+ "tables": {
+  "feats_v25": {
+   "sha_old": "fdcb929cae04385a",
+   "sha_new": "c399bd36a924f370",
+   "columns_same_order": true,
+   "cols_old_only": [],
+   "cols_new_only": [],
+   "dtype_changes": {},
+   "test_rows_new": 670790,
+   "test_ids_equal_final_dep": true,
+   "rows2025_old": 2085047,
+   "rows2025_missing_in_new": 0,
+   "diff_2025": {
+    "day_daobt_rel": {
+     "share": 0.999999,
+     "rows": 2085045,
+     "max_abs": 3.6595458984375,
+     "nan_mismatch": 0
+    },
+    "d_aobt_mode_dev": {
+     "share": 0.063705,
+     "rows": 132828,
+     "max_abs": 3.0,
+     "nan_mismatch": 0
+    }
+   },
+   "status": "PASS_WITH_DIFFS"
+  },
+  "ctx_v3": {
+   "sha_old": "0b139ddbd6e70573",
+   "sha_new": "01ac984c7afd6e05",
+   "columns_same_order": true,
+   "cols_old_only": [],
+   "cols_new_only": [],
+   "dtype_changes": {},
+   "parts_new": [
+    "2025-01",
+    "2025-07",
+    "2026-01",
+    "2026-02",
+    "2026-06",
+    "2026-07"
+   ],
+   "rows2025_old": 344419,
+   "rows2025_missing_in_new": 0,
+   "diff_2025": {},
+   "status": "PASS"
+  }
+ },
+ "copies": {}
+}

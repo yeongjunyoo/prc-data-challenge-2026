@@ -1,0 +1,4 @@
+# m6r25axs 의 출력에 G 지연 1~4시간 규칙(src/g_band.py, 열 달 시험 10/10)을 덧씌운 판. 묶음 003 대비(10-03 작업 세션).
+logs/m6r25axsg_val_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting val --seed 0 --tag m6r25axsg --base m6r25axs --feats feats_v25
+logs/m6r25axsg_fwd_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting fwd --seed 0 --tag m6r25axsg --base m6r25axs --feats feats_v25
+logs/m6r25axsg_full_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting full --seed 0 --tag m6r25axsg --base m6r25axs --feats feats_v25

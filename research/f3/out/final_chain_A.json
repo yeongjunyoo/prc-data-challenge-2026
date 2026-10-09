@@ -1,0 +1,38 @@
+{
+ "label": "A",
+ "names": {
+  "corr": "2004_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3",
+  "am": "2005_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3am",
+  "fh": "2006_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfh",
+  "gkc": "2007_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkc",
+  "gkcx": "2008_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcx",
+  "xncr": "2009_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncr",
+  "db": "2010_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdb",
+  "aw": "2011_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbaw",
+  "gp": "2012_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgp",
+  "gl": "2013_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpgl",
+  "gja": "2014_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja"
+ },
+ "checks": {
+  "xgb_weight": {
+   "weights": [
+    0.1252,
+    0.4951,
+    0.0,
+    0.3798
+   ],
+   "zeros_vs_ones_identical": true
+  },
+  "fit_cache_s0": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s1": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s2": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ]
+ },
+ "done": "gja",
+ "updated": "10-09 15:18:22"
+}

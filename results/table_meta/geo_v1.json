@@ -1,0 +1,28 @@
+{
+ "name": "geo_v1",
+ "file": "cache/geo_v1.parquet",
+ "sha16": "c088c658eb4b5cd3",
+ "rows": 689260,
+ "columns": [
+  "d_stand_first",
+  "st_known",
+  "d_stand_stop",
+  "d_any_stand",
+  "seg_code",
+  "to_gap"
+ ],
+ "source": "research/obs2/corr_plus.py geo_cols('filled') (observation lane, 10-05; OSM parking_position ODbL 1.0 + adsb.lol ODbL 1.0)",
+ "inputs_sha16": {
+  "corr_plus.py": "9d1a4acb4f107595",
+  "obs_geo.parquet": "18f4db0ff9212aba",
+  "stand_map_filled.parquet": "419317298abf4971"
+ },
+ "fill": {
+  "d_stand_first": 0.6073,
+  "st_known": 1.0,
+  "d_stand_stop": 0.1459,
+  "d_any_stand": 0.6509,
+  "seg_code": 0.6509,
+  "to_gap": 0.6509
+ }
+}

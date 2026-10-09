@@ -1,0 +1,46 @@
+{
+ "name": "adsb_geo_v1",
+ "file": "cache/adsb_geo_v1.parquet",
+ "sha16": "c088c658eb4b5cd3",
+ "rows": 689260,
+ "columns": [
+  "d_stand_first",
+  "st_known",
+  "d_stand_stop",
+  "d_any_stand",
+  "seg_code",
+  "to_gap"
+ ],
+ "filled": {
+  "d_stand_first": 418612,
+  "st_known": 689260,
+  "d_stand_stop": 100536,
+  "d_any_stand": 448610,
+  "seg_code": 448620,
+  "to_gap": 448620
+ },
+ "source": "adsb.lol globe_history (ODbL 1.0, via cache/adsb_v1 route A events) for first points and stand stops; OpenStreetMap aeroway=parking_position via Overpass API, fetched 2026-10-05 (ODbL 1.0, (c) OpenStreetMap contributors) for stands without an ADS-B position (LFPG excluded: OSM and ADS-B positions disagree)",
+ "licence": "ODbL 1.0 (adsb.lol, OpenStreetMap)",
+ "labels_used": false,
+ "inputs": {
+  "research/obs2/obs_rows.py": "e923951e9a1e4496",
+  "research/obs2/coverage.py": "08c38f3844f6478a",
+  "research/obs2/osm_stands.py": "204c934b9e8fd84c",
+  "research/obs2/corr_plus.py": "9d1a4acb4f107595",
+  "research/obs2/build_geo.py": "6b4190760083d6ed",
+  "research/obs2/obs_geo.parquet": "18f4db0ff9212aba",
+  "research/obs2/stand_map.parquet": "8ff3d50b4e38baba",
+  "research/obs2/stand_map_filled.parquet": "419317298abf4971",
+  "research/obs2/osm/EDDF.json": "ca869202d86448d5",
+  "research/obs2/osm/EDDM.json": "ba3b23d458de647c",
+  "research/obs2/osm/EGLL.json": "5d905c44622a7f34",
+  "research/obs2/osm/EHAM.json": "9c2a5d019b290113",
+  "research/obs2/osm/LEBL.json": "60103f375bc0e31d",
+  "research/obs2/osm/LEMD.json": "9091cb7002b33f86",
+  "research/obs2/osm/LFPG.json": "cd564e1e3a7c50e6",
+  "research/obs2/osm/LIRF.json": "2834af87d10f3288",
+  "research/obs2/osm/LSZH.json": "06ca52348fe38d2f",
+  "research/obs2/osm/LTFM.json": "b24f9f29f671095a"
+ },
+ "written_kst": "2026-10-05 17:20:49 KST"
+}

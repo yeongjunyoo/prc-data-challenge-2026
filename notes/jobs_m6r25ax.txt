@@ -1,0 +1,6 @@
+# 해가 바뀐 시계 표류에 강한 후보: m6r25a(--anchor aobt)에서 2026 에 AOBT 기준보다 크게 움직인 계획 시계 칸을 뺀 판(MISSION G3 ⑦, 10-03 11:05 측정:
+# d_eobt, d_lobt, d_iobt, aobt_m_eobt, aobt_m_lobt 의 공항, 달별 중앙값이 d_aobt 보다 평균 약 100초 더 움직였고 dur1, ddur, arvt3_m_arvt1 은 120~136초, eobt_m_sch 는 EOBT=일정 비율이 LFPG 7월 61.8 → 36.5%).
+# 칸을 고른 근거는 시험 피처 분포의 표류뿐이고 자 점수는 보지 않았다(10-03 작업 세션).
+logs/m6r25ax_val_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m6r25ax --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch
+logs/m6r25ax_fwd_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 0 --tag m6r25ax --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch
+logs/m6r25ax_full_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting full --seed 0 --tag m6r25ax --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt --drop d_eobt,d_lobt,d_iobt,aobt_m_eobt,aobt_m_lobt,dur1,ddur,arvt3_m_arvt1,eobt_m_sch

@@ -1,0 +1,141 @@
+{
+ "tag": "m6r27tmcwin",
+ "setting": "full",
+ "seed": 0,
+ "anchor": "win",
+ "args": {
+  "setting": "full",
+  "seed": 0,
+  "tag": "m6r27tmcwin",
+  "base": "m6r27skwin",
+  "anchor": "win",
+  "k": 32,
+  "n_blocks": 2,
+  "d_block": 512,
+  "dropout": 0.1,
+  "d_emb": 16,
+  "n_bins": 48,
+  "lr": 0.002,
+  "wd": 0.0003,
+  "bs": 1024,
+  "epochs": 20,
+  "patience": 99,
+  "max_minutes": 150.0,
+  "sched": "cos",
+  "device": "cuda",
+  "threads": 3,
+  "amp": "bf16"
+ },
+ "best_epoch": 17,
+ "es_rmse": 192.966,
+ "hist": [
+  {
+   "epoch": 0,
+   "es_rmse": 212.471,
+   "sec": 38.1
+  },
+  {
+   "epoch": 1,
+   "es_rmse": 210.724,
+   "sec": 37.1
+  },
+  {
+   "epoch": 2,
+   "es_rmse": 208.094,
+   "sec": 37.1
+  },
+  {
+   "epoch": 3,
+   "es_rmse": 200.147,
+   "sec": 37.1
+  },
+  {
+   "epoch": 4,
+   "es_rmse": 199.654,
+   "sec": 37.3
+  },
+  {
+   "epoch": 5,
+   "es_rmse": 202.205,
+   "sec": 37.1
+  },
+  {
+   "epoch": 6,
+   "es_rmse": 198.259,
+   "sec": 37.1
+  },
+  {
+   "epoch": 7,
+   "es_rmse": 196.962,
+   "sec": 37.0
+  },
+  {
+   "epoch": 8,
+   "es_rmse": 196.203,
+   "sec": 37.3
+  },
+  {
+   "epoch": 9,
+   "es_rmse": 195.38,
+   "sec": 37.0
+  },
+  {
+   "epoch": 10,
+   "es_rmse": 194.773,
+   "sec": 37.2
+  },
+  {
+   "epoch": 11,
+   "es_rmse": 194.455,
+   "sec": 37.1
+  },
+  {
+   "epoch": 12,
+   "es_rmse": 193.963,
+   "sec": 36.8
+  },
+  {
+   "epoch": 13,
+   "es_rmse": 194.373,
+   "sec": 36.5
+  },
+  {
+   "epoch": 14,
+   "es_rmse": 194.411,
+   "sec": 36.5
+  },
+  {
+   "epoch": 15,
+   "es_rmse": 194.021,
+   "sec": 37.3
+  },
+  {
+   "epoch": 16,
+   "es_rmse": 193.458,
+   "sec": 36.5
+  },
+  {
+   "epoch": 17,
+   "es_rmse": 192.966,
+   "sec": 36.5
+  },
+  {
+   "epoch": 18,
+   "es_rmse": 193.075,
+   "sec": 36.5
+  },
+  {
+   "epoch": 19,
+   "es_rmse": 193.061,
+   "sec": 37.3
+  }
+ ],
+ "params": 1878744,
+ "target_mean": 49.909295594958245,
+ "target_sd": 365.25938355268005,
+ "minutes": 13.3,
+ "versions": {
+  "tabm": "0.0.3",
+  "torch": "2.11.0+cu128"
+ }
+}

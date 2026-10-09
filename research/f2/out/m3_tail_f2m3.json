@@ -1,0 +1,354 @@
+{
+ "tag": "f2m3",
+ "artmm_val": {
+  "dmse": -18.58,
+  "sd": 16.77,
+  "p_lt0": 0.8665,
+  "p_gt0": 0.1335,
+  "days": 62,
+  "by_month_own_rows": {
+   "1": -35.75,
+   "7": -4.75
+  },
+  "by_airport": {
+   "EDDF": 0.0,
+   "EDDM": 0.0,
+   "EGLL": 0.0,
+   "EHAM": 0.0,
+   "LEBL": 0.0,
+   "LEMD": 0.0,
+   "LFPG": 0.0,
+   "LIRF": -18.58,
+   "LSZH": 0.0,
+   "LTFM": 0.0
+  },
+  "changed": 1052,
+  "move_mse": 29.4,
+  "kappa": 0.8112,
+  "cells": [
+   {
+    "ap": "LIRF",
+    "car": "AEZ",
+    "mon": 1,
+    "rows": 656,
+    "da": -0.1941,
+    "p_mean": 0.5535,
+    "p_mean_new": 0.396,
+    "b": -0.9233
+   },
+   {
+    "ap": "LIRF",
+    "car": "ETH",
+    "mon": 1,
+    "rows": 155,
+    "da": -0.1114,
+    "p_mean": 0.3484,
+    "p_mean_new": 0.258,
+    "b": -0.4709
+   },
+   {
+    "ap": "LIRF",
+    "car": "THY",
+    "mon": 1,
+    "rows": 124,
+    "da": -0.2093,
+    "p_mean": 0.1794,
+    "p_mean_new": 0.0096,
+    "b": -3.2084
+   },
+   {
+    "ap": "LIRF",
+    "car": "THY",
+    "mon": 7,
+    "rows": 117,
+    "da": -0.1614,
+    "p_mean": 0.1687,
+    "p_mean_new": 0.0377,
+    "b": -1.6855
+   }
+  ]
+ },
+ "artmm_fj": {
+  "dmse": -46.14,
+  "sd": 24.94,
+  "p_lt0": 0.9815,
+  "p_gt0": 0.0185,
+  "days": 58,
+  "by_month_own_rows": {
+   "2": -112.29,
+   "6": 5.77
+  },
+  "by_airport": {
+   "EDDF": 0.0,
+   "EDDM": 0.0,
+   "EGLL": 0.0,
+   "EHAM": 0.0,
+   "LEBL": 0.0,
+   "LEMD": 0.0,
+   "LFPG": 0.0,
+   "LIRF": -46.14,
+   "LSZH": 0.0,
+   "LTFM": 0.0
+  },
+  "changed": 983,
+  "move_mse": 20.68,
+  "kappa": 0.8327,
+  "cells": [
+   {
+    "ap": "LIRF",
+    "car": "AEZ",
+    "mon": 2,
+    "rows": 633,
+    "da": 0.1012,
+    "p_mean": 0.514,
+    "p_mean_new": 0.5983,
+    "b": 0.5494
+   },
+   {
+    "ap": "LIRF",
+    "car": "ETH",
+    "mon": 2,
+    "rows": 131,
+    "da": 0.1482,
+    "p_mean": 0.2511,
+    "p_mean_new": 0.3745,
+    "b": 0.6477
+   },
+   {
+    "ap": "LIRF",
+    "car": "THY",
+    "mon": 2,
+    "rows": 99,
+    "da": -0.1615,
+    "p_mean": 0.1903,
+    "p_mean_new": 0.0558,
+    "b": -1.5018
+   },
+   {
+    "ap": "LIRF",
+    "car": "THY",
+    "mon": 6,
+    "rows": 120,
+    "da": -0.1603,
+    "p_mean": 0.1617,
+    "p_mean_new": 0.0282,
+    "b": -1.9826
+   }
+  ]
+ },
+ "arthist_beta_all": 0.1536,
+ "arthist_val": {
+  "dmse": -42.89,
+  "sd": 15.9,
+  "p_lt0": 0.999,
+  "p_gt0": 0.001,
+  "days": 62,
+  "by_month_own_rows": {
+   "1": 4.09,
+   "7": -80.76
+  },
+  "by_airport": {
+   "EDDF": 0.0,
+   "EDDM": 0.0,
+   "EGLL": 0.0,
+   "EHAM": 0.0,
+   "LEBL": 0.0,
+   "LEMD": 0.0,
+   "LFPG": 0.0,
+   "LIRF": -42.89,
+   "LSZH": 0.0,
+   "LTFM": 0.0
+  },
+  "changed": 24783,
+  "move_mse": 10.02,
+  "info": {
+   "rows_lirf_nong": 26131,
+   "rows_moved": 24799,
+   "beta": [
+    0.133107,
+    0.14494,
+    0.145857,
+    0.14755,
+    0.151358,
+    0.151908,
+    0.155254,
+    0.157103,
+    0.167762,
+    0.180255
+   ],
+   "mean_p_old": 0.18562,
+   "mean_p_new": 0.1871
+  }
+ },
+ "arthist_fj": {
+  "dmse": -11.96,
+  "sd": 13.05,
+  "p_lt0": 0.8255,
+  "p_gt0": 0.1745,
+  "days": 58,
+  "by_month_own_rows": {
+   "2": -17.87,
+   "6": -7.32
+  },
+  "by_airport": {
+   "EDDF": 0.0,
+   "EDDM": 0.0,
+   "EGLL": 0.0,
+   "EHAM": 0.0,
+   "LEBL": 0.0,
+   "LEMD": 0.0,
+   "LFPG": 0.0,
+   "LIRF": -11.96,
+   "LSZH": 0.0,
+   "LTFM": 0.0
+  },
+  "changed": 24262,
+  "move_mse": 5.79,
+  "info": {
+   "rows_lirf_nong": 25156,
+   "rows_moved": 24278,
+   "beta": 0.15359952269082405,
+   "mean_p_old": 0.19569,
+   "mean_p_new": 0.19525
+  }
+ },
+ "aiu_val": {
+  "dmse": -165.54,
+  "sd": 27.33,
+  "p_lt0": 1.0,
+  "p_gt0": 0.0,
+  "days": 62,
+  "by_month_own_rows": {
+   "1": -99.82,
+   "7": -218.51
+  },
+  "by_airport": {
+   "EDDF": -5.02,
+   "EDDM": -6.67,
+   "EGLL": -13.44,
+   "EHAM": -5.66,
+   "LEBL": -32.7,
+   "LEMD": -10.19,
+   "LFPG": -17.5,
+   "LIRF": -14.02,
+   "LSZH": -1.89,
+   "LTFM": -58.45
+  },
+  "changed": 343510,
+  "move_mse": 99.67
+ },
+ "aiu_fj": {
+  "dmse": -396.35,
+  "sd": 112.02,
+  "p_lt0": 1.0,
+  "p_gt0": 0.0,
+  "days": 58,
+  "by_month_own_rows": {
+   "2": -671.16,
+   "6": -180.67
+  },
+  "by_airport": {
+   "EDDF": -21.4,
+   "EDDM": -8.62,
+   "EGLL": -3.36,
+   "EHAM": 1.41,
+   "LEBL": -8.86,
+   "LEMD": -14.81,
+   "LFPG": -22.42,
+   "LIRF": -23.28,
+   "LSZH": -10.09,
+   "LTFM": -284.92
+  },
+  "changed": 326335,
+  "move_mse": 92.22,
+  "offsets": {
+   "EDDF": 119.9,
+   "EDDM": 43.0,
+   "EGLL": 70.5,
+   "EHAM": -1541.5,
+   "LEBL": 13.5,
+   "LEMD": 96.5,
+   "LFPG": 2229.5,
+   "LIRF": -42.5,
+   "LSZH": -793.8,
+   "LTFM": 71.5
+  }
+ },
+ "aiu_fj_inmonth_report": {
+  "dmse": -322.35,
+  "sd": 114.62,
+  "p_lt0": 1.0,
+  "p_gt0": 0.0,
+  "days": 58,
+  "by_month_own_rows": {
+   "2": -680.85,
+   "6": -40.99
+  },
+  "by_airport": {
+   "EDDF": -14.3,
+   "EDDM": -5.3,
+   "EGLL": 7.08,
+   "EHAM": 4.82,
+   "LEBL": -0.31,
+   "LEMD": -6.27,
+   "LFPG": -14.13,
+   "LIRF": -13.56,
+   "LSZH": -3.64,
+   "LTFM": -276.73
+  },
+  "changed": 326331,
+  "move_mse": 163.87
+ },
+ "aiu_fj_off10_report": {
+  "dmse": -396.7,
+  "sd": 112.02,
+  "p_lt0": 1.0,
+  "p_gt0": 0.0,
+  "days": 58,
+  "by_month_own_rows": {
+   "2": -671.31,
+   "6": -181.2
+  },
+  "by_airport": {
+   "EDDF": -21.39,
+   "EDDM": -8.62,
+   "EGLL": -3.3,
+   "EHAM": 1.11,
+   "LEBL": -8.87,
+   "LEMD": -14.8,
+   "LFPG": -22.37,
+   "LIRF": -23.28,
+   "LSZH": -10.27,
+   "LTFM": -284.92
+  },
+  "changed": 326337,
+  "move_mse": 92.53,
+  "offsets": {
+   "EDDF": 107.0,
+   "EDDM": 47.0,
+   "EGLL": 53.0,
+   "EHAM": -2138.4,
+   "LEBL": 16.0,
+   "LEMD": 78.0,
+   "LFPG": 2079.0,
+   "LIRF": -41.0,
+   "LSZH": -295.0,
+   "LTFM": 70.0
+  }
+ },
+ "rmse": {
+  "val": {
+   "corr": 296.805,
+   "am": 296.773,
+   "fh": 296.701,
+   "db": 296.422
+  },
+  "fj": {
+   "corr": 285.006,
+   "am": 284.925,
+   "fh": 284.904,
+   "db": 284.208
+  }
+ },
+ "seconds": 11
+}

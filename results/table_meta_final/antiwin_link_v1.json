@@ -1,0 +1,12 @@
+{
+ "rows": 1277,
+ "train_rows": 897,
+ "test_rows": 380,
+ "r1_train": 69,
+ "r2_train": 45,
+ "r1_test": 31,
+ "r2_test": 18,
+ "sha16": "b75ec1a1a64afd0e",
+ "built_kst": "2026-10-08 23:04:11 KST",
+ "code": "tools/antiwin.py build_link"
+}

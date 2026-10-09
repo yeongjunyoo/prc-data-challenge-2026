@@ -1,0 +1,68 @@
+{
+ "name": "ctx_v3",
+ "file": "cache/ctx_v3.parquet",
+ "sha16": "9f4a2d15b317f85e",
+ "rows": 1015209,
+ "base": "ctx_v2",
+ "base_sha16": "f592e0fea6fdacb7",
+ "new_columns": [
+  "aiu_m_txo",
+  "aiu_m_add",
+  "aiu_m_valid",
+  "aiu_d_pdd",
+  "aiu_d_txo"
+ ],
+ "inputs_sha16": {
+  "taxi_out_additional_time_2025.csv": "4aedf19520d3f84b",
+  "taxi_out_additional_time_2026.csv": "b72040e0987e6c7d",
+  "all_pre_departure_delays_2025.csv": "d742eeb626e5f9f7",
+  "all_pre_departure_delays_2026.csv": "5952d20ef5f9c424"
+ },
+ "fill": {
+  "2025-01": {
+   "aiu_m_txo": 1.0,
+   "aiu_m_add": 1.0,
+   "aiu_m_valid": 1.0,
+   "aiu_d_pdd": 1.0,
+   "aiu_d_txo": 1.0
+  },
+  "2025-07": {
+   "aiu_m_txo": 1.0,
+   "aiu_m_add": 1.0,
+   "aiu_m_valid": 1.0,
+   "aiu_d_pdd": 1.0,
+   "aiu_d_txo": 1.0
+  },
+  "2026-01": {
+   "aiu_m_txo": 1.0,
+   "aiu_m_add": 1.0,
+   "aiu_m_valid": 1.0,
+   "aiu_d_pdd": 1.0,
+   "aiu_d_txo": 1.0
+  },
+  "2026-02": {
+   "aiu_m_txo": 1.0,
+   "aiu_m_add": 1.0,
+   "aiu_m_valid": 1.0,
+   "aiu_d_pdd": 1.0,
+   "aiu_d_txo": 1.0
+  },
+  "2026-06": {
+   "aiu_m_txo": 1.0,
+   "aiu_m_add": 1.0,
+   "aiu_m_valid": 1.0,
+   "aiu_d_pdd": 1.0,
+   "aiu_d_txo": 1.0
+  },
+  "2026-07": {
+   "aiu_m_txo": 1.0,
+   "aiu_m_add": 1.0,
+   "aiu_m_valid": 1.0,
+   "aiu_d_pdd": 1.0,
+   "aiu_d_txo": 1.0
+  }
+ },
+ "code": "src/feats_aiu.py",
+ "code_sha16": "950ac59be3ce12b6",
+ "source": "EUROCONTROL Aviation Intelligence Unit (ansperformance.eu), data/ext/aiu/MANIFEST.json"
+}

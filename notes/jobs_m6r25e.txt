@@ -1,0 +1,4 @@
+# m6r25 에 세 번째 혼합 성분(BLOCK = EOBT1, --eobt_comp)을 켠 판. 묶음 002 의 성격이 다른 후보(10-03 작업 세션).
+logs/m6r25e_val_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m6r25e --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --eobt_comp
+logs/m6r25e_fwd_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 0 --tag m6r25e --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --eobt_comp
+logs/m6r25e_full_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting full --seed 0 --tag m6r25e --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --eobt_comp

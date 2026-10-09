@@ -1,0 +1,47 @@
+{
+ "name": "2008_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcx",
+ "manifest": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcx.json",
+ "source": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkc.json",
+ "method": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkc.json 의 G 행(LIRF, NM 미매칭)에 기록 감식 칸 열둘을 더한 G 모형을 얹은 판(tools/gkeyx.py, 표 cache/gkeyx_v1.parquet sha 210f643bba5e983b, G 다리 m6r27skwing). gkey avg(목적지 키와 운항사 키 평균) 식의 GBM 쪽에 같은 편명의 그 달 기록 이력 일곱, 편명 꼴 셋, 목적지와 운항사의 그 달 고치지 않은 지연 몫 둘을 더하고 MVT − SCHED < 43,200 행에만 쓴다. 띠 규칙과 mu 는 다리의 것, 후보에는 (새 G − 재현한 gkey avg G)를 더했다. 학습 행은 설정마다 g_band 와 같고 자로 고른 값은 없다. 근거 private notes research/2026-10-06-r5-records.md. 반대 창은 이 뒤에 둔다. 자 ΔMSE -969.8(275/384), 7월 전방 ΔMSE -2822.9(221/326), 시험 바뀐 행 604, 이동 MSE 358.0, 10-05 단일 발 체제라 준비 점검은 경고(--readiness-warn)",
+ "report": {
+  "full": {
+   "g_rows": 619,
+   "changed": 604,
+   "outside_g": 0,
+   "guarded_rows": 15,
+   "mean_g_av": 6644.1,
+   "mean_g_new": 6663.1,
+   "gkey_repro_max_diff": 1.455e-11,
+   "move_mse_test_n": 358.0
+  },
+  "val": {
+   "g_rows": 397,
+   "changed": 384,
+   "outside_g": 0,
+   "guarded_rows": 11,
+   "mean_g_av": 6993.0,
+   "mean_g_new": 6860.2,
+   "gkey_repro_max_diff": 1.455e-11,
+   "rows": 344419,
+   "rmse_old": 290.008,
+   "rmse_new": 288.331,
+   "dmse": -969.8,
+   "improved": 275
+  },
+  "fwd": {
+   "g_rows": 337,
+   "changed": 326,
+   "outside_g": 0,
+   "guarded_rows": 9,
+   "mean_g_av": 7086.0,
+   "mean_g_new": 6833.2,
+   "gkey_repro_max_diff": 1.455e-11,
+   "rows": 190713,
+   "rmse_old": 285.381,
+   "rmse_new": 280.392,
+   "dmse": -2822.9,
+   "improved": 221
+  }
+ },
+ "written_kst": "2026-10-09 15:05:12 KST"
+}

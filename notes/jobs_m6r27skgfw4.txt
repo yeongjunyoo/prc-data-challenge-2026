@@ -1,0 +1,4 @@
+# 경로 B 다리에 316 의 B 가중을 그대로(rb392, 10-06 낮, PC): src/blend_fixed.py, 기준 m6r25sg / m6r25sgoof4, LightGBM 다리 m6r27skg(피처 v2.7), 나머지 셋 m6r25cb, m6r25xg, m6r25rm
+logs/m6r27skgfw4_val_s0.log	.venv/Scripts/python.exe -u src/blend_fixed.py --setting val --seed 0 --tag m6r27skgfw4 --base m6r27skg --ref_base m6r25sg --ref_tag m6r25sgoof4 --learners m6r25cb:mu_cat,m6r25xg:mu_xgb,m6r25rm:mu_rmlp --folds 10 --check
+logs/m6r27skgfw4_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_fixed.py --setting fwd --seed 0 --tag m6r27skgfw4 --base m6r27skg --ref_base m6r25sg --ref_tag m6r25sgoof4 --learners m6r25cb:mu_cat,m6r25xg:mu_xgb,m6r25rm:mu_rmlp --folds 10 --check
+logs/m6r27skgfw4_full_s0.log	.venv/Scripts/python.exe -u src/blend_fixed.py --setting full --seed 0 --tag m6r27skgfw4 --base m6r27skg --ref_base m6r25sg --ref_tag m6r25sgoof4 --learners m6r25cb:mu_cat,m6r25xg:mu_xgb,m6r25rm:mu_rmlp --folds 10 --check

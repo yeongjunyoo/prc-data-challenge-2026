@@ -1,0 +1,33 @@
+final_ranking row groups: [1048576, 292621]
+final_ranking first 689534 ids == ranking ids in same order: True
+MVT_ID_mvt               diff_rows=      0 nulls old=      0 new=      0
+FLIGHT_ID_mvt            diff_rows=      0 nulls old=   6692 new=   6692
+FLIGHT_mvt               diff_rows=      0 nulls old=     97 new=     97
+FLIGHT_RULE_mvt          diff_rows=      0 nulls old=     84 new=     84
+ADEP_mvt                 diff_rows=      0 nulls old=     13 new=     13
+ADES_mvt                 diff_rows=      0 nulls old=     13 new=     13
+PHASE_mvt                diff_rows=      0 nulls old=      0 new=      0
+MVT_TIME_UTC_mvt         diff_rows= 633739 nulls old=      0 new=      0 examples=[(202501153.0, datetime.datetime(2026, 1, 4, 14, 55, 26, tzinfo=zoneinfo.ZoneInfo(key='UTC')), datetime.datetime(2026, 1, 4, 14, 55, 32, tzinfo=zoneinfo.ZoneInfo(key='UTC'))), (202517397.0, datetime.datetime(2026, 1, 4, 14, 55, 30, tzinfo=zoneinfo.ZoneInfo(key='UTC')), datetime.datetime(2026, 1, 4, 14, 55, 34, tzinfo=zoneinfo.ZoneInfo(key='UTC'))), (202517400.0, datetime.datetime(2026, 1, 4, 14, 55, 54, tzinfo=zoneinfo.ZoneInfo(key='UTC')), datetime.datetime(2026, 1, 4, 14, 55, 47, tzinfo=zoneinfo.ZoneInfo(key='UTC')))] delta_sec min=-12 median=1 max=12 n=633739
+BLOCK_TIME_UTC_mvt       diff_rows= 316835 nulls old= 344841 new= 344841 examples=[(202517397.0, datetime.datetime(2026, 1, 4, 15, 6, 58, tzinfo=zoneinfo.ZoneInfo(key='UTC')), datetime.datetime(2026, 1, 4, 15, 6, 55, tzinfo=zoneinfo.ZoneInfo(key='UTC'))), (202517400.0, datetime.datetime(2026, 1, 4, 15, 0, 8, tzinfo=zoneinfo.ZoneInfo(key='UTC')), datetime.datetime(2026, 1, 4, 15, 0, 16, tzinfo=zoneinfo.ZoneInfo(key='UTC'))), (202517406.0, datetime.datetime(2026, 1, 4, 15, 8, 9, tzinfo=zoneinfo.ZoneInfo(key='UTC')), datetime.datetime(2026, 1, 4, 15, 8, 14, tzinfo=zoneinfo.ZoneInfo(key='UTC')))] delta_sec min=-12 median=-1 max=12 n=316835
+SCHED_TIME_UTC_mvt       diff_rows=      0 nulls old=      0 new=      0
+AIRCRAFT_TYPE_mvt        diff_rows=      0 nulls old=    409 new=    409
+RUNWAY_mvt               diff_rows=      0 nulls old=      0 new=      0
+STAND_mvt                diff_rows=      0 nulls old=      9 new=      9
+TAXITIME_SEC_mvt         diff_rows= 330721 nulls old= 344841 new= 344841 examples=[(202517397.0, 688, 681), (202517400.0, 254, 269), (202517406.0, 666, 677)]
+LOBT_flt                 diff_rows=      0 nulls old=   7842 new=   7842
+CALLSIGN_flt             diff_rows=      0 nulls old=   7842 new=   7842
+ADEP_flt                 diff_rows=      0 nulls old=   7842 new=   7842
+ADES_flt                 diff_rows=      0 nulls old=   7842 new=   7842
+ADES_FILED_flt           diff_rows=      0 nulls old=   7842 new=   7842
+MARKET_SEGMENT_flt       diff_rows=      0 nulls old=   7842 new=   7842
+IOBT_flt                 diff_rows=      0 nulls old=   7842 new=   7842
+FLIGHT_RULE_flt          diff_rows=      0 nulls old=   7868 new=   7868
+FLIGHT_TYPE_flt          diff_rows=      0 nulls old=   7842 new=   7842
+AIRCRAFT_TYPE_flt        diff_rows=      0 nulls old=   7842 new=   7842
+WK_TBL_CAT_flt           diff_rows=      0 nulls old=   7868 new=   7868
+AIRCRAFT_OPERATOR_flt    diff_rows=      0 nulls old=   7842 new=   7842
+EOBT_1_flt               diff_rows=      0 nulls old=   7842 new=   7842
+ARVT_1_flt               diff_rows=      0 nulls old=   7842 new=   7842
+AOBT_3_flt               diff_rows=      0 nulls old=   7842 new=   7842
+ARVT_3_flt               diff_rows=      0 nulls old=   7842 new=   7842
+memcap: rc=0 cap=1.0GB peak_job=0.81GB

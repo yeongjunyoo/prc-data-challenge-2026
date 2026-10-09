@@ -1,0 +1,60 @@
+{
+ "name": "2206_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfh",
+ "manifest": "preds/manifest_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfh.json",
+ "source": "preds/manifest_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3am.json",
+ "method": "preds/manifest_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3am.json 의 LIRF G 아닌 출발에서 주 분류기 p_art 를 같은 편명의 2025 학습 달 art 몫(편명 20행 -> 같은 운항사 같은 노선 50행 -> 운항사 몫으로 수축) 쪽으로 로짓 계수 하나 β 만큼 옮긴 판(tools/arthist.py, 표 arthist_v1 ec3ac93e29ece0b5). β 는 자 행에서 맞췄다(val 은 날 열 겹, fwd 는 1월, 시험은 두 달: 0.1536). 예측은 (p' − p)(d − mn) 만큼, LOBT 창 안으로. G 행과 p_art 0 행은 그대로. 근거 private notes research/2026-10-07-r7-u.md. gkey 와 그 뒤 단계는 이 뒤에 둔다. 자 ΔMSE -44.9(11863/24783), 7월 전방 ΔMSE -20.5(6246/13816), 시험 바뀐 행 49032, 이동 MSE 29.2. 약점: 계층 수축 판은 운항사 수축 판과 둘 다 잰 뒤 골랐고(둘 다 네 자에서 이김), 열두 달 한 달 빼기는 정답만 쓴 대리다. 이득은 7월과 11, 12월이고 1월은 0 안팎이다(+2). 시험 이동의 약 40% 가 드문 운항사 십여 행이다(운항사 몫까지 수축한 판은 네 자 모두 졌다). 10-05 단일 발 체제라 준비 점검은 경고(--readiness-warn)",
+ "report": {
+  "beta": {
+   "fold": {
+    "0": 0.151908,
+    "1": 0.145857,
+    "2": 0.133107,
+    "3": 0.155254,
+    "4": 0.14494,
+    "5": 0.180255,
+    "6": 0.14755,
+    "7": 0.151358,
+    "8": 0.157103,
+    "9": 0.167762
+   },
+   "jan": 0.131564,
+   "all": 0.1536
+  },
+  "full": {
+   "rows_lirf_nong": 51527,
+   "rows_moved": 49080,
+   "mean_p_old": 0.19538,
+   "mean_p_new": 0.19668,
+   "changed": 49032,
+   "g_changed": 0,
+   "move_mse_test_n": 29.2
+  },
+  "val": {
+   "rows_lirf_nong": 26131,
+   "rows_moved": 24799,
+   "mean_p_old": 0.18562,
+   "mean_p_new": 0.1871,
+   "changed": 24783,
+   "g_changed": 0,
+   "rows": 344419,
+   "rmse_old": 291.457,
+   "rmse_new": 291.38,
+   "dmse": -44.9,
+   "improved": 11863
+  },
+  "fwd": {
+   "rows_lirf_nong": 14874,
+   "rows_moved": 13823,
+   "mean_p_old": 0.16126,
+   "mean_p_new": 0.16465,
+   "changed": 13816,
+   "g_changed": 0,
+   "rows": 190713,
+   "rmse_old": 287.134,
+   "rmse_new": 287.098,
+   "dmse": -20.5,
+   "improved": 6246
+  }
+ },
+ "written_kst": "2026-10-09 14:39:31 KST"
+}

@@ -1,0 +1,13 @@
+== ranking: rows=689534 row_groups=1 cols=30 created_by=parquet-cpp-arrow version 24.0.0
+== submitting: rows=344841 row_groups=1 cols=2 created_by=parquet-cpp-arrow version 24.0.0
+== final_ranking: rows=1341197 row_groups=2 cols=30 created_by=parquet-cpp-arrow version 24.0.0
+== final_submitting: rows=670790 row_groups=1 cols=2 created_by=parquet-cpp-arrow version 24.0.0
+== training_2025-01: rows=307257 row_groups=1 cols=30 created_by=parquet-cpp-arrow version 24.0.0
+
+-- schema ranking vs final_ranking: same names&order=True
+-- schema submitting vs final_submitting: same names&order=True
+-- schema training_2025-01 vs final_ranking: same names&order=True
+
+final_ranking columns: ['MVT_ID_mvt:double', 'FLIGHT_ID_mvt:double', 'FLIGHT_mvt:string', 'FLIGHT_RULE_mvt:string', 'ADEP_mvt:string', 'ADES_mvt:string', 'PHASE_mvt:string', 'MVT_TIME_UTC_mvt:timestamp[us, tz=UTC]', 'BLOCK_TIME_UTC_mvt:timestamp[us, tz=UTC]', 'SCHED_TIME_UTC_mvt:timestamp[us, tz=UTC]', 'AIRCRAFT_TYPE_mvt:string', 'RUNWAY_mvt:string', 'STAND_mvt:string', 'TAXITIME_SEC_mvt:int32', 'LOBT_flt:timestamp[us, tz=UTC]', 'CALLSIGN_flt:string', 'ADEP_flt:string', 'ADES_flt:string', 'ADES_FILED_flt:string', 'MARKET_SEGMENT_flt:string', 'IOBT_flt:timestamp[us, tz=UTC]', 'FLIGHT_RULE_flt:string', 'FLIGHT_TYPE_flt:string', 'AIRCRAFT_TYPE_flt:string', 'WK_TBL_CAT_flt:string', 'AIRCRAFT_OPERATOR_flt:string', 'EOBT_1_flt:timestamp[us, tz=UTC]', 'ARVT_1_flt:timestamp[us, tz=UTC]', 'AOBT_3_flt:timestamp[us, tz=UTC]', 'ARVT_3_flt:timestamp[us, tz=UTC]']
+final_submitting columns: ['MVT_ID_mvt:double', 'TAXITIME_SEC_mvt:int32']
+memcap: rc=0 cap=1.0GB peak_job=0.40GB

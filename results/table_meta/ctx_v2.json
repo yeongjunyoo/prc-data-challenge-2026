@@ -1,0 +1,98 @@
+{
+ "name": "ctx_v2",
+ "file": "cache/ctx_v2.parquet",
+ "sha16": "ac01294f15b8a618",
+ "rows": 689260,
+ "base": "ctx_v1",
+ "base_sha16": "0383b7a4b36c5821",
+ "new_columns": [
+  "gate_delay_pm30",
+  "plan_ground_aobt3",
+  "st_g1",
+  "st_g2",
+  "st_g3",
+  "st_gp",
+  "st_gp2",
+  "st_k",
+  "st_n_arr_2h"
+ ],
+ "fill": {
+  "2025-01": {
+   "gate_delay_pm30": 1.0,
+   "plan_ground_aobt3": 0.9907,
+   "st_g1": 0.9918,
+   "st_g2": 0.9772,
+   "st_g3": 0.9627,
+   "st_gp": 0.9851,
+   "st_gp2": 0.971,
+   "st_k": 0.9851,
+   "st_n_arr_2h": 1.0
+  },
+  "2025-07": {
+   "gate_delay_pm30": 0.9999,
+   "plan_ground_aobt3": 0.9794,
+   "st_g1": 0.9994,
+   "st_g2": 0.9993,
+   "st_g3": 0.9991,
+   "st_gp": 0.9998,
+   "st_gp2": 0.9997,
+   "st_k": 0.9998,
+   "st_n_arr_2h": 1.0
+  },
+  "2026-01": {
+   "gate_delay_pm30": 0.9999,
+   "plan_ground_aobt3": 0.984,
+   "st_g1": 1.0,
+   "st_g2": 0.9998,
+   "st_g3": 0.9996,
+   "st_gp": 0.9999,
+   "st_gp2": 0.9997,
+   "st_k": 0.9999,
+   "st_n_arr_2h": 1.0
+  },
+  "2026-07": {
+   "gate_delay_pm30": 1.0,
+   "plan_ground_aobt3": 0.9852,
+   "st_g1": 0.9999,
+   "st_g2": 0.9994,
+   "st_g3": 0.9992,
+   "st_gp": 0.9998,
+   "st_gp2": 0.9997,
+   "st_k": 0.9999,
+   "st_n_arr_2h": 1.0
+  }
+ },
+ "check_vs_r3_stand_files": {
+  "rows": 2429888,
+  "st_g1": {
+   "nan_mismatch": 23,
+   "max_abs_diff": 0.0
+  },
+  "st_g2": {
+   "nan_mismatch": 21,
+   "max_abs_diff": 0.0
+  },
+  "st_g3": {
+   "nan_mismatch": 20,
+   "max_abs_diff": 0.0
+  },
+  "st_gp": {
+   "nan_mismatch": 31,
+   "max_abs_diff": 0.0
+  },
+  "st_gp2": {
+   "nan_mismatch": 30,
+   "max_abs_diff": 0.0
+  },
+  "st_k": {
+   "nan_mismatch": 31,
+   "max_abs_diff": 0.0
+  },
+  "st_n_arr_2h": {
+   "nan_mismatch": 32,
+   "max_abs_diff": 0.0
+  }
+ },
+ "code": "src/feats_ctx2.py",
+ "code_sha16": "01fc7ad52545c6ba"
+}

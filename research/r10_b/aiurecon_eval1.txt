@@ -1,0 +1,48 @@
+start 05:16:03 need 2600 MB cap 2.5 GB: ../../tools/aiurecon.py eval B3,A2,A2L,B1a,B1b
+[B3] val: rmse 286.255 -> 286.258, dMSE +2.14 +- 3.41 (P<0 0.2735), months {'01': 5.5, '07': -3.4}, G same True, aw same True
+[B3] val: airports {'EDDF': -0.4, 'EDDM': 0.3, 'EGLL': 0.8, 'EHAM': 0.4, 'LEBL': -1.6, 'LEMD': -0.9, 'LFPG': 0.6, 'LIRF': 2.7, 'LSZH': 0.5, 'LTFM': -0.4}
+[B3] val: fits [{"eval_rows": 153706, "lam": 0.7115337544502491, "lam_raw": 0.7115337544502491, "days_done": 310, "days_skipped_count": 0}, {"eval_rows": 190713, "lam": 0.5362532243828989, "lam_raw": 0.5362532243828989, "days_done": 310, "days_skipped_count": 0}]
+[B3] fwd: rmse 273.063 -> 273.04, dMSE -12.97 +- 2.72 (P<0 1.0000), months {'07': -13.0}, G same True, aw same True
+[B3] fwd: airports {'EDDF': -0.2, 'EDDM': -1.0, 'EGLL': -1.6, 'EHAM': 0.2, 'LEBL': -3.1, 'LEMD': -2.4, 'LFPG': -0.5, 'LIRF': -1.5, 'LSZH': -0.2, 'LTFM': -2.7}
+[B3] fwd: fits [{"eval_rows": 190713, "lam": 0.5362532243828989, "lam_raw": 0.5362532243828989, "days_done": 310, "days_skipped_count": 0}]
+[B3] nd: dMSE -44.23 +- 6.83 (P<0 1.0000), months {'11': -16.8, '12': -27.4}, lam [0.6388389630916279]
+[B3] full: move MSE 7.92, rows moved 273990, mean move -0.611, guard {'ledger_pass': True, 'ledger_nearest': 'spirited-tiger_v25.parquet', 'ledger_min_diff': 0.98231, 'queue_diff': {'423_m6r27skcbrmfw4adsbgeondctxv3x50wgkcxndsaw': 0.97774, '456_m6r27skcbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.97763, '446_m6r27wincbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.80334, '491_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.79738, '493_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgpavsk': 0.9557, '492_m6r27skcbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.97628}, 'queue_min_diff': 0.79738}, lam [0.6388389630916279], days [(620, 0)]
+[B3] gates {'1_val': False, '2_fwd': True, '3_nd': True, '4_months': True, '5_same': True, '6_guard': True} -> FAIL
+[A2] val: rmse 286.255 -> 286.269, dMSE +8.14 +- 11.49 (P<0 0.2550), months {'01': 4.6, '07': 3.5}, G same True, aw same True
+[A2] val: airports {'EDDF': 0.0, 'EDDM': -0.0, 'EGLL': 0.0, 'EHAM': -4.5, 'LEBL': -0.0, 'LEMD': 0.0, 'LFPG': 7.7, 'LIRF': 7.7, 'LSZH': -0.8, 'LTFM': -2.0}
+[A2] val: fits [{"eval_rows": 153706, "lam": 0.5, "lam_raw": null, "days_done": 301, "days_skipped_count": 9}, {"eval_rows": 190713, "lam": 0.5, "lam_raw": null, "days_done": 298, "days_skipped_count": 12}]
+[A2] fwd: rmse 273.063 -> 273.105, dMSE +22.58 +- 26.30 (P<0 0.2360), months {'07': 22.6}, G same True, aw same True
+[A2] fwd: airports {'EDDF': 0.0, 'EDDM': -0.0, 'EGLL': 0.0, 'EHAM': -5.5, 'LEBL': 0.0, 'LEMD': 0.0, 'LFPG': 0.3, 'LIRF': 20.8, 'LSZH': 0.8, 'LTFM': 6.1}
+[A2] fwd: fits [{"eval_rows": 190713, "lam": 0.5, "lam_raw": null, "days_done": 298, "days_skipped_count": 12}]
+[A2] nd: dMSE +1.60 +- 10.08 (P<0 0.4395), months {'11': -0.7, '12': 2.3}, lam [0.5]
+[A2] full: move MSE 7.9, rows moved 89390, mean move 0.079, guard {'ledger_pass': True, 'ledger_nearest': 'spirited-tiger_v25.parquet', 'ledger_min_diff': 0.98189, 'queue_diff': {'423_m6r27skcbrmfw4adsbgeondctxv3x50wgkcxndsaw': 0.97718, '456_m6r27skcbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.97703, '446_m6r27wincbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.53417, '491_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.24477, '493_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgpavsk': 0.95403, '492_m6r27skcbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.97635}, 'queue_min_diff': 0.24477}, lam [0.5], days [(603, 17)]
+[A2] gates {'1_val': False, '2_fwd': False, '3_nd': False, '4_months': False, '5_same': True, '6_guard': True} -> FAIL
+[A2L] val: rmse 286.255 -> 286.274, dMSE +11.12 +- 11.63 (P<0 0.1740), months {'01': 11.6, '07': -0.5}, G same True, aw same True
+[A2L] val: airports {'EDDF': -0.4, 'EDDM': 0.4, 'EGLL': 1.2, 'EHAM': -4.9, 'LEBL': -1.8, 'LEMD': -0.9, 'LFPG': 9.7, 'LIRF': 11.5, 'LSZH': -0.8, 'LTFM': -2.8}
+[A2L] val: fits [{"eval_rows": 153706, "lam": 0.7478777388317591, "lam_raw": 0.7478777388317591, "days_done": 301, "days_skipped_count": 9}, {"eval_rows": 190713, "lam": 0.5393919537173937, "lam_raw": 0.5393919537173937, "days_done": 298, "days_skipped_count": 12}]
+[A2L] fwd: rmse 273.063 -> 273.081, dMSE +9.43 +- 26.43 (P<0 0.3935), months {'07': 9.4}, G same True, aw same True
+[A2L] fwd: airports {'EDDF': -0.3, 'EDDM': -1.1, 'EGLL': -1.7, 'EHAM': -5.8, 'LEBL': -3.3, 'LEMD': -2.6, 'LFPG': -0.4, 'LIRF': 20.7, 'LSZH': 0.6, 'LTFM': 3.4}
+[A2L] fwd: fits [{"eval_rows": 190713, "lam": 0.5393919537173937, "lam_raw": 0.5393919537173937, "days_done": 298, "days_skipped_count": 12}]
+[A2L] nd: dMSE -52.06 +- 10.63 (P<0 1.0000), months {'11': -21.9, '12': -30.2}, lam [0.6625888403565323]
+[A2L] full: move MSE 17.76, rows moved 292322, mean move -0.61, guard {'ledger_pass': True, 'ledger_nearest': 'spirited-tiger_v25.parquet', 'ledger_min_diff': 0.98227, 'queue_diff': {'423_m6r27skcbrmfw4adsbgeondctxv3x50wgkcxndsaw': 0.97805, '456_m6r27skcbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.97789, '446_m6r27wincbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.85097, '491_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.84909, '493_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgpavsk': 0.95736, '492_m6r27skcbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.97675}, 'queue_min_diff': 0.84909}, lam [0.6625888403565323], days [(603, 17)]
+[A2L] gates {'1_val': False, '2_fwd': False, '3_nd': True, '4_months': True, '5_same': True, '6_guard': True} -> FAIL
+[B1a] val: rmse 286.255 -> 286.15, dMSE -60.13 +- 44.36 (P<0 0.9075), months {'01': -20.0, '07': -40.1}, G same True, aw same True
+[B1a] val: airports {'EDDF': 0.5, 'EDDM': 27.6, 'EGLL': -33.0, 'EHAM': -11.9, 'LEBL': -20.0, 'LEMD': 0.3, 'LFPG': 5.3, 'LIRF': 3.8, 'LSZH': 1.6, 'LTFM': -34.3}
+[B1a] val: fits [{"eval_rows": 153706, "lam": 0.8565973510727898, "lam_raw": 0.8565973510727898, "days_done": 301, "days_skipped_count": 9}, {"eval_rows": 190713, "lam": 0.8455393361508999, "lam_raw": 0.8455393361508999, "days_done": 298, "days_skipped_count": 12}]
+[B1a] fwd: rmse 273.063 -> 273.007, dMSE -30.62 +- 103.53 (P<0 0.5795), months {'07': -30.6}, G same True, aw same True
+[B1a] fwd: airports {'EDDF': 3.2, 'EDDM': 19.2, 'EGLL': -111.0, 'EHAM': -4.9, 'LEBL': -33.2, 'LEMD': 2.5, 'LFPG': -5.6, 'LIRF': 132.1, 'LSZH': -0.2, 'LTFM': -32.8}
+[B1a] fwd: fits [{"eval_rows": 190713, "lam": 0.8455393361508999, "lam_raw": 0.8455393361508999, "days_done": 298, "days_skipped_count": 12}]
+[B1a] nd: dMSE -46.93 +- 45.60 (P<0 0.8510), months {'11': 3.1, '12': -50.0}, lam [0.8635290906006264]
+[B1a] full: move MSE 191.99, rows moved 300877, mean move -0.223, guard {'ledger_pass': True, 'ledger_nearest': 'spirited-tiger_v25.parquet', 'ledger_min_diff': 0.9825, 'queue_diff': {'423_m6r27skcbrmfw4adsbgeondctxv3x50wgkcxndsaw': 0.97863, '456_m6r27skcbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.97863, '446_m6r27wincbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.89134, '491_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.87558, '493_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgpavsk': 0.96121, '492_m6r27skcbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.978}, 'queue_min_diff': 0.87558}, lam [0.8635290906006264], days [(603, 17)]
+[B1a] gates {'1_val': True, '2_fwd': False, '3_nd': True, '4_months': True, '5_same': True, '6_guard': True} -> FAIL
+[B1b] val: rmse 286.255 -> 286.202, dMSE -30.37 +- 36.03 (P<0 0.8065), months {'01': -3.5, '07': -26.9}, G same True, aw same True
+[B1b] val: airports {'EDDF': 0.2, 'EDDM': 26.1, 'EGLL': -18.4, 'EHAM': -12.1, 'LEBL': -20.2, 'LEMD': -1.4, 'LFPG': 6.3, 'LIRF': 9.6, 'LSZH': 0.7, 'LTFM': -21.2}
+[B1b] val: fits [{"eval_rows": 153706, "lam": 0.829770801481304, "lam_raw": 0.829770801481304, "days_done": 301, "days_skipped_count": 9}, {"eval_rows": 190713, "lam": 0.8142702218947242, "lam_raw": 0.8142702218947242, "days_done": 298, "days_skipped_count": 12}]
+[B1b] fwd: rmse 273.063 -> 273.05, dMSE -7.01 +- 75.23 (P<0 0.5180), months {'07': -7.0}, G same True, aw same True
+[B1b] fwd: airports {'EDDF': -0.5, 'EDDM': 17.9, 'EGLL': -60.1, 'EHAM': -7.4, 'LEBL': -44.9, 'LEMD': -6.8, 'LFPG': -5.0, 'LIRF': 117.3, 'LSZH': -0.1, 'LTFM': -17.3}
+[B1b] fwd: fits [{"eval_rows": 190713, "lam": 0.8142702218947242, "lam_raw": 0.8142702218947242, "days_done": 298, "days_skipped_count": 12}]
+[B1b] nd: dMSE -92.89 +- 36.88 (P<0 0.9925), months {'11': -14.4, '12': -78.5}, lam [0.8183931750036434]
+[B1b] full: move MSE 129.0, rows moved 294263, mean move -0.901, guard {'ledger_pass': True, 'ledger_nearest': 'spirited-tiger_v25.parquet', 'ledger_min_diff': 0.98242, 'queue_diff': {'423_m6r27skcbrmfw4adsbgeondctxv3x50wgkcxndsaw': 0.97837, '456_m6r27skcbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.9782, '446_m6r27wincbrmfw4adsbgeondctxv3x50wamgkcxncrdsaw': 0.87236, '491_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.85466, '493_m6r27wincbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgpavsk': 0.95902, '492_m6r27skcbrmfw4adsbgeondctxv3x50wamfhgkcxncrdbawgp': 0.97758}, 'queue_min_diff': 0.85466}, lam [0.8183931750036434], days [(603, 17)]
+[B1b] gates {'1_val': False, '2_fwd': False, '3_nd': True, '4_months': True, '5_same': True, '6_guard': True} -> FAIL
+memcap: rc=0 cap=2.5GB peak_job=0.93GB
+end 05:16:38 rc 0

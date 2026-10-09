@@ -1,0 +1,46 @@
+{
+ "name": "m1b",
+ "fj_base": "research/r18/mac_fj/cache/fj_f2wincbrmfw4_s0.parquet",
+ "val_base": "m6r27wincbrmfw4sv434",
+ "legs": {
+  "ref": "r18tmc",
+  "cand": "r18tmhl"
+ },
+ "n_fj": 326873,
+ "smoke": false,
+ "w_ref": 0.1398,
+ "rmse_ref": 278.53,
+ "body_rmse_ref": 184.283,
+ "w_cand": 0.2123,
+ "rmse_cand": 279.032,
+ "body_rmse_cand": 183.209,
+ "rmse_base": 279.29,
+ "d_all": {
+  "dmse": 279.79,
+  "sd": 343.52,
+  "p_below0": 0.174
+ },
+ "d_body_nonG": {
+  "dmse": -393.34,
+  "sd": 41.8,
+  "p_below0": 1.0
+ },
+ "d_by_month": {
+  "2": 354.2,
+  "6": -74.41
+ },
+ "d_by_airport": {
+  "EDDF": -23.54,
+  "EDDM": -22.53,
+  "EGLL": 6.74,
+  "EHAM": -36.65,
+  "LEBL": -16.09,
+  "LEMD": -19.54,
+  "LFPG": -18.35,
+  "LIRF": -12.38,
+  "LSZH": -22.04,
+  "LTFM": 444.17
+ },
+ "d_tail_y_gt_3600_nonG": 673.13,
+ "pass": false
+}

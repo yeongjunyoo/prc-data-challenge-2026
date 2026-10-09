@@ -1,0 +1,12 @@
+{
+ "written_kst": "2026-10-03 00:05",
+ "question": "준비 점검의 prefix, fl_len 차이(편명 빈 LIRF 행 자 25, 시험 58)를 피처에서 없앤 v2.5 의 비용",
+ "evidence_logs": ["logs/m4br24_val_s0.log", "logs/m4br25_val_s0.log"],
+ "m4br_val_seed0": {
+  "feats_v24": {"rmse": 320.37, "rmse_y_lt_3600": 232.39, "reg_iters": 465, "clf_iters": 145, "code": "model3 663a204f8249cf12, te e327405d63aa2996"},
+  "feats_v25": {"rmse": 322.24, "rmse_y_lt_3600": 236.78, "reg_iters": 1850, "clf_iters": 163, "code": "model3 fd3df71f830cfe9b, te 0a78bd1cf5a5771a"}
+ },
+ "noise_reference": "정답 3,600초 미만 행의 RMSE 는 v2.4 시드 사이에서 232.2~232.4 로 거의 움직이지 않는다(notes/levers.md). 전체 RMSE 의 단일 시드 표준편차는 4.29(notes/seed_noise.json)",
+ "reading": "v2.5 는 같은 설정, 같은 시드에서 핵심 행 RMSE 가 4.4 나빠졌고 회귀 반복이 약 4배로 늘었다. 다만 v2.5 는 prefix, fl_len 을 뺀 것 말고 te.py 도 바꿨다(prefix 기반 그룹 통계 두 칸을 (공항, 목적지, NM 매칭)과 (공항, 스탠드, 목적지)로 교체). 그래서 손실을 두 칸만의 몫으로 가를 수는 없다",
+ "deviation_impact": "notes/readiness_deviation_sensitivity.json: 편명 빈 행을 시험 비중으로 가중해도 후보 RMSE +0.087~0.089, 후보 사이 Δ 변화 0.002 이하, 부호 모두 같음"
+}

@@ -1,0 +1,35 @@
+{
+ "root": "<mac-workdir>/prcm/final_run",
+ "tables": {
+  "adsb_v1nd": {
+   "sha_old": "0d03ff06267e0dee",
+   "sha_new": "07df03ca69833082",
+   "rows_old": 689260,
+   "rows_new": 1009110,
+   "unique_old": true,
+   "unique_new": true,
+   "rows2025_old": 344419,
+   "rows2025_new": 344419,
+   "same_2025_id_set": true,
+   "same_2025_order": false,
+   "columns_same": true,
+   "diffs_2025": {},
+   "byte_copy_2025": true
+  },
+  "geo_v1nd": {
+   "sha_old": "43310b9bbeefe81b",
+   "sha_new": "9dfa71b64e1099de",
+   "rows_old": 689260,
+   "rows_new": 1009110,
+   "unique_old": true,
+   "unique_new": true,
+   "rows2025_old": 344419,
+   "rows2025_new": 344419,
+   "same_2025_id_set": true,
+   "same_2025_order": true,
+   "columns_same": true,
+   "diffs_2025": {},
+   "byte_copy_2025": true
+  }
+ }
+}

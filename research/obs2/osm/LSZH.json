@@ -1,0 +1,5279 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-05T05:11:49Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 58013950,
+  "lat": 47.4577161,
+  "lon": 8.5696167,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "B2"
+  }
+},
+{
+  "type": "node",
+  "id": 65119916,
+  "lat": 47.4642649,
+  "lon": 8.5573473,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "ILS",
+    "ref": "H1"
+  }
+},
+{
+  "type": "node",
+  "id": 384258090,
+  "lat": 47.4602093,
+  "lon": 8.5485493,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E5"
+  }
+},
+{
+  "type": "node",
+  "id": 447864355,
+  "lat": 47.4635217,
+  "lon": 8.5596357,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "H2"
+  }
+},
+{
+  "type": "node",
+  "id": 1252165205,
+  "lat": 47.4604513,
+  "lon": 8.5632855,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "H3"
+  }
+},
+{
+  "type": "node",
+  "id": 1703035500,
+  "lat": 47.4572825,
+  "lon": 8.5703424,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B1"
+  }
+},
+{
+  "type": "node",
+  "id": 1703035519,
+  "lat": 47.4578172,
+  "lon": 8.5628786,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "K"
+  }
+},
+{
+  "type": "node",
+  "id": 1703035550,
+  "lat": 47.4598899,
+  "lon": 8.5382927,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B9"
+  }
+},
+{
+  "type": "node",
+  "id": 4990745304,
+  "lat": 47.4602452,
+  "lon": 8.5485609,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E5"
+  }
+},
+{
+  "type": "node",
+  "id": 4990745465,
+  "lat": 47.4586765,
+  "lon": 8.5507474,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E"
+  }
+},
+{
+  "type": "node",
+  "id": 6727462031,
+  "lat": 47.4581063,
+  "lon": 8.5587895,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "J"
+  }
+},
+{
+  "type": "node",
+  "id": 6727965677,
+  "lat": 47.4572802,
+  "lon": 8.5703746,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B1"
+  }
+},
+{
+  "type": "node",
+  "id": 6728184662,
+  "lat": 47.4460890,
+  "lon": 8.5579130,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E9"
+  }
+},
+{
+  "type": "node",
+  "id": 6740378993,
+  "lat": 47.4700755,
+  "lon": 8.5421779,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E3"
+  }
+},
+{
+  "type": "node",
+  "id": 6757802677,
+  "lat": 47.4578146,
+  "lon": 8.5629160,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "K"
+  }
+},
+{
+  "type": "node",
+  "id": 7230355361,
+  "lat": 47.4586985,
+  "lon": 8.5504371,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E"
+  }
+},
+{
+  "type": "node",
+  "id": 7230355362,
+  "lat": 47.4592441,
+  "lon": 8.5496222,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B"
+  }
+},
+{
+  "type": "node",
+  "id": 9196359029,
+  "lat": 47.4556323,
+  "lon": 8.5695560,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "A2"
+  }
+},
+{
+  "type": "node",
+  "id": 9196359037,
+  "lat": 47.4559148,
+  "lon": 8.5701122,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "A1"
+  }
+},
+{
+  "type": "node",
+  "id": 9196359043,
+  "lat": 47.4551479,
+  "lon": 8.5701392,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "Y1"
+  }
+},
+{
+  "type": "node",
+  "id": 9197095795,
+  "lat": 47.4593994,
+  "lon": 8.5426248,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B7"
+  }
+},
+{
+  "type": "node",
+  "id": 9197111630,
+  "lat": 47.4594764,
+  "lon": 8.5448208,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B"
+  }
+},
+{
+  "type": "node",
+  "id": 9197111632,
+  "lat": 47.4581180,
+  "lon": 8.5375185,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "L9"
+  }
+},
+{
+  "type": "node",
+  "id": 9197111642,
+  "lat": 47.4591305,
+  "lon": 8.5497004,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "B"
+  }
+},
+{
+  "type": "node",
+  "id": 9197117149,
+  "lat": 47.4601500,
+  "lon": 8.5484895,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E5"
+  }
+},
+{
+  "type": "node",
+  "id": 9197117591,
+  "lat": 47.4585904,
+  "lon": 8.5519604,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "F"
+  }
+},
+{
+  "type": "node",
+  "id": 9197125413,
+  "lat": 47.4585775,
+  "lon": 8.5521423,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "F"
+  }
+},
+{
+  "type": "node",
+  "id": 9197731174,
+  "lat": 47.4581017,
+  "lon": 8.5588520,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "J"
+  }
+},
+{
+  "type": "node",
+  "id": 9197810555,
+  "lat": 47.4578198,
+  "lon": 8.5628413,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "K"
+  }
+},
+{
+  "type": "node",
+  "id": 9197812103,
+  "lat": 47.4654548,
+  "lon": 8.5569496,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "H1"
+  }
+},
+{
+  "type": "node",
+  "id": 9197832788,
+  "lat": 47.4604532,
+  "lon": 8.5632829,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "H3"
+  }
+},
+{
+  "type": "node",
+  "id": 9197832789,
+  "lat": 47.4605817,
+  "lon": 8.5631057,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "H3"
+  }
+},
+{
+  "type": "node",
+  "id": 9198197943,
+  "lat": 47.4785756,
+  "lon": 8.5392158,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "G"
+  }
+},
+{
+  "type": "node",
+  "id": 9198197976,
+  "lat": 47.4769082,
+  "lon": 8.5368750,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E1"
+  }
+},
+{
+  "type": "node",
+  "id": 9198197996,
+  "lat": 47.4760900,
+  "lon": 8.5375439,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E2"
+  }
+},
+{
+  "type": "node",
+  "id": 9198198005,
+  "lat": 47.4756414,
+  "lon": 8.5389148,
+  "tags": {
+    "aeroway": "holding_position",
+    "alt_name": "ER (from 2026-11-26)",
+    "holding_position:type": "ILS",
+    "name": "EZ",
+    "ref": "EZ"
+  }
+},
+{
+  "type": "node",
+  "id": 9199466996,
+  "lat": 47.4528487,
+  "lon": 8.5499488,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "R7"
+  }
+},
+{
+  "type": "node",
+  "id": 9199492812,
+  "lat": 47.4484076,
+  "lon": 8.5527280,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "R8"
+  }
+},
+{
+  "type": "node",
+  "id": 9199532901,
+  "lat": 47.4437489,
+  "lon": 8.5607768,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9200357041,
+  "lat": 47.4571647,
+  "lon": 8.5529372,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "F"
+  }
+},
+{
+  "type": "node",
+  "id": 9200357043,
+  "lat": 47.4571908,
+  "lon": 8.5514751,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E"
+  }
+},
+{
+  "type": "node",
+  "id": 9200425071,
+  "lat": 47.4559855,
+  "lon": 8.5514910,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E6"
+  }
+},
+{
+  "type": "node",
+  "id": 9202020745,
+  "lat": 47.4564727,
+  "lon": 8.5626710,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "K"
+  }
+},
+{
+  "type": "node",
+  "id": 9202020746,
+  "lat": 47.4567672,
+  "lon": 8.5586038,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "J"
+  }
+},
+{
+  "type": "node",
+  "id": 9202020749,
+  "lat": 47.4559111,
+  "lon": 8.5701662,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "A1"
+  }
+},
+{
+  "type": "node",
+  "id": 9956711289,
+  "lat": 47.4504434,
+  "lon": 8.5485757,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "703"
+  }
+},
+{
+  "type": "node",
+  "id": 9956715467,
+  "lat": 47.4498833,
+  "lon": 8.5483079,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "705"
+  }
+},
+{
+  "type": "node",
+  "id": 9956715469,
+  "lat": 47.4507257,
+  "lon": 8.5487107,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "702"
+  }
+},
+{
+  "type": "node",
+  "id": 9956717330,
+  "lat": 47.4485209,
+  "lon": 8.5476565,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "710"
+  }
+},
+{
+  "type": "node",
+  "id": 9956721693,
+  "lat": 47.4493417,
+  "lon": 8.5480489,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "707"
+  }
+},
+{
+  "type": "node",
+  "id": 9956723755,
+  "lat": 47.4479597,
+  "lon": 8.5473882,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "712"
+  }
+},
+{
+  "type": "node",
+  "id": 9956726496,
+  "lat": 47.4482397,
+  "lon": 8.5475220,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "711"
+  }
+},
+{
+  "type": "node",
+  "id": 9956731792,
+  "lat": 47.4490533,
+  "lon": 8.5479945,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "708"
+  }
+},
+{
+  "type": "node",
+  "id": 9956732210,
+  "lat": 47.4501594,
+  "lon": 8.5484399,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "704"
+  }
+},
+{
+  "type": "node",
+  "id": 9956734389,
+  "lat": 47.4487924,
+  "lon": 8.5477863,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "709"
+  }
+},
+{
+  "type": "node",
+  "id": 9956741339,
+  "lat": 47.4496205,
+  "lon": 8.5481823,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "706"
+  }
+},
+{
+  "type": "node",
+  "id": 9956748217,
+  "lat": 47.4510012,
+  "lon": 8.5488424,
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "701"
+  }
+},
+{
+  "type": "node",
+  "id": 9969867494,
+  "lat": 47.4423340,
+  "lon": 8.5619142,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9969952535,
+  "lat": 47.4430921,
+  "lon": 8.5629943,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9969993584,
+  "lat": 47.4477759,
+  "lon": 8.5604675,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9969999270,
+  "lat": 47.4490222,
+  "lon": 8.5596099,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970000653,
+  "lat": 47.4454415,
+  "lon": 8.5642104,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970008503,
+  "lat": 47.4452817,
+  "lon": 8.5637058,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970015756,
+  "lat": 47.4452928,
+  "lon": 8.5621760,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970015757,
+  "lat": 47.4461166,
+  "lon": 8.5616092,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970103335,
+  "lat": 47.4460931,
+  "lon": 8.5579108,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E9"
+  }
+},
+{
+  "type": "node",
+  "id": 9970104376,
+  "lat": 47.4447357,
+  "lon": 8.5600471,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970145125,
+  "lat": 47.4469865,
+  "lon": 8.5584984,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9970150610,
+  "lat": 47.4460034,
+  "lon": 8.5591749,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971481296,
+  "lat": 47.4495369,
+  "lon": 8.5578645,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971522609,
+  "lat": 47.4497472,
+  "lon": 8.5569689,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971570917,
+  "lat": 47.4497173,
+  "lon": 8.5577141,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971576719,
+  "lat": 47.4493838,
+  "lon": 8.5558106,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E8"
+  }
+},
+{
+  "type": "node",
+  "id": 9971664682,
+  "lat": 47.4515100,
+  "lon": 8.5490857,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971679290,
+  "lat": 47.4518971,
+  "lon": 8.5494653,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971679291,
+  "lat": 47.4518858,
+  "lon": 8.5495166,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971679293,
+  "lat": 47.4519015,
+  "lon": 8.5494452,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9971793804,
+  "lat": 47.4541055,
+  "lon": 8.5480378,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9972071610,
+  "lat": 47.4532742,
+  "lon": 8.5486101,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9972074205,
+  "lat": 47.4534968,
+  "lon": 8.5477117,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9972196307,
+  "lat": 47.4548558,
+  "lon": 8.5485186,
+  "tags": {
+    "aeroway": "holding_position",
+    "direction": "backward",
+    "holding_position:type": "runway",
+    "ref": "L"
+  }
+},
+{
+  "type": "node",
+  "id": 9972212279,
+  "lat": 47.4564628,
+  "lon": 8.5412542,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9972243359,
+  "lat": 47.4576340,
+  "lon": 8.5429331,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "L7"
+  }
+},
+{
+  "type": "node",
+  "id": 9977175657,
+  "lat": 47.4527114,
+  "lon": 8.5564333,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9984910038,
+  "lat": 47.4501788,
+  "lon": 8.5563235,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9984988037,
+  "lat": 47.4502276,
+  "lon": 8.5572425,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9985050323,
+  "lat": 47.4518082,
+  "lon": 8.5552020,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9985133328,
+  "lat": 47.4530191,
+  "lon": 8.5543686,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9985251786,
+  "lat": 47.4538027,
+  "lon": 8.5528422,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E7"
+  }
+},
+{
+  "type": "node",
+  "id": 9985332738,
+  "lat": 47.4535463,
+  "lon": 8.5552350,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9985336432,
+  "lat": 47.4522003,
+  "lon": 8.5558849,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9985374966,
+  "lat": 47.4531483,
+  "lon": 8.5545753,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986002406,
+  "lat": 47.4561050,
+  "lon": 8.5522445,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986068169,
+  "lat": 47.4556381,
+  "lon": 8.5525659,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986088225,
+  "lat": 47.4543531,
+  "lon": 8.5546797,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986091052,
+  "lat": 47.4544791,
+  "lon": 8.5539786,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986091740,
+  "lat": 47.4546347,
+  "lon": 8.5532566,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986097129,
+  "lat": 47.4560748,
+  "lon": 8.5534946,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9986105592,
+  "lat": 47.4558104,
+  "lon": 8.5536766,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9990728150,
+  "lat": 47.4553304,
+  "lon": 8.5533924,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9990728151,
+  "lat": 47.4553769,
+  "lon": 8.5533575,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9992881976,
+  "lat": 47.4552615,
+  "lon": 8.5549821,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9992895065,
+  "lat": 47.4571645,
+  "lon": 8.5529410,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "F"
+  }
+},
+{
+  "type": "node",
+  "id": 9992897512,
+  "lat": 47.4568196,
+  "lon": 8.5525106,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9992897513,
+  "lat": 47.4568045,
+  "lon": 8.5525210,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9992903209,
+  "lat": 47.4550612,
+  "lon": 8.5578006,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9992947624,
+  "lat": 47.4567147,
+  "lon": 8.5539875,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9992947947,
+  "lat": 47.4564325,
+  "lon": 8.5579621,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9994368829,
+  "lat": 47.4561393,
+  "lon": 8.5620352,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9994375446,
+  "lat": 47.4560023,
+  "lon": 8.5584857,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9994386778,
+  "lat": 47.4563461,
+  "lon": 8.5591283,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9994388373,
+  "lat": 47.4554181,
+  "lon": 8.5583956,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9994714656,
+  "lat": 47.4556091,
+  "lon": 8.5695524,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "A2"
+  }
+},
+{
+  "type": "node",
+  "id": 9994776053,
+  "lat": 47.4553343,
+  "lon": 8.5706443,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "P2"
+  }
+},
+{
+  "type": "node",
+  "id": 9994783817,
+  "lat": 47.4550100,
+  "lon": 8.5714270,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 9994785026,
+  "lat": 47.4555570,
+  "lon": 8.5706790,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "P1"
+  }
+},
+{
+  "type": "node",
+  "id": 10011210156,
+  "lat": 47.4574594,
+  "lon": 8.5709373,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "Z1"
+  }
+},
+{
+  "type": "node",
+  "id": 10011373534,
+  "lat": 47.4579859,
+  "lon": 8.5658211,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10027012718,
+  "lat": 47.4596824,
+  "lon": 8.5419136,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10027072920,
+  "lat": 47.4588475,
+  "lon": 8.5643458,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10044634655,
+  "lat": 47.4592729,
+  "lon": 8.5603078,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10044634656,
+  "lat": 47.4591234,
+  "lon": 8.5624134,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10044801853,
+  "lat": 47.4581371,
+  "lon": 8.5636946,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10044807838,
+  "lat": 47.4586316,
+  "lon": 8.5630044,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10044807839,
+  "lat": 47.4582378,
+  "lon": 8.5622763,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047189503,
+  "lat": 47.4595764,
+  "lon": 8.5623376,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047212762,
+  "lat": 47.4585532,
+  "lon": 8.5647383,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047217311,
+  "lat": 47.4595997,
+  "lon": 8.5631540,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047226034,
+  "lat": 47.4605935,
+  "lon": 8.5619796,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047395489,
+  "lat": 47.4597157,
+  "lon": 8.5603762,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047400914,
+  "lat": 47.4600658,
+  "lon": 8.5617502,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10047411899,
+  "lat": 47.4601585,
+  "lon": 8.5604446,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10072979458,
+  "lat": 47.4597635,
+  "lon": 8.5597059,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076656203,
+  "lat": 47.4581013,
+  "lon": 8.5588577,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "J"
+  }
+},
+{
+  "type": "node",
+  "id": 10076673763,
+  "lat": 47.4618265,
+  "lon": 8.5600258,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076743843,
+  "lat": 47.4607294,
+  "lon": 8.5598595,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076744846,
+  "lat": 47.4614222,
+  "lon": 8.5608492,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076750463,
+  "lat": 47.4612170,
+  "lon": 8.5599349,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076779932,
+  "lat": 47.4593838,
+  "lon": 8.5587465,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076788094,
+  "lat": 47.4596506,
+  "lon": 8.5549868,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076788095,
+  "lat": 47.4587656,
+  "lon": 8.5548426,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076788096,
+  "lat": 47.4586714,
+  "lon": 8.5561691,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076788097,
+  "lat": 47.4595570,
+  "lon": 8.5563058,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076803476,
+  "lat": 47.4585334,
+  "lon": 8.5581135,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10076805297,
+  "lat": 47.4584140,
+  "lon": 8.5597955,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089712169,
+  "lat": 47.4588900,
+  "lon": 8.5530875,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089720613,
+  "lat": 47.4606252,
+  "lon": 8.5505599,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089738847,
+  "lat": 47.4594570,
+  "lon": 8.5514109,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089738848,
+  "lat": 47.4594502,
+  "lon": 8.5515062,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089738849,
+  "lat": 47.4594605,
+  "lon": 8.5513614,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089738850,
+  "lat": 47.4594693,
+  "lon": 8.5513115,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089739852,
+  "lat": 47.4607751,
+  "lon": 8.5490073,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743114,
+  "lat": 47.4599853,
+  "lon": 8.5502757,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743115,
+  "lat": 47.4599035,
+  "lon": 8.5503321,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743116,
+  "lat": 47.4599649,
+  "lon": 8.5502898,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743226,
+  "lat": 47.4589588,
+  "lon": 8.5509823,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743227,
+  "lat": 47.4590744,
+  "lon": 8.5509027,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743228,
+  "lat": 47.4590437,
+  "lon": 8.5509239,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743229,
+  "lat": 47.4590705,
+  "lon": 8.5509054,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089743230,
+  "lat": 47.4589300,
+  "lon": 8.5510021,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089750117,
+  "lat": 47.4600497,
+  "lon": 8.5502314,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089752412,
+  "lat": 47.4598486,
+  "lon": 8.5521975,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089781995,
+  "lat": 47.4622853,
+  "lon": 8.5587655,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089791262,
+  "lat": 47.4629947,
+  "lon": 8.5587044,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089796554,
+  "lat": 47.4629937,
+  "lon": 8.5598122,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "ILS",
+    "ref": "H2"
+  }
+},
+{
+  "type": "node",
+  "id": 10089803369,
+  "lat": 47.4623131,
+  "lon": 8.5584897,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10089805871,
+  "lat": 47.4623050,
+  "lon": 8.5584885,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091598976,
+  "lat": 47.4628278,
+  "lon": 8.5511217,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091598977,
+  "lat": 47.4627313,
+  "lon": 8.5524812,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091598978,
+  "lat": 47.4625759,
+  "lon": 8.5546709,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091598979,
+  "lat": 47.4624200,
+  "lon": 8.5568665,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091612138,
+  "lat": 47.4632743,
+  "lon": 8.5506308,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091613061,
+  "lat": 47.4628803,
+  "lon": 8.5503816,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091613062,
+  "lat": 47.4629443,
+  "lon": 8.5503634,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091614099,
+  "lat": 47.4623237,
+  "lon": 8.5479410,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091627302,
+  "lat": 47.4630823,
+  "lon": 8.5481433,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091627303,
+  "lat": 47.4630368,
+  "lon": 8.5481746,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091627304,
+  "lat": 47.4630196,
+  "lon": 8.5481864,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091627305,
+  "lat": 47.4629682,
+  "lon": 8.5482219,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091641384,
+  "lat": 47.4635319,
+  "lon": 8.5485306,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091641385,
+  "lat": 47.4635391,
+  "lon": 8.5485533,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091647847,
+  "lat": 47.4663417,
+  "lon": 8.5473480,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091647848,
+  "lat": 47.4661533,
+  "lon": 8.5467531,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091647849,
+  "lat": 47.4652447,
+  "lon": 8.5473788,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091647850,
+  "lat": 47.4654330,
+  "lon": 8.5479738,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091647851,
+  "lat": 47.4656215,
+  "lon": 8.5485685,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091647852,
+  "lat": 47.4665451,
+  "lon": 8.5478969,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091695315,
+  "lat": 47.4670517,
+  "lon": 8.5446852,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091704583,
+  "lat": 47.4637982,
+  "lon": 8.5469257,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091712637,
+  "lat": 47.4653254,
+  "lon": 8.5458740,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091713658,
+  "lat": 47.4647808,
+  "lon": 8.5457303,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "runway",
+    "ref": "E4"
+  }
+},
+{
+  "type": "node",
+  "id": 10091719346,
+  "lat": 47.4688243,
+  "lon": 8.5436108,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 10091741091,
+  "lat": 47.4676167,
+  "lon": 8.5456505,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 11673171658,
+  "lat": 47.4513684,
+  "lon": 8.5498197,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate"
+  }
+},
+{
+  "type": "node",
+  "id": 12640700388,
+  "lat": 47.4559147,
+  "lon": 8.5652084,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "ILS"
+  }
+},
+{
+  "type": "node",
+  "id": 13261681759,
+  "lat": 47.4555851,
+  "lon": 8.5695492,
+  "tags": {
+    "aeroway": "holding_position",
+    "holding_position:type": "intermediate",
+    "ref": "A2"
+  }
+},
+{
+  "type": "node",
+  "id": 13264666259,
+  "lat": 47.4522525,
+  "lon": 8.5563002,
+  "tags": {
+    "aeroway": "holding_position",
+    "direction": "forward"
+  }
+},
+{
+  "type": "way",
+  "id": 29024003,
+  "center": {
+    "lat": 47.4507054,
+    "lon": 8.5479505
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Heliport West",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 38080890,
+  "center": {
+    "lat": 47.4557849,
+    "lon": 8.5438971
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Holding Bay 10"
+  }
+},
+{
+  "type": "way",
+  "id": 141473050,
+  "center": {
+    "lat": 47.4484740,
+    "lon": 8.5502669
+  },
+  "tags": {
+    "aeroway": "apron",
+    "ref": "W"
+  }
+},
+{
+  "type": "way",
+  "id": 228719147,
+  "center": {
+    "lat": 47.4598761,
+    "lon": 8.5610301
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "De-Icing Pad C",
+    "ref": "C"
+  }
+},
+{
+  "type": "way",
+  "id": 228719572,
+  "center": {
+    "lat": 47.4659854,
+    "lon": 8.5478458
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "De-Icing Pad F",
+    "ref": "F"
+  }
+},
+{
+  "type": "way",
+  "id": 431662870,
+  "center": {
+    "lat": 47.4551469,
+    "lon": 8.5666416
+  },
+  "tags": {
+    "aeroway": "apron",
+    "ref": "F"
+  }
+},
+{
+  "type": "way",
+  "id": 665273467,
+  "center": {
+    "lat": 47.4490719,
+    "lon": 8.5497596
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 9"
+  }
+},
+{
+  "type": "way",
+  "id": 665273468,
+  "center": {
+    "lat": 47.4474174,
+    "lon": 8.5482623
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 8"
+  }
+},
+{
+  "type": "way",
+  "id": 665273469,
+  "center": {
+    "lat": 47.4494930,
+    "lon": 8.5485260
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 7"
+  }
+},
+{
+  "type": "way",
+  "id": 735443244,
+  "center": {
+    "lat": 47.4549317,
+    "lon": 8.5691397
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 5"
+  }
+},
+{
+  "type": "way",
+  "id": 735443245,
+  "center": {
+    "lat": 47.4535832,
+    "lon": 8.5729308
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 1"
+  }
+},
+{
+  "type": "way",
+  "id": 735443251,
+  "center": {
+    "lat": 47.4552152,
+    "lon": 8.5758743
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 3 Ost"
+  }
+},
+{
+  "type": "way",
+  "id": 915512889,
+  "center": {
+    "lat": 47.4485817,
+    "lon": 8.5515696
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W05"
+  }
+},
+{
+  "type": "way",
+  "id": 915512890,
+  "center": {
+    "lat": 47.4486005,
+    "lon": 8.5511981
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W23"
+  }
+},
+{
+  "type": "way",
+  "id": 915512891,
+  "center": {
+    "lat": 47.4484252,
+    "lon": 8.5510756
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W04"
+  }
+},
+{
+  "type": "way",
+  "id": 915512892,
+  "center": {
+    "lat": 47.4482555,
+    "lon": 8.5503832
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W03"
+  }
+},
+{
+  "type": "way",
+  "id": 915512893,
+  "center": {
+    "lat": 47.4482912,
+    "lon": 8.5502217
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W22"
+  }
+},
+{
+  "type": "way",
+  "id": 915512894,
+  "center": {
+    "lat": 47.4482424,
+    "lon": 8.5500681
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W30"
+  }
+},
+{
+  "type": "way",
+  "id": 915512895,
+  "center": {
+    "lat": 47.4480669,
+    "lon": 8.5497879
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W02"
+  }
+},
+{
+  "type": "way",
+  "id": 915512896,
+  "center": {
+    "lat": 47.4480162,
+    "lon": 8.5493532
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W21"
+  }
+},
+{
+  "type": "way",
+  "id": 915512897,
+  "center": {
+    "lat": 47.4478942,
+    "lon": 8.5492425
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W01"
+  }
+},
+{
+  "type": "way",
+  "id": 915512898,
+  "center": {
+    "lat": 47.4636758,
+    "lon": 8.5496045
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P35"
+  }
+},
+{
+  "type": "way",
+  "id": 915512899,
+  "center": {
+    "lat": 47.4640268,
+    "lon": 8.5493628
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P36"
+  }
+},
+{
+  "type": "way",
+  "id": 915512900,
+  "center": {
+    "lat": 47.4643820,
+    "lon": 8.5491182
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P37"
+  }
+},
+{
+  "type": "way",
+  "id": 915512901,
+  "center": {
+    "lat": 47.4631030,
+    "lon": 8.5531517
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P31"
+  }
+},
+{
+  "type": "way",
+  "id": 915512902,
+  "center": {
+    "lat": 47.4631436,
+    "lon": 8.5525793
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P32"
+  }
+},
+{
+  "type": "way",
+  "id": 915512903,
+  "center": {
+    "lat": 47.4631842,
+    "lon": 8.5520083
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P33"
+  }
+},
+{
+  "type": "way",
+  "id": 915512904,
+  "center": {
+    "lat": 47.4632252,
+    "lon": 8.5514296
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P34"
+  }
+},
+{
+  "type": "way",
+  "id": 915512905,
+  "center": {
+    "lat": 47.4553345,
+    "lon": 8.5677593
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "F70"
+  }
+},
+{
+  "type": "way",
+  "id": 915512907,
+  "center": {
+    "lat": 47.4554127,
+    "lon": 8.5666538
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "F71"
+  }
+},
+{
+  "type": "way",
+  "id": 915512909,
+  "center": {
+    "lat": 47.4428668,
+    "lon": 8.5609347
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G01"
+  }
+},
+{
+  "type": "way",
+  "id": 915512910,
+  "center": {
+    "lat": 47.4424796,
+    "lon": 8.5612011
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G02"
+  }
+},
+{
+  "type": "way",
+  "id": 915512911,
+  "center": {
+    "lat": 47.4421025,
+    "lon": 8.5614605
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G03"
+  }
+},
+{
+  "type": "way",
+  "id": 915512912,
+  "center": {
+    "lat": 47.4417191,
+    "lon": 8.5617243
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G04"
+  }
+},
+{
+  "type": "way",
+  "id": 915512913,
+  "center": {
+    "lat": 47.4413347,
+    "lon": 8.5619886
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G05"
+  }
+},
+{
+  "type": "way",
+  "id": 915512914,
+  "center": {
+    "lat": 47.4409486,
+    "lon": 8.5622543
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G06"
+  }
+},
+{
+  "type": "way",
+  "id": 915512915,
+  "center": {
+    "lat": 47.4412668,
+    "lon": 8.5632592
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G14"
+  }
+},
+{
+  "type": "way",
+  "id": 915512916,
+  "center": {
+    "lat": 47.4416280,
+    "lon": 8.5630107
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G13"
+  }
+},
+{
+  "type": "way",
+  "id": 915512917,
+  "center": {
+    "lat": 47.4419871,
+    "lon": 8.5627366
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G12"
+  }
+},
+{
+  "type": "way",
+  "id": 915512918,
+  "center": {
+    "lat": 47.4423636,
+    "lon": 8.5625229
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "G11"
+  }
+},
+{
+  "type": "way",
+  "id": 915512920,
+  "center": {
+    "lat": 47.4434627,
+    "lon": 8.5623724
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T63"
+  }
+},
+{
+  "type": "way",
+  "id": 915512921,
+  "center": {
+    "lat": 47.4436221,
+    "lon": 8.5629213
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T62"
+  }
+},
+{
+  "type": "way",
+  "id": 915512922,
+  "center": {
+    "lat": 47.4437959,
+    "lon": 8.5632061
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T61"
+  }
+},
+{
+  "type": "way",
+  "id": 915512923,
+  "center": {
+    "lat": 47.4437787,
+    "lon": 8.5634703
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T60"
+  }
+},
+{
+  "type": "way",
+  "id": 915512924,
+  "center": {
+    "lat": 47.4434273,
+    "lon": 8.5653201
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T44"
+  }
+},
+{
+  "type": "way",
+  "id": 915512925,
+  "center": {
+    "lat": 47.4436490,
+    "lon": 8.5658641
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T43"
+  }
+},
+{
+  "type": "way",
+  "id": 915512926,
+  "center": {
+    "lat": 47.4440698,
+    "lon": 8.5667175
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T41"
+  }
+},
+{
+  "type": "way",
+  "id": 915512927,
+  "center": {
+    "lat": 47.4438636,
+    "lon": 8.5664267
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T42"
+  }
+},
+{
+  "type": "way",
+  "id": 915512928,
+  "center": {
+    "lat": 47.4457091,
+    "lon": 8.5662912
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T46"
+  }
+},
+{
+  "type": "way",
+  "id": 915512929,
+  "center": {
+    "lat": 47.4460929,
+    "lon": 8.5662268
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T45"
+  }
+},
+{
+  "type": "way",
+  "id": 915512930,
+  "center": {
+    "lat": 47.4467832,
+    "lon": 8.5660258
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T51"
+  }
+},
+{
+  "type": "way",
+  "id": 915512931,
+  "center": {
+    "lat": 47.4466427,
+    "lon": 8.5655445
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T52"
+  }
+},
+{
+  "type": "way",
+  "id": 915512932,
+  "center": {
+    "lat": 47.4464758,
+    "lon": 8.5650693
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T53"
+  }
+},
+{
+  "type": "way",
+  "id": 915512933,
+  "center": {
+    "lat": 47.4461324,
+    "lon": 8.5646730
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T54"
+  }
+},
+{
+  "type": "way",
+  "id": 915512934,
+  "center": {
+    "lat": 47.4459428,
+    "lon": 8.5641097
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T56"
+  }
+},
+{
+  "type": "way",
+  "id": 915512935,
+  "center": {
+    "lat": 47.4456982,
+    "lon": 8.5627528
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C60"
+  }
+},
+{
+  "type": "way",
+  "id": 915512936,
+  "center": {
+    "lat": 47.4458165,
+    "lon": 8.5626884
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C59"
+  }
+},
+{
+  "type": "way",
+  "id": 915512937,
+  "center": {
+    "lat": 47.4460499,
+    "lon": 8.5625108
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C58"
+  }
+},
+{
+  "type": "way",
+  "id": 915512938,
+  "center": {
+    "lat": 47.4464122,
+    "lon": 8.5622785
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C57"
+  }
+},
+{
+  "type": "way",
+  "id": 915512939,
+  "center": {
+    "lat": 47.4467647,
+    "lon": 8.5620213
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C56"
+  }
+},
+{
+  "type": "way",
+  "id": 915512940,
+  "center": {
+    "lat": 47.4470018,
+    "lon": 8.5618729
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C55"
+  }
+},
+{
+  "type": "way",
+  "id": 915512941,
+  "center": {
+    "lat": 47.4471185,
+    "lon": 8.5617756
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C54"
+  }
+},
+{
+  "type": "way",
+  "id": 915512942,
+  "center": {
+    "lat": 47.4476098,
+    "lon": 8.5614376
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C53"
+  }
+},
+{
+  "type": "way",
+  "id": 915512943,
+  "center": {
+    "lat": 47.4477382,
+    "lon": 8.5613662
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C52"
+  }
+},
+{
+  "type": "way",
+  "id": 915512944,
+  "center": {
+    "lat": 47.4479660,
+    "lon": 8.5611918
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C51"
+  }
+},
+{
+  "type": "way",
+  "id": 915512945,
+  "center": {
+    "lat": 47.4483280,
+    "lon": 8.5609608
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "C50"
+  }
+},
+{
+  "type": "way",
+  "id": 915512946,
+  "center": {
+    "lat": 47.4445702,
+    "lon": 8.5618174
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D17"
+  }
+},
+{
+  "type": "way",
+  "id": 915512947,
+  "center": {
+    "lat": 47.4446925,
+    "lon": 8.5615897
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D16"
+  }
+},
+{
+  "type": "way",
+  "id": 915512948,
+  "center": {
+    "lat": 47.4449155,
+    "lon": 8.5615797
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D15"
+  }
+},
+{
+  "type": "way",
+  "id": 915512949,
+  "center": {
+    "lat": 47.4452939,
+    "lon": 8.5613194
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D14"
+  }
+},
+{
+  "type": "way",
+  "id": 915512950,
+  "center": {
+    "lat": 47.4454094,
+    "lon": 8.5610745
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D13"
+  }
+},
+{
+  "type": "way",
+  "id": 915512951,
+  "center": {
+    "lat": 47.4456371,
+    "lon": 8.5610794
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D12"
+  }
+},
+{
+  "type": "way",
+  "id": 915512952,
+  "center": {
+    "lat": 47.4460154,
+    "lon": 8.5608233
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D11"
+  }
+},
+{
+  "type": "way",
+  "id": 915512953,
+  "center": {
+    "lat": 47.4461300,
+    "lon": 8.5605786
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D10"
+  }
+},
+{
+  "type": "way",
+  "id": 915512954,
+  "center": {
+    "lat": 47.4463603,
+    "lon": 8.5605857
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D09"
+  }
+},
+{
+  "type": "way",
+  "id": 915512955,
+  "center": {
+    "lat": 47.4467380,
+    "lon": 8.5603261
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D08"
+  }
+},
+{
+  "type": "way",
+  "id": 915512956,
+  "center": {
+    "lat": 47.4468519,
+    "lon": 8.5600819
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D07"
+  }
+},
+{
+  "type": "way",
+  "id": 915512957,
+  "center": {
+    "lat": 47.4470829,
+    "lon": 8.5600886
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D06"
+  }
+},
+{
+  "type": "way",
+  "id": 915512958,
+  "center": {
+    "lat": 47.4480740,
+    "lon": 8.5593198
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D05"
+  }
+},
+{
+  "type": "way",
+  "id": 915512959,
+  "center": {
+    "lat": 47.4482137,
+    "lon": 8.5592235
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D04"
+  }
+},
+{
+  "type": "way",
+  "id": 915512960,
+  "center": {
+    "lat": 47.4484592,
+    "lon": 8.5590546
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D03"
+  }
+},
+{
+  "type": "way",
+  "id": 915512961,
+  "center": {
+    "lat": 47.4487517,
+    "lon": 8.5588533
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D02"
+  }
+},
+{
+  "type": "way",
+  "id": 915512962,
+  "center": {
+    "lat": 47.4488337,
+    "lon": 8.5587969
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "D01"
+  }
+},
+{
+  "type": "way",
+  "id": 915512963,
+  "center": {
+    "lat": 47.4499850,
+    "lon": 8.5596567
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B32"
+  }
+},
+{
+  "type": "way",
+  "id": 915512964,
+  "center": {
+    "lat": 47.4499977,
+    "lon": 8.5594801
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B34"
+  }
+},
+{
+  "type": "way",
+  "id": 915512965,
+  "center": {
+    "lat": 47.4499810,
+    "lon": 8.5590801
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B36"
+  }
+},
+{
+  "type": "way",
+  "id": 915512966,
+  "center": {
+    "lat": 47.4500657,
+    "lon": 8.5585237
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B38"
+  }
+},
+{
+  "type": "way",
+  "id": 915512967,
+  "center": {
+    "lat": 47.4521845,
+    "lon": 8.5569950
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B45"
+  }
+},
+{
+  "type": "way",
+  "id": 915512968,
+  "center": {
+    "lat": 47.4521440,
+    "lon": 8.5571668
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B43"
+  }
+},
+{
+  "type": "way",
+  "id": 915512969,
+  "center": {
+    "lat": 47.4521448,
+    "lon": 8.5575544
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B41"
+  }
+},
+{
+  "type": "way",
+  "id": 915512970,
+  "center": {
+    "lat": 47.4520260,
+    "lon": 8.5580942
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B39"
+  }
+},
+{
+  "type": "way",
+  "id": 915512971,
+  "center": {
+    "lat": 47.4519678,
+    "lon": 8.5588401
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B37"
+  }
+},
+{
+  "type": "way",
+  "id": 915512972,
+  "center": {
+    "lat": 47.4519601,
+    "lon": 8.5590213
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B35"
+  }
+},
+{
+  "type": "way",
+  "id": 915512973,
+  "center": {
+    "lat": 47.4520618,
+    "lon": 8.5594218
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B33"
+  }
+},
+{
+  "type": "way",
+  "id": 915512974,
+  "center": {
+    "lat": 47.4518942,
+    "lon": 8.5599513
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "B31"
+  }
+},
+{
+  "type": "way",
+  "id": 915512975,
+  "center": {
+    "lat": 47.4529656,
+    "lon": 8.5601274
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "construction": "yes",
+    "ref": "A42"
+  }
+},
+{
+  "type": "way",
+  "id": 915512976,
+  "center": {
+    "lat": 47.4530192,
+    "lon": 8.5593819
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A44"
+  }
+},
+{
+  "type": "way",
+  "id": 915512977,
+  "center": {
+    "lat": 47.4530783,
+    "lon": 8.5585689
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A02"
+  }
+},
+{
+  "type": "way",
+  "id": 915512978,
+  "center": {
+    "lat": 47.4530890,
+    "lon": 8.5583894
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A46"
+  }
+},
+{
+  "type": "way",
+  "id": 915512979,
+  "center": {
+    "lat": 47.4531224,
+    "lon": 8.5580294
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A04"
+  }
+},
+{
+  "type": "way",
+  "id": 915512980,
+  "center": {
+    "lat": 47.4531528,
+    "lon": 8.5574907
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A48"
+  }
+},
+{
+  "type": "way",
+  "id": 915512981,
+  "center": {
+    "lat": 47.4531906,
+    "lon": 8.5569586
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A08"
+  }
+},
+{
+  "type": "way",
+  "id": 915512982,
+  "center": {
+    "lat": 47.4532282,
+    "lon": 8.5564281
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A10"
+  }
+},
+{
+  "type": "way",
+  "id": 915512983,
+  "center": {
+    "lat": 47.4546871,
+    "lon": 8.5557282
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A57"
+  }
+},
+{
+  "type": "way",
+  "id": 915512984,
+  "center": {
+    "lat": 47.4546400,
+    "lon": 8.5563908
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A17"
+  }
+},
+{
+  "type": "way",
+  "id": 915512985,
+  "center": {
+    "lat": 47.4546000,
+    "lon": 8.5569527
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A15"
+  }
+},
+{
+  "type": "way",
+  "id": 915512986,
+  "center": {
+    "lat": 47.4545605,
+    "lon": 8.5575097
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A13"
+  }
+},
+{
+  "type": "way",
+  "id": 915512987,
+  "center": {
+    "lat": 47.4545643,
+    "lon": 8.5580780
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A11"
+  }
+},
+{
+  "type": "way",
+  "id": 915512988,
+  "center": {
+    "lat": 47.4544714,
+    "lon": 8.5587638
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "A49"
+  }
+},
+{
+  "type": "way",
+  "id": 915512989,
+  "center": {
+    "lat": 47.4544198,
+    "lon": 8.5594986
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "construction": "yes",
+    "ref": "A09"
+  }
+},
+{
+  "type": "way",
+  "id": 915512990,
+  "center": {
+    "lat": 47.4543809,
+    "lon": 8.5600565
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "construction": "yes",
+    "ref": "A07"
+  }
+},
+{
+  "type": "way",
+  "id": 915512991,
+  "center": {
+    "lat": 47.4543374,
+    "lon": 8.5606497
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "construction": "yes",
+    "ref": "A05"
+  }
+},
+{
+  "type": "way",
+  "id": 915512992,
+  "center": {
+    "lat": 47.4542976,
+    "lon": 8.5612094
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "construction": "yes",
+    "ref": "A03"
+  }
+},
+{
+  "type": "way",
+  "id": 915512993,
+  "center": {
+    "lat": 47.4613835,
+    "lon": 8.5591147
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E19"
+  }
+},
+{
+  "type": "way",
+  "id": 915512994,
+  "center": {
+    "lat": 47.4599982,
+    "lon": 8.5582603
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E20"
+  }
+},
+{
+  "type": "way",
+  "id": 915512995,
+  "center": {
+    "lat": 47.4600560,
+    "lon": 8.5573183
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E26"
+  }
+},
+{
+  "type": "way",
+  "id": 915512996,
+  "center": {
+    "lat": 47.4601227,
+    "lon": 8.5563779
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E32"
+  }
+},
+{
+  "type": "way",
+  "id": 915512997,
+  "center": {
+    "lat": 47.4601356,
+    "lon": 8.5561954
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E34"
+  }
+},
+{
+  "type": "way",
+  "id": 915512998,
+  "center": {
+    "lat": 47.4601630,
+    "lon": 8.5558105
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E36"
+  }
+},
+{
+  "type": "way",
+  "id": 915512999,
+  "center": {
+    "lat": 47.4602040,
+    "lon": 8.5552331
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E42"
+  }
+},
+{
+  "type": "way",
+  "id": 915513000,
+  "center": {
+    "lat": 47.4602447,
+    "lon": 8.5546593
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E44"
+  }
+},
+{
+  "type": "way",
+  "id": 915513001,
+  "center": {
+    "lat": 47.4602625,
+    "lon": 8.5543178
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E4M"
+  }
+},
+{
+  "type": "way",
+  "id": 915513002,
+  "center": {
+    "lat": 47.4602721,
+    "lon": 8.5542742
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E46"
+  }
+},
+{
+  "type": "way",
+  "id": 915513003,
+  "center": {
+    "lat": 47.4602852,
+    "lon": 8.5540893
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E48"
+  }
+},
+{
+  "type": "way",
+  "id": 915513004,
+  "center": {
+    "lat": 47.4603257,
+    "lon": 8.5535176
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E50"
+  }
+},
+{
+  "type": "way",
+  "id": 915513005,
+  "center": {
+    "lat": 47.4603395,
+    "lon": 8.5533238
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E52"
+  }
+},
+{
+  "type": "way",
+  "id": 915513006,
+  "center": {
+    "lat": 47.4603666,
+    "lon": 8.5529409
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E54"
+  }
+},
+{
+  "type": "way",
+  "id": 915513007,
+  "center": {
+    "lat": 47.4603984,
+    "lon": 8.5523698
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E56"
+  }
+},
+{
+  "type": "way",
+  "id": 915513008,
+  "center": {
+    "lat": 47.4604016,
+    "lon": 8.5523271
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E5M"
+  }
+},
+{
+  "type": "way",
+  "id": 915513009,
+  "center": {
+    "lat": 47.4605794,
+    "lon": 8.5513778
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E58"
+  }
+},
+{
+  "type": "way",
+  "id": 915513010,
+  "center": {
+    "lat": 47.4609389,
+    "lon": 8.5511303
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E62"
+  }
+},
+{
+  "type": "way",
+  "id": 915513011,
+  "center": {
+    "lat": 47.4612657,
+    "lon": 8.5508034
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E64"
+  }
+},
+{
+  "type": "way",
+  "id": 915513012,
+  "center": {
+    "lat": 47.4622869,
+    "lon": 8.5507578
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E67"
+  }
+},
+{
+  "type": "way",
+  "id": 915513013,
+  "center": {
+    "lat": 47.4622493,
+    "lon": 8.5519334
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E57"
+  }
+},
+{
+  "type": "way",
+  "id": 915513014,
+  "center": {
+    "lat": 47.4622084,
+    "lon": 8.5525097
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E55"
+  }
+},
+{
+  "type": "way",
+  "id": 915513015,
+  "center": {
+    "lat": 47.4621710,
+    "lon": 8.5528868
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E53"
+  }
+},
+{
+  "type": "way",
+  "id": 915513016,
+  "center": {
+    "lat": 47.4621677,
+    "lon": 8.5530837
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E51"
+  }
+},
+{
+  "type": "way",
+  "id": 915513017,
+  "center": {
+    "lat": 47.4621121,
+    "lon": 8.5538103
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E49"
+  }
+},
+{
+  "type": "way",
+  "id": 915513018,
+  "center": {
+    "lat": 47.4620934,
+    "lon": 8.5540018
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E47"
+  }
+},
+{
+  "type": "way",
+  "id": 915513019,
+  "center": {
+    "lat": 47.4620750,
+    "lon": 8.5543888
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E45"
+  }
+},
+{
+  "type": "way",
+  "id": 915513020,
+  "center": {
+    "lat": 47.4620346,
+    "lon": 8.5549588
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E43"
+  }
+},
+{
+  "type": "way",
+  "id": 915513021,
+  "center": {
+    "lat": 47.4619938,
+    "lon": 8.5555335
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E37"
+  }
+},
+{
+  "type": "way",
+  "id": 915513022,
+  "center": {
+    "lat": 47.4619665,
+    "lon": 8.5559175
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E35"
+  }
+},
+{
+  "type": "way",
+  "id": 915513023,
+  "center": {
+    "lat": 47.4619527,
+    "lon": 8.5561135
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E33"
+  }
+},
+{
+  "type": "way",
+  "id": 915513024,
+  "center": {
+    "lat": 47.4618308,
+    "lon": 8.5578303
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E23"
+  }
+},
+{
+  "type": "way",
+  "id": 915513025,
+  "center": {
+    "lat": 47.4618989,
+    "lon": 8.5568710
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "E27"
+  }
+},
+{
+  "type": "way",
+  "id": 964963626,
+  "center": {
+    "lat": 47.4553228,
+    "lon": 8.5614809
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "H11"
+  }
+},
+{
+  "type": "way",
+  "id": 964963628,
+  "center": {
+    "lat": 47.4554216,
+    "lon": 8.5599620
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "H13"
+  }
+},
+{
+  "type": "way",
+  "id": 964967821,
+  "center": {
+    "lat": 47.4553818,
+    "lon": 8.5605231
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "H12"
+  }
+},
+{
+  "type": "way",
+  "id": 965375511,
+  "center": {
+    "lat": 47.4557907,
+    "lon": 8.5547355
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "I05"
+  }
+},
+{
+  "type": "way",
+  "id": 965375512,
+  "center": {
+    "lat": 47.4557509,
+    "lon": 8.5553272
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "I04"
+  }
+},
+{
+  "type": "way",
+  "id": 965375513,
+  "center": {
+    "lat": 47.4557085,
+    "lon": 8.5559249
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "I03"
+  }
+},
+{
+  "type": "way",
+  "id": 965375514,
+  "center": {
+    "lat": 47.4556451,
+    "lon": 8.5568164
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "I02"
+  }
+},
+{
+  "type": "way",
+  "id": 965375515,
+  "center": {
+    "lat": 47.4556076,
+    "lon": 8.5574125
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "I01"
+  }
+},
+{
+  "type": "way",
+  "id": 976717542,
+  "center": {
+    "lat": 47.4550319,
+    "lon": 8.5687214
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "502"
+  }
+},
+{
+  "type": "way",
+  "id": 976717544,
+  "center": {
+    "lat": 47.4549713,
+    "lon": 8.5695749
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "501"
+  }
+},
+{
+  "type": "way",
+  "id": 995931552,
+  "center": {
+    "lat": 47.4551137,
+    "lon": 8.5725930
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "301"
+  }
+},
+{
+  "type": "way",
+  "id": 995931553,
+  "center": {
+    "lat": 47.4550916,
+    "lon": 8.5729584
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "302"
+  }
+},
+{
+  "type": "way",
+  "id": 995931554,
+  "center": {
+    "lat": 47.4550688,
+    "lon": 8.5733366
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "303"
+  }
+},
+{
+  "type": "way",
+  "id": 995931555,
+  "center": {
+    "lat": 47.4550480,
+    "lon": 8.5737028
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "304"
+  }
+},
+{
+  "type": "way",
+  "id": 995931556,
+  "center": {
+    "lat": 47.4550204,
+    "lon": 8.5740802
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "305"
+  }
+},
+{
+  "type": "way",
+  "id": 995933582,
+  "center": {
+    "lat": 47.4553267,
+    "lon": 8.5726433
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "307"
+  }
+},
+{
+  "type": "way",
+  "id": 995933583,
+  "center": {
+    "lat": 47.4553302,
+    "lon": 8.5724350
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "306"
+  }
+},
+{
+  "type": "way",
+  "id": 995933584,
+  "center": {
+    "lat": 47.4553085,
+    "lon": 8.5728572
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "308"
+  }
+},
+{
+  "type": "way",
+  "id": 995933585,
+  "center": {
+    "lat": 47.4552939,
+    "lon": 8.5730684
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "309"
+  }
+},
+{
+  "type": "way",
+  "id": 995933586,
+  "center": {
+    "lat": 47.4552849,
+    "lon": 8.5732797
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "310"
+  }
+},
+{
+  "type": "way",
+  "id": 995933587,
+  "center": {
+    "lat": 47.4552700,
+    "lon": 8.5734904
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "311"
+  }
+},
+{
+  "type": "way",
+  "id": 995933588,
+  "center": {
+    "lat": 47.4552547,
+    "lon": 8.5737003
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "312"
+  }
+},
+{
+  "type": "way",
+  "id": 995933589,
+  "center": {
+    "lat": 47.4552406,
+    "lon": 8.5739108
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "313"
+  }
+},
+{
+  "type": "way",
+  "id": 995933590,
+  "center": {
+    "lat": 47.4552258,
+    "lon": 8.5741235
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "314"
+  }
+},
+{
+  "type": "way",
+  "id": 995933591,
+  "center": {
+    "lat": 47.4554924,
+    "lon": 8.5732032
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "315"
+  }
+},
+{
+  "type": "way",
+  "id": 995933592,
+  "center": {
+    "lat": 47.4554772,
+    "lon": 8.5734148
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "316"
+  }
+},
+{
+  "type": "way",
+  "id": 995933593,
+  "center": {
+    "lat": 47.4554627,
+    "lon": 8.5736242
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "317"
+  }
+},
+{
+  "type": "way",
+  "id": 995933594,
+  "center": {
+    "lat": 47.4554514,
+    "lon": 8.5738362
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "318"
+  }
+},
+{
+  "type": "way",
+  "id": 995933595,
+  "center": {
+    "lat": 47.4554316,
+    "lon": 8.5740506
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "319"
+  }
+},
+{
+  "type": "way",
+  "id": 995933596,
+  "center": {
+    "lat": 47.4554169,
+    "lon": 8.5742603
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "320"
+  }
+},
+{
+  "type": "way",
+  "id": 1052964008,
+  "center": {
+    "lat": 47.4577216,
+    "lon": 8.5739239
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "Sector 6"
+  }
+},
+{
+  "type": "way",
+  "id": 1085806842,
+  "center": {
+    "lat": 47.4446406,
+    "lon": 8.5648624
+  },
+  "tags": {
+    "aeroway": "apron",
+    "name": "SSH"
+  }
+},
+{
+  "type": "way",
+  "id": 1085823325,
+  "center": {
+    "lat": 47.4481413,
+    "lon": 8.5596500
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V07"
+  }
+},
+{
+  "type": "way",
+  "id": 1085823818,
+  "center": {
+    "lat": 47.4478379,
+    "lon": 8.5585532
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V08"
+  }
+},
+{
+  "type": "way",
+  "id": 1085824082,
+  "center": {
+    "lat": 47.4484190,
+    "lon": 8.5594712
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V05"
+  }
+},
+{
+  "type": "way",
+  "id": 1085824408,
+  "center": {
+    "lat": 47.4481247,
+    "lon": 8.5583657
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V06"
+  }
+},
+{
+  "type": "way",
+  "id": 1085824591,
+  "center": {
+    "lat": 47.4486839,
+    "lon": 8.5592795
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V03"
+  }
+},
+{
+  "type": "way",
+  "id": 1085824634,
+  "center": {
+    "lat": 47.4484098,
+    "lon": 8.5581623
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V04"
+  }
+},
+{
+  "type": "way",
+  "id": 1085825085,
+  "center": {
+    "lat": 47.4489426,
+    "lon": 8.5590362
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V01"
+  }
+},
+{
+  "type": "way",
+  "id": 1085825208,
+  "center": {
+    "lat": 47.4486932,
+    "lon": 8.5579676
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V02"
+  }
+},
+{
+  "type": "way",
+  "id": 1085827826,
+  "center": {
+    "lat": 47.4455705,
+    "lon": 8.5634513
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V14"
+  }
+},
+{
+  "type": "way",
+  "id": 1085827872,
+  "center": {
+    "lat": 47.4454398,
+    "lon": 8.5627394
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V15"
+  }
+},
+{
+  "type": "way",
+  "id": 1085828358,
+  "center": {
+    "lat": 47.4460229,
+    "lon": 8.5630982
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V12"
+  }
+},
+{
+  "type": "way",
+  "id": 1085828382,
+  "center": {
+    "lat": 47.4457959,
+    "lon": 8.5623721
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V13"
+  }
+},
+{
+  "type": "way",
+  "id": 1085828422,
+  "center": {
+    "lat": 47.4463207,
+    "lon": 8.5629164
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V10"
+  }
+},
+{
+  "type": "way",
+  "id": 1085828606,
+  "center": {
+    "lat": 47.4461374,
+    "lon": 8.5621017
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "V11"
+  }
+},
+{
+  "type": "way",
+  "id": 1086398163,
+  "center": {
+    "lat": 47.4543077,
+    "lon": 8.5726747
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "106"
+  }
+},
+{
+  "type": "way",
+  "id": 1086398270,
+  "center": {
+    "lat": 47.4542889,
+    "lon": 8.5729385
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "107"
+  }
+},
+{
+  "type": "way",
+  "id": 1086398401,
+  "center": {
+    "lat": 47.4542713,
+    "lon": 8.5731858
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "108"
+  }
+},
+{
+  "type": "way",
+  "id": 1086399195,
+  "center": {
+    "lat": 47.4542572,
+    "lon": 8.5733835
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "109"
+  }
+},
+{
+  "type": "way",
+  "id": 1086399346,
+  "center": {
+    "lat": 47.4542431,
+    "lon": 8.5735813
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "110"
+  }
+},
+{
+  "type": "way",
+  "id": 1086399492,
+  "center": {
+    "lat": 47.4542290,
+    "lon": 8.5737792
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "111"
+  }
+},
+{
+  "type": "way",
+  "id": 1086399587,
+  "center": {
+    "lat": 47.4539490,
+    "lon": 8.5726776
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "105"
+  }
+},
+{
+  "type": "way",
+  "id": 1086399740,
+  "center": {
+    "lat": 47.4539312,
+    "lon": 8.5729282
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "104"
+  }
+},
+{
+  "type": "way",
+  "id": 1086399861,
+  "center": {
+    "lat": 47.4539133,
+    "lon": 8.5731788
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "103"
+  }
+},
+{
+  "type": "way",
+  "id": 1086400014,
+  "center": {
+    "lat": 47.4538955,
+    "lon": 8.5734294
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "102"
+  }
+},
+{
+  "type": "way",
+  "id": 1086400551,
+  "center": {
+    "lat": 47.4539134,
+    "lon": 8.5736854
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "101"
+  }
+},
+{
+  "type": "way",
+  "id": 1086429234,
+  "center": {
+    "lat": 47.4571256,
+    "lon": 8.5745660
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "408"
+  }
+},
+{
+  "type": "way",
+  "id": 1086429307,
+  "center": {
+    "lat": 47.4571409,
+    "lon": 8.5743539
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "407"
+  }
+},
+{
+  "type": "way",
+  "id": 1086429354,
+  "center": {
+    "lat": 47.4571563,
+    "lon": 8.5741410
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "406"
+  }
+},
+{
+  "type": "way",
+  "id": 1086429886,
+  "center": {
+    "lat": 47.4571714,
+    "lon": 8.5739322
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "405"
+  }
+},
+{
+  "type": "way",
+  "id": 1086430421,
+  "center": {
+    "lat": 47.4571867,
+    "lon": 8.5737206
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "404"
+  }
+},
+{
+  "type": "way",
+  "id": 1086430586,
+  "center": {
+    "lat": 47.4572021,
+    "lon": 8.5735096
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "403"
+  }
+},
+{
+  "type": "way",
+  "id": 1086430592,
+  "center": {
+    "lat": 47.4572173,
+    "lon": 8.5732992
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "402"
+  }
+},
+{
+  "type": "way",
+  "id": 1086430786,
+  "center": {
+    "lat": 47.4572327,
+    "lon": 8.5730870
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "401"
+  }
+},
+{
+  "type": "way",
+  "id": 1086430972,
+  "center": {
+    "lat": 47.4571229,
+    "lon": 8.5749548
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "412"
+  }
+},
+{
+  "type": "way",
+  "id": 1086431136,
+  "center": {
+    "lat": 47.4572379,
+    "lon": 8.5749620
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "411"
+  }
+},
+{
+  "type": "way",
+  "id": 1086431250,
+  "center": {
+    "lat": 47.4572810,
+    "lon": 8.5747813
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "410"
+  }
+},
+{
+  "type": "way",
+  "id": 1086444207,
+  "center": {
+    "lat": 47.4643092,
+    "lon": 8.5491684
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P3D"
+  }
+},
+{
+  "type": "way",
+  "id": 1086444319,
+  "center": {
+    "lat": 47.4642385,
+    "lon": 8.5492172
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P3C"
+  }
+},
+{
+  "type": "way",
+  "id": 1086444499,
+  "center": {
+    "lat": 47.4638205,
+    "lon": 8.5495049
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P3B"
+  }
+},
+{
+  "type": "way",
+  "id": 1086444690,
+  "center": {
+    "lat": 47.4637453,
+    "lon": 8.5495566
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "P3A"
+  }
+},
+{
+  "type": "way",
+  "id": 1086633213,
+  "center": {
+    "lat": 47.4493360,
+    "lon": 8.5506433
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "908"
+  }
+},
+{
+  "type": "way",
+  "id": 1086633248,
+  "center": {
+    "lat": 47.4492265,
+    "lon": 8.5503767
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "907"
+  }
+},
+{
+  "type": "way",
+  "id": 1086633558,
+  "center": {
+    "lat": 47.4491268,
+    "lon": 8.5500974
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "906"
+  }
+},
+{
+  "type": "way",
+  "id": 1086633649,
+  "center": {
+    "lat": 47.4490345,
+    "lon": 8.5498223
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "905"
+  }
+},
+{
+  "type": "way",
+  "id": 1086633756,
+  "center": {
+    "lat": 47.4489447,
+    "lon": 8.5495425
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "904"
+  }
+},
+{
+  "type": "way",
+  "id": 1086633834,
+  "center": {
+    "lat": 47.4488536,
+    "lon": 8.5492549
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "903"
+  }
+},
+{
+  "type": "way",
+  "id": 1086634048,
+  "center": {
+    "lat": 47.4487769,
+    "lon": 8.5490552
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "902"
+  }
+},
+{
+  "type": "way",
+  "id": 1086634090,
+  "center": {
+    "lat": 47.4486603,
+    "lon": 8.5488728
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "901"
+  }
+},
+{
+  "type": "way",
+  "id": 1086655366,
+  "center": {
+    "lat": 47.4472429,
+    "lon": 8.5488235
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "801"
+  }
+},
+{
+  "type": "way",
+  "id": 1086655440,
+  "center": {
+    "lat": 47.4473232,
+    "lon": 8.5484599
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "802"
+  }
+},
+{
+  "type": "way",
+  "id": 1086655511,
+  "center": {
+    "lat": 47.4474010,
+    "lon": 8.5481074
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "803"
+  }
+},
+{
+  "type": "way",
+  "id": 1086655552,
+  "center": {
+    "lat": 47.4474815,
+    "lon": 8.5477386
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "804"
+  }
+},
+{
+  "type": "way",
+  "id": 1086655685,
+  "center": {
+    "lat": 47.4475686,
+    "lon": 8.5473519
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "805"
+  }
+},
+{
+  "type": "way",
+  "id": 1086656803,
+  "center": {
+    "lat": 47.4478976,
+    "lon": 8.5476893
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "712"
+  }
+},
+{
+  "type": "way",
+  "id": 1086656825,
+  "center": {
+    "lat": 47.4481771,
+    "lon": 8.5478161
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "711"
+  }
+},
+{
+  "type": "way",
+  "id": 1086657041,
+  "center": {
+    "lat": 47.4484554,
+    "lon": 8.5479492
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "710"
+  }
+},
+{
+  "type": "way",
+  "id": 1086657933,
+  "center": {
+    "lat": 47.4487289,
+    "lon": 8.5480799
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "709"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658016,
+  "center": {
+    "lat": 47.4489971,
+    "lon": 8.5482499
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "708"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658066,
+  "center": {
+    "lat": 47.4492791,
+    "lon": 8.5483429
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "707"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658177,
+  "center": {
+    "lat": 47.4495562,
+    "lon": 8.5484755
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "706"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658562,
+  "center": {
+    "lat": 47.4498254,
+    "lon": 8.5486042
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "705"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658587,
+  "center": {
+    "lat": 47.4501011,
+    "lon": 8.5487360
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "704"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658617,
+  "center": {
+    "lat": 47.4503809,
+    "lon": 8.5488698
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "703"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658726,
+  "center": {
+    "lat": 47.4506597,
+    "lon": 8.5490032
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "702"
+  }
+},
+{
+  "type": "way",
+  "id": 1086658750,
+  "center": {
+    "lat": 47.4509353,
+    "lon": 8.5491349
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "701"
+  }
+},
+{
+  "type": "way",
+  "id": 1088362113,
+  "center": {
+    "lat": 47.4474902,
+    "lon": 8.5481407
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W33"
+  }
+},
+{
+  "type": "way",
+  "id": 1091229749,
+  "center": {
+    "lat": 47.4553250,
+    "lon": 8.5718974
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "SD"
+  }
+},
+{
+  "type": "way",
+  "id": 1126642519,
+  "center": {
+    "lat": 47.4572954,
+    "lon": 8.5745791
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "409"
+  }
+},
+{
+  "type": "way",
+  "id": 1280116995,
+  "center": {
+    "lat": 47.4552213,
+    "lon": 8.5691807
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "503"
+  }
+},
+{
+  "type": "way",
+  "id": 1280116997,
+  "center": {
+    "lat": 47.4554919,
+    "lon": 8.5655484
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "F72"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003399,
+  "center": {
+    "lat": 47.4500216,
+    "lon": 8.5465785
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W60"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003400,
+  "center": {
+    "lat": 47.4505962,
+    "lon": 8.5462911
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W59"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003402,
+  "center": {
+    "lat": 47.4507035,
+    "lon": 8.5464660
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W58"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003404,
+  "center": {
+    "lat": 47.4509810,
+    "lon": 8.5464257
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W57"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003405,
+  "center": {
+    "lat": 47.4513426,
+    "lon": 8.5467001
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W56"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003406,
+  "center": {
+    "lat": 47.4517235,
+    "lon": 8.5467955
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W55"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003407,
+  "center": {
+    "lat": 47.4526401,
+    "lon": 8.5475235
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W50"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003409,
+  "center": {
+    "lat": 47.4519215,
+    "lon": 8.5471539
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W54"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003411,
+  "center": {
+    "lat": 47.4520865,
+    "lon": 8.5470105
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W53"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003412,
+  "center": {
+    "lat": 47.4524500,
+    "lon": 8.5472244
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W52"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003413,
+  "center": {
+    "lat": 47.4538817,
+    "lon": 8.5467143
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W40"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003414,
+  "center": {
+    "lat": 47.4517217,
+    "lon": 8.5447829
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W47"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003415,
+  "center": {
+    "lat": 47.4519130,
+    "lon": 8.5455534
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W46"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003416,
+  "center": {
+    "lat": 47.4521914,
+    "lon": 8.5453502
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W45"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003417,
+  "center": {
+    "lat": 47.4522676,
+    "lon": 8.5456931
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W44"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003418,
+  "center": {
+    "lat": 47.4526607,
+    "lon": 8.5460296
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W43"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003419,
+  "center": {
+    "lat": 47.4529986,
+    "lon": 8.5462291
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W42"
+  }
+},
+{
+  "type": "way",
+  "id": 1338003420,
+  "center": {
+    "lat": 47.4533368,
+    "lon": 8.5464285
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "W41"
+  }
+},
+{
+  "type": "way",
+  "id": 1396569560,
+  "center": {
+    "lat": 47.4460217,
+    "lon": 8.5643625
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "T55"
+  }
+},
+{
+  "type": "way",
+  "id": 1457521634,
+  "center": {
+    "lat": 47.4555790,
+    "lon": 8.5594208
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "H14"
+  }
+},
+{
+  "type": "way",
+  "id": 1457521635,
+  "center": {
+    "lat": 47.4550616,
+    "lon": 8.5593408
+  },
+  "tags": {
+    "aeroway": "parking_position",
+    "ref": "H14"
+  }
+}
+
+  ]
+}

@@ -1,0 +1,4 @@
+# 네 학습기를 고르게: m6r25sgcbx(LightGBM, CatBoost, XGBoost 각 1/3)의 mu 에 RealMLP 를 넷째 몫으로(W 0.25, 점수 전에 고정).
+logs/m6r25sgcbxr_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcbxr --base m6r25sgcbx --cat m6r25rm --col mu_rmlp --w 0.25
+logs/m6r25sgcbxr_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgcbxr --base m6r25sgcbx --cat m6r25rm --col mu_rmlp --w 0.25
+logs/m6r25sgcbxr_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgcbxr --base m6r25sgcbx --cat m6r25rm --col mu_rmlp --w 0.25

@@ -1,0 +1,10 @@
+{
+ "rows": 34766,
+ "kind": "airport x carrier x month: arrivals and arrival copies (inputs), 2025 non-G departures and art (training labels)",
+ "sha16": "4ecdbea3beb1607b",
+ "source": "cache/all.parquet",
+ "source_sha16": "4cecec6f9a89e010",
+ "built_kst": "2026-10-08 23:06:20 KST",
+ "code": "tools/artmm.py table",
+ "code_sha16": "a78fda56cd3f3e15"
+}

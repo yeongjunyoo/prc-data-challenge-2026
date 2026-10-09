@@ -1,0 +1,4 @@
+# 네 학습기 섞기 가중을 묶음 밖 예측에서(src/blend_oof.py, 점수 전에 정한 규칙: 음 아닌 가중 합 1, 비 G 행 제곱오차, val 은 날 묶음 10겹 교차 맞춤, fwd 는 1월 날, full 은 자 62일 전부). 바탕 m6r25sg 와 m6r25cb, m6r25xg, m6r25rm 의 mu
+logs/m6r25sgoof4_val_s0.log	.venv/Scripts/python.exe -u src/blend_oof.py --setting val --seed 0 --tag m6r25sgoof4 --base m6r25sg --learners m6r25cb:mu_cat,m6r25xg:mu_xgb,m6r25rm:mu_rmlp --folds 10
+logs/m6r25sgoof4_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_oof.py --setting fwd --seed 0 --tag m6r25sgoof4 --base m6r25sg --learners m6r25cb:mu_cat,m6r25xg:mu_xgb,m6r25rm:mu_rmlp --folds 10
+logs/m6r25sgoof4_full_s0.log	.venv/Scripts/python.exe -u src/blend_oof.py --setting full --seed 0 --tag m6r25sgoof4 --base m6r25sg --learners m6r25cb:mu_cat,m6r25xg:mu_xgb,m6r25rm:mu_rmlp --folds 10

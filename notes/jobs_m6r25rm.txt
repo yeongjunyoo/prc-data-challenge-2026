@@ -1,0 +1,5 @@
+# RealMLP 회귀(mu)를 model3 와 같은 회귀 행, 같은 피처로 GPU 에서 학습한 판(src/rmlp_mu.py, 설정은 점수 전에 고정: TD 기본값, batch 2048, epochs 64, 다시 맞추기 없음).
+# 근거: TabArena BeyondArena 큰 회귀, 시간과 높은 기수 조각에서 조정한 LightGBM 보다 앞선 유일한 계열(10-04 00:48 조사). 묶음 후보는 섞은 판 쪽이다.
+logs/m6r25rm_val_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting val --seed 0 --tag m6r25rm --base m6r25 --feats feats_v25
+logs/m6r25rm_fwd_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting fwd --seed 0 --tag m6r25rm --base m6r25 --feats feats_v25
+logs/m6r25rm_full_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting full --seed 0 --tag m6r25rm --base m6r25 --feats feats_v25

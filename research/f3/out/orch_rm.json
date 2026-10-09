@@ -1,0 +1,62 @@
+{
+ "rmwin_s0": {
+  "rc": 0,
+  "end": "10-09 08:49:52",
+  "start": "10-09 08:32:51",
+  "cmd": "src/rmlp_mu.py --setting full --seed 0 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1"
+ },
+ "rmwin_s1": {
+  "rc": 0,
+  "end": "10-09 09:06:22",
+  "start": "10-09 08:49:52",
+  "cmd": "src/rmlp_mu.py --setting full --seed 1 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1"
+ },
+ "rmwin_s2": {
+  "rc": 0,
+  "end": "10-09 09:22:52",
+  "start": "10-09 09:06:22",
+  "cmd": "src/rmlp_mu.py --setting full --seed 2 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1"
+ },
+ "rmwin_s3": {
+  "rc": 0,
+  "end": "10-09 09:39:23",
+  "start": "10-09 09:22:52",
+  "cmd": "src/rmlp_mu.py --setting full --seed 3 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1"
+ },
+ "rm_s0": {
+  "rc": 0,
+  "end": "10-09 09:55:53",
+  "start": "10-09 09:39:23",
+  "cmd": "src/rmlp_mu.py --setting full --seed 0 --tag m6r27rm --base m6r27sk --feats feats_v27 --device mps --threads 1"
+ },
+ "rm_s1": {
+  "rc": 0,
+  "end": "10-09 10:12:24",
+  "start": "10-09 09:55:53",
+  "cmd": "src/rmlp_mu.py --setting full --seed 1 --tag m6r27rm --base m6r27sk --feats feats_v27 --device mps --threads 1"
+ },
+ "rm_s2": {
+  "rc": 0,
+  "end": "10-09 10:28:54",
+  "start": "10-09 10:12:24",
+  "cmd": "src/rmlp_mu.py --setting full --seed 2 --tag m6r27rm --base m6r27sk --feats feats_v27 --device mps --threads 1"
+ },
+ "rm_s3": {
+  "rc": 0,
+  "end": "10-09 10:45:24",
+  "start": "10-09 10:28:54",
+  "cmd": "src/rmlp_mu.py --setting full --seed 3 --tag m6r27rm --base m6r27sk --feats feats_v27 --device mps --threads 1"
+ },
+ "avg_rmwinx4": {
+  "rc": 0,
+  "end": "10-09 10:46:24",
+  "start": "10-09 10:45:24",
+  "cmd": "research/f3/avg_legs_final.py m6r27rmwin m6r27rmwinx4 0,1,2,3"
+ },
+ "avg_rmx4": {
+  "rc": 0,
+  "end": "10-09 10:47:24",
+  "start": "10-09 10:46:24",
+  "cmd": "research/f3/avg_legs_final.py m6r27rm m6r27rmx4 0,1,2,3"
+ }
+}

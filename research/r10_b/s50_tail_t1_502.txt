@@ -1,0 +1,30 @@
+start 23:21:34 need 4096 MB, commit < 85 %, cap 2.0 GB: s50_tail.py preds/manifest_m6r27wincbrmfw4sv324adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavsk.json
+val months ['01', '07'], rows 344419; fwd months ['07'], rows 190713
+[calib val_jan] {'band': '0-600', 'n': 16847, 'pred': 487.0, 'y': 486.4, 'resid': -0.6, 'mse_share': 0.0179}
+[calib val_jan] {'band': '600-1200', 'n': 103141, 'pred': 887.0, 'y': 890.2, 'resid': 3.2, 'mse_share': 0.7826}
+[calib val_jan] {'band': '1200-1800', 'n': 27896, 'pred': 1401.0, 'y': 1405.7, 'resid': 4.7, 'mse_share': 0.097}
+[calib val_jan] {'band': '1800-2700', 'n': 4828, 'pred': 2112.5, 'y': 2120.9, 'resid': 8.4, 'mse_share': 0.0444}
+[calib val_jan] {'band': '2700-3600', 'n': 767, 'pred': 3014.4, 'y': 3030.4, 'resid': 15.9, 'mse_share': 0.014}
+[calib val_jan] {'band': '3600-inf', 'n': 167, 'pred': 4381.2, 'y': 4471.0, 'resid': 89.8, 'mse_share': 0.0096}
+[calib val_jan] {'true_y_3600_7200': 281, 'pred': 3353.1, 'y': 4270.4}
+[calib val_jul] {'band': '0-600', 'n': 18041, 'pred': 482.1, 'y': 478.2, 'resid': -4.0, 'mse_share': 0.0169}
+[calib val_jul] {'band': '600-1200', 'n': 124889, 'pred': 898.0, 'y': 897.3, 'resid': -0.7, 'mse_share': 0.2975}
+[calib val_jul] {'band': '1200-1800', 'n': 41370, 'pred': 1407.7, 'y': 1413.7, 'resid': 6.0, 'mse_share': 0.2736}
+[calib val_jul] {'band': '1800-2700', 'n': 5155, 'pred': 2070.3, 'y': 2116.4, 'resid': 46.1, 'mse_share': 0.1291}
+[calib val_jul] {'band': '2700-3600', 'n': 621, 'pred': 3027.9, 'y': 3145.0, 'resid': 117.1, 'mse_share': 0.0362}
+[calib val_jul] {'band': '3600-inf', 'n': 300, 'pred': 5058.8, 'y': 5113.8, 'resid': 54.9, 'mse_share': 0.0294}
+[calib val_jul] {'true_y_3600_7200': 501, 'pred': 3398.9, 'y': 4626.2}
+[calib fwd_jul] {'band': '0-600', 'n': 18361, 'pred': 481.3, 'y': 482.1, 'resid': 0.8, 'mse_share': 0.0158}
+[calib fwd_jul] {'band': '600-1200', 'n': 122714, 'pred': 897.7, 'y': 896.2, 'resid': -1.5, 'mse_share': 0.2833}
+[calib fwd_jul] {'band': '1200-1800', 'n': 43231, 'pred': 1410.6, 'y': 1400.7, 'resid': -9.9, 'mse_share': 0.2862}
+[calib fwd_jul] {'band': '1800-2700', 'n': 5207, 'pred': 2060.4, 'y': 2099.8, 'resid': 39.5, 'mse_share': 0.121}
+[calib fwd_jul] {'band': '2700-3600', 'n': 569, 'pred': 3009.2, 'y': 3123.0, 'resid': 113.8, 'mse_share': 0.0307}
+[calib fwd_jul] {'band': '3600-inf', 'n': 294, 'pred': 5041.1, 'y': 5055.8, 'resid': 14.7, 'mse_share': 0.0298}
+[calib fwd_jul] {'true_y_3600_7200': 501, 'pred': 3274.4, 'y': 4626.2}
+[fit] J (val Jan): tau 2400.0, lam 0.04; L (val Jul): tau 1200.0, lam 0.04
+[eval J_val_jul] {'rows': 190713, 'rows_moved': 1525, 'dmse': -39.0, 'boot_sd': 32.66, 'p_below0': 0.875, 'rmse': 248.159}
+[eval J_fwd_jul] {'rows': 190713, 'rows_moved': 1448, 'dmse': -27.36, 'boot_sd': 34.32, 'p_below0': 0.776, 'rmse': 263.014}
+[eval L_val_jan] {'rows': 153706, 'rows_moved': 33658, 'dmse': 28.4, 'boot_sd': 37.17, 'p_below0': 0.2295, 'rmse': 319.699}
+[gateT1] pass = False; fit on both val months: tau 1200.0, lam 0.02
+memcap: rc=0 cap=2.0GB peak_job=1.14GB
+end 23:21:46 rc 0

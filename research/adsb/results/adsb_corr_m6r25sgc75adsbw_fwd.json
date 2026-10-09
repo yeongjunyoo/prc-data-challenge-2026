@@ -1,0 +1,241 @@
+{
+ "rows": 190713,
+ "matched": {
+  "n": 115222,
+  "base_window": 256.397,
+  "adsb_window": 237.416
+ },
+ "fm_ok": {
+  "n": 20319,
+  "base_window": 196.355,
+  "adsb_window": 155.654
+ },
+ "all": {
+  "n": 190713,
+  "base_window": 304.376,
+  "adsb_window": 294.927
+ },
+ "unmatched": {
+  "n": 75491,
+  "base_window": 365.665,
+  "adsb_window": 365.665
+ },
+ "body_y_le_3600": {
+  "n": 190057,
+  "base_window": 263.051,
+  "adsb_window": 252.628
+ },
+ "per_airport_matched": {
+  "EDDF": {
+   "n": 20563,
+   "base_window": 188.29,
+   "adsb_window": 157.06
+  },
+  "EDDM": {
+   "n": 6036,
+   "base_window": 202.8,
+   "adsb_window": 155.64
+  },
+  "EGLL": {
+   "n": 8017,
+   "base_window": 309.01,
+   "adsb_window": 301.11
+  },
+  "EHAM": {
+   "n": 21975,
+   "base_window": 163.54,
+   "adsb_window": 120.2
+  },
+  "LEBL": {
+   "n": 16037,
+   "base_window": 265.02,
+   "adsb_window": 248.21
+  },
+  "LEMD": {
+   "n": 9215,
+   "base_window": 193.37,
+   "adsb_window": 170.91
+  },
+  "LFPG": {
+   "n": 7071,
+   "base_window": 257.67,
+   "adsb_window": 255.3
+  },
+  "LIRF": {
+   "n": 14340,
+   "base_window": 451.76,
+   "adsb_window": 446.26
+  },
+  "LSZH": {
+   "n": 11968,
+   "base_window": 177.51,
+   "adsb_window": 136.51
+  }
+ },
+ "per_day_matched": {
+  "2025-07-01": {
+   "n": 3594,
+   "base_window": 205.25,
+   "adsb_window": 185.86
+  },
+  "2025-07-02": {
+   "n": 3390,
+   "base_window": 237.6,
+   "adsb_window": 215.67
+  },
+  "2025-07-03": {
+   "n": 3287,
+   "base_window": 280.56,
+   "adsb_window": 257.76
+  },
+  "2025-07-04": {
+   "n": 3439,
+   "base_window": 252.08,
+   "adsb_window": 236.71
+  },
+  "2025-07-05": {
+   "n": 3371,
+   "base_window": 252.37,
+   "adsb_window": 233.94
+  },
+  "2025-07-06": {
+   "n": 3685,
+   "base_window": 315.8,
+   "adsb_window": 296.07
+  },
+  "2025-07-07": {
+   "n": 3475,
+   "base_window": 278.66,
+   "adsb_window": 262.19
+  },
+  "2025-07-08": {
+   "n": 3366,
+   "base_window": 205.66,
+   "adsb_window": 183.12
+  },
+  "2025-07-09": {
+   "n": 3445,
+   "base_window": 253.81,
+   "adsb_window": 238.72
+  },
+  "2025-07-10": {
+   "n": 3510,
+   "base_window": 223.26,
+   "adsb_window": 203.59
+  },
+  "2025-07-11": {
+   "n": 3500,
+   "base_window": 234.69,
+   "adsb_window": 220.88
+  },
+  "2025-07-12": {
+   "n": 3271,
+   "base_window": 228.23,
+   "adsb_window": 211.86
+  },
+  "2025-07-13": {
+   "n": 3445,
+   "base_window": 368.64,
+   "adsb_window": 342.78
+  },
+  "2025-07-14": {
+   "n": 3540,
+   "base_window": 273.6,
+   "adsb_window": 259.92
+  },
+  "2025-07-15": {
+   "n": 3445,
+   "base_window": 243.03,
+   "adsb_window": 231.15
+  },
+  "2025-07-16": {
+   "n": 3565,
+   "base_window": 219.61,
+   "adsb_window": 196.88
+  },
+  "2025-07-17": {
+   "n": 3594,
+   "base_window": 229.17,
+   "adsb_window": 212.79
+  },
+  "2025-07-18": {
+   "n": 3690,
+   "base_window": 245.59,
+   "adsb_window": 233.53
+  },
+  "2025-07-19": {
+   "n": 3925,
+   "base_window": 247.62,
+   "adsb_window": 230.41
+  },
+  "2025-07-20": {
+   "n": 4000,
+   "base_window": 285.46,
+   "adsb_window": 269.97
+  },
+  "2025-07-21": {
+   "n": 4182,
+   "base_window": 237.83,
+   "adsb_window": 215.58
+  },
+  "2025-07-22": {
+   "n": 3777,
+   "base_window": 199.57,
+   "adsb_window": 180.54
+  },
+  "2025-07-23": {
+   "n": 3792,
+   "base_window": 223.79,
+   "adsb_window": 206.54
+  },
+  "2025-07-24": {
+   "n": 4176,
+   "base_window": 259.96,
+   "adsb_window": 236.85
+  },
+  "2025-07-25": {
+   "n": 4023,
+   "base_window": 247.34,
+   "adsb_window": 224.91
+  },
+  "2025-07-26": {
+   "n": 3979,
+   "base_window": 232.52,
+   "adsb_window": 211.8
+  },
+  "2025-07-27": {
+   "n": 3909,
+   "base_window": 254.43,
+   "adsb_window": 227.04
+  },
+  "2025-07-28": {
+   "n": 4211,
+   "base_window": 284.61,
+   "adsb_window": 263.63
+  },
+  "2025-07-29": {
+   "n": 4111,
+   "base_window": 236.76,
+   "adsb_window": 214.94
+  },
+  "2025-07-30": {
+   "n": 4179,
+   "base_window": 311.1,
+   "adsb_window": 289.33
+  },
+  "2025-07-31": {
+   "n": 4346,
+   "base_window": 289.51,
+   "adsb_window": 272.85
+  }
+ },
+ "tag": "m6r25sgc75adsbw",
+ "setting": "fwd",
+ "base": "m6r25sgc75",
+ "adsb": "adsb_v1",
+ "adsb_sha": "2bb0952d93192201",
+ "note": "January only: 31 days, 82836 matched rows",
+ "rmse_base": 317.447,
+ "rmse_base_window": 304.376,
+ "rmse_adsb_window": 294.927
+}

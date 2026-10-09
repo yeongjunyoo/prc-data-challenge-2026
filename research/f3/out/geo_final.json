@@ -1,0 +1,69 @@
+{
+ "stand_map_filled_sha16": "419317298abf4971",
+ "regression_obs_geo_to_adsb_geo_v1": {
+  "pass": true,
+  "columns": {
+   "d_stand_first": {
+    "nan_pattern_equal": true,
+    "bits_equal": false,
+    "max_abs": 1.8189894035458565e-12
+   },
+   "st_known": {
+    "nan_pattern_equal": true,
+    "bits_equal": true,
+    "max_abs": 0.0
+   },
+   "d_stand_stop": {
+    "nan_pattern_equal": true,
+    "bits_equal": false,
+    "max_abs": 9.094947017729282e-13
+   },
+   "d_any_stand": {
+    "nan_pattern_equal": true,
+    "bits_equal": false,
+    "max_abs": 4.547473508864641e-13
+   },
+   "seg_code": {
+    "nan_pattern_equal": true,
+    "bits_equal": true,
+    "max_abs": 0.0
+   },
+   "to_gap": {
+    "nan_pattern_equal": true,
+    "bits_equal": true,
+    "max_abs": 0.0
+   }
+  }
+ },
+ "no_data_days_dropped": [
+  "2026-06-11"
+ ],
+ "obs_rows_2026": 664691,
+ "obs_by_month": {
+  "2026-01": 152719,
+  "2026-02": 144158,
+  "2026-06": 175692,
+  "2026-07": 192122
+ },
+ "jan_jul_common": 344841,
+ "jan_jul_rows_differing": {
+  "d_stand_first": 15355,
+  "st_known": 0,
+  "d_stand_stop": 3064,
+  "d_any_stand": 20084,
+  "seg_code": 11,
+  "to_gap": 11
+ },
+ "rows": 1009110,
+ "rows_2025": 344419,
+ "rows_2026": 664691,
+ "sha16": "9dfa71b64e1099de",
+ "fill_2026": {
+  "d_stand_first": 0.6656,
+  "st_known": 1.0,
+  "d_stand_stop": 0.1716,
+  "d_any_stand": 0.7297,
+  "seg_code": 0.7298,
+  "to_gap": 0.0
+ }
+}

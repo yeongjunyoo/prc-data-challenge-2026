@@ -1,0 +1,141 @@
+{
+ "tag": "m6r27tmcwin",
+ "setting": "full",
+ "seed": 0,
+ "anchor": "win",
+ "args": {
+  "setting": "full",
+  "seed": 0,
+  "tag": "m6r27tmcwin",
+  "base": "m6r27skwin",
+  "anchor": "win",
+  "k": 32,
+  "n_blocks": 2,
+  "d_block": 512,
+  "dropout": 0.1,
+  "d_emb": 16,
+  "n_bins": 48,
+  "lr": 0.002,
+  "wd": 0.0003,
+  "bs": 1024,
+  "epochs": 20,
+  "patience": 99,
+  "max_minutes": 150.0,
+  "sched": "cos",
+  "device": "mps",
+  "threads": 3,
+  "amp": "bf16"
+ },
+ "best_epoch": 17,
+ "es_rmse": 192.279,
+ "hist": [
+  {
+   "epoch": 0,
+   "es_rmse": 214.174,
+   "sec": 323.0
+  },
+  {
+   "epoch": 1,
+   "es_rmse": 210.931,
+   "sec": 322.1
+  },
+  {
+   "epoch": 2,
+   "es_rmse": 204.794,
+   "sec": 322.7
+  },
+  {
+   "epoch": 3,
+   "es_rmse": 202.799,
+   "sec": 322.5
+  },
+  {
+   "epoch": 4,
+   "es_rmse": 200.621,
+   "sec": 322.3
+  },
+  {
+   "epoch": 5,
+   "es_rmse": 197.557,
+   "sec": 321.8
+  },
+  {
+   "epoch": 6,
+   "es_rmse": 196.537,
+   "sec": 321.8
+  },
+  {
+   "epoch": 7,
+   "es_rmse": 196.714,
+   "sec": 321.6
+  },
+  {
+   "epoch": 8,
+   "es_rmse": 196.564,
+   "sec": 321.6
+  },
+  {
+   "epoch": 9,
+   "es_rmse": 196.861,
+   "sec": 314.7
+  },
+  {
+   "epoch": 10,
+   "es_rmse": 194.703,
+   "sec": 307.4
+  },
+  {
+   "epoch": 11,
+   "es_rmse": 193.512,
+   "sec": 307.3
+  },
+  {
+   "epoch": 12,
+   "es_rmse": 193.774,
+   "sec": 307.3
+  },
+  {
+   "epoch": 13,
+   "es_rmse": 192.58,
+   "sec": 307.3
+  },
+  {
+   "epoch": 14,
+   "es_rmse": 194.314,
+   "sec": 307.3
+  },
+  {
+   "epoch": 15,
+   "es_rmse": 193.292,
+   "sec": 307.1
+  },
+  {
+   "epoch": 16,
+   "es_rmse": 192.637,
+   "sec": 307.1
+  },
+  {
+   "epoch": 17,
+   "es_rmse": 192.279,
+   "sec": 307.1
+  },
+  {
+   "epoch": 18,
+   "es_rmse": 192.439,
+   "sec": 307.1
+  },
+  {
+   "epoch": 19,
+   "es_rmse": 192.545,
+   "sec": 307.1
+  }
+ ],
+ "params": 1877576,
+ "target_mean": 49.909295594958245,
+ "target_sd": 365.25938355268005,
+ "minutes": 105.7,
+ "versions": {
+  "tabm": "0.0.3",
+  "torch": "2.11.0"
+ }
+}

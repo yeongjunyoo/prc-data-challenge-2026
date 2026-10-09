@@ -1,0 +1,35 @@
+{
+ "written_kst": "2026-10-02 23:07:08",
+ "batch": [
+  "010_m4br_avg2",
+  "020_m3r_directG",
+  "030_m6r_avg2"
+ ],
+ "check": "src/composition.py 피처 칸별 채움 비율(feats_v24, 칸 101개). 폭 = max(2025 달 쌍 차이, 자의 비율로 낸 이항 표준오차 4배)",
+ "result": "101칸 중 2칸 폭 밖: prefix, fl_len(둘 다 diff 0.01%p, 폭 0.008%p). notes/composition.json(10-02 23:04 register_batch --dry 의 준비 점검)",
+ "rows": {
+  "cause": "FLIGHT_mvt(편명)가 빈 행. 두 칸 모두 편명에서 만든다(src/feats.py 314, 324줄). 빈 행은 전부 LIRF",
+  "ruler": {
+   "rows": 344419,
+   "nan": 25,
+   "pct": 0.0073,
+   "callsign_present": 20,
+   "nm_matched": 20,
+   "y_mean_on_nan_rows": 1787.5,
+   "y_max": 5334.0
+  },
+  "test": {
+   "rows": 344841,
+   "nan": 58,
+   "pct": 0.0168,
+   "callsign_present": 35,
+   "nm_matched": 35
+  },
+  "extra_test_rows": 33,
+  "two_proportion_z_pooled": 3.62,
+  "z_ruler_only_floor": "약 4.6(폭 4.0 넘음)"
+ },
+ "materiality": "33행이 각각 3,000초 오차를 가져도 RMSE 는 약 317.7 → 319.1(+1.4)로 단일 시드 잡음 4.29 안이다. 세 후보가 같은 피처와 같은 행을 써서 수준을 같이 옮기는 쪽이라, 측정 묶음이 재는 후보 사이 Δ 의 부호에는 거의 영향이 없다",
+ "not_done": "편명 빈 행을 callsign 으로 채워도 5 대 23 행이 남아 차이가 그대로다. 표지 값으로 채우는 것은 결측을 숨기는 것이라 하지 않는다. 잡음 바닥을 통합 비율(교과서식 두 비율 z, 그러면 3.62 로 통과)로 되돌리는 것은 실패를 본 뒤 규칙을 바꾸는 것이라 하지 않는다",
+ "status": "등록 보류. 이 예외를 받을지와 받는다면 도구에 어떻게 적을지는 독립 검토(재검토 4판)가 판정한다. 세션은 스스로 예외를 열지 않는다"
+}

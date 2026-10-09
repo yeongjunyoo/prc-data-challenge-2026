@@ -1,0 +1,59 @@
+{
+ "name": "2400_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+ "manifest": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap.json",
+ "sources": [
+  "2014_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja",
+  "2114_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja",
+  "2214_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja"
+ ],
+ "report": {
+  "val": {
+   "vs_a": {
+    "rows": 344419,
+    "rmse_old": 282.358,
+    "rmse_new": 281.992,
+    "dmse": -206.5
+   },
+   "vs_b": {
+    "rows": 344419,
+    "rmse_old": 282.828,
+    "rmse_new": 281.992,
+    "dmse": -472.2
+   },
+   "vs_c": {
+    "rows": 344419,
+    "rmse_old": 282.805,
+    "rmse_new": 281.992,
+    "dmse": -459.1
+   }
+  },
+  "fwd": {
+   "vs_a": {
+    "rows": 190713,
+    "rmse_old": 263.087,
+    "rmse_new": 262.71,
+    "dmse": -197.9
+   },
+   "vs_b": {
+    "rows": 190713,
+    "rmse_old": 263.978,
+    "rmse_new": 262.71,
+    "dmse": -667.9
+   },
+   "vs_c": {
+    "rows": 190713,
+    "rmse_old": 264.326,
+    "rmse_new": 262.71,
+    "dmse": -851.9
+   }
+  },
+  "full": {
+   "rows": 670790,
+   "move_mse_vs_a": 835.7,
+   "move_mse_vs_b": 561.2,
+   "move_mse_vs_c": 1153.4,
+   "rows_moved_vs_a": 635658
+  }
+ },
+ "written_kst": "2026-10-09 15:18:56 KST"
+}

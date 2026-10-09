@@ -1,0 +1,298 @@
+{
+ "spec": "m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am",
+ "run_tag": "m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am",
+ "column": "pred",
+ "seeds": [
+  0
+ ],
+ "feats": "feats_v27",
+ "feats_sha": "c05acdc9987ff9c7",
+ "config": {
+  "--base": "m6r27skcbrmfw4sv434",
+  "--base_seed": "0",
+  "--src": "preds/manifest_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3.json",
+  "--src_sha": "206c1565ff4a8487",
+  "--corr": "m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3",
+  "--table": "artmm_v1",
+  "--table_sha": "104cb46eb06c3085",
+  "--cells": "artmm_cells_v1",
+  "--cells_sha": "6d61c60b4dfd7061",
+  "--th": "0.10",
+  "--tag": "m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -X utf8 tools/artmm.py --setting val --base m6r27skcbrmfw4sv434 --base_seed 0 --src preds/manifest_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3.json --src_sha 206c1565ff4a8487 --corr m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3 --table artmm_v1 --table_sha 104cb46eb06c3085 --cells artmm_cells_v1 --cells_sha 6d61c60b4dfd7061 --th 0.10 --tag m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -X utf8 tools/artmm.py --setting full --base m6r27skcbrmfw4sv434 --base_seed 0 --src preds/manifest_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3.json --src_sha 206c1565ff4a8487 --corr m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3 --table artmm_v1 --table_sha 104cb46eb06c3085 --cells artmm_cells_v1 --cells_sha 6d61c60b4dfd7061 --th 0.10 --tag m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -X utf8 tools/artmm.py --setting fwd --base m6r27skcbrmfw4sv434 --base_seed 0 --src preds/manifest_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3.json --src_sha 206c1565ff4a8487 --corr m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3 --table artmm_v1 --table_sha 104cb46eb06c3085 --cells artmm_cells_v1 --cells_sha 6d61c60b4dfd7061 --th 0.10 --tag m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -X utf8 tools/artmm.py --setting val --base m6r27skcbrmfw4sv434 --base_seed 0 --src preds/manifest_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3.json --src_sha 206c1565ff4a8487 --corr m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3 --table artmm_v1 --table_sha 104cb46eb06c3085 --cells artmm_cells_v1 --cells_sha 6d61c60b4dfd7061 --th 0.10 --tag m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am",
+ "code_sha": {
+  "src/model3.py": "4641d5b5d91abd26",
+  "src/feats.py": "f60eeb7e58daa178",
+  "src/te.py": "0a78bd1cf5a5771a",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a",
+  "src/cat_mu.py": "05956dbe5a32bfa9",
+  "src/blend_mu.py": "e5827379dba9ec9a",
+  "src/g_band.py": "46969e68a18dd8d0",
+  "src/xgb_mu.py": "eb1904bd9c883cdd",
+  "src/rmlp_mu.py": "28fe9c7543664c2b",
+  "src/lobt_window.py": "3f6ef6d290ee429c",
+  "src/adsb_corr.py": "486880c0b3273ded",
+  "src/feats_adsb.py": "c50556bf2e08b59d",
+  "src/adsb_geo.py": "01a6d0667d3e5ac6",
+  "src/blend_oof.py": "42fa157949144637",
+  "src/ctx_corr.py": "41affa9791fd6d27",
+  "src/feats_ctx.py": "81c4378d6cf286a9",
+  "src/blend_fixed.py": "89fa42fffe266892",
+  "src/ctx_corr2.py": "8d5eb965268c3832",
+  "src/ctx_corr3.py": "b5866706124a1292",
+  "src/feats_ctx2.py": "01fc7ad52545c6ba",
+  "src/feats_aiu.py": "950ac59be3ce12b6",
+  "research/ctx_corr/freeze_geo.py": "c8a1864d9541565c",
+  "research/obs2/corr_plus.py": "9d1a4acb4f107595",
+  "research/obs2/obs_rows.py": "e923951e9a1e4496",
+  "research/obs2/coverage.py": "08c38f3844f6478a",
+  "research/obs2/osm_stands.py": "204c934b9e8fd84c",
+  "research/adsb/gprobe/build_nd.py": "d89f4aef50faba12",
+  "research/r10_b/cavg.py": "70c353c25c737700",
+  "tools/artmm.py": "a78fda56cd3f3e15"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/4641d5b5d91abd26_model3.py",
+  "src/feats.py": "preds/code/f60eeb7e58daa178_feats.py",
+  "src/te.py": "preds/code/0a78bd1cf5a5771a_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py",
+  "src/cat_mu.py": "preds/code/05956dbe5a32bfa9_cat_mu.py",
+  "src/blend_mu.py": "preds/code/e5827379dba9ec9a_blend_mu.py",
+  "src/g_band.py": "preds/code/46969e68a18dd8d0_g_band.py",
+  "src/xgb_mu.py": "preds/code/eb1904bd9c883cdd_xgb_mu.py",
+  "src/rmlp_mu.py": "preds/code/28fe9c7543664c2b_rmlp_mu.py",
+  "src/lobt_window.py": "preds/code/3f6ef6d290ee429c_lobt_window.py",
+  "src/adsb_corr.py": "preds/code/486880c0b3273ded_adsb_corr.py",
+  "src/feats_adsb.py": "preds/code/c50556bf2e08b59d_feats_adsb.py",
+  "src/adsb_geo.py": "preds/code/01a6d0667d3e5ac6_adsb_geo.py",
+  "src/blend_oof.py": "preds/code/42fa157949144637_blend_oof.py",
+  "src/ctx_corr.py": "preds/code/41affa9791fd6d27_ctx_corr.py",
+  "src/feats_ctx.py": "preds/code/81c4378d6cf286a9_feats_ctx.py",
+  "src/blend_fixed.py": "preds/code/89fa42fffe266892_blend_fixed.py",
+  "src/ctx_corr2.py": "preds/code/8d5eb965268c3832_ctx_corr2.py",
+  "src/ctx_corr3.py": "preds/code/b5866706124a1292_ctx_corr3.py",
+  "src/feats_ctx2.py": "preds/code/01fc7ad52545c6ba_feats_ctx2.py",
+  "src/feats_aiu.py": "preds/code/950ac59be3ce12b6_feats_aiu.py",
+  "research/ctx_corr/freeze_geo.py": "preds/code/c8a1864d9541565c_freeze_geo.py",
+  "research/obs2/corr_plus.py": "preds/code/9d1a4acb4f107595_corr_plus.py",
+  "research/obs2/obs_rows.py": "preds/code/e923951e9a1e4496_obs_rows.py",
+  "research/obs2/coverage.py": "preds/code/08c38f3844f6478a_coverage.py",
+  "research/obs2/osm_stands.py": "preds/code/204c934b9e8fd84c_osm_stands.py",
+  "research/adsb/gprobe/build_nd.py": "preds/code/d89f4aef50faba12_build_nd.py",
+  "research/r10_b/cavg.py": "preds/code/70c353c25c737700_cavg.py",
+  "tools/artmm.py": "preds/code/a78fda56cd3f3e15_artmm.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am_rmse291.45.parquet",
+  "sha": "c1b1ce949c84fa50",
+  "rmse": 291.45,
+  "ruler_hash": "19afdfc7fedf88ea"
+ },
+ "test": {
+  "path": "preds/test_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am.parquet",
+  "sha": "34a44fc8bd07009b"
+ },
+ "forward": {
+  "path": "preds/fwd_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am.parquet",
+  "sha": "06c48765c50029ca",
+  "rmse_2025_07": 286.83
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0
+ },
+ "iteration_rule": "internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0) | artmm: p_art cell means moved by kappa x (carrier-month arrival copy share minus its training-month share) where that change is at least 0.10; kappa from training-month cells only; threshold fixed in research",
+ "source": {
+  "queue": null,
+  "manifest": "preds/manifest_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3.json",
+  "manifest_sha": "206c1565ff4a8487",
+  "spec": "m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3",
+  "holdout_sha": "2531299a5bbcfe31",
+  "test_sha": "3a061cbe718b0636",
+  "forward_sha": "d7e4047a907de621"
+ },
+ "artmm": {
+  "corrector": "m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3",
+  "table": "cache/artmm_v1.parquet",
+  "table_sha": "104cb46eb06c3085",
+  "cells": "cache/artmm_cells_v1.parquet",
+  "cells_sha": "6d61c60b4dfd7061",
+  "threshold": 0.1,
+  "caches": {
+   "val": "cache/val_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am_s0.parquet",
+   "fwd": "cache/fwd_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am_s0.parquet",
+   "full": "cache/full_m6r27skcbrmfw4sv434adsbgeondctxv3dx50wc3am_s0.parquet"
+  },
+  "model": "per airport x carrier x month cell with |arrival copy share change| >= 0.10: one logit shift so that the cell's mean p_art moves by kappa x change; prediction moved by (p' - p)(d - mn); LOBT window and 0 floor on changed rows; G rows and p_art = 0 rows untouched; the cache files carry p' for the AIU day shift; gkey and later steps go after this",
+  "caveats": [
+   "the 0.10 threshold was chosen after seeing that 0.05 lost on val (+25) and fwd (+75); the label-only cell LOMO does not separate 0.05 from 0.10 (d_sch^2-weighted -10.9% vs -10.3%)",
+   "the val (-17) and fwd (-1) gains are noise-sized; the strong ruler evidence (nd -325) is a single event, THY at LIRF in Nov-Dec 2025"
+  ],
+  "report": {
+   "full": {
+    "kappa": 0.8122,
+    "cells": 5,
+    "changed": 3196,
+    "g_changed": 0,
+    "cells_detail": [
+     {
+      "ap": "LIRF",
+      "car": "AEZ",
+      "mon": 107,
+      "rows": 890,
+      "da": -0.1174,
+      "p_mean": 0.4947,
+      "p_mean_new": 0.3994,
+      "b": -0.6056
+     },
+     {
+      "ap": "LIRF",
+      "car": "RYR",
+      "mon": 107,
+      "rows": 1857,
+      "da": 0.1236,
+      "p_mean": 0.1851,
+      "p_mean_new": 0.2855,
+      "b": 0.7966
+     },
+     {
+      "ap": "LIRF",
+      "car": "THY",
+      "mon": 101,
+      "rows": 118,
+      "da": 0.3753,
+      "p_mean": 0.2268,
+      "p_mean_new": 0.5316,
+      "b": 1.5107
+     },
+     {
+      "ap": "LIRF",
+      "car": "THY",
+      "mon": 107,
+      "rows": 121,
+      "da": -0.1293,
+      "p_mean": 0.1779,
+      "p_mean_new": 0.0729,
+      "b": -1.052
+     },
+     {
+      "ap": "LIRF",
+      "car": "VLG",
+      "mon": 107,
+      "rows": 211,
+      "da": -0.101,
+      "p_mean": 0.1746,
+      "p_mean_new": 0.0926,
+      "b": -0.8038
+     }
+    ],
+    "move_mse_test_n": 72.2
+   },
+   "val": {
+    "kappa": 0.8112,
+    "cells": 4,
+    "changed": 1052,
+    "g_changed": 0,
+    "cells_detail": [
+     {
+      "ap": "LIRF",
+      "car": "AEZ",
+      "mon": 1,
+      "rows": 656,
+      "da": -0.1941,
+      "p_mean": 0.5521,
+      "p_mean_new": 0.3946,
+      "b": -0.9062
+     },
+     {
+      "ap": "LIRF",
+      "car": "ETH",
+      "mon": 1,
+      "rows": 155,
+      "da": -0.1114,
+      "p_mean": 0.3829,
+      "p_mean_new": 0.2926,
+      "b": -0.4478
+     },
+     {
+      "ap": "LIRF",
+      "car": "THY",
+      "mon": 1,
+      "rows": 124,
+      "da": -0.2093,
+      "p_mean": 0.1998,
+      "p_mean_new": 0.03,
+      "b": -2.1863
+     },
+     {
+      "ap": "LIRF",
+      "car": "THY",
+      "mon": 7,
+      "rows": 117,
+      "da": -0.1614,
+      "p_mean": 0.1822,
+      "p_mean_new": 0.0513,
+      "b": -1.4678
+     }
+    ],
+    "rows": 344419,
+    "rmse_old": 291.489,
+    "rmse_new": 291.451,
+    "dmse": -22.2,
+    "improved": 481
+   },
+   "fwd": {
+    "kappa": 0.5701,
+    "cells": 2,
+    "changed": 322,
+    "g_changed": 0,
+    "cells_detail": [
+     {
+      "ap": "LIRF",
+      "car": "AAL",
+      "mon": 7,
+      "rows": 146,
+      "da": -0.1115,
+      "p_mean": 0.0917,
+      "p_mean_new": 0.0282,
+      "b": -1.3594
+     },
+     {
+      "ap": "LIRF",
+      "car": "UAL",
+      "mon": 7,
+      "rows": 176,
+      "da": -0.1188,
+      "p_mean": 0.0885,
+      "p_mean_new": 0.0207,
+      "b": -1.6062
+     }
+    ],
+    "rows": 190713,
+    "rmse_old": 286.827,
+    "rmse_new": 286.826,
+    "dmse": -1.0,
+    "improved": 167
+   }
+  }
+ },
+ "written_kst": "2026-10-09 01:24:37 KST"
+}

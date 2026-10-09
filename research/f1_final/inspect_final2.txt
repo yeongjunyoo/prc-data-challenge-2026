@@ -1,0 +1,62 @@
+== ranking: rows=689534 id nulls=0
+   2026-01 ARR 152871
+   2026-01 DEP 152719
+   2026-07 ARR 191822
+   2026-07 DEP 192122
+   DEP rows=344841 BLOCK null=344841 TAXI null=344841
+   ARR rows=344693 BLOCK null=0 TAXI null=0
+   MVT_TIME min/max: 2026-01-01 00:01:55+00:00 2026-07-31 23:56:19+00:00
+   DEP by ADEP x month:
+      EDDF {'2026-01': 15667, '2026-07': 20650}
+      EDDM {'2026-01': 10953, '2026-07': 15013}
+      EGLL {'2026-01': 19283, '2026-07': 20557}
+      EHAM {'2026-01': 16232, '2026-07': 21950}
+      LEBL {'2026-01': 12201, '2026-07': 17879}
+      LEMD {'2026-01': 16802, '2026-07': 20152}
+      LFPG {'2026-01': 18129, '2026-07': 21743}
+      LIRF {'2026-01': 11061, '2026-07': 15838}
+      LSZH {'2026-01': 9995, '2026-07': 13155}
+      LTFM {'2026-01': 22396, '2026-07': 25185}
+== final_ranking: rows=1341197 id nulls=0
+   2026-01 ARR 152871
+   2026-01 DEP 152719
+   2026-02 ARR 144274
+   2026-02 DEP 144158
+   2026-06 ARR 181440
+   2026-06 DEP 181791
+   2026-07 ARR 191822
+   2026-07 DEP 192122
+   DEP rows=670790 BLOCK null=670790 TAXI null=670790
+   ARR rows=670407 BLOCK null=0 TAXI null=0
+   MVT_TIME min/max: 2026-01-01 00:02:01+00:00 2026-07-31 23:56:28+00:00
+   DEP by ADEP x month:
+      EDDF {'2026-01': 15667, '2026-02': 14654, '2026-06': 19700, '2026-07': 20650}
+      EDDM {'2026-01': 10953, '2026-02': 10534, '2026-06': 14372, '2026-07': 15013}
+      EGLL {'2026-01': 19283, '2026-02': 17719, '2026-06': 19662, '2026-07': 20557}
+      EHAM {'2026-01': 16232, '2026-02': 16802, '2026-06': 20881, '2026-07': 21950}
+      LEBL {'2026-01': 12201, '2026-02': 12167, '2026-06': 17067, '2026-07': 17879}
+      LEMD {'2026-01': 16802, '2026-02': 16191, '2026-06': 19335, '2026-07': 20152}
+      LFPG {'2026-01': 18129, '2026-02': 16934, '2026-06': 20714, '2026-07': 21743}
+      LIRF {'2026-01': 11061, '2026-02': 10264, '2026-06': 14983, '2026-07': 15838}
+      LSZH {'2026-01': 9995, '2026-02': 9374, '2026-06': 12384, '2026-07': 13155}
+      LTFM {'2026-01': 22396, '2026-02': 19519, '2026-06': 22693, '2026-07': 25185}
+
+ranking ids found in final_ranking: 689534 of 689534; final-only ids: 651663
+final-only rows by month: {'2026-02': 288432, '2026-06': 363231}
+final rows with old ids by month: {'2026-01': 305590, '2026-07': 383944}
+
+submitting rows=344841 unique=344841 TAXI non-null=0
+final_submitting rows=670790 unique=670790 TAXI non-null=0
+old submitting ids found in final_submitting: 344841 of 344841 ; final-only: 325949
+final_submitting ids == final_ranking DEP ids (set): True
+final_submitting order == final_ranking DEP order: True
+old submitting order == ranking DEP order: True
+final_submitting sorted asc: False | old submitting sorted asc: False
+final_submitting first len(old) ids == old submitting ids, same order: True
+first 3 final_submitting ids: [202501153.0, 202501107.0, 202501179.0] last 3: [211505384.0, 211505385.0, 211505387.0]
+id ranges: old sub 202180234.0 213809059.0 | final sub 202180234.0 213809059.0
+final_submitting new ids by month: {'2026-02': 144158, '2026-06': 181791}
+final_submitting old ids by month: {'2026-01': 152719, '2026-07': 192122}
+final_submitting TAXI dtype int32 first values [None, None, None]
+MVT_ID all integral (final sub): True
+memcap: rc=0 cap=1.0GB peak_job=0.94GB

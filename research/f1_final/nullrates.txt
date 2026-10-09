@@ -1,0 +1,14 @@
+col                            01       02       06       07
+DEP rows                   152719   144158   181791   192122
+FLIGHT_ID_mvt               1.60%    0.91%    1.35%    1.48%
+AIRCRAFT_TYPE_mvt           0.07%    0.05%    0.09%    0.15%
+RUNWAY_mvt                  0.00%    0.00%    0.00%    0.00%
+STAND_mvt                   0.00%    0.00%    0.00%    0.00%
+SCHED_TIME_UTC_mvt          0.00%    0.00%    0.00%    0.00%
+LOBT_flt                    1.61%    0.92%    1.36%    1.48%
+IOBT_flt                    1.61%    0.92%    1.36%    1.48%
+EOBT_1_flt                  1.61%    0.92%    1.36%    1.48%
+AOBT_3_flt                  1.61%    0.92%    1.36%    1.48%
+AIRCRAFT_OPERATOR_flt       1.61%    0.92%    1.36%    1.48%
+MARKET_SEGMENT_flt          1.61%    0.92%    1.36%    1.48%
+memcap: rc=0 cap=1.0GB peak_job=0.79GB

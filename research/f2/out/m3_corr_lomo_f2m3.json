@@ -1,0 +1,99 @@
+{
+ "F2_L_minus_T1": {
+  "dmse": -289.17,
+  "sd": 114.35,
+  "p_lt0": 0.9985,
+  "days": 28
+ },
+ "F2_T1_vs_none": {
+  "dmse": -1826.37,
+  "sd": 588.61,
+  "p_lt0": 1.0,
+  "days": 28
+ },
+ "F2_L_vs_none": {
+  "dmse": -2115.54,
+  "sd": 679.86,
+  "p_lt0": 1.0,
+  "days": 28
+ },
+ "F2_L_minus_T1_by_airport": {
+  "EDDF": -9.07,
+  "EDDM": -2.88,
+  "EGLL": -18.76,
+  "EHAM": -12.33,
+  "LEBL": -13.93,
+  "LEMD": -3.28,
+  "LFPG": -7.06,
+  "LIRF": -39.0,
+  "LSZH": -11.6,
+  "LTFM": -171.26
+ },
+ "F6_L_minus_T1": {
+  "dmse": -221.01,
+  "sd": 130.49,
+  "p_lt0": 0.993,
+  "days": 30
+ },
+ "F6_T1_vs_none": {
+  "dmse": -957.29,
+  "sd": 361.02,
+  "p_lt0": 0.991,
+  "days": 30
+ },
+ "F6_L_vs_none": {
+  "dmse": -1178.3,
+  "sd": 269.59,
+  "p_lt0": 1.0,
+  "days": 30
+ },
+ "F6_L_minus_T1_by_airport": {
+  "EDDF": 10.44,
+  "EDDM": 15.04,
+  "EGLL": -3.32,
+  "EHAM": -17.45,
+  "LEBL": -0.99,
+  "LEMD": 7.15,
+  "LFPG": -13.04,
+  "LIRF": -209.98,
+  "LSZH": 8.37,
+  "LTFM": -17.23
+ },
+ "V1_other_month_vs_none": {
+  "dmse": -979.06,
+  "sd": 105.93,
+  "p_lt0": 1.0,
+  "days": 31
+ },
+ "V1_other_plus_F_vs_none": {
+  "dmse": -1179.66,
+  "sd": 128.32,
+  "p_lt0": 1.0,
+  "days": 31
+ },
+ "V1_plusF_minus_other": {
+  "dmse": -200.6,
+  "sd": 62.72,
+  "p_lt0": 0.9995,
+  "days": 31
+ },
+ "V7_other_month_vs_none": {
+  "dmse": -1448.31,
+  "sd": 188.2,
+  "p_lt0": 1.0,
+  "days": 31
+ },
+ "V7_other_plus_F_vs_none": {
+  "dmse": -2277.9,
+  "sd": 287.62,
+  "p_lt0": 1.0,
+  "days": 31
+ },
+ "V7_plusF_minus_other": {
+  "dmse": -829.59,
+  "sd": 147.88,
+  "p_lt0": 1.0,
+  "days": 31
+ },
+ "seconds": 79
+}

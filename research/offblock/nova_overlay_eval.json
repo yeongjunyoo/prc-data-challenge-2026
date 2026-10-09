@@ -1,0 +1,365 @@
+{
+ "ruler_rmse": 317.744,
+ "days": {
+  "2025-01-15": {
+   "departures": 4676,
+   "usable": 789,
+   "offsets_from_other_day": {
+    "EDDF": 91.5,
+    "EGLL": 274.3,
+    "EHAM": -10.7,
+    "LEBL": 36.9,
+    "LEMD": 124.9,
+    "LFPG": 65.8,
+    "LIRF": 513.7,
+    "LSZH": 30.0,
+    "_all": 26.2
+   },
+   "replace_if_within_60": {
+    "dSSE": -154744,
+    "rows_changed": 188
+   },
+   "blend50_if_within_60": {
+    "dSSE": -136794,
+    "rows_changed": 188
+   },
+   "replace_if_within_120": {
+    "dSSE": -484588,
+    "rows_changed": 317
+   },
+   "blend50_if_within_120": {
+    "dSSE": -579342,
+    "rows_changed": 317
+   },
+   "replace_if_within_180": {
+    "dSSE": -861059,
+    "rows_changed": 447
+   },
+   "blend50_if_within_180": {
+    "dSSE": -1504626,
+    "rows_changed": 447
+   },
+   "replace_if_within_300": {
+    "dSSE": -1414271,
+    "rows_changed": 607
+   },
+   "blend50_if_within_300": {
+    "dSSE": -4153421,
+    "rows_changed": 607
+   },
+   "replace_if_within_600": {
+    "dSSE": 76285,
+    "rows_changed": 745
+   },
+   "blend50_if_within_600": {
+    "dSSE": -9079357,
+    "rows_changed": 745
+   },
+   "replace_if_within_any": {
+    "dSSE": 75072167,
+    "rows_changed": 789
+   },
+   "blend50_if_within_any": {
+    "dSSE": -1267893,
+    "rows_changed": 789
+   },
+   "replace_if_start_observed": {
+    "dSSE": 5008854,
+    "rows_changed": 344
+   },
+   "replace_if_start_observed_within_300": {
+    "dSSE": -3277012,
+    "rows_changed": 270
+   },
+   "lower_bound_first_seen": {
+    "dSSE": 2748816672,
+    "rows_changed": 122
+   },
+   "replace_within_300_plus_lower_bound": {
+    "dSSE": 2747402401,
+    "rows_changed": 729
+   },
+   "per_airport_replace_within_300": {
+    "EDDF": {
+     "changed": 53,
+     "model_rmse": 88.0,
+     "overlay_rmse": 152.3
+    },
+    "EDDM": {
+     "changed": 154,
+     "model_rmse": 147.6,
+     "overlay_rmse": 69.7
+    },
+    "EGLL": {
+     "changed": 52,
+     "model_rmse": 152.5,
+     "overlay_rmse": 152.7
+    },
+    "EHAM": {
+     "changed": 207,
+     "model_rmse": 127.3,
+     "overlay_rmse": 135.8
+    },
+    "LEBL": {
+     "changed": 58,
+     "model_rmse": 127.6,
+     "overlay_rmse": 165.5
+    },
+    "LSZH": {
+     "changed": 83,
+     "model_rmse": 158.2,
+     "overlay_rmse": 127.1
+    }
+   }
+  },
+  "2025-07-15": {
+   "departures": 6120,
+   "usable": 962,
+   "offsets_from_other_day": {
+    "EDDF": 160.3,
+    "EDDM": 33.4,
+    "EGLL": 211.2,
+    "EHAM": -5.5,
+    "LEBL": 80.7,
+    "LSZH": 31.3,
+    "_all": 40.1
+   },
+   "replace_if_within_60": {
+    "dSSE": -90070,
+    "rows_changed": 260
+   },
+   "blend50_if_within_60": {
+    "dSSE": -122145,
+    "rows_changed": 260
+   },
+   "replace_if_within_120": {
+    "dSSE": -487418,
+    "rows_changed": 478
+   },
+   "blend50_if_within_120": {
+    "dSSE": -751507,
+    "rows_changed": 478
+   },
+   "replace_if_within_180": {
+    "dSSE": -405485,
+    "rows_changed": 627
+   },
+   "blend50_if_within_180": {
+    "dSSE": -1548402,
+    "rows_changed": 627
+   },
+   "replace_if_within_300": {
+    "dSSE": 2200467,
+    "rows_changed": 788
+   },
+   "blend50_if_within_300": {
+    "dSSE": -2526631,
+    "rows_changed": 788
+   },
+   "replace_if_within_600": {
+    "dSSE": 11965214,
+    "rows_changed": 921
+   },
+   "blend50_if_within_600": {
+    "dSSE": -3291300,
+    "rows_changed": 921
+   },
+   "replace_if_within_any": {
+    "dSSE": 162200689,
+    "rows_changed": 962
+   },
+   "blend50_if_within_any": {
+    "dSSE": 33697987,
+    "rows_changed": 962
+   },
+   "replace_if_start_observed": {
+    "dSSE": 129859308,
+    "rows_changed": 424
+   },
+   "replace_if_start_observed_within_300": {
+    "dSSE": -1308303,
+    "rows_changed": 376
+   },
+   "lower_bound_first_seen": {
+    "dSSE": 12593711201,
+    "rows_changed": 91
+   },
+   "replace_within_300_plus_lower_bound": {
+    "dSSE": 12595911667,
+    "rows_changed": 879
+   },
+   "per_airport_replace_within_300": {
+    "EDDF": {
+     "changed": 102,
+     "model_rmse": 128.7,
+     "overlay_rmse": 172.1
+    },
+    "EGLL": {
+     "changed": 12,
+     "model_rmse": 168.4,
+     "overlay_rmse": 139.6
+    },
+    "EHAM": {
+     "changed": 407,
+     "model_rmse": 108.0,
+     "overlay_rmse": 112.4
+    },
+    "LEBL": {
+     "changed": 98,
+     "model_rmse": 262.6,
+     "overlay_rmse": 270.1
+    },
+    "LEMD": {
+     "changed": 38,
+     "model_rmse": 132.7,
+     "overlay_rmse": 105.1
+    },
+    "LFPG": {
+     "changed": 2,
+     "model_rmse": 180.2,
+     "overlay_rmse": 27.6
+    },
+    "LIRF": {
+     "changed": 17,
+     "model_rmse": 164.8,
+     "overlay_rmse": 244.2
+    },
+    "LSZH": {
+     "changed": 112,
+     "model_rmse": 162.8,
+     "overlay_rmse": 161.4
+    }
+   }
+  }
+ },
+ "summary": {
+  "replace_if_within_60": {
+   "dSSE_two_days": -244813,
+   "ruler_rmse_extrapolated": 317.709,
+   "per_day": [
+    -154744,
+    -90070
+   ]
+  },
+  "blend50_if_within_60": {
+   "dSSE_two_days": -258939,
+   "ruler_rmse_extrapolated": 317.707,
+   "per_day": [
+    -136794,
+    -122145
+   ]
+  },
+  "replace_if_within_120": {
+   "dSSE_two_days": -972006,
+   "ruler_rmse_extrapolated": 317.606,
+   "per_day": [
+    -484588,
+    -487418
+   ]
+  },
+  "blend50_if_within_120": {
+   "dSSE_two_days": -1330849,
+   "ruler_rmse_extrapolated": 317.555,
+   "per_day": [
+    -579342,
+    -751507
+   ]
+  },
+  "replace_if_within_180": {
+   "dSSE_two_days": -1266544,
+   "ruler_rmse_extrapolated": 317.564,
+   "per_day": [
+    -861059,
+    -405485
+   ]
+  },
+  "blend50_if_within_180": {
+   "dSSE_two_days": -3053028,
+   "ruler_rmse_extrapolated": 317.311,
+   "per_day": [
+    -1504626,
+    -1548402
+   ]
+  },
+  "replace_if_within_300": {
+   "dSSE_two_days": 786196,
+   "ruler_rmse_extrapolated": 317.855,
+   "per_day": [
+    -1414271,
+    2200467
+   ]
+  },
+  "blend50_if_within_300": {
+   "dSSE_two_days": -6680051,
+   "ruler_rmse_extrapolated": 316.796,
+   "per_day": [
+    -4153421,
+    -2526631
+   ]
+  },
+  "replace_if_within_600": {
+   "dSSE_two_days": 12041499,
+   "ruler_rmse_extrapolated": 319.445,
+   "per_day": [
+    76285,
+    11965214
+   ]
+  },
+  "blend50_if_within_600": {
+   "dSSE_two_days": -12370657,
+   "ruler_rmse_extrapolated": 315.987,
+   "per_day": [
+    -9079357,
+    -3291300
+   ]
+  },
+  "replace_if_within_any": {
+   "dSSE_two_days": 237272856,
+   "ruler_rmse_extrapolated": 349.739,
+   "per_day": [
+    75072167,
+    162200689
+   ]
+  },
+  "blend50_if_within_any": {
+   "dSSE_two_days": 32430093,
+   "ruler_rmse_extrapolated": 322.304,
+   "per_day": [
+    -1267893,
+    33697987
+   ]
+  },
+  "replace_if_start_observed": {
+   "dSSE_two_days": 134868163,
+   "ruler_rmse_extrapolated": 336.304,
+   "per_day": [
+    5008854,
+    129859308
+   ]
+  },
+  "replace_if_start_observed_within_300": {
+   "dSSE_two_days": -4585315,
+   "ruler_rmse_extrapolated": 317.094,
+   "per_day": [
+    -3277012,
+    -1308303
+   ]
+  },
+  "lower_bound_first_seen": {
+   "dSSE_two_days": 15342527872,
+   "ruler_rmse_extrapolated": 1217.329,
+   "per_day": [
+    2748816672,
+    12593711201
+   ]
+  },
+  "replace_within_300_plus_lower_bound": {
+   "dSSE_two_days": 15343314068,
+   "ruler_rmse_extrapolated": 1217.358,
+   "per_day": [
+    2747402401,
+    12595911667
+   ]
+  }
+ }
+}

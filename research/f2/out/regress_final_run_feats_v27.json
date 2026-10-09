@@ -1,0 +1,35 @@
+{
+ "root": "<mac-workdir>/prcm/final_run",
+ "final_dep_rows": 670790,
+ "data_ranking_sha16": "4b0692a792846079",
+ "tables": {
+  "feats_v27": {
+   "sha_old": "c05acdc9987ff9c7",
+   "sha_new": "8fc36fd4314708a8",
+   "columns_same_order": true,
+   "cols_old_only": [],
+   "cols_new_only": [],
+   "dtype_changes": {},
+   "test_rows_new": 670790,
+   "test_ids_equal_final_dep": true,
+   "rows2025_old": 2085047,
+   "rows2025_missing_in_new": 0,
+   "diff_2025": {
+    "day_daobt_rel": {
+     "share": 0.999999,
+     "rows": 2085045,
+     "max_abs": 3.6595458984375,
+     "nan_mismatch": 0
+    },
+    "d_aobt_mode_dev": {
+     "share": 0.063705,
+     "rows": 132828,
+     "max_abs": 3.0,
+     "nan_mismatch": 0
+    }
+   },
+   "status": "PASS_WITH_DIFFS"
+  }
+ },
+ "copies": {}
+}

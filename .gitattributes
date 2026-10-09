@@ -1,0 +1,2 @@
+# keep every file byte for byte (the manifests record SHA-256 of the code files)
+* -text

@@ -1,0 +1,257 @@
+{
+ "new": "cache/ctx_v2.parquet",
+ "old": "../r16b_sbx/cache/ctx_v2.parquet",
+ "rows_new": 1015209,
+ "rows_old": 689260,
+ "same_columns": true,
+ "cols_only_new": [],
+ "cols_only_old": [],
+ "rows_2025": [
+  344419,
+  344419
+ ],
+ "order_2025_same": true,
+ "2025": {
+  "rows_common": 344419,
+  "rows_only_new": 0,
+  "rows_only_old": 0
+ },
+ "2026_common": {
+  "rows_common": 344841,
+  "rows_only_new": 325949,
+  "rows_only_old": 0,
+  "arr_rwy_ti_m15": {
+   "diff": 35639,
+   "nan_mismatch": 378,
+   "max_abs": 823.5,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "arr_rwy_n_m15": {
+   "diff": 3421,
+   "nan_mismatch": 0,
+   "max_abs": 2.0,
+   "median_abs_on_diff": 1.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "arr_rwy_ti_m60": {
+   "diff": 56523,
+   "nan_mismatch": 149,
+   "max_abs": 998.0,
+   "median_abs_on_diff": 3.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "arr_ap_ti_m15": {
+   "diff": 335428,
+   "nan_mismatch": 326,
+   "max_abs": 1615.0,
+   "median_abs_on_diff": 3.571428571428612,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "nb_rwy_daobt_m60": {
+   "diff": 334527,
+   "nan_mismatch": 10,
+   "max_abs": 765.1666666666667,
+   "median_abs_on_diff": 0.8857142857142435,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "nb_rwy_daobt_p30": {
+   "diff": 330388,
+   "nan_mismatch": 57,
+   "max_abs": 1223.8333333333335,
+   "median_abs_on_diff": 1.25,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "own_m_nb_rwy": {
+   "diff": 334207,
+   "nan_mismatch": 10,
+   "max_abs": 438.2321428571429,
+   "median_abs_on_diff": 3.7586206896551175,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "own_m_nb_ap": {
+   "diff": 337872,
+   "nan_mismatch": 0,
+   "max_abs": 349.41666666666674,
+   "median_abs_on_diff": 3.723832881627686,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "prev_st_arr_ti": {
+   "diff": 322530,
+   "nan_mismatch": 6,
+   "max_abs": 2992.0,
+   "median_abs_on_diff": 7.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "prev_st_arr_age": {
+   "diff": 317796,
+   "nan_mismatch": 6,
+   "max_abs": 79426.0,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "rwy_share_pm30": {
+   "diff": 67700,
+   "nan_mismatch": 0,
+   "max_abs": 0.5,
+   "median_abs_on_diff": 0.010437710437710412,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "n_dep_rwys_pm30": {
+   "diff": 436,
+   "nan_mismatch": 0,
+   "max_abs": 1.0,
+   "median_abs_on_diff": 1.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "n_arr_rwys_pm30": {
+   "diff": 762,
+   "nan_mismatch": 0,
+   "max_abs": 1.0,
+   "median_abs_on_diff": 1.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "t": {
+   "diff": 316651,
+   "nan_mismatch": 0,
+   "max_abs": 12.0,
+   "median_abs_on_diff": 4.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "day": {
+   "diff": 13
+  },
+  "gate_delay_pm30": {
+   "diff": 96065,
+   "nan_mismatch": 1,
+   "max_abs": 900.0,
+   "median_abs_on_diff": 9.31034482758622,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "plan_ground_aobt3": {
+   "diff": 52565,
+   "nan_mismatch": 0,
+   "max_abs": 19.0,
+   "median_abs_on_diff": 1.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_g1": {
+   "diff": 325835,
+   "nan_mismatch": 5,
+   "max_abs": 31430046.0,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_g2": {
+   "diff": 325713,
+   "nan_mismatch": 22,
+   "max_abs": 40264917.0,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_g3": {
+   "diff": 325886,
+   "nan_mismatch": 35,
+   "max_abs": 42682201.0,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_gp": {
+   "diff": 325893,
+   "nan_mismatch": 15,
+   "max_abs": 44761625.0,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_gp2": {
+   "diff": 326152,
+   "nan_mismatch": 37,
+   "max_abs": 44761626.0,
+   "median_abs_on_diff": 5.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_k": {
+   "diff": 2463,
+   "nan_mismatch": 14,
+   "max_abs": 44.0,
+   "median_abs_on_diff": 1.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  },
+  "st_n_arr_2h": {
+   "diff": 1260,
+   "nan_mismatch": 0,
+   "max_abs": 1.0,
+   "median_abs_on_diff": 1.0,
+   "dtype": [
+    "float64",
+    "float64"
+   ]
+  }
+ }
+}

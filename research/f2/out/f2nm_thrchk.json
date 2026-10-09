@@ -1,0 +1,28 @@
+{
+ "what": "514's chain A corrector seed 0 rerun at --threads 2 (514: 4), compared with 514's cache files",
+ "settings": {
+  "val": {
+   "rows": 344419,
+   "same_ids_and_order": true,
+   "columns_equal": true,
+   "pred_max_abs_diff": 0.0,
+   "pred_rows_diff": 0,
+   "p_art_max_abs_diff": 0.0,
+   "p_art_rows_diff": 0,
+   "mse_check": 84737.30540693212,
+   "mse_514": 84737.30540693212,
+   "frames_equal": true
+  },
+  "full": {
+   "rows": 344841,
+   "same_ids_and_order": true,
+   "columns_equal": true,
+   "pred_max_abs_diff": 0.0,
+   "pred_rows_diff": 0,
+   "p_art_max_abs_diff": 0.0,
+   "p_art_rows_diff": 0,
+   "frames_equal": true
+  }
+ },
+ "identical": true
+}

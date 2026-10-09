@@ -1,0 +1,24 @@
+{
+ "columns_equal": true,
+ "rows": [
+  670790,
+  670790
+ ],
+ "cells_differing": {
+  "pred": {
+   "cells": 510,
+   "max_abs": 9.094947017729282e-13
+  },
+  "pred_noG": {
+   "cells": 510,
+   "max_abs": 9.094947017729282e-13
+  },
+  "mu": {
+   "cells": 598,
+   "max_abs": 9.094947017729282e-13
+  }
+ },
+ "bit_equal": false,
+ "int32_pred_rows_differing": 0,
+ "PASS": true
+}

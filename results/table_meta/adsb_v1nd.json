@@ -1,0 +1,24 @@
+{
+ "script": "research/adsb/gprobe/build_nd.py",
+ "adsb_v1nd": {
+  "source": "cache/adsb_v1.parquet",
+  "source_sha": "2bb0952d93192201",
+  "emptied": [
+   "ev_n_pts",
+   "ev_to_gap",
+   "ev_max_gap_after_fm",
+   "ev_share_mlat"
+  ],
+  "rows": 689260,
+  "sha16": "0d03ff06267e0dee"
+ },
+ "geo_v1nd": {
+  "source": "cache/geo_v1.parquet",
+  "source_sha": "c088c658eb4b5cd3",
+  "emptied": [
+   "to_gap"
+  ],
+  "rows": 689260,
+  "sha16": "43310b9bbeefe81b"
+ }
+}

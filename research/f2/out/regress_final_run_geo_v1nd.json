@@ -1,0 +1,23 @@
+{
+ "root": "<mac-workdir>/prcm/final_run",
+ "final_dep_rows": 670790,
+ "data_ranking_sha16": "4b0692a792846079",
+ "tables": {
+  "geo_v1nd": {
+   "sha_old": "43310b9bbeefe81b",
+   "sha_new": "9dfa71b64e1099de",
+   "columns_same_order": true,
+   "cols_old_only": [],
+   "cols_new_only": [],
+   "dtype_changes": {},
+   "rows_old_total": 689260,
+   "rows_new_total": 1009110,
+   "rows_new_not_in_old": 319850,
+   "rows2025_old": 344419,
+   "rows2025_missing_in_new": 0,
+   "diff_2025": {},
+   "status": "PASS"
+  }
+ },
+ "copies": {}
+}

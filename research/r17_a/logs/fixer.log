@@ -1,0 +1,9 @@
+10-09 00:34:55 fixer start pid 2963
+10-09 00:34:55 2026-06-06: the manifest already moved off the failed release (now v2026.06.06-planes-readsb-prod-0); left
+10-09 00:34:55 2026-06-07: the manifest already moved off the failed release (now v2026.06.07-planes-readsb-prod-0); left
+10-09 01:28:16 2026-06-23: switched v2026.06.23-planes-readsb-staging-0 -> v2026.06.23-planes-readsb-prod-0 (3972288512 B); failed try: curl_rc 0, bytes 3973302784/3973302784, tar end 2000004608, bad members 1
+10-09 01:37:16 2026-06-25: switched v2026.06.25-planes-readsb-staging-0 -> v2026.06.25-planes-readsb-prod-0 (4174927360 B); failed try: curl_rc 0, bytes 4177656320/4177656320, tar end 2000019456, bad members 1
+10-09 07:02:23 2025-05-11: switched v2025.05.11-planes-readsb-prod-0 -> v2025.05.11-planes-readsb-staging-0 (2889666560 B); failed try: curl_rc 0, bytes 2541577610/2893332480, tar end 1648271360, bad members 1
+10-09 07:46:44 2025-05-19: switched v2025.05.19-planes-readsb-prod-0 -> v2025.05.19-planes-readsb-staging-0 (3137300480 B); failed try: 
+10-09 08:01:04 2025-05-22: switched v2025.05.22-planes-readsb-prod-0 -> v2025.05.22-planes-readsb-staging-0 (3317831680 B); failed try: curl_rc 0, bytes 3116271824/3321569280, tar end 1794721280, bad members 1
+10-09 11:53:49 2025-09-10: switched v2025.09.10-planes-readsb-prod-0 -> v2025.09.10-planes-readsb-staging-0 (3476817920 B); failed try: curl_rc 0, bytes 2211040256/3477626880, tar end 733426688, bad members 1

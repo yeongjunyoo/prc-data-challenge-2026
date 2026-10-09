@@ -1,0 +1,208 @@
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 00:22:08"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 00:22:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 00:22:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 00:22:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_e3a8c9f2cbacc6790c6b0f1e5da2e23d", "seq": 4, "trees": 144, "t": "10-09 00:23:19"}
+{"lib": "lgb", "event": "saved", "key": "lgb_6daa98a1f57b7c5eae9ce1b7b493b5b3", "seq": 5, "trees": 2203, "t": "10-09 00:36:09"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "1", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 00:36:39"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 00:36:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 00:36:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 00:36:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_8c3661e4afe9e698d8abca4fce7bd6bf", "seq": 4, "trees": 144, "t": "10-09 00:38:01"}
+{"lib": "lgb", "event": "saved", "key": "lgb_7db549a4c2b51df6d9ddf69babbf61de", "seq": 6, "trees": 518, "t": "10-09 00:40:20"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 00:40:39"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "2", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 00:41:38"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 00:41:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 00:41:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 00:41:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_cc513813195e540f524fee6d699e9f57", "seq": 4, "trees": 144, "t": "10-09 00:42:44"}
+{"lib": "lgb", "event": "saved", "key": "lgb_359936417a84b0ca367758955cb36647", "seq": 5, "trees": 2203, "t": "10-09 00:49:52"}
+{"lib": "lgb", "event": "saved", "key": "lgb_b6a3e24b4eb7a2d5508a33505dbfd4f0", "seq": 6, "trees": 518, "t": "10-09 00:54:02"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 00:54:19"}
+{"lib": "lgb", "event": "saved", "key": "lgb_2391d046db1515e91aebcb0df3462486", "seq": 5, "trees": 2203, "t": "10-09 00:54:58"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "3", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 00:55:09"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 00:55:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 00:55:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 00:55:16"}
+{"lib": "lgb", "event": "saved", "key": "lgb_8e8998ebe478fef6368e0a6e23086d1a", "seq": 4, "trees": 144, "t": "10-09 00:56:30"}
+{"lib": "lgb", "event": "saved", "key": "lgb_d690d73d5e2672e28d7c076ca40aa002", "seq": 6, "trees": 518, "t": "10-09 00:58:59"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 00:59:16"}
+{"lib": "lgb", "event": "saved", "key": "lgb_91014ebb202d5b0470403a730ff84186", "seq": 5, "trees": 2203, "t": "10-09 01:06:54"}
+{"lib": "lgb", "event": "saved", "key": "lgb_d37de57dd678f955d6258586d21b2226", "seq": 6, "trees": 518, "t": "10-09 01:10:01"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 01:10:17"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 01:11:09"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 01:11:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 01:11:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 01:11:15"}
+{"lib": "lgb", "event": "saved", "key": "lgb_1a949b28288b24fe19f696b499b49804", "seq": 4, "trees": 144, "t": "10-09 01:12:00"}
+{"lib": "lgb", "event": "saved", "key": "lgb_d9571526f6f7a85e5b4ed570e1318c88", "seq": 5, "trees": 2029, "t": "10-09 01:20:10"}
+{"lib": "lgb", "event": "saved", "key": "lgb_ccf60960717359c04813edb94218e23c", "seq": 6, "trees": 554, "t": "10-09 01:22:44"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 01:22:56"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "1", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 01:23:39"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 01:23:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 01:23:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 01:23:46"}
+{"lib": "lgb", "event": "saved", "key": "lgb_d61239128ecf9dde9f099bb46d68bc5e", "seq": 4, "trees": 144, "t": "10-09 01:24:29"}
+{"lib": "lgb", "event": "saved", "key": "lgb_4a2218692e790e3c0c60addbd7574062", "seq": 5, "trees": 2029, "t": "10-09 01:32:19"}
+{"lib": "lgb", "event": "saved", "key": "lgb_e8f6b676b91c1cfc377eeaf9d3da243f", "seq": 6, "trees": 554, "t": "10-09 01:34:44"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 01:34:57"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "2", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 01:35:39"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 01:35:47"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 01:35:47"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 01:35:48"}
+{"lib": "lgb", "event": "saved", "key": "lgb_6c4db59674d55841ae5cb650ba3e3b2a", "seq": 4, "trees": 144, "t": "10-09 01:36:36"}
+{"lib": "lgb", "event": "saved", "key": "lgb_34826d03b74639b06226b8bc1cfad678", "seq": 5, "trees": 2029, "t": "10-09 01:44:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_0aaf409acb5f8d5a4dddac25abac1660", "seq": 6, "trees": 554, "t": "10-09 01:47:24"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 01:47:36"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "3", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 01:48:09"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 01:48:16"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 01:48:16"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 01:48:16"}
+{"lib": "lgb", "event": "saved", "key": "lgb_a901e9633fa4dca70b33e6e0b63a38f1", "seq": 4, "trees": 144, "t": "10-09 01:49:04"}
+{"lib": "lgb", "event": "saved", "key": "lgb_5a62283ef0e95e02810645475d373093", "seq": 5, "trees": 2029, "t": "10-09 01:57:14"}
+{"lib": "lgb", "event": "saved", "key": "lgb_75300feffa30a249f39da00ea8d2d093", "seq": 6, "trees": 554, "t": "10-09 01:59:49"}
+{"event": "end", "stats": {"saved": 6, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 02:00:02"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "research/r13_f3/model3ap.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27skap", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "all"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 02:00:40"}
+{"lib": "lgb", "event": "saved", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "trees": 600, "t": "10-09 02:00:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "trees": 600, "t": "10-09 02:00:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "trees": 600, "t": "10-09 02:00:45"}
+{"lib": "lgb", "event": "saved", "key": "lgb_1a949b28288b24fe19f696b499b49804", "seq": 4, "trees": 144, "t": "10-09 02:01:33"}
+{"lib": "lgb", "event": "saved", "key": "lgb_d1438da96da5b7f4af3606176312a734", "seq": 5, "trees": 473, "t": "10-09 02:02:07"}
+{"lib": "lgb", "event": "saved", "key": "lgb_0c33f4649662638c019ad8f99a9155d5", "seq": 6, "trees": 290, "t": "10-09 02:02:24"}
+{"lib": "lgb", "event": "saved", "key": "lgb_d3b50cfab3539c06a839289fe2dac36d", "seq": 7, "trees": 685, "t": "10-09 02:03:06"}
+{"lib": "lgb", "event": "saved", "key": "lgb_f16253243fcaff93499617616754f11d", "seq": 8, "trees": 391, "t": "10-09 02:03:34"}
+{"lib": "lgb", "event": "saved", "key": "lgb_3b479a51e9ce384d5d3e6fdb63cc898c", "seq": 9, "trees": 342, "t": "10-09 02:03:56"}
+{"lib": "lgb", "event": "saved", "key": "lgb_4afa2c02d198dc7ae458d83c764b842b", "seq": 10, "trees": 405, "t": "10-09 02:04:24"}
+{"lib": "lgb", "event": "saved", "key": "lgb_2d6b0e7cde35cd4c95283427bb6cbb5a", "seq": 11, "trees": 562, "t": "10-09 02:04:59"}
+{"lib": "lgb", "event": "saved", "key": "lgb_f41463127c4ecd6ab681ac6aa358301e", "seq": 12, "trees": 518, "t": "10-09 02:05:27"}
+{"lib": "lgb", "event": "saved", "key": "lgb_f2c683b7d0cff3213221ca31e8cfec03", "seq": 13, "trees": 265, "t": "10-09 02:05:42"}
+{"lib": "lgb", "event": "saved", "key": "lgb_27c1eab8760b6a34917ae1c64d22c3d8", "seq": 14, "trees": 382, "t": "10-09 02:06:08"}
+{"event": "end", "stats": {"saved": 14, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 02:06:10"}
+{"event": "start", "mode": "save", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27cbwin", "--base", "m6r27skwin", "--feats", "feats_v27", "--anchor", "win", "--threads", "8"], "cwd": "<mac-workdir>/prcm/f3_sbx/interim", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 02:08:33"}
+{"lib": "cb", "event": "saved", "key": "cb_a4185ad6947ed65b2b5ad29c9fce6fb0", "seq": 1, "trees": 4400, "t": "10-09 03:04:23"}
+{"event": "end", "stats": {"saved": 1, "loaded": 0, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:04:26"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:05:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:05:24"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:05:24"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:05:24"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_1a949b28288b24fe19f696b499b49804", "seq": 4, "t": "10-09 03:05:33"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_d9571526f6f7a85e5b4ed570e1318c88", "seq": 5, "t": "10-09 03:05:36"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_ccf60960717359c04813edb94218e23c", "seq": 6, "t": "10-09 03:07:37"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:07:49"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:08:47"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "1", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:08:47"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:08:54"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:08:54"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:08:54"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:08:54"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:08:54"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:08:54"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_8c3661e4afe9e698d8abca4fce7bd6bf", "seq": 4, "t": "10-09 03:09:10"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_e3a8c9f2cbacc6790c6b0f1e5da2e23d", "seq": 4, "t": "10-09 03:09:10"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_359936417a84b0ca367758955cb36647", "seq": 5, "t": "10-09 03:09:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_6daa98a1f57b7c5eae9ce1b7b493b5b3", "seq": 5, "t": "10-09 03:09:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_b6a3e24b4eb7a2d5508a33505dbfd4f0", "seq": 6, "t": "10-09 03:14:08"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_7db549a4c2b51df6d9ddf69babbf61de", "seq": 6, "t": "10-09 03:14:09"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:14:28"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:14:29"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "1", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:15:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:15:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:15:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:15:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_d61239128ecf9dde9f099bb46d68bc5e", "seq": 4, "t": "10-09 03:15:33"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_4a2218692e790e3c0c60addbd7574062", "seq": 5, "t": "10-09 03:15:35"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_e8f6b676b91c1cfc377eeaf9d3da243f", "seq": 6, "t": "10-09 03:17:25"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:17:37"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "2", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:18:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:18:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:18:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:18:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_6c4db59674d55841ae5cb650ba3e3b2a", "seq": 4, "t": "10-09 03:18:32"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_34826d03b74639b06226b8bc1cfad678", "seq": 5, "t": "10-09 03:18:35"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_0aaf409acb5f8d5a4dddac25abac1660", "seq": 6, "t": "10-09 03:20:28"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:20:39"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "3", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:21:17"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "2", "--tag", "m6r27sk", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "4", "--mu_sep", "LIRF"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:21:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:21:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:21:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:21:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:21:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:21:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:21:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_cc513813195e540f524fee6d699e9f57", "seq": 4, "t": "10-09 03:21:34"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_8e8998ebe478fef6368e0a6e23086d1a", "seq": 4, "t": "10-09 03:21:34"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_2391d046db1515e91aebcb0df3462486", "seq": 5, "t": "10-09 03:21:39"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_91014ebb202d5b0470403a730ff84186", "seq": 5, "t": "10-09 03:21:39"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_d690d73d5e2672e28d7c076ca40aa002", "seq": 6, "t": "10-09 03:26:19"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_d37de57dd678f955d6258586d21b2226", "seq": 6, "t": "10-09 03:26:25"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:26:38"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:26:43"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/model3.py", "args": ["--setting", "full", "--seed", "3", "--tag", "m6r27skwin", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "LIRF", "--anchor", "win"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:27:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:27:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:27:23"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:27:24"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_a901e9633fa4dca70b33e6e0b63a38f1", "seq": 4, "t": "10-09 03:27:33"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_5a62283ef0e95e02810645475d373093", "seq": 5, "t": "10-09 03:27:35"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_75300feffa30a249f39da00ea8d2d093", "seq": 6, "t": "10-09 03:29:24"}
+{"event": "end", "stats": {"saved": 0, "loaded": 6, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:29:36"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "research/r13_f3/model3ap.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27skap", "--feats", "feats_v27", "--es", "internal", "--refit", "--wpow", "1", "--leaves", "255", "--mdl", "100", "--no_direct", "--clf_drop_prefix", "m_,ab_", "--full_mult", "1.0", "--threads", "6", "--mu_sep", "all"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:30:17"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_c9991354d86d2bfd9da275f032026972", "seq": 1, "t": "10-09 03:30:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_dbaaca4a8eb7c505bbf10bf26caa5e1f", "seq": 2, "t": "10-09 03:30:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_bd175e9c08537ac5f1afb955151d3190", "seq": 3, "t": "10-09 03:30:22"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_1a949b28288b24fe19f696b499b49804", "seq": 4, "t": "10-09 03:30:31"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_d1438da96da5b7f4af3606176312a734", "seq": 5, "t": "10-09 03:30:34"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_0c33f4649662638c019ad8f99a9155d5", "seq": 6, "t": "10-09 03:30:35"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_d3b50cfab3539c06a839289fe2dac36d", "seq": 7, "t": "10-09 03:30:36"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_f16253243fcaff93499617616754f11d", "seq": 8, "t": "10-09 03:30:38"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_3b479a51e9ce384d5d3e6fdb63cc898c", "seq": 9, "t": "10-09 03:30:39"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_4afa2c02d198dc7ae458d83c764b842b", "seq": 10, "t": "10-09 03:30:40"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_2d6b0e7cde35cd4c95283427bb6cbb5a", "seq": 11, "t": "10-09 03:30:41"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_f41463127c4ecd6ab681ac6aa358301e", "seq": 12, "t": "10-09 03:30:43"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_f2c683b7d0cff3213221ca31e8cfec03", "seq": 13, "t": "10-09 03:30:44"}
+{"lib": "lgb", "event": "loaded", "key": "lgb_27c1eab8760b6a34917ae1c64d22c3d8", "seq": 14, "t": "10-09 03:30:44"}
+{"event": "end", "stats": {"saved": 0, "loaded": 14, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:30:46"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27cbwin", "--base", "m6r27skwin", "--feats", "feats_v27", "--anchor", "win", "--threads", "8"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:43:48"}
+{"lib": "cb", "event": "loaded", "key": "cb_a4185ad6947ed65b2b5ad29c9fce6fb0", "seq": 1, "t": "10-09 03:43:55"}
+{"event": "end", "stats": {"saved": 0, "loaded": 1, "miss_fit": 0, "uncached": 0}, "rc": "ok", "t": "10-09 03:43:58"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27cb", "--base", "m6r27sk", "--feats", "feats_v27", "--threads", "8"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 03:44:48"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_5f4504338633d82dd887ef4182495566", "seq": 1, "stored_key": null, "t": "10-09 03:44:55"}
+{"lib": "cb", "event": "saved", "key": "cb_5f4504338633d82dd887ef4182495566", "seq": 1, "trees": 4400, "t": "10-09 04:36:19"}
+{"event": "end", "stats": {"saved": 1, "loaded": 0, "miss_fit": 1, "uncached": 0}, "rc": "ok", "t": "10-09 04:36:22"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "1", "--tag", "m6r27cbwin", "--base", "m6r27skwin", "--feats", "feats_v27", "--anchor", "win", "--threads", "8"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 04:37:19"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_6dfdc89866af063a1fdbe671dee22594", "seq": 1, "stored_key": null, "t": "10-09 04:37:26"}
+{"lib": "cb", "event": "saved", "key": "cb_6dfdc89866af063a1fdbe671dee22594", "seq": 1, "trees": 4400, "t": "10-09 05:29:59"}
+{"event": "end", "stats": {"saved": 1, "loaded": 0, "miss_fit": 1, "uncached": 0}, "rc": "ok", "t": "10-09 05:30:02"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "1", "--tag", "m6r27cb", "--base", "m6r27sk", "--feats", "feats_v27", "--threads", "8"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 05:30:50"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_e6f4bffcf3733ca05bd38bdbcd23dfaf", "seq": 1, "stored_key": null, "t": "10-09 05:30:57"}
+{"lib": "cb", "event": "saved", "key": "cb_e6f4bffcf3733ca05bd38bdbcd23dfaf", "seq": 1, "trees": 4400, "t": "10-09 06:22:35"}
+{"event": "end", "stats": {"saved": 1, "loaded": 0, "miss_fit": 1, "uncached": 0}, "rc": "ok", "t": "10-09 06:22:38"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "2", "--tag", "m6r27cbwin", "--base", "m6r27skwin", "--feats", "feats_v27", "--anchor", "win", "--threads", "8"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 06:23:20"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_ec005afaa0a487017c0f9476eab462a2", "seq": 1, "stored_key": null, "t": "10-09 06:23:28"}
+{"lib": "cb", "event": "saved", "key": "cb_ec005afaa0a487017c0f9476eab462a2", "seq": 1, "trees": 4400, "t": "10-09 07:15:53"}
+{"event": "end", "stats": {"saved": 1, "loaded": 0, "miss_fit": 1, "uncached": 0}, "rc": "ok", "t": "10-09 07:15:56"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "src/cat_mu.py", "args": ["--setting", "full", "--seed", "2", "--tag", "m6r27cb", "--base", "m6r27sk", "--feats", "feats_v27", "--threads", "8"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 07:16:51"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_4ed71b8575067a8155b25678f67622e4", "seq": 1, "stored_key": null, "t": "10-09 07:16:58"}
+{"lib": "cb", "event": "saved", "key": "cb_4ed71b8575067a8155b25678f67622e4", "seq": 1, "trees": 4400, "t": "10-09 08:08:16"}
+{"event": "end", "stats": {"saved": 1, "loaded": 0, "miss_fit": 1, "uncached": 0}, "rc": "ok", "t": "10-09 08:08:18"}
+{"event": "start", "mode": "load", "salt": "54114020d2aa3d3c", "target": "research/r13_f3/cat_muap.py", "args": ["--setting", "full", "--seed", "0", "--tag", "m6r27cbap", "--base", "m6r27skap", "--feats", "feats_v27", "--threads", "8", "--per_ap"], "cwd": "<mac-workdir>/prcm/final_run", "lightgbm": "4.7.0", "catboost": "1.2.10", "t": "10-09 08:08:52"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_4cd659756d8ef11ccd2fb230214034a3", "seq": 1, "stored_key": null, "t": "10-09 08:08:57"}
+{"lib": "cb", "event": "saved", "key": "cb_4cd659756d8ef11ccd2fb230214034a3", "seq": 1, "trees": 2038, "t": "10-09 08:11:47"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_9ba22d55ebd200db7a128b9b9bd58a3d", "seq": 2, "stored_key": null, "t": "10-09 08:11:47"}
+{"lib": "cb", "event": "saved", "key": "cb_9ba22d55ebd200db7a128b9b9bd58a3d", "seq": 2, "trees": 3331, "t": "10-09 08:15:12"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_1dc9a733a70d117e6db3b515c5eab30c", "seq": 3, "stored_key": null, "t": "10-09 08:15:12"}
+{"lib": "cb", "event": "saved", "key": "cb_1dc9a733a70d117e6db3b515c5eab30c", "seq": 3, "trees": 1579, "t": "10-09 08:17:16"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_dda1b21c401f5ee7a8b553421c0b614c", "seq": 4, "stored_key": null, "t": "10-09 08:17:16"}
+{"lib": "cb", "event": "saved", "key": "cb_dda1b21c401f5ee7a8b553421c0b614c", "seq": 4, "trees": 2435, "t": "10-09 08:20:51"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_171a95c28abfd64d522e4e994951f508", "seq": 5, "stored_key": null, "t": "10-09 08:20:52"}
+{"lib": "cb", "event": "saved", "key": "cb_171a95c28abfd64d522e4e994951f508", "seq": 5, "trees": 2140, "t": "10-09 08:23:03"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_86e83eb31abaaeb49222c305e0dd9332", "seq": 6, "stored_key": null, "t": "10-09 08:23:04"}
+{"lib": "cb", "event": "saved", "key": "cb_86e83eb31abaaeb49222c305e0dd9332", "seq": 6, "trees": 1439, "t": "10-09 08:24:46"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_88b12d1b22dfec69703d2bdf46f4d687", "seq": 7, "stored_key": null, "t": "10-09 08:24:47"}
+{"lib": "cb", "event": "saved", "key": "cb_88b12d1b22dfec69703d2bdf46f4d687", "seq": 7, "trees": 1731, "t": "10-09 08:26:59"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_affbfcddc609f404d8a9d1b22605e60c", "seq": 8, "stored_key": null, "t": "10-09 08:26:59"}
+{"lib": "cb", "event": "saved", "key": "cb_affbfcddc609f404d8a9d1b22605e60c", "seq": 8, "trees": 1345, "t": "10-09 08:28:07"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_7948e9158e1dcd2f5f1ab27255c8bf3b", "seq": 9, "stored_key": null, "t": "10-09 08:28:08"}
+{"lib": "cb", "event": "saved", "key": "cb_7948e9158e1dcd2f5f1ab27255c8bf3b", "seq": 9, "trees": 2298, "t": "10-09 08:30:04"}
+{"lib": "cb", "event": "MISS_fit", "key": "cb_93d385553b3049def2b6e366171192ff", "seq": 10, "stored_key": null, "t": "10-09 08:30:05"}
+{"lib": "cb", "event": "saved", "key": "cb_93d385553b3049def2b6e366171192ff", "seq": 10, "trees": 1868, "t": "10-09 08:32:40"}
+{"event": "end", "stats": {"saved": 10, "loaded": 0, "miss_fit": 10, "uncached": 0}, "rc": "ok", "t": "10-09 08:32:41"}

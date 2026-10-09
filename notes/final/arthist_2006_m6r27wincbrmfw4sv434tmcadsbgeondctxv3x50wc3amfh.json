@@ -1,0 +1,60 @@
+{
+ "name": "2006_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfh",
+ "manifest": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfh.json",
+ "source": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3am.json",
+ "method": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3am.json 의 LIRF G 아닌 출발에서 주 분류기 p_art 를 같은 편명의 2025 학습 달 art 몫(편명 20행 -> 같은 운항사 같은 노선 50행 -> 운항사 몫으로 수축) 쪽으로 로짓 계수 하나 β 만큼 옮긴 판(tools/arthist.py, 표 arthist_v1 ec3ac93e29ece0b5). β 는 자 행에서 맞췄다(val 은 날 열 겹, fwd 는 1월, 시험은 두 달: 0.116548). 예측은 (p' − p)(d − mn) 만큼, LOBT 창 안으로. G 행과 p_art 0 행은 그대로. 근거 private notes research/2026-10-07-r7-u.md. gkey 와 그 뒤 단계는 이 뒤에 둔다. 자 ΔMSE -24.9(11820/24784), 7월 전방 ΔMSE -12.2(6192/13816), 시험 바뀐 행 49029, 이동 MSE 17.2. 약점: 계층 수축 판은 운항사 수축 판과 둘 다 잰 뒤 골랐고(둘 다 네 자에서 이김), 열두 달 한 달 빼기는 정답만 쓴 대리다. 이득은 7월과 11, 12월이고 1월은 0 안팎이다(+2). 시험 이동의 약 40% 가 드문 운항사 십여 행이다(운항사 몫까지 수축한 판은 네 자 모두 졌다). 10-05 단일 발 체제라 준비 점검은 경고(--readiness-warn)",
+ "report": {
+  "beta": {
+   "fold": {
+    "0": 0.11162,
+    "1": 0.107626,
+    "2": 0.102505,
+    "3": 0.123802,
+    "4": 0.106315,
+    "5": 0.144884,
+    "6": 0.108903,
+    "7": 0.114063,
+    "8": 0.117542,
+    "9": 0.127324
+   },
+   "jan": 0.063097,
+   "all": 0.116548
+  },
+  "full": {
+   "rows_lirf_nong": 51527,
+   "rows_moved": 49080,
+   "mean_p_old": 0.19491,
+   "mean_p_new": 0.19598,
+   "changed": 49029,
+   "g_changed": 0,
+   "move_mse_test_n": 17.2
+  },
+  "val": {
+   "rows_lirf_nong": 26131,
+   "rows_moved": 24799,
+   "mean_p_old": 0.18605,
+   "mean_p_new": 0.18714,
+   "changed": 24784,
+   "g_changed": 0,
+   "rows": 344419,
+   "rmse_old": 290.948,
+   "rmse_new": 290.905,
+   "dmse": -24.9,
+   "improved": 11820
+  },
+  "fwd": {
+   "rows_lirf_nong": 14874,
+   "rows_moved": 13823,
+   "mean_p_old": 0.16112,
+   "mean_p_new": 0.16274,
+   "changed": 13816,
+   "g_changed": 0,
+   "rows": 190713,
+   "rmse_old": 286.148,
+   "rmse_new": 286.127,
+   "dmse": -12.2,
+   "improved": 6192
+  }
+ },
+ "written_kst": "2026-10-09 15:03:42 KST"
+}

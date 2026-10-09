@@ -1,0 +1,190 @@
+{
+ "T1_vs_T2_save_transparent": {
+  "columns_equal": true,
+  "rows": [
+   670790,
+   670790
+  ],
+  "cells_differing": {
+   "pred": 4557,
+   "pred_noG": 4557,
+   "p_art": 34970,
+   "mu": 1371
+  },
+  "bit_equal": false
+ },
+ "T1_vs_T3_load_exact": {
+  "columns_equal": true,
+  "rows": [
+   670790,
+   670790
+  ],
+  "cells_differing": {
+   "pred": 4557,
+   "pred_noG": 4557,
+   "p_art": 34970,
+   "mu": 1371
+  },
+  "bit_equal": false
+ },
+ "events_save": {
+  "-:start": 1,
+  "lgb:saved": 5,
+  "-:end": 1
+ },
+ "events_load": {
+  "-:start": 1,
+  "lgb:loaded": 5,
+  "-:end": 1
+ },
+ "events_strict_perturbed": {
+  "-:start": 1,
+  "lgb:loaded": 3,
+  "lgb:MISS_STOP": 1,
+  "-:end": 1
+ },
+ "miss_strict_perturbed": [
+  {
+   "lib": "lgb",
+   "event": "MISS_STOP",
+   "key": "lgb_db646c69dbf0037aa8781826c233c7b6",
+   "seq": 4,
+   "stored_key": "lgb_e3a8c9f2cbacc6790c6b0f1e5da2e23d",
+   "components_differing": [
+    "dataset"
+   ],
+   "data_columns_differing": [
+    47
+   ],
+   "t": "10-09 00:13:57"
+  }
+ ],
+ "events_strict_hybrid": {
+  "-:start": 1,
+  "lgb:loaded": 5,
+  "-:end": 1
+ },
+ "T4": {
+  "stopped": true,
+  "perturbed": {
+   "column": "c_dep_m15",
+   "row": 0,
+   "id": 182234017.0,
+   "old": 8.0,
+   "new": 9.0,
+   "read_back_differing": {
+    "c_dep_m15": 1
+   }
+  },
+  "first_miss": {
+   "lib": "lgb",
+   "event": "MISS_STOP",
+   "key": "lgb_db646c69dbf0037aa8781826c233c7b6",
+   "seq": 4,
+   "stored_key": "lgb_e3a8c9f2cbacc6790c6b0f1e5da2e23d",
+   "components_differing": [
+    "dataset"
+   ],
+   "data_columns_differing": [
+    47
+   ],
+   "t": "10-09 00:13:57"
+  },
+  "named_columns": [
+   "c_dep_m15"
+  ]
+ },
+ "T5_real_redraw_move": {
+  "rows_other_than_jan_jul_bit_equal": false,
+  "rows_other_detail": {
+   "columns_equal": true,
+   "rows": [
+    325949,
+    325949
+   ],
+   "cells_differing": {
+    "pred": 2262,
+    "pred_noG": 2262,
+    "p_art": 15585,
+    "mu": 724
+   },
+   "bit_equal": false
+  },
+  "jan_jul_rows": 344841,
+  "minute": {
+   "rows": 180158,
+   "move_rms_s": 19.85,
+   "move_mean_s": 0.03,
+   "p99_abs_s": 67.4,
+   "max_abs_s": 1070.9,
+   "share_abs_gt60s": 0.01409,
+   "p_art_move_rms": 0.01631
+  },
+  "second": {
+   "rows": 164683,
+   "move_rms_s": 8.97,
+   "move_mean_s": 0.017,
+   "p99_abs_s": 31.9,
+   "max_abs_s": 366.9,
+   "share_abs_gt60s": 0.0015,
+   "p_art_move_rms": 0.00543
+  },
+  "all": {
+   "rows": 344841,
+   "move_rms_s": 15.63,
+   "move_mean_s": 0.023,
+   "p99_abs_s": 55.5,
+   "max_abs_s": 1070.9,
+   "share_abs_gt60s": 0.00808,
+   "p_art_move_rms": 0.01237
+  },
+  "sampler_move_rms_s_same_rows_kind": {
+   "minute": 19.7,
+   "second": 8.6
+  }
+ },
+ "catboost": {
+  "C2_save_eq_C1": true,
+  "C3_load_eq_C1": true,
+  "C4_stopped": true,
+  "events_save": {
+   "-:start": 1,
+   "cb:saved": 1,
+   "-:end": 1
+  },
+  "events_load": {
+   "-:start": 1,
+   "cb:loaded": 1,
+   "-:end": 1
+  },
+  "events_strict": {
+   "-:start": 1,
+   "cb:MISS_STOP": 1,
+   "-:end": 1
+  },
+  "max_abs_diff_C3_C1": 0.0
+ },
+ "T2_vs_T3_load_reproduces_save": {
+  "columns_equal": true,
+  "rows": [
+   670790,
+   670790
+  ],
+  "cells_differing": {},
+  "bit_equal": true
+ },
+ "PASS_strict_bit_equal_to_direct": false,
+ "direct_vs_direct_T1_T1b_max_abs": {
+  "pred": 1.653006620472297e-10,
+  "p_art": 8.326672684688674e-16,
+  "mu": 1.653006620472297e-10
+ },
+ "direct_vs_save_T1_T2_max_abs": {
+  "pred": 1.0231815394945443e-12,
+  "p_art": 1.6653345369377348e-15,
+  "mu": 4.547473508864641e-13
+ },
+ "direct_vs_direct_bits_differ_pred": 559633,
+ "PASS": true,
+ "pass_rule": "load == save bit-exact; save vs direct within 10x the direct-vs-direct difference and <= 1e-9; stop and CatBoost checks"
+}

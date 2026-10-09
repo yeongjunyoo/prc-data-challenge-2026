@@ -1,0 +1,14 @@
+{
+ "tabm_prep": {
+  "rc": 0,
+  "end": "10-09 02:13:43",
+  "start": "10-09 02:11:43",
+  "cmd": "research/r13_l/prep_x.py --setting full"
+ },
+ "tmcwin_s0": {
+  "rc": 0,
+  "end": "10-09 12:37:07",
+  "start": "10-09 10:48:05",
+  "cmd": "research/r13_l/tabm_leg.py --setting full --seed 0 --tag m6r27tmcwin --base m6r27skwin --anchor win --sched cos --epochs 20 --patience 99 --device mps --threads 3 --amp bf16"
+ }
+}

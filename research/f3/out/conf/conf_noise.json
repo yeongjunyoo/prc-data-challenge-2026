@@ -1,0 +1,122 @@
+{
+ "b|all|all": {
+  "new_minus_old": 115.09,
+  "sd_one_draw": 49.7,
+  "z": 2.01
+ },
+ "b|all|body_nonG": {
+  "new_minus_old": 23.44,
+  "sd_one_draw": 12.1,
+  "z": 1.68
+ },
+ "b|all|y_gt3600": {
+  "new_minus_old": 89.66,
+  "sd_one_draw": 47.43,
+  "z": 1.64
+ },
+ "b|all|G": {
+  "new_minus_old": 2.0,
+  "sd_one_draw": 8.63,
+  "z": 0.2
+ },
+ "b|minute|all": {
+  "new_minus_old": 86.92,
+  "sd_one_draw": 49.41,
+  "z": 1.52
+ },
+ "b|minute|body_nonG": {
+  "new_minus_old": -6.06,
+  "sd_one_draw": 11.04,
+  "z": -0.48
+ },
+ "b|minute|y_gt3600": {
+  "new_minus_old": 90.98,
+  "sd_one_draw": 47.38,
+  "z": 1.66
+ },
+ "b|minute|G": {
+  "new_minus_old": 2.0,
+  "sd_one_draw": 8.63,
+  "z": 0.2
+ },
+ "b|second|all": {
+  "new_minus_old": 28.17,
+  "sd_one_draw": 5.41,
+  "z": 4.51
+ },
+ "b|second|body_nonG": {
+  "new_minus_old": 29.5,
+  "sd_one_draw": 4.95,
+  "z": 5.16
+ },
+ "b|second|y_gt3600": {
+  "new_minus_old": -1.33,
+  "sd_one_draw": 2.16,
+  "z": -0.53
+ },
+ "b|second|G": {
+  "new_minus_old": 0.0,
+  "sd_one_draw": 0.0,
+  "z": null
+ },
+ "a|all|all": {
+  "new_minus_old": 138.4,
+  "sd_one_draw": 49.74,
+  "z": 2.41
+ },
+ "a|all|body_nonG": {
+  "new_minus_old": 48.31,
+  "sd_one_draw": 12.19,
+  "z": 3.43
+ },
+ "a|all|y_gt3600": {
+  "new_minus_old": 86.56,
+  "sd_one_draw": 47.34,
+  "z": 1.58
+ },
+ "a|all|G": {
+  "new_minus_old": 3.53,
+  "sd_one_draw": 9.21,
+  "z": 0.33
+ },
+ "a|minute|all": {
+  "new_minus_old": 127.35,
+  "sd_one_draw": 49.53,
+  "z": 2.23
+ },
+ "a|minute|body_nonG": {
+  "new_minus_old": 36.07,
+  "sd_one_draw": 11.46,
+  "z": 2.73
+ },
+ "a|minute|y_gt3600": {
+  "new_minus_old": 87.75,
+  "sd_one_draw": 47.3,
+  "z": 1.61
+ },
+ "a|minute|G": {
+  "new_minus_old": 3.53,
+  "sd_one_draw": 9.21,
+  "z": 0.33
+ },
+ "a|second|all": {
+  "new_minus_old": 11.05,
+  "sd_one_draw": 4.63,
+  "z": 2.07
+ },
+ "a|second|body_nonG": {
+  "new_minus_old": 12.24,
+  "sd_one_draw": 4.15,
+  "z": 2.56
+ },
+ "a|second|y_gt3600": {
+  "new_minus_old": -1.19,
+  "sd_one_draw": 2.05,
+  "z": -0.5
+ },
+ "a|second|G": {
+  "new_minus_old": 0.0,
+  "sd_one_draw": 0.0,
+  "z": null
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "1_schema_rows": true,
+ "2_rows_2025": {
+  "same_ids_order": true,
+  "unexpected_columns": {},
+  "pass": true
+ },
+ "3_v25_part_equal": true,
+ "4_jan_jul_ab": {
+  "common_ids": 344841,
+  "rows_not_as_expected": 11,
+  "per_column": {
+   "ab_matched": 10,
+   "ab_fm_seen": 10,
+   "ab_fm_ok": 10,
+   "ab_est_mvt": 2,
+   "ab_est_to": 2,
+   "ab_est_first": 11,
+   "ab_est_mvt_last": 2,
+   "ab_dt_to": 11,
+   "ab_fm_m_sch": 2,
+   "ab_first_m_sch": 11,
+   "ab_first_m_aobt": 5,
+   "ab_first_gs": 11,
+   "ab_first_dist_m": 11,
+   "ab_first_stationary": 10,
+   "ab_stand_seen": 10,
+   "ab_stand_dur": 2,
+   "ab_fm_gap": 2,
+   "ab_n_mid_stops": 10,
+   "ab_mid_stop_s": 10,
+   "ab_mid_stop_max": 10,
+   "ab_n_long_stops": 10,
+   "ab_fm_last_gap": 2,
+   "ab_last_long_dur": 2,
+   "ab_to_gap": 10,
+   "ab_n_pts": 11,
+   "ab_max_gap_after_fm": 11,
+   "ab_share_mlat": 10
+  },
+  "pass": true
+ },
+ "5_feb_jun_fill": {
+  "day_data_fill": {
+   "1": 1.0,
+   "2": 1.0,
+   "6": 0.9665,
+   "7": 1.0
+  },
+  "matched_share": {
+   "1": 0.7619,
+   "2": 0.7391,
+   "6": 0.7039,
+   "7": 0.6986
+  },
+  "pass": true
+ },
+ "pass": true
+}

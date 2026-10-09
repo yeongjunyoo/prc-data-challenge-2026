@@ -1,0 +1,86 @@
+{
+ "skwin_s0": {
+  "rc": 0,
+  "end": "10-09 03:08:16",
+  "start": "10-09 03:04:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 0 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "sk_s0": {
+  "rc": 0,
+  "end": "10-09 03:14:46",
+  "start": "10-09 03:08:16",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 0 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF"
+ },
+ "sk_s1": {
+  "rc": 0,
+  "end": "10-09 03:14:46",
+  "start": "10-09 03:08:16",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 1 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF"
+ },
+ "gband_m6r27skwing": {
+  "rc": 0,
+  "end": "10-09 03:09:16",
+  "start": "10-09 03:08:16",
+  "cmd": "src/g_band.py --setting full --seed 0 --tag m6r27skwing --base m6r27skwin --feats feats_v27"
+ },
+ "skwin_s1": {
+  "rc": 0,
+  "end": "10-09 03:17:46",
+  "start": "10-09 03:14:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 1 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "gband_m6r27skg": {
+  "rc": 0,
+  "end": "10-09 03:15:46",
+  "start": "10-09 03:14:46",
+  "cmd": "src/g_band.py --setting full --seed 0 --tag m6r27skg --base m6r27sk --feats feats_v27"
+ },
+ "skwin_s2": {
+  "rc": 0,
+  "end": "10-09 03:20:46",
+  "start": "10-09 03:17:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 2 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "sk_s2": {
+  "rc": 0,
+  "end": "10-09 03:26:46",
+  "start": "10-09 03:20:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 2 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF"
+ },
+ "sk_s3": {
+  "rc": 0,
+  "end": "10-09 03:26:46",
+  "start": "10-09 03:20:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 3 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF"
+ },
+ "skwin_s3": {
+  "rc": 0,
+  "end": "10-09 03:29:46",
+  "start": "10-09 03:26:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs src/model3.py --setting full --seed 3 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "avg_skgx4": {
+  "rc": 0,
+  "end": "10-09 03:27:46",
+  "start": "10-09 03:26:46",
+  "cmd": "research/f3/avg_legs_final.py m6r27skg m6r27skgx4 0,1,2,3 m6r27sk"
+ },
+ "skap_s0": {
+  "rc": 0,
+  "end": "10-09 03:30:46",
+  "start": "10-09 03:29:46",
+  "cmd": "<mac-workdir>/prcm/final_run/research/f3/fitwrap.py load <mac-workdir>/prcm/final_run/research/f3/fc_legs research/r13_f3/model3ap.py --setting full --seed 0 --tag m6r27skap --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all"
+ },
+ "avg_skwingx4": {
+  "rc": 0,
+  "end": "10-09 03:30:46",
+  "start": "10-09 03:29:46",
+  "cmd": "research/f3/avg_legs_final.py m6r27skwing m6r27skwingx4 0,1,2,3 m6r27skwin"
+ },
+ "gband_m6r27skapg": {
+  "rc": 0,
+  "end": "10-09 03:31:46",
+  "start": "10-09 03:30:46",
+  "cmd": "src/g_band.py --setting full --seed 0 --tag m6r27skapg --base m6r27skap --feats feats_v27"
+ }
+}

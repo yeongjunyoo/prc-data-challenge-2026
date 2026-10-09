@@ -1,0 +1,5 @@
+# m6r25s(LIRF 분리 회귀, 바탕 명령은 notes/jobs_m6r25s.txt, preds/manifest_m6r25s.json) 의 출력에 G 지연 1~4시간 규칙(src/g_band.py, model3.g_override)을 덧씌운 판.
+# 규칙은 학습 기간 열 달을 한 달씩 빼는 시험(research/gmodel/oof_g_art.py, 10-03 07:55~08:10, 10/10 달 G 제곱오차 감소)으로 정했고, 자(1, 7월) 점수는 그 뒤에 처음 봤다.
+logs/m6r25sg_val_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting val --seed 0 --tag m6r25sg --base m6r25s --feats feats_v25
+logs/m6r25sg_fwd_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting fwd --seed 0 --tag m6r25sg --base m6r25s --feats feats_v25
+logs/m6r25sg_full_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting full --seed 0 --tag m6r25sg --base m6r25s --feats feats_v25

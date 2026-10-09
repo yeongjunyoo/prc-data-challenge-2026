@@ -1,0 +1,10 @@
+{
+ "rows": 187603,
+ "kind": "LIRF departures (2025 and 2026): canonical flight key, carrier, destination, month, UTC day, NM match, 2025 class (1 art, 2 day push, 0 normal; training labels, history only)",
+ "sha16": "a02992652cfcdc2a",
+ "source": "cache/all.parquet",
+ "source_sha16": "704408c3b5dfccd1",
+ "built_kst": "2026-10-06 23:18:58 KST",
+ "code": "tools/arthist.py table",
+ "code_sha16": "a64145d2b02f714a"
+}

@@ -1,0 +1,32 @@
+{
+ "rows": 2106,
+ "train_rows": 1487,
+ "test_rows": 619,
+ "fill": {
+  "ca_copy_mon": [
+   0.9139,
+   0.8885
+  ],
+  "rt_copy_mon": [
+   0.8278,
+   0.8029
+  ]
+ },
+ "mean_2025_1_7_vs_test": {
+  "ca_copy_mon": [
+   0.1294,
+   0.1472
+  ],
+  "rt_copy_mon": [
+   0.1371,
+   0.1497
+  ]
+ },
+ "arrival_rows_used": 212232,
+ "sha16": "8cdbc2de1a10ef25",
+ "source": "cache/all.parquet",
+ "source_sha16": "4cecec6f9a89e010",
+ "built_kst": "2026-10-08 23:05:45 KST",
+ "code": "tools/gkeyxn.py table",
+ "code_sha16": "3719a24fe7bcf65d"
+}

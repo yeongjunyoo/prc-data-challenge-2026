@@ -1,0 +1,10 @@
+{
+ "rows": 2429888,
+ "kind": "departure keys (all departures, 2025 and 2026)",
+ "sha16": "104cb46eb06c3085",
+ "source": "cache/all.parquet",
+ "source_sha16": "704408c3b5dfccd1",
+ "built_kst": "2026-10-06 18:46:55 KST",
+ "code": "tools/artmm.py table",
+ "code_sha16": "59199a41bac84f3d"
+}

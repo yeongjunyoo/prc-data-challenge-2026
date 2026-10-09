@@ -1,0 +1,5 @@
+# 10-04 v2.6 피처 판 빌드와 점검(게임이 끝나고 가용 12 GB 이상일 때, 통째로 memcap 12 GB 안에서 run_jobs.sh 로)
+logs/feats_v26.log	python -X utf8 -u src/feats.py feats_v26
+logs/mask_test_v26.log	python -X utf8 -u -m src.mask_test v26
+logs/te_coverage_v26.log	python -X utf8 -u src/te_coverage.py feats_v26
+logs/composition_v26.log	python -X utf8 -m src.composition --feats feats_v26 --out notes/composition_feats_v26.json

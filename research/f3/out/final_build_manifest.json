@@ -1,0 +1,1150 @@
+{
+ "written": "2026-10-09 15:27:46 KST",
+ "spec": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+ "rebuild_of": "514 (v35, daily LB 228.384), code sha16 of its 47 files equal in this root",
+ "data": {
+  "ranking": "4b0692a792846079",
+  "submitting": "b3445d80e29bf599",
+  "note": "final_ranking 4b0692a792846079, final_submitting b3445d80e29bf599 (organizer, 10-08 11:57 UTC)"
+ },
+ "tables_sha16": {
+  "all": "4cecec6f9a89e010",
+  "feats_v25": "c399bd36a924f370",
+  "feats_v27": "8fc36fd4314708a8",
+  "ctx_v1": "0aa0fb24888729eb",
+  "ctx_v2": "67c6f0a7a3f79637",
+  "ctx_v3": "01ac984c7afd6e05",
+  "adsb_v2": "54ba81f368669d1d",
+  "adsb_v1nd": "07df03ca69833082",
+  "geo_v1nd": "9dfa71b64e1099de",
+  "antiwin_link_v1": "b75ec1a1a64afd0e",
+  "gkey_v1": "247e69682fee0fa1",
+  "gkeyx_v1": "210f643bba5e983b",
+  "gkeyxn_v2": "8cdbc2de1a10ef25",
+  "artmm_v1": "8a949f3896d5de1a",
+  "artmm_cells_v1": "4ecdbea3beb1607b",
+  "arthist_v1": "ec3ac93e29ece0b5"
+ },
+ "r17a_pack2": {
+  "manifest_written_kst": "2026-10-09 02:04:24 KST",
+  "days_under_1000_events": [
+   [
+    "2026-06-11",
+    89
+   ]
+  ],
+  "adsb_v2": {
+   "sha16": "54ba81f368669d1d",
+   "sha16_manifest": "54ba81f368669d1d",
+   "sha16_today": "8ee80c46165c4ef9",
+   "sha_ok": true,
+   "schema_equal": true,
+   "rows_2025": [
+    981649,
+    981649
+   ],
+   "rows_2025_identical": true,
+   "rows_2025_columns_differing": {},
+   "rows_2026_by_month": {
+    "2026-01": 152719,
+    "2026-02": 144158,
+    "2026-06": 175692,
+    "2026-07": 192122
+   },
+   "match_rate_2026_by_month": {
+    "2026-01": 0.7619,
+    "2026-02": 0.7391,
+    "2026-06": 0.7284,
+    "2026-07": 0.6986
+   },
+   "rows_2026_06_11": 0,
+   "pass": true
+  },
+  "adsb_v1nd": {
+   "sha16": "07df03ca69833082",
+   "sha16_manifest": "07df03ca69833082",
+   "sha16_today": "0d03ff06267e0dee",
+   "sha_ok": true,
+   "schema_equal": true,
+   "rows_2025": [
+    344419,
+    344419
+   ],
+   "rows_2025_identical": true,
+   "rows_2025_columns_differing": {},
+   "rows_2026_by_month": {
+    "2026-01": 152719,
+    "2026-02": 144158,
+    "2026-06": 175692,
+    "2026-07": 192122
+   },
+   "match_rate_2026_by_month": {
+    "2026-01": 0.7619,
+    "2026-02": 0.7391,
+    "2026-06": 0.7284,
+    "2026-07": 0.6986
+   },
+   "rows_2026_06_11": 0,
+   "pass": true
+  },
+  "pass": true,
+  "placed": [
+   "cache/adsb_v2.parquet",
+   "cache/adsb_v1nd.parquet"
+  ]
+ },
+ "feats_v27_check": {
+  "1_schema_rows": true,
+  "2_rows_2025": {
+   "same_ids_order": true,
+   "unexpected_columns": {},
+   "pass": true
+  },
+  "3_v25_part_equal": true,
+  "4_jan_jul_ab": {
+   "common_ids": 344841,
+   "rows_not_as_expected": 11,
+   "per_column": {
+    "ab_matched": 10,
+    "ab_fm_seen": 10,
+    "ab_fm_ok": 10,
+    "ab_est_mvt": 2,
+    "ab_est_to": 2,
+    "ab_est_first": 11,
+    "ab_est_mvt_last": 2,
+    "ab_dt_to": 11,
+    "ab_fm_m_sch": 2,
+    "ab_first_m_sch": 11,
+    "ab_first_m_aobt": 5,
+    "ab_first_gs": 11,
+    "ab_first_dist_m": 11,
+    "ab_first_stationary": 10,
+    "ab_stand_seen": 10,
+    "ab_stand_dur": 2,
+    "ab_fm_gap": 2,
+    "ab_n_mid_stops": 10,
+    "ab_mid_stop_s": 10,
+    "ab_mid_stop_max": 10,
+    "ab_n_long_stops": 10,
+    "ab_fm_last_gap": 2,
+    "ab_last_long_dur": 2,
+    "ab_to_gap": 10,
+    "ab_n_pts": 11,
+    "ab_max_gap_after_fm": 11,
+    "ab_share_mlat": 10
+   },
+   "pass": true
+  },
+  "5_feb_jun_fill": {
+   "day_data_fill": {
+    "1": 1.0,
+    "2": 1.0,
+    "6": 0.9665,
+    "7": 1.0
+   },
+   "matched_share": {
+    "1": 0.7619,
+    "2": 0.7391,
+    "6": 0.7039,
+    "7": 0.6986
+   },
+   "pass": true
+  },
+  "pass": true
+ },
+ "interim_vs_real_2025_rows": {
+  "columns_equal": true,
+  "rows_2025": [
+   2085047,
+   2085047
+  ],
+  "ids_equal": true,
+  "columns_differing_2025": {},
+  "identical_2025": true
+ },
+ "fit_cache": {
+  "fitwrap_sha16": "54114020d2aa3d3c",
+  "fitwrap_sha16_frozen": "54114020d2aa3d3c",
+  "interim_feats_v27_sha16": "60028382131600d3",
+  "store": "research/f3/fc_legs",
+  "wrapper_test": {
+   "T1_vs_T2_save_transparent": {
+    "columns_equal": true,
+    "rows": [
+     670790,
+     670790
+    ],
+    "cells_differing": {
+     "pred": 4557,
+     "pred_noG": 4557,
+     "p_art": 34970,
+     "mu": 1371
+    },
+    "bit_equal": false
+   },
+   "T1_vs_T3_load_exact": {
+    "columns_equal": true,
+    "rows": [
+     670790,
+     670790
+    ],
+    "cells_differing": {
+     "pred": 4557,
+     "pred_noG": 4557,
+     "p_art": 34970,
+     "mu": 1371
+    },
+    "bit_equal": false
+   },
+   "events_save": {
+    "-:start": 1,
+    "lgb:saved": 5,
+    "-:end": 1
+   },
+   "events_load": {
+    "-:start": 1,
+    "lgb:loaded": 5,
+    "-:end": 1
+   },
+   "events_strict_perturbed": {
+    "-:start": 1,
+    "lgb:loaded": 3,
+    "lgb:MISS_STOP": 1,
+    "-:end": 1
+   },
+   "miss_strict_perturbed": [
+    {
+     "lib": "lgb",
+     "event": "MISS_STOP",
+     "key": "lgb_db646c69dbf0037aa8781826c233c7b6",
+     "seq": 4,
+     "stored_key": "lgb_e3a8c9f2cbacc6790c6b0f1e5da2e23d",
+     "components_differing": [
+      "dataset"
+     ],
+     "data_columns_differing": [
+      47
+     ],
+     "t": "10-09 00:13:57"
+    }
+   ],
+   "events_strict_hybrid": {
+    "-:start": 1,
+    "lgb:loaded": 5,
+    "-:end": 1
+   },
+   "T4": {
+    "stopped": true,
+    "perturbed": {
+     "column": "c_dep_m15",
+     "row": 0,
+     "id": 182234017.0,
+     "old": 8.0,
+     "new": 9.0,
+     "read_back_differing": {
+      "c_dep_m15": 1
+     }
+    },
+    "first_miss": {
+     "lib": "lgb",
+     "event": "MISS_STOP",
+     "key": "lgb_db646c69dbf0037aa8781826c233c7b6",
+     "seq": 4,
+     "stored_key": "lgb_e3a8c9f2cbacc6790c6b0f1e5da2e23d",
+     "components_differing": [
+      "dataset"
+     ],
+     "data_columns_differing": [
+      47
+     ],
+     "t": "10-09 00:13:57"
+    },
+    "named_columns": [
+     "c_dep_m15"
+    ]
+   },
+   "T5_real_redraw_move": {
+    "rows_other_than_jan_jul_bit_equal": false,
+    "rows_other_detail": {
+     "columns_equal": true,
+     "rows": [
+      325949,
+      325949
+     ],
+     "cells_differing": {
+      "pred": 2262,
+      "pred_noG": 2262,
+      "p_art": 15585,
+      "mu": 724
+     },
+     "bit_equal": false
+    },
+    "jan_jul_rows": 344841,
+    "minute": {
+     "rows": 180158,
+     "move_rms_s": 19.85,
+     "move_mean_s": 0.03,
+     "p99_abs_s": 67.4,
+     "max_abs_s": 1070.9,
+     "share_abs_gt60s": 0.01409,
+     "p_art_move_rms": 0.01631
+    },
+    "second": {
+     "rows": 164683,
+     "move_rms_s": 8.97,
+     "move_mean_s": 0.017,
+     "p99_abs_s": 31.9,
+     "max_abs_s": 366.9,
+     "share_abs_gt60s": 0.0015,
+     "p_art_move_rms": 0.00543
+    },
+    "all": {
+     "rows": 344841,
+     "move_rms_s": 15.63,
+     "move_mean_s": 0.023,
+     "p99_abs_s": 55.5,
+     "max_abs_s": 1070.9,
+     "share_abs_gt60s": 0.00808,
+     "p_art_move_rms": 0.01237
+    },
+    "sampler_move_rms_s_same_rows_kind": {
+     "minute": 19.7,
+     "second": 8.6
+    }
+   },
+   "catboost": {
+    "C2_save_eq_C1": true,
+    "C3_load_eq_C1": true,
+    "C4_stopped": true,
+    "events_save": {
+     "-:start": 1,
+     "cb:saved": 1,
+     "-:end": 1
+    },
+    "events_load": {
+     "-:start": 1,
+     "cb:loaded": 1,
+     "-:end": 1
+    },
+    "events_strict": {
+     "-:start": 1,
+     "cb:MISS_STOP": 1,
+     "-:end": 1
+    },
+    "max_abs_diff_C3_C1": 0.0
+   },
+   "T2_vs_T3_load_reproduces_save": {
+    "columns_equal": true,
+    "rows": [
+     670790,
+     670790
+    ],
+    "cells_differing": {},
+    "bit_equal": true
+   },
+   "PASS_strict_bit_equal_to_direct": false,
+   "direct_vs_direct_T1_T1b_max_abs": {
+    "pred": 1.653006620472297e-10,
+    "p_art": 8.326672684688674e-16,
+    "mu": 1.653006620472297e-10
+   },
+   "direct_vs_save_T1_T2_max_abs": {
+    "pred": 1.0231815394945443e-12,
+    "p_art": 1.6653345369377348e-15,
+    "mu": 4.547473508864641e-13
+   },
+   "direct_vs_direct_bits_differ_pred": 559633,
+   "PASS": true,
+   "pass_rule": "load == save bit-exact; save vs direct within 10x the direct-vs-direct difference and <= 1e-9; stop and CatBoost checks"
+  },
+  "twin_sk_s0": {
+   "columns_equal": true,
+   "rows": [
+    670790,
+    670790
+   ],
+   "cells_differing": {
+    "pred": {
+     "cells": 510,
+     "max_abs": 9.094947017729282e-13
+    },
+    "pred_noG": {
+     "cells": 510,
+     "max_abs": 9.094947017729282e-13
+    },
+    "mu": {
+     "cells": 598,
+     "max_abs": 9.094947017729282e-13
+    }
+   },
+   "bit_equal": false,
+   "int32_pred_rows_differing": 0,
+   "PASS": true
+  },
+  "final_root_load_runs": {
+   "runs": [
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 0 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win",
+     "start": "10-09 03:05:17"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 0 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF",
+     "start": "10-09 03:08:47"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 1 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF",
+     "start": "10-09 03:08:47"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 1 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win",
+     "start": "10-09 03:15:17"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 2 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win",
+     "start": "10-09 03:18:17"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 3 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF",
+     "start": "10-09 03:21:17"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 2 --tag m6r27sk --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 4 --mu_sep LIRF",
+     "start": "10-09 03:21:17"
+    },
+    {
+     "target": "src/model3.py",
+     "args": "--setting full --seed 3 --tag m6r27skwin --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win",
+     "start": "10-09 03:27:17"
+    },
+    {
+     "target": "research/r13_f3/model3ap.py",
+     "args": "--setting full --seed 0 --tag m6r27skap --feats feats_v27 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all",
+     "start": "10-09 03:30:17"
+    },
+    {
+     "target": "src/cat_mu.py",
+     "args": "--setting full --seed 0 --tag m6r27cbwin --base m6r27skwin --feats feats_v27 --anchor win --threads 8",
+     "start": "10-09 03:43:48"
+    },
+    {
+     "target": "src/cat_mu.py",
+     "args": "--setting full --seed 0 --tag m6r27cb --base m6r27sk --feats feats_v27 --threads 8",
+     "start": "10-09 03:44:48"
+    },
+    {
+     "target": "src/cat_mu.py",
+     "args": "--setting full --seed 1 --tag m6r27cbwin --base m6r27skwin --feats feats_v27 --anchor win --threads 8",
+     "start": "10-09 04:37:19"
+    },
+    {
+     "target": "src/cat_mu.py",
+     "args": "--setting full --seed 1 --tag m6r27cb --base m6r27sk --feats feats_v27 --threads 8",
+     "start": "10-09 05:30:50"
+    },
+    {
+     "target": "src/cat_mu.py",
+     "args": "--setting full --seed 2 --tag m6r27cbwin --base m6r27skwin --feats feats_v27 --anchor win --threads 8",
+     "start": "10-09 06:23:20"
+    },
+    {
+     "target": "src/cat_mu.py",
+     "args": "--setting full --seed 2 --tag m6r27cb --base m6r27sk --feats feats_v27 --threads 8",
+     "start": "10-09 07:16:51"
+    },
+    {
+     "target": "research/r13_f3/cat_muap.py",
+     "args": "--setting full --seed 0 --tag m6r27cbap --base m6r27skap --feats feats_v27 --threads 8 --per_ap",
+     "start": "10-09 08:08:52"
+    }
+   ],
+   "events_by_kind": {
+    "loaded": 63,
+    "MISS_fit": 15,
+    "MISS_STOP": 0,
+    "uncached": 0
+   },
+   "end_lines": 16,
+   "end_rc_not_ok": []
+  }
+ },
+ "legs": {
+  "catboost_threads": "8 for every CatBoost leg (514: cbwin 10, cb 5, cbap 8); R16-D refit cbwin at 8 threads and reproduced the deployed mu_cat exactly (max diff 0.0 s), research/2026-10-08-r16-d-nd-legs.md",
+  "xgboost": "not refit: weight exactly 0 in the three full blends; placeholder mu_xgb = 0, blend output identical at 0 and 1 (research/f3/out/final_chain_<A|B|C>.json checks.xgb_weight)",
+  "tabm": {
+   "device": "mps (514's command); the CUDA run is kept aside, see tabm_move",
+   "cuda_run_sha16": "1fd9f495c0bfb04a",
+   "cuda_run": "research/f3/out/tabm_cuda/full_m6r27tmcwin_s0.parquet",
+   "cache_sha16": "a4c0f7e9085c644c",
+   "move_cuda_vs_mps": {
+    "rows": 670790,
+    "mu_tabm": {
+     "all": {
+      "mse": 304.923,
+      "mean": -0.189,
+      "max_abs": 977.8
+     },
+     "month_01": {
+      "rows": 152719,
+      "mse": 548.12,
+      "mean": -0.583
+     },
+     "month_02": {
+      "rows": 144158,
+      "mse": 219.155,
+      "mean": -0.641
+     },
+     "month_06": {
+      "rows": 181791,
+      "mse": 230.415,
+      "mean": 0.067
+     },
+     "month_07": {
+      "rows": 192122,
+      "mse": 246.462,
+      "mean": 0.219
+     },
+     "minute_airports": {
+      "mse": 358.795
+     },
+     "second_airports": {
+      "mse": 247.0
+     }
+    },
+    "pred": {
+     "all": {
+      "mse": 65.61,
+      "mean": -0.067,
+      "max_abs": 440.8
+     },
+     "month_01": {
+      "rows": 152719,
+      "mse": 127.824,
+      "mean": -0.246
+     },
+     "month_02": {
+      "rows": 144158,
+      "mse": 46.226,
+      "mean": -0.274
+     },
+     "month_06": {
+      "rows": 181791,
+      "mse": 47.351,
+      "mean": 0.045
+     },
+     "month_07": {
+      "rows": 192122,
+      "mse": 47.976,
+      "mean": 0.126
+     },
+     "minute_airports": {
+      "mse": 71.666
+     },
+     "second_airports": {
+      "mse": 59.097
+     }
+    }
+   }
+  },
+  "realmlp_device": "mps (514's command)"
+ },
+ "chains": {
+  "A": {
+   "label": "A",
+   "names": {
+    "corr": "2004_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3",
+    "am": "2005_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3am",
+    "fh": "2006_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfh",
+    "gkc": "2007_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkc",
+    "gkcx": "2008_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcx",
+    "xncr": "2009_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncr",
+    "db": "2010_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdb",
+    "aw": "2011_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbaw",
+    "gp": "2012_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgp",
+    "gl": "2013_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpgl",
+    "gja": "2014_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja"
+   },
+   "checks": {
+    "xgb_weight": {
+     "weights": [
+      0.1252,
+      0.4951,
+      0.0,
+      0.3798
+     ],
+     "zeros_vs_ones_identical": true
+    },
+    "fit_cache_s0": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ],
+    "fit_cache_s1": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ],
+    "fit_cache_s2": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ]
+   },
+   "done": "gja",
+   "updated": "10-09 15:18:22"
+  },
+  "B": {
+   "label": "B",
+   "names": {
+    "corr": "2104_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3",
+    "am": "2105_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3am",
+    "fh": "2106_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfh",
+    "gkc": "2107_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkc",
+    "gkcx": "2108_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcx",
+    "xncr": "2109_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncr",
+    "db": "2110_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdb",
+    "aw": "2111_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbaw",
+    "gp": "2112_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgp",
+    "gl": "2113_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpgl",
+    "gja": "2114_m6r27skcbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja"
+   },
+   "checks": {
+    "xgb_weight": {
+     "weights": [
+      0.1252,
+      0.4951,
+      0.0,
+      0.3798
+     ],
+     "zeros_vs_ones_identical": true
+    },
+    "fit_cache_s0": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ],
+    "fit_cache_s1": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ],
+    "fit_cache_s2": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ]
+   },
+   "done": "gja",
+   "updated": "10-09 14:29:28"
+  },
+  "C": {
+   "label": "C",
+   "names": {
+    "corr": "2204_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3",
+    "am": "2205_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3am",
+    "fh": "2206_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfh",
+    "gkc": "2207_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkc",
+    "gkcx": "2208_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcx",
+    "xncr": "2209_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncr",
+    "db": "2210_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncrdb",
+    "aw": "2211_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncrdbaw",
+    "gp": "2212_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncrdbawgp",
+    "gl": "2213_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncrdbawgpgl",
+    "gja": "2214_m6r27apcbrmfw4sv114adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgja"
+   },
+   "checks": {
+    "xgb_weight": {
+     "weights": [
+      0.1252,
+      0.4951,
+      0.0,
+      0.3798
+     ],
+     "zeros_vs_ones_identical": true
+    },
+    "fit_cache_s0": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ],
+    "fit_cache_s1": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ],
+    "fit_cache_s2": [
+     "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+    ]
+   },
+   "done": "gja",
+   "updated": "10-09 14:53:49"
+  }
+ },
+ "one_off_changes": [
+  "ctx_v2: st_k of MVT_ID 182512875 (2025-01, EDDM) kept at today's value 0 (patch_ctx2025.py, ctx_v2.json patched_2025; coordinator 10-08 22:5x)",
+  "ctx_v1: stand_p codes frozen from today's table, new prefixes appended (LEMD_PE 159, LSZH_WE 160)",
+  "geo_final regression check: discrete columns bit-equal, distances within 1e-6 m (first exact run: 1.8e-12 m)",
+  "2026-06-11 rows absent from adsb_v2, adsb_v1nd, geo_v1nd (R17-A pack 2: short source day read as a day without ADS-B)",
+  "src/manifest.py:126 asserted the public template's 344,841 test rows; in this root it checks against the template's own row count (87c960a26a0d7def -> 030ea98285708daa); the recording tool, in no manifest's code_sha",
+  "tail tools keep N_TEST = 344841 (hash-pinned code): their report field move_mse_test_n is a sum over 670,790 rows divided by 344,841 here, a reporting-only number (predictions unaffected)",
+  "research/f3/final_chain.py check_xgb_weight links data/ into its sandbox (blend_oof.ruler_days reads the 2025-01 and -07 training files); the rerun blend of chain A is byte-identical to the 10:48 output (84d4f8b748a911d9)",
+  "TabM full leg: MPS with 514's command (cache sha16 a4c0f7e9085c644c, 10-09 10:48-12:37); the CUDA run (1fd9f495c0bfb04a) is kept in research/f3/out/tabm_cuda/ and compared in tabm_move.json"
+ ],
+ "file": {
+  "path": "research/f3/out/spirited-tiger_final.parquet",
+  "sha16": "8384f8e5a782d3b5",
+  "checks": {
+   "spec": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+   "file": "research/f3/out/spirited-tiger_final.parquet",
+   "sha16": "8384f8e5a782d3b5",
+   "rows": 670790,
+   "check1": {
+    "rows_670790": true,
+    "order_equals_template": true,
+    "no_missing": true,
+    "no_negative": true,
+    "int32": true,
+    "schema_equal": true,
+    "pass": true
+   },
+   "check2": {
+    "rows": 344841,
+    "move_mse_vs_v35_int": 357.28,
+    "move_rms_vs_v35": 18.902,
+    "move_max_abs_vs_v35": 2152.0,
+    "move_mse_vs_514_float": 357.11,
+    "move_max_abs_vs_514_float": 2151.35,
+    "move_mse_by_airport": {
+     "EDDF": 288.9,
+     "EDDM": 153.5,
+     "EGLL": 317.9,
+     "EHAM": 391.8,
+     "LEBL": 97.8,
+     "LEMD": 114.2,
+     "LFPG": 443.1,
+     "LIRF": 1073.0,
+     "LSZH": 221.7,
+     "LTFM": 466.9
+    },
+    "move_mse_by_abs_dmvt": {
+     "0-0": 253.2,
+     "1-4": 305.1,
+     "5-8": 423.3,
+     "9-12": 538.3
+    },
+    "share_rows_moved_gt_60s": 0.0118,
+    "mean_move_vs_514": -0.185
+   },
+   "check3": {
+    "EDDF 01": {
+     "n": 15667,
+     "pred_mean": 1025.0,
+     "pred_median": 892.0,
+     "pred_p90": 1706.4,
+     "label2025_mean": 884.8,
+     "label2025_median": 825.0
+    },
+    "EDDF 02": {
+     "n": 14654,
+     "pred_mean": 895.2,
+     "pred_median": 845.5,
+     "pred_p90": 1244.0,
+     "label2025_mean": 846.3,
+     "label2025_median": 814.0
+    },
+    "EDDF 06": {
+     "n": 19700,
+     "pred_mean": 875.5,
+     "pred_median": 869.0,
+     "pred_p90": 1204.0,
+     "label2025_mean": 865.0,
+     "label2025_median": 841.0
+    },
+    "EDDF 07": {
+     "n": 20650,
+     "pred_mean": 861.7,
+     "pred_median": 858.0,
+     "pred_p90": 1176.0,
+     "label2025_mean": 868.4,
+     "label2025_median": 840.0
+    },
+    "EDDM 01": {
+     "n": 10953,
+     "pred_mean": 1010.5,
+     "pred_median": 847.0,
+     "pred_p90": 1724.8,
+     "label2025_mean": 870.2,
+     "label2025_median": 729.0
+    },
+    "EDDM 02": {
+     "n": 10534,
+     "pred_mean": 874.3,
+     "pred_median": 763.0,
+     "pred_p90": 1339.0,
+     "label2025_mean": 833.7,
+     "label2025_median": 728.0
+    },
+    "EDDM 06": {
+     "n": 14372,
+     "pred_mean": 777.4,
+     "pred_median": 761.0,
+     "pred_p90": 1025.0,
+     "label2025_mean": 787.6,
+     "label2025_median": 773.0
+    },
+    "EDDM 07": {
+     "n": 15013,
+     "pred_mean": 777.2,
+     "pred_median": 752.0,
+     "pred_p90": 1038.0,
+     "label2025_mean": 804.9,
+     "label2025_median": 780.0
+    },
+    "EGLL 01": {
+     "n": 19283,
+     "pred_mean": 1326.2,
+     "pred_median": 1268.0,
+     "pred_p90": 1755.0,
+     "label2025_mean": 1330.1,
+     "label2025_median": 1261.0
+    },
+    "EGLL 02": {
+     "n": 17719,
+     "pred_mean": 1309.0,
+     "pred_median": 1274.0,
+     "pred_p90": 1721.0,
+     "label2025_mean": 1320.2,
+     "label2025_median": 1268.0
+    },
+    "EGLL 06": {
+     "n": 19662,
+     "pred_mean": 1360.5,
+     "pred_median": 1315.0,
+     "pred_p90": 1791.9,
+     "label2025_mean": 1381.6,
+     "label2025_median": 1327.0
+    },
+    "EGLL 07": {
+     "n": 20557,
+     "pred_mean": 1340.9,
+     "pred_median": 1307.0,
+     "pred_p90": 1742.0,
+     "label2025_mean": 1430.6,
+     "label2025_median": 1373.0
+    },
+    "EHAM 01": {
+     "n": 16232,
+     "pred_mean": 995.6,
+     "pred_median": 781.0,
+     "pred_p90": 1694.9,
+     "label2025_mean": 811.2,
+     "label2025_median": 727.0
+    },
+    "EHAM 02": {
+     "n": 16802,
+     "pred_mean": 789.4,
+     "pred_median": 737.0,
+     "pred_p90": 1131.0,
+     "label2025_mean": 818.5,
+     "label2025_median": 760.0
+    },
+    "EHAM 06": {
+     "n": 20881,
+     "pred_mean": 745.3,
+     "pred_median": 700.0,
+     "pred_p90": 1103.0,
+     "label2025_mean": 716.4,
+     "label2025_median": 677.0
+    },
+    "EHAM 07": {
+     "n": 21950,
+     "pred_mean": 840.7,
+     "pred_median": 816.0,
+     "pred_p90": 1233.0,
+     "label2025_mean": 787.2,
+     "label2025_median": 751.0
+    },
+    "LEBL 01": {
+     "n": 12201,
+     "pred_mean": 894.5,
+     "pred_median": 833.0,
+     "pred_p90": 1253.0,
+     "label2025_mean": 887.4,
+     "label2025_median": 838.0
+    },
+    "LEBL 02": {
+     "n": 12167,
+     "pred_mean": 926.4,
+     "pred_median": 878.0,
+     "pred_p90": 1287.4,
+     "label2025_mean": 907.9,
+     "label2025_median": 867.0
+    },
+    "LEBL 06": {
+     "n": 17067,
+     "pred_mean": 986.3,
+     "pred_median": 945.0,
+     "pred_p90": 1379.0,
+     "label2025_mean": 977.7,
+     "label2025_median": 937.0
+    },
+    "LEBL 07": {
+     "n": 17879,
+     "pred_mean": 981.0,
+     "pred_median": 936.0,
+     "pred_p90": 1376.2,
+     "label2025_mean": 1008.2,
+     "label2025_median": 945.0
+    },
+    "LEMD 01": {
+     "n": 16802,
+     "pred_mean": 1013.6,
+     "pred_median": 970.0,
+     "pred_p90": 1378.0,
+     "label2025_mean": 985.8,
+     "label2025_median": 954.0
+    },
+    "LEMD 02": {
+     "n": 16191,
+     "pred_mean": 1003.2,
+     "pred_median": 972.0,
+     "pred_p90": 1353.0,
+     "label2025_mean": 981.9,
+     "label2025_median": 954.5
+    },
+    "LEMD 06": {
+     "n": 19335,
+     "pred_mean": 1042.8,
+     "pred_median": 1021.0,
+     "pred_p90": 1395.0,
+     "label2025_mean": 1023.6,
+     "label2025_median": 994.0
+    },
+    "LEMD 07": {
+     "n": 20152,
+     "pred_mean": 1016.0,
+     "pred_median": 992.0,
+     "pred_p90": 1351.0,
+     "label2025_mean": 1032.3,
+     "label2025_median": 1002.0
+    },
+    "LFPG 01": {
+     "n": 18129,
+     "pred_mean": 1077.0,
+     "pred_median": 923.0,
+     "pred_p90": 1658.2,
+     "label2025_mean": 1079.8,
+     "label2025_median": 907.0
+    },
+    "LFPG 02": {
+     "n": 16934,
+     "pred_mean": 945.2,
+     "pred_median": 902.0,
+     "pred_p90": 1246.0,
+     "label2025_mean": 998.6,
+     "label2025_median": 900.0
+    },
+    "LFPG 06": {
+     "n": 20714,
+     "pred_mean": 985.5,
+     "pred_median": 937.0,
+     "pred_p90": 1320.0,
+     "label2025_mean": 943.9,
+     "label2025_median": 895.0
+    },
+    "LFPG 07": {
+     "n": 21743,
+     "pred_mean": 979.9,
+     "pred_median": 935.0,
+     "pred_p90": 1318.0,
+     "label2025_mean": 1027.6,
+     "label2025_median": 962.0
+    },
+    "LIRF 01": {
+     "n": 11061,
+     "pred_mean": 1117.0,
+     "pred_median": 983.0,
+     "pred_p90": 1468.0,
+     "label2025_mean": 1096.5,
+     "label2025_median": 1009.0
+    },
+    "LIRF 02": {
+     "n": 10264,
+     "pred_mean": 1065.8,
+     "pred_median": 971.0,
+     "pred_p90": 1434.0,
+     "label2025_mean": 1078.8,
+     "label2025_median": 959.0
+    },
+    "LIRF 06": {
+     "n": 14983,
+     "pred_mean": 1234.6,
+     "pred_median": 1106.0,
+     "pred_p90": 1685.0,
+     "label2025_mean": 1268.7,
+     "label2025_median": 1082.0
+    },
+    "LIRF 07": {
+     "n": 15838,
+     "pred_mean": 1339.6,
+     "pred_median": 1125.0,
+     "pred_p90": 1846.6,
+     "label2025_mean": 1405.7,
+     "label2025_median": 1132.0
+    },
+    "LSZH 01": {
+     "n": 9995,
+     "pred_mean": 904.5,
+     "pred_median": 771.0,
+     "pred_p90": 1577.0,
+     "label2025_mean": 775.1,
+     "label2025_median": 705.0
+    },
+    "LSZH 02": {
+     "n": 9374,
+     "pred_mean": 754.1,
+     "pred_median": 712.5,
+     "pred_p90": 1080.0,
+     "label2025_mean": 743.8,
+     "label2025_median": 700.0
+    },
+    "LSZH 06": {
+     "n": 12384,
+     "pred_mean": 739.5,
+     "pred_median": 723.0,
+     "pred_p90": 1026.7,
+     "label2025_mean": 736.2,
+     "label2025_median": 719.0
+    },
+    "LSZH 07": {
+     "n": 13155,
+     "pred_mean": 751.6,
+     "pred_median": 729.0,
+     "pred_p90": 1057.0,
+     "label2025_mean": 742.3,
+     "label2025_median": 720.0
+    },
+    "LTFM 01": {
+     "n": 22396,
+     "pred_mean": 1214.1,
+     "pred_median": 1094.0,
+     "pred_p90": 1757.0,
+     "label2025_mean": 1041.1,
+     "label2025_median": 967.0
+    },
+    "LTFM 02": {
+     "n": 19519,
+     "pred_mean": 1098.7,
+     "pred_median": 1022.0,
+     "pred_p90": 1533.0,
+     "label2025_mean": 1260.6,
+     "label2025_median": 1009.0
+    },
+    "LTFM 06": {
+     "n": 22693,
+     "pred_mean": 1003.6,
+     "pred_median": 963.0,
+     "pred_p90": 1342.0,
+     "label2025_mean": 997.4,
+     "label2025_median": 951.0
+    },
+    "LTFM 07": {
+     "n": 25185,
+     "pred_mean": 1026.8,
+     "pred_median": 979.0,
+     "pred_p90": 1382.0,
+     "label2025_mean": 1094.2,
+     "label2025_median": 1012.0
+    }
+   },
+   "check3_month_means": {
+    "1": {
+     "pred_mean": 1079.8,
+     "label2025_mean": 995.3,
+     "rows": 152719
+    },
+    "2": {
+     "pred_mean": 983.4,
+     "label2025_mean": 1002.4,
+     "rows": 144158
+    },
+    "6": {
+     "pred_mean": 982.3,
+     "label2025_mean": 973.2,
+     "rows": 181791
+    },
+    "7": {
+     "pred_mean": 998.1,
+     "label2025_mean": 1025.7,
+     "rows": 192122
+    }
+   }
+  }
+ },
+ "daily_candidate": {
+  "kind": "CANDIDATE",
+  "method": "F3 최종 재구축의 첫 파일(514 를 final_ranking 위에 그대로 다시 지음, research/f3, private notes research/2026-10-08-f3-jitter.md)의 1, 7월 344,841행을 공개 단계 틀의 순서로 옮긴 일일 형식 후보. 서버 확인용이고 쏘지 않는다(10-08 23:1x). 기대: 514 의 228.384 에서 다시 뽑힌 시각만큼 움직인 228.6 ~ 228.7 근처, 1점 넘게 벌어지면 재구축 오류.",
+  "local_rmse": 281.99,
+  "manifest_final_root": "<mac-workdir>/prcm/final_run/preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap.json",
+  "manifest_sha16": "394902b7faf0b50f",
+  "test_sha16_final_root": "6845ed61803d305e",
+  "spec": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+  "note": "spec m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap, feats feats_v27, holdout preds/holdout_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap_rmse281.99.parquet (514 의 val 캐시 그대로라 로컬 값이 514 와 같다)",
+  "readiness": "composition_f3f1_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap.json",
+  "readiness_all_pass": false,
+  "readiness_failed": [
+   {
+    "check": "f3f1_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap: 3,600초 초과 예측 비중 비(시험 0.317% / 자 0.184%, 폭은 정답 비중의 달 쌍 비)",
+    "value": 1.72073,
+    "band": [
+     0.4455,
+     1.5545
+    ]
+   }
+  ],
+  "checks": {
+   "rows": 344841,
+   "template_rows": 344841,
+   "ids_unique": true,
+   "missing": 0,
+   "negative": 0,
+   "test_rows_in_final_file": 670790,
+   "move": {
+    "vs_514_float": {
+     "mse": 357.114,
+     "rms": 18.897,
+     "mean": -0.185,
+     "max_abs": 2151.3,
+     "minute_airports_rms": 21.772,
+     "second_airports_rms": 15.14
+    },
+    "vs_v35_int": {
+     "mse": 357.166,
+     "rms": 18.899,
+     "mean": -0.184,
+     "max_abs": 2151.5,
+     "minute_airports_rms": 21.773,
+     "second_airports_rms": 15.142
+    }
+   }
+  },
+  "parquet_sha16": "6e433c26a3cdd59b",
+  "fired": false
+ },
+ "pc_candidates": {
+  "daily_580": {
+   "name": "580_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskapff1",
+   "where": "prc-2026/research/f3/queue_ready/",
+   "test_sha16": "6e433c26a3cdd59b",
+   "rows": "Jan/Jul 344,841, public-phase template order",
+   "feats_live": "cache/feats_v27_f3final.parquet 8fc36fd4314708a8",
+   "checks": "candidate(), pred_problems, sane, guard (vs v35 95.98% rows differ), empty-on-test, composition (514's tail-share warning only)",
+   "expected_daily": "228.6 to 229.1, about 228.85; alarm above 229.4 (reference v35 514 228.384)"
+  },
+  "final_590": {
+   "name": "590_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskapff1",
+   "where": "prc-2026/research/f3/queue_ready_final/ (not in queue/)",
+   "parquet_sha256": "6845ed61803d305ea35327dea9f8bfd003bea033831d6222663d1c607ee05120",
+   "checks": "final_data_problems none, template 670,790 rows same IDs and order, pred_problems none, sane, candidate(), empty-on-final none; the int file built with build_final's formula is byte-identical to this root's file"
+  }
+ },
+ "build_steps": {
+  "phase3b": "research/f3/phase3b.sh (resume after the 10:48 stop: xgb-check sandbox got data/)",
+  "phase3c": "research/f3/phase3c.sh (resume after the 14:10 stop: src/manifest.py public-template assert)",
+  "final_chain_sha16": "9d5cbbe34fc0ca59",
+  "mac_step_sha16": "28ffd44ae1c48b52",
+  "src_manifest_sha16": "030ea98285708daa",
+  "threads": "F3_MAXTH 3, F3CAP 3, TOTCAP 15 beside F2's fj CatBoosts (coordinator 10-09 13:5x); total-cap override after 300 s logged in logs/cap_override.log (none happened if absent)",
+  "cap_override_log": null
+ }
+}

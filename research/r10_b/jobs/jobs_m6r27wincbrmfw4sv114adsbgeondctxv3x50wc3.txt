@@ -1,0 +1,4 @@
+# R10-B sandbox corrector seed average; the seed runs are notes/jobs_m6r27wincbrmfw4sv114adsbgeondctxv3x50w.txt
+logs/m6r27wincbrmfw4sv114adsbgeondctxv3x50wc3_val_s0.log	.venv/Scripts/python.exe -u research/r10_b/cavg.py --setting val --seed 0 --tag m6r27wincbrmfw4sv114adsbgeondctxv3x50wc3 --src m6r27wincbrmfw4sv114adsbgeondctxv3x50w --seeds 0,1,2 --base m6r27wincbrmfw4sv114 --base_seed 0
+logs/m6r27wincbrmfw4sv114adsbgeondctxv3x50wc3_fwd_s0.log	.venv/Scripts/python.exe -u research/r10_b/cavg.py --setting fwd --seed 0 --tag m6r27wincbrmfw4sv114adsbgeondctxv3x50wc3 --src m6r27wincbrmfw4sv114adsbgeondctxv3x50w --seeds 0,1,2 --base m6r27wincbrmfw4sv114 --base_seed 0
+logs/m6r27wincbrmfw4sv114adsbgeondctxv3x50wc3_full_s0.log	.venv/Scripts/python.exe -u research/r10_b/cavg.py --setting full --seed 0 --tag m6r27wincbrmfw4sv114adsbgeondctxv3x50wc3 --src m6r27wincbrmfw4sv114adsbgeondctxv3x50w --seeds 0,1,2 --base m6r27wincbrmfw4sv114 --base_seed 0

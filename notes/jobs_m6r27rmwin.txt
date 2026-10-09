@@ -1,0 +1,4 @@
+# 닻 다리 RealMLP(R5-C 의 --anchor win): 경로 B 의 m6r27rm 과 같은 조리법(src/rmlp_mu.py, seed 0, TD 기본값, batch 2048, epochs 64)을 피처 v2.7 과 닻 LightGBM m6r27skwin 바탕으로. 10-06 맥북 닻 트리 <mac-workdir>/prca 의 venv311, GPU(MPS), --threads 1(lightgbm, sklearn, torch 의 libomp 충돌, research/ctx_corr/mac/omp_repro.py), src/rmlp_mu.py sha16 28fe9c7543664c2b, research/ctx_corr/mac/lane3_mac.sh, nice 10
+logs/m6r27rmwin_fwd_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting fwd --seed 0 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1
+logs/m6r27rmwin_val_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting val --seed 0 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1
+logs/m6r27rmwin_full_s0.log	.venv/Scripts/python.exe -u src/rmlp_mu.py --setting full --seed 0 --tag m6r27rmwin --base m6r27skwin --feats feats_v27 --device mps --anchor win --threads 1

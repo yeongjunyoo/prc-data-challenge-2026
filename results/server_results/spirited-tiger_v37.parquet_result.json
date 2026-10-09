@@ -1,0 +1,11 @@
+{
+ "status": "Succeeded",
+ "file": "spirited-tiger_v37.parquet",
+ "bucket": "prc-2026-spirited-tiger",
+ "used_pairs": 344841,
+ "inputs": {
+  "test_set_bucket": "prc-2026-testsets",
+  "test_set_file": "truthing.parquet"
+ },
+ "score": 228.4055
+}

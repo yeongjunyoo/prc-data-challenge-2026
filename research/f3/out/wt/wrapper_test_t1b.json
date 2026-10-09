@@ -1,0 +1,47 @@
+{
+ "T1_vs_T1b_direct_direct": {
+  "pred": {
+   "bits_differ": 559633,
+   "max_abs": 1.653006620472297e-10
+  },
+  "p_art": {
+   "bits_differ": 31019,
+   "max_abs": 8.326672684688674e-16
+  },
+  "mu": {
+   "bits_differ": 575946,
+   "max_abs": 1.653006620472297e-10
+  },
+  "pred_int32_rounding_differ": 0
+ },
+ "T1b_vs_T2_direct_save": {
+  "pred": {
+   "bits_differ": 559512,
+   "max_abs": 1.653006620472297e-10
+  },
+  "p_art": {
+   "bits_differ": 3956,
+   "max_abs": 1.6653345369377348e-15
+  },
+  "mu": {
+   "bits_differ": 575937,
+   "max_abs": 1.653006620472297e-10
+  },
+  "pred_int32_rounding_differ": 0
+ },
+ "T1_vs_T2_direct_save": {
+  "pred": {
+   "bits_differ": 4557,
+   "max_abs": 1.0231815394945443e-12
+  },
+  "p_art": {
+   "bits_differ": 34970,
+   "max_abs": 1.6653345369377348e-15
+  },
+  "mu": {
+   "bits_differ": 1371,
+   "max_abs": 4.547473508864641e-13
+  },
+  "pred_int32_rounding_differ": 0
+ }
+}

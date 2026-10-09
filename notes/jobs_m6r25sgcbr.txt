@@ -1,0 +1,4 @@
+# v10(070_m6r25sgcb)의 mu 에 RealMLP mu 를 셋째 몫으로 섞은 판: mu = 2/3 v10 mu + 1/3 RealMLP(W 0.333333, 점수 전에 고정). v10 과 다른 것은 RealMLP 를 더한 것뿐이다.
+logs/m6r25sgcbr_val_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25sgcbr --base m6r25sgcb --cat m6r25rm --col mu_rmlp --w 0.333333
+logs/m6r25sgcbr_fwd_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting fwd --seed 0 --tag m6r25sgcbr --base m6r25sgcb --cat m6r25rm --col mu_rmlp --w 0.333333
+logs/m6r25sgcbr_full_s0.log	.venv/Scripts/python.exe -u src/blend_mu.py --setting full --seed 0 --tag m6r25sgcbr --base m6r25sgcb --cat m6r25rm --col mu_rmlp --w 0.333333

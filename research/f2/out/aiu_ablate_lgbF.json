@@ -1,0 +1,147 @@
+{
+ "tag": "lgbF",
+ "vbase": "m6r27skwing",
+ "fwdbase": "",
+ "fbase": "f2skwing",
+ "ctx": "f2ctx_v3",
+ "drop": {
+  "all": [],
+  "no_month": [
+   "aiu_m_txo",
+   "aiu_m_add",
+   "aiu_m_valid",
+   "aiu_m_gap"
+  ],
+  "no_day": [
+   "aiu_d_pdd",
+   "aiu_d_txo",
+   "aiu_d_gap"
+  ],
+  "no_aiu": [
+   "aiu_m_txo",
+   "aiu_m_add",
+   "aiu_m_valid",
+   "aiu_m_gap",
+   "aiu_d_pdd",
+   "aiu_d_txo",
+   "aiu_d_gap"
+  ]
+ },
+ "val": {
+  "all": {
+   "stage2": {
+    "dmse": -2319.62,
+    "sd": 158.62,
+    "p_lt0": 1.0,
+    "days": 62
+   },
+   "vs_all": {
+    "dmse": 0.0,
+    "sd": 0.0,
+    "p_lt0": 0.0,
+    "days": 62
+   }
+  },
+  "no_month": {
+   "stage2": {
+    "dmse": -2265.58,
+    "sd": 156.24,
+    "p_lt0": 1.0,
+    "days": 62
+   },
+   "vs_all": {
+    "dmse": 54.04,
+    "sd": 17.1,
+    "p_lt0": 0.0,
+    "days": 62
+   }
+  },
+  "no_day": {
+   "stage2": {
+    "dmse": -1897.54,
+    "sd": 128.54,
+    "p_lt0": 1.0,
+    "days": 62
+   },
+   "vs_all": {
+    "dmse": 422.07,
+    "sd": 65.64,
+    "p_lt0": 0.0,
+    "days": 62
+   }
+  },
+  "no_aiu": {
+   "stage2": {
+    "dmse": -1878.56,
+    "sd": 125.84,
+    "p_lt0": 1.0,
+    "days": 62
+   },
+   "vs_all": {
+    "dmse": 441.06,
+    "sd": 63.05,
+    "p_lt0": 0.0,
+    "days": 62
+   }
+  }
+ },
+ "F": {
+  "all": {
+   "stage2": {
+    "dmse": -1371.26,
+    "sd": 306.53,
+    "p_lt0": 1.0,
+    "days": 58
+   },
+   "vs_all": {
+    "dmse": 0.0,
+    "sd": 0.0,
+    "p_lt0": 0.0,
+    "days": 58
+   }
+  },
+  "no_month": {
+   "stage2": {
+    "dmse": -1417.47,
+    "sd": 337.89,
+    "p_lt0": 1.0,
+    "days": 58
+   },
+   "vs_all": {
+    "dmse": -46.2,
+    "sd": 42.45,
+    "p_lt0": 0.8775,
+    "days": 58
+   }
+  },
+  "no_day": {
+   "stage2": {
+    "dmse": -334.07,
+    "sd": 259.25,
+    "p_lt0": 0.891,
+    "days": 58
+   },
+   "vs_all": {
+    "dmse": 1037.2,
+    "sd": 340.69,
+    "p_lt0": 0.0,
+    "days": 58
+   }
+  },
+  "no_aiu": {
+   "stage2": {
+    "dmse": -384.63,
+    "sd": 266.8,
+    "p_lt0": 0.91,
+    "days": 58
+   },
+   "vs_all": {
+    "dmse": 986.64,
+    "sd": 307.33,
+    "p_lt0": 0.0,
+    "days": 58
+   }
+  }
+ },
+ "seconds": 785
+}

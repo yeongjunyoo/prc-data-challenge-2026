@@ -1,0 +1,12 @@
+{
+ "what": "best daily-board submission (January and July 2026 only); history, not the final file",
+ "version": 39,
+ "spec": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapwac",
+ "server_rmse": 228.1667,
+ "ruler_rmse": 281.35,
+ "submitted_file": "spirited-tiger_v39.parquet",
+ "submitted_file_sha256": "9a36a77a409b1056badbef40b87b9b772122a91068708159ef872380008284bb",
+ "manifest": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapwac.json",
+ "manifest_sha256": "6a02986436567578c20bdd3d2c11c31fbaa2d26d866d58345477dcb2f4e8eee6",
+ "made_kst": "2026-10-09 09:26"
+}

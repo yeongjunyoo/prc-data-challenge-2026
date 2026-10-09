@@ -1,0 +1,3 @@
+[val body] {'A_v_corr': 73.1, 'A_blend_s0x_vs_sv114': 309.2, 'A_corrc3_s0x_vs_sv114': 322.1, 'A_blend_sv224_vs_sv114': 122.2, 'A_corrc3_sv224_vs_sv114': 145.1, 'A_corr_noise_corr_across_bases': 0.312, 'B_v_corr': 70.7, 'B_blend_s0x_vs_sv114': 316.8, 'B_corrc3_s0x_vs_sv114': 322.8, 'blend_v_111': 656.7, 'blend_v_114': 347.5, 'pass_rm': 1.042, 'pass_lc': 1.187}
+[fwd body] {'A_v_corr': 82.2, 'A_blend_s0x_vs_sv114': 459.8, 'A_corrc3_s0x_vs_sv114': 531.9, 'A_blend_sv224_vs_sv114': 143.5, 'A_corrc3_sv224_vs_sv114': 197.4, 'A_corr_noise_corr_across_bases': 0.048, 'B_v_corr': 93.9, 'B_blend_s0x_vs_sv114': 590.0, 'B_corrc3_s0x_vs_sv114': 710.9, 'blend_v_111': 900.1, 'blend_v_114': 440.3, 'pass_rm': 1.157, 'pass_lc': 1.376}
+memcap: rc=0 cap=1.5GB peak_job=1.17GB

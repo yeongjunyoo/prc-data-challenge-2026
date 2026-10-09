@@ -1,0 +1,4 @@
+# 닻 다리 LightGBM 의 G 띠 규칙(src/g_band.py, 바탕 m6r27skwin, 피처 v2.7), 10-06 맥북 닻 트리 <mac-workdir>/prca(research/ctx_corr/mac/anchor27_mac.sh). 경로 B 의 m6r27skg 와 같은 명령
+logs/m6r27skwing_val_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting val --seed 0 --tag m6r27skwing --base m6r27skwin --feats feats_v27
+logs/m6r27skwing_fwd_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting fwd --seed 0 --tag m6r27skwing --base m6r27skwin --feats feats_v27
+logs/m6r27skwing_full_s0.log	.venv/Scripts/python.exe -u src/g_band.py --setting full --seed 0 --tag m6r27skwing --base m6r27skwin --feats feats_v27
