@@ -10,8 +10,8 @@ On 2026-10-08 the organizers added a final phase (e-mail to all team corresponde
 | Item | Value | Evidence |
 |---|---|---|
 | Final file | `spirited-tiger_final.parquet`: 670,790 rows, `MVT_ID_mvt` (double) and `TAXITIME_SEC_mvt` (int32), in the row order of `final_submitting.parquet`; value = clip(rint(prediction), 0) | `research/f3/final_file.py` (writer and its checks) |
-| SHA-256 of the final file | <!--FILL:final_file_sha256--> | `research/f3/out/final_build_manifest.json` (fields `data`, `tables_sha16`, `chains`, `file`) |
-| Chain that produced it | <!--FILL:final_spec--> | `preds/final/manifest_*.json` |
+| SHA-256 of the final file | `454dc0e7fb436cb10545da6d2cd9e137e1a4da9585b9cc01c152b2a6d4a87f4c` | `research/f3/out/final_file_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap.json` (the writer's checks of the file) and `research/f3/out/final_drivers_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff4.json` (the scripts that ran each step, with their SHA-256) |
+| Chain that produced it | `m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap`: the average of chains A, B and C, each with the corrector row split (`rBb`, section 14.7) | `preds/final/manifest_*.json` |
 | Input `final_ranking.parquet` | SHA-256 `4b0692a792846079516a2749e034b0abda55df72c213eabdcda52a4d1f6bc69f`, 1,341,197 rows; 670,790 departures: January 152,719, February 144,158, June 181,791, July 192,122 | `research/f1_final/inspect_final2.txt` |
 | Template `final_submitting.parquet` | SHA-256 `b3445d80e29bf599a5583ca9675f63ddf57b51fdf1ca3f498facb38ea84f3924`, 670,790 rows, same order as the departures of `final_ranking.parquet` | `research/f1_final/inspect_final2.txt` |
 | Labels used for training | the twelve 2025 training files only (2,085,047 departures). The departures of `final_ranking.parquet` have no block time and no taxi time (670,790 of 670,790 blank) | section 14.2; `research/f1_final/inspect_final2.txt` |

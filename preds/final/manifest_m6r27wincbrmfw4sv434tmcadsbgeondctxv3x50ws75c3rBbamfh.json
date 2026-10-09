@@ -1,0 +1,235 @@
+{
+ "spec": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh",
+ "run_tag": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh",
+ "column": "pred",
+ "seeds": [
+  0
+ ],
+ "feats": "feats_v27",
+ "feats_sha": "8fc36fd4314708a8",
+ "config": {
+  "--base": "m6r27wincbrmfw4sv434tmc",
+  "--base_seed": "0",
+  "--src": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam.json",
+  "--src_sha": "31d2807ce3422ece",
+  "--corr": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb",
+  "--table": "arthist_v1",
+  "--table_sha": "ec3ac93e29ece0b5",
+  "--tag": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -X utf8 tools/arthist.py --setting val --base m6r27wincbrmfw4sv434tmc --base_seed 0 --src preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam.json --src_sha 31d2807ce3422ece --corr m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb --table arthist_v1 --table_sha ec3ac93e29ece0b5 --tag m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -X utf8 tools/arthist.py --setting full --base m6r27wincbrmfw4sv434tmc --base_seed 0 --src preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam.json --src_sha 31d2807ce3422ece --corr m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb --table arthist_v1 --table_sha ec3ac93e29ece0b5 --tag m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -X utf8 tools/arthist.py --setting fwd --base m6r27wincbrmfw4sv434tmc --base_seed 0 --src preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam.json --src_sha 31d2807ce3422ece --corr m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb --table arthist_v1 --table_sha ec3ac93e29ece0b5 --tag m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -X utf8 tools/arthist.py --setting val --base m6r27wincbrmfw4sv434tmc --base_seed 0 --src preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam.json --src_sha 31d2807ce3422ece --corr m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb --table arthist_v1 --table_sha ec3ac93e29ece0b5 --tag m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh",
+ "code_sha": {
+  "src/model3.py": "4641d5b5d91abd26",
+  "src/feats.py": "f60eeb7e58daa178",
+  "src/te.py": "0a78bd1cf5a5771a",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a",
+  "src/cat_mu.py": "05956dbe5a32bfa9",
+  "src/blend_mu.py": "e5827379dba9ec9a",
+  "src/g_band.py": "46969e68a18dd8d0",
+  "src/xgb_mu.py": "eb1904bd9c883cdd",
+  "src/rmlp_mu.py": "28fe9c7543664c2b",
+  "src/lobt_window.py": "3f6ef6d290ee429c",
+  "src/adsb_corr.py": "486880c0b3273ded",
+  "src/feats_adsb.py": "c50556bf2e08b59d",
+  "src/adsb_geo.py": "01a6d0667d3e5ac6",
+  "src/blend_oof.py": "42fa157949144637",
+  "src/ctx_corr.py": "41affa9791fd6d27",
+  "src/feats_ctx.py": "81c4378d6cf286a9",
+  "src/blend_fixed.py": "89fa42fffe266892",
+  "src/ctx_corr2.py": "8d5eb965268c3832",
+  "src/ctx_corr3.py": "b5866706124a1292",
+  "src/feats_ctx2.py": "01fc7ad52545c6ba",
+  "src/feats_aiu.py": "950ac59be3ce12b6",
+  "research/ctx_corr/freeze_geo.py": "c8a1864d9541565c",
+  "research/obs2/corr_plus.py": "9d1a4acb4f107595",
+  "research/obs2/obs_rows.py": "e923951e9a1e4496",
+  "research/obs2/coverage.py": "08c38f3844f6478a",
+  "research/obs2/osm_stands.py": "204c934b9e8fd84c",
+  "research/adsb/gprobe/build_nd.py": "d89f4aef50faba12",
+  "research/r10_b/cavg.py": "70c353c25c737700",
+  "research/f3/fitwrap.py": "54114020d2aa3d3c",
+  "research/r13_l/prep_x.py": "ce1c61190712b424",
+  "research/r13_l/tabm_leg.py": "dc0f41eade5183d5",
+  "research/r13_l/xrfm_leg.py": "77e1c3ef839f9a80",
+  "research/r13_l/blend_add.py": "b69eb9d47a800ceb",
+  "research/f2/merge_corr.py": "57287c4a47417dc3",
+  "research/f2/ctx_corr4.py": "859f390761f3d790",
+  "research/f2/ctx4_table.py": "f71469c1bcbafd62",
+  "tools/artmm.py": "a78fda56cd3f3e15",
+  "tools/arthist.py": "c35e98cccf682f53"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/4641d5b5d91abd26_model3.py",
+  "src/feats.py": "preds/code/f60eeb7e58daa178_feats.py",
+  "src/te.py": "preds/code/0a78bd1cf5a5771a_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py",
+  "src/cat_mu.py": "preds/code/05956dbe5a32bfa9_cat_mu.py",
+  "src/blend_mu.py": "preds/code/e5827379dba9ec9a_blend_mu.py",
+  "src/g_band.py": "preds/code/46969e68a18dd8d0_g_band.py",
+  "src/xgb_mu.py": "preds/code/eb1904bd9c883cdd_xgb_mu.py",
+  "src/rmlp_mu.py": "preds/code/28fe9c7543664c2b_rmlp_mu.py",
+  "src/lobt_window.py": "preds/code/3f6ef6d290ee429c_lobt_window.py",
+  "src/adsb_corr.py": "preds/code/486880c0b3273ded_adsb_corr.py",
+  "src/feats_adsb.py": "preds/code/c50556bf2e08b59d_feats_adsb.py",
+  "src/adsb_geo.py": "preds/code/01a6d0667d3e5ac6_adsb_geo.py",
+  "src/blend_oof.py": "preds/code/42fa157949144637_blend_oof.py",
+  "src/ctx_corr.py": "preds/code/41affa9791fd6d27_ctx_corr.py",
+  "src/feats_ctx.py": "preds/code/81c4378d6cf286a9_feats_ctx.py",
+  "src/blend_fixed.py": "preds/code/89fa42fffe266892_blend_fixed.py",
+  "src/ctx_corr2.py": "preds/code/8d5eb965268c3832_ctx_corr2.py",
+  "src/ctx_corr3.py": "preds/code/b5866706124a1292_ctx_corr3.py",
+  "src/feats_ctx2.py": "preds/code/01fc7ad52545c6ba_feats_ctx2.py",
+  "src/feats_aiu.py": "preds/code/950ac59be3ce12b6_feats_aiu.py",
+  "research/ctx_corr/freeze_geo.py": "preds/code/c8a1864d9541565c_freeze_geo.py",
+  "research/obs2/corr_plus.py": "preds/code/9d1a4acb4f107595_corr_plus.py",
+  "research/obs2/obs_rows.py": "preds/code/e923951e9a1e4496_obs_rows.py",
+  "research/obs2/coverage.py": "preds/code/08c38f3844f6478a_coverage.py",
+  "research/obs2/osm_stands.py": "preds/code/204c934b9e8fd84c_osm_stands.py",
+  "research/adsb/gprobe/build_nd.py": "preds/code/d89f4aef50faba12_build_nd.py",
+  "research/r10_b/cavg.py": "preds/code/70c353c25c737700_cavg.py",
+  "research/f3/fitwrap.py": "preds/code/54114020d2aa3d3c_fitwrap.py",
+  "research/r13_l/prep_x.py": "preds/code/ce1c61190712b424_prep_x.py",
+  "research/r13_l/tabm_leg.py": "preds/code/dc0f41eade5183d5_tabm_leg.py",
+  "research/r13_l/xrfm_leg.py": "preds/code/77e1c3ef839f9a80_xrfm_leg.py",
+  "research/r13_l/blend_add.py": "preds/code/b69eb9d47a800ceb_blend_add.py",
+  "research/f2/merge_corr.py": "preds/code/57287c4a47417dc3_merge_corr.py",
+  "research/f2/ctx_corr4.py": "preds/code/859f390761f3d790_ctx_corr4.py",
+  "research/f2/ctx4_table.py": "preds/code/f71469c1bcbafd62_ctx4_table.py",
+  "tools/artmm.py": "preds/code/a78fda56cd3f3e15_artmm.py",
+  "tools/arthist.py": "preds/code/c35e98cccf682f53_arthist.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh_rmse290.22.parquet",
+  "sha": "5f1502351504b104",
+  "rmse": 290.22,
+  "ruler_hash": "19afdfc7fedf88ea"
+ },
+ "test": {
+  "path": "preds/test_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh.parquet",
+  "sha": "b48717be9cf2f8a7"
+ },
+ "forward": {
+  "path": "preds/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh.parquet",
+  "sha": "b1fa41c9d23eb891",
+  "rmse_2025_07": 286.43
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0
+ },
+ "iteration_rule": "internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0) | artmm: p_art cell means moved by kappa x (carrier-month arrival copy share minus its training-month share) where that change is at least 0.10; kappa from training-month cells only; threshold fixed in research | arthist: LIRF non-G p_art moved in log-odds by beta x (flight-history art share vs the flight-month mean p_art); one coefficient beta fitted on the val ruler rows (day folds for val, January for fwd, both months for test)",
+ "source": {
+  "queue": null,
+  "manifest": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam.json",
+  "manifest_sha": "31d2807ce3422ece",
+  "spec": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam",
+  "holdout_sha": "f8d81876678a4488",
+  "test_sha": "ffabf3e4d74da192",
+  "forward_sha": "215b056275408e49"
+ },
+ "arthist": {
+  "source_cache": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam",
+  "corrector": "m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb",
+  "table": "cache/arthist_v1.parquet",
+  "table_sha": "ec3ac93e29ece0b5",
+  "shrink": {
+   "flight": 20.0,
+   "route": 50.0
+  },
+  "folds": 10,
+  "fold_seed": 0,
+  "inputs_sha16": {
+   "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam_s0.parquet": "296e2d37cdabc32c",
+   "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb_s0.parquet": "2c7d048c8d3f12bf",
+   "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam_s0.parquet": "164eb1b4a6d118b1",
+   "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb_s0.parquet": "d7aa7d7c9184d044",
+   "cache/full_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbam_s0.parquet": "22bc0c5d3f08f606",
+   "cache/full_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBb_s0.parquet": "9ae158b257da036d"
+  },
+  "caches": {
+   "val": "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh_s0.parquet",
+   "fwd": "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh_s0.parquet",
+   "full": "cache/full_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh_s0.parquet"
+  },
+  "model": "LIRF non-G rows with p_art > 0: p' = sigmoid(logit p + beta x), x = logit(h) - logit(mean p of the flight in that month), h = flight art share in the training months shrunk 20 rows toward the carrier-route share (itself shrunk 50 rows toward the carrier share); prediction moved by (p' - p)(d - mn) with mn from the corrector's pred and p_art; LOBT window and 0 floor on changed rows; G rows and p_art = 0 rows untouched; the cache files carry p' for the AIU day shift; gkey and later steps go after this",
+  "caveats": [
+   "the hierarchical prior (flight -> carrier-route -> carrier, P1h) was chosen over the carrier-only prior (P1) after both were measured; both won val (day folds), January<->July, July forward and Nov-Dec",
+   "the 12-month leave-one-month-out is a label-only proxy against a carrier-level baseline (row-weighted -1.15%, d_sch^2-weighted -2.88%, 12/12 months); the main p_art exists only for the ruler months, so the shift itself was measured on val, fwd and nd",
+   "beta is fitted on the val ruler rows (day folds for val, January for fwd, both months for test), the way the A3 corrector's stage 2 is fitted",
+   "the history uses 2025 departure labels of the training months; 2026 flights with little 2025 history fall back to the carrier-route and carrier shares",
+   "after seeing that about 40% of the test move sits on a dozen rare-carrier rows, a variant that also shrinks the carrier share toward the LIRF share was measured and lost all four rulers (val -33, Jan<->Jul -29, fwd +6, Nov-Dec -36 against -45, -40, -21, -51); kept as built",
+   "by month the gain is July (val -42 to -45, fwd -21) and Nov-Dec (-21, -30); January is flat (+2.0 to +2.3); within val July one carrier-month (WMT) carries about two thirds"
+  ],
+  "report": {
+   "beta": {
+    "fold": {
+     "0": 0.11162,
+     "1": 0.107626,
+     "2": 0.102505,
+     "3": 0.123802,
+     "4": 0.106315,
+     "5": 0.144884,
+     "6": 0.108903,
+     "7": 0.114063,
+     "8": 0.117542,
+     "9": 0.127324
+    },
+    "jan": 0.063097,
+    "all": 0.116548
+   },
+   "full": {
+    "rows_lirf_nong": 51527,
+    "rows_moved": 49080,
+    "mean_p_old": 0.19491,
+    "mean_p_new": 0.19598,
+    "changed": 49029,
+    "g_changed": 0,
+    "move_mse_test_n": 17.4
+   },
+   "val": {
+    "rows_lirf_nong": 26131,
+    "rows_moved": 24799,
+    "mean_p_old": 0.18605,
+    "mean_p_new": 0.18714,
+    "changed": 24784,
+    "g_changed": 0,
+    "rows": 344419,
+    "rmse_old": 290.266,
+    "rmse_new": 290.22,
+    "dmse": -26.5,
+    "improved": 11860
+   },
+   "fwd": {
+    "rows_lirf_nong": 14874,
+    "rows_moved": 13823,
+    "mean_p_old": 0.16112,
+    "mean_p_new": 0.16274,
+    "changed": 13816,
+    "g_changed": 0,
+    "rows": 190713,
+    "rmse_old": 286.458,
+    "rmse_new": 286.433,
+    "dmse": -14.3,
+    "improved": 6215
+   }
+  }
+ },
+ "written_kst": "2026-10-10 02:53:12 KST"
+}

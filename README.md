@@ -9,7 +9,7 @@ The final phase asks for one file that predicts January, February, June and July
 | Item | Value |
 |---|---|
 | File | `spirited-tiger_final.parquet`, 670,790 rows, in the order of `final_submitting.parquet` |
-| SHA-256 | <!--FILL:final_file_sha256--> |
+| SHA-256 | `454dc0e7fb436cb10545da6d2cd9e137e1a4da9585b9cc01c152b2a6d4a87f4c` |
 | Built by | the three-chain stack of `docs/DESIGN.md`, re-run on `final_ranking.parquet` (SHA-256 `4b0692a792846079516a2749e034b0abda55df72c213eabdcda52a4d1f6bc69f`) with the choices of `docs/DESIGN.md` section 14.5 |
 | Training labels | the twelve 2025 training files only |
 | Months without a public score (February, June) | every choice decided on February and June 2025 held out as unseen months, by rules written before their numbers, with two exceptions: the row split of stage 2 of the corrector was decided after its gate numbers, and the scale2 of the matched February and June rows follows the literal reading of an ambiguous registered rule that we first read the other way after seeing its numbers (`docs/DESIGN.md` sections 14.3 and 14.7) |

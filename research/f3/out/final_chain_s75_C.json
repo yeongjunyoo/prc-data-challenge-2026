@@ -1,0 +1,36 @@
+{
+ "label": "C",
+ "cfg": {
+  "mid": "adsbgeondctxv3x50ws75",
+  "scale2": "0.75",
+  "dnum": 1000,
+  "pre": "s75_",
+  "src_note": "531's caches cloned from var1_sbx"
+ },
+ "names": {
+  "corr": "3204_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3",
+  "am": "3205_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3am",
+  "fh": "3206_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfh",
+  "gkc": "3207_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkc",
+  "gkcx": "3208_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcx",
+  "xncr": "3209_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncr",
+  "db": "3210_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdb",
+  "aw": "3211_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbaw",
+  "gp": "3212_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgp",
+  "gl": "3213_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpgl",
+  "gja": "3214_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgja"
+ },
+ "checks": {
+  "fit_cache_s0": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s1": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s2": [
+   "fit cache research/f3/fitcache_union: 65 loaded, 0 fitted"
+  ]
+ },
+ "done": "gja",
+ "updated": "10-10 00:28:08"
+}

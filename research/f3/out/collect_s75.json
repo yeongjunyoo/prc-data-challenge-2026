@@ -1,0 +1,125 @@
+{
+ "from": "<mac-workdir>/prcm/var1_sbx",
+ "copied": {
+  "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s0.parquet": {
+   "sha16": "3a7d98a270abbdb6",
+   "live_sha16": null
+  },
+  "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s1.parquet": {
+   "sha16": "68771a6fd413a695",
+   "live_sha16": null
+  },
+  "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s2.parquet": {
+   "sha16": "de90a401ee0b5934",
+   "live_sha16": null
+  },
+  "cache/val_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_s0.parquet": {
+   "sha16": "2c7d048c8d3f12bf",
+   "live_sha16": null
+  },
+  "preds/es_valid_ids_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_val_s0.parquet": {
+   "sha16": "dd793de93000e14e",
+   "live_sha16": "dd793de93000e14e"
+  },
+  "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s0.parquet": {
+   "sha16": "fbfe89c0b9ab9490",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s1.parquet": {
+   "sha16": "65c308d0e8c312b4",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s2.parquet": {
+   "sha16": "f32e1726ae29a905",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_s0.parquet": {
+   "sha16": "d7aa7d7c9184d044",
+   "live_sha16": null
+  },
+  "preds/es_valid_ids_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_fwd_s0.parquet": {
+   "sha16": "925e0b6eceb77d24",
+   "live_sha16": "925e0b6eceb77d24"
+  },
+  "cache/val_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75_s0.parquet": {
+   "sha16": "20859b28115db09e",
+   "live_sha16": null
+  },
+  "cache/val_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75_s1.parquet": {
+   "sha16": "0fad73d9844c0878",
+   "live_sha16": null
+  },
+  "cache/val_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75_s2.parquet": {
+   "sha16": "cfd6e0d06ccf731d",
+   "live_sha16": null
+  },
+  "cache/val_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "sha16": "3cb7d3c431ad25a7",
+   "live_sha16": null
+  },
+  "preds/es_valid_ids_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75c3_val_s0.parquet": {
+   "sha16": "dd793de93000e14e",
+   "live_sha16": "dd793de93000e14e"
+  },
+  "cache/fwd_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75_s0.parquet": {
+   "sha16": "a52587ac3dada3ac",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75_s1.parquet": {
+   "sha16": "a07ae2791c5b8e23",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75_s2.parquet": {
+   "sha16": "f821cdba17bee6d4",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "sha16": "474b7928f196e472",
+   "live_sha16": null
+  },
+  "preds/es_valid_ids_m6r27skcbrmfw4sv434adsbgeondctxv3x50ws75c3_fwd_s0.parquet": {
+   "sha16": "925e0b6eceb77d24",
+   "live_sha16": "925e0b6eceb77d24"
+  },
+  "cache/val_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet": {
+   "sha16": "b91b570ec84fdbbd",
+   "live_sha16": null
+  },
+  "cache/val_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet": {
+   "sha16": "dbf2749c3af6f19c",
+   "live_sha16": null
+  },
+  "cache/val_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet": {
+   "sha16": "d8e6a0282dda7114",
+   "live_sha16": null
+  },
+  "cache/val_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "sha16": "a812807e45d31638",
+   "live_sha16": null
+  },
+  "preds/es_valid_ids_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3_val_s0.parquet": {
+   "sha16": "dd793de93000e14e",
+   "live_sha16": "dd793de93000e14e"
+  },
+  "cache/fwd_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet": {
+   "sha16": "aca3824b08da72f0",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet": {
+   "sha16": "e01ddaab66b72431",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet": {
+   "sha16": "78ea699cd72d147e",
+   "live_sha16": null
+  },
+  "cache/fwd_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "sha16": "b047e15d8c9e25b0",
+   "live_sha16": null
+  },
+  "preds/es_valid_ids_m6r27apcbrmfw4sv114adsbgeondctxv3x50ws75c3_fwd_s0.parquet": {
+   "sha16": "925e0b6eceb77d24",
+   "live_sha16": "925e0b6eceb77d24"
+  }
+ }
+}

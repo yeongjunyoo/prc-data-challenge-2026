@@ -20,7 +20,7 @@ lock="$P/f2_m3b.lock"; mkdir "$lock" || exit 9
 printf 'owner: PRC F2 ruler M3b (whole-month check and tail stages)\npid: %s\npeak_gb: 5\nthreads: %s\nstart: %s\nexpected_end: %s KST\njob: research/f2/m3_corr.py\n' \
   "$$" "$TH" "$(date '+%Y-%m-%d %H:%M')" "$(date -v+40M '+%Y-%m-%d %H:%M')" > "$lock/info"
 echo "$(ts) START m3b"
-nice -n 10 /usr/bin/time -l "$PY" -u research/f2/m3_corr_lomo.py --vbase m6r27skwing --fbase f2skwing --seed 0 --ctx f2ctx_v3 --ctx_sha "$(sha cache/f2ctx_v3.parquet)" --tag f2m3 --threads $TH > logs/m3_corr_lomo.log 2>&1
+nice -n 10 /usr/bin/time -l "$PY" -u true research/f2/m3_corr_lomo.py --vbase m6r27skwing --fbase f2skwing --seed 0 --ctx f2ctx_v3 --ctx_sha "$(sha cache/f2ctx_v3.parquet)" --tag f2m3 --threads $TH > logs/m3_corr_lomo.log 2>&1
 echo "$(ts) lomo rc $?"
 nice -n 10 /usr/bin/time -l "$PY" -u research/f2/m3_tail.py --tag f2m3 --vbase m6r27skwing --fbase f2skwing --ctx f2ctx_v3 > logs/m3_tail.log 2>&1
 rc=$?; rm -rf "$lock"; echo "$(ts) END m3b rc $rc"

@@ -1,0 +1,47 @@
+{
+ "name": "7007_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkc",
+ "manifest": "preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkc.json",
+ "source": "7006_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh",
+ "method": "7006_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfh 의 G 행(LIRF, NM 미매칭)만 새 G 모형으로 바꾼 판(tools/gkey.py, 표 cache/gkey_v1.parquet sha 247e69682fee0fa1, G 다리 m6r27skwing). model3.g_probs 꼴의 세 유형 확률을 목적지 키와 편명 앞 ICAO 운항사 키로 두 번 내어 반씩 평균하고, GBM 쪽에 R3 스탠드, 이음 칸 아홉을 더했다. 띠 규칙과 mu 는 다리의 것, 후보에는 (새 G − 재현한 옛 G)를 더했다. 학습 행은 설정마다 g_band 와 같고 자로 고른 값은 없다. 근거 private notes research/2026-10-06-r5-analogs.md 4.5. 반대 창은 이 뒤에 둔다. 자 ΔMSE -525.9(197/394), 7월 전방 ΔMSE -423.5(188/335), 시험 바뀐 행 619, 이동 MSE 464.0, 10-05 단일 발 체제라 준비 점검은 경고(--readiness-warn)",
+ "report": {
+  "full": {
+   "g_rows": 619,
+   "changed": 619,
+   "outside_g": 0,
+   "later_stage_rows": 279,
+   "later_stage_mean_abs": 151.84,
+   "mean_g_old": 6710.3,
+   "mean_g_new": 6644.1,
+   "move_mse_test_n": 464.0
+  },
+  "val": {
+   "g_rows": 397,
+   "changed": 394,
+   "outside_g": 0,
+   "later_stage_rows": 173,
+   "later_stage_mean_abs": 206.57,
+   "mean_g_old": 7002.8,
+   "mean_g_new": 6993.0,
+   "rows": 344419,
+   "rmse_old": 290.22,
+   "rmse_new": 289.313,
+   "dmse": -525.9,
+   "improved": 197
+  },
+  "fwd": {
+   "g_rows": 337,
+   "changed": 335,
+   "outside_g": 0,
+   "later_stage_rows": 133,
+   "later_stage_mean_abs": 150.73,
+   "mean_g_old": 7133.7,
+   "mean_g_new": 7086.0,
+   "rows": 190713,
+   "rmse_old": 286.433,
+   "rmse_new": 285.693,
+   "dmse": -423.5,
+   "improved": 188
+  }
+ },
+ "written_kst": "2026-10-10 02:53:52 KST"
+}

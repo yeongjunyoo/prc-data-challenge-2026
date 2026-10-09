@@ -10,12 +10,13 @@ Best daily-board submission (January and July 2026 only; history): v39 (spirited
 
 ### 0.1 What is rebuilt
 
-The final file is the stack of daily submission v35 (sections 3 to 5; chain commands in section 5) re-run on the final input, with the choices of `DESIGN.md` section 14.5. Only the setting `full` (train on all of 2025, predict the ranking rows) is re-run on the final input. The settings `val` and `fwd`, on whose 2025 rows the correctors, the blend weights and the tail coefficients are fitted, are the outputs of the daily build and are reused unchanged. A rebuild therefore has two roots:
+The final file is the stack of daily submission v35 (sections 3 to 5; chain commands in section 5) re-run on the final input, with the choices of `DESIGN.md` section 14.5: stage 2 of the corrector runs in v36's configuration (`--scale2 0.75`) in all three chains, and for the February and June rows a second form of stage 2, fitted on four 2025 months, is merged into each chain at the corrector stage, before the tail stages (`DESIGN.md` section 14.7). Only the setting `full` (train on all of 2025, predict the ranking rows) is re-run on the final input. The settings `val` and `fwd`, on whose 2025 rows the correctors, the blend weights and the tail coefficients are fitted, are the outputs of the daily build and are reused unchanged. A rebuild therefore has three roots:
 
 1. Daily root: sections 2 to 5 below, run with the daily-phase `ranking.parquet` and `submitting.parquet`, all three settings. It provides `cache/val_*` and `cache/fwd_*`, the iteration counts `cache/iters_<tag>.json` that the setting `full` of each leg reads, and the corrector model stores `research/*/fitcache/` (written by `src/ctx_corr3.py --fit_cache <dir>`).
 2. Final root: the same code and the same 2025 data, with `data/ranking.parquet` = `final_ranking.parquet` and `data/submitting.parquet` = `final_submitting.parquet`. `research/f3/mk_final_root_mac.sh` makes it from the daily root (code, 2025 data, METAR, AIU files and the union of the corrector model stores; the cache starts empty). The `val`, `fwd` and `iters` files of the daily root are copied into its `cache/` as read-only inputs.
+3. Month-held-out root: a copy of the daily root in which one seed of each leg family of v35 except TabM is fitted on the 2025 months other than February and June and predicts February and June 2025 (setting `fj`), and the legs are blended with v35's weights. These blends are the extra training rows of the four-month form of stage 2. The context table with the 2025 months 1, 2, 6 and 7 is built there too. Step 8 copies the files it needs into the final root and checks their hashes.
 
-### 0.2 Order of the steps in the final root (working directory = final root)
+### 0.2 Order of the steps (working directory = the final root, except in step 7)
 
 ```
 # 1. inputs (own access key, see section 2); SHA-256 4b0692a7...c69f and b3445d80...3924 (DESIGN.md section 0)
@@ -43,21 +44,57 @@ python research/f3/final_orch.py cb      # CatBoost: 3 + 3 + 1 legs at 8 threads
 python research/f3/final_orch.py rm      # RealMLP: 4 + 4 legs on MPS, one at a time, seed averages
 python research/f3/final_orch.py tabm    # TabM: input arrays, then the leg on MPS
 
-# 5. chains, average, file
+# 5. chains A, B, C as in v35 (scale2 0.5). The final file uses the blends and the TabM add of this step; the rest built the first final file
 python research/f3/final_chain.py tables      # antiwin link, gkey, gkeyx, gkeyxn v2, artmm, arthist tables on the final input
 python research/f3/final_chain.py chain A     # blend, TabM add, corrector (3 seeds), average, manifest, 10 tail stages
 python research/f3/final_chain.py chain B
 python research/f3/final_chain.py chain C
 python research/f3/final_chain.py avg3        # tools/chainavg3.py, 1/3 each
-python research/f3/final_file.py <spec> spirited-tiger_final.parquet <v35 file> <v35 test prediction> <daily ranking.parquet>
-python research/f3/final_manifest.py <spec>   # build record: input and table hashes, fit-cache counts, device of each leg, checks of the file
+python research/f3/final_manifest.py <spec>   # build record of the first final file: input and table hashes, fit-cache counts, leg devices
+
+# 6. the same chains from the corrector on, in v36's configuration (scale2 0.75)
+python research/f3/collect_s75.py             # v36's val and fwd corrector outputs from the daily build, as read-only inputs
+python research/f3/final_chain.py chain B --from corr --cfg s75      # corrector (3 seeds), average, manifest, 10 tail stages; then C, A
+python research/f3/final_chain.py avg3 --cfg s75                     # v36's configuration on all four months: the default of the checks in step 8
+python research/f3/final_file.py <its spec> <comparison file> <v36 file> <its float test prediction> <daily ranking.parquet>
+
+# 7. month-held-out root: context tables with the 2025 months 1, 2, 6, 7, then the legs fitted without February and June 2025 (seed 0)
+python src/feats_ctx.py --name f2ctx_v1 --months 1,2,6,7
+python src/feats_ctx2.py --name f2ctx_v2 --base f2ctx_v1 --base_sha <sha16 of cache/f2ctx_v1.parquet>
+python src/feats_aiu.py --name f2ctx_v3 --base f2ctx_v2 --base_sha <sha16 of cache/f2ctx_v2.parquet>
+python research/f2/model3_fj.py --setting fj --seed 0 --tag f2skwin --feats feats_v27 <LightGBM arguments of section 4> --threads 4 --mu_sep LIRF --anchor win
+python research/f2/model3_fj.py --setting fj --seed 0 --tag f2sk --feats feats_v27 <LightGBM arguments of section 4> --threads 2 --mu_sep LIRF
+python research/f2/model3ap_fj.py --setting fj --seed 0 --tag f2skap --feats feats_v27 <LightGBM arguments of section 4> --threads 2 --mu_sep all
+python research/f2/g_band_fj.py --setting fj --seed 0 --tag f2skwing --base f2skwin --feats feats_v27        # also f2skg (base f2sk), f2skapg (base f2skap)
+python research/f2/cat_mu_fj.py --setting fj --seed 0 --tag f2cbwin --base f2skwin --feats feats_v27 --anchor win --threads 4   # also f2cb (base f2sk, no anchor)
+python research/f2/cat_muap_fj.py --setting fj --seed 0 --tag f2cbap --base f2skap --feats feats_v27 --threads 4 --per_ap
+python research/f2/rmlp_mu_fj.py --setting fj --seed 0 --tag f2rmwin --base f2skwin --feats feats_v27 --device mps --anchor win --threads 1   # also f2rm (base f2sk)
+python research/f2/fj_blends.py               # the three chains' blends with v35's weights: cache/fj_f2wincbrmfw4_s0, fj_f2skcbrmfw4_s0, fj_f2apcbrmfw4_s0
+
+# 8. the row split of stage 2 (scripts/host/f2/kit_final.sh, run from a folder that holds it, its four python files, janjul_ids.parquet and sha16.txt)
+bash kit_final.sh install                     # ctx_corr4.py, ctx4_table.py, merge_corr.py, check_split.py, janjul_ids.parquet into research/f2/, hashes checked
+KIT_TH=2 bash kit_final.sh prep               # f2ctx_v3 and the three blends of step 7 (hashes checked), the fit-cache seed, the four-month context table f2ctx4f_v3
+KIT_TH=2 bash kit_final.sh corr4m A           # four-month stage 2, seeds 0 to 2, scale2 0.75 and its 0.5 twin, each averaged over the seeds; then B, C
+KIT_TH=3 bash kit_final.sh merge A            # val and fwd: byte copies of step 6's corrector output; full: by row group (merge_corr.py); then B, C
+KIT_TH=3 bash kit_final.sh check              # the corrector-stage checks of research/f2/check_split.py
+KIT_TH=3 bash kit_final.sh manifest A Bb      # the merged corrector stage's manifest; then KIT_TH=3 bash kit_final.sh tails A Bb (10 tail stages); then B, C
+KIT_TH=3 bash kit_final.sh avg3 Bb            # tools/chainavg3.py, 1/3 each
+KIT_TH=3 bash kit_final.sh check finals       # the five checks of DESIGN.md section 14.7 against step 6's file
+
+# 9. the file
+python research/f3/final_file.py <spec> spirited-tiger_final.parquet <v36 file> <step 6's float test prediction> <daily ranking.parquet>
 ```
 
-The choices still open when this text was written change only steps 4 and 5: <!--FILL:final_steps_delta-->.
+LightGBM legs retrained with the 2025 ADS-B days filled in (L3, `DESIGN.md` section 14.3): <!--FILL:final_steps_delta-->.
 
 Notes on the steps:
 
-- `final_chain.py` runs the corrector with `--fit_cache research/f3/fitcache_union` and stops if any corrector model has to be fitted, so the corrector models applied to the final input are exactly those of the daily build (the corrector of the setting `full` is the average of models fitted on the 2025 ruler rows). With the stores of your own daily build in that folder the step runs as written.
+- `final_chain.py` runs the corrector with `--fit_cache research/f3/fitcache_union` and stops if any corrector model has to be fitted, so the corrector models applied to the final input are exactly those of the daily build (the corrector of the setting `full` is the average of models fitted on the 2025 ruler rows). With the stores of your own daily build in that folder the step runs as written. In steps 5 and 6 every corrector run loaded all its models and fitted none (`research/f3/out/final_chain_A.json`, `research/f3/out/final_chain_s75_A.json` and the files of chains B and C, field `checks`).
+- `--cfg s75` (step 6) sets `--scale2 0.75` in the corrector, gives the stages the prefix `s75_` and the sandbox queue numbers +1000 (`research/f3/final_chain.py:72`); `--from corr` starts at the corrector, which reads the blends and the TabM add of step 5 in the same root. `collect_s75.py` copies only `val` and `fwd` outputs (`research/f3/out/collect_s75.json`); every `full` output is rebuilt on the final input.
+- The model stores of the correctors (`--fit_cache <dir>` of `src/ctx_corr3.py` and `research/f2/ctx_corr4.py`) are keyed by the training rows and columns, the seed, the number of rounds, the thread count and the hashes of `src/adsb_corr.py` and `src/ctx_corr.py` (`src/ctx_corr2.py:86`): a model is loaded only when all of these match, and is otherwise fitted and stored. `kit_final.sh prep` seeds `research/f2/fitcache_4m` with the 704 stage-1 models fitted at 2 threads in the month-held-out root, which is why the four-month corrector runs at `KIT_TH=2`; each run at scale2 0.75 then fitted the 10 four-month stage-2 models and each run at 0.5 loaded all 65, because it is the same fit with another scale (field `fit_caches` of the drivers record in section 0.5). With empty stores the same commands fit every model.
+- `research/f2/janjul_ids.parquet` (step 8) holds the `MVT_ID_mvt` values of the departure rows of the daily-phase `ranking.parquet`, in file order (344,841 ids); the merge uses only their set (`research/f2/merge_corr.py:79`). It lists organizer ids and is not in this repository. `kit_final.sh install` checks each file against `sha16.txt` (the list that ran is in `research/f3/out/final_drivers/`), so a rebuilt ids file needs its own line there.
+- `kit_final.sh` runs each python step through `research/f3/mac_step.sh`, refuses to overwrite an output, and stops unless each scale2-0.75 run of the four-month corrector fitted 10 models and each 0.5 run none (`scripts/host/f2/kit_final.sh:97`). Our run (`scripts/host/f3/phase4b.sh`) also built the variants Ba (scale2 0.75 on the matched February and June rows: the build we chose first and dropped, `DESIGN.md` section 14.7) and D (the null merge of check 4), and the final check stopped as expected at the bit-equal form of check 3; `scripts/host/f3/phase4c.sh` then wrote the file.
+- The scripts that ran steps 4 to 9 on the Mac and that no manifest hashes as a whole are listed, with the SHA-256 of the copy that ran and what it ran, in the drivers record of section 0.5; byte-for-byte copies are in `research/f3/out/final_drivers/`. `research/f3/final_chain.py` in this repository is a later version than the two that ran steps 5 and 6: each version added a configuration (`--cfg s75`, then `--cfg l3s75`) and left the earlier ones as they were.
 - The legs were fitted once in an interim root before the February and June ADS-B days were ready and loaded in the final root through `research/f3/fitwrap.py`, a fit cache keyed by the exact training data, parameters, thread count and library version. Training uses 2025 rows only, and the 2025 rows of the interim and final feature tables were checked byte-identical (`research/f3/cmp_v27_interim.py`). A leg refit directly in the final root gave the same predictions within 1e-9 s and the same rounded file values (`research/f3/out/twin_sk_s0.json`: 510 cells of `pred` differ, by at most 9.1e-13 s; no int32 value differs; the wrapper's own tests are in `research/f3/out/wt/`). A cold rebuild does not need the wrapper: run the leg commands of `final_orch.py` directly.
 - XGBoost is not refit; `final_chain.py` writes a placeholder with `mu_xgb` = 0 and checks that the blend output is the same with 0 and with 1 (its weight is exactly 0).
 - `N_TEST = 344841` (the departures of the daily `ranking.parquet`) is hard-coded in the tail tools `tools/antiwin.py`, `arthist.py`, `artmm.py`, `chainavg3.py`, `gjoint.py`, `gkey.py`, `gkeyx.py`, `gkeyxn.py`, `glong.py` and `gpool.py` (for example `tools/gkey.py:57`) and divides only report numbers, the field `move_mse_test_n` (`move_mse_vs_a` to `move_mse_vs_c` in `chainavg3.py`) and printed check lines; in the final root these numbers are a sum over 670,790 rows divided by 344,841, no prediction depends on them, and the tools are shipped unchanged (except for the SPDX line) so that they keep the hashes in the manifests.
@@ -72,7 +109,10 @@ Notes on the steps:
 | CatBoost leg, setting `full` | Mac, 8 threads | 52 to 53.5 minutes per leg (seed 0 of `cbwin` was loaded from the fit cache in 1 minute); the per-airport leg 24.5 minutes | `research/f3/out/orch_cb.json` |
 | RealMLP leg, setting `full` | Mac, MPS | 16.5 to 17 minutes per leg, run alone (memory footprint up to 33 GB on an 18 GB machine) | `research/f3/out/orch_rm.json`; memory: logs (not shipped) |
 | TabM leg, setting `full` | Mac, MPS, 3 threads | 109 minutes (v35's run on the same device: 105.7 minutes); a CUDA run on the PC (RTX 4070 SUPER), kept aside: 13.3 minutes | `research/f3/out/orch_tabm.json`; `research/r13_l/runs/m6r27tmcwin_full_s0.json` (v35); `research/f3/out/tabm_cuda/m6r27tmcwin_full_s0.json` (CUDA) |
-| Chains A, B, C, average, file | Mac, 3 threads | per chain 16 to 16.5 minutes of step run time: blend and TabM step under 10 s, corrector 1.8 to 2.0 minutes per seed (every model loaded from the fit cache), the ten tail stages about 11 minutes (`gjoint` 4.5 to 4.7 of them); the average of the three chains 6 s; the tables of `final_chain.py tables` about 3 minutes; the file 0.9 s | logs (not shipped) |
+| Chains A, B, C, average, file (step 5) | Mac, 3 threads | per chain 16 to 16.5 minutes of step run time: blend and TabM step under 10 s, corrector 1.8 to 2.0 minutes per seed (every model loaded from the fit cache), the ten tail stages about 11 minutes (`gjoint` 4.5 to 4.7 of them); the average of the three chains 6 s; the tables of `final_chain.py tables` about 3 minutes; the file 0.9 s | logs (not shipped) |
+| Chains from the corrector in v36's configuration (step 6) | Mac, 3 threads | 20 to 26.5 minutes per chain from start to end, waits included (2026-10-09 23:40 to 2026-10-10 00:48); the average 32 s; the comparison file 1 s | logs (not shipped); times of each driver in the drivers record of section 0.5 |
+| Leave-February-and-June-out legs and blends (step 7) | Mac | LightGBM 15 minutes (`f2skwin`, 4 threads), 38.5 and 24 minutes (`f2sk`, `f2skap`, 2 threads); CatBoost 159, 160.5 and 73 minutes (`f2cb`, `f2cbwin`, `f2cbap`, 4 threads, two at a time); RealMLP about 12.5 minutes each (MPS); G bands and the three blends seconds | logs (not shipped) |
+| Row split (step 8) | Mac, 2 threads (four-month corrector), 3 threads (the rest) | context table 3 s; four-month corrector 23 to 25 minutes per chain (six runs and two seed averages); merges seconds each; manifests, tail stages and average of one variant about 36 minutes; the checks about a minute | logs (not shipped) |
 
 Machines: PC with Windows 11 Pro, AMD Ryzen 5 7500F, 31.7 GB RAM, NVIDIA GeForce RTX 4070 SUPER (12 GB); Mac with Apple M3 Pro (11 cores), 18 GB RAM. Seeds are those of v35: LightGBM legs 0 to 3 in chains A and B and 0 for the per-airport leg; CatBoost 0 to 2 and 0; RealMLP 0 to 3; TabM 0; correctors 0 to 2. Early stopping uses the training days whose UTC day number is divisible by 10.
 
@@ -86,8 +126,8 @@ Machines: PC with Windows 11 Pro, AMD Ryzen 5 7500F, 31.7 GB RAM, NVIDIA GeForce
 
 ### 0.5 Checking that this code produced the final file
 
-1. `python scripts/verify_code_hashes.py` compares every code file named in the CODE lists of the manifests in `preds/` with the SHA-256 recorded when each chain step ran (one SPDX line per file is ignored).
-2. The final file's SHA-256 is <!--FILL:final_file_sha256-->. The build record `research/f3/out/final_build_manifest.json` holds the hashes of the input files, of every table and of the chain outputs, and the checks of the file (670,790 rows, template order, no missing or negative value, int32, schema equal to the template).
+1. `python scripts/verify_code_hashes.py` compares every code file named in the CODE lists of the manifests in `preds/` with the SHA-256 recorded when each chain step ran (one SPDX line per file is ignored); `python scripts/verify_code_hashes.py --final` does the same for the manifests of the final file's chain only (`preds/final/` and the final file's own manifest in `preds/`).
+2. The final file's SHA-256 is `454dc0e7fb436cb10545da6d2cd9e137e1a4da9585b9cc01c152b2a6d4a87f4c`. Its records: `research/f3/out/final_file_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap.json` (the writer's checks of the file) and `research/f3/out/final_drivers_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff4.json` (the scripts that ran each step, with their SHA-256). The build record of the first final file, `research/f3/out/final_build_manifest.json`, holds the hashes of the input files and of every table of the final root, which the final file shares, and the checks of that file (670,790 rows, template order, no missing or negative value, int32, schema equal to the template).
 3. The file is written from the chain's test prediction with the rule of `src/make_sub.py` (template order, rounding to the nearest integer, clip at 0, int32), implemented again in `research/f3/final_file.py` and in `src/fire_queue.py` (`build_final`).
 
 ## 1. Hardware and software used
@@ -186,9 +226,11 @@ python research/r13_l/blend_add.py --setting {val,fwd,full} --tag m6r27wincbrmfw
 The stage-2 corrector is run with seeds 0, 1, 2 and averaged; example for the window chain of the seed-base 324 (the 434 base differs only in the tags):
 
 ```
-python src/ctx_corr3.py --setting {val,fwd,full} --seed {0,1,2} --base <blend tag> --base_seed 0 --tag <blend tag>adsbgeondctxv3x50w --feats feats_v25 --adsb adsb_v1nd --adsb_sha <sha16> --folds 10 --rounds 300 --rounds2 400 --max_pred 3600 --threads 4 --geo geo_v1nd --geo_sha <sha16> --ctx ctx_v3 --ctx_sha <sha16> --scale2 0.5
+python src/ctx_corr3.py --setting {val,fwd,full} --seed {0,1,2} --base <blend tag> --base_seed 0 --tag <blend tag>adsbgeondctxv3x50w --feats feats_v25 --adsb adsb_v1nd --adsb_sha <sha16> --folds 10 --rounds 300 --rounds2 400 --max_pred 3600 --threads 4 --geo geo_v1nd --geo_sha <sha16> --ctx ctx_v3 --ctx_sha <sha16> --scale2 0.5 --fit_cache <dir>
 python research/r10_b/cavg.py --setting {val,fwd,full} --seed 0 --tag <blend tag>adsbgeondctxv3x50wc3 --src <blend tag>adsbgeondctxv3x50w --seeds 0,1,2 --base <blend tag> --base_seed 0
 ```
+
+`--fit_cache <dir>` stores every fitted corrector model in `<dir>` and loads it again when the same fit is asked for (section 0.2, notes). It does not change the output, so the job files and the manifests list the commands without it; our builders added `--fit_cache research/r10_b/fitcache` (for the first seed of the `s0x` bases `research/ctx_corr/fitcache`) when they ran these lines. The final root's corrector store is the union of such stores from our build sandboxes (section 0.1).
 
 Then each tail tool has a `table` sub-command that builds its input table once (`tools/artmm.py table`, `tools/arthist.py table`, `tools/gkey.py table`, `tools/gkeyx.py table`, `tools/gkeyxn.py table --version gkeyxn_v2`, `tools/antiwin.py link`) and a reproduction command per setting. The reproduction commands below are copied from the manifests; `--src <manifest> --src_sha <hash>` name the previous stage's manifest and its hash. Run them leaf first, for `--setting val`, `--setting fwd`, `--setting full` (the manifests list the three variants as `commands.holdout`, `commands.forward`, `commands.test`).
 
