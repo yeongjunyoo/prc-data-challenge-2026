@@ -4,7 +4,8 @@
  "final_file_sha256": "454dc0e7fb436cb10545da6d2cd9e137e1a4da9585b9cc01c152b2a6d4a87f4c",
  "fetched": [
   "2026-10-10 05:08 KST",
-  "2026-10-10 05:19 KST"
+  "2026-10-10 05:19 KST",
+  "2026-10-10 08:11 KST"
  ],
  "drivers": [
   {
@@ -23,7 +24,7 @@
    "sha256": "0197e3db6e7c6454596c0637be119542f6c0889cb3d24f698b8fe69b89570f65",
    "copy": "research/f3/out/final_drivers/0197e3db6e7c6454_avg_legs_final.py",
    "named_by": "no log line names it; the copy we kept when the L3 rows were added (2026-10-10) was written 2026-10-08 22:53:15, before the legs ran",
-   "ran": "the seed averages of the legs",
+   "ran": "the seed averages of the first rebuild's legs",
    "here": "research/f3/avg_legs_final.py",
    "here_is": "a later version that adds the rows of the L3 legs"
   },
@@ -33,7 +34,7 @@
    "sha256": "54114020d2aa3d3c223e7bbf7877c39d1cb99218e2f67a2515dad5a47fe4a0ba",
    "copy": "research/f3/out/final_drivers/54114020d2aa3d3c_fitwrap.py",
    "named_by": "the final file's manifest (field code_sha_outside_preds)",
-   "ran": "loaded the fitted legs (fit cache)",
+   "ran": "loaded the fitted legs of the first rebuild (fit cache)",
    "here": "research/f3/fitwrap.py",
    "here_is": "the same bytes apart from the SPDX line"
   },
