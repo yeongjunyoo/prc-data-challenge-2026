@@ -9,7 +9,8 @@ pauses new launches (running jobs go on), e.g. so that a waiting step outside th
 event go to research/f3/out/orch_<phase>.json and logs/orch_<phase>.log. Stops launching (finishes running jobs) when STOP_F3 exists.
     nohup python -u research/f3/final_orch.py <phase> [--budget 10] [--max_jobs 2] >> logs/orch_<phase>.log 2>&1 &
 Phases: lgb (LightGBM legs, g_band, LightGBM seed averages), cb (CatBoost legs and averages), rm (RealMLP legs and averages),
-        tabm (prep + TabM leg).
+        tabm (prep + TabM leg), l3legs (L3 final, 10-10: R17-A's feats_v28 LightGBM legs in the full setting, G bands, averages, and the
+        seed-0 leave-Feb/Jun-out L3 legs for the four-month corrector; never wrapped).
 Fit cache (research/f3/fitwrap.py, coordinator approval 2026-10-08 23:2x KST): --wrap save:<dir> or load:<dir> runs the LightGBM and
 CatBoost leg scripts (model3, model3ap, cat_mu, cat_muap) through the wrapper, unchanged. --root runs the same jobs in another root (the
 interim root), --prefix keeps its lock names apart, --defer_to <root> holds a job while the same job is still running in that root (its
@@ -84,6 +85,34 @@ def jobs_for(phase: str) -> list[dict]:
                       out=["cache/full_m6r27tmcwin_s0.parquet"],
                       cmd="research/r13_l/tabm_leg.py --setting full --seed 0 --tag m6r27tmcwin --base m6r27skwin --anchor win --sched cos --epochs 20 "
                           "--patience 99 --device mps --threads 3 --amp bf16"))
+    elif phase == "l3legs":  # L3 final (coordinator 10-10 03:5x): R17-A's leg lines (research/r17_a/sb_build_r17a.py M3, 6 threads, feats_v28)
+        # in the full setting on the final test, their G bands and seed averages, and the seed-0 leave-Feb/Jun-out legs of the L3 families
+        # (F2's research/f2/model3_fj.py, model3ap_fj.py, g_band_fj.py with feats_v28) for the L3 four-month corrector's extra rows.
+        L28 = LGB.replace("feats_v27", "feats_v28") + " --threads 6"
+        J.append(dict(name="l3skap_s0", th=6, gb=6.5, deps=[], out=["cache/full_m6r28skap_s0.parquet"],
+                      cmd=f"research/r13_f3/model3ap.py --setting full --seed 0 --tag m6r28skap {L28} --mu_sep all"))
+        J.append(dict(name="fj_l3skap", th=6, gb=6.5, deps=[], out=["cache/fj_l3skap_s0.parquet"],
+                      cmd=f"research/f2/model3ap_fj.py --setting fj --seed 0 --tag l3skap {L28} --mu_sep all"))
+        for k in range(4):
+            J.append(dict(name=f"l3sk_s{k}", th=6, gb=6.5, deps=[], out=[f"cache/full_m6r28sk_s{k}.parquet"],
+                          cmd=f"src/model3.py --setting full --seed {k} --tag m6r28sk {L28} --mu_sep LIRF"))
+            J.append(dict(name=f"l3skwin_s{k}", th=6, gb=6.5, deps=[], out=[f"cache/full_m6r28skwin_s{k}.parquet"],
+                          cmd=f"src/model3.py --setting full --seed {k} --tag m6r28skwin {L28} --mu_sep LIRF --anchor win"))
+            if k == 1:
+                J.append(dict(name="fj_l3sk", th=6, gb=6.5, deps=[], out=["cache/fj_l3sk_s0.parquet"],
+                              cmd=f"research/f2/model3_fj.py --setting fj --seed 0 --tag l3sk {L28} --mu_sep LIRF"))
+                J.append(dict(name="fj_l3skwin", th=6, gb=6.5, deps=[], out=["cache/fj_l3skwin_s0.parquet"],
+                              cmd=f"research/f2/model3_fj.py --setting fj --seed 0 --tag l3skwin {L28} --mu_sep LIRF --anchor win"))
+        for g, b, dep in (("m6r28skwing", "m6r28skwin", "l3skwin_s0"), ("m6r28skg", "m6r28sk", "l3sk_s0"), ("m6r28skapg", "m6r28skap", "l3skap_s0")):
+            J.append(dict(name=f"gband_{g}", th=1, gb=5.0, deps=[dep], out=[f"cache/full_{g}_s0.parquet"],
+                          cmd=f"src/g_band.py --setting full --seed 0 --tag {g} --base {b} --feats feats_v28"))
+        for g, b, dep in (("l3skwing", "l3skwin", "fj_l3skwin"), ("l3skg", "l3sk", "fj_l3sk"), ("l3skapg", "l3skap", "fj_l3skap")):
+            J.append(dict(name=f"gbandfj_{g}", th=1, gb=5.0, deps=[dep], out=[f"cache/fj_{g}_s0.parquet"],
+                          cmd=f"research/f2/g_band_fj.py --setting fj --seed 0 --tag {g} --base {b} --feats feats_v28"))
+        J.append(dict(name="avg_l3skwingx4", th=1, gb=2.0, deps=["gband_m6r28skwing", "l3skwin_s1", "l3skwin_s2", "l3skwin_s3"],
+                      out=["cache/full_m6r28skwingx4_s0.parquet"], cmd="research/f3/avg_legs_final.py m6r28skwing m6r28skwingx4 0,1,2,3 m6r28skwin"))
+        J.append(dict(name="avg_l3skgx4", th=1, gb=2.0, deps=["gband_m6r28skg", "l3sk_s1", "l3sk_s2", "l3sk_s3"],
+                      out=["cache/full_m6r28skgx4_s0.parquet"], cmd="research/f3/avg_legs_final.py m6r28skg m6r28skgx4 0,1,2,3 m6r28sk"))
     else:
         raise SystemExit(f"unknown phase {phase}")
     return J

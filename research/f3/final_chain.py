@@ -14,9 +14,12 @@ Each tool run goes through research/f3/mac_step.sh. Every target is checked to n
 --cfg s75 (second rebuild, coordinator 10-09 23:2x, the Default final = 531): every corrector stage at --scale2 0.75 with tag ..x50ws75,
 then cavg, manifest, tail and chainavg3 as above; blend and add are 514's (shared). Its val and fwd inputs are 531's caches cloned from
 var1_sbx (research/f3/collect_s75.py). Queue numbers +1000, step and state names prefixed s75_. Without --cfg everything is as before.
+--cfg l3s75 (L3 final, coordinator 10-10 03:5x, 596 = L3S): R17-A's L3 chains (feats_v28 LightGBM base legs, 514's other learners),
+blend and add rebuilt here, correctors at 0.75 from research/f3/fitcache_l3 (L3's corrector models), manifest and gkey on feats_v28;
+val and fwd inputs cloned from r17a_sbx (research/f3/collect_l3.py). Queue numbers +7000, names prefixed l3_.
     python -u research/f3/final_chain.py tables
-    python -u research/f3/final_chain.py chain <A|B|C> [--from <step>] [--to <step>] [--cfg s75]
-    python -u research/f3/final_chain.py avg3 [--cfg s75]
+    python -u research/f3/final_chain.py chain <A|B|C> [--from <step>] [--to <step>] [--cfg s75|l3s75]
+    python -u research/f3/final_chain.py avg3 [--cfg s75|l3s75]
 State: research/f3/out/final_chain_[s75_]<A|B|C>.json.
 """
 from __future__ import annotations
@@ -51,8 +54,25 @@ CHAINS = {
     "C": dict(T="m6r27apcbrmfw4sv114", base_leg="m6r27skapg", learners="m6r27cbap:mu_cat,m6r25xg:mu_xgb,m6r27rmx4:mu_rmlp",
               TA=None, add_leg=None, gleg="m6r27skapg", num0=2200, extra=EXTRA_C),
 }
-CFGS = {"s50": dict(mid=MID, scale2="0.5", dnum=0, pre="", src_note="514's caches"),
-        "s75": dict(mid="adsbgeondctxv3x50ws75", scale2="0.75", dnum=1000, pre="s75_", src_note="531's caches cloned from var1_sbx")}
+# L3 (coordinator 10-10 03:5x): R17-A's chains (research/r17_a/sb_build_r17a.py CHAINS): the LightGBM base legs on feats_v28, 514's other learners,
+# and R17-A's code list (its EXTRA, which carries the A chain's r13_l files in every chain) plus this root's fitwrap, full-setting averager and feats_v28 builder
+EXTRA_L3 = (EXTRA + ",research/r13_l/prep_x.py,research/r13_l/tabm_leg.py,research/r13_l/xrfm_leg.py,research/r13_l/blend_add.py,"
+            "research/r17_a/avg_r17a.py,research/r17_a/adsb_day_r17a.py,research/adsb/build_feats2.py,research/adsb/adsb_match.py,"
+            "research/f3/avg_legs_final.py,research/f3/feats_v28_final.py")
+CHAINS_L3 = {
+    "A": dict(T="m6r28wincbrmfw4sv434", base_leg="m6r28skwingx4", learners="m6r27cbwinx3:mu_cat,m6r25xg:mu_xgb,m6r27rmwinx4:mu_rmlp",
+              TA="m6r28wincbrmfw4sv434tmc", add_leg="m6r27tmcwin:mu_tabm", gleg="m6r28skwing", num0=2000, extra=EXTRA_L3),
+    "B": dict(T="m6r28skcbrmfw4sv434", base_leg="m6r28skgx4", learners="m6r27cbx3:mu_cat,m6r25xg:mu_xgb,m6r27rmx4:mu_rmlp",
+              TA=None, add_leg=None, gleg="m6r28skg", num0=2100, extra=EXTRA_L3),
+    "C": dict(T="m6r28apcbrmfw4sv114", base_leg="m6r28skapg", learners="m6r27cbap:mu_cat,m6r25xg:mu_xgb,m6r27rmx4:mu_rmlp",
+              TA=None, add_leg=None, gleg="m6r28skapg", num0=2200, extra=EXTRA_L3 + ",research/r13_f3/model3ap.py,research/r13_f3/cat_muap.py"),
+}
+FC = "research/f3/fitcache_union"
+CFGS = {"s50": dict(mid=MID, scale2="0.5", dnum=0, pre="", src_note="514's caches", chains=CHAINS, feats="feats_v27", fitcache=FC, shared=False),
+        "s75": dict(mid="adsbgeondctxv3x50ws75", scale2="0.75", dnum=1000, pre="s75_", src_note="531's caches cloned from var1_sbx",
+                    chains=CHAINS, feats="feats_v27", fitcache=FC, shared=True),
+        "l3s75": dict(mid="adsbgeondctxv3x50ws75", scale2="0.75", dnum=7000, pre="l3_", src_note="L3S's caches cloned from r17a_sbx",
+                      chains=CHAINS_L3, feats="feats_v28", fitcache="research/f3/fitcache_l3", shared=False)}
 CFG = CFGS["s50"]
 DECL = {"blend": (2.5, 1), "add": (2.5, 1), "corr": (4.6, 4), "cavg": (3.1, 1), "manifest": (2.5, 1), "am": (3.0, 4), "fh": (2.6, 4), "gkc": (3.9, 4),
         "gkcx": (3.4, 4), "xncr": (3.4, 4), "db": (3.1, 4), "aw": (3.0, 4), "gp": (3.6, 4), "gl": (3.5, 4), "gja": (3.6, 4), "table": (4.0, 1), "avg3": (2.5, 1)}
@@ -139,7 +159,8 @@ def check_xgb_weight(T: str) -> dict:
     x.to_parquet(p1 / "cache" / "full_m6r25xg_s0.parquet", index=False)
     shutil.copytree(ROOT / "src", p1 / "src", ignore=shutil.ignore_patterns("__pycache__"))
     os.symlink(ROOT / "data", p1 / "data")  # blend_oof.ruler_days reads data/training_2025-01 and -07 (10-09 10:48 failure without it)
-    c = CHAINS[[k for k, v in CHAINS.items() if v["T"] == T][0]]
+    CH = CFG["chains"]
+    c = CH[[k for k, v in CH.items() if v["T"] == T][0]]
     r = subprocess.run([PY, "-X", "utf8", "-u", "src/blend_fixed.py", "--setting", "full", "--seed", "0", "--tag", T + "_xg1", "--base", c["base_leg"],
                         "--learners", c["learners"], *REF.split()], cwd=p1, capture_output=True, text=True)
     assert r.returncode == 0, r.stdout[-2000:] + r.stderr[-2000:]
@@ -150,7 +171,7 @@ def check_xgb_weight(T: str) -> dict:
 
 
 def chain(label: str, start: str = "blend", stop: str = "gja") -> None:
-    c = CHAINS[label]
+    c = CFG["chains"][label]
     T, TA = c["T"], c["TA"]
     CB = TA or T
     TC = CB + CFG["mid"]
@@ -160,13 +181,13 @@ def chain(label: str, start: str = "blend", stop: str = "gja") -> None:
     st = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {"label": label, "cfg": CFG, "names": {}, "checks": {}}
     todo = STEPS[STEPS.index(start):STEPS.index(stop) + 1]
     num = lambda k: str(c["num0"] + CFG["dnum"] + STEPS.index(k))  # noqa: E731
-    if pre and set(todo) & {"blend", "add"}:
+    if CFG["shared"] and set(todo) & {"blend", "add"}:
         raise SystemExit("--cfg s75 starts at corr (blend and add are 514's, shared)")
     for step in todo:
         if step == "blend":
             xgb_placeholder()
             must_be_new(f"cache/full_{T}_s0.parquet")
-            run(f"blend{label}", "blend", f"src/blend_fixed.py --setting full --seed 0 --tag {T} --base {c['base_leg']} --learners {c['learners']} {REF}".split())
+            run(f"{pre}blend{label}", "blend", f"src/blend_fixed.py --setting full --seed 0 --tag {T} --base {c['base_leg']} --learners {c['learners']} {REF}".split())
             st["checks"]["xgb_weight"] = check_xgb_weight(T)
             print(f"[{ts()}] xgb weight check {st['checks']['xgb_weight']}", flush=True)
             if not st["checks"]["xgb_weight"]["zeros_vs_ones_identical"]:
@@ -175,13 +196,13 @@ def chain(label: str, start: str = "blend", stop: str = "gja") -> None:
             if not TA:
                 continue
             must_be_new(f"cache/full_{TA}_s0.parquet")
-            run(f"add{label}", "add", f"research/r13_l/blend_add.py --setting full --tag {TA} --src {T} --leg {c['add_leg']} --folds 10 --seed 0".split())
+            run(f"{pre}add{label}", "add", f"research/r13_l/blend_add.py --setting full --tag {TA} --src {T} --leg {c['add_leg']} --folds 10 --seed 0".split())
         elif step == "corr":
             ca = corr_args()
             for k in (0, 1, 2):
                 must_be_new(f"cache/full_{TC}_s{k}.parquet")
                 run(f"{pre}corr{label}{k}", "corr", f"src/ctx_corr3.py --setting full --seed {k} --base {CB} --base_seed 0 --tag {TC} {ca} "
-                                                    f"--fit_cache research/f3/fitcache_union".split())
+                                                    f"--fit_cache {CFG['fitcache']}".split())
                 txt = (ROOT / f"logs/chain_{pre}corr{label}{k}.log").read_text(encoding="utf-8", errors="replace")
                 st["checks"][f"fit_cache_s{k}"] = [x.strip() for x in txt.splitlines() if "fit cache" in x][-1:]
                 sp.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -199,7 +220,7 @@ def chain(label: str, start: str = "blend", stop: str = "gja") -> None:
                      f"--seeds 0,1,2 --base {CB} --base_seed 0" for s in ("val", "fwd", "full")]
             (ROOT / "notes" / f"jobs_{TCS}.txt").write_text(f"# F3 final rebuild (full rebuilt; val, fwd = {CFG['src_note']})\n" + "\n".join(lines) + "\n",
                                                             encoding="utf-8")
-            run(f"{pre}manifest{label}", "manifest", ["-m", "src.manifest", TCS, TCS, "pred", "0", "feats_v27", f"notes/jobs_{TCS}.txt"],
+            run(f"{pre}manifest{label}", "manifest", ["-m", "src.manifest", TCS, TCS, "pred", "0", CFG["feats"], f"notes/jobs_{TCS}.txt"],
                 {"MANIFEST_EXTRA_CODE": c["extra"]})
             st["names"]["corr"] = qentry(num("manifest"), TCS)
         else:
@@ -211,7 +232,7 @@ def chain(label: str, start: str = "blend", stop: str = "gja") -> None:
             n = num(step)
             args = {"am": ["tools/artmm.py", "build", srcm, n, "--no-enqueue"],
                     "fh": ["tools/arthist.py", "build", srcm, n, "--no-enqueue"],
-                    "gkc": ["tools/gkey.py", "build", src_q, n, "--no-enqueue", "--variant", "avg", "--leg", c["gleg"], "--leg_feats", "feats_v27"],
+                    "gkc": ["tools/gkey.py", "build", src_q, n, "--no-enqueue", "--variant", "avg", "--leg", c["gleg"], "--leg_feats", CFG["feats"]],
                     "gkcx": ["tools/gkeyx.py", "build", srcm, n, "--no-enqueue"],
                     "xncr": ["tools/gkeyxn.py", "build", srcm, n, "--no-enqueue", "--variant", "avg_xncr"],
                     "db": ["src/aiu_shift.py", "build", src_q, n, "--group", "block"],

@@ -2,7 +2,8 @@
 """Check the source files of this repository against the hashes recorded in the manifests in preds/.
 
 Every manifest lists, under "code_sha", the first 16 hex characters of the SHA-256 of each source file as it was when that chain step ran
-(the daily submissions v35 to v39, and the final rebuild once its manifests are added). This repository adds one SPDX license line at the top
+(the daily submissions v35 to v39, and the final rebuild once its manifests are added); a final candidate's manifest also lists, under
+"code_sha_outside_preds", the scripts whose copies were kept beside its queue entry. This repository adds one SPDX license line at the top
 of each source file (after the "#!" line where there is one) and, in src/s3io.py, replaces the function that reads the access key. The check
 removes the SPDX line before hashing; src/s3io.py is reported separately.
 
@@ -34,6 +35,8 @@ def main():
         n_man += 1
         for f, h in (m.get("code_sha") or {}).items():
             want.setdefault(f, set()).add(h)
+        for f, v in (m.get("code_sha_outside_preds") or {}).items():
+            want.setdefault(f, set()).add(v["sha"] if isinstance(v, dict) else v)
     bad = 0
     for f in sorted(want):
         p = os.path.join(ROOT, f)

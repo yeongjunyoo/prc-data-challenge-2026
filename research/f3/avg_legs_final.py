@@ -17,8 +17,9 @@ import pandas as pd
 ROOT = Path.cwd()
 M3 = ["p_art", "mu", "pred", "pred_noG"]
 COLS = {"m6r27rmwin": ["mu_rmlp"], "m6r27rm": ["mu_rmlp"], "m6r27cbwin": ["mu_cat"], "m6r27cb": ["mu_cat"],
-        "m6r27skwin": M3, "m6r27sk": M3, "m6r27skwing": M3, "m6r27skg": M3}
-G_ROWS_SEED0 = {"m6r27skwin", "m6r27sk", "m6r27skwing", "m6r27skg"}
+        "m6r27skwin": M3, "m6r27sk": M3, "m6r27skwing": M3, "m6r27skg": M3,
+        "m6r28skwin": M3, "m6r28sk": M3, "m6r28skwing": M3, "m6r28skg": M3}  # m6r28: L3's feats_v28 legs (R17-A's avg_r17a.py table, 10-10)
+G_ROWS_SEED0 = {"m6r27skwin", "m6r27sk", "m6r27skwing", "m6r27skg", "m6r28skwin", "m6r28sk", "m6r28skwing", "m6r28skg"}
 sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
 leg, new, seeds = sys.argv[1], sys.argv[2], [int(s) for s in sys.argv[3].split(",")]
 sfile = sys.argv[4] if len(sys.argv) > 4 else leg

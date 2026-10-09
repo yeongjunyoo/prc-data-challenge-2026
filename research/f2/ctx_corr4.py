@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 four-month corrector (private notes research/2026-10-08-f2-four-months.md 1.4 and 5.7): src/ctx_corr3.py (imported, unchanged, with src/ctx_corr.py
+"""F2 four-month corrector (vault research/2026-10-08-f2-four-months.md 1.4 and 5.7): src/ctx_corr3.py (imported, unchanged, with src/ctx_corr.py
 and src/ctx_corr2.py) whose stage 2 also trains on the rows of an extra base file: --extra_base <tag> reads cache/fj_<tag>_s0.parquet, the
 leave-Feb/Jun-out blend of the same chain (rows of February and June 2025), sha16-checked with --extra_sha. main() below is src/ctx_corr.py's main
 with the extra rows added to stage-2 training; every helper is ctx_corr's (imported). With --extra_base none it must reproduce ctx_corr3 byte for

@@ -9,6 +9,8 @@ In the final root (cwd), from preds/test_<spec>.parquet (the chain's float predi
   same ids, by airport group; the expected daily score (coordinator): about 228.6 to 228.7 against 514's 228.384, a gap over about 1 point
   means a rebuild error.
     python -X utf8 research/f3/daily_candidate.py <spec> <name> <old ranking> <old submitting> <514 test parquet> <v35 parquet> <out dir>
+The second rebuild's daily check (581 = 592's Jan/Jul rows, coordinator 10-10 00:2x) uses name prefix f3f2: the references are 531's float test
+and v36 in the same argument slots, and TEXTS below gives its labels and texts (f3f1 = the first final file, unchanged).
 """
 from __future__ import annotations
 
@@ -24,6 +26,21 @@ import numpy as np
 import pandas as pd
 
 MINRES = ["EDDM", "EGLL", "LFPG", "LIRF", "LTFM"]
+TEXTS = {
+    "f3f1": dict(refs=("vs_514_float", "vs_v35_int"), same="514",
+                 method=("F3 최종 재구축의 첫 파일(514 를 final_ranking 위에 그대로 다시 지음, research/f3, private notes research/2026-10-08-f3-jitter.md)의 "
+                         "1, 7월 344,841행을 공개 단계 틀의 순서로 옮긴 일일 형식 후보. 서버 확인용이고 쏘지 않는다(10-08 23:1x). "
+                         "기대: 514 의 228.384 에서 다시 뽑힌 시각만큼 움직인 228.6 ~ 228.7 근처, 1점 넘게 벌어지면 재구축 오류.")),
+    "f3f3": dict(refs=("vs_570_float", "vs_570_int_rounded"), same="570",
+                 method=("F3 L3 판 결선의 기준 596(L3S = 570 의 꼴을 final_ranking 위에 다시 지음, research/f3, private notes research/2026-10-08-f3-jitter.md "
+                         "5.4 절)의 1, 7월 344,841행을 공개 단계 틀의 순서로 옮긴 일일 형식 후보(597). 598a 의 1, 7월은 596 과 경계 오프블록 묶음 밖에서 "
+                         "비트까지 같다. 쏘지 않는다(10-10 03:5x). 570 은 아직 쏘지 않아 정수 참조는 570 의 실수 예측을 build_final 식으로 "
+                         "반올림한 파일이다.")),
+    "f3f2": dict(refs=("vs_531_float", "vs_v36_int"), same="531",
+                 method=("F3 두 번째 재구축의 기본안 592(531 을 final_ranking 위에 다시 지음, research/f3, private notes research/2026-10-08-f3-jitter.md)의 "
+                         "1, 7월 344,841행을 공개 단계 틀의 순서로 옮긴 일일 형식 후보(581). 결선 꼴 594a 의 1, 7월 행은 592 와 비트까지 같아야 하므로 "
+                         "이 한 발이 결선의 1, 7월 절반을 서버에서 확인한다. 쏘지 않는다(10-10 00:2x).")),
+}
 PY = sys.executable
 
 
@@ -58,7 +75,8 @@ def main():
     apv = ap.reindex(ids).to_numpy()
     p = q["pred"].to_numpy()
     mv = {}
-    for ref, r in (("vs_514_float", a), ("vs_v35_int", v)):
+    t = TEXTS[name.split("_", 1)[0]]
+    for ref, r in zip(t["refs"], (a, v)):
         d = p - r
         mv[ref] = {"mse": round(float(np.mean(d ** 2)), 3), "rms": round(float(np.sqrt(np.mean(d ** 2))), 3), "mean": round(float(np.mean(d)), 3),
                    "max_abs": round(float(np.max(np.abs(d))), 1),
@@ -89,12 +107,10 @@ def main():
     shutil.copy2(comp_p, out / f"composition_{name}.json") if comp_p.exists() else None
     failed = [{"check": c["check"], "value": c["value"], "band": c["band"]} for c in comp.get("checks", []) if not c["pass"]]
     meta = {"kind": "CANDIDATE",
-            "method": ("F3 최종 재구축의 첫 파일(514 를 final_ranking 위에 그대로 다시 지음, research/f3, private notes research/2026-10-08-f3-jitter.md)의 "
-                       "1, 7월 344,841행을 공개 단계 틀의 순서로 옮긴 일일 형식 후보. 서버 확인용이고 쏘지 않는다(10-08 23:1x). "
-                       "기대: 514 의 228.384 에서 다시 뽑힌 시각만큼 움직인 228.6 ~ 228.7 근처, 1점 넘게 벌어지면 재구축 오류."),
+            "method": t["method"],
             "local_rmse": m["holdout"].get("rmse"), "manifest_final_root": f"<final root>/preds/manifest_{spec}.json",
             "manifest_sha16": sha16(f"preds/manifest_{spec}.json"), "test_sha16_final_root": m["test"]["sha"], "spec": spec,
-            "note": f"spec {spec}, feats {m['feats']}, holdout {m['holdout']['path']} (514 의 val 캐시 그대로라 로컬 값이 514 와 같다)",
+            "note": f"spec {spec}, feats {m['feats']}, holdout {m['holdout']['path']} ({t['same']} 의 val 캐시 그대로라 로컬 값이 {t['same']} 와 같다)",
             "readiness": f"composition_{name}.json", "readiness_all_pass": comp.get("all_pass"), "readiness_failed": failed,
             "checks": chk, "parquet_sha16": sha16(pq_path), "fired": False}
     (out / f"{name}.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")

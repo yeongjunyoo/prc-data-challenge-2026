@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2 (private notes research/2026-10-08-f2-four-months.md 5.7): the context table of the four-month corrector. Every row of --base (ctx_v3), unchanged,
+"""F2 (vault research/2026-10-08-f2-four-months.md 5.7): the context table of the four-month corrector. Every row of --base (ctx_v3), unchanged,
 plus the rows of --parts (2025-02, 2025-06) taken from --extra (f2ctx_v3: src/feats_ctx.py --months 1,2,6,7, src/feats_ctx2.py, src/feats_aiu.py
 under new names, the table gate 1.4 used), with stand_p_c recoded into the base table's vocabulary (stand_p label -> the base code; labels the base
 lacks get new codes after its largest, in sorted order). Every other column of the added rows is the extra table's value. So the base rows (Jan/Jul
