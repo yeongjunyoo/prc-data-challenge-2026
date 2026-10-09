@@ -18,7 +18,7 @@ How the final file is rebuilt, with commands, machines, times, seeds and the lim
 
 ## Daily-board history
 
-Before the final phase the challenge ranked teams on January and July 2026 by their best daily submission. All 39 daily submissions, with server score, local ruler score, file hash and the purpose of each, are in `results/submissions.csv`; the organizers' scoring files are in `results/server_results/`.
+Before the final phase the challenge ranked teams on January and July 2026 by their best daily submission. All 40 daily submissions, with server score, local ruler score, file hash and the purpose of each, are in `results/submissions.csv`; the organizers' scoring files are in `results/server_results/`.
 
 <!--AUTO:DAILYBEST-->
 Best daily-board submission (January and July 2026 only; history): v39 (spirited-tiger_v39.parquet), server RMSE 228.1667, ruler RMSE 281.35, written 2026-10-09 09:26 KST. SHA-256 of the submitted file: `9a36a77a409b1056badbef40b87b9b772122a91068708159ef872380008284bb`. Manifest: `preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapwac.json`.
