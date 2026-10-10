@@ -1,5 +1,5 @@
 # 다른 계열 후보: m6r25 의 회귀(mu)를 NM 실제 오프블록 기준 보정으로(--anchor aobt: 목표 y - clip(MVT - AOBT_3, 0, 7200)). 공개 팀 kind-mango(v74, v75), merry-mushroom 의 바탕 방식.
-# 혼합 계열이 시험에서 자보다 크게 덜 옮겨지는 문제(MISSION G3 ⑦)를 서버에서 가를 수 있는 성격이 다른 진짜 모델로 둔다(10-03).
+# 혼합 계열이 시험에서 자보다 크게 덜 옮겨지는 문제(private notes G3 ⑦)를 서버에서 가를 수 있는 성격이 다른 진짜 모델로 둔다(10-03).
 logs/m6r25a_val_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting val --seed 0 --tag m6r25a --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt
 logs/m6r25a_fwd_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting fwd --seed 0 --tag m6r25a --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt
 logs/m6r25a_full_s0.log	.venv/Scripts/python.exe -u src/model3.py --setting full --seed 0 --tag m6r25a --feats feats_v25 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_ --full_mult 1.0 --threads 4 --anchor aobt

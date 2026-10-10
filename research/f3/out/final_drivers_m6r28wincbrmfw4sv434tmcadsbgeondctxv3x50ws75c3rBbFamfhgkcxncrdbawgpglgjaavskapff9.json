@@ -1,5 +1,5 @@
 {
- "what": "The scripts that ran the steps of docs/REPRODUCE.md section 0.2 for the final file on the Mac and that no manifest hashes as a whole, with the SHA-256 of the copy that ran. `copy` is that copy, byte for byte (no SPDX line, no path cleaning); `here` is the readable copy in this repository and `here_is` how it relates to the copy that ran. Paths in `ran_in` are relative to the Mac work folder (final_run = the final root, f2_run = the month-held-out sandbox). Times are KST.",
+ "what": "The scripts that ran the steps of docs/REPRODUCE.md section 0.2 for the final file on the Mac and that no manifest hashes as a whole, with the SHA-256 of the copy that ran. `copy` is that copy, byte for byte (no SPDX line, no path cleaning); `here` is the readable copy in this repository and `here_is` how it relates to the copy that ran. Paths in `ran_in` are relative to the Mac work folder (final_run = the final root, f2_run = the month-held-out sandbox). Times are KST. The run times of research/f2/fj_tables.py and research/f2/gate19.py come from our notes; the phase logs (logs/*.log) and the file listings of the Mac named in `named_by` are cited but not shipped.",
  "spec": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapff9",
  "final_file_sha256": "a68df016b562ad6b767c339050f53494ca1b40f1fd2442c702466db3183460fa",
  "fetched": [

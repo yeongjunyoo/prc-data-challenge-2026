@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # G7 승격 판정: 로컬 자(2025-01, 07 출발) 위에서 두 예측의 RMSE 차이 Δ 와 날짜 블록 부트스트랩 표준편차를 낸다.
 # |Δ| 가 표준편차의 2배 이상일 때만 로컬로 우열이 갈린다. 아니면 서버 쿼터로 판정한다.
-# 이 도구는 분해능만 판정한다. 후보 선택 권한은 notes/sign_agreement.json 의 local_selection_allowed(닫힘 증거와 닫힘 감사)가 정한다(플레이북 §0 G2).
+# 이 도구는 분해능만 판정한다. 후보 선택 권한은 notes/sign_agreement.json 의 local_selection_allowed(닫힘 증거와 닫힘 감사)가 정한다(private notes §0 G2).
 # 분해능은 날짜 블록 부트스트랩과 시드 잡음(notes/seed_noise.json 의 단일 시드 표준편차 * sqrt(1/ka + 1/kb))을 합친 표준편차다.
 #     python -m src.compare preds/holdout_A.parquet preds/holdout_B.parquet [--ka 1] [--kb 2] [--reps 300]   (ka, kb = 평균한 시드 수)
 # 예측 파일 칸: MVT_ID_mvt, pred(초). 로컬 자의 행과 하나도 빠짐없이 맞아야 한다.

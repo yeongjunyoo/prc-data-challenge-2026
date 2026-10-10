@@ -106,7 +106,7 @@ PERMIT = ROOT / "notes" / "push_permit.json"
 
 def push(path: Path) -> None:
     """제출 올리기. src/fire_queue.py 가 게이트, 측정 묶음, 쿼터를 통과시킨 뒤 쓴 일회용 허가(파일 이름과 sha256)가 있어야 올린다.
-    CLI 나 다른 스크립트는 허가가 없어 올리지 못한다(플레이북 §0 G2, MISSION §5). 허가는 확인하는 즉시 지운다.
+    CLI 나 다른 스크립트는 허가가 없어 올리지 못한다(private notes §0 G2, private notes §5). 허가는 확인하는 즉시 지운다.
     10-05 부터 GATE.json firing 이 single 이면 CANDIDATE 는 fire-one 의 단일 발 허가(mode single)로만 올라가고 src/shot.py upload_problem 이
     다시 본다. 그동안 묶음 허가는 거부한다(묶음 경로는 남겨 두되 쓰지 않는다).
     결선(10-08 공지): spirited-tiger_final.parquet 하나만, fire-final 이 쓴 결선 허가(kind FINAL)로만 올라가고 src/shot.py final_upload_problem 이

@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""발사 큐(플레이북 §0 G6: 우리는 큐를 채우고, 발사는 이 도구가 한다). 게이트는 여기서 강제한다.
+"""발사 큐(private notes §0 G6: 우리는 큐를 채우고, 발사는 이 도구가 한다). 게이트는 여기서 강제한다.
 
 큐 항목: `queue/<순번>_<이름>.parquet`(칸 MVT_ID_mvt, pred 초)와 같은 이름의 `.json`
     {"kind": "CANDIDATE" | "DIAG" | "ANCHOR", "method": "...", "local_rmse": 123.4, "note": "...", "manifest": "preds/manifest_<spec>.json"}
 게이트(`GATE.json`): candidate_allowed 가 false 면 CANDIDATE 를 쏘지 않는다(감사가 측정 단계를 열 때 true). scope 의 ranking 이 team_best,
     split 이 none 이 아니면 쏘지 않는다. DIAG 는 diag_used < diag_limit 일 때만(지금 한도 0), ANCHOR 는 한 번뿐.
-측정 묶음(늘, 플레이북 §0 G2): CANDIDATE 는 `src/register_batch.py` 로 등록한 묶음으로만 쏜다(`src/batches.py`). 번호가 가장 낮은 끝나지 않은
+측정 묶음(늘, private notes §0 G2): CANDIDATE 는 `src/register_batch.py` 로 등록한 묶음으로만 쏜다(`src/batches.py`). 번호가 가장 낮은 끝나지 않은
     묶음 하나만, 적힌 순서대로 쏘고, 앞 후보를 못 쏘면 멈춘다. 쏘기 직전 그 후보의 등록 해시, 다시 잰 로컬 값, 비교 파일, 준비 점검을 다시 본다.
     장부에 변조 흔적(묶음 파일 없음, 해시 다름)이 있거나 팀 버킷에 장부에 없는 제출이 있으면 후보를 쏘지 않는다. 올리기는 이 도구가 쓰는 일회용
     허가(notes/push_permit.json, 파일 이름과 sha256)가 있어야만 된다(src/s3io.py push).
@@ -87,7 +87,7 @@ def record(version: int, score: float) -> None:
 
 
 def sane(p: Path) -> str | None:
-    """후보 값의 상식 검사. 기준은 2025 학습 출발편(평균 991, 표준편차 546)뿐이다. 상수 진단 발로 푼 시험 통계는 쓰지 않는다(MISSION §5)."""
+    """후보 값의 상식 검사. 기준은 2025 학습 출발편(평균 991, 표준편차 546)뿐이다. 상수 진단 발로 푼 시험 통계는 쓰지 않는다(private notes §5)."""
     return sane_values(pd.read_parquet(p)["pred"])
 
 

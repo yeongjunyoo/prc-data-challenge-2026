@@ -33,6 +33,6 @@ out = {"rows": int(len(y)), "days": int(len(days)), "reps": 300,
        "rmse_A_median": float(np.sqrt(se_a.mean())), "sd_A": float(np.std(ra)),
        "rmse_B_proxy": float(np.sqrt(se_b.mean())), "sd_B": float(np.std(rb)),
        "delta_B_minus_A": float(np.sqrt(se_b.mean()) - np.sqrt(se_a.mean())), "sd_delta": float(np.std(rd)),
-       "rule": "증분이 sd_delta 의 2배 미만이면 로컬로 승격하지 않고 쿼터로 판정(플레이북 G7)"}
+       "rule": "증분이 sd_delta 의 2배 미만이면 로컬로 승격하지 않고 쿼터로 판정(private notes G7)"}
 json.dump(out, open("notes/resolution.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(json.dumps(out, ensure_ascii=False, indent=1))

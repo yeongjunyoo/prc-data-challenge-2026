@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-# ANCHOR(플레이북 §0): 가장 단순한 제출. 2025년 전체 출발편의 공항별 택시아웃 중앙값을 손대지 않고 낸다.
+# ANCHOR(private notes §0): 가장 단순한 제출. 2025년 전체 출발편의 공항별 택시아웃 중앙값을 손대지 않고 낸다.
 import glob
 import sys
 
@@ -24,5 +24,5 @@ local = float(np.sqrt(np.mean((tr.loc[hold, "ADEP_mvt"].map(med_h).astype(float)
 rk = pd.read_parquet("data/ranking.parquet", columns=["MVT_ID_mvt", "PHASE_mvt", "ADEP_mvt"])
 rk = rk[rk["PHASE_mvt"] == "DEP"].set_index("MVT_ID_mvt")
 pred = rk["ADEP_mvt"].map(med).astype(float)
-build(pred, "ANCHOR 공항별 중앙값(2025 전체 출발)", local_rmse=local, note="플레이북 §0 ANCHOR, 서버 바닥과 파이프라인 확인")
+build(pred, "ANCHOR 공항별 중앙값(2025 전체 출발)", local_rmse=local, note="private notes §0 ANCHOR, 서버 바닥과 파이프라인 확인")
 print("local holdout RMSE (Jan, Jul 2025)", round(local, 2))

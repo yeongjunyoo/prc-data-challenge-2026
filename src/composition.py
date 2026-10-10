@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: GPL-3.0-only
-# G2 준비 점검(플레이북 §0 G2 측정 단계 ②, 리더보드를 쓰지 않는다). 등록할 때와 쏘기 직전에 다시 돈다(src/batches.py readiness).
+# G2 준비 점검(private notes §0 G2 측정 단계 ②, 리더보드를 쓰지 않는다). 등록할 때와 쏘기 직전에 다시 돈다(src/batches.py readiness).
 # 로컬 자(2025-01, 07 출발편)와 시험 입력(data/ranking.parquet 중 submitting 의 행), 후보의 피처와 예측을 나란히 놓고 폭 안인지 판정한다.
 # 폭의 값은 학습 기간에서만 나온다: 2025 의 다른 달 쌍(2+8, 3+9, 4+10, 5+11, 6+12)이 자(1+7)와 보이는 가장 큰 차이. 이 설계 자체는 시험 입력 통계를 본 뒤
 # 정했다(아래 줄).
 # 피처 칸별 채움 비율의 폭은 그 달 쌍 차이와 표본 잡음 바닥(자의 비율로 낸 두 표본 비율 차의 이항 표준오차 4배) 중 큰 쪽이다. 값이 NaN 이면 실패다.
 # 이 설계(달 쌍 폭)는 자문이 10-02 18:11~18:12 에 잰 시험 입력 통계(공항 비중, NM 매칭, 꼬리 비중)를 본 뒤 18:39 에 정했다. 표본 잡음 바닥과 NaN 실패는
-# 다른 모델 검토(10-02 19:07:46~19:10:07)의 지적으로 19:18 에 넣었다. 그 뒤로 설계를 바꾸면 이 머리와 MISSION G2 에 적는다.
+# 다른 모델 검토(10-02 19:07:46~19:10:07)의 지적으로 19:18 에 넣었다. 그 뒤로 설계를 바꾸면 이 머리와 private notes G2 에 적는다.
 # 같은 기간 출발편 값을 간접으로 쓰는 누수는 가림 재구축(src/mask_test.py, sign_agree 의 닫힘 증거)이 본다.
 #     python -m src.composition [--queue-dir queue] [--out notes/composition.json] [--only <큐 이름> ...] [--feats <피처 판> ...]   (all_pass 가 false 면 종료 코드 1)
 #     --feats 는 후보 없이 피처 판의 채움 비율만 본다(학습 전에 준비 점검을 통과할 판인지 본다)
@@ -154,7 +154,7 @@ def main(only: list[str] | None, feats_only: list[str] | None = None) -> int:
             j = json.loads(tc.read_text(encoding="utf-8"))
             below = {c: v for c, v in j.get("key_seen_summary", {}).items() if v.get("test", 1) < v.get("pseudo_min", 0)}
             out.setdefault("info", {})[f"te_key_seen_{fv}"] = {"file": tc.relative_to(ROOT).as_posix(), "columns": len(j.get("key_seen_summary", {})),
-                                                               "test_below_pseudo_min": below, "note": "판정 밖(구조적 한계). MISSION G2 에 적었다"}
+                                                               "test_below_pseudo_min": below, "note": "판정 밖(구조적 한계). private notes G2 에 적었다"}
     out["all_pass"] = all(c["pass"] for c in out["checks"])
     out["queue_dir"] = QDIR.relative_to(ROOT).as_posix()
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")

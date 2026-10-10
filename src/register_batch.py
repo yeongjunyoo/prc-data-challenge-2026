@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""측정 묶음을 등록한다(플레이북 §0 G2 측정 단계). 진짜 후보 셋 이상을 그중 어느 것의 점수도 나오기 전에 묶고, 등록부는 다시 쓰지 않는다.
+"""측정 묶음을 등록한다(private notes §0 G2 측정 단계). 진짜 후보 셋 이상을 그중 어느 것의 점수도 나오기 전에 묶고, 등록부는 다시 쓰지 않는다.
 
     python -m src.register_batch <큐 이름> x5 [...] [--exception notes/exceptions/<번호>.json] [--note "<순서를 정한 이유>"] [--dry]
 

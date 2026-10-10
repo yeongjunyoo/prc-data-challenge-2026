@@ -8,7 +8,7 @@
     마지막 것은 자(2025-01, 07 출발편)의 채움 비율로 셈하면 시험에서 10행 이상 차 있어야 할 칸이 시험에서 0행인 경우다(empty_on_test, 칸마다 읽어
     메모리가 작다, 결과는 피처 판 해시로 notes/test_empty_<판>.json 에 둔다). 피처 판에 시험 행이 하나도 없어도 막는다.
 엿보기 막이(guard): 올릴 정수 값이 앞서 낸 제출(장부의 파일) 가운데 하나와라도 1% 미만 행에서만 다르면 거부한다. 고른 행만 바꾼 파일은 그 점수 변화가
-    그 행의 정답을 드러내므로 순위 이용이다(원문/render/ranking_html.txt 7줄). 같은 파일을 다시 내는 것도 여기서 막힌다.
+    그 행의 정답을 드러내므로 순위 이용이다(private notes 의 ranking 페이지 사본 7줄). 같은 파일을 다시 내는 것도 여기서 막힌다.
 결정 장부(subs/fire_events.jsonl, 한 줄에 사건 하나, 덧붙이기만): fire-one 은 올리기 전에 이유(why)와 참고한 서버 점수(refs), 준비 점검 경고, 막이 값을
     적고(intent), 올린 뒤(uploaded 또는 upload_failed)와 결과 뒤(scored, pending) 한 줄씩 더한다. push 는 그 파일과 해시의 intent 가 없으면 올리지 않는다.
 쿼터: 오늘(UTC) 팀 버킷의 채점 결과 수와 올린 제출 수 중 큰 쪽을 쓴 것으로 센다(결과가 늦은 발도 센다). 결선 몫(src/fire_queue.py final_reserve):
@@ -286,7 +286,7 @@ def upload_problem(sub: Path, permit: dict) -> str | None:
 
 
 # ---- 결선(주최 10-08 공지: 넉 달 예측 한 번, 마감 2026-10-14T10:00Z) ----
-# 원문(대회 사이트 10-08 판, private notes 원문/render/*_2026-10-08.txt): ranking 575~579줄 “Final Submission / Please submit you unique final submission
+# 원문(대회 사이트 10-08 판, private notes, 2026-10-08 판 대회 페이지 사본): ranking 575~579줄 “Final Submission / Please submit you unique final submission
 # using the following filename: <team-name>_final.parquet”, data 609~614줄 “The Final Datasets … final_ranking.parquet, final_submitting.parquet”,
 # eligibility 556줄 “Final single submission is uploaded by 2026-10-14T12:00 CET (2026-10-14T12:00+02:00)”.
 # 올리는 곳: 같은 팀 버킷(Discord 10-08 14:03Z espinielli “(4) same team bucket … i.e. <team name>_final.parquet”).

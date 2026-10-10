@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-# 발사기와 측정 묶음 등록부의 자체 시험(플레이북 §0 G2 측정 단계, G6). 진짜 GATE.json, 장부, 등록부는 건드리지 않는다.
+# 발사기와 측정 묶음 등록부의 자체 시험(private notes §0 G2 측정 단계, G6). 진짜 GATE.json, 장부, 등록부는 건드리지 않는다.
 # 묶음 예외(src/exception.py)가 있으면 그 기록의 통과와 거부(해시, 후보, 다른 실패, 다른 칸, 상한, 행, 원인, 문턱, 피처, 순서, 재사용) 사례도 돈다.
 # 게이트는 메모리의 열린 문으로, 장부 변조와 이미 쏜 후보는 임시 장부 사본(src.batches.LEDGER 를 바꿔 끼움)으로, 등록 거부는 임시 큐 항목
 # (zz_selftest_*, 끝나면 지움)으로 부른다. 등록된 묶음이 있으면 그 묶음의 통과, 변조(예측 해시, 로컬 값, 비교 파일), 쿼터 0 사례도 돈다.
@@ -24,7 +24,7 @@ from src.register_batch import main as register  # noqa: E402
 
 Q = ROOT / "queue"
 gate = {"candidate_allowed": True, "diag_used": 2, "diag_limit": 0, "anchor_fired": "spirited-tiger_v1",
-        "scope": {"ranking": "team_best", "split": "none", "source": "MISSION G1"}}
+        "scope": {"ranking": "team_best", "split": "none", "source": "private notes G1"}}
 out = [f"run {dt.datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S')} KST, gate in memory: candidate_allowed true, diag_limit 0, "
        "anchor_fired spirited-tiger_v1, scope team_best/none(+source)"]
 

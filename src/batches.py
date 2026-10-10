@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""측정 묶음 등록부(플레이북 §0 G2 측정 단계). 진짜 후보 셋 이상을, 그중 어느 것의 점수도 나오기 전에 해시로 묶는다.
+"""측정 묶음 등록부(private notes §0 G2 측정 단계). 진짜 후보 셋 이상을, 그중 어느 것의 점수도 나오기 전에 해시로 묶는다.
 
 등록부: notes/batches/<번호>.json. 한 번 쓰면 고치지 않고 지우지 않는다. 쏠 때마다 장부 note 에 batch, sha_batch, stem, manifest, sha_manifest,
     spec, feats, holdout, sha_pred, uploaded=1 이 남는다.

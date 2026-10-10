@@ -7,3 +7,8 @@
 10-09 07:46:44 2025-05-19: switched v2025.05.19-planes-readsb-prod-0 -> v2025.05.19-planes-readsb-staging-0 (3137300480 B); failed try: 
 10-09 08:01:04 2025-05-22: switched v2025.05.22-planes-readsb-prod-0 -> v2025.05.22-planes-readsb-staging-0 (3317831680 B); failed try: curl_rc 0, bytes 3116271824/3321569280, tar end 1794721280, bad members 1
 10-09 11:53:49 2025-09-10: switched v2025.09.10-planes-readsb-prod-0 -> v2025.09.10-planes-readsb-staging-0 (3476817920 B); failed try: curl_rc 0, bytes 2211040256/3477626880, tar end 733426688, bad members 1
+10-09 15:47:29 2025-10-04: staging-0 98119680 B is much smaller than v2025.10.04-planes-readsb-prod-0 3220391936 B; left
+10-09 15:59:34 2025-10-14: switched v2025.10.14-planes-readsb-staging-0 -> v2025.10.14-planes-readsb-prod-0 (3381369856 B); failed try: curl_rc 0, bytes 3387778048/3387778048, tar end 2000011264, bad members 1
+10-09 16:06:34 2025-10-03: switched v2025.10.03-planes-readsb-staging-0 -> v2025.10.03-planes-readsb-prod-0 (3706787840 B); failed try: curl_rc 0, bytes 3187471872/3708979712, tar end 1478543360, bad members 1
+10-09 16:16:54 2025-10-13: switched v2025.10.13-planes-readsb-staging-0 -> v2025.10.13-planes-readsb-prod-0 (3311872000 B); failed try: curl_rc 0, bytes 2527860624/3324524032, tar end 1203351552, bad members 1
+10-10 04:12:09 fixer stop

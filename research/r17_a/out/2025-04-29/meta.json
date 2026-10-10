@@ -1,0 +1,59 @@
+{
+ "day": "2025-04-29",
+ "parts": [
+  "https://github.com/adsblol/globe_history_2025/releases/download/v2025.04.29-planes-readsb-prod-0/v2025.04.29-planes-readsb-prod-0.tar.aa",
+  "https://github.com/adsblol/globe_history_2025/releases/download/v2025.04.29-planes-readsb-prod-0/v2025.04.29-planes-readsb-prod-0.tar.ab"
+ ],
+ "bytes": 3079936000,
+ "mode": "stream",
+ "limit_rate": "3200K",
+ "tar_end_offset": 3079928832,
+ "curl_rc": 0,
+ "bytes_read": 3079936000,
+ "complete": true,
+ "members": 67683,
+ "traces": 67370,
+ "gz_bytes": 2288599860,
+ "raw_bytes": 14343217533,
+ "has_ground": 28246,
+ "prefilter_hits": 2366,
+ "kept_traces": 2363,
+ "parse_wall_s": 1988.8,
+ "parse_cpu_s": 85.1,
+ "kept_aircraft_ground": {
+  "EDDF": 454,
+  "EDDM": 382,
+  "EGLL": 125,
+  "EHAM": 579,
+  "LEBL": 375,
+  "LEMD": 377,
+  "LFPG": 1,
+  "LIRF": 0,
+  "LSZH": 288,
+  "LTFM": 0
+ },
+ "other_members": {
+  "README.txt": 1,
+  "LICENSE-cc0.txt": 1,
+  "LICENSE-ODbL.txt": 1,
+  "acas": 2,
+  "heatmap": 48
+ },
+ "events_cpu_s": 1.6,
+ "wall_s": 1990.4,
+ "max_rss_mb": 585.2,
+ "n_points": 788441,
+ "n_events": 3241,
+ "events_by_apt": {
+  "EDDF": 636,
+  "EDDM": 476,
+  "EGLL": 108,
+  "EHAM": 709,
+  "LEBL": 518,
+  "LEMD": 433,
+  "LFPG": 0,
+  "LIRF": 0,
+  "LSZH": 361,
+  "LTFM": 0
+ }
+}

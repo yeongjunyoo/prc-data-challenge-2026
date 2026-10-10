@@ -273,7 +273,7 @@
 2025-09-30	v2025.09.30-planes-readsb-staging-0	globe_history_2025	v2025.09.30-planes-readsb-staging-0.tar.aa,v2025.09.30-planes-readsb-staging-0.tar.ab	2000000000,1498393600	3498393600
 2025-10-01	v2025.10.01-planes-readsb-prod-0	globe_history_2025	v2025.10.01-planes-readsb-prod-0.tar.aa,v2025.10.01-planes-readsb-prod-0.tar.ab	2000000000,1585310720	3585310720
 2025-10-02	v2025.10.02-planes-readsb-staging-0	globe_history_2025	v2025.10.02-planes-readsb-staging-0.tar.aa,v2025.10.02-planes-readsb-staging-0.tar.ab	2000000000,1673088000	3673088000
-2025-10-03	v2025.10.03-planes-readsb-staging-0	globe_history_2025	v2025.10.03-planes-readsb-staging-0.tar.aa,v2025.10.03-planes-readsb-staging-0.tar.ab	2000000000,1708979712	3708979712
+2025-10-03	v2025.10.03-planes-readsb-prod-0	globe_history_2025	v2025.10.03-planes-readsb-prod-0.tar.aa,v2025.10.03-planes-readsb-prod-0.tar.ab	2000000000,1706787840	3706787840
 2025-10-04	v2025.10.04-planes-readsb-prod-0	globe_history_2025	v2025.10.04-planes-readsb-prod-0.tar.aa,v2025.10.04-planes-readsb-prod-0.tar.ab	2000000000,1220391936	3220391936
 2025-10-05	v2025.10.05-planes-readsb-prod-0	globe_history_2025	v2025.10.05-planes-readsb-prod-0.tar.aa,v2025.10.05-planes-readsb-prod-0.tar.ab	2000000000,1286708224	3286708224
 2025-10-06	v2025.10.06-planes-readsb-prod-0	globe_history_2025	v2025.10.06-planes-readsb-prod-0.tar.aa,v2025.10.06-planes-readsb-prod-0.tar.ab	2000000000,1435061760	3435061760
@@ -283,8 +283,8 @@
 2025-10-10	v2025.10.10-planes-readsb-staging-0	globe_history_2025	v2025.10.10-planes-readsb-staging-0.tar.aa,v2025.10.10-planes-readsb-staging-0.tar.ab	2000000000,1686417920	3686417920
 2025-10-11	v2025.10.11-planes-readsb-staging-0	globe_history_2025	v2025.10.11-planes-readsb-staging-0.tar.aa,v2025.10.11-planes-readsb-staging-0.tar.ab	2000000000,1169203712	3169203712
 2025-10-12	v2025.10.12-planes-readsb-staging-0	globe_history_2025	v2025.10.12-planes-readsb-staging-0.tar.aa,v2025.10.12-planes-readsb-staging-0.tar.ab	2000000000,1138263552	3138263552
-2025-10-13	v2025.10.13-planes-readsb-staging-0	globe_history_2025	v2025.10.13-planes-readsb-staging-0.tar.aa,v2025.10.13-planes-readsb-staging-0.tar.ab	2000000000,1324524032	3324524032
-2025-10-14	v2025.10.14-planes-readsb-staging-0	globe_history_2025	v2025.10.14-planes-readsb-staging-0.tar.aa,v2025.10.14-planes-readsb-staging-0.tar.ab	2000000000,1387778048	3387778048
+2025-10-13	v2025.10.13-planes-readsb-prod-0	globe_history_2025	v2025.10.13-planes-readsb-prod-0.tar.aa,v2025.10.13-planes-readsb-prod-0.tar.ab	2000000000,1311872000	3311872000
+2025-10-14	v2025.10.14-planes-readsb-prod-0	globe_history_2025	v2025.10.14-planes-readsb-prod-0.tar.aa,v2025.10.14-planes-readsb-prod-0.tar.ab	2000000000,1381369856	3381369856
 2025-10-15	v2025.10.15-planes-readsb-staging-0	globe_history_2025	v2025.10.15-planes-readsb-staging-0.tar.aa,v2025.10.15-planes-readsb-staging-0.tar.ab	2000000000,1552007680	3552007680
 2025-10-16	v2025.10.16-planes-readsb-prod-0	globe_history_2025	v2025.10.16-planes-readsb-prod-0.tar.aa,v2025.10.16-planes-readsb-prod-0.tar.ab	2000000000,1719129088	3719129088
 2025-10-17	v2025.10.17-planes-readsb-prod-0	globe_history_2025	v2025.10.17-planes-readsb-prod-0.tar.aa,v2025.10.17-planes-readsb-prod-0.tar.ab	2000000000,1809318400	3809318400

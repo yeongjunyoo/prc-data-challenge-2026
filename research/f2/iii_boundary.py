@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""F2: check (iii) restated at the month boundary (F3 10-10 03:0x, for our decision). Read only.
+"""F2: check (iii) restated at the month boundary (F3 10-10 03:0x, for the coordinator's decision). Read only.
 src/aiu_shift.py --group block groups the frame's rows by airport and the UTC date of the estimated off-block time MVT - mn (mn = mu + corrector
 pred - base pred for non-G rows), over the whole four-month test frame. So a Jan 31 group also holds early Feb 1 departures, and a Jun 30 group
 also holds early Jul 1 departures. The group's c is solved from all its rows, and every shiftable row moves by lam (1 - q) c. Per chain, variant
