@@ -1,0 +1,305 @@
+{
+ "spec": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff7",
+ "run_tag": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff7",
+ "column": "pred",
+ "seeds": [
+  0
+ ],
+ "feats": "feats_v28_f3final",
+ "feats_sha": "9c75a870eb72b1ef",
+ "config": {
+  "--src_a": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json",
+  "--src_a_sha": "d91bdb94b25c9e67",
+  "--src_b": "preds/manifest_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json",
+  "--src_b_sha": "92408f30445e30a5",
+  "--src_c": "preds/manifest_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json",
+  "--src_c_sha": "76ac42d4965ab159",
+  "--tag": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -X utf8 tools/chainavg3.py --setting val --src_a preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_a_sha d91bdb94b25c9e67 --src_b preds/manifest_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_b_sha 92408f30445e30a5 --src_c preds/manifest_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_c_sha 76ac42d4965ab159 --tag m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -X utf8 tools/chainavg3.py --setting full --src_a preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_a_sha d91bdb94b25c9e67 --src_b preds/manifest_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_b_sha 92408f30445e30a5 --src_c preds/manifest_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_c_sha 76ac42d4965ab159 --tag m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -X utf8 tools/chainavg3.py --setting fwd --src_a preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_a_sha d91bdb94b25c9e67 --src_b preds/manifest_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_b_sha 92408f30445e30a5 --src_c preds/manifest_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_c_sha 76ac42d4965ab159 --tag m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -X utf8 tools/chainavg3.py --setting val --src_a preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_a_sha d91bdb94b25c9e67 --src_b preds/manifest_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_b_sha 92408f30445e30a5 --src_c preds/manifest_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json --src_c_sha 76ac42d4965ab159 --tag m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap",
+ "code_sha": {
+  "src/model3.py": "4641d5b5d91abd26",
+  "src/feats.py": "f60eeb7e58daa178",
+  "src/te.py": "0a78bd1cf5a5771a",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a",
+  "src/cat_mu.py": "05956dbe5a32bfa9",
+  "src/blend_mu.py": "e5827379dba9ec9a",
+  "src/g_band.py": "46969e68a18dd8d0",
+  "src/xgb_mu.py": "eb1904bd9c883cdd",
+  "src/rmlp_mu.py": "28fe9c7543664c2b",
+  "src/lobt_window.py": "3f6ef6d290ee429c",
+  "src/adsb_corr.py": "486880c0b3273ded",
+  "src/feats_adsb.py": "c50556bf2e08b59d",
+  "src/adsb_geo.py": "01a6d0667d3e5ac6",
+  "src/blend_oof.py": "42fa157949144637",
+  "src/ctx_corr.py": "41affa9791fd6d27",
+  "src/feats_ctx.py": "81c4378d6cf286a9",
+  "src/blend_fixed.py": "89fa42fffe266892",
+  "src/ctx_corr2.py": "8d5eb965268c3832",
+  "src/ctx_corr3.py": "b5866706124a1292",
+  "src/feats_ctx2.py": "01fc7ad52545c6ba",
+  "src/feats_aiu.py": "950ac59be3ce12b6",
+  "research/ctx_corr/freeze_geo.py": "c8a1864d9541565c",
+  "research/obs2/corr_plus.py": "9d1a4acb4f107595",
+  "research/obs2/obs_rows.py": "e923951e9a1e4496",
+  "research/obs2/coverage.py": "08c38f3844f6478a",
+  "research/obs2/osm_stands.py": "204c934b9e8fd84c",
+  "research/adsb/gprobe/build_nd.py": "d89f4aef50faba12",
+  "research/r10_b/cavg.py": "70c353c25c737700",
+  "research/r13_l/prep_x.py": "ce1c61190712b424",
+  "research/r13_l/tabm_leg.py": "dc0f41eade5183d5",
+  "research/r13_l/xrfm_leg.py": "77e1c3ef839f9a80",
+  "research/r13_l/blend_add.py": "b69eb9d47a800ceb",
+  "research/r17_a/avg_r17a.py": "b5aacb51c0b84a7c",
+  "research/r17_a/adsb_day_r17a.py": "9954d81ef97d724e",
+  "research/adsb/build_feats2.py": "167fdc742011e4fa",
+  "research/adsb/adsb_match.py": "652b0a9519920541",
+  "research/r13_f3/model3ap.py": "21733839ba861621",
+  "research/r13_f3/cat_muap.py": "0ab44b8b9e4b276a",
+  "tools/artmm.py": "a78fda56cd3f3e15",
+  "tools/arthist.py": "c35e98cccf682f53",
+  "tools/gkey.py": "f11f50f785937ece",
+  "tools/antiwin.py": "117a35c3d8bed472",
+  "tools/gkeyx.py": "8a1ebee045d8053e",
+  "tools/gkeyxn.py": "3719a24fe7bcf65d",
+  "src/aiu_shift.py": "a2caa0c808f8d59a",
+  "tools/gpool.py": "a3ab8033b847016a",
+  "tools/glong.py": "8caa88190fc3bbe1",
+  "tools/gjoint.py": "2e939bb4cc271ec1",
+  "tools/chainavg3.py": "c47f91532c601250"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/4641d5b5d91abd26_model3.py",
+  "src/feats.py": "preds/code/f60eeb7e58daa178_feats.py",
+  "src/te.py": "preds/code/0a78bd1cf5a5771a_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py",
+  "src/cat_mu.py": "preds/code/05956dbe5a32bfa9_cat_mu.py",
+  "src/blend_mu.py": "preds/code/e5827379dba9ec9a_blend_mu.py",
+  "src/g_band.py": "preds/code/46969e68a18dd8d0_g_band.py",
+  "src/xgb_mu.py": "preds/code/eb1904bd9c883cdd_xgb_mu.py",
+  "src/rmlp_mu.py": "preds/code/28fe9c7543664c2b_rmlp_mu.py",
+  "src/lobt_window.py": "preds/code/3f6ef6d290ee429c_lobt_window.py",
+  "src/adsb_corr.py": "preds/code/486880c0b3273ded_adsb_corr.py",
+  "src/feats_adsb.py": "preds/code/c50556bf2e08b59d_feats_adsb.py",
+  "src/adsb_geo.py": "preds/code/01a6d0667d3e5ac6_adsb_geo.py",
+  "src/blend_oof.py": "preds/code/42fa157949144637_blend_oof.py",
+  "src/ctx_corr.py": "preds/code/41affa9791fd6d27_ctx_corr.py",
+  "src/feats_ctx.py": "preds/code/81c4378d6cf286a9_feats_ctx.py",
+  "src/blend_fixed.py": "preds/code/89fa42fffe266892_blend_fixed.py",
+  "src/ctx_corr2.py": "preds/code/8d5eb965268c3832_ctx_corr2.py",
+  "src/ctx_corr3.py": "preds/code/b5866706124a1292_ctx_corr3.py",
+  "src/feats_ctx2.py": "preds/code/01fc7ad52545c6ba_feats_ctx2.py",
+  "src/feats_aiu.py": "preds/code/950ac59be3ce12b6_feats_aiu.py",
+  "research/ctx_corr/freeze_geo.py": "preds/code/c8a1864d9541565c_freeze_geo.py",
+  "research/obs2/corr_plus.py": "preds/code/9d1a4acb4f107595_corr_plus.py",
+  "research/obs2/obs_rows.py": "preds/code/e923951e9a1e4496_obs_rows.py",
+  "research/obs2/coverage.py": "preds/code/08c38f3844f6478a_coverage.py",
+  "research/obs2/osm_stands.py": "preds/code/204c934b9e8fd84c_osm_stands.py",
+  "research/adsb/gprobe/build_nd.py": "preds/code/d89f4aef50faba12_build_nd.py",
+  "research/r10_b/cavg.py": "preds/code/70c353c25c737700_cavg.py",
+  "research/r13_l/prep_x.py": "preds/code/ce1c61190712b424_prep_x.py",
+  "research/r13_l/tabm_leg.py": "preds/code/dc0f41eade5183d5_tabm_leg.py",
+  "research/r13_l/xrfm_leg.py": "preds/code/77e1c3ef839f9a80_xrfm_leg.py",
+  "research/r13_l/blend_add.py": "preds/code/b69eb9d47a800ceb_blend_add.py",
+  "research/r17_a/avg_r17a.py": "preds/code/b5aacb51c0b84a7c_avg_r17a.py",
+  "research/r17_a/adsb_day_r17a.py": "preds/code/9954d81ef97d724e_adsb_day_r17a.py",
+  "research/adsb/build_feats2.py": "preds/code/167fdc742011e4fa_build_feats2.py",
+  "research/adsb/adsb_match.py": "preds/code/652b0a9519920541_adsb_match.py",
+  "research/r13_f3/model3ap.py": "preds/code/21733839ba861621_model3ap.py",
+  "research/r13_f3/cat_muap.py": "preds/code/0ab44b8b9e4b276a_cat_muap.py",
+  "tools/artmm.py": "preds/code/a78fda56cd3f3e15_artmm.py",
+  "tools/arthist.py": "preds/code/c35e98cccf682f53_arthist.py",
+  "tools/gkey.py": "preds/code/f11f50f785937ece_gkey.py",
+  "tools/antiwin.py": "preds/code/117a35c3d8bed472_antiwin.py",
+  "tools/gkeyx.py": "preds/code/8a1ebee045d8053e_gkeyx.py",
+  "tools/gkeyxn.py": "preds/code/3719a24fe7bcf65d_gkeyxn.py",
+  "src/aiu_shift.py": "preds/code/a2caa0c808f8d59a_aiu_shift.py",
+  "tools/gpool.py": "preds/code/a3ab8033b847016a_gpool.py",
+  "tools/glong.py": "preds/code/8caa88190fc3bbe1_glong.py",
+  "tools/gjoint.py": "preds/code/2e939bb4cc271ec1_gjoint.py",
+  "tools/chainavg3.py": "preds/code/c47f91532c601250_chainavg3.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap_rmse281.37.parquet",
+  "sha": "5c7ca92d989b470e",
+  "rmse": 281.38,
+  "ruler_hash": "19afdfc7fedf88ea",
+  "same_bytes_as_final_root_file": "preds/holdout_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap_rmse281.37.parquet"
+ },
+ "test": {
+  "path": "research/f3/queue_ready_final/598b_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff7.parquet",
+  "sha": "74f04be71751d5e5",
+  "rows": 670790,
+  "what": "option B form Bb on L3's legs (594b's form): Jan/Jul rows = 596 (L3S, T 0.75); Feb/Jun rows = L3's four-month stage 2 L, unmatched 0.75, matched 0.5; merged at the corrector stage, float predictions, four months, final_submitting order"
+ },
+ "forward": {
+  "path": "preds/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.parquet",
+  "sha": "29f3e47bce99262f",
+  "rmse_2025_07": 263.08,
+  "same_bytes_as_final_root_file": "preds/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap.parquet"
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0,
+  "same_bytes_as_final_root_file": "preds/es_valid_ids_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap.parquet"
+ },
+ "iteration_rule": "A: internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0) | artmm: p_art cell means moved by kappa x (carrier-month arrival copy share minus its training-month share) where that change is at least 0.10; kappa from training-month cells only; threshold fixed in research | arthist: LIRF non-G p_art moved in log-odds by beta x (flight-history art share vs the flight-month mean p_art); one coefficient beta fitted on the val ruler rows (day folds for val, January for fwd, both months for test) | gkey: G model refit per setting on the g_band training rows (2025 months outside the evaluated ones); key average 0.5 and the nine columns fixed in research, nothing chosen on the ruler | gkeyx: G model refit per setting on the g_band training rows; twelve record columns, the 43,200 s d_sch guard and the 0.5 key average fixed in research, nothing chosen on the ruler | gkeyxn (avg_xncr): G model refit per setting on the g_band training rows; the nine R3 stand and link columns and the carrier-month arrival copy share added to gkeyx's twelve on the GBM side, gkeyx's 43,200 s d_sch guard and 0.5 key average kept, nothing chosen on the ruler | aiu_shift: no model fitting; g and the airport offsets come from ruler months outside the moved rows | antiwin: no fitting; c and m are medians over 2025 months outside the evaluated months | gpool: G class probabilities = log pool of the four G components with one exponent a, fitted by 3-class log loss on component probabilities from G models without the row's month (val: nested over the 10 training months, fwd: over Jan-Jun, full: the 12 leave-one-month-out probabilities) | glong: on G rows with d_sch >= 30,000 s the chain's normal-class probability is scaled by r = min(1, (k + 0.5)/(E + 0.5)) (k normal labels, E summed out-of-month chain probabilities on the setting's fit-month rows with d_sch >= 30,000), the freed mass split to art and day push in their ratio | gjoint a: on G rows with d_sch in [3,600, 14,400) the art probability is the G model's (gpool S1 after G1) instead of 0.5 G model + 0.5 leg p_art; other components unchanged || B: internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0) | artmm: p_art cell means moved by kappa x (carrier-month arrival copy share minus its training-month share) where that change is at least 0.10; kappa from training-month cells only; threshold fixed in research | arthist: LIRF non-G p_art moved in log-odds by beta x (flight-history art share vs the flight-month mean p_art); one coefficient beta fitted on the val ruler rows (day folds for val, January for fwd, both months for test) | gkey: G model refit per setting on the g_band training rows (2025 months outside the evaluated ones); key average 0.5 and the nine columns fixed in research, nothing chosen on the ruler | gkeyx: G model refit per setting on the g_band training rows; twelve record columns, the 43,200 s d_sch guard and the 0.5 key average fixed in research, nothing chosen on the ruler | gkeyxn (avg_xncr): G model refit per setting on the g_band training rows; the nine R3 stand and link columns and the carrier-month arrival copy share added to gkeyx's twelve on the GBM side, gkeyx's 43,200 s d_sch guard and 0.5 key average kept, nothing chosen on the ruler | aiu_shift: no model fitting; g and the airport offsets come from ruler months outside the moved rows | antiwin: no fitting; c and m are medians over 2025 months outside the evaluated months | gpool: G class probabilities = log pool of the four G components with one exponent a, fitted by 3-class log loss on component probabilities from G models without the row's month (val: nested over the 10 training months, fwd: over Jan-Jun, full: the 12 leave-one-month-out probabilities) | glong: on G rows with d_sch >= 30,000 s the chain's normal-class probability is scaled by r = min(1, (k + 0.5)/(E + 0.5)) (k normal labels, E summed out-of-month chain probabilities on the setting's fit-month rows with d_sch >= 30,000), the freed mass split to art and day push in their ratio | gjoint a: on G rows with d_sch in [3,600, 14,400) the art probability is the G model's (gpool S1 after G1) instead of 0.5 G model + 0.5 leg p_art; other components unchanged || C: internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0) | artmm: p_art cell means moved by kappa x (carrier-month arrival copy share minus its training-month share) where that change is at least 0.10; kappa from training-month cells only; threshold fixed in research | arthist: LIRF non-G p_art moved in log-odds by beta x (flight-history art share vs the flight-month mean p_art); one coefficient beta fitted on the val ruler rows (day folds for val, January for fwd, both months for test) | gkey: G model refit per setting on the g_band training rows (2025 months outside the evaluated ones); key average 0.5 and the nine columns fixed in research, nothing chosen on the ruler | gkeyx: G model refit per setting on the g_band training rows; twelve record columns, the 43,200 s d_sch guard and the 0.5 key average fixed in research, nothing chosen on the ruler | gkeyxn (avg_xncr): G model refit per setting on the g_band training rows; the nine R3 stand and link columns and the carrier-month arrival copy share added to gkeyx's twelve on the GBM side, gkeyx's 43,200 s d_sch guard and 0.5 key average kept, nothing chosen on the ruler | aiu_shift: no model fitting; g and the airport offsets come from ruler months outside the moved rows | antiwin: no fitting; c and m are medians over 2025 months outside the evaluated months | gpool: G class probabilities = log pool of the four G components with one exponent a, fitted by 3-class log loss on component probabilities from G models without the row's month (val: nested over the 10 training months, fwd: over Jan-Jun, full: the 12 leave-one-month-out probabilities) | glong: on G rows with d_sch >= 30,000 s the chain's normal-class probability is scaled by r = min(1, (k + 0.5)/(E + 0.5)) (k normal labels, E summed out-of-month chain probabilities on the setting's fit-month rows with d_sch >= 30,000), the freed mass split to art and day push in their ratio | gjoint a: on G rows with d_sch in [3,600, 14,400) the art probability is the G model's (gpool S1 after G1) instead of 0.5 G model + 0.5 leg p_art; other components unchanged || chainavg3: (A + B + C) / 3 with weights 1/3 fixed before measuring, no fitting",
+ "source": {
+  "queue": "12014_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja",
+  "manifest": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json",
+  "manifest_sha": "d91bdb94b25c9e67",
+  "spec": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja",
+  "holdout_sha": "49f02b7afabd021c",
+  "test_sha": "c92d2ad6a7fc6dd2",
+  "forward_sha": "39dff44b94a39a2d"
+ },
+ "source_b": {
+  "queue": "12114_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja",
+  "manifest": "preds/manifest_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json",
+  "manifest_sha": "92408f30445e30a5",
+  "spec": "m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja",
+  "holdout_sha": "681d93e9372f7c1e",
+  "test_sha": "68a1bad159af592a",
+  "forward_sha": "0a611b224b1eab3e"
+ },
+ "source_c": {
+  "queue": "12214_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja",
+  "manifest": "preds/manifest_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja.json",
+  "manifest_sha": "76ac42d4965ab159",
+  "spec": "m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgja",
+  "holdout_sha": "01b003c038dd9b9d",
+  "test_sha": "a5b2b11914ed3307",
+  "forward_sha": "357e22b54ff0a09f"
+ },
+ "code_sha_clash": {},
+ "chainavg3": {
+  "w": "1/3",
+  "report": {
+   "val": {
+    "vs_a": {
+     "rows": 344419,
+     "rmse_old": 281.688,
+     "rmse_new": 281.375,
+     "dmse": -176.6
+    },
+    "vs_b": {
+     "rows": 344419,
+     "rmse_old": 282.306,
+     "rmse_new": 281.375,
+     "dmse": -525.0
+    },
+    "vs_c": {
+     "rows": 344419,
+     "rmse_old": 282.208,
+     "rmse_new": 281.375,
+     "dmse": -469.6
+    }
+   },
+   "fwd": {
+    "vs_a": {
+     "rows": 190713,
+     "rmse_old": 263.664,
+     "rmse_new": 263.083,
+     "dmse": -305.9
+    },
+    "vs_b": {
+     "rows": 190713,
+     "rmse_old": 264.548,
+     "rmse_new": 263.083,
+     "dmse": -772.7
+    },
+    "vs_c": {
+     "rows": 190713,
+     "rmse_old": 264.637,
+     "rmse_new": 263.083,
+     "dmse": -820.1
+    }
+   },
+   "full": {
+    "rows": 670790,
+    "move_mse_vs_a": 858.8,
+    "move_mse_vs_b": 570.3,
+    "move_mse_vs_c": 1160.0,
+    "rows_moved_vs_a": 637260
+   }
+  },
+  "basis": "vault research/2026-10-07-r13-f3.md 5 ~ 6 (R13-F3)"
+ },
+ "written_kst": "2026-10-10 07:51:53 KST",
+ "code_sha_outside_preds": {
+  "research/f3/fitwrap.py": {
+   "sha": "54114020d2aa3d3c",
+   "snapshot": "research/f3/queue_ready_final/code/54114020d2aa3d3c_fitwrap.py"
+  },
+  "research/f3/avg_legs_final.py": {
+   "sha": "ffc1ca6dd80b1736",
+   "snapshot": "research/f3/queue_ready_final/code/ffc1ca6dd80b1736_avg_legs_final.py"
+  },
+  "research/f3/feats_v28_final.py": {
+   "sha": "79da9cc8b08ccf40",
+   "snapshot": "research/f3/queue_ready_final/code/79da9cc8b08ccf40_feats_v28_final.py"
+  },
+  "research/f2/merge_corr.py": {
+   "sha": "57287c4a47417dc3",
+   "snapshot": "research/f3/queue_ready_final/code/57287c4a47417dc3_merge_corr.py"
+  },
+  "research/f2/ctx_corr4.py": {
+   "sha": "859f390761f3d790",
+   "snapshot": "research/f3/queue_ready_final/code/859f390761f3d790_ctx_corr4.py"
+  },
+  "research/f2/ctx4_table.py": {
+   "sha": "f71469c1bcbafd62",
+   "snapshot": "research/f3/queue_ready_final/code/f71469c1bcbafd62_ctx4_table.py"
+  },
+  "research/f2/model3_fj.py": {
+   "sha": "25f42a490ac58e2d",
+   "snapshot": "research/f3/queue_ready_final/code/25f42a490ac58e2d_model3_fj.py"
+  },
+  "research/f2/model3ap_fj.py": {
+   "sha": "22b2ec5095f73b21",
+   "snapshot": "research/f3/queue_ready_final/code/22b2ec5095f73b21_model3ap_fj.py"
+  },
+  "research/f2/g_band_fj.py": {
+   "sha": "a07b202b286eca98",
+   "snapshot": "research/f3/queue_ready_final/code/a07b202b286eca98_g_band_fj.py"
+  },
+  "research/f2/blend_fixed_fj.py": {
+   "sha": "591cae9a9ac19ec8",
+   "snapshot": "research/f3/queue_ready_final/code/591cae9a9ac19ec8_blend_fixed_fj.py"
+  },
+  "research/f3/fj_blends_l3.py": {
+   "sha": "672a269e14591734",
+   "snapshot": "research/f3/queue_ready_final/code/672a269e14591734_fj_blends_l3.py"
+  },
+  "research/f3/kit_l3.sh": {
+   "sha": "17a0f0e4da84b2e2",
+   "snapshot": "research/f3/queue_ready_final/code/17a0f0e4da84b2e2_kit_l3.sh"
+  }
+ },
+ "final_of": {
+  "final_root": "~/nova-adsb/prcm/final_run",
+  "final_root_manifest": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskap.json",
+  "final_root_manifest_sha16": "93b27d45f4ff929c",
+  "mac_final_file": "research/f3/out/ff7/spirited-tiger_final.parquet",
+  "mac_final_file_sha256": "7a9ed73c7e130238a0ee8484a0257f316e40118b200ac47dd1f11eadf0d4b5d8",
+  "data": "final_ranking 4b0692a792846079, final_submitting b3445d80e29bf599",
+  "note": "594b's form on L3: F2's corrector-stage merge (research/f2/merge_corr.py through research/f3/kit_l3.sh) of L3S's T 0.75 and L3's L (research/f2/ctx_corr4.py on L3's base with the L3 fj extras of research/f3/fj_blends_l3.py; 0.75 for unmatched rows, 0.5 for matched rows), then 570's tail and chainavg3; val, fwd and es are 596's bytes (570's live files)"
+ }
+}

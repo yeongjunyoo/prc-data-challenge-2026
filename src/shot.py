@@ -11,7 +11,8 @@
     그 행의 정답을 드러내므로 순위 이용이다(원문/render/ranking_html.txt 7줄). 같은 파일을 다시 내는 것도 여기서 막힌다.
 결정 장부(subs/fire_events.jsonl, 한 줄에 사건 하나, 덧붙이기만): fire-one 은 올리기 전에 이유(why)와 참고한 서버 점수(refs), 준비 점검 경고, 막이 값을
     적고(intent), 올린 뒤(uploaded 또는 upload_failed)와 결과 뒤(scored, pending) 한 줄씩 더한다. push 는 그 파일과 해시의 intent 가 없으면 올리지 않는다.
-쿼터: 오늘(UTC) 팀 버킷의 채점 결과 수와 올린 제출 수 중 큰 쪽을 쓴 것으로 센다(결과가 늦은 발도 센다).
+쿼터: 오늘(UTC) 팀 버킷의 채점 결과 수와 올린 제출 수 중 큰 쪽을 쓴 것으로 센다(결과가 늦은 발도 센다). 결선 몫(src/fire_queue.py final_reserve):
+    2026-10-13, 14(UTC)에는 결정 장부에 결선 올림이 생기기 전까지 단일 발이 그날 마지막 칸을 쓰지 않는다(fire-one 과 올리기 직전 확인 둘 다).
 결선(10-08 공지): fire-final 이 넉 달 결선 파일 spirited-tiger_final.parquet 하나를 올린다. 검사와 결선 자료 고정값은 아래 「결선」 절(final_upload_problem).
 """
 from __future__ import annotations
@@ -228,9 +229,9 @@ def note_text(s: str) -> str:
 def upload_problem(sub: Path, permit: dict) -> str | None:
     """단일 발 허가(mode single)의 올리기 직전 확인. 허가를 손으로 만들어도 쏘기 직전 검사 전체를 여기서 다시 돈다(준비 점검 경고는 빼고):
     GATE.json(firing single, candidate_allowed, scope), 결정 장부의 intent(이 파일과 해시, why 와 refs, 허가보다 먼저), 큐 후보의 manifest 와 해시와
-    로컬 값과 조기 종료 행, 올릴 값이 그 예측에서 나왔는지, 상식 검사, NaN 과 빠진 행, 시험에서 통째로 빈 칸, 엿보기 막이, 쿼터, 장부 밖 제출."""
+    로컬 값과 조기 종료 행, 올릴 값이 그 예측에서 나왔는지, 상식 검사, NaN 과 빠진 행, 시험에서 통째로 빈 칸, 엿보기 막이, 쿼터와 결선 몫, 장부 밖 제출."""
     from src.batches import QUEUE, candidate
-    from src.fire_queue import sane
+    from src.fire_queue import final_reserve, sane
     from src.s3io import TEAM_BUCKET, ls
     g = load_gate()
     sc = g.get("scope") or {}
@@ -281,7 +282,7 @@ def upload_problem(sub: Path, permit: dict) -> str | None:
         return f"장부에 없는 제출이 버킷에 있다: {', '.join(bs['off_ledger'])}"
     if bs["left"] <= 0:
         return f"오늘(UTC) 쿼터를 다 썼다(결과 {bs['results_today_utc']}, 올림 {bs['uploads_today_utc']})"
-    return None
+    return final_reserve(bs["left"])  # 결선 몫: fire-one 검사 뒤 올리기 전에 다른 발이 그날 칸을 써 남은 칸이 1 이 된 경우도 막는다
 
 
 # ---- 결선(주최 10-08 공지: 넉 달 예측 한 번, 마감 2026-10-14T10:00Z) ----

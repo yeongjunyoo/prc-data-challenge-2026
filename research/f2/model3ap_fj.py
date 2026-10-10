@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 """3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.
 
-R13-F3 사본(research/r13_f3/model3ap.py, private notes research/2026-10-07-r13-f3.md 6): src/model3.py(sha16 4641d5b5d91abd26)에 --mu_sep all 만 더했다.
+R13-F3 사본(research/r13_f3/model3ap.py, vault research/2026-10-07-r13-f3.md 6): src/model3.py(sha16 4641d5b5d91abd26)에 --mu_sep all 만 더했다.
   all: 회귀(mu)를 공항마다 따로 학습한다(공항마다 내부 조기 종료, 재학습 x1.1, full 은 공항별 반복 수 iters["reg_<공항>"]). 분류기, G 모형,
   혼합, 창 밖 규칙, 출력은 원본 그대로다. all 이 아니면 원본과 같은 길을 탄다.
 
@@ -157,7 +157,7 @@ def main():
     pa.add_argument("--anchor", default="", choices=["", "aobt", "win"],
                     help="aobt: 회귀(mu)의 목표를 y - clip(MVT - AOBT_3, 0, 7200) 로 두고 예측에 그 값을 더한다(AOBT_3 없는 행은 학습 범위 정상 행의 공항별 중앙값). "
                          "win: 기준값을 그 공항별 중앙값을 LOBT 창 [d_lobt - 3606, d_lobt + 3606] 안으로 자른 값으로(LOBT 없는 행은 중앙값). "
-                         "근거 private notes research/2026-10-06-r5-paradigms.md(창 바닥에 붙는 지연 출발)")
+                         "근거 vault research/2026-10-06-r5-paradigms.md(창 바닥에 붙는 지연 출발)")
     pa.add_argument("--g_band_avg", action="store_true", help="G 행 가운데 지연 1~4시간 행의 art 확률을 G 모형과 주 분류기의 평균으로(g_override)")
     pa.add_argument("--mu_sep", default="", help="쉼표로 준 공항은 회귀(mu)를 따로 학습한다: 그 공항 행은 그 공항들만의 회귀, 나머지는 그 공항들을 뺀 회귀(예: LIRF)")
     args = pa.parse_args()
@@ -170,7 +170,7 @@ def main():
         fit_rows, eval_rows = ~np.isin(src, [1, 7]) & ~te, np.isin(src, [1, 7])
     elif args.setting == "fwd":
         fit_rows, eval_rows = np.isin(src, [1, 2, 3, 4, 5, 6]), src == 7
-    elif args.setting == "fj":  # F2 (private notes research/2026-10-08-f2-four-months.md): 2025 의 2, 6월을 빼고 학습, 2, 6월로 잰다
+    elif args.setting == "fj":  # F2 (vault research/2026-10-08-f2-four-months.md): 2025 의 2, 6월을 빼고 학습, 2, 6월로 잰다
         fit_rows, eval_rows = ~np.isin(src, [2, 6]) & ~te, np.isin(src, [2, 6])
     elif args.setting == "nd":
         fit_rows, eval_rows = np.isin(src, list(range(1, 11))), np.isin(src, [11, 12])
@@ -216,7 +216,7 @@ def main():
         med = pd.Series(y_all[nfit]).groupby(apv[nfit]).median()
         fb = pd.Series(apv).map(med).fillna(float(np.median(y_all[nfit]))).to_numpy()
         anchor_all = np.where(np.isnan(da), fb, np.clip(da, 0, 7200))
-    elif args.anchor == "win":  # LOBT 창 기준(private notes research/2026-10-06-r5-paradigms.md): 공항별 정상 학습 행 중앙값을 창 [d_lobt - 3606, d_lobt + 3606] 안으로
+    elif args.anchor == "win":  # LOBT 창 기준(vault research/2026-10-06-r5-paradigms.md): 공항별 정상 학습 행 중앙값을 창 [d_lobt - 3606, d_lobt + 3606] 안으로
         dl = F["d_lobt"].to_numpy().astype(float)
         apv = F["ap"].astype(str).to_numpy()
         nfit = fit_rows & ~art_all & ~shift_all & (y_all < 3600)

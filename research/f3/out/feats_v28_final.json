@@ -1,0 +1,71 @@
+{
+ "what": "final root feats_v28 (research/f3/feats_v28_final.py)",
+ "written": "2026-10-10 04:40:34",
+ "feats_v27_sha16": "8fc36fd4314708a8",
+ "r17a_feats_v28_sha16": "b870eefe01d5c95e",
+ "r17a_adsb_v3_sha16": "816f0ffd9b7ae6a4",
+ "adsb_v3": {
+  "rows_2025_from_r17a": 2085047,
+  "rows_2026_from_final_adsb_v2": 664691,
+  "rows": 2749738,
+  "days_2025": 365,
+  "days_2026": 119,
+  "rows_by_month": {
+   "2025-01": 153706,
+   "2025-02": 143732,
+   "2025-03": 164449,
+   "2025-04": 175288,
+   "2025-05": 185202,
+   "2025-06": 183142,
+   "2025-07": 190713,
+   "2025-08": 191182,
+   "2025-09": 183950,
+   "2025-10": 185674,
+   "2025-11": 162332,
+   "2025-12": 165677,
+   "2026-01": 152719,
+   "2026-02": 144158,
+   "2026-06": 175692,
+   "2026-07": 192122
+  },
+  "sha16": "9e7ab56aac4e7e6e",
+  "final_adsb_v2_sha16": "54ba81f368669d1d"
+ },
+ "feats_v28_sha16": "9c75a870eb72b1ef",
+ "a_columns_differing_where_they_must_not": [],
+ "a_changed_rows": 1103398,
+ "a_changed_rows_by_month": {
+  "2025-03": 27810,
+  "2025-04": 175288,
+  "2025-05": 185202,
+  "2025-06": 183142,
+  "2025-09": 183950,
+  "2025-10": 185674,
+  "2025-11": 162332
+ },
+ "a_changed_days": 187,
+ "a_rows_2025_without_day_data_v27": 1103398,
+ "a_rows_2025_with_day_data_v28": 2085047,
+ "b_columns_differing": [
+  "day_daobt_rel",
+  "d_aobt_mode_dev"
+ ],
+ "feats_v25_sha16": "c399bd36a924f370",
+ "r17a_feats_v25_sha16": "fdcb929cae04385a",
+ "b_inherited_from_feats_v25": {
+  "day_daobt_rel": {
+   "this_v28_equals_this_v25": true,
+   "r17a_v28_equals_r17a_v25": true,
+   "rows_differing": 2085045
+  },
+  "d_aobt_mode_dev": {
+   "this_v28_equals_this_v25": true,
+   "r17a_v28_equals_r17a_v25": true,
+   "rows_differing": 132828
+  }
+ },
+ "b_rows_compared": 2085047,
+ "fails": [],
+ "pass": true,
+ "seconds": 20.5
+}

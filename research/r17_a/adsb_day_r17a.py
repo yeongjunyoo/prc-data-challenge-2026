@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""R17-A copy of research/adsb/adsb_day.py (sha16 5474cc8ca82e4c98, private notes research/2026-10-08-r17-a-adsb-fill.md). Changes, nothing else:
+"""R17-A copy of research/adsb/adsb_day.py (sha16 5474cc8ca82e4c98, vault research/2026-10-08-r17-a-adsb-fill.md). Changes, nothing else:
   --limit-rate <curl rate> is passed to every curl (both modes; the home line is capped at 20 MB/s in total);
   curl gets -f (an HTTP error page never enters the tar stream);
   --stream counts the bytes curl delivered (the tar loop, then a drain to EOF) and checks curl's exit code: if curl failed, the byte count
@@ -9,7 +9,7 @@
 Original text follows.
 One adsb.lol globe_history day -> ground points and departure ground segments at the 10 PRC airports.
 
-Usage (on the Mac, in the ADS-B working folder):
+Usage (on the Mac, ~/nova-adsb):
   .venv/bin/python adsb_day.py --day 2025-01-15 [--manifest manifest.tsv] [--out out] [--raw raw] [--keep-raw]
                                [--stream] [--no-download]
 

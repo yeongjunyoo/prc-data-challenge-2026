@@ -9,11 +9,11 @@ The final phase asks for one file that predicts January, February, June and July
 | Item | Value |
 |---|---|
 | File | `spirited-tiger_final.parquet`, 670,790 rows, in the order of `final_submitting.parquet` |
-| SHA-256 | `454dc0e7fb436cb10545da6d2cd9e137e1a4da9585b9cc01c152b2a6d4a87f4c` |
+| SHA-256 | `7a9ed73c7e130238a0ee8484a0257f316e40118b200ac47dd1f11eadf0d4b5d8` |
 | Built by | the three-chain stack of `docs/DESIGN.md`, re-run on `final_ranking.parquet` (SHA-256 `4b0692a792846079516a2749e034b0abda55df72c213eabdcda52a4d1f6bc69f`) with the choices of `docs/DESIGN.md` section 14.5 |
 | Training labels | the twelve 2025 training files only |
-| Months without a public score (February, June) | every choice decided on February and June 2025 held out as unseen months, by rules written before their numbers, with two exceptions: the row split of stage 2 of the corrector was decided after its gate numbers, and the scale2 of the matched February and June rows follows the literal reading of an ambiguous registered rule that we first read the other way after seeing its numbers (`docs/DESIGN.md` sections 14.3 and 14.7) |
-| What the daily board decided in the final file | scale2 0.75 on the January and July rows: v36 scored ΔMSE -97.5 against v35 on the board, while our two local rulers disagreed (val -298.9, July-forward +273.1). The LightGBM legs retrained with the 2025 ADS-B days filled in (L3): <!--FILL:board_l3-->. Two other knobs read on the board kept their earlier values (chain weights 1/3, monthly AIU columns). The best daily-board file, named below, is board-tuned history, not the final file (`docs/DESIGN.md` section 15.2) |
+| Months without a public score (February, June) | every choice decided on February and June 2025 held out as unseen months, by rules written before their numbers, with three exceptions: the LightGBM legs of L3, which act on all four months, were chosen by two January and July board comparisons, v41 against v36 and, as the veto added at 2026-10-10 07:12 KST, v43 against v42, under rules written down before their scores (`docs/DESIGN.md` section 15.2); the row split of stage 2 of the corrector was decided after its gate numbers, and the scale2 of the matched February and June rows follows the literal reading of an ambiguous registered rule that we first read the other way after seeing its numbers (`docs/DESIGN.md` sections 14.3 and 14.7) |
+| What the daily board decided in the final file | scale2 0.75 on the January and July rows: v36 scored ΔMSE -97.5 against v35 on the board, while our two local rulers disagreed (val -298.9, July-forward +273.1). The LightGBM legs retrained with the 2025 ADS-B days filled in (L3): used, because their board check v41 scored 228.0752, below v36's 228.1704, under a rule written before that score, and the final-input rebuild of their January and July rows scored below the same rows in v36's configuration (v43 scored 228.5043, below v42's 228.5347), as the veto added at 2026-10-10 07:12 KST before both scores requires; on the final input their January and July gain is about a third of the public-phase gain (ΔMSE -13.9 for v43 against v42, -43.4 for v41 against v36; `docs/DESIGN.md` section 14.7). Two other knobs read on the board kept their earlier values (chain weights 1/3, monthly AIU columns). The best daily-board file, named below, is board-tuned history, not the final file (`docs/DESIGN.md` section 15.2) |
 
 How the final file is rebuilt, with commands, machines, times, seeds and the limits of bit-for-bit reproduction: `docs/REPRODUCE.md` section 0.
 
@@ -54,10 +54,10 @@ Error by record form on the local ruler (candidate 468, an intermediate chain en
 
 ## Daily-board history
 
-Before the final phase the challenge ranked teams on January and July 2026 by their best daily submission. All 40 daily submissions, with server score, local ruler score, file hash and the purpose of each, are in `results/submissions.csv`; the organizers' scoring files are in `results/server_results/`.
+Before the final phase the challenge ranked teams on January and July 2026 by their best daily submission. All 43 daily submissions, with server score, local ruler score, file hash and the purpose of each, are in `results/submissions.csv`; the organizers' scoring files are in `results/server_results/`.
 
 <!--AUTO:DAILYBEST-->
-Best daily-board submission (January and July 2026 only; board-tuned history, not the final file): v39 (spirited-tiger_v39.parquet), server RMSE 228.1667, ruler RMSE 281.35, written 2026-10-09 09:26 KST. SHA-256 of the submitted file: `9a36a77a409b1056badbef40b87b9b772122a91068708159ef872380008284bb`. Manifest: `preds/manifest_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapwac.json`.
+Best daily-board submission (January and July 2026 only; board-tuned history, not the final file): v41 (spirited-tiger_v41.parquet), server RMSE 228.0752, ruler RMSE 281.38, written 2026-10-10 09:14 KST. SHA-256 of the submitted file: `c78baab494f65b63d4f85cf73e151e474def37a46bb13a9a17ddb779fa84dd5a`. Manifest: `preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.json`.
 <!--/AUTO:DAILYBEST-->
 
 ## Where to start

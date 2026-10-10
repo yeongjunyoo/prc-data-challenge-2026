@@ -1,0 +1,116 @@
+{
+ "name": "12013_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpgl",
+ "manifest": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpgl.json",
+ "source": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgp.json",
+ "method": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgp.json 의 G 행(LIRF NM 미매칭) 가운데 d_sch ≥ 30,000초 행의 정상 확률을 r 배로(비운 몫은 art 와 shift 에 그 비로) 보정한 판(tools/glong.py, G 행만, 반대 창과 gpool 뒤 맨 끝). r 는 그 설정 맞춤 달의 같은 행에서 (정상 수 + 0.5)/(밖 표본 정상 확률 합 + 0.5)(val 0.173, fwd 0.239, 시험 0.184). 근거 private notes research/2026-10-07-r10-d-types.md 3 (R10-D-G1, pre-registered 05:22 KST 10-07): 2025 G 의 d ≥ 30,000 48행에 정상 0. 자 ΔMSE -1258.49(11/16), 7월 전방 ΔMSE -4182.87(10/12), 시험 이동 494.89 MSE(G 26 행). 반대 창 행, d < 30,000 G 행, G 아닌 행은 그대로. G 행만 바꾸므로 홀로 쏘지 않고 바탕이 바뀐 판과 함께 낸다. 10-05 단일 발 체제라 준비 점검은 경고(--readiness-warn)",
+ "report": {
+  "val": {
+   "fit": {
+    "r": 0.17299653809027105,
+    "k": 0,
+    "E": 2.390231,
+    "n": 32,
+    "months": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     8,
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   "a": 1.408583,
+   "g_rows": 397,
+   "target_rows": 16,
+   "guard_rows": 11,
+   "repro_err_guard_vs_gkeyx": 0.0,
+   "repro_err_gpool_move": 0.0,
+   "mean_pn_target": 0.05445,
+   "mean_pn_target_new": 0.00942,
+   "target_rows_moving": 16,
+   "antiwin_rows_kept": 0,
+   "changed": 16,
+   "move_mse_rows_n": 680.81,
+   "rows": 344419,
+   "rmse_old": 284.616,
+   "rmse_new": 282.396,
+   "dmse": -1258.49,
+   "improved": 11
+  },
+  "fwd": {
+   "fit": {
+    "r": 0.23917159067348415,
+    "k": 0,
+    "E": 1.590549,
+    "n": 13,
+    "months": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "a": 1.367987,
+   "g_rows": 337,
+   "target_rows": 12,
+   "guard_rows": 9,
+   "repro_err_guard_vs_gkeyx": 0.0,
+   "repro_err_gpool_move": 0.0,
+   "mean_pn_target": 0.09889,
+   "mean_pn_target_new": 0.02365,
+   "target_rows_moving": 12,
+   "antiwin_rows_kept": 0,
+   "changed": 12,
+   "move_mse_rows_n": 2310.802,
+   "rows": 190713,
+   "rmse_old": 272.77,
+   "rmse_new": 264.991,
+   "dmse": -4182.87,
+   "improved": 10
+  },
+  "full": {
+   "fit": {
+    "r": 0.18387663227261875,
+    "k": 0,
+    "E": 2.219214,
+    "n": 48,
+    "months": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   "a": 1.471006,
+   "g_rows": 619,
+   "target_rows": 26,
+   "guard_rows": 15,
+   "repro_err_guard_vs_gkeyx": 0.0,
+   "repro_err_gpool_move": 0.0,
+   "mean_pn_target": 0.04622,
+   "mean_pn_target_new": 0.0085,
+   "target_rows_moving": 26,
+   "antiwin_rows_kept": 0,
+   "changed": 26,
+   "move_mse_rows_n": 254.414,
+   "move_mse_test_n": 494.89,
+   "share_over_3600_old": 0.002193,
+   "share_over_3600_new": 0.002193
+  }
+ },
+ "written_kst": "2026-10-10 07:43:39 KST"
+}

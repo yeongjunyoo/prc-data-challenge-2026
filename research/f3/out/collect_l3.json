@@ -1,0 +1,332 @@
+{
+ "copied": {
+  "cache/val_m6r28sk_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28sk_s0.parquet",
+   "sha16": "fdab8d7eab3f8283"
+  },
+  "cache/val_m6r28sk_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28sk_s1.parquet",
+   "sha16": "694b3d722eee7869"
+  },
+  "cache/val_m6r28sk_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28sk_s2.parquet",
+   "sha16": "63e2a58cae79fab0"
+  },
+  "cache/val_m6r28sk_s3.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28sk_s3.parquet",
+   "sha16": "6af5f2cd2363f603"
+  },
+  "cache/val_m6r28skwin_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skwin_s0.parquet",
+   "sha16": "b8c8d9378b0cc37f"
+  },
+  "cache/val_m6r28skwin_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skwin_s1.parquet",
+   "sha16": "0cfc14dcc2e5f78f"
+  },
+  "cache/val_m6r28skwin_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skwin_s2.parquet",
+   "sha16": "2f25cdf5fd5e317c"
+  },
+  "cache/val_m6r28skwin_s3.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skwin_s3.parquet",
+   "sha16": "89a51d794f5c2c36"
+  },
+  "cache/val_m6r28skap_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skap_s0.parquet",
+   "sha16": "9eb28a0e83d4ddd0"
+  },
+  "cache/val_m6r28skg_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skg_s0.parquet",
+   "sha16": "6832b5ab6d3f68c2"
+  },
+  "cache/val_m6r28skwing_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skwing_s0.parquet",
+   "sha16": "7fd0be2d3dddc84a"
+  },
+  "cache/val_m6r28skapg_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skapg_s0.parquet",
+   "sha16": "24dfd65cc2fa0ca7"
+  },
+  "cache/val_m6r28skgx4_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skgx4_s0.parquet",
+   "sha16": "f9392c7ba8fdfaba"
+  },
+  "cache/val_m6r28skwingx4_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skwingx4_s0.parquet",
+   "sha16": "ffcede6588c95de8"
+  },
+  "cache/val_m6r28wincbrmfw4sv434_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28wincbrmfw4sv434_s0.parquet",
+   "sha16": "e7ddf93d671da05c"
+  },
+  "cache/val_m6r28wincbrmfw4sv434tmc_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28wincbrmfw4sv434tmc_s0.parquet",
+   "sha16": "df0dc6ee8fa11108"
+  },
+  "cache/val_m6r28skcbrmfw4sv434_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skcbrmfw4sv434_s0.parquet",
+   "sha16": "3056b9f83c1d3049"
+  },
+  "cache/val_m6r28apcbrmfw4sv114_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28apcbrmfw4sv114_s0.parquet",
+   "sha16": "5a9b4b0d4aa91215"
+  },
+  "cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s0.parquet",
+   "sha16": "359fbf276f846168"
+  },
+  "cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s1.parquet",
+   "sha16": "af7f8e6ea0d29c0d"
+  },
+  "cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s2.parquet",
+   "sha16": "93370f775851cf1e"
+  },
+  "cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_s0.parquet",
+   "sha16": "98db791769da6419"
+  },
+  "preds/es_valid_ids_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_val_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/preds/es_valid_ids_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_val_s0.parquet",
+   "sha16": "dd793de93000e14e"
+  },
+  "cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s0.parquet",
+   "sha16": "72577e85160d61df"
+  },
+  "cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s1.parquet",
+   "sha16": "58c162eca0c0e9b3"
+  },
+  "cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s2.parquet",
+   "sha16": "6a4afd75ae0a48bb"
+  },
+  "cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet",
+   "sha16": "d2c3d09fb952e5b1"
+  },
+  "preds/es_valid_ids_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_val_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/preds/es_valid_ids_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_val_s0.parquet",
+   "sha16": "dd793de93000e14e"
+  },
+  "cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet",
+   "sha16": "9e082164924ae835"
+  },
+  "cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet",
+   "sha16": "8cae84eba08ec3a6"
+  },
+  "cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet",
+   "sha16": "dc4d6203248a9f22"
+  },
+  "cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/val_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet",
+   "sha16": "818806f4c09797dd"
+  },
+  "preds/es_valid_ids_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_val_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/preds/es_valid_ids_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_val_s0.parquet",
+   "sha16": "dd793de93000e14e"
+  },
+  "cache/fwd_m6r28sk_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28sk_s0.parquet",
+   "sha16": "8f1182f992f9c2c1"
+  },
+  "cache/fwd_m6r28sk_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28sk_s1.parquet",
+   "sha16": "636c7f09b89bf574"
+  },
+  "cache/fwd_m6r28sk_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28sk_s2.parquet",
+   "sha16": "3d793f34e353b5e0"
+  },
+  "cache/fwd_m6r28sk_s3.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28sk_s3.parquet",
+   "sha16": "bafc5ccc65399328"
+  },
+  "cache/fwd_m6r28skwin_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skwin_s0.parquet",
+   "sha16": "ac858f20c257882a"
+  },
+  "cache/fwd_m6r28skwin_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skwin_s1.parquet",
+   "sha16": "22eeec5384c58e77"
+  },
+  "cache/fwd_m6r28skwin_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skwin_s2.parquet",
+   "sha16": "1dc9e317e85ec75a"
+  },
+  "cache/fwd_m6r28skwin_s3.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skwin_s3.parquet",
+   "sha16": "842f5fd4ae7f55ec"
+  },
+  "cache/fwd_m6r28skap_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skap_s0.parquet",
+   "sha16": "4e9eea1e0c98af99"
+  },
+  "cache/fwd_m6r28skg_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skg_s0.parquet",
+   "sha16": "ed8301ce0a2c4785"
+  },
+  "cache/fwd_m6r28skwing_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skwing_s0.parquet",
+   "sha16": "ea8e0b0a2a09c6b1"
+  },
+  "cache/fwd_m6r28skapg_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skapg_s0.parquet",
+   "sha16": "492ad5df75588e3b"
+  },
+  "cache/fwd_m6r28skgx4_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skgx4_s0.parquet",
+   "sha16": "9c6c08be5a203e68"
+  },
+  "cache/fwd_m6r28skwingx4_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skwingx4_s0.parquet",
+   "sha16": "00ff9ccb6bb3b4a1"
+  },
+  "cache/fwd_m6r28wincbrmfw4sv434_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28wincbrmfw4sv434_s0.parquet",
+   "sha16": "77729adea5e3d572"
+  },
+  "cache/fwd_m6r28wincbrmfw4sv434tmc_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28wincbrmfw4sv434tmc_s0.parquet",
+   "sha16": "c9e3a02bbeef07c4"
+  },
+  "cache/fwd_m6r28skcbrmfw4sv434_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skcbrmfw4sv434_s0.parquet",
+   "sha16": "46bfaa725b3f3f8e"
+  },
+  "cache/fwd_m6r28apcbrmfw4sv114_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28apcbrmfw4sv114_s0.parquet",
+   "sha16": "fbcac23d0eecdff4"
+  },
+  "cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s0.parquet",
+   "sha16": "1407dc53434908f2"
+  },
+  "cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s1.parquet",
+   "sha16": "a81fe78bc1dfaebb"
+  },
+  "cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75_s2.parquet",
+   "sha16": "dab83d7815178d7a"
+  },
+  "cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_s0.parquet",
+   "sha16": "475cf36650f3895c"
+  },
+  "preds/es_valid_ids_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_fwd_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/preds/es_valid_ids_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3_fwd_s0.parquet",
+   "sha16": "925e0b6eceb77d24"
+  },
+  "cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s0.parquet",
+   "sha16": "e05d9f2fda66db43"
+  },
+  "cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s1.parquet",
+   "sha16": "dc8d782d3893df3d"
+  },
+  "cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75_s2.parquet",
+   "sha16": "0ba2f5175859f8d3"
+  },
+  "cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet",
+   "sha16": "6fe31fa77efe25e5"
+  },
+  "preds/es_valid_ids_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_fwd_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/preds/es_valid_ids_m6r28skcbrmfw4sv434adsbgeondctxv3x50ws75c3_fwd_s0.parquet",
+   "sha16": "925e0b6eceb77d24"
+  },
+  "cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet",
+   "sha16": "cf45416f03b4d2be"
+  },
+  "cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet",
+   "sha16": "f3ba6e79e7c22385"
+  },
+  "cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet",
+   "sha16": "b90b1cd0247e5604"
+  },
+  "cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/fwd_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet",
+   "sha16": "0ee60bda68beab33"
+  },
+  "preds/es_valid_ids_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_fwd_s0.parquet": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/preds/es_valid_ids_m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_fwd_s0.parquet",
+   "sha16": "925e0b6eceb77d24"
+  },
+  "cache/iters_m6r28sk.json": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/iters_m6r28sk.json",
+   "sha16": "b80b34d41bd3416a"
+  },
+  "cache/iters_m6r28skwin.json": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/iters_m6r28skwin.json",
+   "sha16": "227a4a501ee9cf90"
+  },
+  "cache/iters_m6r28skap.json": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/cache/iters_m6r28skap.json",
+   "sha16": "6de874c541546936"
+  },
+  "research/r17_a/avg_r17a.py": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/research/r17_a/avg_r17a.py",
+   "sha16": "b5aacb51c0b84a7c"
+  },
+  "research/r17_a/adsb_day_r17a.py": {
+   "from": "<mac-workdir>/prcm/r17a_sbx/research/r17_a/adsb_day_r17a.py",
+   "sha16": "9954d81ef97d724e"
+  },
+  "cache/fj_f2cbwin_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/cache/fj_f2cbwin_s0.parquet",
+   "sha16": "72f72ef35c95e820"
+  },
+  "preds/es_valid_ids_f2cbwin_fj_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/preds/es_valid_ids_f2cbwin_fj_s0.parquet",
+   "sha16": "e0b7c66741d49c37"
+  },
+  "cache/fj_f2cb_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/cache/fj_f2cb_s0.parquet",
+   "sha16": "b7b339f4214f2d32"
+  },
+  "preds/es_valid_ids_f2cb_fj_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/preds/es_valid_ids_f2cb_fj_s0.parquet",
+   "sha16": "e0b7c66741d49c37"
+  },
+  "cache/fj_f2cbap_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/cache/fj_f2cbap_s0.parquet",
+   "sha16": "a4813b3f31e39ef3"
+  },
+  "preds/es_valid_ids_f2cbap_fj_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/preds/es_valid_ids_f2cbap_fj_s0.parquet",
+   "sha16": "e0b7c66741d49c37"
+  },
+  "cache/fj_f2rmwin_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/cache/fj_f2rmwin_s0.parquet",
+   "sha16": "208c54eda1c64d86"
+  },
+  "preds/es_valid_ids_f2rmwin_fj_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/preds/es_valid_ids_f2rmwin_fj_s0.parquet",
+   "sha16": "e0b7c66741d49c37"
+  },
+  "cache/fj_f2rm_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/cache/fj_f2rm_s0.parquet",
+   "sha16": "4365c9d712a6d964"
+  },
+  "preds/es_valid_ids_f2rm_fj_s0.parquet": {
+   "from": "<mac-workdir>/prcm/f2_run/preds/es_valid_ids_f2rm_fj_s0.parquet",
+   "sha16": "e0b7c66741d49c37"
+  }
+ },
+ "fitcache_l3": {
+  "from": "<mac-workdir>/prcm/r17a_sbx/research/r13_l/fitcache",
+  "files": 1386
+ }
+}

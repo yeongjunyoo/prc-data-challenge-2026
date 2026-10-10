@@ -1,0 +1,35 @@
+{
+ "l3wincbrmfw4": {
+  "weights": [
+   0.1252,
+   0.4951,
+   0.0,
+   0.3798
+  ],
+  "placeholder_neutral": true,
+  "sha16": "1f444df533d9750d",
+  "rows": 326873
+ },
+ "l3skcbrmfw4": {
+  "weights": [
+   0.1252,
+   0.4951,
+   0.0,
+   0.3798
+  ],
+  "placeholder_neutral": true,
+  "sha16": "49e83e74a9d27d85",
+  "rows": 326873
+ },
+ "l3apcbrmfw4": {
+  "weights": [
+   0.1252,
+   0.4951,
+   0.0,
+   0.3798
+  ],
+  "placeholder_neutral": true,
+  "sha16": "7afaa6d12a8310c1",
+  "rows": 326873
+ }
+}

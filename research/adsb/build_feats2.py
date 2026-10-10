@@ -3,7 +3,7 @@
 matcher as build_feats.py (adsb_v1), one row per PRC departure of each extracted day, keyed by MVT_ID_mvt.
 
 Usage (repo root):
-  PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe research/adsb/build_feats2.py --name adsb_v2 [--out-dir <adsb out dir>]
+  PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe research/adsb/build_feats2.py --name adsb_v2 [--out-dir D:/prc-adsb/out]
 Inputs: research/adsb/prc_all.parquet (prep_all.py), <out-dir>/<day>/events.parquet of days whose meta.json exists
         (adsb_day.py writes meta.json last, so a day still being extracted is skipped).
 Output: cache/<name>.parquet and cache/<name>.json (days used, days missing per month, match and start-observed rates by
@@ -34,7 +34,7 @@ from build_feats import KEEP, sha16  # noqa: E402
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--name', default='adsb_v2')
-    ap.add_argument('--out-dir', default=os.environ.get('PRC_ADSB_OUT', 'adsb_out'))
+    ap.add_argument('--out-dir', default='D:/prc-adsb/out')
     ap.add_argument('--prc', default=str(HERE / 'prc_all.parquet'))
     a = ap.parse_args()
     t0 = time.time()

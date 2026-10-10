@@ -1,0 +1,122 @@
+{
+ "l3skap_s0": {
+  "rc": 0,
+  "end": "10-10 04:51:31",
+  "start": "10-10 04:41:00",
+  "cmd": "research/r13_f3/model3ap.py --setting full --seed 0 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all"
+ },
+ "fj_l3skap": {
+  "rc": 0,
+  "end": "10-10 05:02:01",
+  "start": "10-10 04:41:00",
+  "cmd": "research/f2/model3ap_fj.py --setting fj --seed 0 --tag l3skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all"
+ },
+ "l3sk_s0": {
+  "rc": 0,
+  "end": "10-10 05:08:31",
+  "start": "10-10 04:51:31",
+  "cmd": "src/model3.py --setting full --seed 0 --tag m6r28sk --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF"
+ },
+ "gband_m6r28skapg": {
+  "rc": 0,
+  "end": "10-10 04:52:31",
+  "start": "10-10 04:51:31",
+  "cmd": "src/g_band.py --setting full --seed 0 --tag m6r28skapg --base m6r28skap --feats feats_v28"
+ },
+ "l3skwin_s0": {
+  "rc": 0,
+  "end": "10-10 05:16:31",
+  "start": "10-10 05:02:01",
+  "cmd": "src/model3.py --setting full --seed 0 --tag m6r28skwin --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "gbandfj_l3skapg": {
+  "rc": 0,
+  "end": "10-10 05:03:01",
+  "start": "10-10 05:02:01",
+  "cmd": "research/f2/g_band_fj.py --setting fj --seed 0 --tag l3skapg --base l3skap --feats feats_v28"
+ },
+ "l3sk_s1": {
+  "rc": 0,
+  "end": "10-10 05:28:01",
+  "start": "10-10 05:08:31",
+  "cmd": "src/model3.py --setting full --seed 1 --tag m6r28sk --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF"
+ },
+ "gband_m6r28skg": {
+  "rc": 0,
+  "end": "10-10 05:09:31",
+  "start": "10-10 05:08:31",
+  "cmd": "src/g_band.py --setting full --seed 0 --tag m6r28skg --base m6r28sk --feats feats_v28"
+ },
+ "l3skwin_s1": {
+  "rc": 0,
+  "end": "10-10 05:31:32",
+  "start": "10-10 05:16:31",
+  "cmd": "src/model3.py --setting full --seed 1 --tag m6r28skwin --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "gband_m6r28skwing": {
+  "rc": 0,
+  "end": "10-10 05:17:31",
+  "start": "10-10 05:16:31",
+  "cmd": "src/g_band.py --setting full --seed 0 --tag m6r28skwing --base m6r28skwin --feats feats_v28"
+ },
+ "fj_l3sk": {
+  "rc": 0,
+  "end": "10-10 05:58:02",
+  "start": "10-10 05:28:01",
+  "cmd": "research/f2/model3_fj.py --setting fj --seed 0 --tag l3sk --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF"
+ },
+ "fj_l3skwin": {
+  "rc": 0,
+  "end": "10-10 05:58:32",
+  "start": "10-10 05:31:32",
+  "cmd": "research/f2/model3_fj.py --setting fj --seed 0 --tag l3skwin --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "l3sk_s2": {
+  "rc": 0,
+  "end": "10-10 06:15:32",
+  "start": "10-10 05:58:02",
+  "cmd": "src/model3.py --setting full --seed 2 --tag m6r28sk --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF"
+ },
+ "gbandfj_l3skg": {
+  "rc": 0,
+  "end": "10-10 05:59:02",
+  "start": "10-10 05:58:02",
+  "cmd": "research/f2/g_band_fj.py --setting fj --seed 0 --tag l3skg --base l3sk --feats feats_v28"
+ },
+ "l3skwin_s2": {
+  "rc": 0,
+  "end": "10-10 06:13:02",
+  "start": "10-10 05:58:32",
+  "cmd": "src/model3.py --setting full --seed 2 --tag m6r28skwin --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "gbandfj_l3skwing": {
+  "rc": 0,
+  "end": "10-10 06:00:02",
+  "start": "10-10 05:59:02",
+  "cmd": "research/f2/g_band_fj.py --setting fj --seed 0 --tag l3skwing --base l3skwin --feats feats_v28"
+ },
+ "l3sk_s3": {
+  "rc": 0,
+  "end": "10-10 06:31:33",
+  "start": "10-10 06:13:02",
+  "cmd": "src/model3.py --setting full --seed 3 --tag m6r28sk --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF"
+ },
+ "l3skwin_s3": {
+  "rc": 0,
+  "end": "10-10 06:38:33",
+  "start": "10-10 06:17:02",
+  "cmd": "src/model3.py --setting full --seed 3 --tag m6r28skwin --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep LIRF --anchor win"
+ },
+ "avg_l3skgx4": {
+  "rc": 0,
+  "end": "10-10 06:32:33",
+  "start": "10-10 06:31:33",
+  "cmd": "research/f3/avg_legs_final.py m6r28skg m6r28skgx4 0,1,2,3 m6r28sk"
+ },
+ "avg_l3skwingx4": {
+  "rc": 0,
+  "end": "10-10 06:39:33",
+  "start": "10-10 06:38:33",
+  "cmd": "research/f3/avg_legs_final.py m6r28skwing m6r28skwingx4 0,1,2,3 m6r28skwin"
+ }
+}

@@ -16,6 +16,7 @@
 단일 발(10-05 체제, GATE.json firing single): 묶음 길(batch_step)은 남겨 두되 쓰지 않는다. 이름 없이 부르면 대기 결과만 읽고 쏘지 않는다.
     한 발씩, 기대 이득으로 고른 후보를 이유(--why)와 참고한 서버 점수(--refs)를 결정 장부(subs/fire_events.jsonl)에 먼저 적고 쏜다.
     검사는 src/shot.py 머리 주석: 게이트와 scope, manifest 와 코드 사본(candidate), 이미 쏜 후보, 장부와 제출 파일, 장부 밖 제출, 쿼터(결과와 올림 중 큰 쪽),
+    결선 몫(2026-10-13, 14 UTC 에는 결정 장부에 결선 올림이 생기기 전까지 그날 마지막 칸을 쓰지 않는다, final_reserve),
     상식 검사, NaN 과 빠진 행, 시험에서 통째로 빈 칸, 엿보기 막이(모든 앞 제출과 1% 이상 행에서 달라야 한다). 준비 점검은 경고로만 돌려 intent 에 남긴다.
     python -m src.fire_queue fire-one <큐 이름> --why "<이유>" --refs "<참고한 서버 점수>" [--dry]
     --dry 는 검사를 끝까지 돌려 보고하고 올리기 전에 멈춘다(파일을 만들지 않고 결정 장부에도 적지 않는다). queue/done 의 쏜 후보도 dry 로 볼 수 있다.
@@ -52,10 +53,27 @@ from src.s3io import DAILY_QUOTA, PERMIT, TEAM, TEAM_BUCKET, ls, push, quota_use
 QUEUE, DONE, GATE = ROOT / "queue", ROOT / "queue" / "done", ROOT / "GATE.json"
 KST = ZoneInfo("Asia/Seoul")
 SCOPE = {"ranking": "team_best", "split": "none"}
+FINAL_RESERVE_DAYS = (dt.date(2026, 10, 13), dt.date(2026, 10, 14))  # 결선 몫을 남기는 UTC 날(마감 2026-10-14T10:00Z, 10-10 감사)
 
 
 def now() -> str:
     return dt.datetime.now(KST).strftime("%Y-%m-%d %H:%M")
+
+
+def utc_today() -> dt.date:
+    return dt.datetime.now(dt.timezone.utc).date()
+
+
+def final_reserve(left: int) -> str | None:
+    """결선 몫: 2026-10-13, 14(UTC)에 결정 장부에 결선 올림(uploaded, verify-final 이 적은 것 포함)이 아직 없으면 fire-one 은 그날 마지막 칸을
+    쓰지 않는다(남은 칸이 1 이하면 막는다). 결선 파일이 하루 5발에 드는지 원문에 없어 fire-final 은 남은 칸이 있어야 쏘므로, 단일 발이 그 칸을 먼저
+    쓰면 결선이 막힌다. fire-final 과 묶음 길은 이 검사를 쓰지 않는다."""
+    from src import shot as S
+    today = utc_today()
+    if today not in FINAL_RESERVE_DAYS or left > 1 or any(e.get("event") == "uploaded" for e in S.final_events()):
+        return None
+    return (f"오늘(UTC {today})의 마지막 칸은 결선 몫이다(남은 칸 {left}): 결정 장부에 결선 올림이 아직 없어 2026-10-13, 14(UTC)에는 "
+            "fire-one 이 그날 마지막 칸을 쓰지 않는다")
 
 
 def record(version: int, score: float) -> None:
@@ -325,6 +343,8 @@ def fire_single(name: str, why: str, refs: str, dry: bool) -> int:
         hard.append(f"장부에 없는 제출이 버킷에 있다: {', '.join(bs['off_ledger'])}")
     if bs["left"] <= 0:
         hard.append(f"오늘(UTC) 쿼터를 다 썼다(결과 {bs['results_today_utc']}, 올림 {bs['uploads_today_utc']})")
+    elif (reserve := final_reserve(bs["left"])):
+        hard.append(reserve)
     tpl = S.template_ids()
     pp = S.pred_problems(p, tpl)
     hard += pp

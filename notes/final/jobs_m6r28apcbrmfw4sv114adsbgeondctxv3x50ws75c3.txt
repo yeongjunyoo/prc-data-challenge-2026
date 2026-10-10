@@ -1,0 +1,4 @@
+# F3 final rebuild (full rebuilt; val, fwd = L3S's caches cloned from r17a_sbx)
+logs/m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_val_s0.log	.venv/Scripts/python.exe -u research/r10_b/cavg.py --setting val --seed 0 --tag m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3 --src m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75 --seeds 0,1,2 --base m6r28apcbrmfw4sv114 --base_seed 0
+logs/m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_fwd_s0.log	.venv/Scripts/python.exe -u research/r10_b/cavg.py --setting fwd --seed 0 --tag m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3 --src m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75 --seeds 0,1,2 --base m6r28apcbrmfw4sv114 --base_seed 0
+logs/m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3_full_s0.log	.venv/Scripts/python.exe -u research/r10_b/cavg.py --setting full --seed 0 --tag m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75c3 --src m6r28apcbrmfw4sv114adsbgeondctxv3x50ws75 --seeds 0,1,2 --base m6r28apcbrmfw4sv114 --base_seed 0
