@@ -1,0 +1,33 @@
+{
+ "written": "2026-10-10 08:40:45",
+ "adsb_v1nd_sha16": "07df03ca69833082",
+ "geo_v1nd_sha16": "9dfa71b64e1099de",
+ "adsb_v1ndfjF_sha16": "e13437a2c55a77c5",
+ "geo_v1ndfjF_sha16": "4fd677dc9060ce22",
+ "adsb_v1ndfjF": {
+  "rows_old": 1009110,
+  "rows_new": 1335983,
+  "old_rows_missing_in_new": 0,
+  "columns_differing_on_old_rows": [],
+  "extra_rows": 326873,
+  "extra_rows_by_month": {
+   "2025-02": 143731,
+   "2025-06": 183142
+  },
+  "extra_rows_matched": 198414
+ },
+ "geo_v1ndfjF": {
+  "rows_old": 1009110,
+  "rows_new": 1335983,
+  "old_rows_missing_in_new": 0,
+  "columns_differing_on_old_rows": [],
+  "extra_rows": 326873,
+  "extra_rows_by_month": {
+   "2025-02": 143731,
+   "2025-06": 183142
+  }
+ },
+ "fails": [],
+ "pass": true,
+ "seconds": 2.9
+}

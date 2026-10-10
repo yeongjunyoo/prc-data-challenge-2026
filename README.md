@@ -9,7 +9,7 @@ The final phase asks for one file that predicts January, February, June and July
 | Item | Value |
 |---|---|
 | File | `spirited-tiger_final.parquet`, 670,790 rows, in the order of `final_submitting.parquet` |
-| SHA-256 | `7a9ed73c7e130238a0ee8484a0257f316e40118b200ac47dd1f11eadf0d4b5d8` |
+| SHA-256 | `a68df016b562ad6b767c339050f53494ca1b40f1fd2442c702466db3183460fa` |
 | Built by | the three-chain stack of `docs/DESIGN.md`, re-run on `final_ranking.parquet` (SHA-256 `4b0692a792846079516a2749e034b0abda55df72c213eabdcda52a4d1f6bc69f`) with the choices of `docs/DESIGN.md` section 14.5 |
 | Training labels | the twelve 2025 training files only |
 | Months without a public score (February, June) | every choice decided on February and June 2025 held out as unseen months, by rules written before their numbers, with three exceptions: the LightGBM legs of L3, which act on all four months, were chosen by two January and July board comparisons, v41 against v36 and, as the veto added at 2026-10-10 07:12 KST, v43 against v42, under rules written down before their scores (`docs/DESIGN.md` section 15.2); the row split of stage 2 of the corrector was decided after its gate numbers, and the scale2 of the matched February and June rows follows the literal reading of an ambiguous registered rule that we first read the other way after seeing its numbers (`docs/DESIGN.md` sections 14.3 and 14.7) |
