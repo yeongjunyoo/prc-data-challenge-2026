@@ -2,6 +2,8 @@
 
 Solution of team spirited-tiger (Yeongjun Yoo, Hongik University, Seoul) for the EUROCONTROL PRC Data Challenge 2026: predict the taxi-out time in seconds of departures from ten European airports (EDDF, EDDM, EGLL, EHAM, LEBL, LEMD, LFPG, LIRF, LSZH, LTFM), trained on the 2025 movements of the same airports. The metric is the RMSE in seconds.
 
+This project was developed with the assistance of AI tools.
+
 ## Final submission
 
 The final phase asks for one file that predicts January, February, June and July 2026 from `final_ranking.parquet`; the organizers rank it on January and July, on February and June, and on the four months together, and review code and documents.
@@ -45,7 +47,7 @@ How the final file is rebuilt, with commands, machines, times, seeds and the lim
 | February and June 2025 held out (ruler M3): one LightGBM leg of chain A after the LOBT window; with the corrector fitted on January and July | 326,873 | RMSE 287.45; 285.01 | `research/f2/out/m3_corr_f2m3.json` |
 | Ruler M3, three-chain world: stage 2 fitted with other 2025 months added (form L; in this gate January, February, June and July minus the held-out month) against stage 2 fitted on January and July (form T), on these rows | 326,873 | ΔMSE -194.0 (P(Δ < 0) 1.0) | `research/f2/out_mac/gate14.json` |
 
-Error by record form on the clean local ruler, the January and July 2025 ruler without the 3 rows whose labels exceed 50,000 s (MSE 52,743 against 82,450 on the full ruler; candidate 468, an intermediate chain end of 2026-10-07; `research/r8_anatomy/a1_anatomy.txt`, `research/r8_anatomy/a1_tables_val.csv`): the squared error is concentrated in the rare record forms (`docs/DESIGN.md` sections 2.1 and 4).
+Error by record form on the clean local ruler: the January and July 2025 ruler without the 3 rows that are not G rows (last row of the table) and have labels of 50,000 s or more (LFPG 84,240 and 58,206 s, LIRF 87,002 s; the 7 LIRF G rows above 50,000 s stay, by our count on the ruler rows). Candidate 468, an intermediate chain end of 2026-10-07, has an MSE of 52,743 on it against 82,450 on the full ruler (`research/r8_anatomy/a1_anatomy.txt`, `research/r8_anatomy/a1_tables_val.csv`). The squared error is concentrated in the rare record forms (`docs/DESIGN.md` sections 2.1 and 4).
 
 | Record form | Share of rows | Share of squared error | RMSE |
 |---|---|---|---|
