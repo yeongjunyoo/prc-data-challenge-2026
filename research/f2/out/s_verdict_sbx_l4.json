@@ -1,0 +1,13 @@
+{
+ "inputs": {
+  "research/f2/out/s_check_rows_l4_valfwd.json": true,
+  "research/f2/out/s_check_cmds_l4_valfwd.json": true,
+  "research/f2/out/s_check_avg_l4_valfwd.json": true,
+  "research/f2/out/s_check_blend_m6r28xsapcbrmfw4sv114.json": true,
+  "research/f2/out/s_check_manifest_m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3.json": true,
+  "research/f2/out/s_gate_sbx_l4.json": true
+ },
+ "pass": true,
+ "adopt": true,
+ "written": "2026-10-11 23:03:33"
+}

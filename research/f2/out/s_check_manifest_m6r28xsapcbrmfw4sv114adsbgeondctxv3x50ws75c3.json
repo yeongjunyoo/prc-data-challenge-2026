@@ -1,0 +1,15 @@
+{
+ "check": "manifest",
+ "pass": true,
+ "differences": [],
+ "s": "preds/manifest_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3.json",
+ "family": "preds/manifest_m6r28xapcbrmfw4sv114adsbgeondctxv3x50ws75c3.json",
+ "extra_code": [
+  "research/f2/avg_s.py"
+ ],
+ "tagmap": {
+  "m6r28xsapcbrmfw4sv114": "m6r28xapcbrmfw4sv114"
+ },
+ "root": "<mac-workdir>/prcm/final_run",
+ "written": "2026-10-12 01:53:37"
+}

@@ -1,0 +1,50 @@
+{
+ "setting": "fj",
+ "mode": "rm",
+ "donor": "cache/fj_l4rm_s0.parquet",
+ "donor_sha16": "c926b18e31a71cba",
+ "seed_files": {
+  "s4": {
+   "file": "cache/fj_l4rm_s4.parquet",
+   "sha16": "eb5a8d566065b633",
+   "same_order": true
+  },
+  "s5": {
+   "file": "cache/fj_l4rm_s5.parquet",
+   "sha16": "460d23de484a3dbc",
+   "same_order": true
+  },
+  "s6": {
+   "file": "cache/fj_l4rm_s6.parquet",
+   "sha16": "7796c70e79cbae7b",
+   "same_order": true
+  },
+  "s7": {
+   "file": "cache/fj_l4rm_s7.parquet",
+   "sha16": "2709c22a719e9071",
+   "same_order": true
+  }
+ },
+ "rows": 326873,
+ "g_rows_kept_seed0": 0,
+ "columns": {
+  "mu_rmlp": {
+   "seeds": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "rms_change_vs_donor": 58.5864
+  }
+ },
+ "es_donor": {
+  "file": "preds/es_valid_ids_l4rm_fj_s0.parquet",
+  "sha16": "e0b7c66741d49c37",
+  "rows": 179260
+ },
+ "es_seeds_equal_donor": true,
+ "new": "cache/fj_l4rmx4s_s0.parquet",
+ "new_sha16": "3155cc4caddcdcd8",
+ "written": "2026-10-12 04:58:39"
+}

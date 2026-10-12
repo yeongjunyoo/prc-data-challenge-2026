@@ -1,0 +1,80 @@
+{
+ "label": "A",
+ "cfg": {
+  "mid": "adsbgeondctxv3x50ws75",
+  "scale2": "0.75",
+  "dnum": 17000,
+  "pre": "l4_",
+  "src_note": "L4's val and fwd from R17-A's public root r17a_sbx",
+  "chains": {
+   "A": {
+    "T": "m6r28xwincbrmfw4sv434",
+    "base_leg": "m6r28skwingx4",
+    "learners": "m6r28cbwinx3:mu_cat,m6r25xg:mu_xgb,m6r28rmwinx4:mu_rmlp",
+    "TA": "m6r28xwincbrmfw4sv434tmc",
+    "add_leg": "m6r27tmcwin:mu_tabm",
+    "gleg": "m6r28skwing",
+    "num0": 2000,
+    "extra": "src/blend_fixed.py,src/ctx_corr2.py,src/ctx_corr3.py,src/feats_ctx2.py,src/feats_aiu.py,research/ctx_corr/freeze_geo.py,research/obs2/corr_plus.py,research/obs2/obs_rows.py,research/obs2/coverage.py,research/obs2/osm_stands.py,research/adsb/gprobe/build_nd.py,research/r10_b/cavg.py,research/f3/fitwrap.py,research/r13_l/prep_x.py,research/r13_l/tabm_leg.py,research/r13_l/xrfm_leg.py,research/r13_l/blend_add.py,research/r17_a/avg_r17a.py,research/r17_a/adsb_day_r17a.py,research/adsb/build_feats2.py,research/adsb/adsb_match.py,research/f3/avg_legs_final.py,research/f3/feats_v28_final.py,research/r17_a/avg_l4.py,research/r17_a/l4_learn_r17a.sh,research/f3/l4_full_f3.sh,research/f3/collect_l4.py"
+   },
+   "B": {
+    "T": "m6r28xskcbrmfw4sv434",
+    "base_leg": "m6r28skgx4",
+    "learners": "m6r28cbx3:mu_cat,m6r25xg:mu_xgb,m6r28rmx4:mu_rmlp",
+    "TA": null,
+    "add_leg": null,
+    "gleg": "m6r28skg",
+    "num0": 2100,
+    "extra": "src/blend_fixed.py,src/ctx_corr2.py,src/ctx_corr3.py,src/feats_ctx2.py,src/feats_aiu.py,research/ctx_corr/freeze_geo.py,research/obs2/corr_plus.py,research/obs2/obs_rows.py,research/obs2/coverage.py,research/obs2/osm_stands.py,research/adsb/gprobe/build_nd.py,research/r10_b/cavg.py,research/f3/fitwrap.py,research/r13_l/prep_x.py,research/r13_l/tabm_leg.py,research/r13_l/xrfm_leg.py,research/r13_l/blend_add.py,research/r17_a/avg_r17a.py,research/r17_a/adsb_day_r17a.py,research/adsb/build_feats2.py,research/adsb/adsb_match.py,research/f3/avg_legs_final.py,research/f3/feats_v28_final.py,research/r17_a/avg_l4.py,research/r17_a/l4_learn_r17a.sh,research/f3/l4_full_f3.sh,research/f3/collect_l4.py"
+   },
+   "C": {
+    "T": "m6r28xapcbrmfw4sv114",
+    "base_leg": "m6r28skapg",
+    "learners": "m6r28cbap:mu_cat,m6r25xg:mu_xgb,m6r28rmx4:mu_rmlp",
+    "TA": null,
+    "add_leg": null,
+    "gleg": "m6r28skapg",
+    "num0": 2200,
+    "extra": "src/blend_fixed.py,src/ctx_corr2.py,src/ctx_corr3.py,src/feats_ctx2.py,src/feats_aiu.py,research/ctx_corr/freeze_geo.py,research/obs2/corr_plus.py,research/obs2/obs_rows.py,research/obs2/coverage.py,research/obs2/osm_stands.py,research/adsb/gprobe/build_nd.py,research/r10_b/cavg.py,research/f3/fitwrap.py,research/r13_l/prep_x.py,research/r13_l/tabm_leg.py,research/r13_l/xrfm_leg.py,research/r13_l/blend_add.py,research/r17_a/avg_r17a.py,research/r17_a/adsb_day_r17a.py,research/adsb/build_feats2.py,research/adsb/adsb_match.py,research/f3/avg_legs_final.py,research/f3/feats_v28_final.py,research/r17_a/avg_l4.py,research/r17_a/l4_learn_r17a.sh,research/f3/l4_full_f3.sh,research/f3/collect_l4.py,research/r13_f3/model3ap.py,research/r13_f3/cat_muap.py"
+   }
+  },
+  "feats": "feats_v28",
+  "fitcache": "research/f3/fitcache_l4",
+  "shared": false
+ },
+ "names": {
+  "corr": "19004_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3",
+  "am": "19005_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3am",
+  "fh": "19006_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfh",
+  "gkc": "19007_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkc",
+  "gkcx": "19008_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcx",
+  "xncr": "19009_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncr",
+  "db": "19010_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdb",
+  "aw": "19011_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbaw",
+  "gp": "19012_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgp",
+  "gl": "19013_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpgl",
+  "gja": "19014_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgja"
+ },
+ "checks": {
+  "xgb_weight": {
+   "weights": [
+    0.1252,
+    0.4951,
+    0.0,
+    0.3798
+   ],
+   "zeros_vs_ones_identical": true
+  },
+  "fit_cache_s0": [
+   "fit cache research/f3/fitcache_l4: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s1": [
+   "fit cache research/f3/fitcache_l4: 65 loaded, 0 fitted"
+  ],
+  "fit_cache_s2": [
+   "fit cache research/f3/fitcache_l4: 65 loaded, 0 fitted"
+  ]
+ },
+ "done": "gja",
+ "updated": "10-11 11:31:43"
+}

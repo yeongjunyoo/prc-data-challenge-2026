@@ -1,0 +1,25 @@
+{
+ "check": "blend",
+ "pass": true,
+ "settings": {
+  "full": {
+   "pass": true,
+   "differences": [],
+   "leg_tags": [
+    "m6r28skapgx3s",
+    "m6r28cbapx3s",
+    "m6r25xg",
+    "m6r28rmx4s"
+   ],
+   "family_leg_tags": [
+    "m6r28skapg",
+    "m6r28cbap",
+    "m6r25xg",
+    "m6r28rmx4"
+   ],
+   "rm_learner": "m6r28rmx4s"
+  }
+ },
+ "root": "<mac-workdir>/prcm/final_run",
+ "written": "2026-10-12 01:53:06"
+}

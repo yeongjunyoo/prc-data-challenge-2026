@@ -1,0 +1,60 @@
+{
+ "name": "35206_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfh",
+ "manifest": "preds/manifest_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfh.json",
+ "source": "preds/manifest_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFam.json",
+ "method": "preds/manifest_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFam.json 의 LIRF G 아닌 출발에서 주 분류기 p_art 를 같은 편명의 2025 학습 달 art 몫(편명 20행 -> 같은 운항사 같은 노선 50행 -> 운항사 몫으로 수축) 쪽으로 로짓 계수 하나 β 만큼 옮긴 판(tools/arthist.py, 표 arthist_v1 ec3ac93e29ece0b5). β 는 자 행에서 맞췄다(val 은 날 열 겹, fwd 는 1월, 시험은 두 달: 0.113719). 예측은 (p' − p)(d − mn) 만큼, LOBT 창 안으로. G 행과 p_art 0 행은 그대로. 근거 private notes research/2026-10-07-r7-u.md. gkey 와 그 뒤 단계는 이 뒤에 둔다. 자 ΔMSE -31.2(11833/24785), 7월 전방 ΔMSE -18.1(6166/13816), 시험 바뀐 행 49026, 이동 MSE 16.4. 약점: 계층 수축 판은 운항사 수축 판과 둘 다 잰 뒤 골랐고(둘 다 네 자에서 이김), 열두 달 한 달 빼기는 정답만 쓴 대리다. 이득은 7월과 11, 12월이고 1월은 0 안팎이다(+2). 시험 이동의 약 40% 가 드문 운항사 십여 행이다(운항사 몫까지 수축한 판은 네 자 모두 졌다). 10-05 단일 발 체제라 준비 점검은 경고(--readiness-warn)",
+ "report": {
+  "beta": {
+   "fold": {
+    "0": 0.108164,
+    "1": 0.104739,
+    "2": 0.098628,
+    "3": 0.120949,
+    "4": 0.10371,
+    "5": 0.142144,
+    "6": 0.106848,
+    "7": 0.112085,
+    "8": 0.115162,
+    "9": 0.123778
+   },
+   "jan": 0.060668,
+   "all": 0.113719
+  },
+  "full": {
+   "rows_lirf_nong": 51527,
+   "rows_moved": 49080,
+   "mean_p_old": 0.19453,
+   "mean_p_new": 0.1956,
+   "changed": 49026,
+   "g_changed": 0,
+   "move_mse_test_n": 16.4
+  },
+  "val": {
+   "rows_lirf_nong": 26131,
+   "rows_moved": 24799,
+   "mean_p_old": 0.1859,
+   "mean_p_new": 0.18698,
+   "changed": 24785,
+   "g_changed": 0,
+   "rows": 344419,
+   "rmse_old": 290.115,
+   "rmse_new": 290.061,
+   "dmse": -31.2,
+   "improved": 11833
+  },
+  "fwd": {
+   "rows_lirf_nong": 14874,
+   "rows_moved": 13823,
+   "mean_p_old": 0.1613,
+   "mean_p_new": 0.16285,
+   "changed": 13816,
+   "g_changed": 0,
+   "rows": 190713,
+   "rmse_old": 285.836,
+   "rmse_new": 285.805,
+   "dmse": -18.1,
+   "improved": 6166
+  }
+ },
+ "written_kst": "2026-10-12 05:21:05 KST"
+}

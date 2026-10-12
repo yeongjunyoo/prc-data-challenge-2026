@@ -1,0 +1,101 @@
+{
+ "check": "avg",
+ "pass": true,
+ "legs": {
+  "m6r28skapgx3s_full": {
+   "pass": true,
+   "differences": [],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "mode": "m3g",
+   "donor": "m6r28skapg",
+   "out_sha16": "8ecb7e8a20deaaca",
+   "seed_files": {
+    "s0": {
+     "file": "cache/full_m6r28skap_s0.parquet",
+     "sha16": "0cae5b6d6079f9f5",
+     "same_order": true
+    },
+    "s1": {
+     "file": "cache/full_m6r28skap_s1.parquet",
+     "sha16": "9422676aea1c312a",
+     "same_order": true
+    },
+    "s2": {
+     "file": "cache/full_m6r28skap_s2.parquet",
+     "sha16": "ad68dfd0f442c3a7",
+     "same_order": true
+    }
+   }
+  },
+  "m6r28cbapx3s_full": {
+   "pass": true,
+   "differences": [],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "mode": "cb",
+   "donor": "m6r28cbap",
+   "out_sha16": "80f20a8d53c129e3",
+   "seed_files": {
+    "s0": {
+     "file": "cache/full_m6r28cbap_s0.parquet",
+     "sha16": "52e5e1de417cd5e4",
+     "same_order": true
+    },
+    "s1": {
+     "file": "cache/full_m6r28cbap_s1.parquet",
+     "sha16": "b721170138d77a77",
+     "same_order": true
+    },
+    "s2": {
+     "file": "cache/full_m6r28cbap_s2.parquet",
+     "sha16": "bfb45eae05910df5",
+     "same_order": true
+    }
+   }
+  },
+  "m6r28rmx4s_full": {
+   "pass": true,
+   "differences": [],
+   "seeds": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "mode": "rm",
+   "donor": "m6r28rm",
+   "out_sha16": "e4d8d165c3d73ec2",
+   "seed_files": {
+    "s4": {
+     "file": "cache/full_m6r28rm_s4.parquet",
+     "sha16": "7b6849a94a4b7bb1",
+     "same_order": true
+    },
+    "s5": {
+     "file": "cache/full_m6r28rm_s5.parquet",
+     "sha16": "ad38c6916d0312e9",
+     "same_order": true
+    },
+    "s6": {
+     "file": "cache/full_m6r28rm_s6.parquet",
+     "sha16": "909ca5414504efb9",
+     "same_order": true
+    },
+    "s7": {
+     "file": "cache/full_m6r28rm_s7.parquet",
+     "sha16": "f89a160d1d058aa7",
+     "same_order": true
+    }
+   }
+  }
+ },
+ "root": "<mac-workdir>/prcm/final_run",
+ "written": "2026-10-12 01:33:36"
+}

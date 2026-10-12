@@ -1,0 +1,63 @@
+R21 W2 pre-registration (written before any fj (2025 Feb/Jun) number for W2 exists; val and fwd numbers of an earlier unconditioned form were seen).
+Time: 2026-10-11 02:09:48 KST (`date` and PowerShell Get-Date 02:09:54 +09:00 just before writing).
+
+Mechanism (inputs only, 2025 facts): every NM-matched departure has |BLOCK - LOBT| <= 3606 s, so y lies in [d_lobt - 3606, d_lobt + 3606]
+(d_lobt = MVT - LOBT). When the take-off is more than 2 h after LOBT (d_lobt > 7200) and NM's AOBT_3 carries no airport information
+(AOBT_3 later than LOBT + 4000 s, i.e. TOT minus a standard taxi), the chain's free estimate is far below the window and the window rule
+leaves the prediction near the lower edge, while 2025 labels sit mid-window (y - d_lobt mean about -1,100 to -1,500).
+
+Rows: departures with LOBT present, d_lobt > 7200, (d_aobt - d_lobt) < -4000 (d_aobt = MVT - AOBT_3). (G rows have no LOBT and are untouched.)
+Rule: new = clip(f + 0.5 * (d_lobt + delta - f), d_lobt - 3606, d_lobt + 3606), clipped at 0.
+delta = mean(y - d_lobt) over 2025 departures meeting the same row condition in the setting's fit months only
+  (val: 2025 months except 1, 7; fwd: 1-6; fj: months except 2, 6; full/test: all twelve 2025 months). Pooled over airports. Nothing else fitted.
+Secondary (reported, not the primary): lambda 1.0 instead of 0.5.
+Gate (as the coordinator's 7.8 parts): (a) change on non-G body rows on val and fwd; (b) all-rows val; (c) all-rows fwd; each dMSE < 0 with
+  day-bootstrap P(dMSE < 0) >= 0.95; plus fj (2025 Feb/Jun, F2 gate19 Lm three-chain mean) reported as a third ruler, sign required.
+
+Addendum 1 (2026-10-11 about 02:10 KST, after the primary W2 numbers on val/fwd/fj were seen; registered before computing it):
+W2b = the same rule and condition with the lower threshold d_lobt > 5400 instead of 7200 (delta re-estimated on the same row set, fit months only).
+W2u = the mirror on the upper edge: rows with LOBT present and d_lobt + 3606 < 1500 (the window's upper edge binds below a typical taxi),
+      new = clip(f + 0.5 * (d_lobt + delta_u - f), d_lobt - 3606, d_lobt + 3606), delta_u = mean(y - d_lobt) over the same rows in fit months.
+Both are judged by the same gate as W2; they are reported as separate candidates, not merged into W2 unless both pass.
+
+Addendum 2 (2026-10-11 02:11:59 KST by `date`, registered before computing it):
+W3 = the complementary family: LOBT present, d_lobt > 5400 and (d_aobt - d_lobt) >= -4000 (NM AOBT_3 within 4000 s after LOBT or earlier,
+     i.e. NM's off-block carries airport information). new = clip(f + 0.5 * (d_aobt + delta3 - f), d_lobt - 3606, d_lobt + 3606), clipped at 0,
+     delta3 = mean(y - d_aobt) over the same rows in the setting's fit months. Same gate as W2. Separate candidate.
+
+Results (filled after computing, research/r21/e4_w2_eval.py, e5_w2b_w2u.py, e6_w3.py):
+W2  (primary, lambda 0.5): val -101.1 (P 1.000, 29/17 rows), fwd -167.6 (P 1.000, 26/6), fj -43.5 (P 0.921, 10/9). PASS val and fwd; fj sign right.
+W2  (lambda 1.0, secondary): val -119.2 (0.989), fwd -240.0 (0.995), fj -24.1 (0.676).
+W2b (d_lobt > 5400): val -53.3 (0.798) FAIL val, fwd -259.4 (0.986), fj -112.8 (0.958).
+W2u (upper edge): val +0.4, fwd +0.5, fj +2.5. FAIL.
+W3  (AOBT_3 near LOBT family): val -32.4 (0.694), fwd -118.6 (0.851), fj +146.9 (0.000). FAIL.
+
+Addendum 3 (2026-10-11, time by `date` printed with this append, registered before computing it):
+W5 = LIRF plan-time copy components the chain does not model. Rows: LIRF departures with LOBT present and (d_aobt - d_lobt) < -4000.
+     In 2025 such rows are 33% LOBT copies, 41% SCHED copies, 7% EOBT_1 copies (labels). The chain mixes only the SCHED copy.
+     LOBT component where |SCHED - LOBT| > 60 s (else it is the SCHED copy): pL = share of LOBT copies among fit-month rows of the same set
+     with |SCHED - LOBT| > 60; EOBT component where EOBT_1 differs from both by > 60 s: pE likewise.
+     new = f + pL * 1[|SCHED-LOBT|>60] * (d_lobt - f) + pE * 1[EOBT distinct] * (d_eobt - f), then clipped to the LOBT window.
+     Same gate as W2 (val, fwd by day bootstrap; fj sign). Separate candidate; W2 and W5 overlap on LIRF rows with d_lobt > 7200.
+W5 result: val +2.9 (P 0.251), fwd +5.6 (0.343), fj +6.0 (0.008). FAIL. LOBT copies with |SCHED - LOBT| > 60 s do not occur in 2025 (pL 0.000):
+     the 33% "LOBT copies" are rows where LOBT equals SCHED, already the chain's SCHED copy.
+
+Addendum 4 (registered before computing, time by `date` printed with this append):
+W6 = W2's rule restricted to LIRF and moved to the band W2 leaves out: LIRF departures with LOBT present, (d_aobt - d_lobt) < -4000 and
+     3606 < d_lobt <= 7200. new = clip(f + 0.5 * (d_lobt + delta6 - f), window), delta6 = mean(y - d_lobt) over the same set in fit months.
+     Same gate. Separate candidate (does not overlap W2 rows).
+W6 result: val -37.9 (P 0.731, 30/53 rows), fwd -247.6 (0.971, 29/49), fj -30.9 (0.645, 8/18). FAIL (val and fj P; more rows worse than better).
+
+Addendum 5 (registered before computing, time by `date` printed with this append):
+W8 = cross-ruler residual correction for the band W2 leaves out. Rows: LOBT present, 3606 < d_lobt <= 7200, (d_aobt - d_lobt) < -4000.
+     new = clip(f - 0.5 * b_hat(airport), window), b_hat = mean(f - y) over the same airport's rows of this set on the OTHER ruler, shrunk
+     n/(n + 20) toward 0. val and fwd take b_hat from fj (2025 Feb/Jun, gate19 Lm mean); fj takes b_hat from val. Same gate (val, fwd P >= 0.95; fj sign).
+W8 result: val -30.1 (P 0.983, 176/232 rows), fwd -84.7 (P 1.000, 156/163), fj -26.3 (P 1.000, 80/107). PASS (small).
+
+Cross-fit requested by the coordinator (10-11 02:2x KST), research/r21/g1_crossfit.py, g2_crossfit_actual.py, g3_crossfit_dayfold.py, g4_selection_table.py:
+Month-held-out nested selection (T, A, lambda, delta mode re-selected on other months' ruler blocks; delta without evaluated and selection month):
+  actual grid (24): val -52.0 (P 0.741) FAIL, fwd -393.6 (0.995), fj -13.5 (0.676). wide grid (240): val -4.8 (0.506), fwd -304.9 (0.912), fj -42.2 (0.918).
+Day-fold nested selection: actual grid val -91.9 (0.963), fwd -360.4 (0.999), fj -179.0 (0.998); wide grid -108.8 (0.923), -471.0 (0.995), -62.6 (0.944).
+Decision (R21, reported to the coordinator 02:3x): month-held-out is the binding test for new 2026 months; W2 family CLOSED.
+R2a (not pre-registered; pi out of month in all numbers): month-held-out val -52.3 (P 0.994), fwd -85.9 (0.957), fj -2,877.9 (0.868; -0.2 without its
+  one day-shift row). PASS. Built as research/r21/r2a_tool.py (selftest PASS), output research/r21/out/598c_r2a.parquet.

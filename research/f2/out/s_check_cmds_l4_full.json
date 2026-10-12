@@ -1,0 +1,64 @@
+{
+ "check": "cmds",
+ "pass": true,
+ "jobs": {
+  "lgbap_full_s1": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "research/r13_f3/model3ap.py --setting full --seed 0 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all",
+   "ref_src": "final_run research/f3/final_orch.py l3legs 9f4f84985fe21845",
+   "cmd": "research/r13_f3/model3ap.py --setting full --seed 1 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all"
+  },
+  "lgbap_full_s2": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "research/r13_f3/model3ap.py --setting full --seed 0 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all",
+   "ref_src": "final_run research/f3/final_orch.py l3legs 9f4f84985fe21845",
+   "cmd": "research/r13_f3/model3ap.py --setting full --seed 2 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all"
+  },
+  "cbap_full_s1": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "research/r13_f3/cat_muap.py --setting full --seed 0 --tag m6r28cbap --base m6r28skap --feats feats_v28 --threads 10 --per_ap",
+   "ref_src": "final_run research/f3/l4_full_f3.sh c24dd1a5d9fb0014",
+   "cmd": "research/r13_f3/cat_muap.py --setting full --seed 1 --tag m6r28cbap --base m6r28skap --feats feats_v28 --threads 10 --per_ap"
+  },
+  "cbap_full_s2": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "research/r13_f3/cat_muap.py --setting full --seed 0 --tag m6r28cbap --base m6r28skap --feats feats_v28 --threads 10 --per_ap",
+   "ref_src": "final_run research/f3/l4_full_f3.sh c24dd1a5d9fb0014",
+   "cmd": "research/r13_f3/cat_muap.py --setting full --seed 2 --tag m6r28cbap --base m6r28skap --feats feats_v28 --threads 10 --per_ap"
+  },
+  "rm_full_s4": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "src/rmlp_mu.py --setting full --seed 1 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "ref_src": "final_run research/f3/l4_full_f3.sh c24dd1a5d9fb0014 (seeds >= 1)",
+   "cmd": "src/rmlp_mu.py --setting full --seed 4 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1"
+  },
+  "rm_full_s5": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "src/rmlp_mu.py --setting full --seed 1 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "ref_src": "final_run research/f3/l4_full_f3.sh c24dd1a5d9fb0014 (seeds >= 1)",
+   "cmd": "src/rmlp_mu.py --setting full --seed 5 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1"
+  },
+  "rm_full_s6": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "src/rmlp_mu.py --setting full --seed 1 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "ref_src": "final_run research/f3/l4_full_f3.sh c24dd1a5d9fb0014 (seeds >= 1)",
+   "cmd": "src/rmlp_mu.py --setting full --seed 6 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1"
+  },
+  "rm_full_s7": {
+   "pass": true,
+   "diff_vs_ref": [],
+   "ref": "src/rmlp_mu.py --setting full --seed 1 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "ref_src": "final_run research/f3/l4_full_f3.sh c24dd1a5d9fb0014 (seeds >= 1)",
+   "cmd": "src/rmlp_mu.py --setting full --seed 7 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1"
+  }
+ },
+ "root": "<mac-workdir>/prcm/final_run",
+ "written": "2026-10-12 01:31:02"
+}

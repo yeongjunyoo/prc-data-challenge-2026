@@ -1,0 +1,38 @@
+{
+ "setting": "full",
+ "mode": "cb",
+ "donor": "cache/full_m6r28cbap_s0.parquet",
+ "donor_sha16": "52e5e1de417cd5e4",
+ "seed_files": {
+  "s0": {
+   "file": "cache/full_m6r28cbap_s0.parquet",
+   "sha16": "52e5e1de417cd5e4",
+   "same_order": true
+  },
+  "s1": {
+   "file": "cache/full_m6r28cbap_s1.parquet",
+   "sha16": "b721170138d77a77",
+   "same_order": true
+  },
+  "s2": {
+   "file": "cache/full_m6r28cbap_s2.parquet",
+   "sha16": "bfb45eae05910df5",
+   "same_order": true
+  }
+ },
+ "rows": 670790,
+ "g_rows_kept_seed0": 0,
+ "columns": {
+  "mu_cat": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 25.3611
+  }
+ },
+ "new": "cache/full_m6r28cbapx3s_s0.parquet",
+ "new_sha16": "80f20a8d53c129e3",
+ "written": "2026-10-12 01:32:34"
+}

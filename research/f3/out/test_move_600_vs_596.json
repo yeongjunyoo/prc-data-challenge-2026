@@ -1,0 +1,55 @@
+{
+ "candidate": "../prc-final/ff10/preds/test_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.parquet",
+ "reference": "../prc-final/ff5/preds/test_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.parquet",
+ "all": {
+  "rows": 670790,
+  "mse": 529.94,
+  "mean": 0.717,
+  "rows_moved_over_0_5s": 648272,
+  "max_abs": 1177.08
+ },
+ "jan_jul": {
+  "rows": 344841,
+  "mse": 616.13,
+  "mean": 0.687,
+  "rows_moved_over_0_5s": 333518,
+  "max_abs": 1177.08
+ },
+ "feb_jun": {
+  "rows": 325949,
+  "mse": 438.76,
+  "mean": 0.749,
+  "rows_moved_over_0_5s": 314754,
+  "max_abs": 757.44
+ },
+ "by_month": {
+  "1": {
+   "rows": 152719,
+   "mse": 820.35,
+   "mean": 0.38,
+   "rows_moved_over_0_5s": 148025,
+   "max_abs": 895.96
+  },
+  "2": {
+   "rows": 144158,
+   "mse": 430.53,
+   "mean": 0.377,
+   "rows_moved_over_0_5s": 139131,
+   "max_abs": 739.28
+  },
+  "6": {
+   "rows": 181791,
+   "mse": 445.28,
+   "mean": 1.044,
+   "rows_moved_over_0_5s": 175623,
+   "max_abs": 757.44
+  },
+  "7": {
+   "rows": 192122,
+   "mse": 453.8,
+   "mean": 0.931,
+   "rows_moved_over_0_5s": 185493,
+   "max_abs": 1177.08
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "check": "rows",
+ "pass": true,
+ "files": {
+  "lgbap_full_s1": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "lgbap_full_s2": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "cbap_full_s1": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "cbap_full_s2": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "rm_full_s4": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "rm_full_s5": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "rm_full_s6": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  },
+  "rm_full_s7": {
+   "rows": 670790,
+   "same_ids_same_order": true,
+   "pass": true
+  }
+ },
+ "root": "<mac-workdir>/prcm/final_run",
+ "written": "2026-10-12 01:31:33"
+}

@@ -1,0 +1,55 @@
+{
+ "candidate": "m6r27wincbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap3",
+ "reference": "m6r27wincbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+ "val": {
+  "rmse_ref": 282.024,
+  "rmse": 281.983,
+  "dmse": -23.14,
+  "boot_sd": 14.29,
+  "p_below0": 0.951,
+  "body_nonG": -23.76,
+  "body_p_below0": 0.997,
+  "months": {
+   "01": -15.96,
+   "07": -7.18
+  }
+ },
+ "fwd": {
+  "rmse_ref": 262.731,
+  "rmse": 262.77,
+  "dmse": 20.49,
+  "boot_sd": 20.83,
+  "p_below0": 0.1605,
+  "body_nonG": -18.85,
+  "body_p_below0": 0.933,
+  "months": {
+   "07": 20.49
+  }
+ },
+ "test_move_vs_ref": {
+  "move_mse": 24.57,
+  "rows_moved": 289734,
+  "mean_move": -0.02
+ },
+ "guard": {
+  "ledger_pass": true,
+  "ledger_nearest": "spirited-tiger_v30.parquet",
+  "ledger_min_diff": 0.955675,
+  "queue_nearest": "512_m6r27wincbrmfw4sv434adsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+  "queue_min_diff": 0.84295
+ },
+ "gate": {
+  "val": true,
+  "fwd": false,
+  "guard": true
+ },
+ "pass": false,
+ "gate78": {
+  "a_body_val": true,
+  "a_body_fwd": true,
+  "b_val_all": true,
+  "c_fwd_point": false,
+  "d_guard": true
+ },
+ "pass78": false
+}

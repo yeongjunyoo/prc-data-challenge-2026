@@ -1,0 +1,88 @@
+{
+ "candidate": "m6r28l4gfxwincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+ "reference": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap",
+ "settings_real": [
+  "val",
+  "fwd"
+ ],
+ "placeholder_map": {
+  "phase": "f",
+  "real_settings": [
+   "val",
+   "fwd"
+  ],
+  "placeholder_links": {
+   "cache/full_m6r28cbwinx3_s0.parquet": {
+    "target": "cache/full_m6r27cbwinx3_s0.parquet",
+    "target_sha16": "4992eacace2d7829"
+   },
+   "cache/full_m6r28cbx3_s0.parquet": {
+    "target": "cache/full_m6r27cbx3_s0.parquet",
+    "target_sha16": "6040fdeca8c21842"
+   },
+   "cache/full_m6r28cbap_s0.parquet": {
+    "target": "cache/full_m6r27cbap_s0.parquet",
+    "target_sha16": "cfecb17eafcc2302"
+   },
+   "cache/full_m6r28rmwinx4_s0.parquet": {
+    "target": "cache/full_m6r27rmwinx4_s0.parquet",
+    "target_sha16": "c9df26acebb725cc"
+   },
+   "cache/full_m6r28rmx4_s0.parquet": {
+    "target": "cache/full_m6r27rmx4_s0.parquet",
+    "target_sha16": "6f78a84a069ca65f"
+   }
+  },
+  "rule": "missing settings of the L4 learner inputs link to 514's learner files (the inputs L3 used), so those settings reproduce L3's chain",
+  "written": "2026-10-11 03:08:17"
+ },
+ "files": {
+  "val": {
+   "candidate": "preds/holdout_m6r28l4gfxwincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap_rmse281.70.parquet",
+   "candidate_sha16": "c41fa88700de48bf",
+   "reference": "preds/holdout_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap_rmse281.91.parquet",
+   "reference_sha16": "f903a366952e946a"
+  },
+  "fwd": {
+   "candidate": "preds/fwd_m6r28l4gfxwincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap.parquet",
+   "candidate_sha16": "57ed742c1fef9d4e",
+   "reference": "preds/fwd_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskap.parquet",
+   "reference_sha16": "92df42ed606e4298"
+  }
+ },
+ "not_computed": "test move and probing guard (d): full is a placeholder here; F3 measures them on the final root",
+ "val": {
+  "rows": 344419,
+  "rmse_ref": 281.906,
+  "rmse": 281.701,
+  "dmse": -115.45,
+  "boot_sd": 51.23,
+  "p_below0": 0.9875,
+  "body_nonG": -87.5,
+  "body_p_below0": 0.9865,
+  "months": {
+   "01": 23.52,
+   "07": -138.97
+  }
+ },
+ "fwd": {
+  "rows": 190713,
+  "rmse_ref": 262.523,
+  "rmse": 261.455,
+  "dmse": -559.52,
+  "boot_sd": 89.33,
+  "p_below0": 1.0,
+  "body_nonG": -467.08,
+  "body_p_below0": 1.0,
+  "months": {
+   "07": -559.52
+  }
+ },
+ "gate78_parts": {
+  "b_val_all": true,
+  "a_body_val": true,
+  "a_body_fwd": true,
+  "c_fwd_point": true
+ },
+ "parts_pass": true
+}

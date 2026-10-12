@@ -1,0 +1,30 @@
+{
+ "what": "F2 final split kit, corrector-stage merge (research/f2/merge_corr.py)",
+ "setting": "fwd",
+ "tag": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbF",
+ "base": "m6r28xskcbrmfw4sv434",
+ "default": {
+  "tag": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3",
+  "path": "cache/fwd_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3_s0.parquet",
+  "sha16": "35565fbb8ec0dedc"
+ },
+ "ctx": [
+  "ctx_v3",
+  "01ac984c7afd6e05"
+ ],
+ "adsb": [
+  "adsb_v1nd",
+  "07df03ca69833082"
+ ],
+ "code_sha16": "57287c4a47417dc3",
+ "es_valid_ids": {
+  "from": "preds/es_valid_ids_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3_fwd_s0.parquet",
+  "sha16": "925e0b6eceb77d24"
+ },
+ "note": "byte copy of the default's file",
+ "out": {
+  "path": "cache/fwd_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbF_s0.parquet",
+  "sha16": "35565fbb8ec0dedc"
+ },
+ "seconds": 0.0
+}

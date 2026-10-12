@@ -1,0 +1,696 @@
+{
+ "what": "The scripts that ran the steps of docs/REPRODUCE.md section 0.2 for the final file on the Mac and that no manifest hashes as a whole, with the SHA-256 of the copy that ran. `copy` is that copy, byte for byte (no SPDX line, no path cleaning); `here` is the readable copy in this repository and `here_is` how it relates to the copy that ran. Paths in `ran_in` are relative to the Mac work folder (final_run = the final root, f2_run = the month-held-out sandbox). Times are KST. The run times of research/f2/fj_tables.py and research/f2/gate19.py come from our notes; the phase logs (logs/*.log) and the file listings of the Mac named in `named_by` are cited but not shipped.",
+ "spec": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13",
+ "final_file_sha256": "68932fffa7f6b8a1ecfa23688518598ff1f6f98809bfb917a03df5fcb9f053c1",
+ "chain_end_file_sha256": "740b81531618e654fca5ca5ce64920667a355eea74407d9d6ea8257989c613b4",
+ "post_step": "R2a ran on the PC after these steps, on the chain end's float predictions, and src/fire_queue.py build_final wrote the final file from its output (docs/DESIGN.md section 8.8; preds/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.json)",
+ "fetched": [
+  "2026-10-10 05:08 KST",
+  "2026-10-10 05:19 KST",
+  "2026-10-10 07:55 KST",
+  "2026-10-10 08:11 KST",
+  "2026-10-10 08:34 KST",
+  "2026-10-10 10:13 KST",
+  "2026-10-11 12:41 KST",
+  "2026-10-11 16:56 KST",
+  "2026-10-12 09:08 KST"
+ ],
+ "drivers": [
+  {
+   "step": "4",
+   "ran_in": "final_run/research/f3/final_orch.py",
+   "sha256": "2af009f9985522f4db6d2e5c01a01b7cb10c2c26939bd27dd9142dd5cccedc8e",
+   "copy": "research/f3/out/final_drivers/2af009f9985522f4_final_orch.py",
+   "named_by": "no log line names it; the copy we kept when the L3 phase was added (2026-10-10) was written 2026-10-09 03:24:09, so it started the CatBoost (03:43), RealMLP (08:32) and TabM (10:48) phases; the LightGBM phase started at 03:04 from an earlier copy that was not kept",
+   "ran": "the leg phases of the first rebuild, whose CatBoost, RealMLP and TabM legs the final file uses; every leg's command is in research/f3/out/orch_lgb.json, orch_cb.json, orch_rm.json and orch_tabm.json",
+   "here": "research/f3/final_orch.py",
+   "here_is": "a later version that adds the L3 leg phase; path lines replaced (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "4",
+   "ran_in": "final_run/research/f3/avg_legs_final.py",
+   "sha256": "0197e3db6e7c6454596c0637be119542f6c0889cb3d24f698b8fe69b89570f65",
+   "copy": "research/f3/out/final_drivers/0197e3db6e7c6454_avg_legs_final.py",
+   "named_by": "no log line names it; the copy we kept when the L3 rows were added (2026-10-10) was written 2026-10-08 22:53:15, before the legs ran",
+   "ran": "the seed averages of the first rebuild's legs",
+   "here": "research/f3/avg_legs_final.py",
+   "here_is": "a later version that adds the rows of the L3 legs"
+  },
+  {
+   "step": "4",
+   "ran_in": "final_run/research/f3/fitwrap.py",
+   "sha256": "54114020d2aa3d3c223e7bbf7877c39d1cb99218e2f67a2515dad5a47fe4a0ba",
+   "copy": "research/f3/out/final_drivers/54114020d2aa3d3c_fitwrap.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds)",
+   "ran": "loaded the fitted legs of the first rebuild (fit cache)",
+   "here": "research/f3/fitwrap.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/phase5.sh",
+   "sha256": "974f721d37c84276968fdbbfc0ae8c3a5a681279ba85b17e0faf2fbf8fa1e5ff",
+   "copy": "research/f3/out/final_drivers/974f721d37c84276_phase5.sh",
+   "named_by": "logs/phase5.log (2026-10-10 04:20:01, and 04:40:03 after its first feature-table run stopped with an error)",
+   "ran": "the L3 steps up to the first merge: feature table v2.8 and its checks, the L3 inputs, the L3 legs, chains C, B and A with --cfg l3s75 and their average (the default of the checks of the file on the L3 legs, and its January and July rows), the comparison file, the leave-February-and-June-out blends, and the four-month corrector of each chain without gate 1.9, which the final file does not use; it stopped at its first merge by design (07:17)",
+   "here": "scripts/host/f3/phase5.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/phase5b.sh",
+   "sha256": "b4107baa215e43ff19c885e95a3745c9725898ac07abf1ecf426ac725aa76327",
+   "copy": "research/f3/out/final_drivers/b4107baa215e43ff_phase5b.sh",
+   "named_by": "logs/phase5b.log (04:50:47)",
+   "ran": "after phase5.sh stopped: the merges Bb, Ba and D, the corrector-stage check, the manifests, tail stages and average of Bb, the final checks, the month-boundary check and the final file without gate 1.9 (07:51:39); of these the corrector-stage check of the file on the L3 legs takes the null merges D (check 4 of docs/DESIGN.md section 14.7)",
+   "here": "scripts/host/f3/phase5b.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/feats_v28_final.py",
+   "sha256": "79da9cc8b08ccf4001c6cc9292e5c3252fb5d592ce47c24bddbc1b70c5b5b7de",
+   "copy": "research/f3/out/final_drivers/79da9cc8b08ccf40_feats_v28_final.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); file time 04:40:03, before its run at 04:40:34 (logs/phase5.log; the run at 04:20:31 with an earlier copy stopped with an error)",
+   "ran": "the ADS-B table adsb_v3 and feature table v2.8 of the final root, with their checks (research/f3/out/feats_v28_final.json)",
+   "here": "research/f3/feats_v28_final.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/collect_l3.py",
+   "sha256": "550bd10290a02c000d7ff71af7f6612d363e4fffeb11311de947cfe765cd72dd",
+   "copy": "research/f3/out/final_drivers/550bd10290a02c00_collect_l3.py",
+   "named_by": "file time 04:19:39, before phase5.sh started (04:20:01); its record research/f3/out/collect_l3.json",
+   "ran": "copied into the final root, with their sha16, the L3 build's val and fwd outputs, iteration files and early-stopping row lists, the CatBoost and RealMLP leave-February-and-June-out learners of step 7, and the L3 build's 1,386 corrector models (04:41)",
+   "here": "research/f3/collect_l3.py",
+   "here_is": "path lines replaced (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/final_orch.py",
+   "sha256": "9f4f84985fe21845a7321546d67c2a8a64969c94db7f3e1625fe993462e3b016",
+   "copy": "research/f3/out/final_drivers/9f4f84985fe21845_final_orch.py",
+   "named_by": "logs/phase5.log (04:20:01 and 04:40:03)",
+   "ran": "the L3 leg phase l3legs (04:41 to 06:38): the nine LightGBM legs, their G bands and seed averages, and the three seed-0 leave-February-and-June-out LightGBM legs with their G bands; every command is in research/f3/out/orch_l3legs.json",
+   "here": "research/f3/final_orch.py",
+   "here_is": "path lines replaced (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/avg_legs_final.py",
+   "sha256": "ffc1ca6dd80b1736f5da9c77303361adb17a164e6ec2fd430074635c611ce8bf",
+   "copy": "research/f3/out/final_drivers/ffc1ca6dd80b1736_avg_legs_final.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds)",
+   "ran": "the seed averages of the L3 legs",
+   "here": "research/f3/avg_legs_final.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/final_chain.py",
+   "sha256": "636d00637ab543bd5b4cd0db284856be857a73d23ae92e6dcf45e71c3af7a3aa",
+   "copy": "research/f3/out/final_drivers/636d00637ab543bd_final_chain.py",
+   "named_by": "logs/phase5.log (04:20:01 and 04:40:03)",
+   "ran": "chains C, B and A with --cfg l3s75 (blends and TabM add on the L3 legs, corrector at scale2 0.75 loaded from the L3 build's models, tail stages; done 05:42, 06:57 and 07:01) and their average (07:02)",
+   "here": "research/f3/final_chain.py",
+   "here_is": "path lines replaced (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/fj_blends_l3.py",
+   "sha256": "672a269e14591734a099bcd8735d865b452a78271274bc6831405fb90992f3a2",
+   "copy": "research/f3/out/final_drivers/672a269e14591734_fj_blends_l3.py",
+   "named_by": "logs/phase5.log (04:20:01; run 06:00:41)",
+   "ran": "the leave-February-and-June-out blends of the three chains on the L3 legs (research/f3/out/fj_blends_l3.json; their sha16 in research/f3/out/l3_fj_sha16.txt)",
+   "here": "research/f3/fj_blends_l3.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/research/f3/kit_l3.sh",
+   "sha256": "17a0f0e4da84b2e29aa9260e157689f0f614e125e5bf97efee86a5d6018bb086",
+   "copy": "research/f3/out/final_drivers/17a0f0e4da84b2e2_kit_l3.sh",
+   "named_by": "logs/phase5b.log (04:50:47) and the final file's manifest (field code_sha_outside_preds); the start lines of logs/phase5.log name an earlier copy (599de02983af5eac), replaced at 04:50:47, before the first kit step (after 06:00)",
+   "ran": "the four-month corrector of each chain without gate 1.9, the merges, the corrector-stage check, the manifests, tail stages and average of Bb, and the final checks, for the same file without gate 1.9; the steps of the file on the L3 legs ran from research/f3/kit_c.sh, which repeats its commands with the stage-1 tables of gate 1.9, and its corrector-stage check takes the null merges D built here",
+   "here": "research/f3/kit_l3.sh",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L3, gate 1.9, L4, S",
+   "ran_in": "final_run/research/f3/final_file.py",
+   "sha256": "a60d331cbd6f05704fe8fd4b64a41c75687d100ca88e595df2a2287a9e7666d3",
+   "copy": "research/f3/out/final_drivers/a60d331cbd6f0570_final_file.py",
+   "named_by": "logs/phase5.log (2026-10-10 07:02:33), logs/phase5b.log (07:51:38), logs/phase6.log (08:40:14), logs/phase7.log (2026-10-11 11:32:45 and 15:59:30), logs/phase8.log (2026-10-12 01:52:05 and 05:32:34)",
+   "ran": "the comparison file of the L3 legs (2026-10-10 07:02:34), the file without gate 1.9 (07:51:39), the file on the L3 legs (09:52:54), the comparison file of the L4 legs (2026-10-11 11:32:46), the file on the L4 legs, 602c (15:59:31), the comparison file of package S, 603 (2026-10-12 01:52:05), and the final file (05:32:35)",
+   "here": "research/f3/final_file.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "8, L3, gate 1.9, L4, S",
+   "ran_in": "final_run/research/f3/mac_step.sh",
+   "sha256": "28ffd44ae1c48b5256847da205a108d9250fba424e7ae394f8a227dda4da8a21",
+   "copy": "research/f3/out/final_drivers/28ffd44ae1c48b52_mac_step.sh",
+   "named_by": "logs/phase4b.log (2026-10-10 00:30:12), logs/phase5.log (04:20:01), logs/phase5b.log (04:50:47), logs/phase6.log (08:40:14), logs/phase7.log (2026-10-11 03:48:25); research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "ran each step under the thread and memory caps of the Mac (lock, nice, /usr/bin/time)",
+   "here": "research/f3/mac_step.sh",
+   "here_is": "path lines replaced (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L3",
+   "ran_in": "final_run/src/manifest.py",
+   "sha256": "030ea98285708daaef601b87b6cdf3e46dfb6e0dde1db202803655ee1fd078b8",
+   "copy": "research/f3/out/final_drivers/030ea98285708daa_manifest.py",
+   "named_by": "logs/phase3.log (2026-10-09 14:13:16); the same SHA-256 in the list of the fetch of 2026-10-10 07:55",
+   "ran": "wrote the manifests of the corrector stages",
+   "here": "src/manifest.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/f2_ctx_mac.sh",
+   "sha256": "9630444ae1d4621b23a5df826e09b3d2dff38e669b3a32e4cd7e8ff9a28e69c9",
+   "copy": "research/f3/out/final_drivers/9630444ae1d4621b_f2_ctx_mac.sh",
+   "named_by": "file time 2026-10-08 22:21:33, before its first step at 22:22:03",
+   "ran": "the context tables f2ctx_v1 to f2ctx_v3 (2026-10-08 22:22 to 22:23)",
+   "here": "scripts/host/f2/f2_ctx_mac.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/f2_leg_mac.sh",
+   "sha256": "c8ce5c89c79d70fa9bfde972317418fe5728e0948006946e5e0e1c08228a17b5",
+   "copy": "research/f3/out/final_drivers/c8ce5c89c79d70fa_f2_leg_mac.sh",
+   "named_by": "file time 2026-10-08 22:10:18, before its first step at 22:10:58",
+   "ran": "leg f2skwin and its G band (22:10 to 22:26)",
+   "here": "scripts/host/f2/f2_leg_mac.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/f2_fjlegs_mac.sh",
+   "sha256": "9c151c725c811f6597dc6de221c0c7047b76b4d9b597b73c37985c62673dba9d",
+   "copy": "research/f3/out/final_drivers/9c151c725c811f65_f2_fjlegs_mac.sh",
+   "named_by": "file time 2026-10-08 23:02:20, before its first step at 23:06:30",
+   "ran": "legs f2sk and f2skap and their G bands (23:06 to 2026-10-09 00:11)",
+   "here": "scripts/host/f2/f2_fjlegs_mac.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/f2_heavy_mac.sh",
+   "sha256": "3f7ebb0a6a7ea15500e76d9beff8e24d98a4ceeeb5ca9eb18142dc74ff82928d",
+   "copy": "research/f3/out/final_drivers/3f7ebb0a6a7ea155_f2_heavy_mac.sh",
+   "named_by": "file time 2026-10-08 23:02:20, before its start on 2026-10-09",
+   "ran": "CatBoost legs f2cb, f2cbwin, f2cbap (13:51 to 17:44), RealMLP legs f2rmwin, f2rm (17:44 to 18:10), the three blends (18:10)",
+   "here": "scripts/host/f2/f2_heavy_mac.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/model3_fj.py",
+   "sha256": "25f42a490ac58e2dd512be4569f3ca90ce4c34302f95d0dd24174c7c83c9a12d",
+   "copy": "research/f3/out/final_drivers/25f42a490ac58e2d_model3_fj.py",
+   "named_by": "file time 2026-10-08 22:10, before the step that ran it",
+   "ran": "LightGBM legs f2skwin and f2sk",
+   "here": "research/f2/model3_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/model3ap_fj.py",
+   "sha256": "22b2ec5095f73b21ce2817dfd62d70bf1597818fa9cb67f56d1d7159a439172b",
+   "copy": "research/f3/out/final_drivers/22b2ec5095f73b21_model3ap_fj.py",
+   "named_by": "file time 2026-10-08 22:46, before the step that ran it",
+   "ran": "LightGBM per-airport leg f2skap",
+   "here": "research/f2/model3ap_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/g_band_fj.py",
+   "sha256": "a07b202b286eca9893fc7b1f1d4fff9a3f9e6d1248a1606a634fb72327bd483e",
+   "copy": "research/f3/out/final_drivers/a07b202b286eca98_g_band_fj.py",
+   "named_by": "file time 2026-10-08 22:10, before the step that ran it",
+   "ran": "G bands f2skwing, f2skg, f2skapg",
+   "here": "research/f2/g_band_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/cat_mu_fj.py",
+   "sha256": "b3ade78c854c99f84ae8be7572cd93e340c066a6ae58196d8011c763ac5feeef",
+   "copy": "research/f3/out/final_drivers/b3ade78c854c99f8_cat_mu_fj.py",
+   "named_by": "file time 2026-10-08 22:46, before the step that ran it",
+   "ran": "CatBoost legs f2cb and f2cbwin",
+   "here": "research/f2/cat_mu_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/cat_muap_fj.py",
+   "sha256": "dc756eb3fa606a94a425e6527d490821e1df0b7cd99d8dead4fcef19225e98c1",
+   "copy": "research/f3/out/final_drivers/dc756eb3fa606a94_cat_muap_fj.py",
+   "named_by": "file time 2026-10-08 22:46, before the step that ran it",
+   "ran": "CatBoost per-airport leg f2cbap",
+   "here": "research/f2/cat_muap_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/rmlp_mu_fj.py",
+   "sha256": "75b9b77b0127e8b8a9eda2704aa1af04f98741359ebd933d7d3ed0b4bc49be6e",
+   "copy": "research/f3/out/final_drivers/75b9b77b0127e8b8_rmlp_mu_fj.py",
+   "named_by": "file time 2026-10-08 22:46, before the step that ran it",
+   "ran": "RealMLP legs f2rmwin and f2rm",
+   "here": "research/f2/rmlp_mu_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/blend_fixed_fj.py",
+   "sha256": "591cae9a9ac19ec85f309ea3feddff72584ffc8b25b77385625265a4443c50fc",
+   "copy": "research/f3/out/final_drivers/591cae9a9ac19ec8_blend_fixed_fj.py",
+   "named_by": "file time 2026-10-08 22:46, before the step that ran it",
+   "ran": "the blends with v35's weights",
+   "here": "research/f2/blend_fixed_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "7",
+   "ran_in": "f2_run/research/f2/fj_blends.py",
+   "sha256": "8fc4f42c69db2b5dc734a15b9d749a0885f41318ff2da69cf60aa6985b0e4415",
+   "copy": "research/f3/out/final_drivers/8fc4f42c69db2b5d_fj_blends.py",
+   "named_by": "file time 2026-10-08 23:02, before the step that ran it",
+   "ran": "the three blends fj_f2wincbrmfw4, fj_f2skcbrmfw4, fj_f2apcbrmfw4",
+   "here": "research/f2/fj_blends.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "8",
+   "ran_in": "final_run/research/f3/phase4b.sh",
+   "sha256": "f35f03c4132a5a4704a530a447dd3c052fee24d4a00b020ace5873b1623bb1c1",
+   "copy": "research/f3/out/final_drivers/f35f03c4132a5a47_phase4b.sh",
+   "named_by": "logs/phase4b.log (2026-10-10 00:30:12)",
+   "ran": "kit_final.sh install and prep (00:50), whose outputs the L3 steps read (the merge and check scripts, research/f2/janjul_ids.parquet and the four-month context table f2ctx4f_v3); the rest of that run built the same row split on the legs of the first rebuild",
+   "here": "scripts/host/f3/phase4b.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "8",
+   "ran_in": "final_run/research/f2/send_final/kit_final.sh",
+   "sha256": "8069a08c39342cb471a57071cfb407b729d95e2bbaa5d2209bcd025b3f749dea",
+   "copy": "research/f3/out/final_drivers/8069a08c39342cb4_kit_final.sh",
+   "named_by": "logs/phase4b.log (00:30:12, checked against the kit's sha16.txt)",
+   "ran": "install and prep",
+   "here": "scripts/host/f2/kit_final.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "8",
+   "ran_in": "final_run/research/f2/send_final/sha16.txt",
+   "sha256": "8902e77d955adbc19f6397250849e5f2a246a7c691321bafc7bc6619868ae68e",
+   "copy": "research/f3/out/final_drivers/8902e77d955adbc1_sha16.txt",
+   "named_by": "logs/phase4b.log (00:30:12)",
+   "ran": "the kit's list of its files and their sha16",
+   "here": null,
+   "here_is": null
+  },
+  {
+   "step": "8, L3, gate 1.9, L4, S",
+   "ran_in": "final_run/research/f2/ctx_corr4.py",
+   "sha256": "859f390761f3d790565c82af8fdee4d3a8962b72cc9dc6451cd7843af286fec7",
+   "copy": "research/f3/out/final_drivers/859f390761f3d790_ctx_corr4.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds)",
+   "ran": "the four-month stage 2 of the corrector (for the final file research/f3/kit_s.sh l4 corr4m on chain C of package S and research/f3/kit_l4c.sh l4c corr4m on chains A and B, both on the stage-1 tables of gate 1.9; for the file on the L3 legs research/f3/kit_c.sh corr4m, and without gate 1.9 research/f3/kit_l3.sh corr4m)",
+   "here": "research/f2/ctx_corr4.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "8, L3",
+   "ran_in": "final_run/research/f2/ctx4_table.py",
+   "sha256": "f71469c1bcbafd625c17a349405f26177192470e2e03625d4935469c749acd35",
+   "copy": "research/f3/out/final_drivers/f71469c1bcbafd62_ctx4_table.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); logs/phase4b.log (00:50:22, kit install)",
+   "ran": "the four-month context table f2ctx4f_v3 (kit_final.sh prep)",
+   "here": "research/f2/ctx4_table.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "8, L3, gate 1.9, L4, S",
+   "ran_in": "final_run/research/f2/merge_corr.py",
+   "sha256": "57287c4a47417dc3320ecde2d844423ff91683a4d82f5f59f15e0002dea24dca",
+   "copy": "research/f3/out/final_drivers/57287c4a47417dc3_merge_corr.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds)",
+   "ran": "the corrector-stage merges by row group (for the final file research/f3/kit_s.sh l4 merge on chain C and research/f3/kit_l4c.sh l4c merge on chains A and B, with their null merges D; for the file on the L3 legs research/f3/kit_c.sh merge and research/f3/kit_l3.sh merge)",
+   "here": "research/f2/merge_corr.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "8, L3, gate 1.9, L4, S",
+   "ran_in": "final_run/research/f2/check_split.py",
+   "sha256": "6b58b86d6f5dae533ec2105ce05ad512685787a2b81a80e3fec6021b0ecd21f2",
+   "copy": "research/f3/out/final_drivers/6b58b86d6f5dae53_check_split.py",
+   "named_by": "research/f3/out/split_check_sl4.json (field code_sha16; in this repository research/f2/out_mac/split_check.json) and research/f3/out/split_check_l4c.json (field code_sha16)",
+   "ran": "the checks of the merges and of the final file (research/f3/kit_s.sh l4 check and check finals; for chains A and B research/f3/kit_l4c.sh l4c check)",
+   "here": "research/f2/check_split.py",
+   "here_is": "comments that name our private notes reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "gate 1.9",
+   "ran_in": "f2_run/f2_fj_mac.sh",
+   "sha256": "02cc384d0352800e43cf1ca943cbda4ab803a2cb9cafd4db6dc42c4f0b1db1d3",
+   "copy": "research/f3/out/final_drivers/02cc384d0352800e_f2_fj_mac.sh",
+   "named_by": "file time 2026-10-10 06:33:02, before its first run at 06:33",
+   "ran": "research/f2/fj_tables.py (its run of 06:53:30 to 06:53:50 wrote the tables; the runs of 06:33 and 06:43 stopped at an import of an earlier copy and wrote none), then research/f2/gate19.py (06:54:20, stopped by implementation check 2, and 07:53:30, the result of docs/DESIGN.md section 14.3)",
+   "here": "scripts/host/f2/f2_fj_mac.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "gate 1.9",
+   "ran_in": "f2_run/research/f2/fj_tables.py",
+   "sha256": "ca3e508416b2c103e22c1a041ad7e9ab396e19c1cd05669b77ce9c1679316157",
+   "copy": "research/f3/out/final_drivers/ca3e508416b2c103_fj_tables.py",
+   "named_by": "file time 2026-10-10 06:53:00, before the run of 06:53:30 to 06:53:50 that wrote research/f2/out_mac/fj_tables.json (field seconds: 20)",
+   "ran": "the stage-1 tables of gate 1.9 in the month-held-out root: adsb_v1ndfj and geo_v1ndfj for the gate, adsb_v1ndfjF and geo_v1ndfjF (the final root's adsb_v1nd and geo_v1nd plus the same 326,873 rows) for the final file",
+   "here": "research/f2/fj_tables.py",
+   "here_is": "path lines replaced and comments that name our private notes reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "gate 1.9",
+   "ran_in": "final_run/research/f3/phase6.sh",
+   "sha256": "1a618df7e9e36bcd8c0fa3d83f8f91274ccd9e88a9ad1cc14c37a29fc19ea552",
+   "copy": "research/f3/out/final_drivers/1a618df7e9e36bcd_phase6.sh",
+   "named_by": "logs/phase6.log (2026-10-10 08:40:14)",
+   "ran": "the stage-1 tables adsb_v1ndfjF and geo_v1ndfjF copied into the final root from the month-held-out root (sha16 checked) and their check (08:40:48); then research/f3/kit_c.sh 598c: the four-month corrector of each chain on those tables (08:43 to 09:18), the merges BbF and the corrector-stage check (09:23), the manifests, tail stages and average of BbF (09:51), the final checks, the month-boundary check and the file on the L3 legs (09:52:54); in parallel the same on the legs of the first rebuild (594c, its file 09:45:33)",
+   "here": "scripts/host/f3/phase6.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "gate 1.9",
+   "ran_in": "final_run/research/f3/check_fjF.py",
+   "sha256": "86c868bb5f6349ea04080d2f675eed55699dd93e4a999d61802584d19238a7a6",
+   "copy": "research/f3/out/final_drivers/86c868bb5f6349ea_check_fjF.py",
+   "named_by": "logs/phase6.log (08:40:14; run 08:40:45)",
+   "ran": "the check of the stage-1 tables of gate 1.9 in the final root: the final root's adsb_v1nd and geo_v1nd with every row unchanged plus 326,873 rows, all of them February or June 2025 departures (research/f3/out/check_fjF.json)",
+   "here": "research/f3/check_fjF.py",
+   "here_is": "a word of our working notes removed from its docstring (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "gate 1.9",
+   "ran_in": "final_run/research/f3/kit_c.sh",
+   "sha256": "dcfabd38f56d23e461ce658ef7f4e96ad1a6ceb0d724e5617eaf5f09df075d13",
+   "copy": "research/f3/out/final_drivers/dcfabd38f56d23e4_kit_c.sh",
+   "named_by": "research/f3/out/final_build_manifest_598c.json and research/f3/out/final_build_manifest_594c.json (field code_sha16); logs/phase6.log (08:40:14)",
+   "ran": "the four-month corrector of each chain on the stage-1 tables of gate 1.9, the merges BbF, the corrector-stage check, the manifests, tail stages and average of BbF, and the final checks: the commands of research/f3/kit_l3.sh with those tables and the variant name BbF",
+   "here": "research/f3/kit_c.sh",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/phase7.sh",
+   "sha256": "decc453e8404bc3b94ef6157167226923f480ec504f803dc5ff14a537db4fd2b",
+   "copy": "research/f3/out/final_drivers/decc453e8404bc3b_phase7.sh",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25)",
+   "ran": "the L4 steps of the final root in this order: the clones, the fifteen learners in the setting full and their averages, the chains of 600 and their file, the test move against 596, v44's file, the leave-February-and-June-out learners and blends, and the c form (602c) with its checks, its file and the test move against 598c",
+   "here": "scripts/host/f3/phase7.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/collect_l4.py",
+   "sha256": "0568bb8e1c40b375da5e14cff92f6de48bacb11ebcc167553337116d80076b75",
+   "copy": "research/f3/out/final_drivers/0568bb8e1c40b375_collect_l4.py",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25) and the final file's manifest (field code_sha_outside_preds)",
+   "ran": "copied into the final root, with their sha16, the L4 build's val and fwd outputs (learners, seed averages, blends, correctors), the CatBoost iteration files and the gate build's corrector models (03:49; research/f3/out/collect_l4.json)",
+   "here": "research/f3/collect_l4.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/l4_full_f3.sh",
+   "sha256": "c24dd1a5d9fb0014e401c339cc7cac5f44fb01d216dfbc1fd4352031b0ef4905",
+   "copy": "research/f3/out/final_drivers/c24dd1a5d9fb0014_l4_full_f3.sh",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25) and the final file's manifest (field code_sha_outside_preds)",
+   "ran": "the fifteen L4 learners in the setting full and their seed averages (03:49 to 11:08), then the five leave-February-and-June-out learners on feature table v2.8 (setting fj)",
+   "here": "research/f3/l4_full_f3.sh",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/r17_a/avg_l4.py",
+   "sha256": "849e0f32f45513f29cdc64721f4bcf5eacab3b89544a6311b4e729debe51503c",
+   "copy": "research/f3/out/final_drivers/849e0f32f45513f2_avg_l4.py",
+   "named_by": "logs/phase7.log (03:49:02) and the final file's manifest (field code_sha_outside_preds)",
+   "ran": "the seed averages of the L4 learners in the setting full (cloned from the L4 build by research/f3/collect_l4.py)",
+   "here": "research/r17_a/avg_l4.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/final_chain_l4.py",
+   "sha256": "663cbae065e18622c8ab937ad503bcae83bc44b6fd9ed5ab1f63c2a0c2a96cbf",
+   "copy": "research/f3/out/final_drivers/663cbae065e18622_final_chain_l4.py",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25)",
+   "ran": "chains C, B and A with --cfg l4s75 (blends and TabM add on the L4 legs, correctors at scale2 0.75 loaded from the gate build's models) and their average (600, 11:32:15)",
+   "here": "research/f3/final_chain_l4.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/daily_candidate_l4.py",
+   "sha256": "1c40939f611530b4e73998297a8d1dfc9a45e6952e028ca6c566216b836599ef",
+   "copy": "research/f3/out/final_drivers/1c40939f611530b4_daily_candidate_l4.py",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25)",
+   "ran": "v44's file: the January and July rows of 600 in the daily format (11:33:50)",
+   "here": "research/f3/daily_candidate_l4.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/fj_blends_l4.py",
+   "sha256": "b4f5b1bad4e03c9a24bc934fe3b838915811e746121c2c87b4eab8233df01021",
+   "copy": "research/f3/out/final_drivers/b4f5b1bad4e03c9a_fj_blends_l4.py",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25)",
+   "ran": "the leave-February-and-June-out blends of the three chains on the L4 legs (research/f3/out/fj_blends_l4.json; their sha16 in research/f3/out/l4_fj_sha16.txt)",
+   "here": "research/f3/fj_blends_l4.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/kit_l4c.sh",
+   "sha256": "dfdcdb9e355885973570be7962a23d2c1729b2cc9a9c53b401abac97d7152835",
+   "copy": "research/f3/out/final_drivers/dfdcdb9e35588597_kit_l4c.sh",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25)",
+   "ran": "the four-month corrector of each chain on the stage-1 tables of gate 1.9, the null merges D and the merges BbF, the corrector-stage check, the manifests, tail stages and average of BbF, and the final checks: the commands of research/f3/kit_c.sh on the chains of the L4 legs",
+   "here": "research/f3/kit_l4c.sh",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4, S",
+   "ran_in": "final_run/research/f3/test_move.py",
+   "sha256": "00f8cf1787e91b4908928c0f887fab80c11b6c1e9875801e79903e3214626899",
+   "copy": "research/f3/out/final_drivers/00f8cf1787e91b49_test_move.py",
+   "named_by": "logs/phase7.log (2026-10-11 03:48:25) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "the test moves of 600 against 596 (11:33:16), of 602c against 598c, of 603 against 600 (2026-10-12 01:52:36) and of 605c against 602c (05:33:05)",
+   "here": "research/f3/test_move.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/final_manifest_l4_602c.py",
+   "sha256": "b9435177552ba4faf8735db77b55fbfd87e18fc61bb01cd17618d49060bdc105",
+   "copy": "research/f3/out/final_drivers/b9435177552ba4fa_final_manifest_l4_602c.py",
+   "named_by": "research/f3/out/final_build_manifest_602c.json (field code_sha16)",
+   "ran": "wrote the build record of 602c (2026-10-11 16:52:48) with research/f3/final_manifest.py and research/f3/final_manifest_l4.py imported unchanged; the two records of phase 7 that are not json (the DONE markers of the L4 learners) go to its checks by path and sha16",
+   "here": "research/f3/final_manifest_l4_602c.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f3/final_manifest_l4.py",
+   "sha256": "0c60a7709413f71108e184bf56836e8fd6c1e1b7b27094dbbf0500df7a4e2269",
+   "copy": "research/f3/out/final_drivers/0c60a7709413f711_final_manifest_l4.py",
+   "named_by": "research/f3/out/final_build_manifest_602c.json (field code_sha16)",
+   "ran": "the profile of 602c for research/f3/final_manifest.py (the chains of the L4 legs, the kit research/f3/kit_l4c.sh, the default 600)",
+   "here": "research/f3/final_manifest_l4.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "L4",
+   "ran_in": "final_run/research/f2/cat_mu_fj.py",
+   "sha256": "b3ade78c854c99f84ae8be7572cd93e340c066a6ae58196d8011c763ac5feeef",
+   "copy": "research/f3/out/final_drivers/b3ade78c854c99f8_cat_mu_fj.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); logs/l4_fj.log (2026-10-11 11:34:20 and 12:45:27)",
+   "ran": "the CatBoost leave-February-and-June-out learners l4cbwin and l4cb on feature table v2.8 (research/f3/l4_full_f3.sh fj)",
+   "here": "research/f2/cat_mu_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4, S",
+   "ran_in": "final_run/research/f2/cat_muap_fj.py",
+   "sha256": "dc756eb3fa606a94a425e6527d490821e1df0b7cd99d8dead4fcef19225e98c1",
+   "copy": "research/f3/out/final_drivers/dc756eb3fa606a94_cat_muap_fj.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); logs/l4_fj.log (13:55:35); research/f2/out/s_learn_l4_fj.json",
+   "ran": "the CatBoost per-airport leave-February-and-June-out learner l4cbap on feature table v2.8 (research/f3/l4_full_f3.sh fj), and its seeds 1 and 2 for package S (2026-10-12 02:19:54 to 04:03:36; research/f2/s_learn.py l4 fj)",
+   "here": "research/f2/cat_muap_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "L4, S",
+   "ran_in": "final_run/research/f2/rmlp_mu_fj.py",
+   "sha256": "75b9b77b0127e8b8a9eda2704aa1af04f98741359ebd933d7d3ed0b4bc49be6e",
+   "copy": "research/f3/out/final_drivers/75b9b77b0127e8b8_rmlp_mu_fj.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); logs/l4_fj.log (14:43:14 and 14:56:12); research/f2/out/s_learn_l4_fj.json",
+   "ran": "the RealMLP leave-February-and-June-out learners l4rmwin and l4rm on feature table v2.8 (research/f3/l4_full_f3.sh fj, 2026-10-11 14:43:14 to 15:08:42, the end of the L4 fj learners), and l4rm at the seeds 4 to 7 of package S (2026-10-12 04:04:40 to 04:56:06; research/f2/s_learn.py l4 fj)",
+   "here": "research/f2/rmlp_mu_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f3/phase8.sh",
+   "sha256": "2e927e3b06c00f1453bd99ec190bf9e6b52b72748c5150027bbcb0db0310c1bb",
+   "copy": "research/f3/out/final_drivers/2e927e3b06c00f14_phase8.sh",
+   "named_by": "logs/phase8.log (2026-10-11 23:03:56) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "the steps of package S in the final root in this order: the clones from the package's sandbox, the eight new learners in the setting full and their averages, chain C in the T form and 603 with its file, the test move against 600, the construction checks of the blend and the manifest, v45's file, chain C's leave-February-and-June-out learners, averages and blend, the c form of chain C (605c) with its checks, the month-boundary check against 603, the final file, the test move against 602c and rule 3b",
+   "here": "scripts/host/f3/phase8.sh",
+   "here_is": "path-cleaned copy (scripts/host/README.md)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f3/collect_s.py",
+   "sha256": "ab493e2f1084daf6aa38f01370b2e37cff7e46f66ad9bbd38b5b77bac7bb6661",
+   "copy": "research/f3/out/final_drivers/ab493e2f1084daf6_collect_s.py",
+   "named_by": "logs/phase8.log (2026-10-11 23:03:56) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "copied into the final root, with their sha16, the sandbox's val and fwd files of package S (the new seeds, the averaged legs, chain C's blend and corrector outputs), its corrector models (twice: the T corrector's store and the four-month corrector's) and its tools, after checking the sandbox's verdict (23:04:26; research/f3/out/collect_s_l4.json)",
+   "here": "research/f3/collect_s.py",
+   "here_is": "path lines replaced and comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/s_spec.py",
+   "sha256": "e10e80132cf7df0b1f27c7121f3376977ebf216fc76d7c7d78fa9d34fb5514b1",
+   "copy": "research/f3/out/final_drivers/e10e80132cf7df0b_s_spec.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "the names, seed lists and commands of package S that research/f2/s_learn.py, research/f2/avg_s.py, research/f2/s_check.py and research/f3/final_chain_s.py read",
+   "here": "research/f2/s_spec.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/s_learn.py",
+   "sha256": "eee9149ab09d73f8f74c013f0311840572f5059f12b1d3dce85feaff6028b3b8",
+   "copy": "research/f3/out/final_drivers/eee9149ab09d73f8_s_learn.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); research/f2/out/s_learn_l4_full.json and s_learn_l4_fj.json",
+   "ran": "the eight new learners of package S in the setting full (2026-10-11 23:04:57 to 2026-10-12 01:30:32) and in the setting fj (01:54:40 to 04:56:06), one at a time, each with the command of the leg it averages and only --seed changed",
+   "here": "research/f2/s_learn.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/rm_smoke.py",
+   "sha256": "461b04d55fe1d60534417ecc7dceaa192261022d7d793c2c45632f4a1ef4d81c",
+   "copy": "research/f3/out/final_drivers/461b04d55fe1d605_rm_smoke.py",
+   "named_by": "research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "the one-minute RealMLP test fits before the RealMLP seeds (2026-10-12 00:24:59 and 04:04:10)",
+   "here": "research/f2/rm_smoke.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/avg_s.py",
+   "sha256": "943f6d89f16d150c9dc1e86ec62245be3a4a0757dd63cb9f656ce2e713584398",
+   "copy": "research/f3/out/final_drivers/943f6d89f16d150c_avg_s.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "the seed averages of package S: full 2026-10-12 01:32:03 to 01:33:05, fj 04:57:38 to 04:58:39 (research/f2/out/avg_s_*.json)",
+   "here": "research/f2/avg_s.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/s_check.py",
+   "sha256": "f0bb6dbc3ced23fa4326f2d9940afeb9c261763b702ca79b24f699c862d9573d",
+   "copy": "research/f3/out/final_drivers/f0bb6dbc3ced23fa_s_check.py",
+   "named_by": "research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "the construction checks of rule 1 on the full and fj files, the averages, chain C's blend and its manifest (research/f2/out/s_check_*.json)",
+   "here": "research/f2/s_check.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f3/final_chain_s.py",
+   "sha256": "4d259e042da4fa5cd72bedc25d378aaeb358d11a1935dee435f85a1c6bd41ea3",
+   "copy": "research/f3/out/final_drivers/4d259e042da4fa5c_final_chain_s.py",
+   "named_by": "logs/phase8.log (2026-10-11 23:03:56) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "chain C of package S in the T form, with research/f3/final_chain.py and research/f3/final_chain_l4.py imported unchanged, and its average with chains A and B of 600 (603, 01:51:35; research/f3/out/final_chain_sl4_C.json)",
+   "here": "research/f3/final_chain_s.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f3/daily_candidate_s.py",
+   "sha256": "079ee84cd1dafbe6481e45307e2ed665a429bca242e3295eb22a749be7c518ec",
+   "copy": "research/f3/out/final_drivers/079ee84cd1dafbe6_daily_candidate_s.py",
+   "named_by": "logs/phase8.log (2026-10-11 23:03:56) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "v45's file: the January and July rows of 603 in the daily format (01:54:10), with research/f3/daily_candidate.py imported unchanged",
+   "here": "research/f3/daily_candidate_s.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/model3ap_fj.py",
+   "sha256": "22b2ec5095f73b21ce2817dfd62d70bf1597818fa9cb67f56d1d7159a439172b",
+   "copy": "research/f3/out/final_drivers/22b2ec5095f73b21_model3ap_fj.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds); research/f2/out/s_learn_l4_fj.json",
+   "ran": "the LightGBM per-airport leave-February-and-June-out learner l3skap at seeds 1 and 2 for package S (2026-10-12 01:54:40 to 02:19:24; research/f2/s_learn.py l4 fj)",
+   "here": "research/f2/model3ap_fj.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/fj_blend_s.py",
+   "sha256": "42f534768e166112f09120d9dcf52f96534d7e8ca9fb41ad8e3b75060523c934",
+   "copy": "research/f3/out/final_drivers/42f534768e166112_fj_blend_s.py",
+   "named_by": "the final file's manifest (field code_sha_outside_preds) and research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "chain C's leave-February-and-June-out blend of package S (04:59:40 to 04:59:44; research/f2/out/s_fj_blend_l4.json)",
+   "here": "research/f2/fj_blend_s.py",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f3/kit_s.sh",
+   "sha256": "f1a12a3eb0aa420d5836ab7495311a5764909f366ae1142e7e69acfe8f33e5f0",
+   "copy": "research/f3/out/final_drivers/f1a12a3eb0aa420d_kit_s.sh",
+   "named_by": "logs/phase8.log (2026-10-11 23:03:56); the final file's manifest (field code_sha_outside_preds)",
+   "ran": "the four-month corrector of chain C on the stage-1 tables of gate 1.9 (05:00:15 to 05:15:50), its null merge D and merge BbF, the corrector-stage check, the manifests, tail stages and average of BbF (605c, 05:30:50) and the final checks: the commands of research/f3/kit_l4c.sh for chain C with the names of package S",
+   "here": "research/f3/kit_s.sh",
+   "here_is": "the same bytes apart from the SPDX line"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f2/s_gate.py",
+   "sha256": "fde3c0abeac92d408055d4d98c73d662a6cdb1cc873cda4a9aea942fcddbbe82",
+   "copy": "research/f3/out/final_drivers/fde3c0abeac92d40_s_gate.py",
+   "named_by": "research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "rule 3b in the final root: the move of 605c against 602c (05:33:36; research/f3/out/s_gate_move_l4.json)",
+   "here": "research/f2/s_gate.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  },
+  {
+   "step": "S",
+   "ran_in": "final_run/research/f3/final_manifest_s.py",
+   "sha256": "bb87594bd7dae4f079616af3fee3a45e83e9e6abe8ab6853b994ec32acd8e38e",
+   "copy": "research/f3/out/final_drivers/bb87594bd7dae4f0_final_manifest_s.py",
+   "named_by": "research/f3/out/final_build_manifest_605c.json (field code_sha16)",
+   "ran": "wrote the build record of 605c (2026-10-12 06:10:02) with the helpers of research/f3/final_manifest.py imported unchanged",
+   "here": "research/f3/final_manifest_s.py",
+   "here_is": "comments that name our private notes or roles reworded (RELEASE_MANIFEST.md section 3)"
+  }
+ ],
+ "fit_caches": {
+  "research/f3/fitcache_l4 (final root)": "the L4 gate build's 2,079 corrector models, copied in by research/f3/collect_l4.py (logs/phase7.log 2026-10-11 03:49:02); each of the nine corrector runs of the chains with --cfg l4s75 loaded all 65 of its models and fitted none (research/f3/out/final_chain_l4_A.json and the files of chains B and C, field checks)",
+  "research/f2/fitcache_4m_l4 (final root)": "seeded with the same 2,079 models (logs/phase7.log 03:49:02); for 602c, whose chains A and B the final file takes, on the stage-1 tables of gate 1.9, each of the nine scale2-0.75 runs of the four-month corrector loaded 55 models and fitted 10 and each of the nine 0.5 runs loaded all 65 (15:09 to 15:30; research/f3/out/final_build_manifest_602c.json, field seeds_fit_cache of each chain); 2,169 files at the fetch of 16:56",
+  "research/f3/fitcache_sl4 (final root)": "the 231 corrector models of package S's sandbox (its corrector runs on the new val and fwd bases fitted 65 and 12 models per seed there), copied in by research/f3/collect_s.py (logs/phase8.log 2026-10-11 23:04:27); each of the three corrector runs of chain C in the T form loaded all 65 of its models and fitted none (research/f3/out/final_chain_sl4_C.json, field checks)",
+  "research/f2/fitcache_4m_sl4 (final root)": "seeded with the same 231 models by research/f3/collect_s.py; for the final file's chain C, on the stage-1 tables of gate 1.9, each of the three scale2-0.75 runs of the four-month corrector loaded 55 models and fitted 10 and each of the three 0.5 runs loaded all 65 (2026-10-12 05:00:15 to 05:15:50; research/f3/out/final_build_manifest_605c.json, field chain_C, four_month_L); 261 files at the fetch of 09:08"
+ }
+}

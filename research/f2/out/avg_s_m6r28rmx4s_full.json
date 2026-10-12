@@ -1,0 +1,44 @@
+{
+ "setting": "full",
+ "mode": "rm",
+ "donor": "cache/full_m6r28rm_s0.parquet",
+ "donor_sha16": "7d4acea8a38c5472",
+ "seed_files": {
+  "s4": {
+   "file": "cache/full_m6r28rm_s4.parquet",
+   "sha16": "7b6849a94a4b7bb1",
+   "same_order": true
+  },
+  "s5": {
+   "file": "cache/full_m6r28rm_s5.parquet",
+   "sha16": "ad38c6916d0312e9",
+   "same_order": true
+  },
+  "s6": {
+   "file": "cache/full_m6r28rm_s6.parquet",
+   "sha16": "909ca5414504efb9",
+   "same_order": true
+  },
+  "s7": {
+   "file": "cache/full_m6r28rm_s7.parquet",
+   "sha16": "f89a160d1d058aa7",
+   "same_order": true
+  }
+ },
+ "rows": 670790,
+ "g_rows_kept_seed0": 0,
+ "columns": {
+  "mu_rmlp": {
+   "seeds": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "rms_change_vs_donor": 69.6964
+  }
+ },
+ "new": "cache/full_m6r28rmx4s_s0.parquet",
+ "new_sha16": "e4d8d165c3d73ec2",
+ "written": "2026-10-12 01:33:05"
+}

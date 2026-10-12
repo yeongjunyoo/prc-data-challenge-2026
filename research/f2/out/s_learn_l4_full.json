@@ -1,0 +1,366 @@
+{
+ "family": "l4",
+ "settings": [
+  "full"
+ ],
+ "root": "<mac-workdir>/prcm/final_run",
+ "jobs": {
+  "lgbap_full_s1": {
+   "status": "done",
+   "cmd": "research/r13_f3/model3ap.py --setting full --seed 1 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all",
+   "argv": [
+    "research/r13_f3/model3ap.py",
+    "--setting",
+    "full",
+    "--seed",
+    "1",
+    "--tag",
+    "m6r28skap",
+    "--feats",
+    "feats_v28",
+    "--es",
+    "internal",
+    "--refit",
+    "--wpow",
+    "1",
+    "--leaves",
+    "255",
+    "--mdl",
+    "100",
+    "--no_direct",
+    "--clf_drop_prefix",
+    "m_,ab_",
+    "--full_mult",
+    "1.0",
+    "--threads",
+    "6",
+    "--mu_sep",
+    "all"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 375,
+   "peak_gb": 6.15,
+   "log": "logs/f2s_l4_lgbap_full_s1_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "6",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "9422676aea1c312a"
+  },
+  "lgbap_full_s2": {
+   "status": "done",
+   "cmd": "research/r13_f3/model3ap.py --setting full --seed 2 --tag m6r28skap --feats feats_v28 --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct --clf_drop_prefix m_,ab_ --full_mult 1.0 --threads 6 --mu_sep all",
+   "argv": [
+    "research/r13_f3/model3ap.py",
+    "--setting",
+    "full",
+    "--seed",
+    "2",
+    "--tag",
+    "m6r28skap",
+    "--feats",
+    "feats_v28",
+    "--es",
+    "internal",
+    "--refit",
+    "--wpow",
+    "1",
+    "--leaves",
+    "255",
+    "--mdl",
+    "100",
+    "--no_direct",
+    "--clf_drop_prefix",
+    "m_,ab_",
+    "--full_mult",
+    "1.0",
+    "--threads",
+    "6",
+    "--mu_sep",
+    "all"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 375,
+   "peak_gb": 6.15,
+   "log": "logs/f2s_l4_lgbap_full_s2_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "6",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "ad68dfd0f442c3a7"
+  },
+  "cbap_full_s1": {
+   "status": "done",
+   "cmd": "research/r13_f3/cat_muap.py --setting full --seed 1 --tag m6r28cbap --base m6r28skap --feats feats_v28 --threads 10 --per_ap",
+   "argv": [
+    "research/r13_f3/cat_muap.py",
+    "--setting",
+    "full",
+    "--seed",
+    "1",
+    "--tag",
+    "m6r28cbap",
+    "--base",
+    "m6r28skap",
+    "--feats",
+    "feats_v28",
+    "--threads",
+    "10",
+    "--per_ap"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 1963,
+   "peak_gb": 5.25,
+   "log": "logs/f2s_l4_cbap_full_s1_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "10",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "b721170138d77a77"
+  },
+  "cbap_full_s2": {
+   "status": "done",
+   "cmd": "research/r13_f3/cat_muap.py --setting full --seed 2 --tag m6r28cbap --base m6r28skap --feats feats_v28 --threads 10 --per_ap",
+   "argv": [
+    "research/r13_f3/cat_muap.py",
+    "--setting",
+    "full",
+    "--seed",
+    "2",
+    "--tag",
+    "m6r28cbap",
+    "--base",
+    "m6r28skap",
+    "--feats",
+    "feats_v28",
+    "--threads",
+    "10",
+    "--per_ap"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 1966,
+   "peak_gb": 5.41,
+   "log": "logs/f2s_l4_cbap_full_s2_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "10",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "bfb45eae05910df5"
+  },
+  "rm_full_s4": {
+   "status": "done",
+   "cmd": "src/rmlp_mu.py --setting full --seed 4 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "argv": [
+    "src/rmlp_mu.py",
+    "--setting",
+    "full",
+    "--seed",
+    "4",
+    "--tag",
+    "m6r28rm",
+    "--base",
+    "m6r28skB0",
+    "--feats",
+    "feats_v28",
+    "--device",
+    "mps",
+    "--threads",
+    "1"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 952,
+   "peak_gb": 31.31,
+   "log": "logs/f2s_l4_rm_full_s4_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "1",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "7b6849a94a4b7bb1"
+  },
+  "rm_full_s5": {
+   "status": "done",
+   "cmd": "src/rmlp_mu.py --setting full --seed 5 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "argv": [
+    "src/rmlp_mu.py",
+    "--setting",
+    "full",
+    "--seed",
+    "5",
+    "--tag",
+    "m6r28rm",
+    "--base",
+    "m6r28skB0",
+    "--feats",
+    "feats_v28",
+    "--device",
+    "mps",
+    "--threads",
+    "1"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 955,
+   "peak_gb": 31.3,
+   "log": "logs/f2s_l4_rm_full_s5_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "1",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "ad38c6916d0312e9"
+  },
+  "rm_full_s6": {
+   "status": "done",
+   "cmd": "src/rmlp_mu.py --setting full --seed 6 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "argv": [
+    "src/rmlp_mu.py",
+    "--setting",
+    "full",
+    "--seed",
+    "6",
+    "--tag",
+    "m6r28rm",
+    "--base",
+    "m6r28skB0",
+    "--feats",
+    "feats_v28",
+    "--device",
+    "mps",
+    "--threads",
+    "1"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 953,
+   "peak_gb": 31.31,
+   "log": "logs/f2s_l4_rm_full_s6_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "1",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "909ca5414504efb9"
+  },
+  "rm_full_s7": {
+   "status": "done",
+   "cmd": "src/rmlp_mu.py --setting full --seed 7 --tag m6r28rm --base m6r28skB0 --feats feats_v28 --device mps --threads 1",
+   "argv": [
+    "src/rmlp_mu.py",
+    "--setting",
+    "full",
+    "--seed",
+    "7",
+    "--tag",
+    "m6r28rm",
+    "--base",
+    "m6r28skB0",
+    "--feats",
+    "feats_v28",
+    "--device",
+    "mps",
+    "--threads",
+    "1"
+   ],
+   "attempts": 1,
+   "rc": 0,
+   "real_s": 952,
+   "peak_gb": 31.31,
+   "log": "logs/f2s_l4_rm_full_s7_a1.log",
+   "crash": false,
+   "launch": {
+    "py_flags": [
+     "-X",
+     "utf8",
+     "-u"
+    ],
+    "env": {
+     "OMP_NUM_THREADS": "1",
+     "OPENBLAS_NUM_THREADS": "1"
+    }
+   },
+   "sha16": "f89a160d1d058aa7"
+  }
+ },
+ "rm_dropped": [],
+ "smoke": [
+  {
+   "attempt": 1,
+   "rc": 0,
+   "sec": 3.9,
+   "ok": true,
+   "time": "00:24:59"
+  }
+ ],
+ "updated": "2026-10-12 01:30:32",
+ "rm_seeds_done": [
+  4,
+  5,
+  6,
+  7
+ ],
+ "rm_use_own": true,
+ "rm_tag": "m6r28rmx4s",
+ "self_check": {
+  "cmds": true,
+  "rows": true
+ }
+}

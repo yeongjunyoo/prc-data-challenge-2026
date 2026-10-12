@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 """다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
 
-R13-F3 사본(research/r13_f3/cat_muap.py, private notes research/2026-10-07-r13-f3.md 6): src/cat_mu.py(sha16 05956dbe5a32bfa9)에 --per_ap 만 더했다.
+R13-F3 사본(research/r13_f3/cat_muap.py, vault research/2026-10-07-r13-f3.md 6): src/cat_mu.py(sha16 05956dbe5a32bfa9)에 --per_ap 만 더했다.
   --per_ap: 공항마다 CatBoost 회귀 하나(그 공항의 조기 종료 날 행으로 조기 종료, 그 공항 회귀 행에 x1.1 재학습, full 은 val 씨앗 0 이 쓴
   공항별 반복 수 "cat_<공항>"). 바탕과 섞기, G 행, 출력은 원본 그대로다. --per_ap 이 없으면 원본과 같은 길을 탄다.
 
@@ -90,7 +90,7 @@ def main():
         fit_rows, eval_rows = ~np.isin(src, [1, 7]) & ~te, np.isin(src, [1, 7])
     elif args.setting == "fwd":
         fit_rows, eval_rows = np.isin(src, [1, 2, 3, 4, 5, 6]), src == 7
-    elif args.setting == "fj":  # F2 (private notes research/2026-10-08-f2-four-months.md): 2025 의 2, 6월을 빼고 학습, 2, 6월로 잰다
+    elif args.setting == "fj":  # F2 (vault research/2026-10-08-f2-four-months.md): 2025 의 2, 6월을 빼고 학습, 2, 6월로 잰다
         fit_rows, eval_rows = ~np.isin(src, [2, 6]) & ~te, np.isin(src, [2, 6])
     else:
         fit_rows, eval_rows = ~te, te
@@ -116,7 +116,7 @@ def main():
         med = pd.Series(y_all[nfit]).groupby(apv[nfit]).median()
         fb = pd.Series(apv).map(med).fillna(float(np.median(y_all[nfit]))).to_numpy()
         anchor_all = np.where(np.isnan(da), fb, np.clip(da, 0, 7200))
-    elif args.anchor == "win":  # LOBT 창 기준(private notes research/2026-10-06-r5-paradigms.md): 공항별 정상 학습 행 중앙값을 창 [d_lobt - 3606, d_lobt + 3606] 안으로
+    elif args.anchor == "win":  # LOBT 창 기준(vault research/2026-10-06-r5-paradigms.md): 공항별 정상 학습 행 중앙값을 창 [d_lobt - 3606, d_lobt + 3606] 안으로
         dl = F["d_lobt"].to_numpy().astype(float)
         apv = F["ap"].astype(str).to_numpy()
         nfit = fit_rows & ~art_all & ~shift_all & (y_all < 3600)

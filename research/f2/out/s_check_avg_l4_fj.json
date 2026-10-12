@@ -1,0 +1,101 @@
+{
+ "check": "avg",
+ "pass": true,
+ "legs": {
+  "l3skapgx3s_fj": {
+   "pass": true,
+   "differences": [],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "mode": "m3g",
+   "donor": "l3skapg",
+   "out_sha16": "238b4092b9be15ac",
+   "seed_files": {
+    "s0": {
+     "file": "cache/fj_l3skap_s0.parquet",
+     "sha16": "bcc556a29a178f74",
+     "same_order": true
+    },
+    "s1": {
+     "file": "cache/fj_l3skap_s1.parquet",
+     "sha16": "1ef1f8d567fe36b7",
+     "same_order": true
+    },
+    "s2": {
+     "file": "cache/fj_l3skap_s2.parquet",
+     "sha16": "7784bbdab28996ae",
+     "same_order": true
+    }
+   }
+  },
+  "l4cbapx3s_fj": {
+   "pass": true,
+   "differences": [],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "mode": "cb",
+   "donor": "l4cbap",
+   "out_sha16": "45d221c2b7fdfa44",
+   "seed_files": {
+    "s0": {
+     "file": "cache/fj_l4cbap_s0.parquet",
+     "sha16": "0971fb9d4806aa50",
+     "same_order": true
+    },
+    "s1": {
+     "file": "cache/fj_l4cbap_s1.parquet",
+     "sha16": "cc46a5e315f12fa2",
+     "same_order": true
+    },
+    "s2": {
+     "file": "cache/fj_l4cbap_s2.parquet",
+     "sha16": "d9177df95f9944ad",
+     "same_order": true
+    }
+   }
+  },
+  "l4rmx4s_fj": {
+   "pass": true,
+   "differences": [],
+   "seeds": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "mode": "rm",
+   "donor": "l4rm",
+   "out_sha16": "3155cc4caddcdcd8",
+   "seed_files": {
+    "s4": {
+     "file": "cache/fj_l4rm_s4.parquet",
+     "sha16": "eb5a8d566065b633",
+     "same_order": true
+    },
+    "s5": {
+     "file": "cache/fj_l4rm_s5.parquet",
+     "sha16": "460d23de484a3dbc",
+     "same_order": true
+    },
+    "s6": {
+     "file": "cache/fj_l4rm_s6.parquet",
+     "sha16": "7796c70e79cbae7b",
+     "same_order": true
+    },
+    "s7": {
+     "file": "cache/fj_l4rm_s7.parquet",
+     "sha16": "2709c22a719e9071",
+     "same_order": true
+    }
+   }
+  }
+ },
+ "root": "<mac-workdir>/prcm/final_run",
+ "written": "2026-10-12 04:59:10"
+}

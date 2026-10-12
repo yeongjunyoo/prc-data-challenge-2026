@@ -1,0 +1,180 @@
+{
+ "written": "2026-10-12 06:01:48 KST",
+ "packer": {
+  "path": "research/f3/pack_r2a.py",
+  "sha256": "546cd08d98e97e199d287e9eab685c7e6611df9ba4f168103945b5ee3563992f"
+ },
+ "folder": "research/f3/queue_ready_r2a",
+ "name": "605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a",
+ "spec": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a",
+ "base": "605c_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13",
+ "base_dir": "research/f3/queue_ready_s",
+ "base_checks": {
+  "sha256": {
+   "parquet": "78099e1cdad943c364a922f1f0cfc3035edbe66d2d8b04650cddddec3d74f4d4",
+   "manifest": "7a969c8f150bf34663899d200d35f927408a885a39451cff9cbc1e9976f3274e",
+   "json": "7cebcdf087e66c2eef41de962f0ec7f56345f443a021aa71354f3d02f0e613ed"
+  },
+  "sha256sums_match": true,
+  "candidate": {
+   "stem": "605c_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13",
+   "manifest": "research/f3/queue_ready_s/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13.json",
+   "manifest_sha": "7a969c8f150bf346",
+   "pred_sha": "78099e1cdad943c3",
+   "holdout": "research/f3/queue_ready_s/preds/holdout_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskaps_rmse281.08.parquet",
+   "holdout_sha": "dbb7486e560930c1",
+   "local_rmse": 281.082,
+   "seeds": 1,
+   "feats": "feats_v28_f3final",
+   "spec": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13"
+  },
+  "base_mac_int_sha256": "740b81531618e654fca5ca5ce64920667a355eea74407d9d6ea8257989c613b4"
+ },
+ "tool_run": {
+  "command": "python -X utf8 research/r21/r2a_tool.py apply research/f3/queue_ready_s/605c_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13.parquet research/r21/f3_pack/605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.parquet",
+  "rc": 0,
+  "out": "apply: 605c_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13.parquet -> 605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.parquet, changed 13 rows, move MSE (4-month N) 15.60, out sha256 116d5a9fe1649dfe",
+  "err": ""
+ },
+ "r2a_output": {
+  "path": "research/r21/f3_pack/605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.parquet",
+  "sha256": "116d5a9fe1649dfefdf40c74e223ac0a20b2276681ec9fe57b5fbadf9b971fd9",
+  "expect_sha256": null,
+  "equals_expect": null,
+  "tool_record_input_sha256_is_base": true,
+  "tool_record_output_sha256_ok": true,
+  "ids_and_order_same_as_base": true,
+  "dtypes": {
+   "MVT_ID_mvt": "float64",
+   "pred": "float64"
+  },
+  "changed_n": 13,
+  "tool_changed_rows": 13,
+  "changed_ids_all_r2a_rows": true,
+  "changed_by_month": {
+   "1": 9,
+   "2": 2,
+   "7": 2
+  },
+  "changed_ids_sha256": "5d2cd5e07ea6f7b314796fd846eeaac38bd68daefbf35604606e4027ec2d5cc8",
+  "changed_ids_sha256_of": "sha256 of the sorted MVT_ID_mvt values written as integers, one per line, joined by \\n without a trailing newline, UTF-8",
+  "other_rows_bit_identical": true,
+  "move_mse_4month": 15.595740381972641
+ },
+ "checks": {
+  "candidate": {
+   "stem": "605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a",
+   "manifest": "research/f3/queue_ready_r2a/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.json",
+   "manifest_sha": "a8d85dc8caae81f6",
+   "pred_sha": "116d5a9fe1649dfe",
+   "holdout": "research/f3/queue_ready_s/preds/holdout_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskaps_rmse281.08.parquet",
+   "holdout_sha": "dbb7486e560930c1",
+   "local_rmse": 281.082,
+   "seeds": 1,
+   "feats": "feats_v28_f3final",
+   "spec": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a"
+  },
+  "candidate_problem": null,
+  "fire_final_dry": {
+   "rc": 0,
+   "would_fire": true,
+   "blocks": [],
+   "warns": [],
+   "out": [
+    "pack_r2a: empty_on_final from the notes cache (read only) notes/test_empty_final_feats_v28_f3final.json",
+    "2026-10-12 06:01 guard 엿보기 막이(guard)는 건너뛴다: 장부의 앞 제출은 1월과 7월 344,841행이고 결선 파일은 넉 달 670,790행이라 행 수와 행 집합이 다르다. 결선은 한 번뿐인 블라인드 채점(Discord 10-08 07:34Z “single blind ranking”)이라 점수 차로 행의 정답을 캐는 길도 없다",
+    "2026-10-12 06:01 final data final_ranking.parquet sha256 4b0692a792846079 ETag 8970d7057c0c72b5138020578f6bc861-6; final_submitting.parquet sha256 b3445d80e29bf599 ETag 2c1f407296e217fd7d242c9d51ba27ad",
+    "2026-10-12 06:01 quota 오늘(UTC) 결과 1, 올림 1, 남음 4",
+    "2026-10-12 06:01 (dry) would fire 605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a 을 spirited-tiger_final.parquet 로, why 와 refs 를 결정 장부에 먼저 적고 올린다. 만들기와 올리기 전에 멈췄다(파일, 결정 장부, 허가 모두 쓰지 않음)"
+   ],
+   "err": ""
+  },
+  "int_file": {
+   "builds": {
+    "r2a_1": {
+     "sha256": "68932fffa7f6b8a1ecfa23688518598ff1f6f98809bfb917a03df5fcb9f053c1",
+     "final_file_problems": [],
+     "values_equal_submission_values": true
+    },
+    "r2a_2": {
+     "sha256": "68932fffa7f6b8a1ecfa23688518598ff1f6f98809bfb917a03df5fcb9f053c1",
+     "final_file_problems": [],
+     "values_equal_submission_values": true
+    },
+    "base": {
+     "sha256": "740b81531618e654fca5ca5ce64920667a355eea74407d9d6ea8257989c613b4",
+     "final_file_problems": [],
+     "values_equal_submission_values": true
+    }
+   },
+   "reproducible": true,
+   "sha256": "68932fffa7f6b8a1ecfa23688518598ff1f6f98809bfb917a03df5fcb9f053c1",
+   "base_build_sha256": "740b81531618e654fca5ca5ce64920667a355eea74407d9d6ea8257989c613b4",
+   "base_build_equals_base_mac_int": true,
+   "same_ids_as_base_int": true,
+   "float_rows_changed": 13,
+   "float_rows_changed_by_month": {
+    "1": 9,
+    "2": 2,
+    "7": 2
+   },
+   "int_values_differing_from_base_int": 13,
+   "int_values_differing_by_month": {
+    "1": 9,
+    "2": 2,
+    "7": 2
+   },
+   "int_values_differing_from_base_mac_int": 13,
+   "int_abs_change_sum_s": 8403,
+   "differing_ids_are_r2a_changed_rows": true
+  },
+  "build_tmp_removed": true,
+  "pass": true,
+  "shippable": {
+   "manifest_test_row_ids": 0,
+   "manifest_new_fields_abs_paths": [],
+   "manifest_new_fields_private_words": [],
+   "manifest_base_keys_with_paths_or_words": [
+    "chainavg3.basis",
+    "final_of.final_root",
+    "iteration_rule"
+   ],
+   "check_json_test_row_ids": 0,
+   "check_json_abs_paths": [],
+   "check_json_private_words": [],
+   "release_scan": {
+    "rc": 0,
+    "planted_ok": true,
+    "files_scanned": 2,
+    "hits": {
+     "hard": 0,
+     "path_or_notes": 2
+    },
+    "hard": [],
+    "path_or_notes_outside_preds": [],
+    "path_or_notes_in_preds": [
+     [
+      "path or notes rule",
+      "preds/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.json",
+      243
+     ],
+     [
+      "path or notes rule",
+      "preds/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a.json",
+      361
+     ]
+    ],
+    "temp_tree_removed": true,
+    "clean": true
+   },
+   "clean": true
+  }
+ },
+ "staged": {
+  "queue_name": "605cr_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13r2a",
+  "staged_dir": "research/f3/queue_ready_r2a",
+  "parquet_sha256": "116d5a9fe1649dfefdf40c74e223ac0a20b2276681ec9fe57b5fbadf9b971fd9",
+  "json_sha256": "c3d23cf60add6d8667f9ade2f1f76ac2f969952bfa7f830188456ee1dc644260",
+  "manifest_sha256": "a8d85dc8caae81f64165659d3f02907627d677cbe3e9d903b054b8dac2b237dd"
+ }
+}

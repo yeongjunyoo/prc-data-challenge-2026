@@ -1,0 +1,63 @@
+{
+ "setting": "full",
+ "mode": "m3g",
+ "donor": "cache/full_m6r28skapg_s0.parquet",
+ "donor_sha16": "035909accca8d457",
+ "seed_files": {
+  "s0": {
+   "file": "cache/full_m6r28skap_s0.parquet",
+   "sha16": "0cae5b6d6079f9f5",
+   "same_order": true
+  },
+  "s1": {
+   "file": "cache/full_m6r28skap_s1.parquet",
+   "sha16": "9422676aea1c312a",
+   "same_order": true
+  },
+  "s2": {
+   "file": "cache/full_m6r28skap_s2.parquet",
+   "sha16": "ad68dfd0f442c3a7",
+   "same_order": true
+  }
+ },
+ "rows": 670790,
+ "g_rows_kept_seed0": 619,
+ "donor_equals_seed0_on_nonG": true,
+ "columns": {
+  "p_art": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 0.0124
+  },
+  "mu": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 24.0269
+  },
+  "pred": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 23.6583
+  },
+  "pred_noG": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 23.6583
+  }
+ },
+ "new": "cache/full_m6r28skapgx3s_s0.parquet",
+ "new_sha16": "8ecb7e8a20deaaca",
+ "written": "2026-10-12 01:32:04"
+}

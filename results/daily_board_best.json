@@ -1,12 +1,12 @@
 {
  "what": "best daily-board submission (January and July 2026 only); history, not the final file",
- "version": 41,
- "spec": "m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap",
- "server_rmse": 228.0752,
- "ruler_rmse": 281.38,
- "submitted_file": "spirited-tiger_v41.parquet",
- "submitted_file_sha256": "c78baab494f65b63d4f85cf73e151e474def37a46bb13a9a17ddb779fa84dd5a",
- "manifest": "preds/manifest_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.json",
- "manifest_sha256": "0137b1adc7f9ca13f1107805d352ef8188ad3c497c4fcd2c6d97802da7144156",
- "made_kst": "2026-10-10 09:14"
+ "version": 45,
+ "spec": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapsff12",
+ "server_rmse": 227.6728,
+ "ruler_rmse": 281.08,
+ "submitted_file": "spirited-tiger_v45.parquet",
+ "submitted_file_sha256": "154b90716630bc5c8eddc4773e3bad4bc88acbb9f9730614d358c1209bcf8409",
+ "manifest": "preds/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapsff12.json",
+ "manifest_sha256": "1fd889a7aca2646ec9c83e112934d48be1d3148dfb8fe2038674cfa8b867f833",
+ "made_kst": "2026-10-12 09:03"
 }

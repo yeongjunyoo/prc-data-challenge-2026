@@ -1,0 +1,28 @@
+{
+ "candidate": "../prc-final/ff10/research/f3/queue_ready/f3f4_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskap.parquet",
+ "rows": 344841,
+ "ledger": {
+  "pass": true,
+  "nearest": "spirited-tiger_v43.parquet",
+  "min_diff_frac": 0.967205,
+  "rule": "모든 앞 제출과 1% 이상의 행에서 달라야 한다",
+  "problems": []
+ },
+ "queue": {
+  "files": 169,
+  "nearest": "queue/done/597_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapff5.parquet",
+  "min_diff_frac": 0.967205,
+  "skipped_not_daily_format": [
+   "research/f3/queue_ready_final/590_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50wc3amfhgkcxncrdbawgpglgjaavskapff1.parquet",
+   "research/f3/queue_ready_final/592_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapff2.parquet",
+   "research/f3/queue_ready_final/594a_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBaamfhgkcxncrdbawgpglgjaavskapff3.parquet",
+   "research/f3/queue_ready_final/594b_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff4.parquet",
+   "research/f3/queue_ready_final/594c_m6r27wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapff8.parquet",
+   "research/f3/queue_ready_final/596_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapff5.parquet",
+   "research/f3/queue_ready_final/598a_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBaamfhgkcxncrdbawgpglgjaavskapff6.parquet",
+   "research/f3/queue_ready_final/598b_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbamfhgkcxncrdbawgpglgjaavskapff7.parquet",
+   "research/f3/queue_ready_final/598c_m6r28wincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapff9.parquet"
+  ]
+ },
+ "guard_d_pass": true
+}

@@ -101,7 +101,7 @@ def main():
         fit_rows, eval_rows = ~np.isin(src, [1, 7]) & ~te, np.isin(src, [1, 7])
     elif args.setting == "fwd":
         fit_rows, eval_rows = np.isin(src, [1, 2, 3, 4, 5, 6]), src == 7
-    elif args.setting == "fj":  # F2 (private notes research/2026-10-08-f2-four-months.md): 2025 의 2, 6월을 빼고 학습, 2, 6월로 잰다
+    elif args.setting == "fj":  # F2 (vault research/2026-10-08-f2-four-months.md): 2025 의 2, 6월을 빼고 학습, 2, 6월로 잰다
         fit_rows, eval_rows = ~np.isin(src, [2, 6]) & ~te, np.isin(src, [2, 6])
     else:
         fit_rows, eval_rows = ~te, te
@@ -127,7 +127,7 @@ def main():
         amed = pd.Series(y_all[nfit]).groupby(apv[nfit]).median()
         fb = pd.Series(apv).map(amed).fillna(float(np.median(y_all[nfit]))).to_numpy()
         anchor_all = np.where(np.isnan(da), fb, np.clip(da, 0, 7200))
-    elif args.anchor == "win":  # LOBT 창 기준(private notes research/2026-10-06-r5-paradigms.md): 공항별 정상 학습 행 중앙값을 창 [d_lobt - 3606, d_lobt + 3606] 안으로
+    elif args.anchor == "win":  # LOBT 창 기준(vault research/2026-10-06-r5-paradigms.md): 공항별 정상 학습 행 중앙값을 창 [d_lobt - 3606, d_lobt + 3606] 안으로
         dl = F["d_lobt"].to_numpy().astype(float)
         apv = F["ap"].astype(str).to_numpy()
         nfit = fit_rows & ~art_all & ~shift_all & (y_all < 3600)

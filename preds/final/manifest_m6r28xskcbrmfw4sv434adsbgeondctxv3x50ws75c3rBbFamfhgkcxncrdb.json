@@ -1,0 +1,402 @@
+{
+ "spec": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb",
+ "run_tag": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb",
+ "column": "pred",
+ "seeds": [
+  0
+ ],
+ "feats": "feats_v28",
+ "feats_sha": "9c75a870eb72b1ef",
+ "config": {
+  "--src": "preds/manifest_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr.json",
+  "--src_sha": "382326395f723ecc",
+  "--lam": "0.5",
+  "--cmax": "60",
+  "--ctx": "ctx_v3",
+  "--ctx_sha": "01ac984c7afd6e05",
+  "--aiu25_sha": "d742eeb626e5f9f7",
+  "--aiu26_sha": "5952d20ef5f9c424",
+  "--group": "block",
+  "--tag": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb"
+ },
+ "commands": {
+  "holdout": [
+   ".venv/Scripts/python.exe -X utf8 src/aiu_shift.py --setting val --src preds/manifest_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr.json --src_sha 382326395f723ecc --lam 0.5 --cmax 60 --ctx ctx_v3 --ctx_sha 01ac984c7afd6e05 --aiu25_sha d742eeb626e5f9f7 --aiu26_sha 5952d20ef5f9c424 --group block --tag m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb"
+  ],
+  "test": [
+   ".venv/Scripts/python.exe -X utf8 src/aiu_shift.py --setting full --src preds/manifest_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr.json --src_sha 382326395f723ecc --lam 0.5 --cmax 60 --ctx ctx_v3 --ctx_sha 01ac984c7afd6e05 --aiu25_sha d742eeb626e5f9f7 --aiu26_sha 5952d20ef5f9c424 --group block --tag m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb"
+  ],
+  "forward": [
+   ".venv/Scripts/python.exe -X utf8 src/aiu_shift.py --setting fwd --src preds/manifest_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr.json --src_sha 382326395f723ecc --lam 0.5 --cmax 60 --ctx ctx_v3 --ctx_sha 01ac984c7afd6e05 --aiu25_sha d742eeb626e5f9f7 --aiu26_sha 5952d20ef5f9c424 --group block --tag m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb"
+  ]
+ },
+ "command": ".venv/Scripts/python.exe -X utf8 src/aiu_shift.py --setting val --src preds/manifest_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr.json --src_sha 382326395f723ecc --lam 0.5 --cmax 60 --ctx ctx_v3 --ctx_sha 01ac984c7afd6e05 --aiu25_sha d742eeb626e5f9f7 --aiu26_sha 5952d20ef5f9c424 --group block --tag m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb",
+ "code_sha": {
+  "src/model3.py": "4641d5b5d91abd26",
+  "src/feats.py": "f60eeb7e58daa178",
+  "src/te.py": "0a78bd1cf5a5771a",
+  "src/load.py": "576e89ceb820272d",
+  "src/sub_g.py": "9610cde7af6ca9d9",
+  "src/common.py": "0fa50c37aeb1b42a",
+  "src/cat_mu.py": "05956dbe5a32bfa9",
+  "src/blend_mu.py": "e5827379dba9ec9a",
+  "src/g_band.py": "46969e68a18dd8d0",
+  "src/xgb_mu.py": "eb1904bd9c883cdd",
+  "src/rmlp_mu.py": "28fe9c7543664c2b",
+  "src/lobt_window.py": "3f6ef6d290ee429c",
+  "src/adsb_corr.py": "486880c0b3273ded",
+  "src/feats_adsb.py": "c50556bf2e08b59d",
+  "src/adsb_geo.py": "01a6d0667d3e5ac6",
+  "src/blend_oof.py": "42fa157949144637",
+  "src/ctx_corr.py": "41affa9791fd6d27",
+  "src/feats_ctx.py": "81c4378d6cf286a9",
+  "src/blend_fixed.py": "89fa42fffe266892",
+  "src/ctx_corr2.py": "8d5eb965268c3832",
+  "src/ctx_corr3.py": "b5866706124a1292",
+  "src/feats_ctx2.py": "01fc7ad52545c6ba",
+  "src/feats_aiu.py": "950ac59be3ce12b6",
+  "research/ctx_corr/freeze_geo.py": "c8a1864d9541565c",
+  "research/obs2/corr_plus.py": "9d1a4acb4f107595",
+  "research/obs2/obs_rows.py": "e923951e9a1e4496",
+  "research/obs2/coverage.py": "08c38f3844f6478a",
+  "research/obs2/osm_stands.py": "204c934b9e8fd84c",
+  "research/adsb/gprobe/build_nd.py": "d89f4aef50faba12",
+  "research/r10_b/cavg.py": "70c353c25c737700",
+  "research/f3/fitwrap.py": "54114020d2aa3d3c",
+  "research/r13_l/prep_x.py": "ce1c61190712b424",
+  "research/r13_l/tabm_leg.py": "dc0f41eade5183d5",
+  "research/r13_l/xrfm_leg.py": "77e1c3ef839f9a80",
+  "research/r13_l/blend_add.py": "b69eb9d47a800ceb",
+  "research/r17_a/avg_r17a.py": "b5aacb51c0b84a7c",
+  "research/r17_a/adsb_day_r17a.py": "9954d81ef97d724e",
+  "research/adsb/build_feats2.py": "167fdc742011e4fa",
+  "research/adsb/adsb_match.py": "652b0a9519920541",
+  "research/f3/avg_legs_final.py": "ffc1ca6dd80b1736",
+  "research/f3/feats_v28_final.py": "79da9cc8b08ccf40",
+  "research/r17_a/avg_l4.py": "849e0f32f45513f2",
+  "research/r17_a/l4_learn_r17a.sh": "e822599569c2b963",
+  "research/f3/l4_full_f3.sh": "c24dd1a5d9fb0014",
+  "research/f3/collect_l4.py": "0568bb8e1c40b375",
+  "research/f2/merge_corr.py": "57287c4a47417dc3",
+  "research/f2/ctx4_table.py": "f71469c1bcbafd62",
+  "research/f2/ctx_corr4.py": "859f390761f3d790",
+  "research/f2/model3_fj.py": "25f42a490ac58e2d",
+  "research/f2/model3ap_fj.py": "22b2ec5095f73b21",
+  "research/f2/g_band_fj.py": "a07b202b286eca98",
+  "research/f2/blend_fixed_fj.py": "591cae9a9ac19ec8",
+  "research/f3/fj_blends_l3.py": "672a269e14591734",
+  "research/f3/kit_l3.sh": "17a0f0e4da84b2e2",
+  "research/f3/kit_l4c.sh": "dfdcdb9e35588597",
+  "research/f2/cat_mu_fj.py": "b3ade78c854c99f8",
+  "research/f2/cat_muap_fj.py": "dc756eb3fa606a94",
+  "research/f2/rmlp_mu_fj.py": "75b9b77b0127e8b8",
+  "research/f3/fj_blends_l4.py": "b4f5b1bad4e03c9a",
+  "tools/artmm.py": "a78fda56cd3f3e15",
+  "tools/arthist.py": "c35e98cccf682f53",
+  "tools/gkey.py": "f11f50f785937ece",
+  "tools/antiwin.py": "117a35c3d8bed472",
+  "tools/gkeyx.py": "8a1ebee045d8053e",
+  "tools/gkeyxn.py": "3719a24fe7bcf65d",
+  "src/aiu_shift.py": "a2caa0c808f8d59a"
+ },
+ "code_snapshots": {
+  "src/model3.py": "preds/code/4641d5b5d91abd26_model3.py",
+  "src/feats.py": "preds/code/f60eeb7e58daa178_feats.py",
+  "src/te.py": "preds/code/0a78bd1cf5a5771a_te.py",
+  "src/load.py": "preds/code/576e89ceb820272d_load.py",
+  "src/sub_g.py": "preds/code/9610cde7af6ca9d9_sub_g.py",
+  "src/common.py": "preds/code/0fa50c37aeb1b42a_common.py",
+  "src/cat_mu.py": "preds/code/05956dbe5a32bfa9_cat_mu.py",
+  "src/blend_mu.py": "preds/code/e5827379dba9ec9a_blend_mu.py",
+  "src/g_band.py": "preds/code/46969e68a18dd8d0_g_band.py",
+  "src/xgb_mu.py": "preds/code/eb1904bd9c883cdd_xgb_mu.py",
+  "src/rmlp_mu.py": "preds/code/28fe9c7543664c2b_rmlp_mu.py",
+  "src/lobt_window.py": "preds/code/3f6ef6d290ee429c_lobt_window.py",
+  "src/adsb_corr.py": "preds/code/486880c0b3273ded_adsb_corr.py",
+  "src/feats_adsb.py": "preds/code/c50556bf2e08b59d_feats_adsb.py",
+  "src/adsb_geo.py": "preds/code/01a6d0667d3e5ac6_adsb_geo.py",
+  "src/blend_oof.py": "preds/code/42fa157949144637_blend_oof.py",
+  "src/ctx_corr.py": "preds/code/41affa9791fd6d27_ctx_corr.py",
+  "src/feats_ctx.py": "preds/code/81c4378d6cf286a9_feats_ctx.py",
+  "src/blend_fixed.py": "preds/code/89fa42fffe266892_blend_fixed.py",
+  "src/ctx_corr2.py": "preds/code/8d5eb965268c3832_ctx_corr2.py",
+  "src/ctx_corr3.py": "preds/code/b5866706124a1292_ctx_corr3.py",
+  "src/feats_ctx2.py": "preds/code/01fc7ad52545c6ba_feats_ctx2.py",
+  "src/feats_aiu.py": "preds/code/950ac59be3ce12b6_feats_aiu.py",
+  "research/ctx_corr/freeze_geo.py": "preds/code/c8a1864d9541565c_freeze_geo.py",
+  "research/obs2/corr_plus.py": "preds/code/9d1a4acb4f107595_corr_plus.py",
+  "research/obs2/obs_rows.py": "preds/code/e923951e9a1e4496_obs_rows.py",
+  "research/obs2/coverage.py": "preds/code/08c38f3844f6478a_coverage.py",
+  "research/obs2/osm_stands.py": "preds/code/204c934b9e8fd84c_osm_stands.py",
+  "research/adsb/gprobe/build_nd.py": "preds/code/d89f4aef50faba12_build_nd.py",
+  "research/r10_b/cavg.py": "preds/code/70c353c25c737700_cavg.py",
+  "research/f3/fitwrap.py": "preds/code/54114020d2aa3d3c_fitwrap.py",
+  "research/r13_l/prep_x.py": "preds/code/ce1c61190712b424_prep_x.py",
+  "research/r13_l/tabm_leg.py": "preds/code/dc0f41eade5183d5_tabm_leg.py",
+  "research/r13_l/xrfm_leg.py": "preds/code/77e1c3ef839f9a80_xrfm_leg.py",
+  "research/r13_l/blend_add.py": "preds/code/b69eb9d47a800ceb_blend_add.py",
+  "research/r17_a/avg_r17a.py": "preds/code/b5aacb51c0b84a7c_avg_r17a.py",
+  "research/r17_a/adsb_day_r17a.py": "preds/code/9954d81ef97d724e_adsb_day_r17a.py",
+  "research/adsb/build_feats2.py": "preds/code/167fdc742011e4fa_build_feats2.py",
+  "research/adsb/adsb_match.py": "preds/code/652b0a9519920541_adsb_match.py",
+  "research/f3/avg_legs_final.py": "preds/code/ffc1ca6dd80b1736_avg_legs_final.py",
+  "research/f3/feats_v28_final.py": "preds/code/79da9cc8b08ccf40_feats_v28_final.py",
+  "research/r17_a/avg_l4.py": "preds/code/849e0f32f45513f2_avg_l4.py",
+  "research/r17_a/l4_learn_r17a.sh": "preds/code/e822599569c2b963_l4_learn_r17a.sh",
+  "research/f3/l4_full_f3.sh": "preds/code/c24dd1a5d9fb0014_l4_full_f3.sh",
+  "research/f3/collect_l4.py": "preds/code/0568bb8e1c40b375_collect_l4.py",
+  "research/f2/merge_corr.py": "preds/code/57287c4a47417dc3_merge_corr.py",
+  "research/f2/ctx4_table.py": "preds/code/f71469c1bcbafd62_ctx4_table.py",
+  "research/f2/ctx_corr4.py": "preds/code/859f390761f3d790_ctx_corr4.py",
+  "research/f2/model3_fj.py": "preds/code/25f42a490ac58e2d_model3_fj.py",
+  "research/f2/model3ap_fj.py": "preds/code/22b2ec5095f73b21_model3ap_fj.py",
+  "research/f2/g_band_fj.py": "preds/code/a07b202b286eca98_g_band_fj.py",
+  "research/f2/blend_fixed_fj.py": "preds/code/591cae9a9ac19ec8_blend_fixed_fj.py",
+  "research/f3/fj_blends_l3.py": "preds/code/672a269e14591734_fj_blends_l3.py",
+  "research/f3/kit_l3.sh": "preds/code/17a0f0e4da84b2e2_kit_l3.sh",
+  "research/f3/kit_l4c.sh": "preds/code/dfdcdb9e35588597_kit_l4c.sh",
+  "research/f2/cat_mu_fj.py": "preds/code/b3ade78c854c99f8_cat_mu_fj.py",
+  "research/f2/cat_muap_fj.py": "preds/code/dc756eb3fa606a94_cat_muap_fj.py",
+  "research/f2/rmlp_mu_fj.py": "preds/code/75b9b77b0127e8b8_rmlp_mu_fj.py",
+  "research/f3/fj_blends_l4.py": "preds/code/b4f5b1bad4e03c9a_fj_blends_l4.py",
+  "tools/artmm.py": "preds/code/a78fda56cd3f3e15_artmm.py",
+  "tools/arthist.py": "preds/code/c35e98cccf682f53_arthist.py",
+  "tools/gkey.py": "preds/code/f11f50f785937ece_gkey.py",
+  "tools/antiwin.py": "preds/code/117a35c3d8bed472_antiwin.py",
+  "tools/gkeyx.py": "preds/code/8a1ebee045d8053e_gkeyx.py",
+  "tools/gkeyxn.py": "preds/code/3719a24fe7bcf65d_gkeyxn.py",
+  "src/aiu_shift.py": "preds/code/a2caa0c808f8d59a_aiu_shift.py"
+ },
+ "holdout": {
+  "path": "preds/holdout_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb_rmse286.72.parquet",
+  "sha": "277fd5ba5706b796",
+  "rmse": 286.72,
+  "ruler_hash": "19afdfc7fedf88ea"
+ },
+ "test": {
+  "path": "preds/test_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb.parquet",
+  "sha": "899ae65e8d6104a5"
+ },
+ "forward": {
+  "path": "preds/fwd_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb.parquet",
+  "sha": "42542a21e6b0025d",
+  "rmse_2025_07": 278.13
+ },
+ "es_valid_ids": {
+  "path": "preds/es_valid_ids_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb.parquet",
+  "sha": "dd793de93000e14e",
+  "rows": 172291,
+  "overlap_with_ruler": 0
+ },
+ "iteration_rule": "internal early stopping on train-range days (UTC day % 10 == 0); holdout and forward refit on all train-range rows with iterations x 1.1; test (full 2025) uses the same iterations x 1.1 (--full_mult 1.0) | artmm: p_art cell means moved by kappa x (carrier-month arrival copy share minus its training-month share) where that change is at least 0.10; kappa from training-month cells only; threshold fixed in research | arthist: LIRF non-G p_art moved in log-odds by beta x (flight-history art share vs the flight-month mean p_art); one coefficient beta fitted on the val ruler rows (day folds for val, January for fwd, both months for test) | gkey: G model refit per setting on the g_band training rows (2025 months outside the evaluated ones); key average 0.5 and the nine columns fixed in research, nothing chosen on the ruler | gkeyx: G model refit per setting on the g_band training rows; twelve record columns, the 43,200 s d_sch guard and the 0.5 key average fixed in research, nothing chosen on the ruler | gkeyxn (avg_xncr): G model refit per setting on the g_band training rows; the nine R3 stand and link columns and the carrier-month arrival copy share added to gkeyx's twelve on the GBM side, gkeyx's 43,200 s d_sch guard and 0.5 key average kept, nothing chosen on the ruler | aiu_shift: no model fitting; g and the airport offsets come from ruler months outside the moved rows",
+ "source": {
+  "queue": "21109_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr",
+  "manifest": "preds/manifest_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr.json",
+  "manifest_sha": "382326395f723ecc",
+  "spec": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr",
+  "holdout_sha": "29efbff84e712828",
+  "test_sha": "2aadd299ce9b298e",
+  "forward_sha": "9d7c88130ce03f74"
+ },
+ "aiu_shift": {
+  "corrector": "m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfh",
+  "base": "m6r28xskcbrmfw4sv434",
+  "inputs_sha16": {
+   "cache/val_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfh_s0.parquet": "64d012bddb3d7fae",
+   "cache/fwd_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfh_s0.parquet": "d04c108485951eda",
+   "cache/full_m6r28xskcbrmfw4sv434adsbgeondctxv3x50ws75c3rBbFamfh_s0.parquet": "9052572a0f1bfb3b",
+   "cache/val_m6r28xskcbrmfw4sv434_s0.parquet": "4a707430cb52e856",
+   "cache/fwd_m6r28xskcbrmfw4sv434_s0.parquet": "14d84762cc5a947a",
+   "cache/full_m6r28xskcbrmfw4sv434_s0.parquet": "5ac0cd926d7184b7",
+   "cache/feats_v25.parquet": "c399bd36a924f370"
+  },
+  "report": {
+   "full": {
+    "rows": 670790,
+    "rows_moved": 619954,
+    "move_mse": 74.4,
+    "c_by_airport": {
+     "EDDF": [
+      -3.2,
+      12.6,
+      0.01
+     ],
+     "EDDM": [
+      4.1,
+      9.8,
+      0.01
+     ],
+     "EGLL": [
+      -3.4,
+      9.7,
+      0.01
+     ],
+     "EHAM": [
+      -0.2,
+      17.6,
+      0.05
+     ],
+     "LEBL": [
+      -10.6,
+      18.4,
+      0.04
+     ],
+     "LEMD": [
+      1.0,
+      11.5,
+      0.0
+     ],
+     "LFPG": [
+      -1.2,
+      16.5,
+      0.01
+     ],
+     "LIRF": [
+      -10.9,
+      33.4,
+      0.16
+     ],
+     "LSZH": [
+      1.3,
+      12.3,
+      0.01
+     ],
+     "LTFM": [
+      -23.0,
+      19.4,
+      0.07
+     ]
+    }
+   },
+   "val": {
+    "rows": 344419,
+    "rows_moved": 316827,
+    "move_mse": 73.0,
+    "c_by_airport": {
+     "EDDF": [
+      0.8,
+      8.3,
+      0.0
+     ],
+     "EDDM": [
+      0.2,
+      13.7,
+      0.03
+     ],
+     "EGLL": [
+      -8.5,
+      15.3,
+      0.02
+     ],
+     "EHAM": [
+      0.4,
+      11.5,
+      0.02
+     ],
+     "LEBL": [
+      1.9,
+      20.7,
+      0.05
+     ],
+     "LEMD": [
+      -6.0,
+      12.1,
+      0.0
+     ],
+     "LFPG": [
+      -10.3,
+      17.2,
+      0.0
+     ],
+     "LIRF": [
+      -14.5,
+      29.7,
+      0.13
+     ],
+     "LSZH": [
+      2.5,
+      9.0,
+      0.0
+     ],
+     "LTFM": [
+      -9.6,
+      24.3,
+      0.05
+     ]
+    },
+    "rmse_old": 286.883,
+    "rmse_new": 286.72,
+    "dmse": -93.3
+   },
+   "fwd": {
+    "rows": 190713,
+    "rows_moved": 184793,
+    "move_mse": 156.9,
+    "c_by_airport": {
+     "EDDF": [
+      -14.1,
+      3.6,
+      0.0
+     ],
+     "EDDM": [
+      13.2,
+      17.3,
+      0.03
+     ],
+     "EGLL": [
+      -4.3,
+      20.4,
+      0.03
+     ],
+     "EHAM": [
+      5.3,
+      11.1,
+      0.03
+     ],
+     "LEBL": [
+      18.2,
+      31.1,
+      0.1
+     ],
+     "LEMD": [
+      -29.7,
+      15.7,
+      0.1
+     ],
+     "LFPG": [
+      -23.5,
+      15.4,
+      0.06
+     ],
+     "LIRF": [
+      -31.5,
+      28.1,
+      0.35
+     ],
+     "LSZH": [
+      4.4,
+      8.7,
+      0.0
+     ],
+     "LTFM": [
+      -25.8,
+      24.0,
+      0.1
+     ]
+    },
+    "rmse_old": 278.816,
+    "rmse_new": 278.129,
+    "dmse": -382.7
+   }
+  },
+  "group": {
+   "group": "block",
+   "rule": "airport-day groups by the UTC date of MVT - mn (rows to shift) and of MVT - y (fitting rows for the airport offsets); dates outside the frame's MVT dates are not matched",
+   "evidence": "vault research/2026-10-07-r7-u.md 6.1 (pre-registered 00:04 KST 10-07): AIU totals match label totals grouped by off-block UTC date (research/r7_u/e3_dayattr.py); against the MVT-date shift on the 456 stack after antiwin val -45.9, fwd -82.5, nd -21.9 (day bootstrap 1.00 each), 12/12 months of the label-only match proxy",
+   "caveats": [
+    "the off-block date finding came from looking at 2025 AIU totals after the pre-registered tail variant had failed; the rule for this option was written before its rulers were run"
+   ]
+  }
+ },
+ "written_kst": "2026-10-11 15:45:31 KST"
+}

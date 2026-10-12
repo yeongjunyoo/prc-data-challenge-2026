@@ -1,0 +1,220 @@
+{
+ "from": "<mac-workdir>/prcm/f2s_sbxl4",
+ "export": "<mac-workdir>/prcm/f2s_sbxl4/research/f2/out/s_export_l4.json",
+ "export_sha16": "98bec6fee0c6fb8d",
+ "family": "l4",
+ "rm_seeds": [
+  4,
+  5,
+  6,
+  7
+ ],
+ "names": {
+  "family": "l4",
+  "label": "602c (L4: CatBoost and RealMLP learners refit on feats_v28 over L3's LightGBM legs)",
+  "rm_seeds": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "rm_own": true,
+  "S": {
+   "T": "m6r28xsapcbrmfw4sv114",
+   "base": "m6r28skapgx3s",
+   "learners": "m6r28cbapx3s:mu_cat,m6r25xg:mu_xgb,m6r28rmx4s:mu_rmlp",
+   "TC": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75",
+   "TCS": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3",
+   "tails": {
+    "am": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3am",
+    "fh": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfh",
+    "gkc": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkc",
+    "gkcx": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcx",
+    "xncr": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncr",
+    "db": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdb",
+    "aw": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbaw",
+    "gp": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgp",
+    "gl": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpgl",
+    "gja": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgja"
+   },
+   "L75": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75m4F",
+   "L50": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50wm4F",
+   "merge": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbF",
+   "merge_tails": {
+    "am": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFam",
+    "fh": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfh",
+    "gkc": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkc",
+    "gkcx": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcx",
+    "xncr": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcxncr",
+    "db": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdb",
+    "aw": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbaw",
+    "gp": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgp",
+    "gl": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpgl",
+    "gja": "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgja"
+   },
+   "fj_blend": {
+    "tag": "l4sapcbrmfw4",
+    "base": "l3skapgx3s",
+    "learners": "l4cbapx3s:mu_cat,l4xg:mu_xgb,l4rmx4s:mu_rmlp"
+   }
+  },
+  "G": {
+   "T": "m6r28xsgapcbrmfw4sv114",
+   "base": "m6r28skapgx3s",
+   "learners": "m6r28cbapx3s:mu_cat,m6r25xg:mu_xgb,m6r28rmx4s:mu_rmlp",
+   "TC": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75",
+   "TCS": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3",
+   "tails": {
+    "am": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3am",
+    "fh": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfh",
+    "gkc": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkc",
+    "gkcx": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcx",
+    "xncr": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncr",
+    "db": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdb",
+    "aw": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbaw",
+    "gp": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgp",
+    "gl": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpgl",
+    "gja": "m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgja"
+   }
+  },
+  "names": {
+   "603": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskaps",
+   "604": "Jan/Jul rows of 603 in 597's form (research/f3/daily_candidate.py)",
+   "605c": "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskaps"
+  }
+ },
+ "verdict": {
+  "file": "research/f2/out/s_verdict_sbx_l4.json",
+  "sha16": "21ff0aae651cacba",
+  "pass": true,
+  "inputs": {
+   "research/f2/out/s_check_rows_l4_valfwd.json": true,
+   "research/f2/out/s_check_cmds_l4_valfwd.json": true,
+   "research/f2/out/s_check_avg_l4_valfwd.json": true,
+   "research/f2/out/s_check_blend_m6r28xsapcbrmfw4sv114.json": true,
+   "research/f2/out/s_check_manifest_m6r28xsgapcbrmfw4sv114adsbgeondctxv3x50ws75c3.json": true,
+   "research/f2/out/s_gate_sbx_l4.json": true
+  }
+ },
+ "gate": {
+  "file": "research/f2/out/s_gate_sbx_l4.json",
+  "sha16": "615d154825365dc1",
+  "rules": {
+   "2_body_val_le0": true,
+   "2_body_fwd_le0": true,
+   "3a_all_val_le_2sd": true,
+   "3a_all_fwd_le_2sd": true
+  },
+  "numbers": {
+   "val": {
+    "dmse": -51.74,
+    "boot_sd": 23.61,
+    "body_nonG": -83.63,
+    "p_below0": 0.989,
+    "body_p_below0": 1.0
+   },
+   "fwd": {
+    "dmse": -87.86,
+    "boot_sd": 29.96,
+    "body_nonG": -44.3,
+    "p_below0": 0.9985,
+    "body_p_below0": 0.978
+   }
+  }
+ },
+ "copied": {
+  "cache/val_m6r28skap_s1.parquet": "a21deecdfd40cc70",
+  "preds/es_valid_ids_m6r28skap_val_s1.parquet": "dd793de93000e14e",
+  "cache/val_m6r28skap_s2.parquet": "a2e64ad0ec3322b4",
+  "preds/es_valid_ids_m6r28skap_val_s2.parquet": "dd793de93000e14e",
+  "cache/val_m6r28skapgx3s_s0.parquet": "985d3b2bf059b6eb",
+  "preds/es_valid_ids_m6r28skapgx3s_val_s0.parquet": "dd793de93000e14e",
+  "cache/val_m6r28cbap_s1.parquet": "dc6f2b0099995242",
+  "preds/es_valid_ids_m6r28cbap_val_s1.parquet": "dd793de93000e14e",
+  "cache/val_m6r28cbap_s2.parquet": "f42f999484d72746",
+  "preds/es_valid_ids_m6r28cbap_val_s2.parquet": "dd793de93000e14e",
+  "cache/val_m6r28cbapx3s_s0.parquet": "d217bd9342759e5a",
+  "preds/es_valid_ids_m6r28cbapx3s_val_s0.parquet": "dd793de93000e14e",
+  "cache/val_m6r28rm_s4.parquet": "d873e1dc78b7f07e",
+  "preds/es_valid_ids_m6r28rm_val_s4.parquet": "dd793de93000e14e",
+  "cache/val_m6r28rm_s5.parquet": "d5c29e121b11a77a",
+  "preds/es_valid_ids_m6r28rm_val_s5.parquet": "dd793de93000e14e",
+  "cache/val_m6r28rm_s6.parquet": "7d0c47ac3cc1b5ee",
+  "preds/es_valid_ids_m6r28rm_val_s6.parquet": "dd793de93000e14e",
+  "cache/val_m6r28rm_s7.parquet": "e6de5f628ea7bb5b",
+  "preds/es_valid_ids_m6r28rm_val_s7.parquet": "dd793de93000e14e",
+  "cache/val_m6r28rmx4s_s0.parquet": "2ca186bed6487f26",
+  "preds/es_valid_ids_m6r28rmx4s_val_s0.parquet": "dd793de93000e14e",
+  "cache/val_m6r28xsapcbrmfw4sv114_s0.parquet": "1c803d2031bccae3",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114_val_s0.parquet": "dd793de93000e14e",
+  "notes/blend_fixed_m6r28xsapcbrmfw4sv114_val_s0.json": "6370678c69ae8a7a",
+  "cache/val_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet": "6d9c41e06f23cff1",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_val_s0.parquet": "dd793de93000e14e",
+  "cache/val_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet": "b82bc7b9f3ba1f67",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_val_s1.parquet": "dd793de93000e14e",
+  "cache/val_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet": "87a760c432acc486",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_val_s2.parquet": "dd793de93000e14e",
+  "cache/val_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet": "c285c779551da434",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3_val_s0.parquet": "dd793de93000e14e",
+  "cache/fwd_m6r28skap_s1.parquet": "e44accdf45c12447",
+  "preds/es_valid_ids_m6r28skap_fwd_s1.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28skap_s2.parquet": "57a6bc8e2daee990",
+  "preds/es_valid_ids_m6r28skap_fwd_s2.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28skapgx3s_s0.parquet": "cbb40adb9a6bc70e",
+  "preds/es_valid_ids_m6r28skapgx3s_fwd_s0.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28cbap_s1.parquet": "53d973ff7bea193d",
+  "preds/es_valid_ids_m6r28cbap_fwd_s1.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28cbap_s2.parquet": "5404f28bb089fbe4",
+  "preds/es_valid_ids_m6r28cbap_fwd_s2.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28cbapx3s_s0.parquet": "e36232f2643d38f4",
+  "preds/es_valid_ids_m6r28cbapx3s_fwd_s0.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28rm_s4.parquet": "b954edb6062591cb",
+  "preds/es_valid_ids_m6r28rm_fwd_s4.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28rm_s5.parquet": "68c2bb384f1faa54",
+  "preds/es_valid_ids_m6r28rm_fwd_s5.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28rm_s6.parquet": "9d711b149a0a3b23",
+  "preds/es_valid_ids_m6r28rm_fwd_s6.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28rm_s7.parquet": "90b47a6fde805692",
+  "preds/es_valid_ids_m6r28rm_fwd_s7.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28rmx4s_s0.parquet": "fa7c14c6fe21e2f3",
+  "preds/es_valid_ids_m6r28rmx4s_fwd_s0.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28xsapcbrmfw4sv114_s0.parquet": "c7c12098275751bf",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114_fwd_s0.parquet": "925e0b6eceb77d24",
+  "notes/blend_fixed_m6r28xsapcbrmfw4sv114_fwd_s0.json": "548c1befd9321913",
+  "cache/fwd_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_s0.parquet": "ec2ca8e9bc9a2831",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_fwd_s0.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_s1.parquet": "50af0e8f86421a43",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_fwd_s1.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_s2.parquet": "89d75a45e1458049",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75_fwd_s2.parquet": "925e0b6eceb77d24",
+  "cache/fwd_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3_s0.parquet": "e075628cf6e8d0a2",
+  "preds/es_valid_ids_m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3_fwd_s0.parquet": "925e0b6eceb77d24",
+  "research/f2/avg_s.py": "943f6d89f16d150c",
+  "research/f2/s_spec.py": "e10e80132cf7df0b",
+  "research/f2/s_check.py": "f0bb6dbc3ced23fa",
+  "research/f2/s_gate.py": "fde3c0abeac92d40",
+  "research/f2/fj_blend_s.py": "42f534768e166112",
+  "research/f2/s_learn.py": "eee9149ab09d73f8",
+  "research/f2/rm_smoke.py": "461b04d55fe1d605"
+ },
+ "same_bytes_existing": {},
+ "fitcache": {
+  "research/f3/fitcache_sl4": {
+   "from": "<mac-workdir>/prcm/f2s_sbxl4/research/f2/fitcache_s",
+   "files": 231
+  },
+  "research/f2/fitcache_4m_sl4": {
+   "from": "<mac-workdir>/prcm/f2s_sbxl4/research/f2/fitcache_s",
+   "files": 231
+  }
+ },
+ "tool_sha16": {
+  "research/f2/avg_s.py": "943f6d89f16d150c",
+  "research/f2/s_spec.py": "e10e80132cf7df0b",
+  "research/f2/s_check.py": "f0bb6dbc3ced23fa",
+  "research/f2/s_gate.py": "fde3c0abeac92d40",
+  "research/f2/fj_blend_s.py": "42f534768e166112",
+  "research/f2/s_learn.py": "eee9149ab09d73f8",
+  "research/f2/rm_smoke.py": "461b04d55fe1d605"
+ }
+}

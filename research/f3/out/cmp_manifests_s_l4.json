@@ -1,0 +1,354 @@
+{
+ "family": "l4",
+ "maps_sandbox_to_final": [
+  [
+   "m6r28xsgapcbrmfw4sv114",
+   "m6r28xsapcbrmfw4sv114"
+  ],
+  [
+   "m6r28l4gfx",
+   "m6r28x"
+  ]
+ ],
+ "compared": 12,
+ "missing": [],
+ "fails": {},
+ "same": [
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3am",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfh",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkc",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcx",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncr",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdb",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbaw",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgp",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpgl",
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgja",
+  "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskaps"
+ ],
+ "code_sha_differences": {
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3am": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfh": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkc": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcx": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncr": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdb": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbaw": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgp": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpgl": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xsapcbrmfw4sv114adsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgja": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  },
+  "m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskaps": {
+   "research/f3/avg_legs_final.py": [
+    "ffc1ca6dd80b1736",
+    null
+   ],
+   "research/f3/collect_l4.py": [
+    "0568bb8e1c40b375",
+    null
+   ],
+   "research/f3/feats_v28_final.py": [
+    "79da9cc8b08ccf40",
+    null
+   ],
+   "research/f3/fitwrap.py": [
+    "54114020d2aa3d3c",
+    null
+   ],
+   "research/f3/l4_full_f3.sh": [
+    "c24dd1a5d9fb0014",
+    null
+   ],
+   "research/r17_a/l4_learn_r17a.sh": [
+    "e822599569c2b963",
+    null
+   ]
+  }
+ },
+ "code_files_differing_anywhere": [
+  "research/f3/avg_legs_final.py",
+  "research/f3/collect_l4.py",
+  "research/f3/feats_v28_final.py",
+  "research/f3/fitwrap.py",
+  "research/f3/l4_full_f3.sh",
+  "research/r17_a/l4_learn_r17a.sh"
+ ],
+ "pass": true,
+ "summary": "12 of 12 pairs compared: 12 with holdout, forward, es, seeds, column equal and config and commands equal up to input hashes and the name map; 0 failing; missing []; code files differing somewhere: ['research/f3/avg_legs_final.py', 'research/f3/collect_l4.py', 'research/f3/feats_v28_final.py', 'research/f3/fitwrap.py', 'research/f3/l4_full_f3.sh', 'research/r17_a/l4_learn_r17a.sh']"
+}

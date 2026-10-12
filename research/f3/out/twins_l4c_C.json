@@ -1,0 +1,35 @@
+{
+ "what": "F2 final split kit checks (research/f2/check_split.py)",
+ "written": "2026-10-11 15:30:21",
+ "code_sha16": {
+  "research/f2/merge_corr.py": "57287c4a47417dc3",
+  "research/f2/check_split.py": "6b58b86d6f5dae53",
+  "research/f2/ctx_corr4.py": "859f390761f3d790",
+  "research/f2/ctx4_table.py": "f71469c1bcbafd62"
+ },
+ "inputs_sha16": {
+  "cache/f2ctx4f_v3.parquet": "5d6b344920e46b7f",
+  "cache/f2ctx_v3.parquet": "531e8113e7f26fff",
+  "cache/fj_f2wincbrmfw4_s0.parquet": "bbdfbccf5821da14",
+  "cache/fj_f2skcbrmfw4_s0.parquet": "cd2cf1ea95631aad",
+  "cache/fj_f2apcbrmfw4_s0.parquet": "c0901a4fd4121cc7"
+ },
+ "expected_counts": {
+  "2026-02": "106542/144158",
+  "2026-06": "127966/181791"
+ },
+ "merged": {},
+ "finals": {},
+ "twins": {
+  "m6r28xapcbrmfw4sv114adsbgeondctxv3x50ws75m4F:m6r28xapcbrmfw4sv114adsbgeondctxv3x50wm4F": {
+   "s0_same_stage2": true,
+   "s1_same_stage2": true,
+   "s2_same_stage2": true,
+   "c3_differ_in_pred_only": true,
+   "c3_pred_rows_differ": 643947
+  }
+ },
+ "fails": [],
+ "pass": true,
+ "seconds": 0.2
+}

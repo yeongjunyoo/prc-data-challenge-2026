@@ -1,0 +1,20 @@
+{
+ "s_final": "preds/test_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskaps.parquet",
+ "s_sha16": "78099e1cdad943c3",
+ "family_final": "preds/test_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskap.parquet",
+ "family_sha16": "242bd657a353e21a",
+ "rows": 670790,
+ "move_mse": 51.41,
+ "mean_move": 0.116,
+ "rows_moved_over_0.5s": 589479,
+ "max_abs_move": 293.38,
+ "limit": 150.0,
+ "raw": {
+  "move_mse": 51.407090821262955
+ },
+ "rules": {
+  "3b_move_le_150": true
+ },
+ "pass": true,
+ "written": "2026-10-12 05:33:36"
+}

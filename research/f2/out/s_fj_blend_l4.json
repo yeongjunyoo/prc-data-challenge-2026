@@ -1,0 +1,14 @@
+{
+ "tag": "l4sapcbrmfw4",
+ "base": "l3skapgx3s",
+ "learners": "l4cbapx3s:mu_cat,l4xg:mu_xgb,l4rmx4s:mu_rmlp",
+ "weights": [
+  0.1252,
+  0.4951,
+  0.0,
+  0.3798
+ ],
+ "placeholder_neutral": true,
+ "sha16": "8bae6fd4ceba6ca8",
+ "rows": 326873
+}

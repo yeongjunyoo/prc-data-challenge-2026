@@ -1,0 +1,13 @@
+{
+ "s_twin_score": 227.6728,
+ "base_twin_score": 227.9618,
+ "mse_diff": -131.68,
+ "limit": 100.0,
+ "reject_above_score": 228.181,
+ "note": "veto only; never selects",
+ "rules": {
+  "4_board_le_plus100": true
+ },
+ "pass": true,
+ "written": "2026-10-12 09:04:26"
+}

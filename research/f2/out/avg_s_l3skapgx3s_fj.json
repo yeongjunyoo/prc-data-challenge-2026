@@ -1,0 +1,69 @@
+{
+ "setting": "fj",
+ "mode": "m3g",
+ "donor": "cache/fj_l3skapg_s0.parquet",
+ "donor_sha16": "36d62a64a0b81f7b",
+ "seed_files": {
+  "s0": {
+   "file": "cache/fj_l3skap_s0.parquet",
+   "sha16": "bcc556a29a178f74",
+   "same_order": true
+  },
+  "s1": {
+   "file": "cache/fj_l3skap_s1.parquet",
+   "sha16": "1ef1f8d567fe36b7",
+   "same_order": true
+  },
+  "s2": {
+   "file": "cache/fj_l3skap_s2.parquet",
+   "sha16": "7784bbdab28996ae",
+   "same_order": true
+  }
+ },
+ "rows": 326873,
+ "g_rows_kept_seed0": 243,
+ "donor_equals_seed0_on_nonG": true,
+ "columns": {
+  "p_art": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 0.0127
+  },
+  "mu": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 22.3893
+  },
+  "pred": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 21.6965
+  },
+  "pred_noG": {
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "rms_change_vs_donor": 21.6965
+  }
+ },
+ "es_donor": {
+  "file": "preds/es_valid_ids_l3skapg_fj_s0.parquet",
+  "sha16": "e0b7c66741d49c37",
+  "rows": 179260
+ },
+ "es_seeds_equal_donor": true,
+ "new": "cache/fj_l3skapgx3s_s0.parquet",
+ "new_sha16": "238b4092b9be15ac",
+ "written": "2026-10-12 04:57:38"
+}
