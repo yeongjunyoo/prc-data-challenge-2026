@@ -65,6 +65,7 @@ def epoch_s(col: pa.ChunkedArray) -> np.ndarray:
 
 
 def read(path: str) -> pd.DataFrame:
+    """Movements of one challenge file with the columns the context needs; a departure's taxi-out (the label) is set to NaN."""
     t = pq.read_table(path, columns=COLS)
     d = pd.DataFrame({"MVT_ID_mvt": np.asarray(t.column("MVT_ID_mvt").to_numpy(zero_copy_only=False), dtype="float64")})
     for c in ("ADEP_mvt", "ADES_mvt", "PHASE_mvt", "RUNWAY_mvt", "STAND_mvt"):
@@ -111,6 +112,7 @@ def stand_prefix(s: str) -> str:
 
 
 def one_airport(dep: pd.DataFrame, arr: pd.DataFrame) -> pd.DataFrame:
+    """Context columns (FEATS) of the departures of one airport and one UTC month, from its departures and arrivals."""
     n = len(dep)
     out = {k: np.full(n, np.nan) for k in FEATS}
     t, ao, eo = dep["t"].to_numpy(), dep["ao"].to_numpy(), dep["eo"].to_numpy()
@@ -176,6 +178,7 @@ def one_airport(dep: pd.DataFrame, arr: pd.DataFrame) -> pd.DataFrame:
 
 
 def build(d: pd.DataFrame) -> pd.DataFrame:
+    """Context columns of every departure of the movements d, airport by airport and month by month."""
     parts = []
     for part in sorted(d["part"].unique()):
         dp = d[d["part"] == part]
@@ -198,6 +201,7 @@ def sha16(p: Path) -> str:
 
 
 def main():
+    """Command line entry: read the challenge files, build the context table and write cache/<name>.parquet and its json."""
     pa_ = argparse.ArgumentParser()
     pa_.add_argument("--name", default="ctx_v1")
     pa_.add_argument("--months", default="1,2,3,4,5,6,7,8,9,10,11,12", help="2025 training months to include (the test file is always in)")

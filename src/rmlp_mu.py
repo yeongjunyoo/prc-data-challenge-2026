@@ -1,5 +1,17 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""넷째 학습기 후보: RealMLP(pytabkit 1.7.3, Apache-2.0) 회귀(mu)를 model3, cat_mu, xgb_mu 와 같은 회귀 행, 같은 피처로 GPU 에서 학습한다.
+"""RealMLP leg (pytabkit 1.7.3, RealMLP_TD defaults): a neural regression of mu on the regression rows and features of src/model3.py.
+
+Mixed half and half with the base's mu like src/cat_mu.py (G rows keep the base's values); the final stack takes the column mu_rmlp.
+No refit: every setting trains on its fitting rows without the early-stopping days (UTC day number divisible by 10) and keeps the
+best epoch on those days (64 epochs, batch 2,048; full as well). Missing values are filled with the training median and get indicator
+columns; CAT_FEATS enter as categories (embeddings for high cardinality). The network is trained from scratch on the training rows.
+
+    python src/rmlp_mu.py --setting val --seed 0 --tag <tag> --base <model3 tag> --feats <feature table> --device mps
+Output: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_rmlp, mu, p_art, g, dsch and, except for full, y) and the
+early-stopping rows.
+
+Original note (Korean):
+넷째 학습기 후보: RealMLP(pytabkit 1.7.3, Apache-2.0) 회귀(mu)를 model3, cat_mu, xgb_mu 와 같은 회귀 행, 같은 피처로 GPU 에서 학습한다.
 
   pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_base + W * mu_rmlp   (W = 0.5, 점수 전에 고정)
   G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 다른 학습기와 고르게 섞을 때는 이 출력의 mu_rmlp 를 blend_mu --col mu_rmlp 로 쓴다.
@@ -49,7 +61,12 @@ def log(msg: str):
 
 
 def nframe(F: pd.DataFrame, cols: list[str], rows: np.ndarray, med: dict[str, float], na_cols: list[str]) -> pd.DataFrame:
-    """RealMLP 입력: CAT_FEATS 는 범주형 그대로(결측은 "<NA>" 범주), 다른 범주형은 코드(float), 수치는 float32. 결측은 med 로 채우고 na_cols 마다 표시 칸."""
+    """RealMLP input on the rows marked in rows: CAT_FEATS as categories (a missing value gets a category of its own), other
+    categories as float codes, numbers as float32; missing numbers filled with med, with an indicator column for each column in na_cols.
+
+    Original note (Korean):
+    RealMLP 입력: CAT_FEATS 는 범주형 그대로(결측은 "<NA>" 범주), 다른 범주형은 코드(float), 수치는 float32. 결측은 med 로 채우고 na_cols 마다 표시 칸.
+    """
     out = {}
     for c in cols:
         s = F[c]
@@ -68,8 +85,14 @@ def nframe(F: pd.DataFrame, cols: list[str], rows: np.ndarray, med: dict[str, fl
 
 
 def light_checks() -> None:
-    """pytabkit 의 fit, predict 첫머리 검사(sklearn check_X_y, check_array, dtype=None)는 범주와 수치가 섞인 표 전체를 object 배열로 바꿔
-    학습 행 140만 x 155칸에 약 7GB 를 잠깐 쓴다(10-04 06:16 memcap 7GB 에서 MemoryError). 데이터를 바꾸지 않는 검사라 앞 2,000행으로만 한다."""
+    """Make pytabkit's input checks look at the first 2,000 rows only (they do not change the data).
+
+    Its fit and predict checked the whole mixed table as an object array, which took about 7 GB on the challenge data.
+
+    Original note (Korean):
+    pytabkit 의 fit, predict 첫머리 검사(sklearn check_X_y, check_array, dtype=None)는 범주와 수치가 섞인 표 전체를 object 배열로 바꿔
+    학습 행 140만 x 155칸에 약 7GB 를 잠깐 쓴다(10-04 06:16 memcap 7GB 에서 MemoryError). 데이터를 바꾸지 않는 검사라 앞 2,000행으로만 한다.
+    """
     import pytabkit.models.sklearn.sklearn_base as skb
     xy, arr = skb.check_X_y_wrapper, skb.check_array_wrapper
     head = lambda v: v.iloc[:2000] if hasattr(v, "iloc") else v[:2000]  # noqa: E731
@@ -78,6 +101,7 @@ def light_checks() -> None:
 
 
 def main():
+    """Command line entry: fit the RealMLP regression for one setting and seed and write the outputs of the module docstring."""
     from pytabkit import RealMLP_TD_Regressor
     light_checks()
 

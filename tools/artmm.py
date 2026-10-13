@@ -1,5 +1,17 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""운항사-달 도착 복사 몫이 크게 움직인 공항-운항사-달 칸에서 주 분류기 p_art 의 칸 평균을 옮긴다(G 아닌 출발만). A3 보정기 출력 바로 뒤, gkey 앞에 둔다.
+"""Copy-probability step for departures that are not G rows (docs/DESIGN.md section 8.3), right after the corrector average.
+
+In an airport-carrier-month cell where the carrier's share of arrivals recorded as the schedule (|BLOCK - SCHED| <= 6.5 s) moved by
+0.10 or more against the fitting months, the cell's mean copy probability p_art moves by kappa times that change (kappa: the
+within-carrier slope of the departures' copy share on the arrivals' one, measured on the fitting months). The prediction moves with
+it and stays inside the LOBT window. Inputs only, except kappa, which uses the fitting months' labels.
+
+    python tools/artmm.py table                            # cache/artmm_v1.parquet and cache/artmm_cells_v1.parquet
+    python tools/artmm.py --setting {val,fwd,full} --base <base> --base_seed 0 --src <manifest> --src_sha <16> --corr <corrector tag>
+        --table artmm_v1 --table_sha <16> --cells artmm_cells_v1 --cells_sha <16> --th 0.10 --tag <spec>
+
+Original note (Korean):
+운항사-달 도착 복사 몫이 크게 움직인 공항-운항사-달 칸에서 주 분류기 p_art 의 칸 평균을 옮긴다(G 아닌 출발만). A3 보정기 출력 바로 뒤, gkey 앞에 둔다.
 순서: 바탕 다리 → V5 기하 → A3 x0.5 → 이 단계 → gkey(avg) → gkeyx → gkeyxn → AIU 날 이동 → 반대 창(맨 끝).
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r6-g.md` 의 비G 확장(연구 스크립트 research/r6_g/p1_check.py,
 p4_cell_lomo.py, p5_mm_thresh.py). 생각의 출처: 우리 기록 감식(같은 운항사의 그 달 도착 기록이 SCHED 복사이면 출발 기록도 복사다. 2025 LIRF 운항사-달 안

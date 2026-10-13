@@ -1,5 +1,18 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""학습 12개월과 ranking 을 한 표로 읽는다. 문자열은 category, 시각은 epoch 초(float, 결측 NaN).
+"""Read the challenge files into one table: the twelve training months and the movements to predict.
+
+Reads data/training_*.parquet (labelled months; the calendar month of a file is read from characters 15 and 16 of its name,
+training_YYYY-MM-..., and becomes the column src = 1 to 12) and data/ranking.parquet (the movements to predict, src = 0).
+Departures and arrivals are both kept (PHASE_mvt). Text columns become pandas categories with the same categories in every file.
+The nine timestamp columns become float epoch seconds (NaN when missing) under short names: MVT_TIME_UTC_mvt -> t_mvt,
+BLOCK_TIME_UTC_mvt -> t_blk, SCHED_TIME_UTC_mvt -> t_sch, LOBT_flt -> t_lobt, IOBT_flt -> t_iobt, EOBT_1_flt -> t_eobt1,
+ARVT_1_flt -> t_arvt1, AOBT_3_flt -> t_aobt3, ARVT_3_flt -> t_arvt3; TAXITIME_SEC_mvt becomes y. The table is cached in
+cache/all.parquet. The folders are fixed relative to the repository root (DATA = data/, CACHE = cache/).
+
+    python src/load.py        # rebuild cache/all.parquet; prints its shape, the column types and the rows per src and phase
+
+Original note (Korean):
+학습 12개월과 ranking 을 한 표로 읽는다. 문자열은 category, 시각은 epoch 초(float, 결측 NaN).
 
 메모리를 아끼려고 결과를 cache/all.parquet 에 한 번 저장해 다시 쓴다.
 """
@@ -44,7 +57,14 @@ def _read(path: str) -> pd.DataFrame:
 
 
 def load_all(rebuild: bool = False) -> pd.DataFrame:
-    """전체 이동(DEP, ARR)과 ranking. src: 1~12 = 2025 월, 0 = ranking(2026)."""
+    """All movements (departures and arrivals) of the training files and of ranking.parquet as one DataFrame.
+
+    The column src is the training month (1 to 12) or 0 for the movements to predict. With rebuild=False an existing
+    cache/all.parquet is returned; with rebuild=True the files in data/ are read again and the cache is rewritten.
+
+    Original note (Korean):
+    전체 이동(DEP, ARR)과 ranking. src: 1~12 = 2025 월, 0 = ranking(2026).
+    """
     CACHE.mkdir(exist_ok=True)
     cp = CACHE / "all.parquet"
     if cp.exists() and not rebuild:

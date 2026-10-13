@@ -1,5 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""두 출력의 회귀(mu)를 반씩 섞어 혼합 예측을 다시 짓는다: model3 바탕 출력(--base)의 p_art, dsch, G 값과 cat_mu 출력(--cat)의 mu_cat.
+"""Mix the regressions of two outputs and rebuild the mixture prediction: p_art, dsch and the G values of a model3 output (--base)
+with mu_cat of a src/cat_mu.py output (--cat).
+
+    pred = clip(p_art * d_sch + (1 - p_art) * ((1 - W) * mu_base + W * mu_cat), 0); G rows keep the base's values (W = --w, default 0.5)
+The early-stopping rows of both inputs must be the same; the base's are kept under the new tag.
+
+    python src/blend_mu.py --setting val --seed 0 --tag <tag> --base <model3 tag> --cat <cat_mu tag>
+
+Original note (Korean):
+두 출력의 회귀(mu)를 반씩 섞어 혼합 예측을 다시 짓는다: model3 바탕 출력(--base)의 p_art, dsch, G 값과 cat_mu 출력(--cat)의 mu_cat.
 
   pred = clip(p_art * d_sch + (1 - p_art) * ((1 - W) * mu_base + W * mu_cat), 0),  G 행은 바탕 모형 값 그대로 (W = --w, 기본 0.5)
 cat_mu 의 CatBoost 회귀는 바탕 모형과 무관하게 같은 행, 같은 피처로 학습하므로(src/cat_mu.py), 다른 바탕 모형(예: --mu_sep LIRF)에 그대로 다시 쓴다.

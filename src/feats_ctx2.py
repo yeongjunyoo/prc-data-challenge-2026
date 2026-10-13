@@ -63,6 +63,7 @@ def epoch_s(col: pa.ChunkedArray) -> np.ndarray:
 
 
 def files() -> list[str]:
+    """The challenge files of data/: the training months, then ranking.parquet."""
     return sorted(glob.glob(str(ROOT / "data" / "training_*.parquet"))) + [str(ROOT / "data" / "ranking.parquet")]
 
 
@@ -85,6 +86,10 @@ class Vocab:
 # ---- R4 state columns ----
 
 def r4_columns(want_months: set[int]) -> pd.DataFrame:
+    """Two state columns per departure of the given training months and of ranking.parquet, from inputs only (module docstring):
+    gate_delay_pm30, the mean AOBT_3 - EOBT_1 of the airport's departures within 30 minutes of the take-off, and plan_ground_aobt3, the
+    departures with an NM record whose EOBT_1 had passed but which had not taken off at the departure's AOBT_3.
+    """
     parts = []
     for f in files():
         name = Path(f).name
@@ -129,6 +134,9 @@ def r4_columns(want_months: set[int]) -> pd.DataFrame:
 # ---- R3 stand columns ----
 
 def stand_columns() -> pd.DataFrame:
+    """Stand occupancy columns per departure (module docstring): times since the take-offs of the previous departures and the
+    in-blocks of the latest arrivals at the same stand, arrivals since the previous departure and in the past two hours; across month edges.
+    """
     ap_v, st_v = Vocab(), Vocab()
     dep_parts, arr_parts = [], []
     for f in files():
@@ -196,6 +204,7 @@ def compare_r3(S: pd.DataFrame) -> dict:
 
 
 def main():
+    """Command line entry: the context table of ctx_v1 (checked by its SHA-256 prefix) with the nine columns above added."""
     pa_ = argparse.ArgumentParser()
     pa_.add_argument("--name", default="ctx_v2")
     pa_.add_argument("--base", default="ctx_v1")

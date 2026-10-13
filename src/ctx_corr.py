@@ -65,6 +65,7 @@ def sha16(path) -> str:
 
 
 def checked(name: str, want: str) -> pd.DataFrame:
+    """Table cache/<name>.parquet after checking that its SHA-256 prefix equals want (stops otherwise)."""
     p = CACHE / f"{name}.parquet"
     got = sha16(p)
     if got != want:
@@ -73,6 +74,7 @@ def checked(name: str, want: str) -> pd.DataFrame:
 
 
 def stage1_inputs(a) -> pd.DataFrame:
+    """ADS-B table of stage 1, with the stand-geometry columns joined when --geo is not none."""
     A = ac.load_adsb(a.adsb, a.adsb_sha)
     if a.geo != "none":
         G = checked(a.geo, a.geo_sha).set_index("MVT_ID_mvt")
@@ -142,6 +144,7 @@ class Rows:
 
 
 def fit2(M: np.ndarray, target: np.ndarray, seed: int, rounds: int, threads: int):
+    """Stage-2 LightGBM on the matrix M (columns X2) and the target clipped to +-1,800 s."""
     import lightgbm as lgb
     params = dict(objective="regression", learning_rate=0.05, num_leaves=63, min_data_in_leaf=200, feature_fraction=0.8, bagging_fraction=0.8,
                   bagging_freq=1, lambda_l2=10.0, verbose=-1, num_threads=threads, seed=seed, deterministic=True, force_col_wise=True)
@@ -150,6 +153,7 @@ def fit2(M: np.ndarray, target: np.ndarray, seed: int, rounds: int, threads: int
 
 
 def stage1_folds(T: pd.DataFrame, a):
+    """Day folds of stage 1 and one stage-1 model per fold, fitted without that fold's days."""
     fo = ac.day_folds(T["day"].unique(), a.folds, a.seed)
     fT = T["day"].map(fo).to_numpy()
     models = [ac.fit(T[fT != j], a.seed, a.rounds, a.threads) for j in range(a.folds)]
@@ -191,6 +195,7 @@ def stage2_val_models(R: "Rows", T, fT, fo, models, nested, a, keep: np.ndarray)
 
 
 def main():
+    """Command line entry: run stage 1 and stage 2 for one setting and seed and write the outputs of the module docstring."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

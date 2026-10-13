@@ -1,5 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
+"""Per-airport variant of src/cat_mu.py for chain C: a copy of it (sha16 05956dbe5a32bfa9) with the flag --per_ap.
+
+--per_ap fits one CatBoost regression per airport: early stopping on that airport's early-stopping days, refit with the iterations
+times 1.1 on its regression rows, and full with the per-airport iteration counts cat_<airport> written by the seed-0 val run. The mix
+with the base, the G rows and the outputs are those of src/cat_mu.py; without --per_ap the script runs as src/cat_mu.py.
+
+    python research/r13_f3/cat_muap.py --setting val --seed 0 --tag <tag> --base <model3 tag> --feats <feature table> --per_ap
+
+Original note (Korean):
+다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
 
 R13-F3 사본(research/r13_f3/cat_muap.py, vault research/2026-10-07-r13-f3.md 6): src/cat_mu.py(sha16 05956dbe5a32bfa9)에 --per_ap 만 더했다.
   --per_ap: 공항마다 CatBoost 회귀 하나(그 공항의 조기 종료 날 행으로 조기 종료, 그 공항 회귀 행에 x1.1 재학습, full 은 val 씨앗 0 이 쓴

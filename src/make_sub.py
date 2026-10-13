@@ -1,5 +1,13 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""제출 파일을 만들고 검사한 뒤 장부에 적는다. 올리기는 s3io.push 가 한다.
+"""Write a daily submission file from a prediction, check it and append it to the submission ledger (the upload is src/s3io.py push).
+
+The rule of the ranking page: fill the column TAXITIME_SEC_mvt of the template data/submitting.parquet; a missing, extra or
+changed MVT_ID is a scoring error. Values are rounded to the nearest integer, clipped at 0 and written as int32 with the template's
+schema, into subs/spirited-tiger_v<N>.parquet with the next free N. examples/write_predictions.py applies the same rule without the
+team's file name and ledger.
+
+Original note (Korean):
+제출 파일을 만들고 검사한 뒤 장부에 적는다. 올리기는 s3io.push 가 한다.
 
 규칙(ranking.html): 템플릿 `submitting.parquet` 의 TAXITIME 칸을 채운다. MVT_ID 불일치, 행 누락, 행 추가는 채점 오류.
 """
@@ -25,12 +33,17 @@ FIELDS = ["version", "made_kst", "file", "sha256", "method", "local_rmse", "serv
 
 
 def next_version() -> int:
+    """Next free submission number: one more than the largest N of subs/spirited-tiger_v<N>.parquet."""
     used = [int(p.stem.split("_v")[1]) for p in (ROOT / "subs").glob(f"{TEAM}_v*.parquet")]
     return max(used, default=0) + 1
 
 
 def ledger_append(path: Path, method: str, local_rmse: float | None, note: str) -> None:
-    """제출 파일 한 줄을 장부에 더한다. 발사기는 올리기가 끝난 뒤에만 부른다(올리지 못한 파일은 장부에 없다)."""
+    """Append the line of the submission file path to subs/ledger.csv; the launcher calls it only after a successful upload.
+
+    Original note (Korean):
+    제출 파일 한 줄을 장부에 더한다. 발사기는 올리기가 끝난 뒤에만 부른다(올리지 못한 파일은 장부에 없다).
+    """
     sha = hashlib.sha256(path.read_bytes()).hexdigest()
     new = not LEDGER.exists()
     with LEDGER.open("a", newline="", encoding="utf-8") as f:
@@ -44,7 +57,11 @@ def ledger_append(path: Path, method: str, local_rmse: float | None, note: str) 
 
 
 def build(pred: pd.Series, method: str, local_rmse: float | None = None, note: str = "", write_ledger: bool = True) -> Path:
-    """pred: index = MVT_ID_mvt, 값 = 초. 템플릿 순서대로 맞추고 검사한다."""
+    """Write pred (index MVT_ID_mvt, values in seconds) in the template's order with the rule above, check the file and return its path.
+
+    Original note (Korean):
+    pred: index = MVT_ID_mvt, 값 = 초. 템플릿 순서대로 맞추고 검사한다.
+    """
     # 템플릿의 정답 칸은 전부 비어 pandas 가 실수형으로 읽는다. 서버가 보는 것은 parquet 스키마라 arrow 스키마로 맞춘다.
     schema = pq.read_schema(TEMPLATE)
     tpl = pd.read_parquet(TEMPLATE)

@@ -1,5 +1,40 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.
+"""LightGBM leg of the record-type mixture model (docs/DESIGN.md section 4), with a separate model for the G rows.
+
+For every departure outside the G rows the prediction is pred = clip(p_art * d_sch + (1 - p_art) * mu, 0). p_art is a binary classifier of
+"the recorded off-block time is a copy of the schedule" (|y - d_sch| <= 60 s, d_sch = take-off - schedule); mu is a regression of the
+taxi time on the rows that are neither copies nor next-day offsets (labels above 60,000 s). The G rows (LIRF departures without an NM
+record) get pa * d_sch + ps * (86,400 * max(dd, 1) + clip(mu, 300, 3,000)) + pn * mu, clipped at 0, with the type probabilities of g_probs
+(src/sub_g.py). Options: a direct regression of y (column direct; --no_direct leaves it out), a third component for BLOCK = EOBT_1
+(--eobt_comp), a target relative to an anchor (--anchor aobt or win), separate regressions for some airports (--mu_sep LIRF).
+
+Settings, by the column src of the feature table:
+    --setting val    fit on the training months other than January and July, evaluate on January and July (the ruler)
+    --setting fwd    fit on January to June, evaluate on July (the forward ruler)
+    --setting nd     fit on January to October, evaluate on November and December
+    --setting full   fit on all training rows, predict the rows with src 0
+Early stopping (--es internal, the default) holds out the training days whose UTC day number is divisible by 10. With --refit, val,
+fwd and nd refit on all their fitting rows with the iterations times 1.1. full trains the iterations that the seed-0 val run wrote to
+cache/iters_<tag>.json, times that refit factor and --full_mult (default 1.15); run val with seed 0 first.
+
+Other options, with their defaults. The submitted legs used --es internal --refit --wpow 1 --leaves 255 --mdl 100 --no_direct
+--clf_drop_prefix m_,ab_ --full_mult 1.0 --mu_sep LIRF, chain A also --anchor win (docs/REPRODUCE.md section 4):
+    --feats              the feature table cache/<name>.parquet (feats)
+    --leaves, --mdl      LightGBM num_leaves (127) and min_data_in_leaf (200); --lr learning rate (0.05), --lr_reg that of the regressions
+    --rounds             iteration cap of early stopping (6000); --threads LightGBM threads (6)
+    --wpow, --wcap       weight the copy classifier's rows by (clip(|d_sch - 1000|, 300, wcap) / 1000) to the power wpow (0: no weights)
+    --clf_drop_prefix    column prefixes that the copy classifier does not see (m_ = METAR, ab_ = ADS-B)
+    --drop, --drop_hc    columns left out of every model; leave out the raw high-cardinality categories, keeping their group statistics
+    --g_band_avg         copy probability of G rows delayed 1 to 4 hours = mean of the G model's and the main classifier's
+    --iters_tag          the tag whose iteration counts full reads (default --tag); --g_only stops after the G probabilities
+
+    python src/model3.py --setting val --seed 0 --tag demo --feats feats_demo --refit --no_direct --threads 2
+Output: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, pred_noG, p_art, mu, g, dsch and, except for full, y),
+preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet (the early-stopping rows) and, for val with seed 0, cache/iters_<tag>.json.
+The G model needs LIRF departures without an NM record among both the fitted and the predicted rows (docs/USAGE.md section 4).
+
+Original note (Korean):
+3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.
 
 전역:  pred = p_art * d_sch + (1 - p_art) * mu
   p_art : BLOCK 이 SCHED 와 60초 안일 확률(LightGBM 이진, --wpow 로 (|d_sch-1000|) 가중 가능)
@@ -52,6 +87,7 @@ def log(msg: str):
 
 
 def to_matrix(F: pd.DataFrame, cols: list[str], rows: np.ndarray) -> np.ndarray:
+    """Float32 matrix of the columns cols on the rows marked in rows; categories become their codes and missing values NaN."""
     X = np.empty((int(rows.sum()), len(cols)), dtype=np.float32)
     for j, c in enumerate(cols):
         s = F[c]
@@ -65,6 +101,10 @@ def to_matrix(F: pd.DataFrame, cols: list[str], rows: np.ndarray) -> np.ndarray:
 
 
 def train(params, dset, rounds, dval=None):
+    """Train a LightGBM model for at most rounds iterations; with a validation set dval, stop after 200 rounds without improvement.
+
+    Returns the model and the number of iterations to predict with.
+    """
     if dval is None:
         return lgb.train(params, dset, num_boost_round=rounds), rounds
     m = lgb.train(params, dset, num_boost_round=rounds, valid_sets=[dval],
@@ -73,7 +113,14 @@ def train(params, dset, rounds, dval=None):
 
 
 def g_probs(Gtr: pd.DataFrame, Gte: pd.DataFrame, seeds=(0, 1, 2)) -> np.ndarray:
-    """G 그룹 세 유형 확률: lookup+항공사 키 보정과 작은 GBM(시드 3개) 의 평균. 조기 종료 없음(고정 200회).
+    """Probabilities of the three record types (normal, copy of the schedule, next-day offset) for the G rows Gte, fitted on the G rows Gtr.
+
+    Half and half: a lookup of the type frequencies by delay band and date change, moved by a key's copy share (sub_g.fit_lookup,
+    predict_lookup, pfx_adjust), and a small multiclass LightGBM averaged over three seeds (sub_g.gbm_probs). The key column is named pfx;
+    since feature set 2.5 it holds the destination (ADES). Returns an array of shape (rows, 3).
+
+    Original note (Korean):
+    G 그룹 세 유형 확률: lookup+항공사 키 보정과 작은 GBM(시드 3개) 의 평균. 조기 종료 없음(고정 200회).
 
     키 칸 이름은 "pfx" 로 고정이다(sub_g.gbm_probs 가 그 이름을 범주로 쓴다). 피처 v2.5 부터 값은 편명 접두사 대신 목적지(ADES)다.
     """
@@ -97,8 +144,15 @@ G_BAND = (3600.0, 14400.0)  # --g_band_avg 의 지연(d_sch) 구간
 
 
 def g_override(P: np.ndarray, d_sch: np.ndarray, dd: np.ndarray, mu_g: np.ndarray, p_art_g: np.ndarray | None = None) -> tuple[np.ndarray, np.ndarray]:
-    """G 행의 기대값과 정상 몫 확률. P 는 g_probs 의 [정상, art, shift]. p_art_g 를 주면 지연이 G_BAND 안인 행의 art 확률을
-    G 모형과 주 분류기의 평균으로 바꾼다(10-03 열 달 한 달씩 빼기 시험에서 10/10 달 G 제곱오차 감소, research/gmodel/oof_g_art.py)."""
+    """Expected label of G rows from the type probabilities P (columns normal, copy, next-day offset).
+
+    pa * d_sch + ps * (86,400 * max(dd, 1) + clip(mu_g, 300, 3,000)) + pn * mu_g. With p_art_g, rows with a delay d_sch of 1 to 4 hours
+    take the mean of the G model's and the main classifier's copy probability. Returns (expected label, pn).
+
+    Original note (Korean):
+    G 행의 기대값과 정상 몫 확률. P 는 g_probs 의 [정상, art, shift]. p_art_g 를 주면 지연이 G_BAND 안인 행의 art 확률을
+    G 모형과 주 분류기의 평균으로 바꾼다(10-03 열 달 한 달씩 빼기 시험에서 10/10 달 G 제곱오차 감소, research/gmodel/oof_g_art.py).
+    """
     pa, pn = P[:, 1], P[:, 0]
     if p_art_g is not None:
         band = (d_sch >= G_BAND[0]) & (d_sch < G_BAND[1])
@@ -109,7 +163,11 @@ def g_override(P: np.ndarray, d_sch: np.ndarray, dd: np.ndarray, mu_g: np.ndarra
 
 
 def reg_set(dbase, idx: np.ndarray, target: np.ndarray, anchor: str):
-    """회귀 행의 부분 Dataset. --anchor 가 있으면 라벨을 y - 기준값(target)으로 바꾼다. 없으면 바탕의 y 그대로(옛 동작)."""
+    """LightGBM dataset of the regression rows idx taken from dbase; with an anchor its label becomes target[idx] (the label minus the anchor).
+
+    Original note (Korean):
+    회귀 행의 부분 Dataset. --anchor 가 있으면 라벨을 y - 기준값(target)으로 바꾼다. 없으면 바탕의 y 그대로(옛 동작).
+    """
     d = dbase.subset(idx)
     if anchor:
         d.construct()
@@ -118,7 +176,11 @@ def reg_set(dbase, idx: np.ndarray, target: np.ndarray, anchor: str):
 
 
 def es_day_mask(mvt_ids: np.ndarray) -> np.ndarray:
-    """조기 종료용 날짜 블록: 이륙 시각의 UTC 날짜 번호 % 10 == 0."""
+    """Early-stopping rows: True where the take-off's UTC day number (days since 1970-01-01) is divisible by 10 (reads cache/all.parquet).
+
+    Original note (Korean):
+    조기 종료용 날짜 블록: 이륙 시각의 UTC 날짜 번호 % 10 == 0.
+    """
     A = pd.read_parquet(CACHE / "all.parquet", columns=["MVT_ID_mvt", "PHASE_mvt", "t_mvt"])
     A = A[A["PHASE_mvt"] == "DEP"]
     day = pd.Series((A["t_mvt"].to_numpy() // 86400).astype(np.int64), index=A["MVT_ID_mvt"].to_numpy())
@@ -127,6 +189,7 @@ def es_day_mask(mvt_ids: np.ndarray) -> np.ndarray:
 
 
 def main():
+    """Command line entry: fit the classifier, the regressions and the G model for one setting and seed and write the outputs above."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "nd", "full"])
     pa.add_argument("--es", default="internal", choices=["internal", "holdout"])

@@ -4,6 +4,8 @@ Solution of team spirited-tiger (Yeongjun Yoo, Hongik University, Seoul) for the
 
 This project was developed with the assistance of AI tools.
 
+To run the model on your own data, start with `docs/USAGE.md`; how the parts connect is in `docs/ARCHITECTURE.md`, and why they are built this way in `docs/DESIGN.md` (section “Where to start” below lists every document).
+
 ## Final submission
 
 The final phase asks for one file that predicts January, February, June and July 2026 from `final_ranking.parquet`; the organizers rank it on January and July, on February and June, and on the four months together, and review code and documents.
@@ -69,6 +71,9 @@ Best daily-board submission (January and July 2026 only; board-tuned history, no
 
 ## Where to start
 
+- Use the model on your own data: `docs/USAGE.md` gives the input format and a check of input files, a worked example on a synthetic sample that runs in under a minute (`examples/`), what to change for other airports and periods, and which parts are reusable.
+- How it works: `docs/ARCHITECTURE.md` shows the data flow from the challenge files to the final file, what each stage reads, writes and is fitted on, and how the file tags read.
+- Why it is built this way: `docs/DESIGN.md`, with an index of the design decisions at its top.
 - Reviewers: `docs/REVIEW_GUIDE.md` maps each eligibility line and the likely questions to files, lines and organizer messages.
 - `docs/DESIGN.md`: section 0 (the final file, what predicts which rows), sections 1 to 13 (the model), section 14 (months without a board, the re-drawn timestamps of the final input), section 15 (every choice that used the public board).
 - `docs/REPRODUCE.md`: the order in which the scripts run.
@@ -84,14 +89,15 @@ Best daily-board submission (January and July 2026 only; board-tuned history, no
 | `preds/` | Manifests of the submitted chains: command lines, seeds, feature set and hash, code hashes, ruler results, output hashes. `preds/final/` holds the chain of the final file, `preds/first_final/` that of the first final file (v35's configuration on the final input). No prediction files |
 | `notes/` | Job files (command lines) of the legs, the step notes of the two final chains (`notes/final/`, `notes/first_final/`) and small files cited in the documents |
 | `results/` | Daily submissions table, organizers' scores, metadata and hashes of derived tables |
-| `scripts/verify_code_hashes.py` | Checks the code against the hashes recorded in the manifests |
+| `examples/` | The synthetic sample, the input checker and the prediction writer of the worked example in `docs/USAGE.md` |
+| `scripts/verify_code_hashes.py` | Checks the code against the hashes recorded in the manifests, after putting back the lines that the release's English docstrings replaced (`scripts/release_docstrings.json`) |
 | `scripts/host/` | Host scheduling scripts of the final rebuild and the download loops of the February and June 2026 ADS-B days, path-cleaned, with a README |
 | `RELEASE_MANIFEST.md` | How this tree was made from the working copies, what was left out and why |
 | `LICENSE` | GNU General Public License version 3 |
 
 Not included: the organizer data (no license is published for it), prediction files, derived data tables, raw ADS-B data and the EUROCONTROL AIU files (download commands and hashes are in `docs/REPRODUCE.md`).
 
-Code comments are mostly in Korean; the documentation is in English.
+The documentation is in English, and so are the docstrings of the model's main modules and functions (`docs/USAGE.md` section 6 says which). Code comments, other docstrings, the command-line help and the error messages are mostly in Korean.
 
 ## License
 

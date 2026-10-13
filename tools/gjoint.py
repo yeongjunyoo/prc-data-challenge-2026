@@ -1,5 +1,12 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""G 하위 모형 다시 맞춤(R11-G). glong(G1) 단계 뒤 맨 끝에 얹는다. G 행(LIRF 출발, NM 미매칭)만 바꾼다.
+"""Joint refit of the G rows (docs/DESIGN.md section 8.5), the last tail step of a chain. Mode a (the final stack): for G rows with
+3,600 <= d_sch < 14,400 the copy probability is the G model's own instead of its mean with the leg's p_art; mode c (not used) adds a
+G-only regression of the normal part. Rows changed by antiwin and rows that are not G stay byte for byte.
+
+    python tools/gjoint.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --tag <spec> --mode a
+
+Original note (Korean):
+G 하위 모형 다시 맞춤(R11-G). glong(G1) 단계 뒤 맨 끝에 얹는다. G 행(LIRF 출발, NM 미매칭)만 바꾼다.
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r11-g.md`(측정 research/r11_g/). 남의 코드 없음.
 
 판(--mode):

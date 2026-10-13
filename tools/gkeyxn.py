@@ -1,5 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""gkeyx 판(tools/gkeyx.py, --variant avg_x)의 G 행(LIRF 출발 가운데 NM 미매칭)에 칸을 더한 G 모형을 얹는다. 두 판:
+"""G model of tools/gkeyx.py with more GBM columns: the nine stand and link columns of tools/gkey.py and, in variant avg_xncr (the
+final stack), the carrier-month share of arrivals recorded as the schedule and the same share for the carrier's route at LIRF.
+Used for G rows with d_sch below 43,200 s; the other G rows keep the gkeyx value (docs/DESIGN.md section 8.4).
+
+    python tools/gkeyxn.py table --version gkeyxn_v2      # cache/gkeyxn_v2.parquet
+    python tools/gkeyxn.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --leg <g_band tag> --leg_feats <feature table>
+        --table gkey_v1 --table_sha <16> --xtable gkeyx_v1 --xtable_sha <16> --ytable gkeyxn_v2 --ytable_sha <16> --variant avg_xncr --tag <spec>
+
+Original note (Korean):
+gkeyx 판(tools/gkeyx.py, --variant avg_x)의 G 행(LIRF 출발 가운데 NM 미매칭)에 칸을 더한 G 모형을 얹는다. 두 판:
   avg_xnc(기본, spec 끝 "nc"): R3 스탠드, 이음 칸 아홉 + 운항사-달 도착 복사 몫(ca_copy_mon) 하나.
   avg_xn (spec 끝 "n")       : R3 스탠드, 이음 칸 아홉만(10-06 18:2x 에 처음 보낸 판, 재현과 AIU 를 위해 그대로 둔다).
   avg_xncr(spec 끝 "ncr")    : avg_xnc + 같은 운항사, 같은 노선의 그 달 LIRF 도착 복사 몫 rt_copy_mon(표 cache/gkeyxn_v2.parquet). 10-06 20:3x 에 더했다.

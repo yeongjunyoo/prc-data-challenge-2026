@@ -1,5 +1,16 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""gkey avg 판(tools/gkey.py --variant avg)의 G 행(LIRF 출발 가운데 NM 미매칭)에 기록 감식 칸 열둘을 더한 G 모형을 얹는다.
+"""G model of tools/gkey.py (variant avg) with twelve record-keeping columns in its GBM, for G rows with d_sch below 43,200 s.
+
+The columns count, per normalised flight number and month (the row itself left out), the other departures, their NM matches and G
+share, how often their LOBT was updated for delays, the median LOBT - SCHED and d_sch, the form of the flight number and the share of
+un-updated delays per destination and per carrier. G rows with d_sch of 43,200 s or more keep the gkey value (docs/DESIGN.md 8.4).
+
+    python tools/gkeyx.py table                            # cache/gkeyx_v1.parquet
+    python tools/gkeyx.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --leg <g_band tag> --leg_feats <feature table>
+        --table gkey_v1 --table_sha <16> --xtable gkeyx_v1 --xtable_sha <16> --variant avg_x --tag <spec>
+
+Original note (Korean):
+gkey avg 판(tools/gkey.py --variant avg)의 G 행(LIRF 출발 가운데 NM 미매칭)에 기록 감식 칸 열둘을 더한 G 모형을 얹는다.
 순서: 원 후보 → gkey(--variant avg) → 이 단계 → (AIU 날 이동) → 반대 창(맨 끝).
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r5-records.md`(연구 스크립트
 research/r5_records/a7_g_month.py, a14_g_guard.py, b1_gkx.py). 생각의 출처: 우리 기록 감식(G 행의 복사 여부는 그 편명이 그 달 얼마나 자주

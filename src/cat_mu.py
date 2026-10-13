@@ -1,5 +1,19 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
+"""CatBoost leg: a CatBoost regression of mu on the same rows and features as src/model3.py, mixed half and half with a LightGBM base.
+
+    pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)    mu_b = 0.5 * mu_lgb + 0.5 * mu_cat (the weight was fixed before any score)
+The base (--base) is a src/model3.py output without --eobt_comp; it gives p_art, d_sch, the G rows (kept as they are) and mu_lgb.
+Rows and early-stopping days are those of model3. val finds the iterations by internal early stopping and refits on all its fitting
+rows with the iterations times 1.1; fwd finds its own iterations inside January to June; full trains the iterations that val wrote
+to cache/iters_<tag>.json times 1.1. --drop and --anchor work as in model3. The final stack takes the column mu_cat and blends the legs
+with fixed weights (src/blend_fixed.py).
+
+    python src/cat_mu.py --setting val --seed 0 --tag <tag> --base <model3 tag> --feats <feature table> --threads 4
+Output: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_cat, mu, p_art, g, dsch and, except for full, y) and
+preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet.
+
+Original note (Korean):
+다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
 
   pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_lgb + W * mu_cat   (W = 0.5, 점수 전에 고정)
   G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 바탕 모형은 --eobt_comp 없는 model3 출력이어야 한다(mu 가 art, shift 를 뺀 행의 회귀).
@@ -49,7 +63,12 @@ def log(msg: str):
 
 
 def frame(F: pd.DataFrame, cols: list[str], rows: np.ndarray) -> pd.DataFrame:
-    """CatBoost 입력: CAT_FEATS 범주 칸은 정수 코드(결측 -1), 다른 범주형 칸은 model3.to_matrix 처럼 코드(결측 NaN), 나머지는 float32."""
+    """CatBoost input on the rows marked in rows: CAT_FEATS categories as integer codes (missing = -1), other categories as codes
+    (missing = NaN, as model3.to_matrix does), numbers as float32.
+
+    Original note (Korean):
+    CatBoost 입력: CAT_FEATS 범주 칸은 정수 코드(결측 -1), 다른 범주형 칸은 model3.to_matrix 처럼 코드(결측 NaN), 나머지는 float32.
+    """
     out = {}
     for c in cols:
         s = F[c]
@@ -62,6 +81,7 @@ def frame(F: pd.DataFrame, cols: list[str], rows: np.ndarray) -> pd.DataFrame:
 
 
 def main():
+    """Command line entry: fit the CatBoost regression for one setting and seed and write the outputs of the module docstring."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

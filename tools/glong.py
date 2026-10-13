@@ -1,5 +1,12 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""긴 지연 G 행(LIRF 출발 가운데 NM 미매칭, d_sch = MVT − SCHED ≥ 30,000초)의 정상 확률을 보정한다(R10-D-G1). G 행만 바꾼다.
+"""Long-delay correction for G rows (docs/DESIGN.md section 8.5): for G rows with d_sch of 30,000 s or more the normal-type probability
+is scaled by r = min(1, (k + 0.5) / (E + 0.5)), with k the number of normal labels and E the summed out-of-month normal probability on
+the fitting rows with such delays (in 2025 none of the 48 such G rows had a normal label); the freed share goes to the other two types.
+
+    python tools/glong.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --tag <spec>
+
+Original note (Korean):
+긴 지연 G 행(LIRF 출발 가운데 NM 미매칭, d_sch = MVT − SCHED ≥ 30,000초)의 정상 확률을 보정한다(R10-D-G1). G 행만 바꾼다.
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r10-d-types.md` 3절(사전 등록 R10-D-G1, 05:22 KST,
 측정 research/r10_d/m1_glong.py). 2025 G 행 가운데 d ≥ 30,000 48행에 정상(제대로 적힌 오프블록)이 하나도 없다(art 37, shift 11). 사슬의 G 확률
 (d < 43,200 은 gpool 로그 풀 S1, d ≥ 43,200 은 gkeyx 가드가 남긴 gkey avg)은 그런 행에 정상 확률을 0.02 ~ 0.17 준다. 남의 코드 없음.

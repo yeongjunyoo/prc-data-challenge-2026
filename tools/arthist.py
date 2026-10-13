@@ -1,5 +1,16 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""LIRF G 아닌 출발의 주 분류기 p_art 를 같은 편명의 학습 달 art 몫(정답 이력) 쪽으로 로짓 계수 하나만큼 옮긴다. artmm 바로 뒤, gkey 앞에 둔다.
+"""Copy-probability step for LIRF departures with an NM record (docs/DESIGN.md section 8.3), right after artmm.
+
+p_art moves in log-odds by one coefficient beta times the difference between the flight number's copy share in the fitting months
+(smoothed toward its route and carrier) and the month's mean p_art of that flight number. beta is fitted on the ruler rows with
+day-fold nesting (val), on January (fwd) or on both months (full). The prediction moves with p_art and stays inside the LOBT window.
+
+    python tools/arthist.py table                          # cache/arthist_v1.parquet
+    python tools/arthist.py --setting {val,fwd,full} --base <base> --base_seed 0 --src <manifest> --src_sha <16> --corr <corrector tag>
+        --table arthist_v1 --table_sha <16> --tag <spec>
+
+Original note (Korean):
+LIRF G 아닌 출발의 주 분류기 p_art 를 같은 편명의 학습 달 art 몫(정답 이력) 쪽으로 로짓 계수 하나만큼 옮긴다. artmm 바로 뒤, gkey 앞에 둔다.
 순서: 바탕 다리 → V5 기하 → A3 x0.5 → artmm → 이 단계 → gkey(avg) → gkeyx → gkeyxn → AIU 날 이동 → 반대 창(맨 끝).
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r7-u.md`(연구 스크립트 research/r7_u/c4_param.py 의 P1h,
 c6_lomo.py). 생각의 출처: R5 기록 감식(LIRF 에서만 편명의 다른 달 복사 비율이 복사를 가른다, 공항 안 AUC 0.667)과 R6 의 G 칸(같은 달 편명 이력).

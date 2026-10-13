@@ -1,5 +1,23 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""출발편 피처. 시험 때 보이는 칸만 쓴다(출발편의 BLOCK 과 TAXITIME 은 어디에도 넣지 않는다).
+"""Feature table of the departures, one row per departure, built only from columns that the movements to predict also have.
+
+A departure's BLOCK_TIME and TAXITIME (the label) are never used as inputs; the arrivals' block times are, since the input to predict
+has them. Feature groups: identity and category columns (airport, runway, stand, aircraft type, operator, market segment,
+destination), the take-off time minus the schedule and the NM times (d_sch, d_aobt, d_eobt, d_iobt, d_lobt and their differences),
+local clock and calendar (needs the airport's time zone in TZ), day and duplicate-record statistics, traffic counts and neighbour
+averages (congestion), the sequence of movements at the stand (stand_seq) and METAR weather (metar_feats; optional files
+data/metar/<ICAO>.csv). Since version 2.4 every window statistic is computed inside the UTC month of the movement, so that the
+training months and the months to predict see the same amount of context (docs/DESIGN.md section 5).
+
+    python src/feats.py [name]     # writes cache/<name>.parquet (default name feats)
+
+The frozen names feats_v2 to feats_v26 are not rebuilt (build refuses them): build under another name and rename the file, as
+research/f3/build_feats_final.py does for feats_v25. Every name that can be built gives version 2.5, except feats_mask_v26, which gives
+version 2.6, the version of the frozen feats_v26 (src/mask_test.py builds it).
+To add an airport, add its time zone to TZ; otherwise its local-time columns stay empty and no METAR file is read for it.
+
+Original note (Korean):
+출발편 피처. 시험 때 보이는 칸만 쓴다(출발편의 BLOCK 과 TAXITIME 은 어디에도 넣지 않는다).
 
 혼잡도와 주변 통계는 같은 칸막이 안의 행끼리 만든다. v2.4 부터 칸막이는 이륙(착륙) 시각의 UTC 달이다:
 학습, 자(2025-01, 07), 시험(2026-01, 07)이 모두 자기 달 안의 사건만 본다(달 경계 가용성을 맞춤).
@@ -33,7 +51,13 @@ DEICE_CLS = {"EDDM": 2, "EHAM": 2, "LFPG": 2, "LTFM": 2, "LEMD": 2, "EDDF": 1, "
 
 
 def local_parts(t: pd.Series, ap: pd.Series) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """현지 날짜(2025-01-01 기준 일수), 현지 하루 중 초, 요일."""
+    """Local calendar day (days since 2025-01-01), seconds since local midnight and weekday (0 = Monday) of UTC epoch seconds t.
+
+    The time zone is that of each row's airport ap (TZ). Rows of airports that are not in TZ, and rows without t, get NaN.
+
+    Original note (Korean):
+    현지 날짜(2025-01-01 기준 일수), 현지 하루 중 초, 요일.
+    """
     day = np.full(len(t), np.nan)
     tod = np.full(len(t), np.nan)
     dow = np.full(len(t), np.nan)
@@ -55,16 +79,30 @@ def _cat(s: pd.Series) -> pd.Series:
 
 
 def window_count(sorted_t: np.ndarray, lo: np.ndarray, hi: np.ndarray) -> np.ndarray:
-    """[lo, hi) 안의 사건 수."""
+    """Number of events of the sorted array sorted_t in the window [lo, hi), for each pair of bounds.
+
+    Original note (Korean):
+    [lo, hi) 안의 사건 수.
+    """
     return np.searchsorted(sorted_t, hi, side="left") - np.searchsorted(sorted_t, lo, side="left")
 
 
 def window_sum(sorted_t: np.ndarray, csum: np.ndarray, lo: np.ndarray, hi: np.ndarray) -> np.ndarray:
+    """Sum of a quantity over the events of sorted_t in [lo, hi), from its cumulative sum csum (csum[0] = 0, one more entry than sorted_t)."""
     return csum[np.searchsorted(sorted_t, hi, side="left")] - csum[np.searchsorted(sorted_t, lo, side="left")]
 
 
 def congestion(dep: pd.DataFrame, arr: pd.DataFrame) -> pd.DataFrame:
-    """같은 공항, 같은 칸막이(_part: v2.4 부터 이륙, 착륙 시각의 UTC 달) 안에서만 센다.
+    """Traffic around each departure's take-off at its airport, counted inside the same UTC month (column _part).
+
+    Counts of departures and arrivals in windows before and after the take-off (5, 15 and 60 minutes; 10 and 30 minutes on the same
+    runway), the gaps to the previous and next take-off on the runway, take-offs during the departure's own taxi (from AOBT_3 or from
+    the schedule), aircraft taxiing at the take-off and at AOBT_3, scheduled departures within 30 minutes, and averages over the
+    neighbouring departures (take-off minus AOBT_3, take-off minus schedule) and arrivals (taxi-in times, which the input to predict
+    also has). Returns float32 columns indexed like dep.
+
+    Original note (Korean):
+    같은 공항, 같은 칸막이(_part: v2.4 부터 이륙, 착륙 시각의 UTC 달) 안에서만 센다.
 
     시험은 2026-01, 07 만 있어 달 경계 너머 사건이 없다. 학습과 자도 같은 창(자기 달)만 보게 해 가용성을 맞춘다.
     """
@@ -179,7 +217,14 @@ def congestion(dep: pd.DataFrame, arr: pd.DataFrame) -> pd.DataFrame:
 
 
 def stand_seq(dep: pd.DataFrame, arr: pd.DataFrame) -> pd.DataFrame:
-    """같은 스탠드의 도착 블록인 시각(시험에서도 보임)과 다른 출발들. 내 이륙 시각 기준 간격.
+    """Movements at the departure's stand around its take-off, inside the same UTC month.
+
+    Seconds since the in-block of the previous and the second previous arrival at the stand, until the next arrival's in-block, since
+    the previous departure's take-off, until the next departure's schedule, and the number of arrivals that blocked in between the
+    departure's schedule and its take-off. Returns float32 columns indexed like dep.
+
+    Original note (Korean):
+    같은 스탠드의 도착 블록인 시각(시험에서도 보임)과 다른 출발들. 내 이륙 시각 기준 간격.
 
     v2.4 부터 같은 칸막이(_part: UTC 달) 안의 사건만 본다. 스탠드에 그 달 도착이 없으면 사이 도착 수는 0 이다.
     """
@@ -235,7 +280,15 @@ def stand_seq(dep: pd.DataFrame, arr: pd.DataFrame) -> pd.DataFrame:
 
 
 def metar_feats(dep: pd.DataFrame) -> pd.DataFrame:
-    """공개 METAR(data/metar/<ICAO>.csv, src/metar_fetch.py). 이륙 시각 직전 보고의 값과 지난 3시간의 현상 횟수.
+    """Weather at the departure airport from METAR reports (data/metar/<ICAO>.csv, IEM ASOS format, written by src/metar_fetch.py).
+
+    For each column the value of the last report that has one within METAR_ASOF_H (3) hours before the take-off: temperature, dew-point
+    spread, humidity, wind, gust, visibility, ceiling and present-weather flags; also counts of snow, freezing and thunderstorm reports
+    and of precipitation in the past 3 hours, the age of the last report, the 6-hour minimum temperature and a de-icing flag. Airports
+    without a file, or not in TZ, get NaN. Returns float32 columns.
+
+    Original note (Korean):
+    공개 METAR(data/metar/<ICAO>.csv, src/metar_fetch.py). 이륙 시각 직전 보고의 값과 지난 3시간의 현상 횟수.
 
     없으면 빈 칸(NaN)으로 둔다. 학습과 시험이 같은 함수로 만든다(관측 시각 기준, 정답은 쓰지 않는다).
     """
@@ -298,7 +351,13 @@ def metar_feats(dep: pd.DataFrame) -> pd.DataFrame:
 
 
 def plan_fix(dep: pd.DataFrame) -> pd.DataFrame:
-    """v2.6 계획 시계 보정. 피처를 만들기 전에 dep 의 NM 계획 시각을 고친다(입력만, 학습 달과 시험 달이 같은 길). 바뀐 행 수를 (공항, UTC 달)로 돌려준다.
+    """Version 2.6 only, not used by the final stack: align two NM planning clocks with their 2025 meaning before the features.
+
+    LFPG: an EOBT_1 that is less than 15 minutes after IOBT is set back to IOBT (ARVT_1 moves with it). LTFM: plans whose IOBT is 10
+    minutes before the schedule move 10 minutes later. Changes dep in place and returns the changed rows by airport and month.
+
+    Original note (Korean):
+    v2.6 계획 시계 보정. 피처를 만들기 전에 dep 의 NM 계획 시각을 고친다(입력만, 학습 달과 시험 달이 같은 길). 바뀐 행 수를 (공항, UTC 달)로 돌려준다.
 
     LFPG: 0 < EOBT_1 - IOBT < 900초(작은 EOBT 갱신)면 EOBT_1 := IOBT. 2025 각 달 2.4~4.3%, 2026-07 24% 다.
       ARVT_1 은 같은 비행 계획 칸이라 EOBT_1 과 같이 움직였다(목적지별 갱신 없음 행의 dur1 중앙값과 견주면 작은 갱신 행은 -58초,
@@ -322,7 +381,14 @@ def plan_fix(dep: pd.DataFrame) -> pd.DataFrame:
 
 
 def v26_feats(dep: pd.DataFrame, F: pd.DataFrame) -> pd.DataFrame:
-    """v2.6 새 칸. 입력만 쓴다. dep 는 plan_fix 를 거친 것, F 는 st_next_arr_gap 과 m_deice 가 붙은 뒤의 것."""
+    """Version 2.6 only, not used by the final stack: five more input-only columns.
+
+    Departures of the day relative to the month's median day, a remote-hold flag (AOBT_3 - IOBT above 30 minutes) and its product with
+    the gap to the next arrival at the stand, the airport's de-icing class (DEICE_CLS) and its product with the METAR de-icing flag.
+
+    Original note (Korean):
+    v2.6 새 칸. 입력만 쓴다. dep 는 plan_fix 를 거친 것, F 는 st_next_arr_gap 과 m_deice 가 붙은 뒤의 것.
+    """
     ap = dep["ADEP_mvt"].astype(str).to_numpy()
     out = pd.DataFrame(index=dep.index)
     # 그 공항의 그 UTC 날짜 출발 수 / 같은 칸막이(UTC 달) 안 그 공항 일별 출발 수의 중앙값. 결항이 많은 날(EHAM 2026-01-03~07)을 잡는다
@@ -343,7 +409,15 @@ def v26_feats(dep: pd.DataFrame, F: pd.DataFrame) -> pd.DataFrame:
 
 
 def build(rebuild: bool = False, name: str = "feats") -> pd.DataFrame:
-    """name: cache/<name>.parquet. 판을 고정해 쓰려면 feats_v21 처럼 복사본 이름을 준다(재생성은 feats 만)."""
+    """Build or read the feature table cache/<name>.parquet, one row per departure.
+
+    The first columns are MVT_ID_mvt, src (1 to 12 = training month, 0 = to predict) and y (the label, NaN for rows to predict); the
+    others are features (src.common.feature_cols leaves out the identifiers). With rebuild=False an existing file is read back.
+    Movements come from src.load.load_all (cache/all.parquet).
+
+    Original note (Korean):
+    name: cache/<name>.parquet. 판을 고정해 쓰려면 feats_v21 처럼 복사본 이름을 준다(재생성은 feats 만).
+    """
     cp = CACHE / f"{name}.parquet"
     if cp.exists() and not rebuild:
         return pd.read_parquet(cp)

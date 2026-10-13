@@ -1,5 +1,16 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""셋째 학습기 후보: XGBoost 회귀(mu)를 model3, cat_mu 와 같은 행, 같은 피처로 GPU 에서 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
+"""XGBoost leg: an XGBoost regression of mu on the same rows and features as src/model3.py, mixed half and half with the base's mu.
+
+G rows keep the base's values. Row split, early-stopping days, iteration rule, --drop and --anchor as in src/cat_mu.py; CAT_FEATS enter
+as categories. The parameters were fixed before any score (depth 8, eta 0.05, min_child_weight 50, subsample and colsample 0.8,
+lambda 10, max_bin 256, early stopping after 200 rounds). It has weight 0 in the final blend, whose definition still reads its file.
+
+    python src/xgb_mu.py --setting val --seed 0 --tag <tag> --base <model3 tag> --feats <feature table>
+Output: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_xgb, mu, p_art, g, dsch and, except for full, y) and the
+early-stopping rows.
+
+Original note (Korean):
+셋째 학습기 후보: XGBoost 회귀(mu)를 model3, cat_mu 와 같은 행, 같은 피처로 GPU 에서 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.
 
   pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_base + W * mu_xgb   (W = 0.5, 점수 전에 고정)
   G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 셋을 고르게 섞을 때는 이 출력의 mu_xgb 를 blend_mu --col mu_xgb --w 0.333333 으로 쓴다.
@@ -38,7 +49,12 @@ def log(msg: str):
 
 
 def xframe(F: pd.DataFrame, cols: list[str], rows: np.ndarray, ncat: dict[str, int]) -> pd.DataFrame:
-    """cat_mu.frame 의 정수 코드(결측 -1)를 같은 범주 집합의 pandas 범주형으로 바꾼다(학습, 조기 종료, 평가 행이 같은 코드표를 쓴다)."""
+    """The integer codes of cat_mu.frame (missing = -1) as pandas categories over one category set for each column in ncat,
+    so that the training, early-stopping and evaluated rows share one code table.
+
+    Original note (Korean):
+    cat_mu.frame 의 정수 코드(결측 -1)를 같은 범주 집합의 pandas 범주형으로 바꾼다(학습, 조기 종료, 평가 행이 같은 코드표를 쓴다).
+    """
     X = frame(F, cols, rows)
     for c, k in ncat.items():
         X[c] = pd.Categorical.from_codes(X[c].to_numpy(), categories=np.arange(k))
@@ -46,6 +62,7 @@ def xframe(F: pd.DataFrame, cols: list[str], rows: np.ndarray, ncat: dict[str, i
 
 
 def main():
+    """Command line entry: fit the XGBoost regression for one setting and seed and write the outputs of the module docstring."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

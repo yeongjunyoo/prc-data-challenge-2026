@@ -1,5 +1,21 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""ADS-B 보정기에 스탠드 기하 칸 여섯을 더한 판. src/adsb_corr.py 를 고치지 않고 불러 ADS-B 칸 목록만 늘린다.
+"""The ADS-B corrector of src/adsb_corr.py (imported unchanged) with six stand-geometry columns added to its ADS-B columns.
+
+Geometry table cache/<geo>.parquet (research/obs2/build_geo.py; its SHA-256 prefix must equal --geo_sha), per departure:
+    d_stand_first   metres from the position of the stand STAND_mvt (median of our ADS-B stand stops, else the OpenStreetMap
+                    aeroway=parking_position) to the first ADS-B ground point
+    st_known        whether that stand position is known
+    d_stand_stop    metres from the ADS-B stand stop to the stand of the record (towing, remote stands)
+    d_any_stand     metres from the first point to the nearest known stand (apron or taxiway)
+    seg_code        why the ground segment starts (0 start of the track, 1 after a gap, 2 landing)
+    to_gap          seconds between the last ground point and the first airborne point
+No label is used. Data: adsb.lol globe_history and OpenStreetMap (both ODbL 1.0). Training, folds, outputs as in src/adsb_corr.py.
+
+    python src/adsb_geo.py --setting val --seed 0 --base <tag> --tag <tag>adsbgeow --feats feats_v25 --adsb adsb_v1 --adsb_sha <16>
+        --geo adsb_geo_v1 --geo_sha <16> --folds 10 --rounds 300 --threads 3 --scale 1.0
+
+Original note (Korean):
+ADS-B 보정기에 스탠드 기하 칸 여섯을 더한 판. src/adsb_corr.py 를 고치지 않고 불러 ADS-B 칸 목록만 늘린다.
 
 기하 칸(cache/<geo>.parquet, research/obs2/build_geo.py 가 만듦, --geo_sha 와 sha256 앞 16자가 같아야 한다):
   d_stand_first  PRC STAND_mvt 의 위치(우리 ADS-B 스탠드 정지 위치의 중앙값, 없으면 OSM aeroway=parking_position)에서 첫 ADS-B 점까지(m)
@@ -33,6 +49,7 @@ GEO = ["d_stand_first", "st_known", "d_stand_stop", "d_any_stand", "seg_code", "
 
 
 def load_geo(name: str, want_sha: str) -> pd.DataFrame:
+    """Stand-geometry columns of cache/<name>.parquet (after checking its SHA-256 prefix), indexed by MVT_ID_mvt."""
     p = CACHE / f"{name}.parquet"
     got = ac.sha16(p)
     if got != want_sha:
@@ -41,6 +58,7 @@ def load_geo(name: str, want_sha: str) -> pd.DataFrame:
 
 
 def main():
+    """Command line entry: the ADS-B corrector with the geometry columns, for one setting."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

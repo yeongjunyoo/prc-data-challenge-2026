@@ -1,0 +1,10 @@
+# Inputs and outputs of the pipeline (docs/USAGE.md). The organizer data has no published license: keep it out of commits.
+/data/
+/cache/
+/logs/
+/queue/
+/subs/
+/preds/*.parquet
+/predictions.parquet
+/.venv/
+__pycache__/

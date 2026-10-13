@@ -1,5 +1,19 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""피처 v2.7 = v2.5 에 ADS-B 지상 궤적 칸(ab_*, adsb.lol globe_history, Open Database License 1.0)을 붙인 판.
+"""Feature set 2.7: feature set 2.5 (cache/feats_v25.parquet) plus 28 columns from open ADS-B ground traces (ab_*).
+
+The ADS-B columns come from the per-departure table of research/adsb/build_feats2.py (--adsb, for example adsb_v2) with the same
+definitions as the corrector (src/adsb_corr.py): whether the departure was matched to an ADS-B take-off that day (ab_matched: 1
+matched, 0 data for the day but no match, NaN no data for the day), whether the first movement was seen, estimates of the off-block
+time from the first movement and the first ground point, their differences to d_sch and d_aobt, and sixteen event columns.
+--mode raw (the default, used by the final stack) keeps every row as it is; sim and harmonize thin the matched rows of the ruler or of
+the rows to predict to the other year's matched share (cells of airport and month, rows picked by a fixed hash of MVT_ID_mvt).
+
+    python -m src.feats_adsb feats_v27 --adsb adsb_v2 --mode raw
+Output: cache/<name>.parquet (the rows and columns of feats_v25, then the ab_* columns) and cache/<name>.json (columns, input hashes,
+shares per cell).
+
+Original note (Korean):
+피처 v2.7 = v2.5 에 ADS-B 지상 궤적 칸(ab_*, adsb.lol globe_history, Open Database License 1.0)을 붙인 판.
 
 ADS-B 칸은 research/adsb/build_feats2.py 의 출발편 표(--adsb, 예 adsb_v2)에서 오고, 정의는 보정기(src/adsb_corr.py)와 같다.
   ab_matched           1 = 그날 ADS-B 이륙 사건과 맞음, 0 = 그날 자료는 있는데 안 맞음, NaN = 그날 자료가 아직 없음
@@ -63,7 +77,11 @@ def sha16(p) -> str:
 
 
 def u01(ids: np.ndarray, salt: int) -> np.ndarray:
-    """MVT_ID 의 고정 해시(splitmix64) → [0, 1)."""
+    """A fixed hash of the movement ids (splitmix64 with salt) mapped to [0, 1); it picks rows without a random seed.
+
+    Original note (Korean):
+    MVT_ID 의 고정 해시(splitmix64) → [0, 1).
+    """
     with np.errstate(over="ignore"):
         z = ids.astype(np.int64).view(np.uint64) + np.uint64(salt) + np.uint64(0x9E3779B97F4A7C15)
         z = (z ^ (z >> np.uint64(30))) * np.uint64(0xBF58476D1CE4E5B9)
@@ -73,7 +91,13 @@ def u01(ids: np.ndarray, salt: int) -> np.ndarray:
 
 
 def adsb_columns(F: pd.DataFrame, A: pd.DataFrame) -> pd.DataFrame:
-    """F(MVT_ID_mvt, d_sch, d_aobt) 행 순서의 ab_* 칸. A 에 없는 행(그날 자료 없음)은 ab_matched 까지 NaN."""
+    """The ab_* columns in the row order of F (MVT_ID_mvt, d_sch, d_aobt), from the per-departure ADS-B table A.
+
+    Rows of days without ADS-B data get NaN, ab_matched included; unmatched rows get ab_matched 0 and NaN elsewhere.
+
+    Original note (Korean):
+    F(MVT_ID_mvt, d_sch, d_aobt) 행 순서의 ab_* 칸. A 에 없는 행(그날 자료 없음)은 ab_matched 까지 NaN.
+    """
     idx = pd.Index(A["MVT_ID_mvt"].to_numpy()).get_indexer(F["MVT_ID_mvt"].to_numpy())
     have = idx >= 0
     a = A.iloc[np.where(have, idx, 0)].reset_index(drop=True)
@@ -95,7 +119,12 @@ def adsb_columns(F: pd.DataFrame, A: pd.DataFrame) -> pd.DataFrame:
 
 
 def cell_rates(ap: np.ndarray, year: np.ndarray, month: np.ndarray, X: pd.DataFrame) -> pd.DataFrame:
-    """칸(공항, 해, 달)의 행 수와 맞음 비율 m, 맞은 행 가운데 첫 움직임 봄 비율 f(그날 자료가 있는 행만)."""
+    """Per cell (airport, year, month), over the rows that have ADS-B data for their day: the number of rows, the matched share m
+    and, among the matched rows, the share whose first movement was seen (f).
+
+    Original note (Korean):
+    칸(공항, 해, 달)의 행 수와 맞음 비율 m, 맞은 행 가운데 첫 움직임 봄 비율 f(그날 자료가 있는 행만).
+    """
     ok = X["ab_matched"].notna().to_numpy()
     d = pd.DataFrame({"ap": ap[ok], "year": year[ok], "month": month[ok], "m": X["ab_matched"].to_numpy()[ok],
                       "f": X["ab_fm_seen"].to_numpy()[ok]})
@@ -104,7 +133,12 @@ def cell_rates(ap: np.ndarray, year: np.ndarray, month: np.ndarray, X: pd.DataFr
 
 
 def mask(X: pd.DataFrame, rows: np.ndarray, keep_m: np.ndarray, keep_f: np.ndarray, ids: np.ndarray) -> tuple[int, int]:
-    """rows 가운데 맞은 행을 keep_m 확률로만 남기고(나머지는 맞지 않은 행처럼), 남은 첫 움직임 행의 FM_COLS 는 keep_f 확률로만 남긴다."""
+    """For --mode sim and harmonize: keep each matched row of rows with probability keep_m (the others become unmatched rows) and the
+    first-movement columns of the kept rows with probability keep_f, picking rows with u01. Returns the numbers of rows changed.
+
+    Original note (Korean):
+    rows 가운데 맞은 행을 keep_m 확률로만 남기고(나머지는 맞지 않은 행처럼), 남은 첫 움직임 행의 FM_COLS 는 keep_f 확률로만 남긴다.
+    """
     m = rows & (X["ab_matched"].to_numpy() == 1)
     drop_m = m & (u01(ids, 1) >= keep_m)
     X.loc[drop_m, [c for c in COLS if c != "ab_matched"]] = np.nan
@@ -117,6 +151,7 @@ def mask(X: pd.DataFrame, rows: np.ndarray, keep_m: np.ndarray, keep_f: np.ndarr
 
 
 def main():
+    """Command line entry: build the feature table with the ADS-B columns (arguments in the module docstring)."""
     pa_ = argparse.ArgumentParser()
     pa_.add_argument("name")
     pa_.add_argument("--adsb", default="adsb_v2")

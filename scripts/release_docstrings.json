@@ -1,0 +1,1713 @@
+{
+ "what": "English docstrings added for the release (2026-10-13) to files of src/ and tools/. For each file: the hunks, each with its first line and its number of lines in the file here, the SHA-256 prefix of those lines (joined by line feeds), and the lines it replaced (the original docstring, or none where the function had none). Putting the original lines back, from the last hunk to the first, gives the file as it ran, which scripts/verify_code_hashes.py hashes. Code lines are not touched: without docstrings, every file here has the same syntax tree as the file that ran.",
+ "files": {
+  "research/r13_f3/cat_muap.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 26,
+     "here_sha16": "d1af9a104a17a5fa",
+     "as_run": [
+      "\"\"\"다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.",
+      "",
+      "R13-F3 사본(research/r13_f3/cat_muap.py, vault research/2026-10-07-r13-f3.md 6): src/cat_mu.py(sha16 05956dbe5a32bfa9)에 --per_ap 만 더했다.",
+      "  --per_ap: 공항마다 CatBoost 회귀 하나(그 공항의 조기 종료 날 행으로 조기 종료, 그 공항 회귀 행에 x1.1 재학습, full 은 val 씨앗 0 이 쓴",
+      "  공항별 반복 수 \"cat_<공항>\"). 바탕과 섞기, G 행, 출력은 원본 그대로다. --per_ap 이 없으면 원본과 같은 길을 탄다.",
+      "",
+      "  pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_lgb + W * mu_cat   (W = 0.5, 점수 전에 고정)",
+      "  G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 바탕 모형은 --eobt_comp 없는 model3 출력이어야 한다(mu 가 art, shift 를 뺀 행의 회귀).",
+      "--setting val|fwd|full, --es internal 의 행 나누기는 model3 와 같다(es_day_mask). val 은 내부 조기 종료로 반복 수를 찾은 뒤",
+      "학습 범위 전체에 x1.1 로 다시 맞춘다(model3 --refit). fwd 도 제 학습 범위(1~6월) 안의 내부 조기 종료로 반복 수를 찾고(10-04 닫힘 감사 2회차:",
+      "val 이 고른 반복 수에는 7월 뒤 달의 정보가 들어 있어 전방 자가 깨끗하지 않았다), full 은 val 이 cache/iters_<tag>.json 에 쓴 반복 수 x1.1 이다.",
+      "--drop, --anchor aobt 는 model3 의 같은 이름 옵션과 같다(뺄 칸, 회귀 목표 y - clip(MVT - AOBT_3, 0, 7200)).",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_cat, mu, p_art, g, dsch, [y]), preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet",
+      "메모리(10-06, 입력과 결과는 그대로): 목표 인코딩 칸을 float32 로 바꿔 붙이고(범주 아닌 피처는 모두 float32 로 읽으므로 값이 같다), 표는 배열을 복사하지 않고",
+      "만든다(pandas 3 의 DataFrame(dict) 는 같은 dtype 칸을 한 덩어리로 복사한다. Pool 이 어차피 제 사본을 만든다).",
+      "    .venv/Scripts/python.exe -u src/cat_mu.py --setting val --seed 0 --tag m6r25cb --base m6r25 --feats feats_v25 --threads 4",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "research/r13_f3/model3ap.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 36,
+     "here_sha16": "d3d4257f0f9278e1",
+     "as_run": [
+      "\"\"\"3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.",
+      "",
+      "R13-F3 사본(research/r13_f3/model3ap.py, vault research/2026-10-07-r13-f3.md 6): src/model3.py(sha16 4641d5b5d91abd26)에 --mu_sep all 만 더했다.",
+      "  all: 회귀(mu)를 공항마다 따로 학습한다(공항마다 내부 조기 종료, 재학습 x1.1, full 은 공항별 반복 수 iters[\"reg_<공항>\"]). 분류기, G 모형,",
+      "  혼합, 창 밖 규칙, 출력은 원본 그대로다. all 이 아니면 원본과 같은 길을 탄다.",
+      "",
+      "전역:  pred = p_art * d_sch + (1 - p_art) * mu",
+      "  p_art : BLOCK 이 SCHED 와 60초 안일 확률(LightGBM 이진, --wpow 로 (|d_sch-1000|) 가중 가능)",
+      "  mu    : art 도 shift(하루 어긋남)도 아닌 행으로 학습한 L2 회귀",
+      "G 그룹: pred = pa*d_sch + ps*(86400*max(dd,1) + mu) + pn*mu   (pa, ps, pn 은 src/sub_g.py 의 lookup+접두사 와 작은 GBM 평균)",
+      "direct: 같은 피처로 정답을 바로 맞히는 L2 회귀(성격이 다른 차선)",
+      "--eobt_comp: 세 번째 성분. art 가 아닌 몫을 p_e * d_eobt + (1 - p_e) * mu 로 나눈다(p_e: BLOCK 이 EOBT1 과 EOBT_WIN 초 안일 확률,",
+      "             EOBT1 이 없는 행은 0). mu 는 이 행들까지 뺀 회귀다.",
+      "",
+      "--setting val : 2025 의 1, 7월을 빼고 학습, 1, 7월로 잰다(로컬 자).",
+      "--setting fwd : 2025-01~06 으로 학습, 2025-07 로 잰다(앞으로 가는 자, 부호 점검용).",
+      "--setting nd  : 2025-01~10 으로 학습, 2025-11, 12 로 잰다(해가 바뀌는 시험의 옮김을 학습 기간 안에서 재는 둘째 자, 10-03).",
+      "--setting full: 2025 전체로 학습해 ranking 출발을 예측한다. 반복 수는 val 의 1.15 배(cache/iters_<tag>.json).",
+      "--es internal(기본): 조기 종료를 학습 범위 안의 날짜 블록(UTC 날짜 번호 % 10 == 0, 약 10%)으로 하고 그 날들은 학습에서 뺀다.",
+      "                    잴 행(1, 7월)은 조기 종료에 쓰지 않는다.",
+      "--es holdout      : 옛 방식(잴 행으로 조기 종료). 기본값을 --es internal 로 바꾼 것은 10-02 18:31 KST(notes/jobs_ruler.txt 생성 시각)이고,",
+      "                    그 전 결과(m3, m3w, m4*, m5, m6, m7)는 이 옛 방식이라 낙관적이다.",
+      "--refit           : 내부 조기 종료로 찾은 반복 수 x 1.1 로 학습 범위 전체(조기 종료 날 포함)에 다시 맞춰 잰다.",
+      "                    전체 데이터 최종 모델(--setting full)과 같은 방식이다. full 은 반복 수 x 1.1 x --full_mult(기본 1.15)를 쓴다.",
+      "조기 종료 행은 preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet 에 남긴다.",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, direct, p_art, mu, g, [y])",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "src/adsb_corr.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 32,
+     "here_sha16": "60db2bdb4449e45c",
+     "as_run": [
+      "\"\"\"ADS-B 지상 궤적 보정기: 바탕 혼합 예측(--base)의 잔차를 adsb.lol 로 매칭된 출발편에서만 고치고, 마지막에 LOBT 창(src/lobt_window.project)을 건다.",
+      "",
+      "입력: cache/<setting>_<base>_s<seed>.parquet(바탕 val, fwd, full), cache/<adsb>.parquet(research/adsb/build_feats.py 가 만든 출발편별 ADS-B 칸,",
+      "      --adsb_sha 와 sha256 앞 16자가 같아야 한다), cache/<feats>.parquet 의 d_lobt(창).",
+      "보정기: LightGBM 이 매칭된 2025-01, 07 홀드아웃 행(바탕 val)의 y − pred(±1,800초에서 자름)를 바탕 칸(pred, mu, p_art, dsch, g, 공항, 시)과",
+      "      ADS-B 칸으로 배운다. 매칭 안 된 행은 바탕 그대로 둔다.",
+      "  val : 날 묶음 --folds 겹(날을 섞어 나눔). 각 날의 매칭 행은 그 날이 빠진 보정기로 고친다(밖 표본). 날별, 공항별 표를 notes/adsb_corr_<tag>_val.json 에 쓴다.",
+      "  fwd : 바탕 fwd(2025-07)의 매칭 행을 1월 날만으로 배운 보정기로 고친다(7월 정보 없음, 앞으로 가는 자).",
+      "  full: 바탕 full(2026 시험)의 매칭 행을 val 의 --folds 개 보정기 평균으로 고친다.",
+      "그다음 창: mu 는 바탕의 혼합식 mu(lobt_window.mu_of), d_lobt 는 --feats 의 원래 칸.",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet(바탕과 같은 칸, pred 와 p_art 만 바뀜). 조기 종료 행은 바탕 것을 이 태그로 복사(보정기는 바탕 학습을 건드리지 않는다).",
+      "    .venv/Scripts/python.exe -u src/adsb_corr.py --setting val --seed 0 --base m6r25sgc75 --tag m6r25sgc75adsbw --feats feats_v25 --adsb adsb_v1 --adsb_sha <16> --folds 10 --rounds 300 --threads 3",
+      "자료: adsb.lol globe_history(Open Database License 1.0), README 「외부 데이터」.",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 82,
+     "lines_here": 4,
+     "here_sha16": "74aa87d0063923b8",
+     "as_run": [],
+     "target": "load_adsb"
+    },
+    {
+     "line": 121,
+     "lines_here": 1,
+     "here_sha16": "1cf522e7a3228c37",
+     "as_run": [],
+     "target": "fit"
+    },
+    {
+     "line": 132,
+     "lines_here": 1,
+     "here_sha16": "0531f283ed8647df",
+     "as_run": [],
+     "target": "predict"
+    },
+    {
+     "line": 137,
+     "lines_here": 1,
+     "here_sha16": "3afecc3e737a7ff7",
+     "as_run": [],
+     "target": "day_folds"
+    },
+    {
+     "line": 143,
+     "lines_here": 1,
+     "here_sha16": "273d2d16bb713136",
+     "as_run": [],
+     "target": "fold_models"
+    },
+    {
+     "line": 150,
+     "lines_here": 3,
+     "here_sha16": "f938b13c70263fca",
+     "as_run": [],
+     "target": "report"
+    },
+    {
+     "line": 178,
+     "lines_here": 1,
+     "here_sha16": "8d46a81328c18909",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/adsb_geo.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 29,
+     "here_sha16": "e4eac654ae0a80fd",
+     "as_run": [
+      "\"\"\"ADS-B 보정기에 스탠드 기하 칸 여섯을 더한 판. src/adsb_corr.py 를 고치지 않고 불러 ADS-B 칸 목록만 늘린다.",
+      "",
+      "기하 칸(cache/<geo>.parquet, research/obs2/build_geo.py 가 만듦, --geo_sha 와 sha256 앞 16자가 같아야 한다):",
+      "  d_stand_first  PRC STAND_mvt 의 위치(우리 ADS-B 스탠드 정지 위치의 중앙값, 없으면 OSM aeroway=parking_position)에서 첫 ADS-B 점까지(m)",
+      "  st_known       그 스탠드 위치를 아는가",
+      "  d_stand_stop   ADS-B 스탠드 정지 위치에서 PRC 스탠드까지(견인, 원격 스탠드 판별)",
+      "  d_any_stand    첫 점에서 가장 가까운 아는 스탠드까지(주기장인지 유도로인지)",
+      "  seg_code       지상 구간 시작 이유(0 궤적 시작, 1 공백으로 끊김, 2 착륙)",
+      "  to_gap         마지막 지상 점과 첫 공중 점 사이(초)",
+      "정답은 쓰지 않는다. 자료: adsb.lol globe_history(ODbL 1.0), OpenStreetMap(ODbL 1.0, © OpenStreetMap contributors), README 「외부 데이터」.",
+      "보정기 학습, 겹, 시드, 반복, 매개변수, 창, 출력 꼴은 src/adsb_corr.py 와 같다(val: 날 묶은 --folds 겹, fwd: 1월 날만, full: --folds 개 평균).",
+      "    .venv/Scripts/python.exe -u src/adsb_geo.py --setting val --seed 0 --base m6r25sgcbxr --tag m6r25sgcbxradsbgeow --feats feats_v25 --adsb adsb_v1 --adsb_sha <16> --geo adsb_geo_v1 --geo_sha <16> --folds 10 --rounds 300 --threads 3 --scale 1.0",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 52,
+     "lines_here": 1,
+     "here_sha16": "45f2fc525c356c9c",
+     "as_run": [],
+     "target": "load_geo"
+    },
+    {
+     "line": 61,
+     "lines_here": 1,
+     "here_sha16": "4d1cb42e7f9359bf",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/blend_mu.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 16,
+     "here_sha16": "16dc80dbdbeff88a",
+     "as_run": [
+      "\"\"\"두 출력의 회귀(mu)를 반씩 섞어 혼합 예측을 다시 짓는다: model3 바탕 출력(--base)의 p_art, dsch, G 값과 cat_mu 출력(--cat)의 mu_cat.",
+      "",
+      "  pred = clip(p_art * d_sch + (1 - p_art) * ((1 - W) * mu_base + W * mu_cat), 0),  G 행은 바탕 모형 값 그대로 (W = --w, 기본 0.5)",
+      "cat_mu 의 CatBoost 회귀는 바탕 모형과 무관하게 같은 행, 같은 피처로 학습하므로(src/cat_mu.py), 다른 바탕 모형(예: --mu_sep LIRF)에 그대로 다시 쓴다.",
+      "조기 종료 행은 두 입력의 것이 같아야 하고, 바탕 모형의 것을 이 태그 이름으로 남긴다.",
+      "    .venv/Scripts/python.exe -u src/blend_mu.py --setting val --seed 0 --tag m6r25scb --base m6r25s --cat m6r25cb",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "src/blend_oof.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 65,
+     "lines_here": 1,
+     "here_sha16": "4a42ff764711fa4c",
+     "as_run": [],
+     "target": "ruler_days"
+    },
+    {
+     "line": 78,
+     "lines_here": 1,
+     "here_sha16": "673bb3b74d3647ee",
+     "as_run": [],
+     "target": "load"
+    },
+    {
+     "line": 90,
+     "lines_here": 1,
+     "here_sha16": "dd029f7165cab9f5",
+     "as_run": [],
+     "target": "design"
+    },
+    {
+     "line": 106,
+     "lines_here": 1,
+     "here_sha16": "714ba60407ce9a9f",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/cat_mu.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 27,
+     "here_sha16": "7dd1346be23dc3bd",
+     "as_run": [
+      "\"\"\"다른 학습기 후보: CatBoost 회귀(mu)를 model3 와 같은 행, 같은 피처로 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.",
+      "",
+      "  pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_lgb + W * mu_cat   (W = 0.5, 점수 전에 고정)",
+      "  G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 바탕 모형은 --eobt_comp 없는 model3 출력이어야 한다(mu 가 art, shift 를 뺀 행의 회귀).",
+      "--setting val|fwd|full, --es internal 의 행 나누기는 model3 와 같다(es_day_mask). val 은 내부 조기 종료로 반복 수를 찾은 뒤",
+      "학습 범위 전체에 x1.1 로 다시 맞춘다(model3 --refit). fwd 도 제 학습 범위(1~6월) 안의 내부 조기 종료로 반복 수를 찾고(10-04 닫힘 감사 2회차:",
+      "val 이 고른 반복 수에는 7월 뒤 달의 정보가 들어 있어 전방 자가 깨끗하지 않았다), full 은 val 이 cache/iters_<tag>.json 에 쓴 반복 수 x1.1 이다.",
+      "--drop, --anchor aobt 는 model3 의 같은 이름 옵션과 같다(뺄 칸, 회귀 목표 y - clip(MVT - AOBT_3, 0, 7200)).",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_cat, mu, p_art, g, dsch, [y]), preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet",
+      "메모리(10-06, 입력과 결과는 그대로): 목표 인코딩 칸을 float32 로 바꿔 붙이고(범주 아닌 피처는 모두 float32 로 읽으므로 값이 같다), 표는 배열을 복사하지 않고",
+      "만든다(pandas 3 의 DataFrame(dict) 는 같은 dtype 칸을 한 덩어리로 복사한다. Pool 이 어차피 제 사본을 만든다).",
+      "    .venv/Scripts/python.exe -u src/cat_mu.py --setting val --seed 0 --tag m6r25cb --base m6r25 --feats feats_v25 --threads 4",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 66,
+     "lines_here": 6,
+     "here_sha16": "b9d800dcb84b4d8b",
+     "as_run": [
+      "    \"\"\"CatBoost 입력: CAT_FEATS 범주 칸은 정수 코드(결측 -1), 다른 범주형 칸은 model3.to_matrix 처럼 코드(결측 NaN), 나머지는 float32.\"\"\""
+     ],
+     "target": "frame"
+    },
+    {
+     "line": 84,
+     "lines_here": 1,
+     "here_sha16": "35689196ace70f53",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/common.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 5,
+     "here_sha16": "fb711a1708e161dc",
+     "as_run": [
+      "\"\"\"모델 공용: 피처 목록, 분할, RMSE 와 분해 표.\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 17,
+     "lines_here": 1,
+     "here_sha16": "8aa509f2391822d2",
+     "as_run": [],
+     "target": "feature_cols"
+    },
+    {
+     "line": 23,
+     "lines_here": 1,
+     "here_sha16": "bddc7dabbed88b1c",
+     "as_run": [],
+     "target": "split"
+    },
+    {
+     "line": 31,
+     "lines_here": 1,
+     "here_sha16": "8b3d3a9dfa01f9c9",
+     "as_run": [],
+     "target": "rmse"
+    },
+    {
+     "line": 38,
+     "lines_here": 1,
+     "here_sha16": "1e40d2d9735c69ea",
+     "as_run": [],
+     "target": "breakdown"
+    }
+   ]
+  },
+  "src/ctx_corr.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 68,
+     "lines_here": 1,
+     "here_sha16": "aa07e9b461ab4f83",
+     "as_run": [],
+     "target": "checked"
+    },
+    {
+     "line": 77,
+     "lines_here": 1,
+     "here_sha16": "d671e6bdb7bb7a88",
+     "as_run": [],
+     "target": "stage1_inputs"
+    },
+    {
+     "line": 147,
+     "lines_here": 1,
+     "here_sha16": "6dca019bb179314a",
+     "as_run": [],
+     "target": "fit2"
+    },
+    {
+     "line": 156,
+     "lines_here": 1,
+     "here_sha16": "01d96516c2041ad6",
+     "as_run": [],
+     "target": "stage1_folds"
+    },
+    {
+     "line": 198,
+     "lines_here": 1,
+     "here_sha16": "d302e052850608cb",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/ctx_corr2.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 36,
+     "lines_here": 1,
+     "here_sha16": "2fd86b62fbaea503",
+     "as_run": [],
+     "target": "Rows2"
+    },
+    {
+     "line": 44,
+     "lines_here": 1,
+     "here_sha16": "f0026fbc7faa3183",
+     "as_run": [],
+     "target": "pop_flag"
+    },
+    {
+     "line": 54,
+     "lines_here": 1,
+     "here_sha16": "b92341cdaf630bf4",
+     "as_run": [],
+     "target": "digest"
+    },
+    {
+     "line": 102,
+     "lines_here": 1,
+     "here_sha16": "3c069a0975c00035",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/ctx_corr3.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 40,
+     "lines_here": 1,
+     "here_sha16": "f3e1a1bb3934c949",
+     "as_run": [],
+     "target": "group_mean"
+    },
+    {
+     "line": 73,
+     "lines_here": 5,
+     "here_sha16": "055f22741c91c439",
+     "as_run": [],
+     "target": "Rows3"
+    },
+    {
+     "line": 92,
+     "lines_here": 1,
+     "here_sha16": "16b716f54306a4b8",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/feats.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 29,
+     "here_sha16": "373585785bc176ea",
+     "as_run": [
+      "\"\"\"출발편 피처. 시험 때 보이는 칸만 쓴다(출발편의 BLOCK 과 TAXITIME 은 어디에도 넣지 않는다).",
+      "",
+      "혼잡도와 주변 통계는 같은 칸막이 안의 행끼리 만든다. v2.4 부터 칸막이는 이륙(착륙) 시각의 UTC 달이다:",
+      "학습, 자(2025-01, 07), 시험(2026-01, 07)이 모두 자기 달 안의 사건만 본다(달 경계 가용성을 맞춤).",
+      "METAR 는 칸마다 이륙 전 METAR_ASOF_H(3)시간 안의 마지막 값 있는 보고를 쓴다.",
+      "v2.5 는 v2.4 에서 편명 파생 칸 prefix, fl_len 을 뺐다(편명이 비면 NaN 이 되는 칸).",
+      "v2.6 은 V26_NAMES 이름으로 만들 때만 켠다: 피처 전에 계획 시계를 2025 뜻으로 맞추고(plan_fix) 새 칸 다섯을 붙인다(v26_feats).",
+      "v25 이하 이름과 feats 로 만들면 v2.5 그대로다.",
+      "결과는 cache/feats.parquet(python src/feats.py [이름] 이면 cache/<이름>.parquet). 고정 판: feats_v2, v21, v22, v23, v24, v25, v26",
+      "(가림 시험 notes/mask_test_feats_<판>.json).",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 54,
+     "lines_here": 7,
+     "here_sha16": "fd98c8e3f0afa8b6",
+     "as_run": [
+      "    \"\"\"현지 날짜(2025-01-01 기준 일수), 현지 하루 중 초, 요일.\"\"\""
+     ],
+     "target": "local_parts"
+    },
+    {
+     "line": 82,
+     "lines_here": 5,
+     "here_sha16": "b8f2459e896dfa60",
+     "as_run": [
+      "    \"\"\"[lo, hi) 안의 사건 수.\"\"\""
+     ],
+     "target": "window_count"
+    },
+    {
+     "line": 91,
+     "lines_here": 1,
+     "here_sha16": "8ec354af4c8e3183",
+     "as_run": [],
+     "target": "window_sum"
+    },
+    {
+     "line": 96,
+     "lines_here": 13,
+     "here_sha16": "5a6450ddb4c0fa8a",
+     "as_run": [
+      "    \"\"\"같은 공항, 같은 칸막이(_part: v2.4 부터 이륙, 착륙 시각의 UTC 달) 안에서만 센다.",
+      "",
+      "    시험은 2026-01, 07 만 있어 달 경계 너머 사건이 없다. 학습과 자도 같은 창(자기 달)만 보게 해 가용성을 맞춘다.",
+      "    \"\"\""
+     ],
+     "target": "congestion"
+    },
+    {
+     "line": 220,
+     "lines_here": 11,
+     "here_sha16": "6b7b4b7cafe42514",
+     "as_run": [
+      "    \"\"\"같은 스탠드의 도착 블록인 시각(시험에서도 보임)과 다른 출발들. 내 이륙 시각 기준 간격.",
+      "",
+      "    v2.4 부터 같은 칸막이(_part: UTC 달) 안의 사건만 본다. 스탠드에 그 달 도착이 없으면 사이 도착 수는 0 이다.",
+      "    \"\"\""
+     ],
+     "target": "stand_seq"
+    },
+    {
+     "line": 283,
+     "lines_here": 12,
+     "here_sha16": "740b50048decc580",
+     "as_run": [
+      "    \"\"\"공개 METAR(data/metar/<ICAO>.csv, src/metar_fetch.py). 이륙 시각 직전 보고의 값과 지난 3시간의 현상 횟수.",
+      "",
+      "    없으면 빈 칸(NaN)으로 둔다. 학습과 시험이 같은 함수로 만든다(관측 시각 기준, 정답은 쓰지 않는다).",
+      "    \"\"\""
+     ],
+     "target": "metar_feats"
+    },
+    {
+     "line": 354,
+     "lines_here": 15,
+     "here_sha16": "370e28eebb01fdff",
+     "as_run": [
+      "    \"\"\"v2.6 계획 시계 보정. 피처를 만들기 전에 dep 의 NM 계획 시각을 고친다(입력만, 학습 달과 시험 달이 같은 길). 바뀐 행 수를 (공항, UTC 달)로 돌려준다.",
+      "",
+      "    LFPG: 0 < EOBT_1 - IOBT < 900초(작은 EOBT 갱신)면 EOBT_1 := IOBT. 2025 각 달 2.4~4.3%, 2026-07 24% 다.",
+      "      ARVT_1 은 같은 비행 계획 칸이라 EOBT_1 과 같이 움직였다(목적지별 갱신 없음 행의 dur1 중앙값과 견주면 작은 갱신 행은 -58초,",
+      "      IOBT 로 재면 +392초). 그래서 ARVT_1 도 같은 폭만큼 당긴다. 안 당기면 dur1, ddur 이 그 행에서 갱신 폭만큼 어긋난다. LOBT 는 99.4% 가 IOBT 그대로다.",
+      "    LTFM: IOBT - SCHED == -600초(2025 각 달 12.7~20.5%, 2026-07 0.13%)면 계획 전체(IOBT, LOBT, EOBT_1, ARVT_1)를 600초 늦춰 IOBT := SCHED.",
+      "      그 행의 LOBT, EOBT_1 은 99.7% 가 IOBT 와 같고 ARVT_1 도 600초 이르다. IOBT 만 옮기면 lobt_m_iobt 에 -600 이 새로 생기고",
+      "      eobt_m_sch, lobt_m_sch 에는 그 범주가 남는다.",
+      "    \"\"\""
+     ],
+     "target": "plan_fix"
+    },
+    {
+     "line": 384,
+     "lines_here": 8,
+     "here_sha16": "1f7487f39aaa2f98",
+     "as_run": [
+      "    \"\"\"v2.6 새 칸. 입력만 쓴다. dep 는 plan_fix 를 거친 것, F 는 st_next_arr_gap 과 m_deice 가 붙은 뒤의 것.\"\"\""
+     ],
+     "target": "v26_feats"
+    },
+    {
+     "line": 412,
+     "lines_here": 9,
+     "here_sha16": "58634376b6025440",
+     "as_run": [
+      "    \"\"\"name: cache/<name>.parquet. 판을 고정해 쓰려면 feats_v21 처럼 복사본 이름을 준다(재생성은 feats 만).\"\"\""
+     ],
+     "target": "build"
+    }
+   ]
+  },
+  "src/feats_adsb.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 40,
+     "here_sha16": "a400eaca384b2ade",
+     "as_run": [
+      "\"\"\"피처 v2.7 = v2.5 에 ADS-B 지상 궤적 칸(ab_*, adsb.lol globe_history, Open Database License 1.0)을 붙인 판.",
+      "",
+      "ADS-B 칸은 research/adsb/build_feats2.py 의 출발편 표(--adsb, 예 adsb_v2)에서 오고, 정의는 보정기(src/adsb_corr.py)와 같다.",
+      "  ab_matched           1 = 그날 ADS-B 이륙 사건과 맞음, 0 = 그날 자료는 있는데 안 맞음, NaN = 그날 자료가 아직 없음",
+      "  ab_fm_seen, ab_fm_ok 첫 움직임을 봤는가, 그 움직임의 시작을 봤는가(맞은 행만, 나머지 NaN)",
+      "  ab_est_mvt, ab_est_to, ab_est_first, ab_est_mvt_last, ab_dt_to   MVT − 첫 움직임, 이륙 − 첫 움직임, MVT − 첫 지상 점,",
+      "                       MVT − 마지막 긴 멈춤 뒤 움직임, ADS-B 이륙 − MVT",
+      "  ab_fm_m_sch, ab_first_m_sch      d_sch − ab_est_mvt, d_sch − ab_est_first(보정기의 fm_minus_sched, first_minus_sched)",
+      "  ab_fm_m_aobt, ab_first_m_aobt    d_aobt − ab_est_mvt, d_aobt − ab_est_first. 보정기의 fm_minus_pred, first_minus_pred 는 바탕 예측과의",
+      "                       차인데, 주 모형에는 바탕 예측이 없어 회귀의 가장 큰 입력인 d_aobt(MVT − AOBT_3)와의 차로 바꿨다.",
+      "  ab_first_gs ... ab_share_mlat     사건 칸 16개(ev_* 그대로)",
+      "맞지 않은 행은 ab_matched 만 0 이고 나머지는 NaN 이다.",
+      "",
+      "--mode 는 행의 덮임(커버리지)을 어떻게 둘지 정한다. 칸(공항, 달력 달 1 또는 7)마다 2025 자의 비율(맞음 m25, 맞은 행 가운데 첫 움직임 봄",
+      "f25)과 2026 시험의 비율(m26, f26)을 입력 표에서 세고, 행마다 MVT_ID 의 고정 해시로 고른다(무작위 씨앗 없음, 다시 만들어도 같다).",
+      "  raw(기본): 아무 행도 가리지 않는다(시험은 2026 의 덮임 그대로).",
+      "  sim      : 자 행(2025 의 1, 7월)만, 칸 비율이 2026 보다 높으면 2026 비율까지 내린다(덮임 표류 모의, 자에서만 쓰는 판). 가린 맞은 행은",
+      "             맞지 않은 행처럼 되고, 첫 움직임만 가린 행은 FM_COLS 만 빈다.",
+      "  harmonize: 시험 행만, 칸 비율이 2025 보다 높으면 2025 비율까지 내린다(맞음은 m25/m26 만 남기고, 남은 행의 첫 움직임 칸은 f25/f26 만",
+      "             남긴다). 정답은 쓰지 않는다. 첫 움직임 칸만 가린 행은 실제 자료에 드문 조합(주기장에서 멈춘 첫 점은 있는데 첫 움직임은 없음)이",
+      "             되므로, 쓰기 전에 그 몫을 따로 본다.",
+      "harmonize 판의 시험 행과 sim 판의 자 행은 칸마다 min(2025, 2026) 비율이 되어, sim 판으로 잰 자 값이 harmonize 판 시험의 로컬 짝이다.",
+      "",
+      "    python -m src.feats_adsb feats_v27 --adsb adsb_v2 --mode raw",
+      "출력: cache/<이름>.parquet(feats_v25 의 칸과 행 순서 그대로, 뒤에 ab_* 28칸), cache/<이름>.json(칸 목록, 입력 해시, 칸별 비율과 가린 수).",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 80,
+     "lines_here": 5,
+     "here_sha16": "767b0572ddf194d2",
+     "as_run": [
+      "    \"\"\"MVT_ID 의 고정 해시(splitmix64) → [0, 1).\"\"\""
+     ],
+     "target": "u01"
+    },
+    {
+     "line": 94,
+     "lines_here": 7,
+     "here_sha16": "aa0a2940879efb65",
+     "as_run": [
+      "    \"\"\"F(MVT_ID_mvt, d_sch, d_aobt) 행 순서의 ab_* 칸. A 에 없는 행(그날 자료 없음)은 ab_matched 까지 NaN.\"\"\""
+     ],
+     "target": "adsb_columns"
+    },
+    {
+     "line": 122,
+     "lines_here": 6,
+     "here_sha16": "58fe71b84d0152eb",
+     "as_run": [
+      "    \"\"\"칸(공항, 해, 달)의 행 수와 맞음 비율 m, 맞은 행 가운데 첫 움직임 봄 비율 f(그날 자료가 있는 행만).\"\"\""
+     ],
+     "target": "cell_rates"
+    },
+    {
+     "line": 136,
+     "lines_here": 6,
+     "here_sha16": "cbcd3183a284e509",
+     "as_run": [
+      "    \"\"\"rows 가운데 맞은 행을 keep_m 확률로만 남기고(나머지는 맞지 않은 행처럼), 남은 첫 움직임 행의 FM_COLS 는 keep_f 확률로만 남긴다.\"\"\""
+     ],
+     "target": "mask"
+    },
+    {
+     "line": 154,
+     "lines_here": 1,
+     "here_sha16": "d3e82afade292cc3",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/feats_aiu.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 58,
+     "lines_here": 3,
+     "here_sha16": "6110a69ab9b8b3d1",
+     "as_run": [],
+     "target": "monthly"
+    },
+    {
+     "line": 76,
+     "lines_here": 1,
+     "here_sha16": "bf5016152e3127fb",
+     "as_run": [],
+     "target": "daily"
+    },
+    {
+     "line": 106,
+     "lines_here": 1,
+     "here_sha16": "0f0375f75571db0a",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/feats_ctx.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 68,
+     "lines_here": 1,
+     "here_sha16": "e5008e7e630f60df",
+     "as_run": [],
+     "target": "read"
+    },
+    {
+     "line": 115,
+     "lines_here": 1,
+     "here_sha16": "0f79180b81b18d49",
+     "as_run": [],
+     "target": "one_airport"
+    },
+    {
+     "line": 181,
+     "lines_here": 1,
+     "here_sha16": "b08a7bf42003a020",
+     "as_run": [],
+     "target": "build"
+    },
+    {
+     "line": 204,
+     "lines_here": 1,
+     "here_sha16": "3ee83d60cf0d008c",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/feats_ctx2.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 66,
+     "lines_here": 1,
+     "here_sha16": "f56dc9a2b9d5be80",
+     "as_run": [],
+     "target": "files"
+    },
+    {
+     "line": 89,
+     "lines_here": 4,
+     "here_sha16": "e9fc8aff925a20de",
+     "as_run": [],
+     "target": "r4_columns"
+    },
+    {
+     "line": 137,
+     "lines_here": 3,
+     "here_sha16": "a531fea6626def59",
+     "as_run": [],
+     "target": "stand_columns"
+    },
+    {
+     "line": 207,
+     "lines_here": 1,
+     "here_sha16": "cceca6a3573cd224",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/g_band.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 17,
+     "here_sha16": "4fc2c3ef0180043e",
+     "as_run": [
+      "\"\"\"저장된 model3 출력(--base)의 G 행만 g_override(--g_band_avg 규칙)로 다시 짓는다. 학습을 다시 돌리지 않는다.",
+      "",
+      "model3 와 같은 피처 판, 같은 행 나누기로 G 표를 만들고 g_probs 를 다시 계산한다. 먼저 규칙을 끈 채로 저장된 G 예측을 그대로",
+      "재현하는지 확인하고(어긋나면 멈춘다), 그다음 지연 1~4시간 G 행의 art 확률을 G 모형과 주 분류기(저장된 p_art)의 평균으로 바꾼다.",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (바탕 출력과 같은 칸, pred 의 G 행만 다름), 조기 종료 행은 바탕의 것을 이 태그로 복사.",
+      "    .venv/Scripts/python.exe -u src/g_band.py --setting val --seed 0 --tag m6r25sg --base m6r25s --feats feats_v25",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 38,
+     "lines_here": 1,
+     "here_sha16": "61de963b34a1f3e3",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/load.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 17,
+     "here_sha16": "a1d3f3c689512083",
+     "as_run": [
+      "\"\"\"학습 12개월과 ranking 을 한 표로 읽는다. 문자열은 category, 시각은 epoch 초(float, 결측 NaN).",
+      "",
+      "메모리를 아끼려고 결과를 cache/all.parquet 에 한 번 저장해 다시 쓴다.",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 60,
+     "lines_here": 8,
+     "here_sha16": "507a988aa4c7358f",
+     "as_run": [
+      "    \"\"\"전체 이동(DEP, ARR)과 ranking. src: 1~12 = 2025 월, 0 = ranking(2026).\"\"\""
+     ],
+     "target": "load_all"
+    }
+   ]
+  },
+  "src/lobt_window.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 21,
+     "here_sha16": "85b73ca2a9552071",
+     "as_run": [
+      "\"\"\"LOBT 창: 학습 자료의 성질 |BLOCK − LOBT| ≤ 3,606초(2025 출발편 중 LOBT 가 있는 행 전부, 위반 0)에서 정답은 [d_lobt − 3,606, d_lobt + 3,606] 안에 있다",
+      "(d_lobt = 이동 시각 − LOBT, 피처 판의 칸). 출처: 공개 팀 outgoing-boat 의 연구 노트(EnioAguiar/prc-taxiout-2026, docs/research/2026-09-27-janela-lobt.md),",
+      "우리 자료로 다시 재어 확인했다(코드는 가져오지 않음). 판을 바꾸는 일은 둘이다.",
+      "  1) 일정 복사(art) 값 d_sch 가 창 밖이면(±60초 여유, art 는 |y − d_sch| ≤ 60) 그 행의 art 확률을 0 으로: pred = max(mu, 0). mu 는 바탕 pred 의 혼합식에 맞는 것(mu_of). G 행(바탕 G 규칙)은 건드리지 않는다.",
+      "  2) 모든 예측을 창 안으로 옮긴다(창이 있는 행만).",
+      "    .venv/Scripts/python.exe -X utf8 src/lobt_window.py check [--tag m6r25sgcb]       2025 위반 수, 그 판 시험 예측의 창 밖 행과 보장 하한",
+      "    .venv/Scripts/python.exe -X utf8 src/lobt_window.py apply --setting val --seed 0 --base <tag> --tag <tag>w --feats feats_v25",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (바탕과 같은 칸, pred 와 p_art 만 바뀜)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 42,
+     "lines_here": 1,
+     "here_sha16": "1adb61ec75e19423",
+     "as_run": [],
+     "target": "window"
+    },
+    {
+     "line": 47,
+     "lines_here": 8,
+     "here_sha16": "ec4cb5559affe0e9",
+     "as_run": [
+      "    \"\"\"(새 pred, 새 p_art, 바뀐 행 표시).\"\"\""
+     ],
+     "target": "project"
+    },
+    {
+     "line": 65,
+     "lines_here": 1,
+     "here_sha16": "f8941b6f86492551",
+     "as_run": [],
+     "target": "feats_d_lobt"
+    },
+    {
+     "line": 71,
+     "lines_here": 1,
+     "here_sha16": "c8054b3c222ee45e",
+     "as_run": [],
+     "target": "check"
+    },
+    {
+     "line": 87,
+     "lines_here": 7,
+     "here_sha16": "f6e7b9eb150752cc",
+     "as_run": [
+      "    \"\"\"바탕 pred 를 만든 혼합의 mu. G 가 아닌 행에서 pred = clip(p_art·d_sch + (1 − p_art)·mu, 0) 가 맞는 것을 고르고, 맞는 것이 없으면 멈춘다.\"\"\""
+     ],
+     "target": "mu_of"
+    },
+    {
+     "line": 106,
+     "lines_here": 1,
+     "here_sha16": "c2424aae339b527a",
+     "as_run": [],
+     "target": "apply"
+    }
+   ]
+  },
+  "src/make_sub.py": {
+   "named_in_a_manifest": false,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 12,
+     "here_sha16": "32e2e7d4305b8735",
+     "as_run": [
+      "\"\"\"제출 파일을 만들고 검사한 뒤 장부에 적는다. 올리기는 s3io.push 가 한다.",
+      "",
+      "규칙(ranking.html): 템플릿 `submitting.parquet` 의 TAXITIME 칸을 채운다. MVT_ID 불일치, 행 누락, 행 추가는 채점 오류.",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 36,
+     "lines_here": 1,
+     "here_sha16": "de46eeaa3ded29b9",
+     "as_run": [],
+     "target": "next_version"
+    },
+    {
+     "line": 42,
+     "lines_here": 5,
+     "here_sha16": "53a1510e2166122d",
+     "as_run": [
+      "    \"\"\"제출 파일 한 줄을 장부에 더한다. 발사기는 올리기가 끝난 뒤에만 부른다(올리지 못한 파일은 장부에 없다).\"\"\""
+     ],
+     "target": "ledger_append"
+    },
+    {
+     "line": 60,
+     "lines_here": 5,
+     "here_sha16": "1f96f96c5b4c38d8",
+     "as_run": [
+      "    \"\"\"pred: index = MVT_ID_mvt, 값 = 초. 템플릿 순서대로 맞추고 검사한다.\"\"\""
+     ],
+     "target": "build"
+    }
+   ]
+  },
+  "src/metar_fetch.py": {
+   "named_in_a_manifest": false,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 13,
+     "here_sha16": "8ed370178ee80f5a",
+     "as_run": [
+      "\"\"\"공개 METAR(Iowa Environmental Mesonet ASOS 내려받기, 가입 없음)를 10개 공항, 2025-01-01 ~ 2026-08-01 UTC 로 받는다.",
+      "",
+      "결과: data/metar/<ICAO>.csv (station, valid(UTC), tmpf, dwpf, relh, sknt, gust, vsby, wxcodes, skyc1, skyl1, p01i)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 28,
+     "lines_here": 1,
+     "here_sha16": "f662b398138284a5",
+     "as_run": [],
+     "target": "url"
+    },
+    {
+     "line": 37,
+     "lines_here": 1,
+     "here_sha16": "6a23f233b3897e2a",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/model3.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 58,
+     "here_sha16": "8683d742ee483d67",
+     "as_run": [
+      "\"\"\"3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.",
+      "",
+      "전역:  pred = p_art * d_sch + (1 - p_art) * mu",
+      "  p_art : BLOCK 이 SCHED 와 60초 안일 확률(LightGBM 이진, --wpow 로 (|d_sch-1000|) 가중 가능)",
+      "  mu    : art 도 shift(하루 어긋남)도 아닌 행으로 학습한 L2 회귀",
+      "G 그룹: pred = pa*d_sch + ps*(86400*max(dd,1) + mu) + pn*mu   (pa, ps, pn 은 src/sub_g.py 의 lookup+접두사 와 작은 GBM 평균)",
+      "direct: 같은 피처로 정답을 바로 맞히는 L2 회귀(성격이 다른 차선)",
+      "--eobt_comp: 세 번째 성분. art 가 아닌 몫을 p_e * d_eobt + (1 - p_e) * mu 로 나눈다(p_e: BLOCK 이 EOBT1 과 EOBT_WIN 초 안일 확률,",
+      "             EOBT1 이 없는 행은 0). mu 는 이 행들까지 뺀 회귀다.",
+      "",
+      "--setting val : 2025 의 1, 7월을 빼고 학습, 1, 7월로 잰다(로컬 자).",
+      "--setting fwd : 2025-01~06 으로 학습, 2025-07 로 잰다(앞으로 가는 자, 부호 점검용).",
+      "--setting nd  : 2025-01~10 으로 학습, 2025-11, 12 로 잰다(해가 바뀌는 시험의 옮김을 학습 기간 안에서 재는 둘째 자, 10-03).",
+      "--setting full: 2025 전체로 학습해 ranking 출발을 예측한다. 반복 수는 val 의 1.15 배(cache/iters_<tag>.json).",
+      "--es internal(기본): 조기 종료를 학습 범위 안의 날짜 블록(UTC 날짜 번호 % 10 == 0, 약 10%)으로 하고 그 날들은 학습에서 뺀다.",
+      "                    잴 행(1, 7월)은 조기 종료에 쓰지 않는다.",
+      "--es holdout      : 옛 방식(잴 행으로 조기 종료). 기본값을 --es internal 로 바꾼 것은 10-02 18:31 KST(notes/jobs_ruler.txt 생성 시각)이고,",
+      "                    그 전 결과(m3, m3w, m4*, m5, m6, m7)는 이 옛 방식이라 낙관적이다.",
+      "--refit           : 내부 조기 종료로 찾은 반복 수 x 1.1 로 학습 범위 전체(조기 종료 날 포함)에 다시 맞춰 잰다.",
+      "                    전체 데이터 최종 모델(--setting full)과 같은 방식이다. full 은 반복 수 x 1.1 x --full_mult(기본 1.15)를 쓴다.",
+      "조기 종료 행은 preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet 에 남긴다.",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, direct, p_art, mu, g, [y])",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 90,
+     "lines_here": 1,
+     "here_sha16": "73e99a83af35ee90",
+     "as_run": [],
+     "target": "to_matrix"
+    },
+    {
+     "line": 104,
+     "lines_here": 4,
+     "here_sha16": "39b23fc6fd50d14f",
+     "as_run": [],
+     "target": "train"
+    },
+    {
+     "line": 116,
+     "lines_here": 11,
+     "here_sha16": "fa1bc1dff2294e61",
+     "as_run": [
+      "    \"\"\"G 그룹 세 유형 확률: lookup+항공사 키 보정과 작은 GBM(시드 3개) 의 평균. 조기 종료 없음(고정 200회).",
+      "",
+      "    키 칸 이름은 \"pfx\" 로 고정이다(sub_g.gbm_probs 가 그 이름을 범주로 쓴다). 피처 v2.5 부터 값은 편명 접두사 대신 목적지(ADES)다.",
+      "    \"\"\""
+     ],
+     "target": "g_probs"
+    },
+    {
+     "line": 147,
+     "lines_here": 9,
+     "here_sha16": "d31d5ae8c2c62755",
+     "as_run": [
+      "    \"\"\"G 행의 기대값과 정상 몫 확률. P 는 g_probs 의 [정상, art, shift]. p_art_g 를 주면 지연이 G_BAND 안인 행의 art 확률을",
+      "    G 모형과 주 분류기의 평균으로 바꾼다(10-03 열 달 한 달씩 빼기 시험에서 10/10 달 G 제곱오차 감소, research/gmodel/oof_g_art.py).\"\"\""
+     ],
+     "target": "g_override"
+    },
+    {
+     "line": 166,
+     "lines_here": 5,
+     "here_sha16": "98a8da154f661eb7",
+     "as_run": [
+      "    \"\"\"회귀 행의 부분 Dataset. --anchor 가 있으면 라벨을 y - 기준값(target)으로 바꾼다. 없으면 바탕의 y 그대로(옛 동작).\"\"\""
+     ],
+     "target": "reg_set"
+    },
+    {
+     "line": 179,
+     "lines_here": 5,
+     "here_sha16": "34fadfd9e38ff9ae",
+     "as_run": [
+      "    \"\"\"조기 종료용 날짜 블록: 이륙 시각의 UTC 날짜 번호 % 10 == 0.\"\"\""
+     ],
+     "target": "es_day_mask"
+    },
+    {
+     "line": 192,
+     "lines_here": 1,
+     "here_sha16": "6578d43aea4f5632",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/rmlp_mu.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 25,
+     "here_sha16": "fdb6b86e70e7aa3f",
+     "as_run": [
+      "\"\"\"넷째 학습기 후보: RealMLP(pytabkit 1.7.3, Apache-2.0) 회귀(mu)를 model3, cat_mu, xgb_mu 와 같은 회귀 행, 같은 피처로 GPU 에서 학습한다.",
+      "",
+      "  pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_base + W * mu_rmlp   (W = 0.5, 점수 전에 고정)",
+      "  G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 다른 학습기와 고르게 섞을 때는 이 출력의 mu_rmlp 를 blend_mu --col mu_rmlp 로 쓴다.",
+      "행 나누기와 조기 종료 날은 src/cat_mu.py 와 같다. 다른 점: 신경망이라 다시 맞추기(refit)를 하지 않는다. 세 설정 모두 학습 범위에서 조기 종료 날(UTC 날짜 % 10 == 0)을",
+      "뺀 행으로 학습하고 그 날들로 가장 나은 에포크를 고른다(full 도 같다, 평가 행은 쓰지 않는다). 결측은 학습 행 중앙값으로 채우고 결측이 있던 칸마다 표시 칸을 더한다.",
+      "CAT_FEATS 는 pytabkit 의 범주형(높은 기수는 8차원 임베딩)으로 넣는다. 설정은 점수 전에 고정했다(RealMLP_TD 기본값, batch 2048, epochs 64, 출력 표준화는 기본).",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_rmlp, mu, p_art, g, dsch, [y]), preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet",
+      "    .venv/Scripts/python.exe -u src/rmlp_mu.py --setting val --seed 0 --tag m6r25rm --base m6r25 --feats feats_v25",
+      "--drop, --anchor aobt 는 cat_mu 와 같다(표류에 강한 계열 m6r25axsg 위에 얹을 때).",
+      "메모리(10-06, 입력과 결과는 그대로): 목표 인코딩 칸을 float32 로 바꿔 붙인다(모든 피처를 float32 로 읽으므로 값이 같다). 표는 배열을 복사하지 않고 만든다",
+      "(pandas 3 의 DataFrame(dict) 는 같은 dtype 칸을 한 덩어리로 복사한다). 학습 표만큼(경로 B 피처에서 약 1.3GB)의 순간 복사와 약 0.3GB 가 준다.",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 64,
+     "lines_here": 6,
+     "here_sha16": "55e08b544c3fc382",
+     "as_run": [
+      "    \"\"\"RealMLP 입력: CAT_FEATS 는 범주형 그대로(결측은 \"<NA>\" 범주), 다른 범주형은 코드(float), 수치는 float32. 결측은 med 로 채우고 na_cols 마다 표시 칸.\"\"\""
+     ],
+     "target": "nframe"
+    },
+    {
+     "line": 88,
+     "lines_here": 8,
+     "here_sha16": "1ac3d0a1dcfd7d07",
+     "as_run": [
+      "    \"\"\"pytabkit 의 fit, predict 첫머리 검사(sklearn check_X_y, check_array, dtype=None)는 범주와 수치가 섞인 표 전체를 object 배열로 바꿔",
+      "    학습 행 140만 x 155칸에 약 7GB 를 잠깐 쓴다(10-04 06:16 memcap 7GB 에서 MemoryError). 데이터를 바꾸지 않는 검사라 앞 2,000행으로만 한다.\"\"\""
+     ],
+     "target": "light_checks"
+    },
+    {
+     "line": 104,
+     "lines_here": 1,
+     "here_sha16": "98a1c8b533e0a5b3",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/ruler.py": {
+   "named_in_a_manifest": false,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 1,
+     "here_sha16": "a9eb12d92afd285c",
+     "as_run": [],
+     "target": "(module)"
+    },
+    {
+     "line": 17,
+     "lines_here": 7,
+     "here_sha16": "221c8ddd5198cb76",
+     "as_run": [
+      "    \"\"\"2025 출발편 전체(index MVT_ID_mvt, 칸 month, TAXITIME_SEC_mvt). 자는 month 가 RULER_MONTHS 인 행이다.\"\"\""
+     ],
+     "target": "ruler_frame"
+    },
+    {
+     "line": 31,
+     "lines_here": 5,
+     "here_sha16": "7f46548d96a33291",
+     "as_run": [
+      "    \"\"\"자의 행 정의 해시. 정렬한 MVT_ID(int64)의 sha256 앞 16자. ruler_checks.json 의 ruler_hash 와 같아야 한다.\"\"\""
+     ],
+     "target": "ruler_hash"
+    },
+    {
+     "line": 40,
+     "lines_here": 5,
+     "here_sha16": "1bc5980a18ffb869",
+     "as_run": [
+      "    \"\"\"예측 파일(MVT_ID_mvt, pred)을 rows 의 정답으로 잰 RMSE. 행이 하나라도 빠지면 멈춘다.\"\"\""
+     ],
+     "target": "rmse_of"
+    }
+   ]
+  },
+  "src/sub_g.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 22,
+     "here_sha16": "d581e8606e11bf7b",
+     "as_run": [
+      "\"\"\"G 그룹(LIRF, NM 미매칭) 출발의 기대값 모형. 세 가지 기록 유형의 확률을 낸다.",
+      "",
+      "  art   : BLOCK 이 SCHED 로 적힘        -> y = 이륙 - SCHED",
+      "  shift : BLOCK 날짜가 SCHED 현지 날짜   -> y = 86400*dd + 택시",
+      "  normal: 제대로 적힘                    -> y = 택시",
+      "E[y] = pa*d_sch + ps*(86400*max(dd,1) + tau) + pn*tau_n",
+      "",
+      "비교(달 단위 12겹 교차검증, 그리고 로컬 자 그대로 1, 7월 제외 학습 -> 1, 7월):",
+      "  lookup : (이륙-SCHED 구간 x 날짜 바뀜) 칸의 평활 빈도",
+      "  lookup+pfx : 위 + 접두사(항공사) art 비율로 art 몫 조정",
+      "  gbm    : 작은 LightGBM 다중분류",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 40,
+     "lines_here": 1,
+     "here_sha16": "26fce28283e133bc",
+     "as_run": [],
+     "target": "labels"
+    },
+    {
+     "line": 47,
+     "lines_here": 1,
+     "here_sha16": "66075c4147490df9",
+     "as_run": [],
+     "target": "cell"
+    },
+    {
+     "line": 53,
+     "lines_here": 5,
+     "here_sha16": "f32a642309e7d950",
+     "as_run": [
+      "    \"\"\"칸별 세 유형 빈도. 전체 빈도를 사전분포로 alpha 만큼 섞는다. 날짜가 안 바뀐 칸의 shift 는 0.\"\"\""
+     ],
+     "target": "fit_lookup"
+    },
+    {
+     "line": 73,
+     "lines_here": 1,
+     "here_sha16": "b5f5b8831ef2c6bd",
+     "as_run": [],
+     "target": "predict_lookup"
+    },
+    {
+     "line": 78,
+     "lines_here": 7,
+     "here_sha16": "322df3d0873ead2c",
+     "as_run": [
+      "    \"\"\"접두사의 art 비율(평활)과 전체 art 비율의 로짓 차를 art 몫에 더한다. 나머지 둘은 비율을 유지.\"\"\""
+     ],
+     "target": "pfx_adjust"
+    },
+    {
+     "line": 99,
+     "lines_here": 1,
+     "here_sha16": "b8f5f947826602fd",
+     "as_run": [],
+     "target": "expected"
+    },
+    {
+     "line": 104,
+     "lines_here": 1,
+     "here_sha16": "28c334f96f5a90a1",
+     "as_run": [],
+     "target": "gbm_probs"
+    },
+    {
+     "line": 113,
+     "lines_here": 1,
+     "here_sha16": "580c9505ffcc491c",
+     "as_run": [],
+     "target": "load_g"
+    },
+    {
+     "line": 123,
+     "lines_here": 1,
+     "here_sha16": "2cd91b1d338843ec",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "src/te.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 11,
+     "here_sha16": "34cc9edb3d318320",
+     "as_run": [
+      "\"\"\"학습 정답으로 만드는 그룹 통계(target encoding). 학습 행은 달 단위 out-of-fold, 나머지 행은 학습 달 전체로 낸다.",
+      "",
+      "시험 행에는 BLOCK 이 없으므로 이 통계는 학습 데이터로만 계산한다(지시: 공항이나 스탠드별 간격 통계는 학습 데이터로만).",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 20,
+     "lines_here": 1,
+     "here_sha16": "734cb6bfe50cb3a0",
+     "as_run": [],
+     "target": "combo_key"
+    },
+    {
+     "line": 32,
+     "lines_here": 8,
+     "here_sha16": "c0fd32cf9dd877c1",
+     "as_run": [
+      "    \"\"\"target 이 NaN 인 행은 통계에서 뺀다. train_mask 행은 자기 달을 뺀 값, 나머지 행은 학습 달 전체 값.\"\"\""
+     ],
+     "target": "te_oof"
+    },
+    {
+     "line": 61,
+     "lines_here": 10,
+     "here_sha16": "1576182f261aab31",
+     "as_run": [
+      "    \"\"\"train_mask: 이 설정에서 정답을 쓸 수 있는 행(검증 설정이면 1, 7월 제외, 최종이면 2025 전체).\"\"\""
+     ],
+     "target": "add_te"
+    }
+   ]
+  },
+  "src/xgb_mu.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 21,
+     "here_sha16": "140c444d8cf09f58",
+     "as_run": [
+      "\"\"\"셋째 학습기 후보: XGBoost 회귀(mu)를 model3, cat_mu 와 같은 행, 같은 피처로 GPU 에서 학습해 바탕 모형(--base)의 mu 와 반씩 섞는다.",
+      "",
+      "  pred = clip(p_art * d_sch + (1 - p_art) * mu_b, 0)   mu_b = (1 - W) * mu_base + W * mu_xgb   (W = 0.5, 점수 전에 고정)",
+      "  G 행(LIRF NM 미매칭)은 바탕 모형의 값을 그대로 둔다. 셋을 고르게 섞을 때는 이 출력의 mu_xgb 를 blend_mu --col mu_xgb --w 0.333333 으로 쓴다.",
+      "행 나누기, 조기 종료 날, 반복 수 규칙(val 과 fwd 는 제 학습 범위 안 내부 조기 종료, full 은 val 이 찾은 반복 수 x1.1), --drop, --anchor 는 src/cat_mu.py 와 같다.",
+      "CAT_FEATS 칸은 XGBoost 의 범주형(enable_categorical)으로 넣는다. 파라미터는 점수 전에 고정했다(depth 8, eta 0.05, min_child_weight 50,",
+      "subsample 0.8, colsample_bytree 0.8, lambda 10, max_bin 256, 조기 종료 200, 상한 --iters).",
+      "출력: cache/<setting>_<tag>_s<seed>.parquet (MVT_ID_mvt, pred, mu_xgb, mu, p_art, g, dsch, [y]), preds/es_valid_ids_<tag>_<setting>_s<seed>.parquet",
+      "    .venv/Scripts/python.exe -u src/xgb_mu.py --setting val --seed 0 --tag m6r25xg --base m6r25 --feats feats_v25",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    },
+    {
+     "line": 52,
+     "lines_here": 6,
+     "here_sha16": "c2077f755132b0c0",
+     "as_run": [
+      "    \"\"\"cat_mu.frame 의 정수 코드(결측 -1)를 같은 범주 집합의 pandas 범주형으로 바꾼다(학습, 조기 종료, 평가 행이 같은 코드표를 쓴다).\"\"\""
+     ],
+     "target": "xframe"
+    },
+    {
+     "line": 65,
+     "lines_here": 1,
+     "here_sha16": "0937c4a6249807cf",
+     "as_run": [],
+     "target": "main"
+    }
+   ]
+  },
+  "tools/antiwin.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 41,
+     "here_sha16": "07845af1f41ef992",
+     "as_run": [
+      "\"\"\"반대 창 두 규칙(R1, R2)을 큐 후보 하나 위에 마지막으로 얹어 새 후보를 만든다.",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-05-r3-structure.md` 2.4(연구 스크립트",
+      "research/r3_structure/s5_link.py, e11_antiwin_rules.py 와 같은 정의).",
+      "",
+      "이음: 출발(목적지가 10곳 안)을 목적 공항의 도착 기록과 (출발 공항, 도착 공항, 공항 편명)으로 묶고, 이륙 300초 뒤부터 8시간 안의 첫 착륙과 잇는다.",
+      "  NM 미매칭 출발(FLIGHT_ID 없음)인데 이어진 도착 기록이 NM 매칭이면 그 도착 기록의 LOBT, AOBT_3(그 비행의 출발 쪽 시각)를 쓴다.",
+      "  d_lobt = MVT − LOBT_arr, d_aobt = MVT − AOBT3_arr, d_sch = MVT − SCHED, sch_m_lobt = SCHED − LOBT_arr. 입력 칸만 쓴다.",
+      "  2025 에서 이 행의 97% 가 |BLOCK − LOBT_arr| > 3,606 이다: 매칭기가 LOBT 창으로 버린 출발이라 정답은 그 창 밖에 있다.",
+      "R1(G 꼴: LIRF, d_sch ≥ 3,600): |sch_m_lobt| ≤ 3,606 이고 d_lobt > 3,606 이면 예측 = d_aobt + c(SCHED 복사가 불가능한 진짜 지연).",
+      "R2(LIRF, LTFM 만): 0 < d_lobt ≤ 3,606 이면 예측 = max(그 후보의 예측, d_lobt + 3,606 + m)(정답이 창 위쪽 가지에 있어야 한다).",
+      "c, m: 평가 달 밖 2025 행의 중앙값(c: R1 행의 y − d_aobt, m: R2 행의 y − (d_lobt + 3,606)). val(자 1, 7월)은 1, 7월 밖, fwd(2025-07)는",
+      "  7월 밖, nd(11, 12월)는 11, 12월 밖, full(시험)은 열두 달 전부. 새로 고르는 값은 없다(연구에서 정한 식 그대로).",
+      "규칙이 바꾸는 행은 출발 쪽 LOBT 가 없는 행이라 LOBT 창과 겹치지 않는다. 그래서 순서상 맨 마지막에 둔다.",
+      "",
+      "쓰는 법(저장소에서, memcap 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/antiwin.py build <원 큐 이름> <새 큐 번호> [--no-enqueue]",
+      "        원 후보의 manifest 에서 자, 7월 전방, 시험 예측을 읽어 규칙을 얹고, preds/ 에 새 파일 셋과 manifest 를 쓰고, 자, 전방, 둘째 자(원 후보의",
+      "        cache/nd_<run_tag>_s0.parquet 가 있을 때)의 ΔMSE 와 바뀐 행(좋아진 / 전체)을 찍고, 시험에서 바뀐 행이 규칙 행 안에만 있는지 확인한 뒤",
+      "        tools/enqueue.py --readiness-warn 으로 큐에 넣는다. 새 spec 은 원 spec 뒤에 \"aw\" 를 붙인다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/antiwin.py --setting {val,fwd,full} --src <원 manifest> --src_sha <16> --link antiwin_link_v1 --link_sha <16> --tag <새 spec>",
+      "        manifest 의 commands 가 적는 재현 명령. 그 설정의 파일 하나만 다시 쓴다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/antiwin.py link",
+      "        이음 표 cache/antiwin_link_v1.parquet(+json)만 만든다(이미 있으면 그대로).",
+      "    .venv/Scripts/python.exe -X utf8 tools/antiwin.py enqueue <새 큐 이름>",
+      "        build 의 큐 넣기 단계만 다시 한다(notes/antiwin_<새 큐 이름>.json 의 manifest 와 설명). build 는 데이터 단계(_files)와 이 단계를 따로 띄운다:",
+      "        준비 점검(src.composition)이 3 GB 상한을 거의 다 쓰므로 데이터를 든 프로세스와 겹치지 않게 한다.",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/arthist.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 40,
+     "here_sha16": "1f60b38cecbcfed1",
+     "as_run": [
+      "\"\"\"LIRF G 아닌 출발의 주 분류기 p_art 를 같은 편명의 학습 달 art 몫(정답 이력) 쪽으로 로짓 계수 하나만큼 옮긴다. artmm 바로 뒤, gkey 앞에 둔다.",
+      "순서: 바탕 다리 → V5 기하 → A3 x0.5 → artmm → 이 단계 → gkey(avg) → gkeyx → gkeyxn → AIU 날 이동 → 반대 창(맨 끝).",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r7-u.md`(연구 스크립트 research/r7_u/c4_param.py 의 P1h,",
+      "c6_lomo.py). 생각의 출처: R5 기록 감식(LIRF 에서만 편명의 다른 달 복사 비율이 복사를 가른다, 공항 안 AUC 0.667)과 R6 의 G 칸(같은 달 편명 이력).",
+      "남의 코드 없음. 입력은 편명, 목적지, 날짜이고, 정답은 학습 달 출발의 art 여부(이력)와 계수 β 를 맞추는 자 행에만 쓴다.",
+      "",
+      "정의:",
+      "  편명 키 fc = tools/gkeyx.canon(FLIGHT_mvt)(겹친 글자 지움), 운항사 = fc 앞 세 글자(영문 대문자일 때), 노선 = 목적지(ADES_mvt).",
+      "  달 = 2025 은 src(1 ~ 12), 2026 은 100 + 이륙 UTC 달. art = |y − (MVT − SCHED)| ≤ 60초.",
+      "  이력(설정의 학습 달 = val 은 1, 7월 밖, fwd 는 1 ~ 6월, full 은 2025 전부, LIRF NM 매칭 출발만):",
+      "    c = 운항사 art 몫, r = (노선 art 수 + 50 c) / (노선 행 + 50), h = (편명 art 수 + 20 r) / (편명 행 + 20)",
+      "  x = logit(h) − logit(p̄), p̄ = 그 편명의 그 달 평가 행 평균 p_art(입력만). 둘 다 0.001 ~ 0.999 로 자른다. x 가 없으면 0.",
+      "  p' = σ(logit p + β x), p 는 원 후보(artmm 판)의 캐시 p_art. p = 0 인 행(LOBT 창 규칙 1로 art 가 불가능한 행)과 G 행은 그대로.",
+      "  β: 자 행(val 1, 7월, 원 후보 val 캐시의 p 와 val 이력)에서 로그 손실 + 0.01 β² n/1000 을 L-BFGS 로. val 은 날 열 겹(src.adsb_corr.day_folds,",
+      "     씨앗 0)마다 다른 겹으로, fwd 는 1월 행으로, full 은 두 달 전부로 맞춘다(A3 보정기 2단계와 같은 꼴).",
+      "  예측: Δ = (p' − p)(d − mn), mn = (f_corr − p_corr d)/(1 − p_corr)(보정기 캐시의 pred 와 p_art, p 는 0.0001 ~ 0.999). 새 예측 = 원 후보 예측 + Δ 를",
+      "  LOBT 창 [d_lobt − 3,606, d_lobt + 3,606](feats_v25 d_lobt, 창이 있는 행만) 안으로, 0 아래는 0. 바꾸지 않은 행은 바이트까지 같은지 확인한다.",
+      "AIU 날 이동이 쓰도록 원 후보 캐시와 같은 칸의 cache/<setting>_<새 spec>_s0.parquet 를 쓴다(p_art 만 p', pred 와 mu 는 그대로라 AIU 의 정상 평균",
+      "  mn = mu + (pred − base) 가 그대로다). manifest 의 --base 는 원 보정기의 것을 그대로 두어 gkey 의 G 다리 찾기와 AIU 의 바탕 읽기가 같게 간다.",
+      "",
+      "쓰는 법(저장소에서, memcap 2 GB 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/arthist.py table [--force]      표 cache/arthist_v1.parquet(LIRF 출발: 편명 키, 운항사, 노선, 달, 날, art 여부)와 json",
+      "    .venv/Scripts/python.exe -X utf8 tools/arthist.py check <artmm 판 manifest 또는 큐 이름>   세 설정의 ΔMSE, β, 이동만 찍는다(표 말고는 쓰지 않는다)",
+      "    .venv/Scripts/python.exe -X utf8 tools/arthist.py build <artmm 판 큐 이름 또는 manifest> <새 큐 번호> [--no-enqueue]",
+      "        preds/ 에 새 파일 셋, cache/ 에 val, fwd, full 캐시, manifest 를 쓰고(새 spec 은 원 spec + \"fh\"), notes/arthist_<새 큐 이름>.json 을 남긴다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/arthist.py enqueue <새 큐 이름>",
+      "    .venv/Scripts/python.exe -X utf8 tools/arthist.py --setting {val,fwd,full} --base <바탕> --base_seed <s> --src <원 manifest> --src_sha <16>",
+      "        --corr <보정기 태그> --table arthist_v1 --table_sha <16> --tag <새 spec>      (manifest 의 재현 명령)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/artmm.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 40,
+     "here_sha16": "04c4ba0b574ecc76",
+     "as_run": [
+      "\"\"\"운항사-달 도착 복사 몫이 크게 움직인 공항-운항사-달 칸에서 주 분류기 p_art 의 칸 평균을 옮긴다(G 아닌 출발만). A3 보정기 출력 바로 뒤, gkey 앞에 둔다.",
+      "순서: 바탕 다리 → V5 기하 → A3 x0.5 → 이 단계 → gkey(avg) → gkeyx → gkeyxn → AIU 날 이동 → 반대 창(맨 끝).",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r6-g.md` 의 비G 확장(연구 스크립트 research/r6_g/p1_check.py,",
+      "p4_cell_lomo.py, p5_mm_thresh.py). 생각의 출처: 우리 기록 감식(같은 운항사의 그 달 도착 기록이 SCHED 복사이면 출발 기록도 복사다. 2025 LIRF 운항사-달 안",
+      "상관 0.77, 기울기 0.93). 남의 코드 없음. 입력만 쓴다(도착 BLOCK 은 시험에도 있는 입력 칸). 정답은 κ 를 재는 학습 달 출발 칸 평균에만 쓴다.",
+      "",
+      "정의:",
+      "  운항사 키 = 편명(FLIGHT_mvt) 앞 세 글자가 영문이면 그것, 아니면 앞 두 글자(EDDF, EHAM, LSZH 는 IATA 판매 편명). 같은 공항의 출발과 도착이 같은 키를 쓴다.",
+      "  달 = 2025 은 src(1 ~ 12), 2026 은 100 + 이륙(착륙) UTC 달.",
+      "  ca(공항, 운항사, 달) = 그 공항 도착 가운데 |BLOCK − SCHED| ≤ 6.5초 몫. ca_ref = 그 설정의 학습 달(val 은 1, 7월 밖, fwd 는 1 ~ 6월, full 은 2025 전부) 도착 전체의 몫.",
+      "  Δa = ca − ca_ref, 칸 조건: 그 달 도착 100행 이상, 기준 도착 300행 이상, |Δa| ≥ 0.10.",
+      "  κ = 학습 달 칸(출발 100, 도착 100 이상, 공항-운항사 세 달 이상)에서 잰 「운항사 안」 기울기(출발 art 몫 대 도착 복사 몫, 고정 효과, 출발 행 가중).",
+      "  칸마다 로짓 이동 b 하나: 그 칸의 바꿀 행(G 아님, p_art > 0) 평균 σ(logit p + b) = 평균 p + κ Δa(0.0001 ~ 0.999 로 자름).",
+      "  예측: Δ = (p' − p)(d − mn), mn = (pred_보정기 − p d)/(1 − p)(p 는 0.0001 ~ 0.999). 새 예측 = 원 후보 예측 + Δ 를 LOBT 창 [d_lobt − 3,606, d_lobt + 3,606]",
+      "  (feats_v25 d_lobt, 창이 있는 행만) 안으로, 0 아래는 0. p_art = 0 인 행(LOBT 창 규칙 1로 art 가 불가능한 행), G 행, 칸 밖 행은 그대로(바이트까지 같은지 확인).",
+      "  문턱 0.10 은 연구에서 정했다(0.05 는 val, fwd 에서 나빴다. 그 비교를 본 뒤 고른 값이라 자 고르기 위험이 있다. 노트 참조).",
+      "AIU 날 이동이 쓰도록 보정기 캐시와 같은 칸의 cache/<setting>_<새 spec>_s0.parquet 를 쓴다(p_art 만 p' 로, pred 와 mu 는 보정기 그대로라 AIU 의 정상 평균",
+      "  mn = mu + (pred − base) 가 그대로다). manifest 의 --base 는 원 보정기의 것을 그대로 두어 gkey 의 G 다리 찾기와 AIU 의 바탕 읽기가 같게 간다.",
+      "",
+      "쓰는 법(저장소에서, memcap 3 GB 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/artmm.py table [--force]      표 cache/artmm_v1.parquet(출발 키), cache/artmm_cells_v1.parquet(칸)과 json",
+      "    .venv/Scripts/python.exe -X utf8 tools/artmm.py check <A3 판 manifest 또는 큐 이름>   세 설정의 ΔMSE, 칸, 이동만 찍는다(표 말고는 쓰지 않는다)",
+      "    .venv/Scripts/python.exe -X utf8 tools/artmm.py build <A3 판 큐 이름 또는 manifest> <새 큐 번호> [--no-enqueue]",
+      "        preds/ 에 새 파일 셋, cache/ 에 val, fwd, full 캐시, manifest 를 쓰고(새 spec 은 원 spec + \"am\"), notes/artmm_<새 큐 이름>.json 을 남긴다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/artmm.py enqueue <새 큐 이름>",
+      "    .venv/Scripts/python.exe -X utf8 tools/artmm.py --setting {val,fwd,full} --base <바탕> --base_seed <s> --src <원 manifest> --src_sha <16> --corr <보정기 태그>",
+      "        --table artmm_v1 --table_sha <16> --cells artmm_cells_v1 --cells_sha <16> --th 0.10 --tag <새 spec>      (manifest 의 재현 명령)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/chainavg3.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 24,
+     "here_sha16": "5c46221a6fef98b0",
+     "as_run": [
+      "\"\"\"세 큐 후보(같은 뒤 단계를 거친 사슬 셋)의 최종 예측을 1/3 씩 섞어 새 후보를 만든다: f = (A + B + C) / 3.",
+      "tools/chainavg.py(두 사슬, sha16 565d51c881797751)를 셋으로 늘린 새 파일이다(공유 도구는 바꾸지 않음). 근거: vault",
+      "`01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r13-f3.md` 5 ~ 6절(R13-F3, 셋째 가족 ap: 공항별 회귀",
+      "LightGBM 과 CatBoost 다리의 사슬). 가중 1/3 은 측정 전에 정했다(고르지 않음). 학습하지 않는다. 세 후보의 행 집합, 피처 판, 자 정의가 같아야 한다.",
+      "",
+      "쓰는 법(저장소 또는 모래 상자에서, memcap 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/chainavg3.py build <A 큐 이름> <B 큐 이름> <C 큐 이름> <새 큐 번호> [--suffix skap] [--no-enqueue]",
+      "        세 원 후보의 manifest 를 검사(src.batches.manifest_of)하고, 자, 7월 전방, 시험 예측을 섞어 preds/ 에 새 파일 셋과 manifest 를 쓰고,",
+      "        A, B, C 대비 ΔMSE 를 찍는다. 새 spec 은 A spec 뒤에 \"av\" + suffix 를 붙인다. --no-enqueue 가 없으면 tools/enqueue.py --readiness-warn.",
+      "    .venv/Scripts/python.exe -X utf8 tools/chainavg3.py --setting {val,fwd,full} --src_a <A manifest> --src_a_sha <16> --src_b <B manifest>",
+      "        --src_b_sha <16> --src_c <C manifest> --src_c_sha <16> --tag <새 spec>",
+      "        manifest 의 commands 가 적는 재현 명령. 그 설정의 파일 하나만 다시 쓴다.",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/gjoint.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 36,
+     "here_sha16": "4c52bb002d238131",
+     "as_run": [
+      "\"\"\"G 하위 모형 다시 맞춤(R11-G). glong(G1) 단계 뒤 맨 끝에 얹는다. G 행(LIRF 출발, NM 미매칭)만 바꾼다.",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r11-g.md`(측정 research/r11_g/). 남의 코드 없음.",
+      "",
+      "판(--mode):",
+      "  a  다리 p_art 띠 평균 빼기(사전 등록 R11-G-A, 06:47 KST 10-07, 새 달 열 자에서 넘음: 2 ~ 6, 8 ~ 12월 lomo ΔSSE −3.06%, 날 다시 뽑기",
+      "     P(Δ<0) 0.9995, 나은 달 9/10, 상수 mu 확인 −2.60%). 사슬의 G 값(src.model3.g_override)은 d_sch ∈ [3,600, 14,400) 행의 art 확률을",
+      "     0.5 G 모형 + 0.5 다리 p_art 로 쓴다(10-03 도입). 이 판은 그 행에서 G 모형 확률(gpool S1, G1 뒤)을 그대로 쓴다. 성분(정상 mu_g,",
+      "     shift 의 택시 clip(mu_g, 300, 3,000))은 사슬 그대로다.",
+      "  c  a + 정상 몫을 G 전용 회귀로(사후 판, 후보 아님): 정상 = mu_n(맞춤 달 G 정상 tz 아닌 행의 가법 수축 회귀, y 6,000 자름), tz 정상 =",
+      "     mu_n + 로마 UTC 차(운항사 수축 확률 τ_c), shift 택시 clip(mu_n, 300, 3,000). 사전 등록 J1(이 성분 + 가중 다시 맞춤)은 fwd 에서 졌다.",
+      "규칙(a): g_A = clip(P1_a d + P1_s (86,400 max(dd, 1) + clip(mu_g, 300, 3,000)) + P1_n mu_g, 0), g = 사슬의 G1 뒤 G 값",
+      "  clip(g_override(P1, d, dd, mu_g, pa_g), 0)(tools/glong 의 g1). 새 예측 = clip(원 예측 + g_A − g, 0). 띠 밖 행은 g_A = g 라 그대로다.",
+      "  반대 창이 바꾼 행, G 아닌 행은 바이트까지 그대로(확인한다). 다리 p_art 의 띠 몫 0.5 pa_g (d − mu_g) 는 P 를 바꾸는 G 단계의 차에서 지워지므로",
+      "  원 파일에 그대로 남아 있다(research/r11_g 진단: 파일과 다시 셈한 g 의 차가 그 몫과 상관 0.02 ~ 0.10). 이 판이 그 몫을 뺀다.",
+      "확인: glong 을 원 사슬(gpool 판)에 다시 돌려 glong 단계 파일과 값이 같아야 하고(사슬 확률 재현은 glong 이 가드 행과 gpool 이동으로 확인한다),",
+      "  입력 사슬의 G 행이 glong 단계 파일의 G 행과 같아야 한다(glong 뒤에 G 행을 바꾼 단계가 없다). G 아닌 행만 바꾼 단계는 앞뒤 어디에 있어도 된다.",
+      "G1 과의 짜임: G1(d ≥ 30,000 정상 확률 r 배)은 띠 밖이라 a 판과 겹치는 행이 없다. a 판은 G1 이 끝난 확률을 입력으로 쓴다.",
+      "496 꼴(두 사슬 반씩)은 494(491 + G1), 495(492 + G1)에 각각 짓고 tools/chainavg.py 식으로 섞는다.",
+      "",
+      "쓰는 법(저장소에서, memcap 2.5 GB 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/gjoint.py check <큐 이름 또는 manifest> [--mode a]",
+      "        세 설정의 원 후보 대비 ΔMSE(val, fwd), 시험 이동만 찍는다(아무 파일도 쓰지 않는다).",
+      "    .venv/Scripts/python.exe -X utf8 tools/gjoint.py build <큐 이름 또는 manifest> <새 큐 번호> [--mode a] [--no-enqueue] [--outdir <폴더>] [--method_dir <폴더>]",
+      "        새 파일 셋과 manifest 를 쓰고(새 spec = 원 spec + \"gj\" + 판), notes/gjoint_<새 큐 이름>.json 을 남긴 뒤 tools/enqueue.py --readiness-warn 으로 넣는다.",
+      "        --outdir 는 예측과 manifest 를 그 폴더에(큐에 넣지 않음), --method_dir 는 preds/ 에 쓰되 방법 json 만 그 폴더에(큐에 넣지 않음).",
+      "    .venv/Scripts/python.exe -X utf8 tools/gjoint.py --setting {val,fwd,full} --src <원 manifest> --src_sha <16> --tag <새 spec> --mode a [--outdir <폴더>]",
+      "        manifest 의 commands 가 적는 재현 명령. 그 설정의 파일 하나만 다시 쓴다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gjoint.py enqueue <새 큐 이름>",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/gkey.py": {
+   "named_in_a_manifest": true,
+   "newline": "crlf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 41,
+     "here_sha16": "532f71e53d5348d7",
+     "as_run": [
+      "\"\"\"G 행(LIRF 출발 가운데 NM 미매칭)만 새 G 모형으로 다시 계산해 큐 후보 하나 위에 얹는다. 반대 창(tools/antiwin.py) 앞에 둔다.",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r5-analogs.md` 4.5(연구 스크립트",
+      "research/r5_analogs/g_carrier2.py), R3 2.5(research/r3_structure/p5_g_rep.py). 생각의 출처: Pushback to the Future 우승 팀들의 항공사 코드,",
+      "OSN Discord 「the echo of the planned time ... is mostly a carrier thing when there's no NM match」(README 「외부 아이디어」).",
+      "",
+      "새 G 모형: src/model3.g_probs 와 같은 식(칸 빈도 + 키 보정과 작은 다중분류 GBM 세 시드를 반반)을 키 둘로 두 번 불러 세 유형 확률을 반씩 평균한다.",
+      "  키 1: 목적지(ADES, 지금 G 모형의 키. 피처 판에 prefix 가 있으면 g_band 처럼 그것), 키 2: 편명 앞 ICAO 세 글자(없으면 앞 두 글자, 편명이 비면 \"D:\" + 키 1).",
+      "  두 번 모두 GBM 쪽에 R3 스탠드, 이음 칸 아홉을 더한다: st_arr_between_sch_mvt, st_next_arr_gap, st_prev_arr_gap, st_prev2_arr_gap, st_prev_dep_gap",
+      "  (피처 판), k_since_prevdep, arr_after_sch(아래 표의 g1 과 d_sch), link_nm, link_in_win(반대 창 이음 표의 SCHED − LOBT_arr).",
+      "  띠 규칙(model3.g_override: 지연 1~4시간 행의 art 확률을 주 분류기 p_art 와 반반)과 mu 는 G 다리(src/g_band.py 출력)의 것을 그대로 쓴다.",
+      "옛 G 는 같은 다리의 설정(키 1, 칸 없음)으로 다시 계산해 다리 파일의 G 값과 같은지(최대 차 1e-3 초) 먼저 확인한다. 어긋나면 멈춘다.",
+      "덮기: 후보 예측의 G 행에 (새 G − 옛 G)를 더한다(G 행에 걸린 뒤 단계의 보정은 그대로 둔다). 0 아래는 0.",
+      "학습 행: 설정마다 g_band 와 같다(val 은 2025 의 1, 7월 밖, fwd 는 1~6월, full 은 2025 전체). 평균 가중 0.5, 칸 아홉, 키는 연구에서 정한 그대로이고",
+      "  자로 고르지 않는다. 이 단계에는 적합되는 상수 c, m 이 없다(그것은 반대 창의 몫).",
+      "반대 창의 R1 행은 G 행이다. 반대 창은 R1 행을 덮어쓰고 R2 행에 하한을 거니, 이 덮기는 반드시 반대 창 앞에 두고 반대 창을 맨 끝에 둔다.",
+      "표 cache/gkey_v1.parquet(+json): G 행마다 운항사 글자(car), k_since_prevdep, g1(src/feats_ctx2.stand_columns 와 같은 정의를 LIRF 에만,",
+      "  달 경계를 넘는다), sch_m_lobt(cache/antiwin_link_v1.parquet). 입력 칸만 쓴다. 만들 때 R3 의 표(s2_stand, s5_link)와 행마다 견준 결과를 json 에 둔다.",
+      "",
+      "쓰는 법(저장소에서, memcap 안, 반대 창과 같은 꼴):",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkey.py table [--force]",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkey.py build <원 큐 이름(반대 창 전)> <새 큐 번호> [--no-enqueue] [--variant {avg_new,avg}] [--leg <g_band 태그> --leg_feats <피처 판>]",
+      "        --variant avg_new(기본, spec 끝 gk): 측정한 그대로 두 키 평균 + 칸 아홉. avg(spec 끝 gkc): 두 키 평균만(칸 없음).",
+      "        원 후보 manifest 의 자, 7월 전방, 시험 예측에 덮기를 얹어 preds/ 에 새 파일 셋과 manifest 를 쓰고, 자와 전방의 ΔMSE, 바뀐 행(좋아진 / 전체),",
+      "        시험의 바뀐 행과 이동 MSE 를 찍은 뒤 tools/enqueue.py --readiness-warn 으로 넣는다(데이터 단계와 큐 단계는 다른 프로세스). 새 spec 은 원 spec + \"gk\".",
+      "        G 다리는 manifest 의 --base 를 따라 내려가 manifest 가 없는 첫 태그로 정하고, 그 태그의 logs/<태그>_val_s0.log 첫 줄이 g_band 명령인지 본다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkey.py enqueue <새 큐 이름>",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkey.py --setting {val,fwd,full} --src <원 manifest> --src_sha <16> --leg <태그> --leg_feats <판>",
+      "        --table gkey_v1 --table_sha <16> --tag <새 spec>      (manifest 의 commands 가 적는 재현 명령, 그 설정의 파일 하나만 다시 쓴다)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/gkeyx.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 37,
+     "here_sha16": "57e9530be699da6c",
+     "as_run": [
+      "\"\"\"gkey avg 판(tools/gkey.py --variant avg)의 G 행(LIRF 출발 가운데 NM 미매칭)에 기록 감식 칸 열둘을 더한 G 모형을 얹는다.",
+      "순서: 원 후보 → gkey(--variant avg) → 이 단계 → (AIU 날 이동) → 반대 창(맨 끝).",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r5-records.md`(연구 스크립트",
+      "research/r5_records/a7_g_month.py, a14_g_guard.py, b1_gkx.py). 생각의 출처: 우리 기록 감식(G 행의 복사 여부는 그 편명이 그 달 얼마나 자주",
+      "뜨는지와 LOBT 를 지연에 맞춰 고쳤는지를 따른다). 남의 코드 없음.",
+      "",
+      "칸(입력만, LIRF 출발 전부로 센다. 키는 정규화 편명 x 달 mon(2025 은 src 1~12, 2026 은 100 + 이륙 UTC 달), 자기 제외):",
+      "  fm_n 같은 편명 다른 출발 수, fm_nm 그 가운데 NM 매칭 수, fm_gshare 그 가운데 G 몫, fm_upd 매칭 가운데 LOBT − SCHED > 900 몫,",
+      "  fm_unupd 매칭 지연(MVT − SCHED ≥ 1,800) 가운데 AOBT_3 − LOBT > 900 몫, fm_lsmed 매칭 LOBT − SCHED 중앙, fm_dsch MVT − SCHED 중앙,",
+      "  ffmt_empty, ffmt_icao_alnum, fl_suffix_alpha 편명 꼴, a_unupd 같은 목적지 x 달의 고치지 않은 지연 몫(최소 3), al_unupd 같은 운항사 세 글자 x 달(최소 5).",
+      "  정규화 편명: 앞 세 글자 뒤에 겹쳐 적힌 글자를 지운다(WMTMT306 → WMT306, AEZZ2994 → AEZ2994).",
+      "새 G: gkey avg 와 같은 식(model3.g_probs 꼴 확률을 목적지 키와 운항사 키로 두 번 내어 반씩 평균, 띠 규칙과 mu 는 G 다리의 것)에서 GBM 쪽에 칸 열둘을",
+      "  더한 확률을 MVT − SCHED < 43,200 인 G 행에만 쓰고, 나머지 G 행은 gkey avg 확률 그대로 둔다. 연구에서 정한 그대로이고 자로 고른 값은 없다.",
+      "덮기: 원 후보(gkey avg 판)의 G 행에 (새 G − gkey avg G)를 더하고 0 아래는 0. G 아닌 행은 그대로(바이트까지 같은지 확인한다).",
+      "  gkey avg G 재현은 gkey 파일을 그 원본에서 1e-3 초 안에 다시 만드는지 먼저 확인하고, 어긋나면 멈춘다.",
+      "AIU 날 이동(src/aiu_shift.py)은 이 단계의 manifest 를 보고 classes() 로 G 행의 정상 확률과 mu 를 받는다.",
+      "",
+      "쓰는 법(저장소에서, memcap 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyx.py table [--force]          표 cache/gkeyx_v1.parquet(+json)",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyx.py check <gkey avg 판 manifest>  세 설정을 계산해 ΔMSE 와 이동만 찍는다(아무 파일도 쓰지 않는다)",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyx.py build <gkey avg 판 manifest 또는 큐 이름> <새 큐 번호> [--no-enqueue]",
+      "        preds/ 에 새 파일 셋과 manifest 를 쓰고(새 spec 은 원 spec + \"x\"), notes/gkeyx_<새 큐 이름>.json 을 남긴다. --no-enqueue 가 없으면 큐에 넣는다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyx.py enqueue <새 큐 이름>",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyx.py --setting {val,fwd,full} --src <원 manifest> --src_sha <16> --leg <태그> --leg_feats <판>",
+      "        --table <gkey 표> --table_sha <16> --xtable gkeyx_v1 --xtable_sha <16> --variant avg_x --tag <새 spec>   (manifest 의 재현 명령)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/gkeyxn.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 40,
+     "here_sha16": "67c3787a05a3769a",
+     "as_run": [
+      "\"\"\"gkeyx 판(tools/gkeyx.py, --variant avg_x)의 G 행(LIRF 출발 가운데 NM 미매칭)에 칸을 더한 G 모형을 얹는다. 두 판:",
+      "  avg_xnc(기본, spec 끝 \"nc\"): R3 스탠드, 이음 칸 아홉 + 운항사-달 도착 복사 몫(ca_copy_mon) 하나.",
+      "  avg_xn (spec 끝 \"n\")       : R3 스탠드, 이음 칸 아홉만(10-06 18:2x 에 처음 보낸 판, 재현과 AIU 를 위해 그대로 둔다).",
+      "  avg_xncr(spec 끝 \"ncr\")    : avg_xnc + 같은 운항사, 같은 노선의 그 달 LIRF 도착 복사 몫 rt_copy_mon(표 cache/gkeyxn_v2.parquet). 10-06 20:3x 에 더했다.",
+      "순서: 원 후보 → gkey(--variant avg) → gkeyx → 이 단계 → (AIU 날 이동) → 반대 창(맨 끝).",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r6-g.md`(연구 스크립트 research/r6_g/s9_variant.py,",
+      "s12_more_feats.py, s17_arr_dep_comove.py, r6e.py). 생각의 출처: R5 기록 감식 8.2 의 1(「gkey avg_new 위에 칸 열둘, 가드 43,200」), R3 스탠드 칸,",
+      "우리 기록 감식(운항사의 그 달 도착 기록이 SCHED 복사이면 출발 기록도 복사다: 2025 LIRF 운항사-달 안 상관 0.77). 남의 코드 없음.",
+      "",
+      "새 G: gkeyx 와 같은 식(model3.g_probs 꼴 확률을 목적지 키와 운항사 키로 두 번 내어 반씩 평균, 띠 규칙과 mu 는 G 다리의 것)에서 GBM 쪽 칸을",
+      "  gkeyx 의 열둘(gkeyx.XCOLS)에 gkey 의 R3 칸 아홉(gkey.NEW: st_arr_between_sch_mvt, st_next_arr_gap, st_prev_arr_gap, st_prev2_arr_gap,",
+      "  st_prev_dep_gap, k_since_prevdep, arr_after_sch, link_nm, link_in_win)과 (avg_xnc 면) ca_copy_mon 을 더한 것으로 바꾼다.",
+      "  MVT − SCHED < 43,200 인 G 행에만 쓰고, 나머지 G 행은 gkeyx 의 값을 그대로 둔다(그 행의 차는 0). 연구에서 정한 그대로이고 자로 고른 값은 없다.",
+      "ca_copy_mon(표 cache/gkeyxn_v1.parquet, 입력만): 같은 운항사(정규화 편명 앞 ICAO 세 글자, gkeyx.canon)의 같은 달(2025 은 src, 2026 은 100 + UTC 달)",
+      "  LIRF 도착 가운데 |BLOCK − SCHED| ≤ 6.5초 몫, 도착 5행 이상일 때만. 도착 BLOCK 은 시험에도 있는 입력 칸이다.",
+      "덮기: 원 후보(gkeyx 판)의 G 행에 (새 G − 재현한 gkeyx G)를 더하고 0 아래는 0. G 아닌 행은 그대로(바이트까지 같은지 확인한다).",
+      "  먼저 gkeyx G 를 다시 계산해 gkeyx 파일을 그 원본(gkey avg 판)에서 1e-3 초 안에 다시 만드는지 확인하고, 어긋나면 멈춘다.",
+      "AIU 날 이동(src/aiu_shift.py)은 이 단계의 manifest(--variant avg_xn 또는 avg_xnc)를 보고 classes() 로 G 행의 정상 확률과 mu 를 받는다.",
+      "",
+      "쓰는 법(저장소에서, memcap 2.5 GB 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyxn.py table [--force] [--version gkeyxn_v2]   표 cache/gkeyxn_v1(또는 v2).parquet(+json). 없으면 build, check 가 만든다",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyxn.py check <gkeyx 판 manifest 또는 gkey avg 판 manifest> [--variant avg_xn]",
+      "        세 설정을 계산해 ΔMSE 와 이동만 찍는다(표 말고는 아무 파일도 쓰지 않는다). gkey avg 판을 주면 gkeyx 를 메모리에서 얹은 뒤 이 단계를 잰다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyxn.py build <gkeyx 판 manifest 또는 큐 이름> <새 큐 번호> [--no-enqueue] [--variant avg_xn]",
+      "        preds/ 에 새 파일 셋과 manifest 를 쓰고(새 spec 은 원 spec + \"nc\", avg_xn 이면 + \"n\"), notes/gkeyxn_<새 큐 이름>.json 을 남긴다.",
+      "        --no-enqueue 가 없으면 큐에 넣는다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyxn.py enqueue <새 큐 이름>",
+      "    .venv/Scripts/python.exe -X utf8 tools/gkeyxn.py --setting {val,fwd,full} --src <gkeyx manifest> --src_sha <16> --leg <태그> --leg_feats <판>",
+      "        --table <gkey 표> --table_sha <16> --xtable <gkeyx 표> --xtable_sha <16> [--ytable gkeyxn_v1 --ytable_sha <16>] --variant {avg_xnc,avg_xn}",
+      "        --tag <새 spec>   (manifest 의 재현 명령)",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/glong.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 35,
+     "here_sha16": "788410347b13fc47",
+     "as_run": [
+      "\"\"\"긴 지연 G 행(LIRF 출발 가운데 NM 미매칭, d_sch = MVT − SCHED ≥ 30,000초)의 정상 확률을 보정한다(R10-D-G1). G 행만 바꾼다.",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r10-d-types.md` 3절(사전 등록 R10-D-G1, 05:22 KST,",
+      "측정 research/r10_d/m1_glong.py). 2025 G 행 가운데 d ≥ 30,000 48행에 정상(제대로 적힌 오프블록)이 하나도 없다(art 37, shift 11). 사슬의 G 확률",
+      "(d < 43,200 은 gpool 로그 풀 S1, d ≥ 43,200 은 gkeyx 가드가 남긴 gkey avg)은 그런 행에 정상 확률을 0.02 ~ 0.17 준다. 남의 코드 없음.",
+      "",
+      "규칙(그 설정의 맞춤 달만 쓴다: val 은 1, 7월 밖 열 달, fwd 는 1 ~ 6월, full(시험)은 2025 열두 달):",
+      "  사슬 확률 P = (정상, art, shift): d < 43,200 은 gpool 과 같은 성분 넷의 로그 풀(원 사슬 gpool manifest 의 그 설정 a), d ≥ 43,200 은 gkey avg",
+      "    (두 키 평균, 칸 없음, tools/gkeyx.gx_values 의 P_av). 먼저 재현을 확인한다: 가드 행 G 값이 gkeyx 의 g_new 와, 나머지 행의 gpool 이동이 원 사슬의",
+      "    gpool 단계 파일과 1e-3 초 안에서 같아야 한다.",
+      "  대상 행(d ≥ 30,000): P'_n = r P_n, 비운 몫 (1 − r) P_n 은 art 와 shift 에 그 둘의 비로 나눈다.",
+      "  r = min(1, (k + 0.5)/(E + 0.5)): 맞춤 달의 대상 행(정답 있음)에서 k = 정상 수, E = 그 행들의 P_n 합. 그 P_n 은 그 행의 달을 뺀 맞춤 달로 학습한",
+      "    G 모형의 밖 표본 확률(같은 a, 가드 행은 gkey avg)이다.",
+      "  G 값 g' = clip(src.model3.g_override(P', d, dd, mu_g, pa_g), 0), g = 같은 식의 P 값(사슬 G 다리 --leg 의 mu, p_art). 새 예측 = clip(원 예측 + g' − g, 0).",
+      "  반대 창이 바꾼 행, d < 30,000 G 행, G 아닌 행은 바이트까지 그대로(확인한다). 원 사슬의 gpool 단계 뒤에 G 행을 바꾼 단계가 있으면 멈춘다",
+      "  (G 아닌 행만 바꾼 단계는 앞뒤 어디에 있어도 된다. 두 단계가 바꾸는 행이 겹치지 않는다).",
+      "493 꼴(두 사슬 반씩)은 491(468gp), 492(486gp)에 각각 짓고 tools/chainavg.py 로 섞는다(gpool 과 같은 길).",
+      "",
+      "쓰는 법(저장소에서, memcap 2 GB 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/glong.py check <원 큐 이름 또는 manifest>",
+      "        세 설정의 r, 재현 차, 원 후보 대비 ΔMSE(val, fwd), 시험 이동만 찍는다(아무 파일도 쓰지 않는다).",
+      "    .venv/Scripts/python.exe -X utf8 tools/glong.py build <원 큐 이름 또는 manifest> <새 큐 번호> [--no-enqueue] [--outdir <저장소 안 폴더>] [--method_dir <폴더>]",
+      "        새 파일 셋과 manifest 를 쓰고(새 spec = 원 spec + \"gl\"), notes/glong_<새 큐 이름>.json 을 남긴 뒤 tools/enqueue.py --readiness-warn 으로 넣는다.",
+      "        --outdir 를 주면 예측 파일, es_valid_ids, manifest, 방법 json 을 그 폴더에 쓰고 큐에 넣지 않는다(연구 사본, 코드 사본만 preds/code 에).",
+      "        --method_dir 를 주면 preds/ 에 쓰되 방법 json 만 그 폴더에 쓰고 큐에 넣지 않는다(큐 밖에서 준비해 사람이 옮길 때).",
+      "    .venv/Scripts/python.exe -X utf8 tools/glong.py --setting {val,fwd,full} --src <원 manifest> --src_sha <16> --tag <새 spec> [--outdir <폴더>]",
+      "        manifest 의 commands 가 적는 재현 명령. 그 설정의 파일 하나만 다시 쓴다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/glong.py enqueue <새 큐 이름>",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  },
+  "tools/gpool.py": {
+   "named_in_a_manifest": true,
+   "newline": "lf",
+   "hunks": [
+    {
+     "line": 2,
+     "lines_here": 38,
+     "here_sha16": "98aaf9943a8e3858",
+     "as_run": [
+      "\"\"\"G 행의 세 유형 확률을 G 모형 성분 넷의 로그 풀로 날카롭게 한다(R9-S1). 반대 창으로 끝나는 큐 후보 하나 위 맨 끝에 얹는다(G 행만).",
+      "근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r9-lirf-coverage.md` 7절(사전 등록 R9-S1, 측정",
+      "research/r9_lirf/c7_gpool.py). R8 해부(research/2026-10-07-r8-anatomy.md 5절)가 G 정상 확률이 양 끝에서 무디다고 봤고(lomo N0 0.7 ~ 0.8 → 실제 0.938),",
+      "그 까닭으로 성분을 평균하는 꼴을 짚었다. 남의 코드 없음.",
+      "",
+      "G 모형(tools/gkeyxn.py, 사슬의 gkeyxn 단계 manifest 의 표와 변형 그대로)은 키 둘(목적지 pfx, 운항사 k_car) x {찾기 표 P1(pfx_adjust), GBM P2(시드 0 ~ 2",
+      "평균)} 넷을 같은 무게로 평균한다(선형 풀). 이 단계는 그 넷을 로그 풀로 합친다:",
+      "  P'_c ∝ exp((a / 4) Σ_성분 log max(P_성분,c, 1e-4)), c = 정상, art, shift 로 다시 정규화.",
+      "  a 하나를 세 유형 로그 손실(src.sub_g.labels, d < 43,200, 정답 있음)을 [0.25, 4] 에서 황금 분할로 최소화해 맞춘다. a 를 맞추는 행의 성분 확률은",
+      "  그 행의 달을 뺀 G 모형에서 온다: val 은 학습 열 달(1, 7월 밖)의 달 j 마다 나머지 아홉 달로 학습, fwd 는 1 ~ 6월의 j 마다 나머지 다섯 달,",
+      "  full(시험) 은 2025 열두 달의 j 마다 나머지 열한 달.",
+      "G 값: g' = clip(src.model3.g_override(P', d, dd, mu_g, pa_g), 0)(띠 평균 그대로, 사슬의 G 다리 --leg 의 mu, p_art), 원래 g 는 선형 풀의 같은 식이고",
+      "  gkeyxn 의 G 값과 같은지 먼저 확인한다(1e-3 초 넘게 다르면 멈춘다). 새 예측 = clip(원 예측 + g' − g, 0). 가드 행(d ≥ 43,200), 반대 창이 바꾼 행,",
+      "  G 아닌 행은 바이트까지 그대로(확인).",
+      "측정(사전 등록 관문 넷 모두 넘음, 490 꼴: 468, 486 에 걸고 반씩): lomo-12 G SSE −3.45%(10/12 달, 날 다시 뽑기 Δ<0 1.000), 가린 7월(R9 덮임 맞춘 자)",
+      "  ΔMSE −433(0.945), 보통 val −520(0.975), fwd −1,541(0.982), 시험 이동 487.5 MSE(G 344 행).",
+      "주의: 이 도구의 성분 확률(gkeyxn 의 지금 표)로 다시 만든 선형 풀은 val, fwd, full 에서 gkeyxn 파일의 G 값과 0 차로 같지만, R6 의 연구 파일",
+      "  research/r6_g/s9_E4_camon_rt.parquet 의 lomo 확률과는 달에 따라 최대 0.32 다르다(R6 의 옛 표나 옛 행 정보로 보인다). lomo 자는 이 도구의 성분으로 잰 것이다.",
+      "",
+      "쓰는 법(저장소에서, memcap 안):",
+      "    .venv/Scripts/python.exe -X utf8 tools/gpool.py check <원 큐 이름>",
+      "        세 설정의 a, 원 후보 대비 ΔMSE(val, fwd), 시험 이동만 찍는다(아무 파일도 쓰지 않는다).",
+      "    .venv/Scripts/python.exe -X utf8 tools/gpool.py build <원 큐 이름> <새 큐 번호> [--no-enqueue]",
+      "        원 후보(반대 창으로 끝나는 판)의 자, 7월 전방, 시험 예측에 얹어 preds/ 에 새 파일 셋과 manifest 를 쓰고 notes/gpool_<새 큐 이름>.json 을 남긴 뒤",
+      "        tools/enqueue.py --readiness-warn 으로 큐에 넣는다. 새 spec 은 원 spec 뒤에 \"gp\" 를 붙인다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gpool.py --setting {val,fwd,full} --src <원 manifest> --src_sha <16> --tag <새 spec>",
+      "        manifest 의 commands 가 적는 재현 명령. 그 설정의 a 를 같은 길로 다시 맞추고 그 설정의 파일 하나만 다시 쓴다.",
+      "    .venv/Scripts/python.exe -X utf8 tools/gpool.py enqueue <새 큐 이름>",
+      "        build 의 큐 넣기 단계만 다시 한다(notes/gpool_<새 큐 이름>.json). 데이터 단계와 따로 띄운다(준비 점검이 메모리를 많이 쓴다).",
+      "\"\"\""
+     ],
+     "target": "(module)"
+    }
+   ]
+  }
+ }
+}

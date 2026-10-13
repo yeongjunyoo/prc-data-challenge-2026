@@ -1,5 +1,17 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""LOBT 창: 학습 자료의 성질 |BLOCK − LOBT| ≤ 3,606초(2025 출발편 중 LOBT 가 있는 행 전부, 위반 0)에서 정답은 [d_lobt − 3,606, d_lobt + 3,606] 안에 있다
+"""LOBT window: in 2025 every departure with an NM record has |BLOCK - LOBT| <= 3,606 s, so its label lies in [d_lobt - 3,606, d_lobt + 3,606].
+
+d_lobt = take-off - LOBT is a column of the feature table. The property was first described in the public notes of team
+outgoing-boat; we measured it again on our data and wrote this code (docs/EXTERNAL_IDEAS.md). Two changes to a prediction:
+(1) where the copy value d_sch lies outside the window (60 s tolerance), the copy probability becomes 0 and the prediction the
+regression part (G rows are left as they are); (2) every prediction with a window is moved into it.
+
+    python src/lobt_window.py check [--tag <tag>]       # violations in 2025; rows of a test prediction outside the window
+    python src/lobt_window.py apply --setting val --seed 0 --base <tag> --tag <tag>w --feats feats_v25
+apply writes cache/<setting>_<tag>_s<seed>.parquet (the base's columns with pred and p_art changed). The correctors call project last.
+
+Original note (Korean):
+LOBT 창: 학습 자료의 성질 |BLOCK − LOBT| ≤ 3,606초(2025 출발편 중 LOBT 가 있는 행 전부, 위반 0)에서 정답은 [d_lobt − 3,606, d_lobt + 3,606] 안에 있다
 (d_lobt = 이동 시각 − LOBT, 피처 판의 칸). 출처: 공개 팀 outgoing-boat 의 연구 노트(EnioAguiar/prc-taxiout-2026, docs/research/2026-09-27-janela-lobt.md),
 우리 자료로 다시 재어 확인했다(코드는 가져오지 않음). 판을 바꾸는 일은 둘이다.
   1) 일정 복사(art) 값 d_sch 가 창 밖이면(±60초 여유, art 는 |y − d_sch| ≤ 60) 그 행의 art 확률을 0 으로: pred = max(mu, 0). mu 는 바탕 pred 의 혼합식에 맞는 것(mu_of). G 행(바탕 G 규칙)은 건드리지 않는다.
@@ -27,11 +39,19 @@ ART_TOL = 60.0
 
 
 def window(d_lobt: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Lower and upper bound of the LOBT window for d_lobt (take-off - LOBT): d_lobt - 3,606 and d_lobt + 3,606 s."""
     return d_lobt - HALF, d_lobt + HALF
 
 
 def project(pred, mu, p_art, g, dsch, d_lobt):
-    """(새 pred, 새 p_art, 바뀐 행 표시)."""
+    """Apply the window to one prediction and return (new pred, new p_art, mask of the changed rows).
+
+    Rows (not G) whose copy value dsch lies outside the window get p_art 0 and pred = max(mu, 0); then every row with a window is
+    clipped into it.
+
+    Original note (Korean):
+    (새 pred, 새 p_art, 바뀐 행 표시).
+    """
     lo, hi = window(d_lobt)
     has = np.isfinite(d_lobt)
     art_out = has & ~g & (p_art > 0) & ((dsch < lo - ART_TOL) | (dsch > hi + ART_TOL))
@@ -42,11 +62,13 @@ def project(pred, mu, p_art, g, dsch, d_lobt):
 
 
 def feats_d_lobt(name: str, ids: np.ndarray) -> np.ndarray:
+    """d_lobt of the feature table cache/<name>.parquet for the movement ids ids (NaN where there is no LOBT)."""
     F = pd.read_parquet(CACHE / f"{name}.parquet", columns=["MVT_ID_mvt", "d_lobt"]).set_index("MVT_ID_mvt")
     return F["d_lobt"].reindex(ids).to_numpy(dtype=float)
 
 
 def check(tag: str, feats: str) -> None:
+    """Print the window violations of the 2025 labels and the rows of cache/full_<tag>_s0.parquet outside the window."""
     F = pd.read_parquet(CACHE / f"{feats}.parquet", columns=["MVT_ID_mvt", "src", "y", "d_lobt"])
     tr = (F["src"] != 0).to_numpy() & np.isfinite(F["d_lobt"].to_numpy()) & np.isfinite(F["y"].to_numpy())
     gap = np.abs(F["d_lobt"].to_numpy()[tr] - F["y"].to_numpy()[tr])
@@ -62,7 +84,13 @@ def check(tag: str, feats: str) -> None:
 
 
 def mu_of(b: pd.DataFrame) -> tuple[str, np.ndarray]:
-    """바탕 pred 를 만든 혼합의 mu. G 가 아닌 행에서 pred = clip(p_art·d_sch + (1 − p_art)·mu, 0) 가 맞는 것을 고르고, 맞는 것이 없으면 멈춘다."""
+    """The regression part that produced a base prediction, found by matching the mixture formula on the non-G rows.
+
+    Candidates: mu, and the half-half mix with mu_cat of a src/cat_mu.py output. Stops if neither reproduces pred.
+
+    Original note (Korean):
+    바탕 pred 를 만든 혼합의 mu. G 가 아닌 행에서 pred = clip(p_art·d_sch + (1 − p_art)·mu, 0) 가 맞는 것을 고르고, 맞는 것이 없으면 멈춘다.
+    """
     g = b["g"].to_numpy().astype(bool)
     p, d, pr = (b[c].to_numpy(dtype=float) for c in ("p_art", "dsch", "pred"))
     cands = {"mu": b["mu"].to_numpy(dtype=float)}
@@ -75,6 +103,7 @@ def mu_of(b: pd.DataFrame) -> tuple[str, np.ndarray]:
 
 
 def apply(setting: str, seed: int, base: str, tag: str, feats: str) -> None:
+    """Apply the window to cache/<setting>_<base>_s<seed>.parquet and write cache/<setting>_<tag>_s<seed>.parquet (early-stopping rows copied)."""
     b = pd.read_parquet(CACHE / f"{setting}_{base}_s{seed}.parquet")
     F = pd.read_parquet(CACHE / f"{feats}.parquet", columns=["MVT_ID_mvt", "d_lobt", "ap"]).set_index("MVT_ID_mvt").reindex(b["MVT_ID_mvt"].to_numpy())
     which, mu = mu_of(b)

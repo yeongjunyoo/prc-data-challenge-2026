@@ -33,6 +33,7 @@ PRED_GAP = {"st_g1_m_pred": "st_g1", "st_g2_m_pred": "st_g2", "st_g3_m_pred": "s
 
 
 class Rows2(cc.Rows):
+    """Rows of src/ctx_corr.py whose stage-2 matrix also holds st_g1 to st_g3 minus the stage-1 prediction (PRED_GAP)."""
     def design2(self, s1, delta):
         for name, src in PRED_GAP.items():
             self.cols[name] = self.cols[src] - s1
@@ -40,6 +41,7 @@ class Rows2(cc.Rows):
 
 
 def pop_flag(flag: str) -> str | None:
+    """Remove a research-only flag and its value from the command line before src/ctx_corr.py parses it; None if absent."""
     if flag not in sys.argv:
         return None
     i = sys.argv.index(flag)
@@ -49,6 +51,7 @@ def pop_flag(flag: str) -> str | None:
 
 
 def digest(*parts) -> str:
+    """Hash (blake2b, 16 bytes) of arrays and values: the key of a fitted model in the store of --fit_cache."""
     h = hashlib.blake2b(digest_size=16)
     for x in parts:
         if isinstance(x, np.ndarray):
@@ -96,6 +99,7 @@ def fit_cache(d: Path) -> None:
 
 
 def main():
+    """Command line entry: the corrector of src/ctx_corr.py with the added stage-2 columns (and --drop2, --fit_cache)."""
     drop = pop_flag("--drop2")
     cache = pop_flag("--fit_cache")
     cc.CTX_COLS = cc.CTX_COLS + NEW_CTX

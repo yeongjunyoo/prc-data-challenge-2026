@@ -1,5 +1,15 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""저장된 model3 출력(--base)의 G 행만 g_override(--g_band_avg 규칙)로 다시 짓는다. 학습을 다시 돌리지 않는다.
+"""Rebuild only the G rows of a saved model3 output (--base) with the delay-band rule of g_override (--g_band_avg), without retraining.
+
+The G table is rebuilt from the same feature table and row split and g_probs is computed again. The script first checks that, with
+the rule off, it reproduces the saved G predictions (it stops otherwise); then the G rows with a delay of 1 to 4 hours take the mean of
+the G model's and the saved main classifier's copy probability.
+
+    python src/g_band.py --setting val --seed 0 --tag <tag> --base <model3 tag> --feats <feature table>
+Output: cache/<setting>_<tag>_s<seed>.parquet (the base's columns; pred differs on G rows only) and a copy of the early-stopping rows.
+
+Original note (Korean):
+저장된 model3 출력(--base)의 G 행만 g_override(--g_band_avg 규칙)로 다시 짓는다. 학습을 다시 돌리지 않는다.
 
 model3 와 같은 피처 판, 같은 행 나누기로 G 표를 만들고 g_probs 를 다시 계산한다. 먼저 규칙을 끈 채로 저장된 G 예측을 그대로
 재현하는지 확인하고(어긋나면 멈춘다), 그다음 지연 1~4시간 G 행의 art 확률을 G 모형과 주 분류기(저장된 p_art)의 평균으로 바꾼다.
@@ -25,6 +35,7 @@ sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
 
 
 def main():
+    """Command line entry: rebuild the G rows of the base output for one setting and seed."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

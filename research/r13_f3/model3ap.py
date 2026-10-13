@@ -1,5 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.
+"""Per-airport variant of src/model3.py for chain C: a copy of it (sha16 4641d5b5d91abd26) with one more value of --mu_sep, all.
+
+--mu_sep all fits the regression mu separately for every airport: internal early stopping per airport, refit with the iterations
+times 1.1, and full with the per-airport iteration counts reg_<airport> of cache/iters_<tag>.json. Everything else is that of
+src/model3.py, whose module docstring describes the settings and options; without --mu_sep all the script runs as src/model3.py.
+
+    python research/r13_f3/model3ap.py --setting val --seed 0 --tag <tag> --feats <feature table> --mu_sep all <options of src/model3.py>
+
+Original note (Korean):
+3차 모델: 전역 혼합 + G 그룹(LIRF, NM 미매칭) 전용 기대값.
 
 R13-F3 사본(research/r13_f3/model3ap.py, vault research/2026-10-07-r13-f3.md 6): src/model3.py(sha16 4641d5b5d91abd26)에 --mu_sep all 만 더했다.
   all: 회귀(mu)를 공항마다 따로 학습한다(공항마다 내부 조기 종료, 재학습 x1.1, full 은 공항별 반복 수 iters["reg_<공항>"]). 분류기, G 모형,

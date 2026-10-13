@@ -55,6 +55,9 @@ def below_normal() -> None:
 
 
 def monthly() -> pd.DataFrame:
+    """EUROCONTROL monthly taxi-out figures of the ten airports, 2025 and 2026: mean taxi-out time, mean additional time and valid
+    share per airport and month (aiu_m_txo, aiu_m_add, aiu_m_valid; seconds).
+    """
     fr = []
     for y in (2025, 2026):
         m = pd.read_csv(AIU / f"taxi_out_additional_time_{y}.csv")
@@ -70,6 +73,7 @@ def monthly() -> pd.DataFrame:
 
 
 def daily() -> pd.DataFrame:
+    """EUROCONTROL daily pre-departure delay of the ten airports, 2025 and 2026: mean delay per departure (aiu_d_pdd, seconds)."""
     fr = []
     for y in (2025, 2026):
         d = pd.read_csv(AIU / f"all_pre_departure_delays_{y}.csv")
@@ -99,6 +103,7 @@ def departures(months: set[str]) -> pd.DataFrame:
 
 
 def main():
+    """Command line entry: the context table of the base (checked by its SHA-256 prefix) with the AIU columns added."""
     pa_ = argparse.ArgumentParser()
     pa_.add_argument("--name", default="ctx_v3")
     pa_.add_argument("--base", default="ctx_v2")

@@ -1,5 +1,15 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""G 그룹(LIRF, NM 미매칭) 출발의 기대값 모형. 세 가지 기록 유형의 확률을 낸다.
+"""Expected label of the G rows (LIRF departures without an NM flight record) from the probabilities of three record types.
+
+    copy (art):        the off-block time was recorded as the schedule      ->  y = take-off - schedule (d_sch)
+    next-day (shift):  the right clock time on the scheduled local date     ->  y = 86,400 * dd + taxi time
+    normal:            a measured off-block time                            ->  y = taxi time
+    E[y] = pa * d_sch + ps * (86,400 * max(dd, 1) + tau) + pn * tau_n
+src/model3.py (g_probs) uses the functions below. main compares the variants (a constant, the lookup, the lookup with a key
+adjustment, the small GBM) by month-wise cross-validation and on the ruler, on cache/feats.parquet of feature versions up to 2.4.
+
+Original note (Korean):
+G 그룹(LIRF, NM 미매칭) 출발의 기대값 모형. 세 가지 기록 유형의 확률을 낸다.
 
   art   : BLOCK 이 SCHED 로 적힘        -> y = 이륙 - SCHED
   shift : BLOCK 날짜가 SCHED 현지 날짜   -> y = 86400*dd + 택시
@@ -27,18 +37,24 @@ BINS = [-1e12, 3600, 14400, 57600, 1e12]
 
 
 def labels(y, dsch):
+    """Record type of training rows: 1 = copy (|y - dsch| <= 60 s), 2 = next-day offset (y above 60,000 s, not a copy), 0 = normal."""
     art = np.abs(y - dsch) <= 60
     shift = (y > 60000) & ~art
     return np.where(art, 1, np.where(shift, 2, 0))
 
 
 def cell(dsch, dd):
+    """Lookup cell: delay band of dsch (below 1 hour, 1 to 4, 4 to 16, above 16 hours) times whether the local date changed (dd >= 1)."""
     b = np.digitize(dsch, BINS[1:-1])  # 0..3
     return b * 2 + (dd >= 1).astype(int)
 
 
 def fit_lookup(c_tr, k_tr, alpha=2.0):
-    """칸별 세 유형 빈도. 전체 빈도를 사전분포로 alpha 만큼 섞는다. 날짜가 안 바뀐 칸의 shift 는 0."""
+    """Type frequencies per cell, smoothed toward the overall frequencies with weight alpha; a cell without a date change has no next-day offset.
+
+    Original note (Korean):
+    칸별 세 유형 빈도. 전체 빈도를 사전분포로 alpha 만큼 섞는다. 날짜가 안 바뀐 칸의 shift 는 0.
+    """
     glob_ = np.bincount(k_tr, minlength=3) / len(k_tr)
     tab = {}
     for c in range(8):
@@ -54,11 +70,18 @@ def fit_lookup(c_tr, k_tr, alpha=2.0):
 
 
 def predict_lookup(tab, c_te):
+    """The frequencies of fit_lookup for the cells c_te, as an array of shape (rows, 3)."""
     return np.vstack([tab[c] for c in c_te])
 
 
 def pfx_adjust(P, pfx_te, pfx_tr, k_tr, kappa=5.0):
-    """접두사의 art 비율(평활)과 전체 art 비율의 로짓 차를 art 몫에 더한다. 나머지 둘은 비율을 유지."""
+    """Move each row's copy probability by the log-odds difference between its key's smoothed copy share and the overall share.
+
+    The key's share is smoothed with kappa pseudo-rows at the overall share; the other two types keep their ratio.
+
+    Original note (Korean):
+    접두사의 art 비율(평활)과 전체 art 비율의 로짓 차를 art 몫에 더한다. 나머지 둘은 비율을 유지.
+    """
     base = (k_tr == 1).mean()
     d = pd.DataFrame({"p": pfx_tr, "a": (k_tr == 1).astype(float)}).groupby("p")["a"].agg(["sum", "count"])
     rate = (d["sum"] + kappa * base) / (d["count"] + kappa)
@@ -73,10 +96,12 @@ def pfx_adjust(P, pfx_te, pfx_tr, k_tr, kappa=5.0):
 
 
 def expected(P, dsch, dd, tau_n, tau_s=1000.0):
+    """Expected label from P (normal, copy, next-day): copy -> dsch, next-day -> 86,400 * max(dd, 1) + tau_s, normal -> tau_n."""
     return P[:, 1] * dsch + P[:, 2] * (86400 * np.maximum(dd, 1) + tau_s) + P[:, 0] * tau_n
 
 
 def gbm_probs(X_tr, k_tr, X_te, seed=0):
+    """Type probabilities of a small multiclass LightGBM (200 rounds, 6 leaves) fitted on X_tr, with the key column pfx as a category."""
     d = lgb.Dataset(X_tr, k_tr, categorical_feature=["pfx"], free_raw_data=True)
     m = lgb.train(dict(objective="multiclass", num_class=3, learning_rate=0.05, num_leaves=6, min_data_in_leaf=15,
                        feature_fraction=0.8, bagging_fraction=0.8, bagging_freq=1, lambda_l2=5.0, cat_smooth=10,
@@ -85,6 +110,7 @@ def gbm_probs(X_tr, k_tr, X_te, seed=0):
 
 
 def load_g():
+    """G rows of cache/feats.parquet with the columns of main (the flight-number prefix exists only in feature versions up to 2.4)."""
     cols = ["MVT_ID_mvt", "src", "y", "ap", "nm", "d_sch", "dd", "prefix", "hour_mvt", "hour_sch", "garb", "fl_len", "stand"]
     F = pd.read_parquet(CACHE / "feats.parquet", columns=cols)
     G = F[(F["ap"] == "LIRF") & (F["nm"] == 0)].copy()
@@ -94,6 +120,7 @@ def load_g():
 
 
 def main():
+    """Compare the G models by month-wise cross-validation (cv12) and on the ruler (local), as MSE contributions."""
     sys.stdout.reconfigure(encoding="utf-8")
     G = load_g()
     T = G[G["src"] > 0].copy()

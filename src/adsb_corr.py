@@ -1,5 +1,23 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""ADS-B 지상 궤적 보정기: 바탕 혼합 예측(--base)의 잔차를 adsb.lol 로 매칭된 출발편에서만 고치고, 마지막에 LOBT 창(src/lobt_window.project)을 건다.
+"""ADS-B ground-trace corrector (stage 1, docs/DESIGN.md section 7.1), then the LOBT window (src/lobt_window.project).
+
+It corrects the residual of a base mixture prediction (--base) on the departures matched to open ADS-B data (adsb.lol
+globe_history, ODbL 1.0) and leaves the other rows as they are. src/ctx_corr.py uses these functions as its stage 1.
+Inputs: cache/<setting>_<base>_s<seed>.parquet (the base's val, fwd and full outputs); cache/<adsb>.parquet, the per-departure ADS-B
+columns built by research/adsb/build_feats.py (its SHA-256 prefix must equal --adsb_sha); d_lobt of cache/<feats>.parquet.
+A LightGBM learns y - pred (clipped to +-1,800 s) on the matched January and July 2025 rows of the base's val output, from the base's
+columns (pred, mu, p_art, dsch, g, airport code, hour) and the ADS-B columns:
+    val:  --folds day folds; the matched rows of a day are corrected by the model fitted without that day
+    fwd:  the matched July rows are corrected by a model fitted on January days only
+    full: the matched rows to predict are corrected by the mean of the --folds models of val
+Output: cache/<setting>_<tag>_s<seed>.parquet (the base's columns with pred and p_art changed) and a copy of the base's early-stopping
+rows. The airport code (APTS) knows the ten airports of the challenge.
+
+    python src/adsb_corr.py --setting val --seed 0 --base <tag> --tag <tag>adsbw --feats feats_v25 --adsb adsb_v1 --adsb_sha <16>
+        --folds 10 --rounds 300 --threads 3
+
+Original note (Korean):
+ADS-B 지상 궤적 보정기: 바탕 혼합 예측(--base)의 잔차를 adsb.lol 로 매칭된 출발편에서만 고치고, 마지막에 LOBT 창(src/lobt_window.project)을 건다.
 
 입력: cache/<setting>_<base>_s<seed>.parquet(바탕 val, fwd, full), cache/<adsb>.parquet(research/adsb/build_feats.py 가 만든 출발편별 ADS-B 칸,
       --adsb_sha 와 sha256 앞 16자가 같아야 한다), cache/<feats>.parquet 의 d_lobt(창).
@@ -61,6 +79,10 @@ def sha16(path) -> str:
 
 
 def load_adsb(name: str, want_sha: str) -> pd.DataFrame:
+    """Matched departures of the ADS-B table cache/<name>.parquet, indexed by MVT_ID_mvt, with hour and airport code.
+
+    Stops if the SHA-256 prefix of the table differs from want_sha.
+    """
     p = CACHE / f"{name}.parquet"
     got = sha16(p)
     if got != want_sha:
@@ -96,6 +118,7 @@ def design(b: pd.DataFrame, A: pd.DataFrame) -> pd.DataFrame:
 
 
 def fit(X: pd.DataFrame, seed: int, rounds: int, threads: int):
+    """LightGBM of the clipped residual y - pred on the rows X, from the base and ADS-B columns (BASE_COLS, ADSB_COLS)."""
     import lightgbm as lgb
     params = dict(objective="regression", learning_rate=0.03, num_leaves=15, min_data_in_leaf=40, feature_fraction=0.9,
                   bagging_fraction=0.9, bagging_freq=1, lambda_l2=10.0, verbose=-1, num_threads=threads, seed=seed,
@@ -106,21 +129,27 @@ def fit(X: pd.DataFrame, seed: int, rounds: int, threads: int):
 
 
 def predict(model, X: pd.DataFrame) -> np.ndarray:
+    """Correction (seconds) of a model of fit for the rows X."""
     return model.predict(X[BASE_COLS + ADSB_COLS].astype(float).to_numpy())
 
 
 def day_folds(days, k: int, seed: int) -> dict:
+    """Fold number of each day: the days in a random order (seed 10,000 + seed) dealt to k folds in turn."""
     perm = np.random.default_rng(10_000 + seed).permutation(sorted(days))
     return {d: i % k for i, d in enumerate(perm)}
 
 
 def fold_models(T: pd.DataFrame, k: int, seed: int, rounds: int, threads: int):
+    """One model per day fold, each fitted without that fold's days; also returns the fold of every row of T."""
     fo = day_folds(T["day"].unique(), k, seed)
     f = T["day"].map(fo).to_numpy()
     return [fit(T[f != j], seed, rounds, threads) for j in range(k)], f
 
 
 def report(b, pred_w, pred_basew, X, setting, tag) -> dict:
+    """Ruler summary of a corrected prediction: RMSE of the base and of the corrected values on all, matched,
+    first-movement and unmatched rows, and by airport.
+    """
     y = b["y"].to_numpy(dtype=float)
     pos = X["pos"].to_numpy()
     m = np.zeros(len(b), bool)
@@ -146,6 +175,7 @@ def report(b, pred_w, pred_basew, X, setting, tag) -> dict:
 
 
 def main():
+    """Command line entry: correct the base output for one setting and write the outputs of the module docstring."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

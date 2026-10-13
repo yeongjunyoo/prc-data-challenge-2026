@@ -1,5 +1,17 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""G 행(LIRF 출발 가운데 NM 미매칭)만 새 G 모형으로 다시 계산해 큐 후보 하나 위에 얹는다. 반대 창(tools/antiwin.py) 앞에 둔다.
+"""New G model for the G rows (LIRF departures without an NM record), docs/DESIGN.md section 8.4; it adds (new G - old G) to them.
+
+The probabilities of the three record types come from the formula of src/model3.g_probs called with two keys, the destination and the
+carrier's letters of the flight number, and averaged; variant avg (the final stack) uses the two keys only, variant avg_new adds nine
+stand and link columns to the GBM. The delay-band rule and mu are those of the G leg (a src/g_band.py output). The script first checks
+that it reproduces the leg's G values with the old settings. It must run before the opposite-window rules (tools/antiwin.py).
+
+    python tools/gkey.py table                             # cache/gkey_v1.parquet
+    python tools/gkey.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --leg <g_band tag> --leg_feats <feature table>
+        --table gkey_v1 --table_sha <16> --variant avg --tag <spec>
+
+Original note (Korean):
+G 행(LIRF 출발 가운데 NM 미매칭)만 새 G 모형으로 다시 계산해 큐 후보 하나 위에 얹는다. 반대 창(tools/antiwin.py) 앞에 둔다.
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-06-r5-analogs.md` 4.5(연구 스크립트
 research/r5_analogs/g_carrier2.py), R3 2.5(research/r3_structure/p5_g_rep.py). 생각의 출처: Pushback to the Future 우승 팀들의 항공사 코드,
 OSN Discord 「the echo of the planned time ... is mostly a carrier thing when there's no NM match」(README 「외부 아이디어」).

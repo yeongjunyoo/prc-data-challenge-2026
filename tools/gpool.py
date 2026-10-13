@@ -1,5 +1,13 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""G 행의 세 유형 확률을 G 모형 성분 넷의 로그 풀로 날카롭게 한다(R9-S1). 반대 창으로 끝나는 큐 후보 하나 위 맨 끝에 얹는다(G 행만).
+"""Sharper type probabilities for the G rows (docs/DESIGN.md section 8.5): the four components of the G model of tools/gkeyxn.py
+(two keys, each a lookup table and a GBM) are combined by a log pool instead of their mean, P' proportional to the components'
+geometric mean raised to a power a. One exponent a in [0.25, 4] minimises the three-class log loss of out-of-month probabilities on
+the fitting months. G rows with d_sch of 43,200 s or more, rows changed by antiwin and rows that are not G stay byte for byte.
+
+    python tools/gpool.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --tag <spec>
+
+Original note (Korean):
+G 행의 세 유형 확률을 G 모형 성분 넷의 로그 풀로 날카롭게 한다(R9-S1). 반대 창으로 끝나는 큐 후보 하나 위 맨 끝에 얹는다(G 행만).
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r9-lirf-coverage.md` 7절(사전 등록 R9-S1, 측정
 research/r9_lirf/c7_gpool.py). R8 해부(research/2026-10-07-r8-anatomy.md 5절)가 G 정상 확률이 양 끝에서 무디다고 봤고(lomo N0 0.7 ~ 0.8 → 실제 0.938),
 그 까닭으로 성분을 평균하는 꼴을 짚었다. 남의 코드 없음.

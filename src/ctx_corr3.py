@@ -37,6 +37,7 @@ DAILY = None  # --aiu_date block: AIU daily mean pre-departure delay per "airpor
 
 
 def group_mean(codes: np.ndarray, x: np.ndarray) -> np.ndarray:
+    """Mean of x within each group code (NaN values left out); NaN for groups without a value."""
     ok = np.isfinite(x)
     s = np.bincount(codes, weights=np.where(ok, x, 0.0))
     n = np.bincount(codes, weights=ok.astype(float))
@@ -69,6 +70,11 @@ def block_day_cols(R, s1: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarra
 
 
 class Rows3(c2.Rows2):
+    """Rows of src/ctx_corr2.py whose stage-2 matrix also holds the gaps between the AIU aggregates and our predictions.
+
+    aiu_m_gap: the airport-month taxi-out time minus the mean of the stage-1 prediction; aiu_d_gap: the day's mean pre-departure delay
+    minus the mean of max(0, d_sch - stage-1 prediction). With --aiu_date block, the day columns follow the date of the estimated off-block.
+    """
     def design2(self, s1, delta):
         if not hasattr(self, "_gm"):
             self._gm = pd.factorize(pd.Series(self.ap) + "|" + pd.Series(self.part))[0]
@@ -83,6 +89,7 @@ class Rows3(c2.Rows2):
 
 
 def main():
+    """Command line entry: the corrector of src/ctx_corr2.py with the AIU columns (and --aiu_date, --drop2, --fit_cache)."""
     global AIU_DATE, DAILY
     drop = c2.pop_flag("--drop2")
     cache = c2.pop_flag("--fit_cache")

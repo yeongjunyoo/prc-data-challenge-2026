@@ -62,6 +62,7 @@ def simplex_ls(A: np.ndarray, r: np.ndarray) -> np.ndarray:
 
 
 def ruler_days(ids: np.ndarray) -> np.ndarray:
+    """UTC day (YYYY-MM-DD) of each ruler departure in ids, read from the January and July 2025 training files."""
     fr = []
     for m in ("01", "07"):
         f = DATA / f"training_2025-{m}-01_2025-{int(m) + 1:02d}-01.parquet"
@@ -74,6 +75,7 @@ def ruler_days(ids: np.ndarray) -> np.ndarray:
 
 
 def load(setting: str, a) -> tuple[pd.DataFrame, np.ndarray]:
+    """The base output of a setting and the regression column of each learner in --learners, as a matrix (rows in the base's order)."""
     b = pd.read_parquet(CACHE / f"{setting}_{a.base}_s{a.base_seed}.parquet")
     mus = [b["mu"].to_numpy(dtype=float)]
     for spec in a.learners.split(","):
@@ -85,6 +87,7 @@ def load(setting: str, a) -> tuple[pd.DataFrame, np.ndarray]:
 
 
 def design(b: pd.DataFrame, MU: np.ndarray):
+    """Terms of the mixture that the weights multiply: ((1 - p_art) * mu of each learner, p_art * dsch)."""
     p, d = b["p_art"].to_numpy(dtype=float), b["dsch"].to_numpy(dtype=float)
     return (1 - p)[:, None] * MU, p * d
 
@@ -100,6 +103,7 @@ def mix(b: pd.DataFrame, MU: np.ndarray, W: np.ndarray) -> tuple[np.ndarray, np.
 
 
 def main():
+    """Command line entry: fit the blend weights for one setting (as the module docstring says) and write the blend."""
     pa = argparse.ArgumentParser()
     pa.add_argument("--setting", default="val", choices=["val", "fwd", "full"])
     pa.add_argument("--seed", type=int, default=0)

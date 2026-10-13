@@ -1,5 +1,16 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""세 큐 후보(같은 뒤 단계를 거친 사슬 셋)의 최종 예측을 1/3 씩 섞어 새 후보를 만든다: f = (A + B + C) / 3.
+"""Average of three chains that went through the same tail steps: f = (A + B + C) / 3 (docs/DESIGN.md section 8.7).
+
+The weights 1/3 were fixed before any of the averages was scored; nothing is fitted. The three candidates must have the same rows,
+feature table and ruler. Writes the ruler, July-forward and test predictions and a manifest whose tag is A's tag plus "av" and the
+suffix (avskap for the final stack).
+
+    python tools/chainavg3.py --setting {val,fwd,full} --src_a <manifest A> --src_a_sha <16> --src_b <manifest B> --src_b_sha <16>
+        --src_c <manifest C> --src_c_sha <16> --tag <spec>
+The sub-command build is the queue tooling of the challenge.
+
+Original note (Korean):
+세 큐 후보(같은 뒤 단계를 거친 사슬 셋)의 최종 예측을 1/3 씩 섞어 새 후보를 만든다: f = (A + B + C) / 3.
 tools/chainavg.py(두 사슬, sha16 565d51c881797751)를 셋으로 늘린 새 파일이다(공유 도구는 바꾸지 않음). 근거: vault
 `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-07-r13-f3.md` 5 ~ 6절(R13-F3, 셋째 가족 ap: 공항별 회귀
 LightGBM 과 CatBoost 다리의 사슬). 가중 1/3 은 측정 전에 정했다(고르지 않음). 학습하지 않는다. 세 후보의 행 집합, 피처 판, 자 정의가 같아야 한다.

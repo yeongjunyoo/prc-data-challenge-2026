@@ -1,5 +1,19 @@
 # SPDX-License-Identifier: GPL-3.0-only
-"""반대 창 두 규칙(R1, R2)을 큐 후보 하나 위에 마지막으로 얹어 새 후보를 만든다.
+"""Opposite-window rules R1 and R2 (docs/DESIGN.md section 8.2), applied on top of a candidate; they change about 30 rows of a month.
+
+A departure without an NM record is linked to its arrival record at the destination, when the destination is one of the ten airports
+(same airports and flight number, the first landing 300 s to 8 hours after the take-off). When that arrival has an NM record, its LOBT
+and AOBT_3 are the flight's own; since the NM matcher drops a departure whose |BLOCK - LOBT| exceeds 3,606 s, the label then lies
+outside the window. R1 (G rows with d_sch >= 3,600, |SCHED - LOBT| <= 3,606, d_lobt > 3,606): prediction = (take-off - AOBT_3 of the
+arrival record) + c. R2 (LIRF and LTFM, 0 < d_lobt <= 3,606): prediction = max(prediction, d_lobt + 3,606 + m). c and m are medians
+over the 2025 months outside the evaluated ones. Inputs only; nothing is chosen on the ruler.
+
+    python tools/antiwin.py link                           # the link table cache/antiwin_link_v1.parquet
+    python tools/antiwin.py --setting {val,fwd,full} --src <manifest> --src_sha <16> --link antiwin_link_v1 --link_sha <16> --tag <spec>
+The other sub-commands (build, enqueue) are the queue tooling of the challenge.
+
+Original note (Korean):
+반대 창 두 규칙(R1, R2)을 큐 후보 하나 위에 마지막으로 얹어 새 후보를 만든다.
 근거: vault `01 Projects/공모전 파이프라인/착수/PRC Data Challenge 2026/research/2026-10-05-r3-structure.md` 2.4(연구 스크립트
 research/r3_structure/s5_link.py, e11_antiwin_rules.py 와 같은 정의).
 
