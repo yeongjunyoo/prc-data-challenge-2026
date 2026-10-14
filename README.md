@@ -46,7 +46,7 @@ How the final file is rebuilt, with commands, machines, times, seeds and the lim
 | Daily board, v42: the January and July rows of the four-month file in v36's configuration on the final input (a check for rebuild errors and the reference of the L3 rule's veto) | 344,841 | RMSE 228.5347 | `results/submissions.csv` |
 | Daily board, v43: the January and July rows of the four-month file in v36's configuration with the L3 legs on the final input (the L3 rule's veto check and the reference of the veto of the L4 legs) | 344,841 | RMSE 228.5043 | `results/submissions.csv` |
 | Daily board, v44: the January and July rows of the four-month file in v36's configuration with the L4 legs on the final input (the veto check of the L4 legs and the reference of the veto of package S) | 344,841 | RMSE 227.9618 | `results/submissions.csv` |
-| Daily board, v45: in effect the final file's January and July rows (v36's configuration with the L4 legs and package S on the final input; 568 rows and 17 integer values differ from the final file's, 11 of these rows moved by the post-step R2a) | 344,841 | RMSE 227.6728 | `results/submissions.csv`; `docs/DESIGN.md` section 14.7 |
+| Daily board, v45: in effect the final file's January and July rows (v36's configuration with the L4 legs and package S on the final input; the unrounded predictions of 568 rows and 17 of the integer values differ from the final file's; 11 of these are the rows that the post-step R2a moves) | 344,841 | RMSE 227.6728 | `results/submissions.csv`; `docs/DESIGN.md` section 14.7 |
 | Local ruler (2025 January and July, day folds) of the final file's configuration (v36's with the L4 legs and package S) | 344,419 | RMSE 281.08 | `preds/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3rBbFamfhgkcxncrdbawgpglgjaavskapsff13.json` (field `holdout`; the chain end before the post-step R2a, `docs/DESIGN.md` section 8.8) |
 | February and June 2025 held out (ruler M3): one LightGBM leg of chain A after the LOBT window; with the corrector fitted on January and July | 326,873 | RMSE 287.45; 285.01 | `research/f2/out/m3_corr_f2m3.json` |
 | Ruler M3, three-chain world: stage 2 fitted with other 2025 months added (form L; in this gate January, February, June and July minus the held-out month) against stage 2 fitted on January and July (form T), on these rows | 326,873 | ΔMSE -194.0 (P(Δ < 0) 1.0) | `research/f2/out_mac/gate14.json` |
@@ -102,7 +102,7 @@ The documentation is in English, and so are the docstrings of the model's main m
 
 ## License
 
-The code is released under the GNU General Public License version 3 (`LICENSE`); each source file carries the line `SPDX-License-Identifier: GPL-3.0-only`. Data sources keep their own licenses, listed in `docs/DATA_AND_LICENSES.md`.
+The code is released under the GNU General Public License version 3 (`LICENSE`), which covers every file of code in this repository. Each source file carries the line `SPDX-License-Identifier: GPL-3.0-only`, except the byte-for-byte copies in `research/f3/out/final_drivers/` of the scripts that ran on the Mac, which are kept unchanged so that their SHA-256 can be checked (`RELEASE_MANIFEST.md` section 3). Data sources keep their own licenses, listed in `docs/DATA_AND_LICENSES.md`.
 
 ## Attribution
 

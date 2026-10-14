@@ -1,10 +1,10 @@
 # Release manifest
 
-How this tree was made, what differs from the working copies it was copied from, and what was left out. Built 2026-10-14 09:36 KST by copying files (nothing was moved or changed in the working copies).
+How this tree was made, what differs from the working copies it was copied from, and what was left out. Built 2026-10-14 16:38 KST by copying files (nothing was moved or changed in the working copies).
 
 ## 1. Size and contents
 
-1440 files, 28,063,173 bytes, largest file 1888 KB.
+1440 files, 28,064,990 bytes, largest file 1888 KB.
 
 | Folder | Files |
 |---|---|
@@ -57,10 +57,11 @@ How this tree was made, what differs from the working copies it was copied from,
 | Organizer data (`training_*.parquet`, `ranking.parquet`, `submitting.parquet`, `final_ranking.parquet`, `final_submitting.parquet`) | No license is published for it; `python -m src.s3io pull` and `research/f1_final/scripts/get_final.py` download it with your own access key |
 | Derived tables, leg outputs, prediction files, model stores (`cache/`, `preds/*.parquet`, fit caches) | Rows keyed by organizer ids; derived databases of ODbL data. Hashes are in the manifests, in `results/table_meta/` and `results/table_meta_final/`, and in `research/f3/out/final_build_manifest.json` |
 | Raw ADS-B days (about 1.5 TB of release assets for the 485 days used) | Size; they are public releases (`research/adsb/manifest_preferred.tsv`, `research/r17_a/manifest_r17a.tsv`) |
+| EUROCONTROL AIU CSV files (four files, about 11 MB) | EUROCONTROL's terms allow copies with the source named, for non-commercial use and without modification (`docs/DATA_AND_LICENSES.md` sections 5 and 7); `docs/REPRODUCE.md` section 2 downloads them and gives their hashes |
 | `tools/prucal.py`, `tools/prucal2.py`, `research/r10_a/pru_cal.py`, `research/r10_a/prucal_495_check.py` | A calibration rule and constants taken from another team's public repository; evaluated on candidates only, in no submitted file and not in the final file (`docs/EXTERNAL_IDEAS.md` section 2) |
 | `tools/run_jobs.sh`, `tools/run_jobs_after.sh`, `tools/host_free.ps1`, `tools/compute_baseline.ps1`, `tools/prc_cycle_wake.py` | Job runner and checks of the author's PC (free memory, running programs, schedules); `docs/REPRODUCE.md` section 4 explains the job-line format they ran |
 | Runners and launchers of the later month-held-out gate runs and of two daily-format variants (`research/f2/mac/`: `f2_curve_mac.sh`, `f2_day_mac.sh`, `f2_evening_mac.sh`, `f2_fixbase_mac.sh`, `f2_gate14_rerun.sh`, `f2_gate15_mac.sh`, `f2_l3go_mac.sh`, `f2_launch_1009.sh`, `f2_seed_mac.sh`, `f2_slot.sh`, `f2_stage4_mac.sh`, `f2_stage_launch.sh`, `f2_stage_mac.sh`, `f2_tailL_mac.sh`) and status printers | They only ordered those runs on the Mac (locks, waits, markers); the gate scripts, whose docstrings give their arguments, and their outputs are in `research/f2/`. The runners that built the final file's inputs are in `scripts/host/f2/` |
-| Other own research scripts not used by any submitted chain or by the final rebuild (1275 files under `research/` of the working repository) | Exploratory analyses, rejected variants, sandbox builders and copies; where `docs/DESIGN.md` cites a number from them, the script or output is included |
+| Other own research scripts not used by any submitted chain or by the final rebuild (1276 files under `research/` of the working repository) | Exploratory analyses, rejected variants, sandbox builders and copies; where `docs/DESIGN.md` cites a number from them, the script or output is included |
 | Saved copies of other teams' repositories and notes, copies of the organizers' Discord channel, leaderboard dumps | Third-party material; the documents quote single organizer sentences with date and message id |
 | Submission ledger, decision log, working notes | Internal working records; `results/submissions.csv` lists every submission with its scores and purpose |
 | The five exception files of seal 001 (`notes/exceptions/001.json`, `001_brief.txt`, `001_deviation.json`, `001_evidence.json`, `001_ruling.txt`) | Internal records of an independent ruling that name the AI model that wrote it, a session transcript and paths of the author's PC; the seal's other files verify without them |

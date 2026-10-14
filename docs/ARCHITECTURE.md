@@ -9,7 +9,7 @@ This page shows how the parts of the repository connect, from the challenge file
    training_*.parquet (2025, labelled)        adsb.lol days -> research/adsb/ -> cache/adsb_v1, adsb_v2      per-departure ADS-B tables
    ranking.parquet (period to predict)        ADS-B stops, OpenStreetMap stands -> research/obs2/, research/ctx_corr/ -> cache/geo_v1
                                               research/adsb/gprobe/build_nd.py -> cache/adsb_v1nd, geo_v1nd  corrector inputs
-   submitting.parquet (template)              IEM METAR -> src/metar_fetch.py -> data/metar/
+   submitting.parquet (template)              IEM METAR -> external_data/metar/ (or src/metar_fetch.py) -> data/metar/
             |                                 EUROCONTROL AIU -> data/ext/aiu/
             v
  src/load.py -> cache/all.parquet             all movements, timestamps in epoch seconds, src = month (0 = to predict)

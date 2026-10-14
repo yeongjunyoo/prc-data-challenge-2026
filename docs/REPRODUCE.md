@@ -1,6 +1,6 @@
 # Reproducing the final file and the daily submissions
 
-This file lists, in execution order, what has to run to rebuild the final file `spirited-tiger_final.parquet` (section 0) and the daily submissions it builds on (sections 1 to 9), what each step needs, how long it took on our machines, and where results can differ. The commands are taken from the manifests in `preds/` (field `commands`), from the job files we used, from the drivers in `research/f3/`, and from the docstrings of the scripts. Nothing here was re-run for this document except the checks marked “verified”. Markers `FILL:<name>` stand for values that were not final when this text was written.
+This file lists, in execution order, what has to run to rebuild the final file `spirited-tiger_final.parquet` (section 0) and the daily submissions it builds on (sections 1 to 9), what each step needs, how long it took on our machines, and where results can differ. The commands are taken from the manifests in `preds/` (field `commands`), from the job files we used, from the drivers in `research/f3/`, and from the docstrings of the scripts. Nothing here was re-run for this document except the checks marked “verified”.
 
 <!--AUTO:DAILYBEST-->
 Best daily-board submission (January and July 2026 only; board-tuned history, not the final file): v45 (spirited-tiger_v45.parquet), server RMSE 227.6728, ruler RMSE 281.08, written 2026-10-12 09:03 KST. SHA-256 of the submitted file: `154b90716630bc5c8eddc4773e3bad4bc88acbb9f9730614d358c1209bcf8409`. Manifest: `preds/manifest_m6r28xwincbrmfw4sv434tmcadsbgeondctxv3x50ws75c3amfhgkcxncrdbawgpglgjaavskapsff12.json`.
@@ -162,7 +162,7 @@ export PRC_S3_PASSWORD=<your secret>
 python -m src.s3io pull        # prc-2026-datasets -> data/ (training_*.parquet, ranking.parquet, submitting.parquet; about 315 MB)
 ```
 
-2. METAR (public domain): copy the ten files that every build used from `external_data/metar/` to `data/metar/`, where `src/feats.py` reads them. Alternatively, `python -m src.metar_fetch` downloads them again into `data/metar/<ICAO>.csv` (ten airports, 2025-01-01 to 2026-08-01 UTC); a later download can differ where IEM has revised or added reports (`DATA_AND_LICENSES.md` section 3 gives the SHA-256 of the files used).
+2. METAR (public domain): copy the ten files that every build used from `external_data/metar/` to `data/metar/`, where `src/feats.py` reads them. Alternatively, `python -m src.metar_fetch` downloads them again into `data/metar/<ICAO>.csv` (ten airports, 2025-01-01 to 2026-08-01 UTC); a later download can differ where IEM has revised or added reports (`DATA_AND_LICENSES.md` section 3 gives the SHA-256 of the files used). The worked example of `USAGE.md` section 3 assumes that `data/metar/` does not exist; with these files there, its printed numbers change.
 
 ```
 mkdir -p data/metar
@@ -357,17 +357,17 @@ The test prediction of a chain is `preds/test_<spec>.parquet` (`MVT_ID_mvt`, `pr
 |---|---|---|---|---|
 | ADS-B extraction of one day (3 to 4 GB tar) | PC, 1 thread | about 1.5 to 2 minutes; 18.7 s per GB (10 days, 31.6 GB: 591 CPU-s) | 0.84 GB | `research/adsb/` pilot, `DATA_AND_LICENSES.md` |
 | ADS-B download | PC, 1 Gbit/s line | 28.7 MB/s with 4 connections; 736 GB take about 7 hours | - | pilot |
-| `feats_adsb.py` | PC | 6 s | below 4 GB | `cache/feats_v27.json` |
-| LightGBM leg (`model3.py`, window anchor), per seed | Mac, 6 threads | val 1,412 s, fwd 644 s, full 833 s (48 min for the three) | 6.7 / 3.7 / 5.5 GB resident | `logs/m6r27skwin_*_s0.log` |
-| CatBoost leg, per seed | Mac, 8 to 10 threads | val 4,790 s (8 threads), fwd 2,423 s, full 2,740 s (2.6 h for the three) | 9.2 / 7.3 / 11.0 GB resident | `logs/m6r27cbwin_*_s0.log` |
-| RealMLP leg, per seed | Mac MPS | val 739 s, fwd 380 s, full 949 s (35 min) | 11.6 / 8.7 / 13.0 GB resident (footprint up to 33 GB) | `logs/m6r27rmwin_*_s0.log` |
-| XGBoost leg | PC GPU | val 106 s, full 64 s | - | `logs/m6r25xg_*_s0.log` |
+| `feats_adsb.py` | PC | 6 s | below 4 GB | `results/table_meta/feats_v27.json` (field `seconds`) |
+| LightGBM leg (`model3.py`, window anchor), per seed | Mac, 6 threads | val 1,412 s, fwd 644 s, full 833 s (48 min for the three) | 6.7 / 3.7 / 5.5 GB resident | `logs/m6r27skwin_*_s0.log` (not shipped) |
+| CatBoost leg, per seed | Mac, 8 to 10 threads | val 4,790 s (8 threads), fwd 2,423 s, full 2,740 s (2.6 h for the three) | 9.2 / 7.3 / 11.0 GB resident | `logs/m6r27cbwin_*_s0.log` (not shipped) |
+| RealMLP leg, per seed | Mac MPS | val 739 s, fwd 380 s, full 949 s (35 min) | 11.6 / 8.7 / 13.0 GB resident (footprint up to 33 GB) | `logs/m6r27rmwin_*_s0.log` (not shipped) |
+| XGBoost leg | PC GPU | val 106 s, full 64 s | - | `logs/m6r25xg_*_s0.log` (not shipped) |
 | TabM leg | PC GPU | 10 to 12.6 minutes per setting (18 to 22 epochs) | memcap 8 GB (GPU allocation counts) | job logs of the author (not part of this repository) |
 | `ctx_corr3.py`, per seed and setting | PC or Mac | about 3 minutes on an idle PC, 50 s on the Mac; 23 minutes on a saturated PC | 2.3 to 2.6 GB | `research/r10_b/` |
 | One full tail (corrector average, artmm to gjoint) | Mac | 28 minutes for the 9 corrector runs, the average and 10 tail tools | below 2.1 GB per tool | `research/r10_b/` notes |
 | `chainavg3.py` | PC | minutes | 1.7 GB | manifest |
 
-Estimated total for a rebuild from raw data on the same machines, from the numbers above: legs about 32 hours (chain A: 4 LightGBM + 3 CatBoost + 4 RealMLP seeds = 13.4 hours; chain B the same; chain C about 5 hours; TabM 0.6 hours), correctors and tails about 4 hours, ADS-B extraction about 4 CPU-hours, ADS-B download about 7 hours. We ran the legs on two machines in parallel over three days.
+Estimated total for a rebuild from raw data on the same machines, from the numbers above: legs about 32 hours (chain A: 4 LightGBM + 3 CatBoost + 4 RealMLP seeds = 13.4 hours; chain B the same; chain C about 5 hours; TabM 0.6 hours), correctors and tails about 4 hours, ADS-B extraction about 4 CPU-hours, ADS-B download about 7 hours. We ran the legs on two machines in parallel over three days. These totals are for the daily stack and its 240 ADS-B days; the final file needs in addition the other 245 ADS-B days (about 800 GB of release assets, `DATA_AND_LICENSES.md` section 4.1) and the steps of section 0, timed in section 0.3.
 
 ## 8. Seeds and sources of non-determinism
 
@@ -378,7 +378,7 @@ Estimated total for a rebuild from raw data on the same machines, from the numbe
 - Library version of the Mac for the final CatBoost and RealMLP legs: catboost 1.2.10, pytabkit 1.7.3, torch 2.11.0 (a list in `research/r10_b/` job notes).
 - `src/feats.py` orders movements with non-stable `np.argsort` on timestamps (`src/feats.py:176` and `src/feats.py:202`). Movements with equal timestamps (common at the five airports whose times lie on a one-minute grid) may be ordered differently by different NumPy builds or CPUs, which can change the “previous or next movement” columns of those tied rows. This is by code reading, not measured.
 - Expected agreement: a rebuild should land within the seed noise of the local ruler (about 4 to 5 RMSE points for one seed of the whole pipeline; much less after the seed averages used here), not bit-identical. The hash list of the original files is in the manifests (`holdout.sha`, `test.sha`, `forward.sha`).
-- The ADS-B and AIU inputs are fixed files; the AIU hashes are given in section 2. ADS-B release assets can be re-published by adsb.lol; the day-to-release mapping is in `research/adsb/manifest_preferred.tsv`.
+- The METAR, ADS-B and AIU inputs are fixed files: the METAR files are in `external_data/metar/`, with their SHA-256 in `DATA_AND_LICENSES.md` section 3; the AIU hashes are given in section 2. ADS-B release assets can be re-published by adsb.lol; the day-to-release mapping is in `research/adsb/manifest_preferred.tsv`.
 
 ## 9. Code hashes
 

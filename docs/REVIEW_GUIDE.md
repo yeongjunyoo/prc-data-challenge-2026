@@ -1,6 +1,6 @@
 # Reviewer guide
 
-For the organizers' review of team spirited-tiger (Yeongjun Yoo, Hongik University, Seoul). Each row points to the file and line, or to the organizer message (OpenSky Discord channel #prc-data-competition, message id), that supports it. Section numbers refer to `docs/DESIGN.md` unless stated. Markers `FILL:<name>` are values that were not final when this text was written; the list is in section 3, and section 4 explains words that code comments and file names use.
+For the organizers' review of team spirited-tiger (Yeongjun Yoo, Hongik University, Seoul). Each row points to the file and line, or to the organizer message (OpenSky Discord channel #prc-data-competition, message id), that supports it. Section numbers refer to `docs/DESIGN.md` unless stated. Section 4 explains words that code comments and file names use.
 
 ## 1. The eligibility lines (eligibility page)
 
@@ -8,7 +8,7 @@ For the organizers' review of team spirited-tiger (Yeongjun Yoo, Hongik Universi
 |---|---|---|
 | “The team is NOT related in any way to sanctioned non-EUROCONTROL states.” | One member, Yeongjun Yoo, Hongik University; country Korea South; type Academia | team page https://prc-data-challenge-2026.netlify.app/teams/spirited-tiger.html (read 2026-10-09) |
 | “All used external datasets are openly accessible/usable and documented.” | Documented: IEM METAR, adsb.lol, OpenStreetMap, EUROCONTROL AIU files. The AIU files are free to download but carry EUROCONTROL's terms (copy with source, no commercial use, no modification), not a named open license | `docs/DATA_AND_LICENSES.md` sections 1 to 5 and 7; organizer rulings on the AIU files: 2026-09-17 (1550118982412009516, “can be considered open data for the challenge” and “if their license applies as open data, ok”), 2026-09-27 (1553786816501514261, “yes”), and for the final phase 2026-10-08 (1557755225346023585, “no change. still ok”) |
-| “All produced source code are made openly available on GitHub under the GNU GPLv3 license.” | GPLv3 text in `LICENSE`; one SPDX line in every Python and shell file. What is left out and why: `RELEASE_MANIFEST.md` section 5 | `LICENSE`; `RELEASE_MANIFEST.md` |
+| “All produced source code are made openly available on GitHub under the GNU GPLv3 license.” | GPLv3 text in `LICENSE`; one SPDX line in every Python and shell file except the byte-for-byte copies in `research/f3/out/final_drivers/` (`RELEASE_MANIFEST.md` section 3). What is left out and why: `RELEASE_MANIFEST.md` section 5 | `LICENSE`; `RELEASE_MANIFEST.md` |
 | “All additional datasets used are openly available under an open source license.” | IEM: public domain. adsb.lol and OpenStreetMap: ODbL 1.0. AIU files: no open-source license (see above). Organizer data: no license is published for it | `docs/DATA_AND_LICENSES.md` sections 2 to 5 and 7 |
 | “Sufficient documentation is provided to understand and reproduce the results.” | Design, data, reproduction steps of the final file and of every chain step, manifests with commands and hashes | `docs/DESIGN.md` sections 0 and 14; `docs/REPRODUCE.md` section 0; `preds/manifest_*.json`; `scripts/verify_code_hashes.py` |
 | “The solution is original ...” | No code taken from other teams; ideas from public sources listed with their sources; originality audit by script | `docs/EXTERNAL_IDEAS.md` sections 1 to 4 |

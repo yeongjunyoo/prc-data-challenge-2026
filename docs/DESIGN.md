@@ -1,7 +1,7 @@
 # System design: team spirited-tiger, PRC Data Challenge 2026 (taxi-out time)
 
 Author: Yeongjun Yoo (Hongik University, Seoul). Team name on the challenge platform: spirited-tiger.
-Status of this document: describes the repository on the date of its last commit. Section 0 describes the final submission; sections 1 to 13 describe the model and the daily-board history; section 14 explains how the stack was checked on months it never saw; section 15 lists every choice that used the public board. Numbers marked “server” are the scores returned by the organizers' ranking bucket for a submitted file. Numbers marked “ruler” are our own local measurements on 2025 data. Every statement about a measured effect names the file it comes from. Markers of the form `FILL:<name>` stand for values that were not final when this text was written; `docs/REVIEW_GUIDE.md` lists them. Code comments in this repository are mostly written in Korean; this documentation is in English.
+Status of this document: describes the repository on the date of its last commit. Section 0 describes the final submission; sections 1 to 13 describe the model and the daily-board history; section 14 explains how the stack was checked on months it never saw; section 15 lists every choice that used the public board. Numbers marked “server” are the scores returned by the organizers' ranking bucket for a submitted file. Numbers marked “ruler” are our own local measurements on 2025 data. Every statement about a measured effect names the file it comes from. Code comments in this repository are mostly written in Korean; this documentation is in English.
 
 ## Decision index
 
