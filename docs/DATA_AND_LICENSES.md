@@ -9,13 +9,15 @@ The challenge asks that all external datasets are “openly accessible/usable an
 | Source | License as published | Redistributed in this repository | Used in |
 |---|---|---|---|
 | Organizer data (OpenSky Network / PRC): `training_*.parquet`, `ranking.parquet`, `submitting.parquet`, and for the final phase `final_ranking.parquet`, `final_submitting.parquet` | none stated on the data page (verified) | no | everything |
-| IEM ASOS METAR (Iowa Environmental Mesonet) | public domain (verified) | no (fetch script only) | features v2.2 and later |
+| IEM ASOS METAR (Iowa Environmental Mesonet) | public domain (verified) | yes, `external_data/metar/` (the ten files the predictions used) | features v2.2 and later |
 | adsb.lol `globe_history_2025`, `globe_history_2026` | ODbL 1.0, receiver contributions CC0 1.0 (verified on repository pages and documentation page) | no | ADS-B columns, correctors |
 | OpenStreetMap via Overpass API | ODbL 1.0 (verified) | the ten raw extracts, with attribution notice (see 4) | stand positions |
 | EUROCONTROL AIU CSV files (ansperformance.eu) | copy with source, non-commercial, no modification (verified); no named open license | no (hashes and fetch commands only) | AIU day shift, corrector columns |
 | EUROCONTROL specifications and guides cited in `DESIGN.md` | various (section 6) | no | citations only |
 
 No other source enters a prediction. In particular, the OpenSky Network's Trino database of historical ADS-B data was not used; every ADS-B input comes from the adsb.lol releases above.
+
+On Discord (#prc-data-competition) a participant asked whether the training data used by the models (the example given was adsb.lol) must be uploaded to the repository or whether the sources and download instructions are enough (2026-10-13 08:33 UTC, message 1559484164531822615); the organizer answered on 2026-10-13 09:55 UTC (message 1559504919768203325): “If it cannot fit the repo quota you have no choice but to provide info/script to fetch”. The METAR files fit and are in the public domain, so they are in this repository (section 3). The organizer data (section 2), the adsb.lol data (sections 2 and 4.1) and the AIU files (section 5) are not, for the reasons given there.
 
 ## 2. Organizer data
 
@@ -27,7 +29,22 @@ No other source enters a prediction. In particular, the OpenSky Network's Trino 
 ## 3. IEM ASOS METAR
 
 - URL: https://mesonet.agron.iastate.edu/disclaimer.php. Verified text: “The materials found on this website are in the public domain and may be used freely by anyone for any lawful purpose.”
-- Fetch: `python -m src.metar_fetch` (`src/metar_fetch.py`) reads the ASOS download service of the same site for the ten airports from 2025-01-01 to 2026-08-01 UTC; no registration. Output `data/metar/<ICAO>.csv`.
+- In this repository: `external_data/metar/<ICAO>.csv`, the ten files as `src/metar_fetch.py` wrote them on 2026-10-02 between 17:48 and 17:49 KST, unchanged. They are the files that every feature-table build read, including those of the final file. To use them, copy them to `data/metar/` (`REPRODUCE.md` section 2). The IEM materials are in the public domain; the GNU GPLv3 of this repository does not apply to them. Their SHA-256:
+
+| File | SHA-256 |
+|---|---|
+| `external_data/metar/EDDF.csv` | `3b3f284edc02a294cec7c9891e0433b7149b740ed30296144157a6181bb22a97` |
+| `external_data/metar/EDDM.csv` | `d8c62c455e153a27baad0542358d4c799dbc507df3e8672b88871ca74c166ccf` |
+| `external_data/metar/EGLL.csv` | `404556b2e645b38f76434aad409431aeb8b89ad699308a72b2b128ed17b666ad` |
+| `external_data/metar/EHAM.csv` | `b0f90ac02e5f9ff577dcda1fb0deabf6f9c365987bdd4bac1cd8a30df5a128bf` |
+| `external_data/metar/LEBL.csv` | `61b6d211bd1c778c2404b0007efb6834215380a08628d3b6b7171fe7bf33221d` |
+| `external_data/metar/LEMD.csv` | `ad62cd3362e7ae3138a66f8c743ea06150bd45d24d5fa62d2c87c477dab23773` |
+| `external_data/metar/LFPG.csv` | `a8dcfed23b1c3fb9a43b004883064b5f2f60019547b880e73ed41aac5463e3e3` |
+| `external_data/metar/LIRF.csv` | `1b371e9f22dee903df8d9d6880d6b27bc390d4ac68278c686d674283052aa413` |
+| `external_data/metar/LSZH.csv` | `ae9dbeb12e18554c5fef2b224a68db242735b0632cb2dd331a56e8ddb098aef3` |
+| `external_data/metar/LTFM.csv` | `e80d65bb0bdd2764beed1927e42376dcddbc46b81daf11d5a68928878b922003` |
+
+- Fetch: `python -m src.metar_fetch` (`src/metar_fetch.py`) reads the ASOS download service of the same site for the ten airports from 2025-01-01 to 2026-08-01 UTC; no registration. Output `data/metar/<ICAO>.csv`. A later fetch can differ from the files above where IEM has revised or added reports since 2026-10-02.
 - Used: weather columns (temperature, dew point, wind, gust, visibility, weather codes, sky cover, precipitation) taking the last report within 3 hours before the take-off (`src/feats.py metar_feats`). The effect of weather on the ruler is inside the resolution (`notes/levers.md`).
 - Attribution: Iowa Environmental Mesonet of Iowa State University.
 

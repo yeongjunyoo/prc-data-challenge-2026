@@ -82,6 +82,7 @@ Every chain step writes a manifest with its command lines, seeds, the feature ta
 | `research/` | builders of the input tables (ADS-B, stand geometry), legs and steps that live outside `src/` (TabM, per-airport legs, seed averages, corrector average, post-step R2a), the final-phase rebuild and gates, and the analysis scripts that the documents cite |
 | `examples/` | the synthetic sample, the input checker and the prediction writer of `docs/USAGE.md` |
 | `preds/`, `notes/`, `results/` | manifests, job lines, step notes, submission history and organizer scores |
+| `external_data/metar/` | the METAR files that every build read (`docs/DATA_AND_LICENSES.md` section 3); a rebuild copies them to `data/metar/` |
 | `scripts/` | the hash check and the host scheduling scripts of the final rebuild |
 
 `docs/USAGE.md` section 6 says which of these parts can be reused outside the challenge.

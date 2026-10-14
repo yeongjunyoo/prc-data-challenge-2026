@@ -162,7 +162,13 @@ export PRC_S3_PASSWORD=<your secret>
 python -m src.s3io pull        # prc-2026-datasets -> data/ (training_*.parquet, ranking.parquet, submitting.parquet; about 315 MB)
 ```
 
-2. METAR (public domain): `python -m src.metar_fetch` writes `data/metar/<ICAO>.csv` (ten airports, 2025-01-01 to 2026-08-01 UTC).
+2. METAR (public domain): copy the ten files that every build used from `external_data/metar/` to `data/metar/`, where `src/feats.py` reads them. Alternatively, `python -m src.metar_fetch` downloads them again into `data/metar/<ICAO>.csv` (ten airports, 2025-01-01 to 2026-08-01 UTC); a later download can differ where IEM has revised or added reports (`DATA_AND_LICENSES.md` section 3 gives the SHA-256 of the files used).
+
+```
+mkdir -p data/metar
+cp external_data/metar/*.csv data/metar/
+```
+
 3. EUROCONTROL AIU files (terms in `DATA_AND_LICENSES.md`): download the four files with the commands below and check the hashes (verified on 2026-10-08: URLs answer and the files are byte-identical to the ones we used).
 
 ```

@@ -89,6 +89,7 @@ Best daily-board submission (January and July 2026 only; board-tuned history, no
 | `preds/` | Manifests of the submitted chains: command lines, seeds, feature set and hash, code hashes, ruler results, output hashes. `preds/final/` holds the chain of the final file, `preds/first_final/` that of the first final file (v35's configuration on the final input). No prediction files |
 | `notes/` | Job files (command lines) of the legs, the step notes of the two final chains (`notes/final/`, `notes/first_final/`) and small files cited in the documents |
 | `results/` | Daily submissions table, organizers' scores, metadata and hashes of derived tables |
+| `external_data/metar/` | The ten METAR weather files that the predictions used (Iowa Environmental Mesonet, public domain); a rebuild copies them to `data/metar/` (`docs/REPRODUCE.md` section 2) |
 | `examples/` | The synthetic sample, the input checker and the prediction writer of the worked example in `docs/USAGE.md` |
 | `scripts/verify_code_hashes.py` | Checks the code against the hashes recorded in the manifests, after putting back the lines that the release's English docstrings replaced (`scripts/release_docstrings.json`) |
 | `scripts/host/` | Host scheduling scripts of the final rebuild and the download loops of the February and June 2026 ADS-B days, path-cleaned, with a README |
